@@ -1,0 +1,55 @@
+---
+title: "Digital History Methods"
+subtitle: |
+  HIST 5444 • Spring 2026<br>Virginia Tech
+sidebar: false
+toc: false
+---
+
+:::: {.grid .course-details}
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Instructor
+
+- {{< fa user >}} [Jesse Sadler](https://www.jessesadler.com)
+- {{< fa university >}} Newman Library 4064
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Course details
+
+- {{< fa calendar >}} Mondays
+- {{< fa clock >}} 2pm–4:50pm
+- {{< fa location-dot >}} Athenaeum, Newman Library 124
+:::
+
+::: {.g-col-12 .g-col-md-4 .contact-policy}
+### Contacting me
+
+- {{< fa envelope >}} <a href='jrsadler@vt.edu'>jrsadler@vt.edu</a>
+- {{< fa calendar-check >}} [Schedule an appointment](https://calendar.lib.vt.edu/appointments/jrsadler)
+- {{< fa mug-hot >}} [Digital Scholarship Collaboration hour](https://calendar.lib.vt.edu/event/16222034)
+
+:::
+
+::::
+
+## Course description
+This course is designed to introduce students to some of the tools of Digital Humanities/History with an emphasis on using open source technology that puts you in control. The course focuses on methodologies. It begins with the basics of organizing primary and secondary sources and your notes on them. We will then give an introduction to data analysis and visualization using the R programming language, culminating in the creation of your own website. Along the way we will be learning the basics of using the command line and learn about git and using GitHub for publishing websites and to become acquainted with the practices of reproducible research.
+
+## Schedule
+1. MLK
+2. History, data, and the digital
+3. Organizing sources and Markdown
+4. Intro to data and R
+5. Visualization
+6. Wrangling data
+7. Working with SNiGB
+8. Git and command line
+9. Making websites with Quarto
+10. Mapping
+11. Network analysis
+12. Web design and visualization
+13. Mapping and Network analysis
+14. Catch up
+15. Presentation of websites
