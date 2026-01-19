@@ -1,0 +1,47 @@
+---
+title: "Syllabus"
+format: html
+---
+
+## Course description
+This course is designed to introduce students to some of the tools of Digital Humanities/History with an emphasis on using open source technology that puts you in control. The course focuses on methodologies. It begins with the basics of organizing primary and secondary sources and your notes on them. We will then give an introduction to data analysis and visualization using the R programming language, culminating in the creation of your own website. Along the way we will be learning the basics of using the command line and learn about git and using GitHub for publishing websites and to become acquainted with the practices of reproducible research.
+
+::: {.callout-warning icon=false}
+## Note
+This course website will function as the main source of information for the course. The syllabus is liable to change based on new material and student input. We may not get to certain material, or I may add new resources based on student interest. Make sure to check in on the website frequently.
+:::
+
+## Learning goals
+After taking this course, you will...
+
+- have an expanded awareness of the open source tools available for conducting historical research and making that research widely available to the public.
+- be comfortable writing in plain text and using Markdown.
+- understand the uses and drawbacks of spreadsheets and how to organize rectangular data.
+- be comfortable with the basics of the command line.
+- be able to import, explore, wrangle, and visualize data in R.
+- be able to write R scripts and document your code in quarto documents.
+- have familiarity with the tidyverse packages in R.
+- have experience with the possibilities for text, network, and spatial analysis available through various R packages.
+- be comfortable with using git and GitHub for your own work or collaboration with others.
+- create a website using open source tools.
+
+## Expectations
+There are no prerequisites for this course. Students do not need to know anything about the methods and technologies listed in the syllabus. You do not need to know what the command line, R, or git is. That is what the course is for. Familiarity is, of course, helpful, and more advanced students can be accommodated within the structures of the course. However, the intention is for this to be an exploration of open source tools that can help you with historical analysis and publication. The primary expectation is a willingness to try and a readiness to learn. More specific expectations include:
+
+- Attendance and active participation in all seminars.
+- Complete and be ready to discuss all reading by our weekly meeting.
+- Come to seminar with a computer ready to work and to participate in the weekly labs with all applications and programming environments installed by the assigned meeting.[^1]
+- Complete all assignments on time.
+- Complete the final project of creating a Quarto website.
+
+Finally, it is expected that all students will be respectful of each other. Students will enter the course at different levels of comfort with the tools that we will use. The goal of the course is to help each other get more comfortable with open source technologies.
+
+## Assessment
+As noted above, the primary expectation for the course is a willingness to try, and so the primary assessment will be focused on effort and growth.
+
+- Participation: 30%
+- Weekly assignments: 30%
+- Final project: 40%
+
+## How the course works
+Meetings will be divided between discussion of weekly readings and topics and interactive workshops devoted to the tools and technologies for that week. All information necessary for the course is made available through this website. Information about weekly reading, assignments, and resources is available via the Schedule on the sidebar. This information is dynamic and liable to change, so please make sure to visit this website frequently.

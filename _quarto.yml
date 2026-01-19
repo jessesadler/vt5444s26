@@ -3,11 +3,20 @@ project:
 
 website:
   title: "Digital History Methods"
+
+  announcement:
+    icon: calendar-check
+    dismissable: true
+    content: "This is a **draft** version of the syllabus. The contents will change frequently."
+    type: info
+    position: below-navbar
+
+
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    right:
+      - href: syllabus.qmd
+        text: Syllabus
+
 
 format:
   html:
