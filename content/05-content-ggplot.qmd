@@ -1,0 +1,15 @@
+---
+title: "Visualizing data with ggplot2"
+format: html
+---
+
+## Reading
+
+
+## Assignment
+
+
+## Activities
+
+
+## Resources

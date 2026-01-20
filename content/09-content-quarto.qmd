@@ -1,0 +1,15 @@
+---
+title: "Making websites with Quarto"
+format: html
+---
+
+## Reading
+
+
+## Assignment
+
+
+## Activities
+
+
+## Resources

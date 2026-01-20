@@ -38,18 +38,18 @@ toc: false
 This course is designed to introduce students to some of the tools of Digital Humanities/History with an emphasis on using open source technology that puts you in control. The course focuses on methodologies. It begins with the basics of organizing primary and secondary sources and your notes on them. We will then give an introduction to data analysis and visualization using the R programming language, culminating in the creation of your own website. Along the way we will be learning the basics of using the command line and learn about git and using GitHub for publishing websites and to become acquainted with the practices of reproducible research.
 
 ## Schedule
-1. MLK
-2. History, data, and the digital
-3. Organizing sources and Markdown
-4. Intro to data and R
-5. Visualization
-6. Wrangling data
-7. Working with SNiGB
-8. Git and command line
-9. Making websites with Quarto
-10. Mapping
-11. Network analysis
-12. Web design and visualization
-13. Mapping and Network analysis
-14. Catch up
-15. Presentation of websites
+1. MLK Day (19 January)
+2. History, data, and the digital (26 January)
+3. The file system and Markdown (2 February)
+4. "Tidy" historical data (9 February)
+5. Visualizing data with ggplot2 (16 February)
+6. Wrangling data (23 February)
+7. Working with SNiGB (2 March)
+8. Reproducible workflows with Git (16 March)
+9. Making websites with Quarto (23 March)
+10. Making maps (30 March)
+11. Network analysis (6 April)
+12. Web design and visualization (13 April)
+13. Mapping and Network analysis (20 April)
+14. Group work on your project (27 April)
+15. Presentation of final projects (4 May)

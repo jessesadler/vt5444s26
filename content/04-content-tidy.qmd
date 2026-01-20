@@ -1,0 +1,15 @@
+---
+title: "'Tidy' historical data"
+format: html
+---
+
+## Reading
+
+
+## Assignment
+
+
+## Activities
+
+
+## Resources

@@ -1,0 +1,6 @@
+---
+title: "Content"
+format: html
+---
+
+This section has all of the material for each week's session, including the readings, assignments, and information to help you prepare for the session
