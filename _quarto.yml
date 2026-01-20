@@ -8,15 +8,19 @@ website:
     icon: calendar-check
     dismissable: true
     content: "This is a **draft** version of the syllabus. The contents will change frequently."
-    type: info
+    type: secondary
     position: below-navbar
 
   navbar:
+    pinned: true
+    background: "#ffaa00"
     right:
       - href: syllabus.qmd
         text: Syllabus
       - href: content/index.qmd
         text: Content
+      - href: worksheets/index.qmd
+        text: Worksheets
   
   sidebar:
     - title: "Content"

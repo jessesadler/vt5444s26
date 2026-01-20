@@ -1,0 +1,101 @@
+---
+title: "Example worksheet"
+author: "Jesse Sadler"
+format: live-html
+engine: knitr
+webr:
+  render-df: gt-interactive
+  packages:
+    - dplyr
+    - ggplot2
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+First we need to load the required R packages. Please wait a moment until the live R session is fully set up and all packages are loaded.
+
+```{r}
+#| eval: false
+library(ggplot2)
+library(dplyr)
+```
+
+Next we take a look at the data. We'll be working with the `penguins` dataset from the **palmerpenguins** package.
+
+```{webr}
+#| edit: false
+penguins
+```
+
+Now make a scatter plot of bill length versus body mass, coloring the points by penguin species.
+
+```{webr} 
+#| exercise: ggplot-example
+ggplot(___) +
+  aes(___) +
+  ___()
+```
+
+::: { .hint exercise="ggplot-example" }
+::: { .callout-tip title="Hint 1" collapse="false"}
+The dataset is provided as the argument to the `ggplot()` function.
+```r
+ggplot(penguins) +
+  aes(___) +
+  ___()
+```
+:::
+:::
+
+::: { .hint exercise="ggplot-example" }
+::: { .callout-tip title="Hint 2" collapse="false"}
+The variable `body_mass_g` goes on the x axis, the variable `bill_length_mm` goes on the y axis, and `species` is used to assign color.
+```r
+ggplot(penguins) +
+  aes(body_mass_g, bill_length_mm, color = species) +
+  ___()
+```
+:::
+:::
+
+::: { .solution exercise="ggplot-example" }
+::: { .callout-tip title="Solution" collapse="false"}
+The complete code to make the requested scatter plot. Use `na.rm = TRUE` to avoid warnings about missing data values.
+```r
+ggplot(penguins) +
+  aes(body_mass_g, bill_length_mm, color = species) +
+  geom_point(na.rm = TRUE)
+```
+:::
+:::
+
+<br>
+
+```{webr} 
+#| exercise: dplyr-example
+penguins |>
+  filter(island == "Biscoe")
+```
+
+## Installation and setup
+
+To enable live R exercises in your own Quarto documents, install the quarto-live extension:
+
+```sh
+quarto add r-wasm/quarto-live
+```
+
+For any worksheet that you want to contain live exercises, you need to set the format to `live-html` in the YAML header. If you're an R user, you probably also want to use the `knitr` engine instead of the `jupyter` engine, which you can select with the `engine` setting. To use the `knitr` engine, you also need to include a custom quarto file that comes with the Quarto-live extension.
+
+```yaml
+---
+format: live-html
+engine: knitr
+---
+
+{{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}}
+```
+
+For more documentation on the quarto live extension, see here: <https://r-wasm.github.io/quarto-live/>
+
+You can also check out the source of this interactive worksheet here: <https://github.com/clauswilke/PositConf2025/blob/main/worksheets/worksheet.qmd>
