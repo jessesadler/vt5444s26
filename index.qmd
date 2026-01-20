@@ -28,7 +28,6 @@ toc: false
 
 - {{< fa envelope >}} <a href='jrsadler@vt.edu'>jrsadler@vt.edu</a>
 - {{< fa calendar-check >}} [Schedule an appointment](https://calendar.lib.vt.edu/appointments/jrsadler)
-- {{< fa mug-hot >}} [Digital Scholarship Collaboration hour](https://calendar.lib.vt.edu/event/16222034)
 
 :::
 
@@ -36,6 +35,12 @@ toc: false
 
 ## Course description
 This course is designed to introduce students to some of the tools of Digital Humanities/History with an emphasis on using open source technology that puts you in control. The course focuses on methodologies. It begins with the basics of organizing primary and secondary sources and your notes on them. We will then give an introduction to data analysis and visualization using the R programming language, culminating in the creation of your own website. Along the way we will be learning the basics of using the command line and learn about git and using GitHub for publishing websites and to become acquainted with the practices of reproducible research.
+
+### Digital Scholarship Collaboration hour
+- {{< fa circle-info >}} Students are encouraged to come to the [weekly collaboration hour](https://calendar.lib.vt.edu/event/16222034) held in the Athenaeum to work on their projects and ask questions.
+- {{< fa calendar >}} Thursdays
+- {{< fa clock >}} 12pm–1:00pm
+- {{< fa location-dot >}} Athenaeum Collaboration room, Newman Library 126
 
 ## Schedule
 1. MLK Day (19 January)
