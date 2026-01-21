@@ -16,7 +16,7 @@ toc: false
 :::
 
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
-### Course details
+### Meetings
 
 - {{< fa calendar >}} Mondays
 - {{< fa clock >}} 2pm–4:50pm
@@ -34,10 +34,10 @@ toc: false
 ::::
 
 ## Course description
-This course is designed to introduce students to some of the tools of Digital Humanities/History with an emphasis on using open source technology that puts you in control. The course focuses on methodologies. It begins with the basics of organizing primary and secondary sources and your notes on them. We will then give an introduction to data analysis and visualization using the R programming language, culminating in the creation of your own website. Along the way we will be learning the basics of using the command line and learn about git and using GitHub for publishing websites and to become acquainted with the practices of reproducible research.
+This course will introduce students to computational methods for analyzing data to develop historical interpretations. You will work through the entire data life-cycle: finding, creating, cleaning, analyzing, visualizing, interpreting, and integrating these interpretations into your historical work. This will be done using free and open source programming languages and tools designed for data analysis, specifically we will be using the R programming language. This approach has a steeper learning curve than point-and-click tools that provide an alternative method for creating digital projects. However, it puts you in control, fosters transparency and reproducibility, and follows the guidelines of [minimal computing](https://go-dh.github.io/mincomp/about/). No previous experience with programming or data analysis is necessary. We will work through a series of examples using provided datasets, and then you will have the opportunity to apply the methods you have learned to your own research, culminating in the creation of a project website.
 
 ### Digital Scholarship Collaboration hour
-- {{< fa circle-info >}} Students are encouraged to come to the [weekly collaboration hour](https://calendar.lib.vt.edu/event/16222034) held in the Athenaeum to work on their projects and ask questions.
+- {{< fa circle-info >}} Students are encouraged to come to the [weekly collaboration hour](https://calendar.lib.vt.edu/event/16222034) held in the Athenaeum to work on assignments/projects and ask questions.
 - {{< fa calendar >}} Thursdays
 - {{< fa clock >}} 12pm–1:00pm
 - {{< fa location-dot >}} Athenaeum Collaboration room, Newman Library 126
