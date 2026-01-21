@@ -15,8 +15,8 @@ website:
     pinned: true
     background: "#ffaa00"
     right:
-      - href: syllabus.qmd
-        text: Syllabus
+      - href: about.qmd
+        text: "Course Details"
       - href: content/index.qmd
         text: Content
       - href: worksheets/index.qmd

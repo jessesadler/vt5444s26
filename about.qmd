@@ -1,0 +1,54 @@
+---
+title: "Course details"
+format: html
+---
+
+## How the course works
+This course will likely work a bit differently from your other humanities courses. Instead of reading and discussion based, the course will be centered on a workshop model in which students will "code along" with the instructor. This means you are expected to bring a computer to each class meeting but also an open mind. Learning to analyze data with a programming language can be frustrating, but we will work together as a class to gradually develop skills and confidence.
+
+Weekly reading will provide background to the topic of the week and a starting point for discussion and questions. You will learn new methods each week in an interactive workshop setting. You will have opportunities to practice these skills through both interactive worksheets and weekly assignments. Emphasis throughout will be on developing skills and learning new competencies over focusing on results.
+
+::: {.callout-warning icon=false}
+## Note
+This course website will function as the main source of information for the course. The syllabus is liable to change based on new material and student input. We may not get to certain material, or I may add new resources based on student interest. Make sure to check in on the website frequently.
+:::
+
+## Learning goals
+After taking this course, you will...
+
+- have an expanded awareness of the open source tools available for conducting historical research and making that research widely available to the public.
+- be able to clean, analyze, and visualize data with the R programming language.
+- understand the opportunities and challenges of working with quantitative data in the field of Digital History.
+- be able to build a static website using Quarto and Git.
+
+## Expectations
+There are no prerequisites for this course. Students do not need to know anything about the methods and technologies listed in the syllabus. You do not need to know what the command line, R, or git is. That is what the course is for. The intention is for this to be an exploration of open source tools that can help you with historical analysis and publication. The primary expectations are a willingness to try and a readiness to learn. More specific expectations include:
+
+- Attendance and active participation in all seminars. If you need to miss a seminar, please let me know.
+- Complete and be ready to discuss all reading by our weekly meeting.
+- Come to seminar with a computer ready to work and to participate in the weekly workshops.
+- Do your best to complete all assignments on time. Record any difficulties you have and bring them to class to discuss.
+- Complete the final project of creating a Quarto website.
+
+Finally, it is expected that all students will be respectful of each other. Students will enter the course at different levels of comfort with the tools that we will use. The goal of the course is to help each other get more comfortable with open source technologies.
+
+### Code of conduct
+With this final expectation in mind, we will be following the general [Code of Conduct](https://docs.carpentries.org/policies/coc/) guidelines of [The Carpentries](https://docs.carpentries.org/policies/coc/). The main tenants of this code of conduct are:
+
+- Use welcoming and inclusive language
+- Be respectful of different viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on what is best for the community
+- Show courtesy and respect towards other community members
+
+## Assessment
+As noted above, the primary expectation for the course is curiosity and a growth mindset. Assessment will be focused on effort and growth rather than strict evaluation of outcomes. Difficulties and encountering errors is expected. Through the course you will come to embrace errors as learning opportunities.
+
+- Participation: 30%
+- Weekly assignments: 30%
+- Final project: 40%
+    - The final project will consist of creating a static website using [Quarto](https://quarto.org).
+    - The contents of the website are up to you but should reflect methods used in the class and your own research interests.
+
+## Generative Artificial Intelligence
+Generative AI tools are getting better and better at writing code, so why do I recommend that you not use it to complete the work in this course? We will be discussing generative AI and large language models (LLMs) more during the semester, but the the short answer is that you are unlikely to learn to code and think computationally if your focus is on the end result and not learning. Just as writing an essay is an essential part of the thinking process, the actual typing of code is important to developing a better understanding of how programming and data analysis works. We will also discuss and demonstrate techniques for [reading error messages and getting help with code](https://datacarpentry.github.io/r-socialsci/01-intro-to-r.html#getting-help) that will limit the need to use generative AI. Once these foundations are laid, you will be better positioned to decide how and when to use generative AI for coding. How exactly we deal with this issue during the semester will be dependent upon student interest.
