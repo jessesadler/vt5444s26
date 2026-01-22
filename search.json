@@ -1,143 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Course details",
-    "section": "",
-    "text": "This course will likely work a bit differently from your other humanities courses. Instead of reading and discussion based, the course will be centered on a workshop model in which students will “code along” with the instructor. This means you are expected to bring a computer to each class meeting but also an open mind. Learning to analyze data with a programming language can be frustrating, but we will work together as a class to gradually develop skills and confidence.\nWeekly reading will provide background to the topic of the week and a starting point for discussion and questions. You will learn new methods each week in an interactive workshop setting. You will have opportunities to practice these skills through both interactive worksheets and weekly assignments. Emphasis throughout will be on developing skills and learning new competencies over focusing on results.\n\n\n\n\n\n\nWarningNote\n\n\n\nThis course website will function as the main source of information for the course. The syllabus is liable to change based on new material and student input. We may not get to certain material, or I may add new resources based on student interest. Make sure to check in on the website frequently."
-  },
-  {
-    "objectID": "about.html#how-the-course-works",
-    "href": "about.html#how-the-course-works",
-    "title": "Course details",
-    "section": "",
-    "text": "This course will likely work a bit differently from your other humanities courses. Instead of reading and discussion based, the course will be centered on a workshop model in which students will “code along” with the instructor. This means you are expected to bring a computer to each class meeting but also an open mind. Learning to analyze data with a programming language can be frustrating, but we will work together as a class to gradually develop skills and confidence.\nWeekly reading will provide background to the topic of the week and a starting point for discussion and questions. You will learn new methods each week in an interactive workshop setting. You will have opportunities to practice these skills through both interactive worksheets and weekly assignments. Emphasis throughout will be on developing skills and learning new competencies over focusing on results.\n\n\n\n\n\n\nWarningNote\n\n\n\nThis course website will function as the main source of information for the course. The syllabus is liable to change based on new material and student input. We may not get to certain material, or I may add new resources based on student interest. Make sure to check in on the website frequently."
-  },
-  {
-    "objectID": "about.html#learning-goals",
-    "href": "about.html#learning-goals",
-    "title": "Course details",
-    "section": "Learning goals",
-    "text": "Learning goals\nAfter taking this course, you will…\n\nhave an expanded awareness of the open source tools available for conducting historical research and making that research widely available to the public.\nbe able to clean, analyze, and visualize data with the R programming language.\nunderstand the opportunities and challenges of working with quantitative data in the field of Digital History.\nbe able to build a static website using Quarto and Git."
-  },
-  {
-    "objectID": "about.html#expectations",
-    "href": "about.html#expectations",
-    "title": "Course details",
-    "section": "Expectations",
-    "text": "Expectations\nThere are no prerequisites for this course. Students do not need to know anything about the methods and technologies listed in the syllabus. You do not need to know what the command line, R, or git is. That is what the course is for. The intention is for this to be an exploration of open source tools that can help you with historical analysis and publication. The primary expectations are a willingness to try and a readiness to learn. More specific expectations include:\n\nAttendance and active participation in all seminars. If you need to miss a seminar, please let me know.\nComplete and be ready to discuss all reading by our weekly meeting.\nCome to seminar with a computer ready to work and to participate in the weekly workshops.\nDo your best to complete all assignments on time. Record any difficulties you have and bring them to class to discuss.\nComplete the final project of creating a Quarto website.\n\nFinally, it is expected that all students will be respectful of each other. Students will enter the course at different levels of comfort with the tools that we will use. The goal of the course is to help each other get more comfortable with open source technologies.\n\nCode of conduct\nWith this final expectation in mind, we will be following the general Code of Conduct guidelines of The Carpentries. The main tenants of this code of conduct are:\n\nUse welcoming and inclusive language\nBe respectful of different viewpoints and experiences\nGracefully accept constructive criticism\nFocus on what is best for the community\nShow courtesy and respect towards other community members"
-  },
-  {
-    "objectID": "about.html#assessment",
-    "href": "about.html#assessment",
-    "title": "Course details",
-    "section": "Assessment",
-    "text": "Assessment\nAs noted above, the primary expectation for the course is curiosity and a growth mindset. Assessment will be focused on effort and growth rather than strict evaluation of outcomes. Difficulties and encountering errors is expected. Through the course you will come to embrace errors as learning opportunities.\n\nParticipation: 30%\nWeekly assignments: 30%\nFinal project: 40%\n\nThe final project will consist of creating a static website using Quarto.\nThe contents of the website are up to you but should reflect methods used in the class and your own research interests."
-  },
-  {
-    "objectID": "about.html#generative-artificial-intelligence",
-    "href": "about.html#generative-artificial-intelligence",
-    "title": "Course details",
-    "section": "Generative Artificial Intelligence",
-    "text": "Generative Artificial Intelligence\nGenerative AI tools are getting better and better at writing code, so why do I recommend that you not use it to complete the work in this course? We will be discussing generative AI and large language models (LLMs) more during the semester, but the the short answer is that you are unlikely to learn to code and think computationally if your focus is on the end result and not learning. Just as writing an essay is an essential part of the thinking process, the actual typing of code is important to developing a better understanding of how programming and data analysis works. We will also discuss and demonstrate techniques for reading error messages and getting help with code that will limit the need to use generative AI. Once these foundations are laid, you will be better positioned to decide how and when to use generative AI for coding. How exactly we deal with this issue during the semester will be dependent upon student interest."
-  },
-  {
-    "objectID": "content/07-content-snigb.html",
-    "href": "content/07-content-snigb.html",
-    "title": "Working with SNiGB",
-    "section": "",
-    "text": "Hadley Wickham, A personal history of the tidyverse",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "7: Working with SNiGB"
-    ]
-  },
-  {
-    "objectID": "content/07-content-snigb.html#reading",
-    "href": "content/07-content-snigb.html#reading",
-    "title": "Working with SNiGB",
-    "section": "",
-    "text": "Hadley Wickham, A personal history of the tidyverse",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "7: Working with SNiGB"
-    ]
-  },
-  {
-    "objectID": "content/07-content-snigb.html#assignment",
-    "href": "content/07-content-snigb.html#assignment",
-    "title": "Working with SNiGB",
-    "section": "Assignment",
-    "text": "Assignment",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "7: Working with SNiGB"
-    ]
-  },
-  {
-    "objectID": "content/07-content-snigb.html#activities",
-    "href": "content/07-content-snigb.html#activities",
-    "title": "Working with SNiGB",
-    "section": "Activities",
-    "text": "Activities",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "7: Working with SNiGB"
-    ]
-  },
-  {
-    "objectID": "content/07-content-snigb.html#resources",
-    "href": "content/07-content-snigb.html#resources",
-    "title": "Working with SNiGB",
-    "section": "Resources",
-    "text": "Resources",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "7: Working with SNiGB"
-    ]
-  },
-  {
-    "objectID": "content/15-content-presentations.html#assignment",
-    "href": "content/15-content-presentations.html#assignment",
-    "title": "Presentation of final projects",
-    "section": "Assignment",
-    "text": "Assignment",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "15: Presentation of final projects"
-    ]
-  },
-  {
-    "objectID": "content/15-content-presentations.html#activities",
-    "href": "content/15-content-presentations.html#activities",
-    "title": "Presentation of final projects",
-    "section": "Activities",
-    "text": "Activities",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "15: Presentation of final projects"
-    ]
-  },
-  {
-    "objectID": "content/15-content-presentations.html#resources",
-    "href": "content/15-content-presentations.html#resources",
-    "title": "Presentation of final projects",
-    "section": "Resources",
-    "text": "Resources",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "15: Presentation of final projects"
-    ]
-  },
-  {
     "objectID": "content/10-content-maps.html",
     "href": "content/10-content-maps.html",
     "title": "Making maps",
@@ -198,159 +60,99 @@
     ]
   },
   {
-    "objectID": "content/09-content-quarto.html",
-    "href": "content/09-content-quarto.html",
-    "title": "Making websites with Quarto",
-    "section": "",
-    "text": "Olivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” The Code4Lib Journal, no. 60 (April 2025), https://journal.code4lib.org/articles/18372.",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "9: Making websites with Quarto"
-    ]
-  },
-  {
-    "objectID": "content/09-content-quarto.html#reading",
-    "href": "content/09-content-quarto.html#reading",
-    "title": "Making websites with Quarto",
-    "section": "",
-    "text": "Olivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” The Code4Lib Journal, no. 60 (April 2025), https://journal.code4lib.org/articles/18372.",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "9: Making websites with Quarto"
-    ]
-  },
-  {
-    "objectID": "content/09-content-quarto.html#assignment",
-    "href": "content/09-content-quarto.html#assignment",
-    "title": "Making websites with Quarto",
+    "objectID": "content/13-content-gis-sna.html#assignment",
+    "href": "content/13-content-gis-sna.html#assignment",
+    "title": "Mapping and network analysis",
     "section": "Assignment",
     "text": "Assignment",
     "crumbs": [
       "Content",
       "Topics",
-      "9: Making websites with Quarto"
+      "13: Mapping and network analysis"
     ]
   },
   {
-    "objectID": "content/09-content-quarto.html#activities",
-    "href": "content/09-content-quarto.html#activities",
-    "title": "Making websites with Quarto",
+    "objectID": "content/13-content-gis-sna.html#activities",
+    "href": "content/13-content-gis-sna.html#activities",
+    "title": "Mapping and network analysis",
     "section": "Activities",
     "text": "Activities",
     "crumbs": [
       "Content",
       "Topics",
-      "9: Making websites with Quarto"
+      "13: Mapping and network analysis"
     ]
   },
   {
-    "objectID": "content/09-content-quarto.html#resources",
-    "href": "content/09-content-quarto.html#resources",
-    "title": "Making websites with Quarto",
+    "objectID": "content/13-content-gis-sna.html#resources",
+    "href": "content/13-content-gis-sna.html#resources",
+    "title": "Mapping and network analysis",
     "section": "Resources",
     "text": "Resources",
     "crumbs": [
       "Content",
       "Topics",
-      "9: Making websites with Quarto"
+      "13: Mapping and network analysis"
     ]
   },
   {
-    "objectID": "content/04-content-tidy.html",
-    "href": "content/04-content-tidy.html",
-    "title": "‘Tidy’ historical data",
+    "objectID": "content/07-content-snigb.html",
+    "href": "content/07-content-snigb.html",
+    "title": "Working with SNiGB",
     "section": "",
-    "text": "Hadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), http://www.jstatsoft.org/v59/i10/.\nKarl Broman and Kara Woo, “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (2018), https://doi.org/10.1080/00031305.2017.1375989.",
+    "text": "Hadley Wickham, A personal history of the tidyverse",
     "crumbs": [
       "Content",
       "Topics",
-      "4: 'Tidy' historical data"
+      "7: Working with SNiGB"
     ]
   },
   {
-    "objectID": "content/04-content-tidy.html#reading",
-    "href": "content/04-content-tidy.html#reading",
-    "title": "‘Tidy’ historical data",
+    "objectID": "content/07-content-snigb.html#reading",
+    "href": "content/07-content-snigb.html#reading",
+    "title": "Working with SNiGB",
     "section": "",
-    "text": "Hadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), http://www.jstatsoft.org/v59/i10/.\nKarl Broman and Kara Woo, “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (2018), https://doi.org/10.1080/00031305.2017.1375989.",
+    "text": "Hadley Wickham, A personal history of the tidyverse",
     "crumbs": [
       "Content",
       "Topics",
-      "4: 'Tidy' historical data"
+      "7: Working with SNiGB"
     ]
   },
   {
-    "objectID": "content/04-content-tidy.html#assignment",
-    "href": "content/04-content-tidy.html#assignment",
-    "title": "‘Tidy’ historical data",
+    "objectID": "content/07-content-snigb.html#assignment",
+    "href": "content/07-content-snigb.html#assignment",
+    "title": "Working with SNiGB",
     "section": "Assignment",
     "text": "Assignment",
     "crumbs": [
       "Content",
       "Topics",
-      "4: 'Tidy' historical data"
+      "7: Working with SNiGB"
     ]
   },
   {
-    "objectID": "content/04-content-tidy.html#activities",
-    "href": "content/04-content-tidy.html#activities",
-    "title": "‘Tidy’ historical data",
-    "section": "## Activities",
-    "text": "## Activities",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "4: 'Tidy' historical data"
-    ]
-  },
-  {
-    "objectID": "content/04-content-tidy.html#resources",
-    "href": "content/04-content-tidy.html#resources",
-    "title": "‘Tidy’ historical data",
-    "section": "Resources",
-    "text": "Resources",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "4: 'Tidy' historical data"
-    ]
-  },
-  {
-    "objectID": "content/14-content-build.html#assignment",
-    "href": "content/14-content-build.html#assignment",
-    "title": "Group work on your project",
-    "section": "Assignment",
-    "text": "Assignment",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "14: Group work on your project"
-    ]
-  },
-  {
-    "objectID": "content/14-content-build.html#activities",
-    "href": "content/14-content-build.html#activities",
-    "title": "Group work on your project",
+    "objectID": "content/07-content-snigb.html#activities",
+    "href": "content/07-content-snigb.html#activities",
+    "title": "Working with SNiGB",
     "section": "Activities",
     "text": "Activities",
     "crumbs": [
       "Content",
       "Topics",
-      "14: Group work on your project"
+      "7: Working with SNiGB"
     ]
   },
   {
-    "objectID": "content/14-content-build.html#resources",
-    "href": "content/14-content-build.html#resources",
-    "title": "Group work on your project",
+    "objectID": "content/07-content-snigb.html#resources",
+    "href": "content/07-content-snigb.html#resources",
+    "title": "Working with SNiGB",
     "section": "Resources",
     "text": "Resources",
     "crumbs": [
       "Content",
       "Topics",
-      "14: Group work on your project"
+      "7: Working with SNiGB"
     ]
   },
   {
@@ -414,54 +216,136 @@
     ]
   },
   {
-    "objectID": "content/13-content-gis-sna.html#assignment",
-    "href": "content/13-content-gis-sna.html#assignment",
-    "title": "Mapping and network analysis",
+    "objectID": "content/08-content-git.html",
+    "href": "content/08-content-git.html",
+    "title": "Reproducible workflows with Git",
+    "section": "",
+    "text": "Jenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "8: Reproducible workflows with Git"
+    ]
+  },
+  {
+    "objectID": "content/08-content-git.html#reading",
+    "href": "content/08-content-git.html#reading",
+    "title": "Reproducible workflows with Git",
+    "section": "",
+    "text": "Jenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "8: Reproducible workflows with Git"
+    ]
+  },
+  {
+    "objectID": "content/08-content-git.html#assignment",
+    "href": "content/08-content-git.html#assignment",
+    "title": "Reproducible workflows with Git",
     "section": "Assignment",
     "text": "Assignment",
     "crumbs": [
       "Content",
       "Topics",
-      "13: Mapping and network analysis"
+      "8: Reproducible workflows with Git"
     ]
   },
   {
-    "objectID": "content/13-content-gis-sna.html#activities",
-    "href": "content/13-content-gis-sna.html#activities",
-    "title": "Mapping and network analysis",
+    "objectID": "content/08-content-git.html#activities",
+    "href": "content/08-content-git.html#activities",
+    "title": "Reproducible workflows with Git",
     "section": "Activities",
     "text": "Activities",
     "crumbs": [
       "Content",
       "Topics",
-      "13: Mapping and network analysis"
+      "8: Reproducible workflows with Git"
     ]
   },
   {
-    "objectID": "content/13-content-gis-sna.html#resources",
-    "href": "content/13-content-gis-sna.html#resources",
-    "title": "Mapping and network analysis",
+    "objectID": "content/08-content-git.html#resources",
+    "href": "content/08-content-git.html#resources",
+    "title": "Reproducible workflows with Git",
     "section": "Resources",
     "text": "Resources",
     "crumbs": [
       "Content",
       "Topics",
-      "13: Mapping and network analysis"
+      "8: Reproducible workflows with Git"
     ]
   },
   {
-    "objectID": "worksheets/index.html",
-    "href": "worksheets/index.html",
-    "title": "Example worksheet",
+    "objectID": "content/index.html",
+    "href": "content/index.html",
+    "title": "Content",
     "section": "",
-    "text": "First we need to load the required R packages. Please wait a moment until the live R session is fully set up and all packages are loaded.\nlibrary(ggplot2)\nlibrary(dplyr)\nNext we take a look at the data. We’ll be working with the penguins dataset from the palmerpenguins package.\nNow make a scatter plot of bill length versus body mass, coloring the points by penguin species."
+    "text": "This section has all of the material for each week’s session, including the readings, assignments, and information to help you prepare for the session",
+    "crumbs": [
+      "Content",
+      "Overview",
+      "Content"
+    ]
   },
   {
-    "objectID": "worksheets/index.html#installation-and-setup",
-    "href": "worksheets/index.html#installation-and-setup",
-    "title": "Example worksheet",
-    "section": "Installation and setup",
-    "text": "Installation and setup\nTo enable live R exercises in your own Quarto documents, install the quarto-live extension:\nquarto add r-wasm/quarto-live\nFor any worksheet that you want to contain live exercises, you need to set the format to live-html in the YAML header. If you’re an R user, you probably also want to use the knitr engine instead of the jupyter engine, which you can select with the engine setting. To use the knitr engine, you also need to include a custom quarto file that comes with the Quarto-live extension.\n---\nformat: live-html\nengine: knitr\n---\n\n{{&lt; include ./_extensions/r-wasm/live/_knitr.qmd &gt;}}\nFor more documentation on the quarto live extension, see here: https://r-wasm.github.io/quarto-live/\nYou can also check out the source of this interactive worksheet here: https://github.com/clauswilke/PositConf2025/blob/main/worksheets/worksheet.qmd"
+    "objectID": "content/04-content-tidy.html",
+    "href": "content/04-content-tidy.html",
+    "title": "‘Tidy’ historical data",
+    "section": "",
+    "text": "Hadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), http://www.jstatsoft.org/v59/i10/.\nKarl Broman and Kara Woo, “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (2018), https://doi.org/10.1080/00031305.2017.1375989.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "4: 'Tidy' historical data"
+    ]
+  },
+  {
+    "objectID": "content/04-content-tidy.html#reading",
+    "href": "content/04-content-tidy.html#reading",
+    "title": "‘Tidy’ historical data",
+    "section": "",
+    "text": "Hadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), http://www.jstatsoft.org/v59/i10/.\nKarl Broman and Kara Woo, “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (2018), https://doi.org/10.1080/00031305.2017.1375989.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "4: 'Tidy' historical data"
+    ]
+  },
+  {
+    "objectID": "content/04-content-tidy.html#assignment",
+    "href": "content/04-content-tidy.html#assignment",
+    "title": "‘Tidy’ historical data",
+    "section": "Assignment",
+    "text": "Assignment",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "4: 'Tidy' historical data"
+    ]
+  },
+  {
+    "objectID": "content/04-content-tidy.html#activities",
+    "href": "content/04-content-tidy.html#activities",
+    "title": "‘Tidy’ historical data",
+    "section": "## Activities",
+    "text": "## Activities",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "4: 'Tidy' historical data"
+    ]
+  },
+  {
+    "objectID": "content/04-content-tidy.html#resources",
+    "href": "content/04-content-tidy.html#resources",
+    "title": "‘Tidy’ historical data",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "4: 'Tidy' historical data"
+    ]
   },
   {
     "objectID": "content/12-content-design.html",
@@ -524,195 +408,200 @@
     ]
   },
   {
-    "objectID": "content/02-content-data-history.html",
-    "href": "content/02-content-data-history.html",
-    "title": "History, data, and the digital",
+    "objectID": "worksheets/index.html",
+    "href": "worksheets/index.html",
+    "title": "Example worksheet",
     "section": "",
-    "text": "Taylor Arnold and Lauren Tilton, “New Data: The Role of Statistics in DH,” in Debates in DH 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "2: History, data, and the digital"
-    ]
+    "text": "First we need to load the required R packages. Please wait a moment until the live R session is fully set up and all packages are loaded.\nlibrary(ggplot2)\nlibrary(dplyr)\nNext we take a look at the data. We’ll be working with the penguins dataset from the palmerpenguins package.\nNow make a scatter plot of bill length versus body mass, coloring the points by penguin species."
   },
   {
-    "objectID": "content/02-content-data-history.html#reading",
-    "href": "content/02-content-data-history.html#reading",
-    "title": "History, data, and the digital",
+    "objectID": "worksheets/index.html#installation-and-setup",
+    "href": "worksheets/index.html#installation-and-setup",
+    "title": "Example worksheet",
+    "section": "Installation and setup",
+    "text": "Installation and setup\nTo enable live R exercises in your own Quarto documents, install the quarto-live extension:\nquarto add r-wasm/quarto-live\nFor any worksheet that you want to contain live exercises, you need to set the format to live-html in the YAML header. If you’re an R user, you probably also want to use the knitr engine instead of the jupyter engine, which you can select with the engine setting. To use the knitr engine, you also need to include a custom quarto file that comes with the Quarto-live extension.\n---\nformat: live-html\nengine: knitr\n---\n\n{{&lt; include ./_extensions/r-wasm/live/_knitr.qmd &gt;}}\nFor more documentation on the quarto live extension, see here: https://r-wasm.github.io/quarto-live/\nYou can also check out the source of this interactive worksheet here: https://github.com/clauswilke/PositConf2025/blob/main/worksheets/worksheet.qmd"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Digital History Methods",
     "section": "",
-    "text": "Taylor Arnold and Lauren Tilton, “New Data: The Role of Statistics in DH,” in Debates in DH 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "2: History, data, and the digital"
-    ]
+    "text": "Jesse Sadler\n Newman Library 4064\n\n\n\n\n\n Mondays\n 2pm–4:50pm\n Athenaeum, Newman Library 124\n\n\n\n\n\n jrsadler@vt.edu\n Schedule an appointment"
   },
   {
-    "objectID": "content/02-content-data-history.html#assignments",
-    "href": "content/02-content-data-history.html#assignments",
-    "title": "History, data, and the digital",
-    "section": "Assignments",
-    "text": "Assignments\n\nLook through the Digital Humanities Research Guide to help situate yourself in the field of Digital Humanities and the resources available to you at Virginia Tech.\nFind a Digital Humanities project that interests you or is in your field. How do you find DH projects? That is a good question to think about. Two good starting places are Reviews in Digital Humanities and DH Now. Use these, web searches, and other resources in the DH Research Guide to find one or more projects of interest.",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "2: History, data, and the digital"
-    ]
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Digital History Methods",
+    "section": "Course description",
+    "text": "Course description\nThis course will introduce students to computational methods for analyzing data to develop historical interpretations. You will work through the entire data life-cycle: finding, creating, cleaning, analyzing, visualizing, interpreting, and integrating these interpretations into your historical work. This will be done using free and open source programming languages and tools designed for data analysis, specifically we will be using the R programming language. This approach has a steeper learning curve than point-and-click tools that provide an alternative method for creating digital projects. However, it puts you in control, fosters transparency and reproducibility, and follows the guidelines of minimal computing. No previous experience with programming or data analysis is necessary. We will work through a series of examples using provided datasets, and then you will have the opportunity to apply the methods you have learned to your own research, culminating in the creation of a project website.\n\nDigital Scholarship Collaboration hour\n\n Students are encouraged to come to the weekly collaboration hour held in the Athenaeum to work on assignments/projects and ask questions.\n Thursdays\n 12pm–1:00pm\n Athenaeum Collaboration room, Newman Library 126"
   },
   {
-    "objectID": "content/02-content-data-history.html#activities",
-    "href": "content/02-content-data-history.html#activities",
-    "title": "History, data, and the digital",
-    "section": "Activities",
-    "text": "Activities\n\nIntroductions\nHow the course works\nDiscussion: Data and History",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "2: History, data, and the digital"
-    ]
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Digital History Methods",
+    "section": "Schedule",
+    "text": "Schedule\n\nMLK Day (19 January)\nHistory, data, and the digital (26 January)\nThe file system and Markdown (2 February)\n“Tidy” historical data (9 February)\nVisualizing data with ggplot2 (16 February)\nWrangling data (23 February)\nWorking with SNiGB (2 March)\nReproducible workflows with Git (16 March)\nMaking websites with Quarto (23 March)\nMaking maps (30 March)\nNetwork analysis (6 April)\nWeb design and visualization (13 April)\nMapping and Network analysis (20 April)\nGroup work on your project (27 April)\nPresentation of final projects (4 May)"
   },
   {
-    "objectID": "content/02-content-data-history.html#resources",
-    "href": "content/02-content-data-history.html#resources",
-    "title": "History, data, and the digital",
-    "section": "Resources",
-    "text": "Resources\n\nDigital Humanities Research Guide - Resources: This is a good place to start to learn more about Digital Humanities and where to turn when you have questions.",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "2: History, data, and the digital"
-    ]
-  },
-  {
-    "objectID": "content/index.html",
-    "href": "content/index.html",
-    "title": "Content",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Course details",
     "section": "",
-    "text": "This section has all of the material for each week’s session, including the readings, assignments, and information to help you prepare for the session",
-    "crumbs": [
-      "Content",
-      "Overview",
-      "Content"
-    ]
+    "text": "This course will likely work a bit differently from your other humanities courses. Instead of reading and discussion based, the course will be centered on a workshop model in which students will “code along” with the instructor. This means you are expected to bring a computer to each class meeting but also an open mind. Learning to analyze data with a programming language can be frustrating, but we will work together as a class to gradually develop skills and confidence.\nWeekly reading will provide background to the topic of the week and a starting point for discussion and questions. You will learn new methods each week in an interactive workshop setting. You will have opportunities to practice these skills through both interactive worksheets and weekly assignments. Emphasis throughout will be on developing skills and learning new competencies over focusing on results.\n\n\n\n\n\n\nWarningNote\n\n\n\nThis course website will function as the main source of information for the course. The syllabus is liable to change based on new material and student input. We may not get to certain material, or I may add new resources based on student interest. Make sure to check in on the website frequently."
   },
   {
-    "objectID": "content/03-content-md.html",
-    "href": "content/03-content-md.html",
-    "title": "The file system and Markdown",
+    "objectID": "about.html#how-the-course-works",
+    "href": "about.html#how-the-course-works",
+    "title": "Course details",
     "section": "",
-    "text": "Anil Dash, How Markdown Took Over the World\nZachary M. Schrag, The Princeton Guide to Historical Research (Princeton University Press, 2021), https://doi.org/10.2307/j.ctv1pdrrc9, Chapters 11 and 12.",
+    "text": "This course will likely work a bit differently from your other humanities courses. Instead of reading and discussion based, the course will be centered on a workshop model in which students will “code along” with the instructor. This means you are expected to bring a computer to each class meeting but also an open mind. Learning to analyze data with a programming language can be frustrating, but we will work together as a class to gradually develop skills and confidence.\nWeekly reading will provide background to the topic of the week and a starting point for discussion and questions. You will learn new methods each week in an interactive workshop setting. You will have opportunities to practice these skills through both interactive worksheets and weekly assignments. Emphasis throughout will be on developing skills and learning new competencies over focusing on results.\n\n\n\n\n\n\nWarningNote\n\n\n\nThis course website will function as the main source of information for the course. The syllabus is liable to change based on new material and student input. We may not get to certain material, or I may add new resources based on student interest. Make sure to check in on the website frequently."
+  },
+  {
+    "objectID": "about.html#learning-goals",
+    "href": "about.html#learning-goals",
+    "title": "Course details",
+    "section": "Learning goals",
+    "text": "Learning goals\nAfter taking this course, you will…\n\nhave an expanded awareness of the open source tools available for conducting historical research and making that research widely available to the public.\nbe able to clean, analyze, and visualize data with the R programming language.\nunderstand the opportunities and challenges of working with quantitative data in the field of Digital History.\nbe able to build a static website using Quarto and Git."
+  },
+  {
+    "objectID": "about.html#expectations",
+    "href": "about.html#expectations",
+    "title": "Course details",
+    "section": "Expectations",
+    "text": "Expectations\nThere are no prerequisites for this course. Students do not need to know anything about the methods and technologies listed in the syllabus. You do not need to know what the command line, R, or git is. That is what the course is for. The intention is for this to be an exploration of open source tools that can help you with historical analysis and publication. The primary expectations are a willingness to try and a readiness to learn. More specific expectations include:\n\nAttendance and active participation in all seminars. If you need to miss a seminar, please let me know.\nComplete and be ready to discuss all reading by our weekly meeting.\nCome to seminar with a computer ready to work and to participate in the weekly workshops.\nDo your best to complete all assignments on time. Record any difficulties you have and bring them to class to discuss.\nComplete the final project of creating a Quarto website.\n\nFinally, it is expected that all students will be respectful of each other. Students will enter the course at different levels of comfort with the tools that we will use. The goal of the course is to help each other get more comfortable with open source technologies.\n\nCode of conduct\nWith this final expectation in mind, we will be following the general Code of Conduct guidelines of The Carpentries. The main tenants of this code of conduct are:\n\nUse welcoming and inclusive language\nBe respectful of different viewpoints and experiences\nGracefully accept constructive criticism\nFocus on what is best for the community\nShow courtesy and respect towards other community members"
+  },
+  {
+    "objectID": "about.html#assessment",
+    "href": "about.html#assessment",
+    "title": "Course details",
+    "section": "Assessment",
+    "text": "Assessment\nAs noted above, the primary expectation for the course is curiosity and a growth mindset. Assessment will be focused on effort and growth rather than strict evaluation of outcomes. Difficulties and encountering errors is expected. Through the course you will come to embrace errors as learning opportunities.\n\nParticipation: 30%\nWeekly assignments: 30%\nFinal project: 40%\n\nThe final project will consist of creating a static website using Quarto.\nThe contents of the website are up to you but should reflect methods used in the class and your own research interests."
+  },
+  {
+    "objectID": "about.html#generative-artificial-intelligence",
+    "href": "about.html#generative-artificial-intelligence",
+    "title": "Course details",
+    "section": "Generative Artificial Intelligence",
+    "text": "Generative Artificial Intelligence\nGenerative AI tools are getting better and better at writing code, so why do I recommend that you not use it to complete the work in this course? We will be discussing generative AI and large language models (LLMs) more during the semester, but the the short answer is that you are unlikely to learn to code and think computationally if your focus is on the end result and not learning. Just as writing an essay is an essential part of the thinking process, the actual typing of code is important to developing a better understanding of how programming and data analysis works. We will also discuss and demonstrate techniques for reading error messages and getting help with code that will limit the need to use generative AI. Once these foundations are laid, you will be better positioned to decide how and when to use generative AI for coding. How exactly we deal with this issue during the semester will be dependent upon student interest."
+  },
+  {
+    "objectID": "content/05-content-ggplot.html",
+    "href": "content/05-content-ggplot.html",
+    "title": "Visualizing data with ggplot2",
+    "section": "",
+    "text": "Kieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.",
     "crumbs": [
       "Content",
       "Topics",
-      "3: The file system and Markdown"
+      "5: Visualizing data with ggplot2"
     ]
   },
   {
-    "objectID": "content/03-content-md.html#reading",
-    "href": "content/03-content-md.html#reading",
-    "title": "The file system and Markdown",
+    "objectID": "content/05-content-ggplot.html#reading",
+    "href": "content/05-content-ggplot.html#reading",
+    "title": "Visualizing data with ggplot2",
     "section": "",
-    "text": "Anil Dash, How Markdown Took Over the World\nZachary M. Schrag, The Princeton Guide to Historical Research (Princeton University Press, 2021), https://doi.org/10.2307/j.ctv1pdrrc9, Chapters 11 and 12.",
+    "text": "Kieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.",
     "crumbs": [
       "Content",
       "Topics",
-      "3: The file system and Markdown"
+      "5: Visualizing data with ggplot2"
     ]
   },
   {
-    "objectID": "content/03-content-md.html#assignment",
-    "href": "content/03-content-md.html#assignment",
-    "title": "The file system and Markdown",
+    "objectID": "content/05-content-ggplot.html#assignment",
+    "href": "content/05-content-ggplot.html#assignment",
+    "title": "Visualizing data with ggplot2",
     "section": "Assignment",
-    "text": "Assignment\n\nDownload Zotero if you have not already and read over the Zotero Guide and look through Zotero’s documentation.",
+    "text": "Assignment\n\nKieran Healy, Watch Trustworthy Data Visualization at posit::conf(2025)",
     "crumbs": [
       "Content",
       "Topics",
-      "3: The file system and Markdown"
+      "5: Visualizing data with ggplot2"
     ]
   },
   {
-    "objectID": "content/03-content-md.html#activities",
-    "href": "content/03-content-md.html#activities",
-    "title": "The file system and Markdown",
-    "section": "Activities",
-    "text": "Activities\n\nHow are your research materials organized?\nWorking with the file system.\nPlain text and Markdown.",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "3: The file system and Markdown"
-    ]
-  },
-  {
-    "objectID": "content/03-content-md.html#resources",
-    "href": "content/03-content-md.html#resources",
-    "title": "The file system and Markdown",
-    "section": "Resources",
-    "text": "Resources",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "3: The file system and Markdown"
-    ]
-  },
-  {
-    "objectID": "content/08-content-git.html",
-    "href": "content/08-content-git.html",
-    "title": "Reproducible workflows with Git",
-    "section": "",
-    "text": "Jenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "8: Reproducible workflows with Git"
-    ]
-  },
-  {
-    "objectID": "content/08-content-git.html#reading",
-    "href": "content/08-content-git.html#reading",
-    "title": "Reproducible workflows with Git",
-    "section": "",
-    "text": "Jenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "8: Reproducible workflows with Git"
-    ]
-  },
-  {
-    "objectID": "content/08-content-git.html#assignment",
-    "href": "content/08-content-git.html#assignment",
-    "title": "Reproducible workflows with Git",
-    "section": "Assignment",
-    "text": "Assignment",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "8: Reproducible workflows with Git"
-    ]
-  },
-  {
-    "objectID": "content/08-content-git.html#activities",
-    "href": "content/08-content-git.html#activities",
-    "title": "Reproducible workflows with Git",
+    "objectID": "content/05-content-ggplot.html#activities",
+    "href": "content/05-content-ggplot.html#activities",
+    "title": "Visualizing data with ggplot2",
     "section": "Activities",
     "text": "Activities",
     "crumbs": [
       "Content",
       "Topics",
-      "8: Reproducible workflows with Git"
+      "5: Visualizing data with ggplot2"
     ]
   },
   {
-    "objectID": "content/08-content-git.html#resources",
-    "href": "content/08-content-git.html#resources",
-    "title": "Reproducible workflows with Git",
+    "objectID": "content/05-content-ggplot.html#resources",
+    "href": "content/05-content-ggplot.html#resources",
+    "title": "Visualizing data with ggplot2",
     "section": "Resources",
     "text": "Resources",
     "crumbs": [
       "Content",
       "Topics",
-      "8: Reproducible workflows with Git"
+      "5: Visualizing data with ggplot2"
+    ]
+  },
+  {
+    "objectID": "content/09-content-quarto.html",
+    "href": "content/09-content-quarto.html",
+    "title": "Making websites with Quarto",
+    "section": "",
+    "text": "Olivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” The Code4Lib Journal, no. 60 (April 2025), https://journal.code4lib.org/articles/18372.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "9: Making websites with Quarto"
+    ]
+  },
+  {
+    "objectID": "content/09-content-quarto.html#reading",
+    "href": "content/09-content-quarto.html#reading",
+    "title": "Making websites with Quarto",
+    "section": "",
+    "text": "Olivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” The Code4Lib Journal, no. 60 (April 2025), https://journal.code4lib.org/articles/18372.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "9: Making websites with Quarto"
+    ]
+  },
+  {
+    "objectID": "content/09-content-quarto.html#assignment",
+    "href": "content/09-content-quarto.html#assignment",
+    "title": "Making websites with Quarto",
+    "section": "Assignment",
+    "text": "Assignment",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "9: Making websites with Quarto"
+    ]
+  },
+  {
+    "objectID": "content/09-content-quarto.html#activities",
+    "href": "content/09-content-quarto.html#activities",
+    "title": "Making websites with Quarto",
+    "section": "Activities",
+    "text": "Activities",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "9: Making websites with Quarto"
+    ]
+  },
+  {
+    "objectID": "content/09-content-quarto.html#resources",
+    "href": "content/09-content-quarto.html#resources",
+    "title": "Making websites with Quarto",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "9: Making websites with Quarto"
     ]
   },
   {
@@ -776,84 +665,195 @@
     ]
   },
   {
-    "objectID": "content/05-content-ggplot.html",
-    "href": "content/05-content-ggplot.html",
-    "title": "Visualizing data with ggplot2",
+    "objectID": "content/02-content-data-history.html",
+    "href": "content/02-content-data-history.html",
+    "title": "History, data, and the digital",
     "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.",
+    "text": "Taylor Arnold and Lauren Tilton, “New Data: The Role of Statistics in DH,” in Debates in DH 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
     "crumbs": [
       "Content",
       "Topics",
-      "5: Visualizing data with ggplot2"
+      "2: History, data, and the digital"
     ]
   },
   {
-    "objectID": "content/05-content-ggplot.html#reading",
-    "href": "content/05-content-ggplot.html#reading",
-    "title": "Visualizing data with ggplot2",
+    "objectID": "content/02-content-data-history.html#reading",
+    "href": "content/02-content-data-history.html#reading",
+    "title": "History, data, and the digital",
     "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.",
+    "text": "Taylor Arnold and Lauren Tilton, “New Data: The Role of Statistics in DH,” in Debates in DH 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
     "crumbs": [
       "Content",
       "Topics",
-      "5: Visualizing data with ggplot2"
+      "2: History, data, and the digital"
     ]
   },
   {
-    "objectID": "content/05-content-ggplot.html#assignment",
-    "href": "content/05-content-ggplot.html#assignment",
-    "title": "Visualizing data with ggplot2",
+    "objectID": "content/02-content-data-history.html#assignments",
+    "href": "content/02-content-data-history.html#assignments",
+    "title": "History, data, and the digital",
+    "section": "Assignments",
+    "text": "Assignments\n\nLook through the Digital Humanities Research Guide to help situate yourself in the field of Digital Humanities and the resources available to you at Virginia Tech.\nFind a Digital Humanities project that interests you or is in your field. How do you find DH projects? That is a good question to think about. Two good starting places are Reviews in Digital Humanities and DH Now. Use these, web searches, and other resources in the DH Research Guide to find one or more projects of interest.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "2: History, data, and the digital"
+    ]
+  },
+  {
+    "objectID": "content/02-content-data-history.html#activities",
+    "href": "content/02-content-data-history.html#activities",
+    "title": "History, data, and the digital",
+    "section": "Activities",
+    "text": "Activities\n\nIntroductions\nHow the course works\nDiscussion: Data and History",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "2: History, data, and the digital"
+    ]
+  },
+  {
+    "objectID": "content/02-content-data-history.html#resources",
+    "href": "content/02-content-data-history.html#resources",
+    "title": "History, data, and the digital",
+    "section": "Resources",
+    "text": "Resources\n\nDigital Humanities Research Guide - Resources: This is a good place to start to learn more about Digital Humanities and where to turn when you have questions.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "2: History, data, and the digital"
+    ]
+  },
+  {
+    "objectID": "content/15-content-presentations.html#assignment",
+    "href": "content/15-content-presentations.html#assignment",
+    "title": "Presentation of final projects",
     "section": "Assignment",
-    "text": "Assignment\n\nKieran Healy, Watch Trustworthy Data Visualization at posit::conf(2025)",
+    "text": "Assignment",
     "crumbs": [
       "Content",
       "Topics",
-      "5: Visualizing data with ggplot2"
+      "15: Presentation of final projects"
     ]
   },
   {
-    "objectID": "content/05-content-ggplot.html#activities",
-    "href": "content/05-content-ggplot.html#activities",
-    "title": "Visualizing data with ggplot2",
+    "objectID": "content/15-content-presentations.html#activities",
+    "href": "content/15-content-presentations.html#activities",
+    "title": "Presentation of final projects",
     "section": "Activities",
     "text": "Activities",
     "crumbs": [
       "Content",
       "Topics",
-      "5: Visualizing data with ggplot2"
+      "15: Presentation of final projects"
     ]
   },
   {
-    "objectID": "content/05-content-ggplot.html#resources",
-    "href": "content/05-content-ggplot.html#resources",
-    "title": "Visualizing data with ggplot2",
+    "objectID": "content/15-content-presentations.html#resources",
+    "href": "content/15-content-presentations.html#resources",
+    "title": "Presentation of final projects",
     "section": "Resources",
     "text": "Resources",
     "crumbs": [
       "Content",
       "Topics",
-      "5: Visualizing data with ggplot2"
+      "15: Presentation of final projects"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Digital History Methods",
+    "objectID": "content/03-content-md.html",
+    "href": "content/03-content-md.html",
+    "title": "The file system and Markdown",
     "section": "",
-    "text": "Jesse Sadler\n Newman Library 4064\n\n\n\n\n\n Mondays\n 2pm–4:50pm\n Athenaeum, Newman Library 124\n\n\n\n\n\n jrsadler@vt.edu\n Schedule an appointment"
+    "text": "Anil Dash, How Markdown Took Over the World\nZachary M. Schrag, The Princeton Guide to Historical Research (Princeton University Press, 2021), https://doi.org/10.2307/j.ctv1pdrrc9, Chapters 11 and 12.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "3: The file system and Markdown"
+    ]
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Digital History Methods",
-    "section": "Course description",
-    "text": "Course description\nThis course will introduce students to computational methods for analyzing data to develop historical interpretations. You will work through the entire data life-cycle: finding, creating, cleaning, analyzing, visualizing, interpreting, and integrating these interpretations into your historical work. This will be done using free and open source programming languages and tools designed for data analysis, specifically we will be using the R programming language. This approach has a steeper learning curve than point-and-click tools that provide an alternative method for creating digital projects. However, it puts you in control, fosters transparency and reproducibility, and follows the guidelines of minimal computing. No previous experience with programming or data analysis is necessary. We will work through a series of examples using provided datasets, and then you will have the opportunity to apply the methods you have learned to your own research, culminating in the creation of a project website.\n\nDigital Scholarship Collaboration hour\n\n Students are encouraged to come to the weekly collaboration hour held in the Athenaeum to work on assignments/projects and ask questions.\n Thursdays\n 12pm–1:00pm\n Athenaeum Collaboration room, Newman Library 126"
+    "objectID": "content/03-content-md.html#reading",
+    "href": "content/03-content-md.html#reading",
+    "title": "The file system and Markdown",
+    "section": "",
+    "text": "Anil Dash, How Markdown Took Over the World\nZachary M. Schrag, The Princeton Guide to Historical Research (Princeton University Press, 2021), https://doi.org/10.2307/j.ctv1pdrrc9, Chapters 11 and 12.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "3: The file system and Markdown"
+    ]
   },
   {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Digital History Methods",
-    "section": "Schedule",
-    "text": "Schedule\n\nMLK Day (19 January)\nHistory, data, and the digital (26 January)\nThe file system and Markdown (2 February)\n“Tidy” historical data (9 February)\nVisualizing data with ggplot2 (16 February)\nWrangling data (23 February)\nWorking with SNiGB (2 March)\nReproducible workflows with Git (16 March)\nMaking websites with Quarto (23 March)\nMaking maps (30 March)\nNetwork analysis (6 April)\nWeb design and visualization (13 April)\nMapping and Network analysis (20 April)\nGroup work on your project (27 April)\nPresentation of final projects (4 May)"
+    "objectID": "content/03-content-md.html#assignment",
+    "href": "content/03-content-md.html#assignment",
+    "title": "The file system and Markdown",
+    "section": "Assignment",
+    "text": "Assignment\n\nDownload Zotero if you have not already and read over the Zotero Guide and look through Zotero’s documentation.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "3: The file system and Markdown"
+    ]
+  },
+  {
+    "objectID": "content/03-content-md.html#activities",
+    "href": "content/03-content-md.html#activities",
+    "title": "The file system and Markdown",
+    "section": "Activities",
+    "text": "Activities\n\nHow are your research materials organized?\nWorking with the file system.\nPlain text and Markdown.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "3: The file system and Markdown"
+    ]
+  },
+  {
+    "objectID": "content/03-content-md.html#resources",
+    "href": "content/03-content-md.html#resources",
+    "title": "The file system and Markdown",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "3: The file system and Markdown"
+    ]
+  },
+  {
+    "objectID": "content/14-content-build.html#assignment",
+    "href": "content/14-content-build.html#assignment",
+    "title": "Group work on your project",
+    "section": "Assignment",
+    "text": "Assignment",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "14: Group work on your project"
+    ]
+  },
+  {
+    "objectID": "content/14-content-build.html#activities",
+    "href": "content/14-content-build.html#activities",
+    "title": "Group work on your project",
+    "section": "Activities",
+    "text": "Activities",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "14: Group work on your project"
+    ]
+  },
+  {
+    "objectID": "content/14-content-build.html#resources",
+    "href": "content/14-content-build.html#resources",
+    "title": "Group work on your project",
+    "section": "Resources",
+    "text": "Resources",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "14: Group work on your project"
+    ]
   }
 ]
