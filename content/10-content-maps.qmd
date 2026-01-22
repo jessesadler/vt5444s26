@@ -4,7 +4,8 @@ format: html
 ---
 
 ## Reading
-
+- Cameron Blevins, "Space, Nation, and the Triumph of Region: A View of the World from Houston," *Journal of American History* 101, no. 1 (2014): 122–47, <https://doi.org/10.1093/jahist/jau184>.
+- Robin Lovelace, Jakub Nowosad, and Jannes Muenchow, [*Geocomputation with R*](https://r.geocompx.org) (2nd Edition), Chapters 1 and 2.
 
 ## Assignment
 

@@ -4,7 +4,7 @@ format: html
 ---
 
 ## Reading
-
+- Hadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, <https://doi.org/10.21105/joss.01686>.
 
 ## Assignment
 

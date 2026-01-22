@@ -4,7 +4,7 @@ format: html
 ---
 
 ## Reading
-
+- [Hadley Wickham, A personal history of the tidyverse](https://hadley.github.io/25-tidyverse-history/)
 
 ## Assignment
 

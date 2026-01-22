@@ -4,12 +4,16 @@ format: html
 ---
 
 ## Reading
+- Taylor Arnold and Lauren Tilton, "[New Data: The Role of Statistics in DH](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/a2a6a192-f04a-4082-afaa-97c76a75b21c#ch24)," in *Debates in DH 2019*, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).
 
-
-## Assignment
-
+## Assignments
+- Look through the [Digital Humanities Research Guide](https://guides.lib.vt.edu/dh) to help situate yourself in the field of Digital Humanities and the resources available to you at Virginia Tech.
+- Find a Digital Humanities project that interests you or is in your field. How do you find DH projects? That is a good question to think about. Two good starting places are [Reviews in Digital Humanities](https://reviewsindh.pubpub.org) and [DH Now](https://digitalhumanitiesnow.org/). Use these, web searches, and other resources in the DH Research Guide to find one or more projects of interest.
 
 ## Activities
-
+- Introductions
+- How the course works
+- Discussion: Data and History
 
 ## Resources
+- [Digital Humanities Research Guide - Resources](https://guides.lib.vt.edu/dh/resources): This is a good place to start to learn more about Digital Humanities and where to turn when you have questions.

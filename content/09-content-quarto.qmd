@@ -4,7 +4,7 @@ format: html
 ---
 
 ## Reading
-
+- Olivia Wikle and Evan Peter Williamson, "Static Web Methodology as a Sustainable Approach to Digital Humanities Projects," The Code4Lib Journal, no. 60 (April 2025), <https://journal.code4lib.org/articles/18372>.
 
 ## Assignment
 
