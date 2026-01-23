@@ -38,33 +38,46 @@ website:
           contents:
             - text: "1: MLK Day - No class"
             - text: "2: History, data, and the digital"
-              file: "content/02-content-data-history.qmd"
+              file: content/02-content-data-history.qmd
             - text: "3: The file system and Markdown"
-              file: "content/03-content-md.qmd"
+              file: content/03-content-md.qmd
             - text: "4: 'Tidy' historical data"
-              file: "content/04-content-tidy.qmd"
+              file: content/04-content-tidy.qmd
             - text: "5: Visualizing data with ggplot2"
-              file: "content/05-content-ggplot.qmd"
+              file: content/05-content-ggplot.qmd
             - text: "6: Wrangling data"
-              file: "content/06-content-dplyr.qmd"
+              file: content/06-content-dplyr.qmd
             - text: "7: Working with SNiGB"
-              file: "content/07-content-snigb.qmd"
+              file: content/07-content-snigb.qmd
             - text: "8: Reproducible workflows with Git"
-              file: "content/08-content-git.qmd"
+              file: content/08-content-git.qmd
             - text: "9: Making websites with Quarto"
-              file: "content/09-content-quarto.qmd"
+              file: content/09-content-quarto.qmd
             - text: "10: Making maps"
-              file: "content/10-content-maps.qmd"
+              file: content/10-content-maps.qmd
             - text: "11: Network analysis"
-              file: "content/11-content-networks.qmd"
+              file: content/11-content-networks.qmd
             - text: "12: Web design and visualization"
-              file: "content/12-content-design.qmd"
+              file: content/12-content-design.qmd
             - text: "13: Mapping and network analysis"
-              file: "content/13-content-gis-sna.qmd"
+              file: content/13-content-gis-sna.qmd
             - text: "14: Group work on your project"
-              file: "content/14-content-build.qmd"
+              file: content/14-content-build.qmd
             - text: "15: Presentation of final projects"
-              file: "content/15-content-presentations.qmd"
+              file: content/15-content-presentations.qmd
+
+    - title: "Worksheets"
+      style: "docked"
+      search: false
+      background: light
+      contents:
+        - section: "Overview"
+          contents:
+            - worksheets/index.qmd
+        - section: "How to"
+          contents:
+            - text: "1: Getting started with R"
+              file: worksheets/01-worksheet.qmd
 
 format:
   html:
