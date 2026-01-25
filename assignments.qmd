@@ -1,0 +1,39 @@
+---
+title: "Assignment overview"
+format: html
+---
+
+There are three basic types of assignments in this course: weekly assignments listed in the [Content section](content/index.qmd), an ongoing log of your notes and thoughts from the class in the form of a commonplace book and a few self reflections, and the final project of developing your own static website using Quarto with content related to your research interests.
+
+## Weekly assignments
+Weekly assignments serve two purposes: preparing you for the weekly meeting and practicing skills learned in the previous meeting. Many of the weekly assignments will not be turned in. These will serve as a basis for discussion in class or will involve completing and playing around with the [interactive worksheets](worksheets/index.qmd). There will also be a few weekly assignments that will ask you to practice coding that will be turned in. These will be graded for effort and not correctness. The details of how these assignments will be turned in will be decided in the future.
+
+These weekly assignments are due by the time our meetings start on Mondays at 2pm. They are listed in the [Content section](content/index.qmd) on the week they are due.
+
+## Commonplace book
+This course will ask you to do tasks and develop skills that are likely quite different from your other courses. As a way to keep track of your thoughts, notes, struggles, and progress, you are expected to keep a commonplace book during the semester.[^1] The commonplace book developed in the 15th and 16th centuries as a humanist learning and reading technique in which one copied down interesting passages, organized them, and possibly commented on them for future use.[^2]
+
+Your commonplace book can be thought of as a blend of notes, journal, and scrapbook. It is a collection of things you find interesting. Commonplacing is having a bit of a resurgence right now. Check out this [blog post](https://ayushithakkar.substack.com/p/how-to-start-a-commonplace-book-and) for ideas on starting one. There is, of course, an [r/commonplacebook](https://www.reddit.com/r/commonplacebook/) community on Reddit and plenty of resources on [using stationery](https://www.1101.com/store/techo/en/howtouse/) for commonplace books. You might take inspiration from the slogan of [Field Notes](https://fieldnotesbrand.com):
+
+> "I'm not writing it down to remember it later, I'm writing it down to remember it now."
+
+Your commonplace book can be digital, analog, or a combination of the two. Decide what tasks fit your needs the best.
+
+## Self reflections
+The commonplace book will be your place to store your ideas and thoughts throughout the semester, but you will also be asked to write a short self reflection twice during the semester. These can be short (2–3 paragraphs and maybe around one page). These self reflections should discuss: 
+
+- what you think is going well in the class
+- what you are excited to learn more about or dive into more deeply
+- where you feel you are struggling
+- what you can do, what your fellow students can do, and what I can do to help you
+
+## Final project: static website
+The final project for the course is the creation of a static site website using [Quarto](https://quarto.org). The structure and content are up to you. The website should reflect the work you have done during the course and your research interests. You can reuse content from other courses or your current projects. This project, like the course in general, is much more about the journey than the destination.
+
+Grading of the project will be based on effort and creativity, both in the use of digital methods and tools, as well as historical research and argumentation. It is ok to experiment and try things out.
+
+Students will present their websites on the last meeting of the semester and write a short self reflection encompassing the course and the final project.
+
+[^1]: This assignment is inspired by Ryan Cordell's [Commonplace book assignment](https://s25bbb.ryancordell.org/pages/assignments/commonplace-book/) in his [Building a (Better) Book course](https://s25bbb.ryancordell.org).
+
+[^2]: See Ann Blair, "Humanist Methods in Natural Philosophy: The Commonplace Book," *Journal of the History of Ideas* 53, no. 4 (1992): 541–51 and Alberto Cevolini, ed., *Forgetting Machines: Knowledge Management Evolution in Early Modern Europe* (Brill, 2016) for more on the history of commonplace books.
