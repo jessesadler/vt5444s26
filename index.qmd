@@ -4,6 +4,7 @@ subtitle: |
   HIST 5444 • Spring 2026<br>Virginia Tech
 sidebar: false
 toc: false
+format: html
 ---
 
 :::: {.grid .course-details}
@@ -12,6 +13,7 @@ toc: false
 ### Instructor
 
 - {{< fa user >}} [Jesse Sadler](https://www.jessesadler.com)
+- {{< fa book-open-reader >}} University Libraries
 - {{< fa university >}} Newman Library 4064
 :::
 
@@ -42,6 +44,9 @@ This course will introduce students to computational methods for analyzing data 
 - {{< fa clock >}} 12pm–1:00pm
 - {{< fa location-dot >}} Athenaeum Collaboration room, Newman Library 126
 
+::: {.grid}
+
+::: {.g-col-6}
 ## Schedule
 1. MLK Day (19 January)
 2. History, data, and the digital (26 January)
@@ -58,3 +63,13 @@ This course will introduce students to computational methods for analyzing data 
 13. Mapping and Network analysis (20 April)
 14. Group work on your project (27 April)
 15. Presentation of final projects (4 May)
+:::
+
+::: {.g-col-6}
+![](/files/logo.png)
+:::
+
+:::
+
+## Acknowledgements
+This course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by [Cameron Blevins](https://cblevins.github.io/teaching/), [Lincoln Mullen](https://lincolnmullen.com/courses/), [Zoë LeBlanc](https://zoeleblanc.com), and [Brandon Walsh](https://walshbr.com/data-for-the-rest-of-us/) have been helpful guides in developing a computing heavy DH course. Courses by [Andrew Heiss](https://datavizf25.classes.andrewheiss.com), [Kieran Healy](https://mptc.io), and [Clause Wilke](https://wilkelab.org/SDS366/) have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course.
