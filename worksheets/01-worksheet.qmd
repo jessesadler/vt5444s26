@@ -1,0 +1,136 @@
+---
+title: "Getting started with R"
+format: live-html
+engine: knitr
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+Based on R for Social Sciences
+
+Non-exercise math
+
+```{webr} 
+2 + 3
+```
+
+
+Assignment
+
+```{webr} 
+#| exercise: assignment
+x ______ 5
+```
+
+::: { .solution exercise="assignment" }
+::: { .callout-tip title="Solution" collapse="false"}
+The assignment operator
+```r
+x <- 5
+```
+:::
+:::
+
+Exercises have their own environment, so `x` has to be redefined.
+
+```{webr} 
+#| exercise: variable
+x <- 5
+x * 2
+```
+
+
+Vector
+
+Make `x` a vector of numbers.
+
+```{webr}
+#| exercise: vect
+x
+```
+
+::: { .hint exercise="vect" }
+::: { .callout-note collapse="false" }
+## Hint 1
+
+Make sure to use the assignment operator (`<-`)
+
+```r
+x <- ______
+```
+:::
+:::
+
+::: { .hint exercise="vect"}
+::: { .callout-note collapse="false"}
+## Hint 2
+
+Vectors are created using the `c()` function, which stands for combine.
+
+```r
+x <- c(______)
+```
+:::
+:::
+
+::: { .solution exercise="vect" }
+::: { .callout-tip collapse="false"}
+## Fully worked solution:
+
+Values within `c()` are separated by commas.
+
+```r
+x <- c(1, 3, 5, 7, 9)
+```
+
+:::
+:::
+
+
+You can also put exercises in a tabset: Make `y` a vector of numbers.
+
+:::: {.panel-tabset}
+
+## Exercise
+
+```{webr}
+#| exercise: ex_4
+y
+```
+
+## Hint 1
+
+::: { .hint exercise="ex_4"}
+Vectors are created using the `c()`, which stands for combine.
+
+```r
+y ______ c(______)
+```
+:::
+
+## Hint 2
+
+::: { .hint exercise="ex_4"}
+Vectors are created using the `c()` function, which stands for combine.
+
+```r
+y <- c(______)
+```
+:::
+
+## Solution
+
+::: { .solution exercise="ex_4" }
+
+```r
+y <- c(1, 3, 5, 7, 9)
+```
+:::
+
+::::
+
+Can run help. Prints out help file. An 
+
+```{webr}
+?mean
+```
