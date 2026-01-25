@@ -1,10 +1,11 @@
 ---
 title: "Network analysis"
+subtitle: "6 April 2026"
 format: html
 ---
 
 ## Reading
-- Ruth Ahnert et al., *The Network Turn: Changing Perspectives in the Humanities* (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.
+- Ruth Ahnert et al., *The Network Turn: Changing Perspectives in the Humanities* (Cambridge University Press, 2020), <https://doi.org/10.1017/9781108866804>.
 - Catherine Medici, "Using Network Analysis to Understand Early Modern Women," *Early Modern Women: An Interdisciplinary Journal*, 13 no. 1 (2018): 153–62, <https://doi.org/10.1353/emw.2018.0058>.
 
 ## Assignment

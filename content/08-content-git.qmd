@@ -1,5 +1,6 @@
 ---
 title: "Reproducible workflows with Git"
+subtitle: "16 March 2026"
 format: html
 ---
 

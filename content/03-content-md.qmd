@@ -1,11 +1,13 @@
 ---
 title: "The file system and Markdown"
+subtitle: "2 February 2026"
 format: html
 ---
 
 ## Reading
-- [Anil Dash, How Markdown Took Over the World](https://www.anildash.com/2026/01/09/how-markdown-took-over-the-world/)
+- [Anil Dash, How Markdown Took Over the World](https://www.anildash.com/2026/01/09/how-markdown-took-over-the-world/).
 - Zachary M. Schrag, *The Princeton Guide to Historical Research* (Princeton University Press, 2021), <https://doi.org/10.2307/j.ctv1pdrrc9>, Chapters 11 and 12.
+- Niklas Luhmann, "[Communicating with Slip Boxes: An Empirical Account](https://luhmann.surge.sh/communicating-with-slip-boxes)".
 
 ## Assignment
 - Download [Zotero](https://www.zotero.org) if you have not already and read over the Zotero Guide and look through [Zotero's documentation](https://www.zotero.org/support/).

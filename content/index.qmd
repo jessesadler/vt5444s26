@@ -3,4 +3,16 @@ title: "Content"
 format: html
 ---
 
-This section has all of the material for each week's session, including the readings, assignments, and information to help you prepare for the session
+This section contains the material for each week's session. One page for each meeting. The basic structure of the section and the course is:
+
+- **Reading** ({{< fa book-open-reader >}}): Weekly reading that should be completed by the class meeting on which they are listed. Prepare for discussions by adding notes and thoughts to your [commonplace book](../assignments.qmd#commonplace-book).
+
+- **Assignments** ({{< fa pen-ruler >}}): Weekly assignments due by the beginning of class (**2pm Monday**) on the class meeting on which they are listed. Some assignments will help you prepare for discussion and the week's topic, while others will ask you to practice skills learned during the previous week's meeting. See the [Assignments section](../assignments.qmd) for more details.
+
+- **Activities** ({{< fa chalkboard-teacher >}}): An overview of in-class activities for the week.
+
+- **Resources** ({{< fa book-atlas >}}): Extra resources for the topics of the week. Also make sure to explore the [Resources section](../resources/index.qmd) for more in-depth guides and resources on the topics from the course.
+
+::: {.callout-note}
+The contents of this Content section **will change frequently** to adapt to feedback and interests from students during the semester. Please look at the course website frequently to keep up with the changes.
+:::

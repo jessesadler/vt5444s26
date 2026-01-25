@@ -1,14 +1,16 @@
 ---
 title: "Visualizing data with ggplot2"
+subtitle: "16 February 2026"
 format: html
 ---
 
 ## Reading
 - Kieran Healy, [Data Visualization: A Practical Introduction](https://socviz.co) (Princeton University Press, 2018), Chapters 1 and 3.
 - Claus Wilke, [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) (O'Reilly 2019), Chapters 2 and 5.
+- Watch [Kieran Healy, Trustworthy Data Visualization](https://youtu.be/ZamPCbvBAgE?si=HlR5phzzJwKr30ML) keynote talk at posit::conf(2025).
 
 ## Assignment
-- Kieran Healy, [Watch Trustworthy Data Visualization](https://youtu.be/ZamPCbvBAgE?si=HlR5phzzJwKr30ML) at posit::conf(2025)
+
 
 ## Activities
 

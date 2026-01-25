@@ -1,5 +1,6 @@
 ---
 title: "Presentation of final projects"
+subtitle: "4 May 2026"
 format: html
 ---
 

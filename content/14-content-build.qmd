@@ -1,5 +1,6 @@
 ---
 title: "Group work on your project"
+subtitle: "27 April 2026"
 format: html
 ---
 

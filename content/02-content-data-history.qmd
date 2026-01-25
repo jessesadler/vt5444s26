@@ -1,5 +1,6 @@
 ---
 title: "History, data, and the digital"
+subtitle: "26 January 2026"
 format: html
 ---
 
@@ -8,7 +9,10 @@ format: html
 
 ## Assignments
 - Look through the [Digital Humanities Research Guide](https://guides.lib.vt.edu/dh) to help situate yourself in the field of Digital Humanities and the resources available to you at Virginia Tech.
-- Find a Digital Humanities project that interests you or is in your field. How do you find DH projects? That is a good question to think about. Two good starting places are [Reviews in Digital Humanities](https://reviewsindh.pubpub.org) and [DH Now](https://digitalhumanitiesnow.org/). Use these, web searches, and other resources in the DH Research Guide to find one or more projects of interest.
+- Find a Digital Humanities project that interests you or is in your field.
+    - How do you find DH projects? That is a good question to think about.
+    - Two good starting places are [Reviews in Digital Humanities](https://reviewsindh.pubpub.org) and [DH Now](https://digitalhumanitiesnow.org/).
+    - Use these, web searches, other resources in the DH Research Guide, or your prior knowledge of a project to find one or more projects of interest.
 
 ## Activities
 - Introductions
