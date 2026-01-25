@@ -1,4 +1,7 @@
 /* css styles */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap';
 
 /*-- scss:defaults --*/
 $white:    #fff !default;
@@ -13,6 +16,29 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+// Fonts
+
+//$font-family:           "Source Sans 3", sans-serif !default;
+//$font-family-monospace: "Source Code Pro", monospace !default;
+$headings-font-family: "EB Garamond", serif !default;
+
+// Links
+$link-decoration:       none;
+$link-color:            #861F41;
+$link-hover-color:      #E5751F;
+$link-hover-decoration: underline;
+
+$sidebar-bg: #E5E1E6;
+$sidebar-fg: #000000;
+
+$font-size-base: 1rem !default;
+
+$h1-font-size: $font-size-base * 2.4;
+$h2-font-size: $font-size-base * 1.6;
+$h3-font-size: $font-size-base * 1.4;
+$h4-font-size: $font-size-base * 1.1;
+$h5-font-size: $font-size-base * 1;
+$h6-font-size: $font-size-base * 0.8;
 
 /*-- scss:rules --*/
 .course-details {
@@ -23,4 +49,8 @@ $black:    #000 !default;
 
 .course-details h3 {
   margin-top: 0;
+}
+
+.nav-footer-center {
+  display: none;
 }

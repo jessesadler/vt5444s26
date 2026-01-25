@@ -6,6 +6,11 @@ execute:
 
 website:
   title: "Digital History Methods"
+  page-navigation: true
+  favicon: files/logo.png
+  site-url: https://jessesadler.github.io/vt5444s26/
+  repo-url: https://github.com/jessesadler/vt5444s26
+  repo-actions: [edit,issue]
 
   announcement:
     icon: calendar-check
@@ -16,7 +21,8 @@ website:
 
   navbar:
     pinned: true
-    background: "#ffaa00"
+    background: "#E5751F"
+    foreground: "#ffffff"
     right:
       - href: about.qmd
         text: "Course Details"
@@ -24,6 +30,8 @@ website:
         text: Content
       - href: worksheets/index.qmd
         text: Worksheets
+      - href: assignments.qmd
+        text: Assignments
   
   sidebar:
     - title: "Content"
@@ -79,13 +87,21 @@ website:
             - text: "1: Getting started with R"
               file: worksheets/01-worksheet.qmd
 
+  page-footer:
+    right: |
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
+      [View the source at {{< fa brands github >}} GitHub](https://github.com/jessesadler/vt5444s26)
+    left: "&copy; Copyright 2026, [Jesse Sadler](https://www.jessesadler.com)"
+
 format:
   html:
     theme:
-      - cosmo
-      - brand
-    css: custom.scss
+      light: [cosmo, custom.scss]
+      dark: solar
     toc: true
-
-
+  live-html:
+    theme:
+      light: [cosmo, custom.scss]
+      dark: solar
+    toc: true
 
