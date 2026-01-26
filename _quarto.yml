@@ -22,7 +22,7 @@ website:
   navbar:
     pinned: true
     background: "#E5751F"
-    foreground: "#ffffff"
+    foreground: "#000000"
     right:
       - href: about.qmd
         text: "Course Details"
@@ -37,7 +37,6 @@ website:
     - title: "Content"
       style: "docked"
       search: false
-      background: light
       contents:
         - section: "Overview"
           contents:
@@ -77,7 +76,6 @@ website:
     - title: "Worksheets"
       style: "docked"
       search: false
-      background: light
       contents:
         - section: "Overview"
           contents:
