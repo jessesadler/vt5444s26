@@ -15,9 +15,10 @@ format: html
     - Use these, web searches, other resources in the DH Research Guide, or your prior knowledge of a project to find one or more projects of interest.
 
 ## Activities
-- Introductions
-- How the course works
-- Discussion: Data and History
+**No class due to ❄️**
+
+- There will be **optional** office hours on Zoom from 2–4pm if you have any questions or want to chat.
+- Students can also [schedule a meeting](https://calendar.lib.vt.edu/appointments/jrsadler) with me or come to the [Digital Scholarship collaboration hour](https://calendar.lib.vt.edu/event/16222035) on Thursday, 12–1pm if you want to chat in person.
 
 ## Resources
 - [Digital Humanities Research Guide - Resources](https://guides.lib.vt.edu/dh/resources): This is a good place to start to learn more about Digital Humanities and where to turn when you have questions.

@@ -15,8 +15,8 @@ website:
   announcement:
     icon: calendar-check
     dismissable: true
-    content: "This is a **draft** version of the syllabus. The contents will change frequently."
-    type: secondary
+    content: "No class on Monday, 26 January due to snow. I will be holding optional office hours on Zoom from 2pm–4pm. Link will be in an email."
+    type: danger
     position: below-navbar
 
   navbar:
