@@ -118,7 +118,7 @@
     "href": "content/03-content-md.html#activities",
     "title": "The file system and Markdown",
     "section": "Activities",
-    "text": "Activities\n\nHow are your research materials organized?\nWorking with the file system.\nPlain text and Markdown.",
+    "text": "Activities\n\nIntroductions and how the course works\n\nExpectations\nCommonplace book assignment\nFinal project\n\nDiscussion: Digital humanities projects\nHow are your research materials organized?\n\nZotero\nTropy\n\nWorking with the file system\nPlain text and Markdown\n\nFile types\nWhat is plain text?\nIntroduction to Markdown\n\nPractice with Markdown Preview: https://markdownlivepreview.com",
     "crumbs": [
       "Content",
       "Topics",
@@ -130,7 +130,7 @@
     "href": "content/03-content-md.html#resources",
     "title": "The file system and Markdown",
     "section": "Resources",
-    "text": "Resources",
+    "text": "Resources\nSee Working with plain text and Markdown syntax.\n\nJohn Gruber’s introduction of Markdown and its syntax\nProgramming Historian: Sarah Simpkin, Getting Started with Markdown\nMarkdown Style Guide\nQuarto Markdown style guide\nPandoc attempts to be a universal document converter and provides the backend for many applications that convert Markdown to HTML, PDF, or another format.\n\nPandoc has an in-depth discussion of its flavor of Markdown syntax.\nSee also Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown.",
     "crumbs": [
       "Content",
       "Topics",
@@ -468,6 +468,150 @@
     ]
   },
   {
+    "objectID": "resources/markdown-syntax.html",
+    "href": "resources/markdown-syntax.html",
+    "title": "Markdown Syntax",
+    "section": "",
+    "text": "Markdown is a plain text format that is intended to be easy to write and read but also able to provide enough markup options for most forms of writing. On the one hand, Markdown leverages the advantages of plain text: it is light weight, highly portable, non-proprietary, and easily searchable across different documents. On the other, Markdown text can be turned into HTML, PDFs, and even Word documents with stylized text through different interpreters.\nThis document provides a basic overview of the Markdown syntax. Note that there are various “flavors” of Markdown that have different capabilities, but the basic syntax is largely shared.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/markdown-syntax.html#paragraphs",
+    "href": "resources/markdown-syntax.html#paragraphs",
+    "title": "Markdown Syntax",
+    "section": "Paragraphs",
+    "text": "Paragraphs\nParagraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.\n\nThis will be a second paragraph.\nParagraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.\nThis will be a second paragraph.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/markdown-syntax.html#text-formatting",
+    "href": "resources/markdown-syntax.html#text-formatting",
+    "title": "Markdown Syntax",
+    "section": "Text Formatting",
+    "text": "Text Formatting\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n*italics* or _italics_\nitalics\n\n\n**bold** or __bold__\nbold\n\n\n`verbatim code`\nverbatim code",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/markdown-syntax.html#headings",
+    "href": "resources/markdown-syntax.html#headings",
+    "title": "Markdown Syntax",
+    "section": "Headings",
+    "text": "Headings\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n# Header 1\nHeader 1\n\n\n## Header 2\nHeader 2\n\n\n### Header 3\nHeader 3\n\n\n#### Header 4\nHeader 4\n\n\n##### Header 5\nHeader 5\n\n\n###### Header 6\nHeader 6",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/markdown-syntax.html#lists",
+    "href": "resources/markdown-syntax.html#lists",
+    "title": "Markdown Syntax",
+    "section": "Lists",
+    "text": "Lists\nUnordered lists are created by typing -, *, or + at the start of a line followed by a space. You can choose one symbol or switch between them in nested lists. The styling of the bullets is done by the output interpreter, not by which symbol you choose.\nOrdered lists are created by typing a number followed by a period and a space (1.).\nNested lists are created by indenting the next line in a list with a tab or four spaces followed by the syntax for creating an unordered or ordered list. Unordered and ordered lists can be combined.\n\nUnordered lists\n\n\n\n- unordered list\n    - nested item\n    - nested item\n        * further nesting \n\n\n\nunordered list\n\nnested item\nnested item\n\nfurther nesting\n\n\n\n\n\n\n\n\nOrdered lists\n\n\n\n1. ordered list\n2. Second item\n    1. nested item\n        1. further nesting\n\n\n\nordered list\nSecond item\n\nnested item\n\nfurther nesting\n\n\n\n\n\n\n\n\nMixed lists\n\n\n\n1. mixed list\n    - unordered nesting\n        1. ordered nesting \n        2. second ordered nesting\n    - unordered nesting\n2. Second item\n\n\n\nmixed list\n\nunordered nesting\n\nordered nesting\nsecond ordered nesting\n\nunordered nesting\n\nSecond item",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/markdown-syntax.html#links",
+    "href": "resources/markdown-syntax.html#links",
+    "title": "Markdown Syntax",
+    "section": "Links",
+    "text": "Links\nThere are three main ways to create links in Markdown:\n\nA raw link is created by surrounding the URL by less than and greater than signs.\n&lt;https://lib.vt.edu&gt; becomes https://lib.vt.edu\nInline links are created by surrounding the link text in square brackets, followed immediately by the URL in parentheses.\n[text to link](https://lib.vt.edu) becomes text to link\nReference links are created by surrounding the link text in square brackets, followed by a reference in square brackets. The reference can be a number or text so long as it is unique within the text. Then, the reference is added on a line by itself, after the paragraph or at the bottom of the text, by writing the reference in square brackets, followed by a colon, space, and the URL.\n[text to link][ref]\n\n[ref]: https://lib.vt.edu\nBecomes text to link",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/markdown-syntax.html#footnotes",
+    "href": "resources/markdown-syntax.html#footnotes",
+    "title": "Markdown Syntax",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe linked footnote appears at the end of the document in HTML and end of the page in a PDF.↩︎",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/markdown-syntax.html#resources",
+    "href": "resources/markdown-syntax.html#resources",
+    "title": "Markdown Syntax",
+    "section": "Resources",
+    "text": "Resources\n\nJohn Gruber’s introduction of Markdown and its syntax\nProgramming Historian: Sarah Simpkin, Getting Started with Markdown\nMarkdown style guide: Quarto docs\nMarkdown Style Guide\nMany Markdown editors, especially those that focus on academic writing, depend upon Pandoc, which attempts to be a universal document converter.\n\nPandoc has an in-depth discussion of its flavor of Markdown syntax.\nSee also Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Markdown Syntax Guide"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html",
+    "href": "resources/plaintext.html",
+    "title": "Working with Plain Text",
+    "section": "",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#why-write-in-plain-text",
+    "href": "resources/plaintext.html#why-write-in-plain-text",
+    "title": "Working with Plain Text",
+    "section": "",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "href": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "title": "Working with Plain Text",
+    "section": "What do I need to write in plaintext?",
+    "text": "What do I need to write in plaintext?\nIn short, a good text editor. Below are some good options to start with.\n\nCross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend\n\nWindows\n\nA classic text editor for Windows is Notepad++.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#plain-text-writing-and-note-taking-apps",
+    "href": "resources/plaintext.html#plain-text-writing-and-note-taking-apps",
+    "title": "Working with Plain Text",
+    "section": "Plain text writing and note taking apps",
+    "text": "Plain text writing and note taking apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\nCheck out Obsidian if you are interested.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Digital History Methods",
@@ -494,6 +638,150 @@
     "title": "Digital History Methods",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nThis course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by Cameron Blevins, Lincoln Mullen, Zoë LeBlanc, and Brandon Walsh have been helpful guides in developing a computing heavy DH course. Courses by Andrew Heiss, Kieran Healy, and Clause Wilke have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the Content page for each week.",
+    "crumbs": [
+      "Resources",
+      "Overview",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html",
+    "href": "resources/zotero.html",
+    "title": "Zotero Guide",
+    "section": "",
+    "text": "Collect references\nStore PDFs, links, other documents\nOrganize your references\nRead and markup PDFs and take notes\nStyle citations\nShare references with collaborators\n\n\n\n\nIt is free and open source.\nBuilt by and for the humanities. It is a project created and maintained by a group called Digital Scholar that also maintains Omeka and Tropy. It came out of the DH group at George Mason University.\nSyncs across devices. There is a web version and iOS version.\nAbility to collaborate through shared groups.\n\n\n\n\n\nBibliographic managers are an investment. The time to learn how to use them is early in the writing and research process, not right before you turn in a paper. If you just want styled citations, there are other tools like ZoteroBib.\nTake time to read the documentation.\nTake time to play around with Zotero or any other software to see how you want to use it and if you like it.\nBad data in leads to bad data out.\n\n\n\n\nCheck out these resources from the Library on Zotero, including former workshops with step-by-step guides and slides with screenshots for working with Zotero. These resources produced by Lisa Becksford Russell provides a basis upon which this document builds: Zotero Research Guide",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#why-bibliographical-managers",
+    "href": "resources/zotero.html#why-bibliographical-managers",
+    "title": "Zotero Guide",
+    "section": "",
+    "text": "Collect references\nStore PDFs, links, other documents\nOrganize your references\nRead and markup PDFs and take notes\nStyle citations\nShare references with collaborators\n\n\n\n\nIt is free and open source.\nBuilt by and for the humanities. It is a project created and maintained by a group called Digital Scholar that also maintains Omeka and Tropy. It came out of the DH group at George Mason University.\nSyncs across devices. There is a web version and iOS version.\nAbility to collaborate through shared groups.\n\n\n\n\n\nBibliographic managers are an investment. The time to learn how to use them is early in the writing and research process, not right before you turn in a paper. If you just want styled citations, there are other tools like ZoteroBib.\nTake time to read the documentation.\nTake time to play around with Zotero or any other software to see how you want to use it and if you like it.\nBad data in leads to bad data out.\n\n\n\n\nCheck out these resources from the Library on Zotero, including former workshops with step-by-step guides and slides with screenshots for working with Zotero. These resources produced by Lisa Becksford Russell provides a basis upon which this document builds: Zotero Research Guide",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#getting-zotero",
+    "href": "resources/zotero.html#getting-zotero",
+    "title": "Zotero Guide",
+    "section": "1. Getting Zotero",
+    "text": "1. Getting Zotero\n\nDownload Zotero: https://www.zotero.org\nRegister for an account. You do not need to use your VT email address.\nYou can store your PDFs in the cloud. You get 300 MB free. You do not need to pay for extra storage until you decide you need it. There are also options to store your PDFs in an external folder such as DropBox, iCloud, OneDrive, etc.1",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#adding-items-to-zotero",
+    "href": "resources/zotero.html#adding-items-to-zotero",
+    "title": "Zotero Guide",
+    "section": "2. Adding items to Zotero",
+    "text": "2. Adding items to Zotero\nAdding items to Zotero documentation\n\nExport RIS file usually found in a cite button on library or database sites.\nUse Zotero Connector plugin for web browser\nAdd Item by Identifier using “magic wand” button in Zotero\nAdd PDF and retrieve metadata\nManually add an item\n\nEdited volume: Created using the Book type and filling out the editor instead of author.\nBook section: Create a book section by right-clicking on an edited volume and choose Create Book Section.\n\n\nRemember, always make sure to check the metadata added to a reference. Make sure to check the item type and that the title, publisher, and place of publication are correct and do not have any odd formatting.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#organizing-your-references",
+    "href": "resources/zotero.html#organizing-your-references",
+    "title": "Zotero Guide",
+    "section": "3. Organizing your references",
+    "text": "3. Organizing your references\nCollections and Tags documentation\n\nCollections\n\nCategories or folders: A hierarchical organization of items into groups and subgroups.\nThe same item can belong to multiple collections.\nMost often will add items to a collection by dragging them.\nRemove an item from a collection by deleting it while within the collection view. This will not delete the item from your Library.\nCan have a “smart” collection by saving an Advanced Search. Advanced Search is under the Edit menu or the magnifier icon on the search bar.\n\nTags\n\nKeywords: Each item can have as many tags as you want, but it is up to .\nTags are good for drilling down into your Library using the tag selector in the lower-left of the app.\nClicking on multiple tags will perform an AND search.\n\nRelated items\n\nRelated Items documentation\nChapters within an Edited volume\nBook reviews to book reviewed\nDifferent versions of a work\n\n\n\nThings to keep in mind\n\nTags are portable, but collections are not.\nTags and collections are only as useful as you make them.\nYou have to decide what system is best for you.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#read-and-markup-pdfs-and-take-notes",
+    "href": "resources/zotero.html#read-and-markup-pdfs-and-take-notes",
+    "title": "Zotero Guide",
+    "section": "4. Read and markup PDFs and take notes",
+    "text": "4. Read and markup PDFs and take notes\n\nYou can read and markup PDFs within Zotero.\n\nPDF Reader documentation\nIf you prefer to open PDFs in an external PDF reader, you can choose one from the General pane of the Zotero preferences.\nAlternatively, you can right-click on an item and choose Show File to open in your application of choice.\n\nNotes\n\nNotes documentation\nYou can export annotations in your PDF into a note by right-clicking on an item and choosing Add Note from Annotations.\nYou can create notes that can be standalone items or are attached to a reference.\nAs with any other item in Zotero, notes can be tagged and related to other items.\n\n\n\nThings to keep in mind\n\nAnnotations created in the built-in PDF reader are stored in the Zotero database, so they won’t be visible in external PDF readers unless you export a PDF with embedded annotations.\nWhether you want to take notes on texts within Zotero is up to you. The benefit is that everything is in the same place. The drawback is that you can only search your notes within Zotero.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#style-citations",
+    "href": "resources/zotero.html#style-citations",
+    "title": "Zotero Guide",
+    "section": "5. Style citations",
+    "text": "5. Style citations\n\nWithin Zotero\nCreating Bibliographies within Zotero documentation\n\nQuick copy styled citations\n\nCopy Citation: ⌘⇧A\nCopy Bibliography: ⌘⇧C\nChoose format for Quick copy in Preferences → Export\n\nBibliography or citation list\n\nEither select the items you want, right-click and choose Create Bibliography from Items…\nOr right-click on a collection and choose Create Bibliography from Collection…\nThen choose the bibliographical style you want, whether to create citations or a bibliography, and how you want the citations exported.\n\n\n\n\nMicrosoft Word\nUsing Zotero with Word: The Zotero Word plugin should be installed automatically when you install Zotero. The Zotero Word plugin adds a Zotero tab to Microsoft Word.\n\nCreate a footnote/endnote\n\nClick the Add/Edit Citation button in the Zotero tab to bring up the citation dialog.\nSearch for items and click on them or press Return to select.\nClick on a citation within the dialog to add pages or make other customizations.\n\nEdit a citation\n\nClick an existing citation in your document and click Add/Edit Citation to open the citation dialog.\n\nCreate a bibliography\n\nPlace the cursor where you want the bibliography and click the Add/Edit Bibliography button.\n\nDocument preferences: Citation styles\n\nThe Document Preferences window is where you will choose your citation style.\n\n\n\n\nGoogle Docs\nUsing Zotero with Google Docs: Google Docs support is provided by the Zotero Connector for your browser. The Connector adds a Zotero menu to the Google Docs interface. This provides the same capabilities as with Word with a different interface.\n\nAuthorization\n\nYou will need to authorize Zotero to integrate with Google Docs the first time you use it.\n\nCreate a footnote/endnote\n\nChoose Add/Edit Citation from the Zotero menu.\nInterface to choose references is in Zotero.\n\nEdit a citation\n\nClick an existing citation in your document and click Edit with Zotero or Add/Edit Citation from the Zotero menu.\n\nCreate a bibliography\n\nPlace the cursor where you want the bibliography and click Add/Edit Bibliography from the Zotero menu.\n\nDocument preferences: Citation styles\n\nThe Document Preferences window is where you will choose your citation style within the Zotero app.\n\n\n\n\nThings to keep in mind\n\nBy using the Word plugin or Zotero Connector with Google Docs the citations and bibliography are linked to Zotero. This means you can make changes to the Document Preferences or to an individual references and the output will be updated.\nIf you share the document with someone else or want to make final manual tweaks to the citations, you will want to unlink the document.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#collaboration-zotero-groups",
+    "href": "resources/zotero.html#collaboration-zotero-groups",
+    "title": "Zotero Guide",
+    "section": "6. Collaboration: Zotero Groups",
+    "text": "6. Collaboration: Zotero Groups\nZotero Groups provides a way to collaborate with others, sharing references, notes, and (optionally) PDFs. You can create, view, and interact with the Group Library online or in the Zotero app.\n\nCreating groups\n\nWithin the Zotero app in File → New Library → New Group\nOn the Zotero Groups webpage choose Create a New Group.\n\nGroup types: choose between private, public with closed membership, or public with open membership.\nSet Library Settings\nGroup Settings provides information about the group\nManage Members: Click Send More Invitations to invite people to the group.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#i-just-want-to-style-citations",
+    "href": "resources/zotero.html#i-just-want-to-style-citations",
+    "title": "Zotero Guide",
+    "section": "I just want to style citations",
+    "text": "I just want to style citations\nZotero is an investment. It takes time and effort to collect, organize, and proofread the references. What if you just want to quickly create footnotes or a bibliography?\n\nZoteroBib\n\nSearch or manually enter a reference\nEdit citation if necessary\nCopy footnote by clicking on quotation mark\nCopy bibliography entry by clicking on two-pages symbol\nCopy to clipboard to copy full bibliography.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#what-about-keeping-track-of-primary-sources-from-the-archives",
+    "href": "resources/zotero.html#what-about-keeping-track-of-primary-sources-from-the-archives",
+    "title": "Zotero Guide",
+    "section": "What about keeping track of primary sources from the archives?",
+    "text": "What about keeping track of primary sources from the archives?\nThe makers of Zotero also make an application called Tropy that is designed to organize photos you take of archival sources.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
+  },
+  {
+    "objectID": "resources/zotero.html#footnotes",
+    "href": "resources/zotero.html#footnotes",
+    "title": "Zotero Guide",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSee the documentation on Alternative Syncing solutions.↩︎",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Zotero Guide"
+    ]
   },
   {
     "objectID": "worksheets/index.html",

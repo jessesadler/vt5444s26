@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping and network analysis – Digital History Methods</title>
+<title>Markdown Syntax – Digital History Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/14-content-build.html" rel="next">
-<link href="../content/12-content-design.html" rel="prev">
+<link href="../resources/plaintext.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -264,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Course Details</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/index.html" aria-current="page"> 
+    <a class="nav-link" href="../content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -276,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html"> 
+    <a class="nav-link active" href="../resources/index.html" aria-current="page"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -291,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/13-content-gis-sna.html">13: Mapping and network analysis</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/zotero.html">Organization</a></li><li class="breadcrumb-item"><a href="../resources/markdown-syntax.html">Markdown Syntax Guide</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -317,8 +351,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Content</span></a>
+  <a href="../resources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
   </div>
 </li>
       </ul>
@@ -326,97 +360,28 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Topics</span></a>
+ <span class="menu-text">Organization</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">1: MLK Day - No class</span>
-  </li>
-          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/02-content-data-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2: History, data, and the digital</span></a>
+  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zotero Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/03-content-md.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3: The file system and Markdown</span></a>
+  <a href="../resources/plaintext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with Plain Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/04-content-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4: ‘Tidy’ historical data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/05-content-ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5: Visualizing data with ggplot2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/06-content-dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6: Wrangling data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/07-content-snigb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7: Working with SNiGB</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/08-content-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8: Reproducible workflows with Git</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/09-content-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9: Making websites with Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/10-content-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10: Making maps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/11-content-networks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11: Network analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/12-content-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12: Web design and visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/13-content-gis-sna.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">13: Mapping and network analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/14-content-build.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14: Group work on your project</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/15-content-presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15: Presentation of final projects</span></a>
+  <a href="../resources/markdown-syntax.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Markdown Syntax Guide</span></a>
   </div>
 </li>
       </ul>
@@ -431,21 +396,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
-  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
-  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
+  <li><a href="#paragraphs" id="toc-paragraphs" class="nav-link active" data-scroll-target="#paragraphs">Paragraphs</a></li>
+  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting">Text Formatting</a></li>
+  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a>
+  <ul class="collapse">
+  <li><a href="#unordered-lists" id="toc-unordered-lists" class="nav-link" data-scroll-target="#unordered-lists">Unordered lists</a></li>
+  <li><a href="#ordered-lists" id="toc-ordered-lists" class="nav-link" data-scroll-target="#ordered-lists">Ordered lists</a></li>
+  <li><a href="#mixed-lists" id="toc-mixed-lists" class="nav-link" data-scroll-target="#mixed-lists">Mixed lists</a></li>
+  </ul></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes">Footnotes</a>
+  <ul class="collapse">
+  <li><a href="#block-quotes" id="toc-block-quotes" class="nav-link" data-scroll-target="#block-quotes">Block quotes</a></li>
+  </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/13-content-gis-sna.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/markdown-syntax.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/13-content-gis-sna.html">13: Mapping and network analysis</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/zotero.html">Organization</a></li><li class="breadcrumb-item"><a href="../resources/markdown-syntax.html">Markdown Syntax Guide</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Mapping and network analysis</h1>
-<p class="subtitle lead">20 April 2026</p>
+<h1 class="title">Markdown Syntax</h1>
 </div>
 
 
@@ -462,22 +437,242 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="reading" class="level2">
-<h2 class="anchored" data-anchor-id="reading">Reading</h2>
+<p><a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> is a plain text format that is intended to be easy to write and read but also able to provide enough markup options for most forms of writing. On the one hand, Markdown leverages the advantages of plain text: it is light weight, highly portable, non-proprietary, and easily searchable across different documents. On the other, Markdown text can be turned into HTML, PDFs, and even Word documents with stylized text through different interpreters.</p>
+<p>This document provides a basic overview of the Markdown syntax. Note that there are various “flavors” of Markdown that have different capabilities, but the basic syntax is largely shared.</p>
+<section id="paragraphs" class="level2">
+<h2 class="anchored" data-anchor-id="paragraphs">Paragraphs</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Paragraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>This will be a second paragraph.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Paragraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.</p>
+<p>This will be a second paragraph.</p>
 </section>
-<section id="assignment" class="level2">
-<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
+<section id="text-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="text-formatting">Text Formatting</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>*italics* or _italics_</code></pre></td>
+<td><em>italics</em></td>
+</tr>
+<tr class="even">
+<td><pre><code>**bold** or __bold__</code></pre></td>
+<td><strong>bold</strong></td>
+</tr>
+<tr class="odd">
+<td><pre><code>`verbatim code`</code></pre></td>
+<td><code>verbatim code</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="activities" class="level2">
-<h2 class="anchored" data-anchor-id="activities">Activities</h2>
+<section id="headings" class="level2">
+<h2 class="anchored" data-anchor-id="headings">Headings</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code># Header 1</code></pre></td>
+<td><h1 id="header-1" class="heading-output">Header 1</h1></td>
+</tr>
+<tr class="even">
+<td><pre><code>## Header 2</code></pre></td>
+<td><h2 id="header-2" class="heading-output anchored">Header 2</h2></td>
+</tr>
+<tr class="odd">
+<td><pre><code>### Header 3</code></pre></td>
+<td><h3 id="header-3" class="heading-output anchored">Header 3</h3></td>
+</tr>
+<tr class="even">
+<td><pre><code>#### Header 4</code></pre></td>
+<td><h4 id="header-4" class="heading-output anchored">Header 4</h4></td>
+</tr>
+<tr class="odd">
+<td><pre><code>##### Header 5</code></pre></td>
+<td><h5 id="header-5" class="heading-output anchored">Header 5</h5></td>
+</tr>
+<tr class="even">
+<td><pre><code>###### Header 6</code></pre></td>
+<td><h6 id="header-6" class="heading-output anchored">Header 6</h6></td>
+</tr>
+</tbody>
+</table>
+<style type="text/css">
+.heading-output {
+  border-bottom: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
+</section>
+<section id="lists" class="level2">
+<h2 class="anchored" data-anchor-id="lists">Lists</h2>
+<p><strong>Unordered lists</strong> are created by typing <code>-</code>, <code>*</code>, or <code>+</code> at the start of a line followed by a space. You can choose one symbol or switch between them in nested lists. The styling of the bullets is done by the output interpreter, not by which symbol you choose.</p>
+<p><strong>Ordered lists</strong> are created by typing a number followed by a period and a space (<code>1.</code>).</p>
+<p><strong>Nested lists</strong> are created by indenting the next line in a list with a tab or four spaces followed by the syntax for creating an unordered or ordered list. Unordered and ordered lists can be combined.</p>
+<section id="unordered-lists" class="level3">
+<h3 class="anchored" data-anchor-id="unordered-lists">Unordered lists</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code>- unordered list
+    - nested item
+    - nested item
+        * further nesting </code></pre>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li>unordered list
+<ul>
+<li>nested item</li>
+<li>nested item
+<ul>
+<li>further nesting</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="ordered-lists" class="level3">
+<h3 class="anchored" data-anchor-id="ordered-lists">Ordered lists</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code>1. ordered list
+2. Second item
+    1. nested item
+        1. further nesting</code></pre>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol type="1">
+<li>ordered list</li>
+<li>Second item
+<ol type="1">
+<li>nested item
+<ol type="1">
+<li>further nesting</li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="mixed-lists" class="level3">
+<h3 class="anchored" data-anchor-id="mixed-lists">Mixed lists</h3>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<pre><code>1. mixed list
+    - unordered nesting
+        1. ordered nesting 
+        2. second ordered nesting
+    - unordered nesting
+2. Second item</code></pre>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol type="1">
+<li>mixed list
+<ul>
+<li>unordered nesting
+<ol type="1">
+<li>ordered nesting</li>
+<li>second ordered nesting</li>
+</ol></li>
+<li>unordered nesting</li>
+</ul></li>
+<li>Second item</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<p>There are three main ways to create links in Markdown:</p>
+<ol type="1">
+<li><p>A <strong>raw link</strong> is created by surrounding the URL by less than and greater than signs.</p>
+<p><code>&lt;https://lib.vt.edu&gt;</code> becomes <a href="https://lib.vt.edu" class="uri">https://lib.vt.edu</a></p></li>
+<li><p><strong>Inline links</strong> are created by surrounding the link text in square brackets, followed immediately by the URL in parentheses.</p>
+<p><code>[text to link](https://lib.vt.edu)</code> becomes <a href="https://lib.vt.edu">text to link</a></p></li>
+<li><p><strong>Reference links</strong> are created by surrounding the link text in square brackets, followed by a reference in square brackets. The reference can be a number or text so long as it is unique within the text. Then, the reference is added on a line by itself, after the paragraph or at the bottom of the text, by writing the reference in square brackets, followed by a colon, space, and the URL.</p>
+<pre><code>[text to link][ref]
+
+[ref]: https://lib.vt.edu</code></pre>
+<p>Becomes <a href="https://lib.vt.edu">text to link</a></p></li>
+</ol>
+</section>
+<section id="footnotes" class="level2">
+<h2 class="anchored" data-anchor-id="footnotes">Footnotes</h2>
+<p>Footnotes are created in much the same way as reference links but a carrot (^) is placed before the reference.</p>
+<pre><code>Some text with a footnote.[^1]
+
+[^1]: The linked footnote appears at the end of the document.</code></pre>
+<p>Some text with a footnote.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<section id="block-quotes" class="level3">
+<h3 class="anchored" data-anchor-id="block-quotes">Block quotes</h3>
+<p>A block quote is created by type a greater than sign (&gt;) followed by a space at the beginning of a line.</p>
+<pre><code>This is a normal paragraph.
+
+&gt; Followed a block quote
+&gt; 
+&gt; With multiple paragraphs
+
+And then another paragraph.</code></pre>
+<p>This is a normal paragraph.</p>
+<blockquote class="blockquote">
+<p>Followed a block quote</p>
+<p>With multiple paragraphs</p>
+</blockquote>
+<p>And then another paragraph.</p>
+</section>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://daringfireball.net/projects/markdown/syntax">John Gruber’s introduction of Markdown and its syntax</a></li>
+<li><a href="https://programminghistorian.org/en/lessons/getting-started-with-markdown">Programming Historian: Sarah Simpkin, Getting Started with Markdown</a></li>
+<li><a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown style guide: Quarto docs</a></li>
+<li><a href="https://markdownguide.offshoot.io/basic-syntax/">Markdown Style Guide</a></li>
+<li>Many Markdown editors, especially those that focus on academic writing, depend upon <a href="https://pandoc.org">Pandoc</a>, which attempts to be a universal document converter.
+<ul>
+<li>Pandoc has an in-depth discussion of its flavor of <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Markdown syntax</a>.</li>
+<li>See also <a href="https://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown">Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown</a></li>
+</ul></li>
+</ul>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The linked footnote appears at the end of the document in HTML and end of the page in a PDF.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -893,14 +1088,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/12-content-design.html" class="pagination-link" aria-label="12: Web design and visualization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">12: Web design and visualization</span>
+      <a href="../resources/plaintext.html" class="pagination-link" aria-label="Working with Plain Text">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Working with Plain Text</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/14-content-build.html" class="pagination-link" aria-label="14: Group work on your project">
-        <span class="nav-page-text">14: Group work on your project</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -911,7 +1103,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/13-content-gis-sna.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/markdown-syntax.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>
