@@ -10,11 +10,31 @@ format: html
 - Niklas Luhmann, "[Communicating with Slip Boxes: An Empirical Account](https://luhmann.surge.sh/communicating-with-slip-boxes)".
 
 ## Assignment
-- Download [Zotero](https://www.zotero.org) if you have not already and read over the Zotero Guide and look through [Zotero's documentation](https://www.zotero.org/support/).
+- Download [Zotero](https://www.zotero.org) if you have not already and read over the [Zotero Guide](../resources/zotero.qmd) and look through [Zotero's documentation](https://www.zotero.org/support/).
 
 ## Activities
+- Introductions and how the course works
+    - Expectations
+    - Commonplace book assignment
+    - Final project
+- Discussion: Digital humanities projects
 - How are your research materials organized?
-- Working with the file system.
-- Plain text and Markdown.
+    - [Zotero](https://www.zotero.org)
+    - [Tropy](https://tropy.org)
+- Working with the file system
+- Plain text and Markdown
+    - File types
+    - What is plain text?
+    - Introduction to Markdown
+        - Practice with [Markdown Preview: https://markdownlivepreview.com](https://markdownlivepreview.com)
 
 ## Resources
+See [Working with plain text](../resources/plaintext.qmd) and [Markdown syntax](../resources/markdown-syntax.qmd).
+
+- [John Gruber's introduction of Markdown and its syntax](https://daringfireball.net/projects/markdown/syntax)
+- [Programming Historian: Sarah Simpkin, Getting Started with Markdown](https://programminghistorian.org/en/lessons/getting-started-with-markdown)
+- [Markdown Style Guide](https://markdownguide.offshoot.io/basic-syntax/)
+- [Quarto Markdown style guide](https://quarto.org/docs/authoring/markdown-basics.html)
+- [Pandoc](https://pandoc.org) attempts to be a universal document converter and provides the backend for many applications that convert Markdown to HTML, PDF, or another format.
+	- Pandoc has an in-depth discussion of its *flavor* of [Markdown syntax](https://pandoc.org/MANUAL.html#pandocs-markdown).
+	- See also [Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown](https://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown).
