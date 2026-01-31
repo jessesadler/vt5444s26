@@ -1,0 +1,157 @@
+---
+title: "Zotero Guide"
+format: html
+---
+
+## Why bibliographical managers?
+1. Collect references
+2. Store PDFs, links, other documents
+3. Organize your references
+4. Read and markup PDFs and take notes
+5. Style citations
+6. Share references with collaborators
+
+### Why Zotero?
+- It is free and open source.
+- Built by and for the humanities. It is a project created and maintained by a group called [Digital Scholar](https://digitalscholar.org) that also maintains [Omeka](https://omeka.org/) and [Tropy](https://tropy.org/). It came out of the DH group at George Mason University.
+- Syncs across devices. There is a web version and iOS version.
+- Ability to collaborate through shared groups.
+
+### Things to keep in mind
+- Bibliographic managers are an investment. The time to learn how to use them is early in the writing and research process, not right before you turn in a paper. If you just want styled citations, there are other tools like [ZoteroBib](https://zbib.org).
+- Take time to read the [documentation](https://www.zotero.org/support/).
+- Take time to play around with Zotero or any other software to see how you want to use it and if you like it.
+- Bad data in leads to bad data out.
+
+### Resources on Zotero and bibliographical managers
+Check out these resources from the Library on Zotero, including former workshops with step-by-step guides and slides with screenshots for working with Zotero. These resources produced by Lisa Becksford Russell provides a basis upon which this document builds: [Zotero Research Guide](https://guides.lib.vt.edu/citationmanagers/Zotero)
+
+## 1. Getting Zotero
+1. Download Zotero: <https://www.zotero.org>
+2. Register for an account. You do not need to use your VT email address.
+3. You can store your PDFs in the cloud. You get 300 MB free. You do not need to pay for extra storage until you decide you need it. There are also options to store your PDFs in an external folder such as DropBox, iCloud, OneDrive, etc.[^1]
+
+## 2. Adding items to Zotero
+[Adding items to Zotero documentation](https://www.zotero.org/support/adding_items_to_zotero)
+
+1. Export RIS file usually found in a *cite* button on library or database sites.
+2. Use Zotero Connector plugin for web browser
+3. Add Item by Identifier using "magic wand" button in Zotero
+4. Add PDF and retrieve metadata
+5. Manually add an item
+	- Edited volume: Created using the Book type and filling out the editor instead of author.
+	- Book section: Create a book section by right-clicking on an edited volume and choose Create Book Section.
+
+**Remember**, always make sure to check the metadata added to a reference. Make sure to check the item type and that the title, publisher, and place of publication are correct and do not have any odd formatting. 
+
+## 3. Organizing your references
+[Collections and Tags documentation](https://www.zotero.org/support/collections_and_tags)
+
+- Collections
+	- Categories or folders: A hierarchical organization of items into groups and subgroups.
+	- The same item can belong to multiple collections.
+	- Most often will add items to a collection by dragging them.
+	- Remove an item from a collection by deleting it while within the collection view. This will not delete the item from your Library.
+	- Can have a "smart" collection by saving an Advanced Search. Advanced Search is under the Edit menu or the magnifier icon on the search bar.
+- Tags
+	- Keywords: Each item can have as many tags as you want, but it is up to .
+	- Tags are good for drilling down into your Library using the tag selector in the lower-left of the app.
+	- Clicking on multiple tags will perform an `AND` search.
+- Related items
+	- [Related Items documentation](https://www.zotero.org/support/related)
+	- Chapters within an Edited volume
+	- Book reviews to book reviewed
+	- Different versions of a work
+
+### Things to keep in mind
+- Tags are portable, but collections are not.
+- Tags and collections are only as useful as you make them.
+- You have to decide what system is best for you.
+
+## 4. Read and markup PDFs and take notes
+- You can read and markup PDFs within Zotero.
+	- [PDF Reader documentation](https://www.zotero.org/support/pdf_reader)
+	- If you prefer to open PDFs in an external PDF reader, you can choose one from the General pane of the Zotero preferences.
+	- Alternatively, you can right-click on an item and choose Show File to open in your application of choice.
+- Notes
+	- [Notes documentation](https://www.zotero.org/support/notes)
+	- You can export annotations in your PDF into a note by right-clicking on an item and choosing Add Note from Annotations.
+	- You can create notes that can be standalone items or are attached to a reference.
+	- As with any other item in Zotero, notes can be tagged and related to other items.
+
+### Things to keep in mind
+- Annotations created in the built-in PDF reader are stored in the Zotero database, so they won't be visible in external PDF readers unless you export a PDF with embedded annotations.
+- Whether you want to take notes on texts within Zotero is up to you. The benefit is that everything is in the same place. The drawback is that you can only search your notes within Zotero.
+
+## 5. Style citations
+
+### Within Zotero
+[Creating Bibliographies within Zotero documentation](https://www.zotero.org/support/creating_bibliographies)
+
+- Quick copy styled citations
+	- Copy Citation: ⌘⇧A
+	- Copy Bibliography: ⌘⇧C
+	- Choose format for Quick copy in Preferences → Export 
+- Bibliography or citation list
+  - Either select the items you want, right-click and choose Create Bibliography from Items...
+  - Or right-click on a collection and choose Create Bibliography from Collection...
+  - Then choose the bibliographical style you want, whether to create citations or a bibliography, and how you want the citations exported. 
+
+### Microsoft Word
+[Using Zotero with Word](https://www.zotero.org/support/word_processor_plugin_usage): The Zotero Word plugin should be installed automatically when you install Zotero. The Zotero Word plugin adds a Zotero tab to Microsoft Word.
+
+- Create a footnote/endnote
+	- Click the Add/Edit Citation button in the Zotero tab to bring up the citation dialog.
+	- Search for items and click on them or press Return to select.
+	- Click on a citation within the dialog to add pages or make other customizations.
+- Edit a citation
+	-  Click an existing citation in your document and click Add/Edit Citation to open the citation dialog.
+- Create a bibliography
+	- Place the cursor where you want the bibliography and click  the Add/Edit Bibliography button.
+- Document preferences: Citation styles
+	- The Document Preferences window is where you will choose your citation style.
+
+### Google Docs
+[Using Zotero with Google Docs](https://www.zotero.org/support/google_docs): Google Docs support is provided by the [Zotero Connector](https://www.zotero.org/download/connectors) for your browser.  The Connector adds a Zotero menu to the Google Docs interface. This provides the same capabilities as with Word with a different interface.
+
+- Authorization
+	- You will need to authorize Zotero to integrate with Google Docs the first time you use it.
+- Create a footnote/endnote
+	- Choose Add/Edit Citation from the Zotero menu.
+	- Interface to choose references is in Zotero.
+- Edit a citation
+	-  Click an existing citation in your document and click Edit with Zotero or Add/Edit Citation from the Zotero menu.
+- Create a bibliography
+	- Place the cursor where you want the bibliography and click  Add/Edit Bibliography from the Zotero menu.
+- Document preferences: Citation styles
+	- The Document Preferences window is where you will choose your citation style within the Zotero app.
+
+### Things to keep in mind
+- By using the Word plugin or Zotero Connector with Google Docs the citations and bibliography are linked to Zotero. This means you can make changes to the Document Preferences or to an individual references and the output will be updated.
+- If you share the document with someone else or want to make final manual tweaks to the citations, you will want to unlink the document.
+
+## 6. Collaboration: Zotero Groups
+[Zotero Groups](https://www.zotero.org/support/groups) provides a way to collaborate with others, sharing references, notes, and (optionally) PDFs. You can create, view, and interact with the Group Library online or in the Zotero app.
+
+- Creating groups
+	1. Within the Zotero app in File → New Library → New Group
+	2. On the [Zotero Groups webpage](https://www.zotero.org/groups) choose Create a New Group.
+- Group types: choose between private, public with closed membership, or public with open membership.
+- Set Library Settings
+- Group Settings provides information about the group
+- Manage Members: Click Send More Invitations to invite people to the group.
+
+## I just want to style citations
+Zotero is an investment. It takes time and effort to collect, organize, and proofread the references. What if you just want to quickly create footnotes or a bibliography?
+
+### [ZoteroBib](https://zbib.org)
+1. Search or manually enter a reference
+2. Edit citation if necessary
+3. Copy footnote by clicking on quotation mark
+4. Copy bibliography entry by clicking on two-pages symbol
+5. Copy to clipboard to copy full bibliography.
+
+## What about keeping track of primary sources from the archives?
+The makers of Zotero also make an application called [Tropy](https://tropy.org) that is designed to organize photos you take of archival sources.
+
+[^1]: See the documentation on [Alternative Syncing solutions](https://www.zotero.org/support/sync#alternative_syncing_solutions).

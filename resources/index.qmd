@@ -1,0 +1,6 @@
+---
+title: "Resources"
+format: html
+---
+
+This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the [Content page](../content/index.qmd) for each week.

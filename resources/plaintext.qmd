@@ -1,0 +1,30 @@
+---
+title: "Working with Plain Text"
+format: html
+---
+
+## Why write in plain text?
+Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.
+
+- **Sustainability**: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.
+- **Light weight**: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.
+- **The power of a text editor**: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time.
+- **The web**: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.
+- **Adding formatting with markup languages**: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use [Markdown](https://daringfireball.net/projects/markdown/basics) to add formatting such as headings, lists, links, and even footnotes. See the [Markdown syntax guide](../resources/markdown-syntax.qmd).
+
+## What do I need to write in plaintext?
+In short, a good text editor. Below are some good options to start with.
+
+- Cross platform
+	- [Visual Studio Code](https://code.visualstudio.com) is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.
+	- [VSCodium](https://vscodium.com) is a community-driven, freely-licensed binary distribution of Visual Studio Code.
+	- [Zed](https://zed.dev) is a cross-platform, open source alternative to Visual Studio Code.
+- macOS
+	- [BBEdit](http://www.barebones.com/products/bbedit/) is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend 
+- Windows
+	- A classic text editor for Windows is [Notepad++](https://notepad-plus-plus.org).
+
+## Plain text writing and note taking apps
+There is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.
+
+Check out [Obsidian](https://obsidian.md) if you are interested.

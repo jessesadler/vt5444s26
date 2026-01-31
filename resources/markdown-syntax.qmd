@@ -1,0 +1,201 @@
+---
+title: "Markdown Syntax"
+format: html
+---
+
+[Markdown](https://daringfireball.net/projects/markdown/syntax) is a plain text format that is intended to be easy to write and read but also able to provide enough markup options for most forms of writing. On the one hand, Markdown leverages the advantages of plain text: it is light weight, highly portable, non-proprietary, and easily searchable across different documents. On the other, Markdown text can be turned into HTML, PDFs, and even Word documents with stylized text through different interpreters.
+
+This document provides a basic overview of the Markdown syntax. Note that there are various "flavors" of Markdown that have different capabilities, but the basic syntax is largely shared.
+
+## Paragraphs
+``` markdown
+Paragraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.
+
+This will be a second paragraph.
+```
+
+Paragraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.
+
+This will be a second paragraph.
+
+## Text Formatting
+
++-------------------------------------+-------------------------------------+
+| Markdown Syntax                     | Output                              |
++=====================================+=====================================+
+| ```                                 | *italics*                           |
+| *italics* or _italics_              |                                     |
+| ```                                 |                                     |
++-------------------------------------+-------------------------------------+
+| ```                                 | **bold**                            | 
+| **bold** or __bold__                |                                     |
+| ```                                 |                                     |
++-------------------------------------+-------------------------------------+
+| ```                                 | `verbatim code`                     |
+| `verbatim code`                     |                                     |
+| ```                                 |                                     |
++-------------------------------------+-------------------------------------+=
+
+## Headings
+
++-----------------+-----------------------------------+
+| Markdown Syntax | Output                            |
++=================+===================================+
+| ```             | # Header 1 {.heading-output}      |
+| # Header 1      |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ```             | ## Header 2 {.heading-output}     |
+| ## Header 2     |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ```             | ### Header 3 {.heading-output}    |
+| ### Header 3    |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ```             | #### Header 4 {.heading-output}   |
+| #### Header 4   |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ```             | ##### Header 5 {.heading-output}  |
+| ##### Header 5  |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ```             | ###### Header 6 {.heading-output} |
+| ###### Header 6 |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+
+```{=html}
+<style type="text/css">
+.heading-output {
+  border-bottom: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
+```
+
+## Lists
+**Unordered lists** are created by typing `-`, `*`, or `+` at the start of a line followed by a space. You can choose one symbol or switch between them in nested lists. The styling of the bullets is done by the output interpreter, not by which symbol you choose.
+
+**Ordered lists** are created by typing a number followed by a period and a space (`1. `).
+
+**Nested lists** are created by indenting the next line in a list with a tab or four spaces followed by the syntax for creating an unordered or ordered list. Unordered and ordered lists can be combined.
+
+### Unordered lists
+
+::: {layout-ncol="2"}
+```
+- unordered list
+    - nested item
+    - nested item
+        * further nesting 
+```
+
+- unordered list
+    - nested item
+    - nested item
+        - further nesting
+:::
+
+### Ordered lists
+
+::: {layout-ncol="2"}
+```
+1. ordered list
+2. Second item
+    1. nested item
+        1. further nesting
+```
+
+1. ordered list
+2. Second item
+    1. nested item
+        1. further nesting
+:::
+
+### Mixed lists
+
+::: {layout-ncol="2"}
+```
+1. mixed list
+    - unordered nesting
+        1. ordered nesting 
+        2. second ordered nesting
+    - unordered nesting
+2. Second item
+```
+
+1. mixed list
+    - unordered nesting
+        1. ordered nesting 
+        2. second ordered nesting
+    - unordered nesting
+2. Second item
+:::
+
+## Links
+There are three main ways to create links in Markdown:
+
+1. A **raw link** is created by surrounding the URL by less than and greater than signs.
+
+    `<https://lib.vt.edu>` becomes <https://lib.vt.edu>
+
+2. **Inline links** are created by surrounding the link text in square brackets, followed immediately by the URL in parentheses.
+
+    `[text to link](https://lib.vt.edu)` becomes [text to link](https://lib.vt.edu)
+
+3. **Reference links** are created by surrounding the link text in square brackets, followed by a reference in square brackets. The reference can be a number or text so long as it is unique within the text. Then, the reference is added on a line by itself, after the paragraph or at the bottom of the text, by writing the reference in square brackets, followed by a colon, space, and the URL.
+
+    ```
+    [text to link][ref]
+    
+    [ref]: https://lib.vt.edu
+    ```
+    
+    Becomes [text to link](https://lib.vt.edu)
+
+## Footnotes
+Footnotes are created in much the same way as reference links but a carrot (^) is placed before the reference.
+
+```
+Some text with a footnote.[^1]
+
+[^1]: The linked footnote appears at the end of the document.
+```
+
+Some text with a footnote.[^1]
+
+[^1]: The linked footnote appears at the end of the document in HTML and end of the page in a PDF.
+
+### Block quotes
+
+A block quote is created by type a greater than sign (>) followed by a space at the beginning of a line.
+
+```
+This is a normal paragraph.
+
+> Followed a block quote
+> 
+> With multiple paragraphs
+
+And then another paragraph.
+```
+
+This is a normal paragraph.
+
+> Followed a block quote
+> 
+> With multiple paragraphs
+
+And then another paragraph.
+
+## Resources
+- [John Gruber's introduction of Markdown and its syntax](https://daringfireball.net/projects/markdown/syntax)
+- [Programming Historian: Sarah Simpkin, Getting Started with Markdown](https://programminghistorian.org/en/lessons/getting-started-with-markdown)
+- [Markdown style guide: Quarto docs](https://quarto.org/docs/authoring/markdown-basics.html)
+- [Markdown Style Guide](https://markdownguide.offshoot.io/basic-syntax/)
+- Many Markdown editors, especially those that focus on academic writing, depend upon [Pandoc](https://pandoc.org), which attempts to be a universal document converter.
+	- Pandoc has an in-depth discussion of its flavor of [Markdown syntax](https://pandoc.org/MANUAL.html#pandocs-markdown).
+	- See also [Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown](https://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown)

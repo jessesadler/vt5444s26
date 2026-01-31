@@ -32,6 +32,8 @@ website:
         text: Worksheets
       - href: assignments.qmd
         text: Assignments
+      - href: resources/index.qmd
+        text: Resources
   
   sidebar:
     - title: "Content"
@@ -84,6 +86,23 @@ website:
           contents:
             - text: "1: Getting started with R"
               file: worksheets/01-worksheet.qmd
+    
+    - title: "Resources"
+      style: "docked"
+      search: false
+      contents:
+        - section: "Overview"
+          contents:
+            - text: "Resources"
+              file: resources/index.qmd
+        - section: "Organization"
+          contents:
+            - text: "Zotero Guide"
+              file: resources/zotero.qmd
+            - text: "Working with Plain Text"
+              file: resources/plaintext.qmd
+            - text: "Markdown Syntax Guide"
+              file: resources/markdown-syntax.qmd
 
   page-footer:
     right: |
