@@ -95,6 +95,12 @@ website:
           contents:
             - text: "Resources"
               file: resources/index.qmd
+        - section: "Digital Humanities"
+          contents:
+            - text: "General DH resources"
+              file: resources/dh.qmd
+            - text: "Data for DH"
+              file: resources/datasets.qmd
         - section: "Organization"
           contents:
             - text: "Zotero Guide"

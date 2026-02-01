@@ -1,0 +1,14 @@
+---
+title: "General Digital Humanities resources"
+format: html
+---
+
+The best place to start looking for general resources on digital humanities is the [Digital Humanities Research Guide](https://guides.lib.vt.edu/dh).[^1]
+
+The [Debates in the Digital Humanities series](https://dhdebates.gc.cuny.edu/) is the best place to get yourself situated in the field, see who is working in digital humanities, and what topics are of interest.
+
+If you are looking to keep up with the latest developments in digital humanities, three great resources are [Reviews in Digital Humanities](https://reviewsindh.pubpub.org), [DH Now](https://digitalhumanitiesnow.org/) and [dh+lib](https://dhandlib.org). Scrolling through these resources will provide a great overview of recent activity.
+
+The [Association for Computers and the Humanities](https://ach.org) (ACH) is the primary digital humanities association in the United States and is part of the worldwide [Alliance of Digital Humanities Organizations](https://adho.org) (ADHO). The [2026 ACH Conference](https://ach2026.ach.org/en/) will be held virtually on 24–26 June 2026. The [Call for Papers](https://ach2026.ach.org/en/cfp/) is live with proposals due 23 February 2026.
+
+[^1]: If you see any issues or think something should be added to this guide, please let me know, and I can get it updated. Of particular interest is the [Resources page](https://guides.lib.vt.edu/dh/resources) of the guide.

@@ -1,0 +1,27 @@
+---
+title: "Data for DH"
+format: html
+---
+
+Some places where you might look for data for historical research.
+
+- [Journal of Open Humanities Data](https://openhumanitiesdata.metajnl.com): The journal features peer reviewed publications describing humanities research objects or techniques with high potential for reuse.
+- [Humanities Data](https://humanitiesdata.com): seeks to help collect and disseminate information about publicly available data of particular interest to digital humanities and humanities computing.
+- [Responsible datasets in context](https://www.responsible-datasets-in-context.com): a handful of datasets that are paired with rich documentation, data essays, and teaching resources.
+- [Enslaved: Peoples of the Historical Slave Trade](https://enslaved.org): brings together data on enslaved peoples. All data found within Enslaved is published in the [Journal of Slavery and Data Preservation](https://jsdp.enslaved.org).
+- [The RICardo Project: Trade between Nations from c. 1800 to 1938](http://ricardo.medialab.sciences-po.fr): trade between nations over a period spanning the beginning of the Industrial Revolution to the eve of the Second World War.
+- [Our World in Data](https://ourworldindata.org/search): Modern socioeconomic datasets.
+- [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday): a weekly social data project where people work on one dataset each week. Explore the previous datasets on GitHub.
+
+## Open data repositories
+- [Virginia Tech Data Repository](https://data.lib.vt.edu)
+- [Zenodo](https://zenodo.org)
+- [Harvard Dataverse](https://dataverse.harvard.edu)
+
+## R data packages
+Many R packages come with some sample data, and there are even some packages that are primarily or entirely designed to distribute and document data.
+
+- [Rdatasets](https://vincentarelbundock.github.io/Rdatasets/index.html): a huge table of datasets in R packages.
+- [USAboundaries](https://docs.ropensci.org/USAboundaries/index.html): Contemporary (2024) and historical state, county, and Congressional boundaries from 1629 to 2000.
+- [historydata](https://docs.ropensci.org/historydata/): Historical datasets that mostly deal with American history.
+- [HistData](https://friendly.github.io/HistData/): a collection of small data sets that are interesting and important in the history of statistics and data visualization.
