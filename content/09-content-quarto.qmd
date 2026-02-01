@@ -4,6 +4,8 @@ subtitle: "23 March 2026"
 format: html
 ---
 
+*This week we begin to work on the final project for the course. We will work through creating a static website with Quarto and launching it using GitHUb pages.*
+
 ## Reading
 - Olivia Wikle and Evan Peter Williamson, "Static Web Methodology as a Sustainable Approach to Digital Humanities Projects," *The Code4Lib Journal*, no. 60 (April 2025), <https://journal.code4lib.org/articles/18372>.
 

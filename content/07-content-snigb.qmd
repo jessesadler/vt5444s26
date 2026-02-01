@@ -4,6 +4,8 @@ subtitle: "2 March 2026"
 format: html
 ---
 
+*This week is a time to reflect on what we have learned in the first half of the semester before Spring Break. We will explore a new dataset as a way to see how everyone is feeling about organization, Markdown, R, data wrangling, visualization, and quarto documents.*
+
 ## Reading
 - Hadley Wickham, [A personal history of the tidyverse](https://hadley.github.io/25-tidyverse-history/).
 

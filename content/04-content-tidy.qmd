@@ -4,17 +4,47 @@ subtitle: "9 February 2026"
 format: html
 ---
 
+*This week our focus will be on the nature of data for historical research. We will also introduce [R](https://www.r-project.org) and see what working in a programming language looks like.*
+
 ## Reading
 - Hadley Wickham, "Tidy Data," *Journal of Statistical Software* 59, no. 10 (2014), <http://www.jstatsoft.org/v59/i10/>.
 - Karl Broman and Kara Woo, "Data Organization in Spreadsheets," *The American Statistician* 72, no. 1 (2018), <https://doi.org/10.1080/00031305.2017.1375989>.
 - Katie Rawson and Trevor Muñoz, "[Against Cleaning](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23)," in *Debates in the Digital Humanities 2019*, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).
+- Catherine D'Ignazio and Lauren F. Klein, *Data Feminism* (The MIT Press, 2020), <https://data-feminism.mitpress.mit.edu>, Chapter 6: [The Numbers Don't Speak for Themselves](https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3).
+
+## Watch
+A short video by [Jenny Bryan](https://jennybryan.org/about/) on how to name files:
+
+::: {.grid}
+
+::: {.g-col-9}
+{{< video https://www.youtube.com/embed/ES1LTlnpLMk?si=hP_4NHRcqGe3KYUo >}}
+:::
+
+:::
 
 ## Assignment
+The assignments this week are examples of material that should be placed in your [commonplace book](../assignments.qmd#commonplace-book) even if only the first one explicitly asks you to do so.
 
+- Download a text editor or Markdown app such as [Obsidian](https://obsidian.md) to use for Markdown documents. If you are using a digital commonplace book, you should do it in Markdown.
+    - See the [Text editor guide](../resources/text-editors.qmd) for information on text editors.
+- Commonplace book writing: Reflect on how you organize your research materials. How could this be improved? What are some of the features or capabilities you would like to have?
+- Find one or more historical datasets related to your research interests and/or think of a dataset you could create from your research. Sketch out what it would look like. 
+- Look at [Responsible datasets in context](https://www.responsible-datasets-in-context.com). How is the data documented? How is the data structured? Does it follow the tenets of tidy data?
 
 ## Activities
 - Visit from [Bipasha Banerjee](https://bipasha-banerjee.github.io), AI Research Scientist at University Libraries.
-- Tidy data
-- Getting started with R worksheet
+- Discussion: Organizing your research materials.
+    - Working with text editors.
+    - Set up folder structure for the course.
+- Discussion: Tidy data in the humanities.
+- Worksheet: [Getting started with R](../worksheets/01-worksheet.qmd)
 
 ## Resources
+- [Data Carpentry - Data Organization in Spreadsheets for Social Scientists](https://datacarpentry.org/spreadsheets-socialsci/)
+- Kieran Healy, [The Plain Person's Guide to Plain Text Social Science](https://plain-text.co)
+- Kieran Healy, [Modern Plain Text Computing](https://mptc.io)
+- Susan Collins, [Data Management Plans for Historians: How to Document and Protect Your Research](https://www.historians.org/research-and-publications/perspectives-on-history/october-2017/).
+- There are lots of resources on data criticism from a humanities perspective.
+    - Look at the resources in the [Critical DH section](https://guides.lib.vt.edu/dh/criticaldh) of the DH research guide.
+    - The work of [Roopika Risam](https://roopikarisam.com) is a particularly good place to start.

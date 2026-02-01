@@ -4,8 +4,10 @@ subtitle: "23 February 2026"
 format: html
 ---
 
+*This week we get into working with data in R, demonstrating how to import data and wrangle it using the tidyverse. We will also introduce the use of quarto documents for writing R code.*
+
 ## Reading
-- Hadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, <https://doi.org/10.21105/joss.01686>.
+- Hadley Wickham et al., "Welcome to the Tidyverse," *Journal of Open Source Software* 4, no. 43 (2019): 1686, <https://doi.org/10.21105/joss.01686>.
 
 ## Assignment
 

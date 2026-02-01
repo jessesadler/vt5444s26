@@ -4,6 +4,8 @@ subtitle: "2 February 2026"
 format: html
 ---
 
+*This week will provide the foundations for the remainder of the semester. We will discuss organizing research materials and introduce writing in plain text with Markdown.*
+
 ## Reading
 - [Anil Dash, How Markdown Took Over the World](https://www.anildash.com/2026/01/09/how-markdown-took-over-the-world/).
 - Zachary M. Schrag, *The Princeton Guide to Historical Research* (Princeton University Press, 2021), <https://doi.org/10.2307/j.ctv1pdrrc9>, Chapters 11 and 12.
@@ -22,7 +24,7 @@ format: html
     - [Zotero](https://www.zotero.org)
     - [Tropy](https://tropy.org)
 - Working with the file system
-- Plain text and Markdown
+- [Plain text](../resources/plaintext.qmd) and [Markdown](../resources/markdown-syntax.qmd)
     - File types
     - What is plain text?
     - Introduction to Markdown

@@ -4,6 +4,8 @@ subtitle: "26 January 2026"
 format: html
 ---
 
+**No class due to ❄️**: *This week is meant to get you acquainted with digital humanities in general and this course in particular.*
+
 ## Reading
 - Taylor Arnold and Lauren Tilton, "[New Data: The Role of Statistics in DH](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/a2a6a192-f04a-4082-afaa-97c76a75b21c#ch24)," in *Debates in DH 2019*, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).
 
