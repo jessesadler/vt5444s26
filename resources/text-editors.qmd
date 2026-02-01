@@ -1,0 +1,74 @@
+---
+title: "Text editors"
+format: html
+---
+
+## Recommended text editors
+
+- Cross platform
+	- [Visual Studio Code](https://code.visualstudio.com) is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.
+	- [VSCodium](https://vscodium.com) is a community-driven, freely-licensed binary distribution of Visual Studio Code.
+	- [Zed](https://zed.dev) is a cross-platform, open source alternative to Visual Studio Code.
+    - [Obsidian](https://obsidian.md) is a Markdown focused alternative that is highly extensible but more focused on taking notes.
+- macOS
+	- [BBEdit](http://www.barebones.com/products/bbedit/) is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.
+
+## Benefits and drawbacks
+
+### Benefits
+See also [Working with plain text](plaintext.qmd#why-write-in-plain-text).
+
+- Text editors are very powerful tools for working with lots of text across many files and folders.
+- They can work with all different kinds of plain text documents, not only files that you might think of as presenting content (Markdown, HTML, csv, txt, etc.) but also scripts for programming languages (R, Python, Bash, etc.).
+- There are multiple free and open source options for text editors.
+- Text editors like [Visual Studio Code](https://code.visualstudio.com) and [Zed](https://zed.dev) are full integrated development environments (IDEs) that have all sorts of tools for writing code, including documentation, code completion, and their own command line interface.
+
+### Drawbacks
+- This last point gets to one of the main drawbacks of text editors. They can be overly complex and confusing; they can be too much when you just want to quickly jot something down.
+- This is also true for Obsidian, which has an almost endless amount of options for how you can use it.
+- You also need to invest at least some time in learning how to use your chosen editor if you want to get many of the benefits of its power.
+- It is up to you how deep you want to go on this.
+
+## Setup
+
+### Visual Studio Code and VSCodium
+[Visual Studio Code](https://code.visualstudio.com) and [VSCodium](https://vscodium.com) are essentially the same software, but VSCodium does not have access to [Microsoft's Extension Marketplace](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace). These instructions are based on Visual Studio Code.
+
+1. [Download Visual Studio Code](https://code.visualstudio.com/Download) for your system.
+    - Refer to the Visual Studio Code [documentation](https://code.visualstudio.com/docs) if you have questions, but try not to get caught up in the complexity of what is possible.
+2. Set up Visual Studio Code to work with Markdown files.
+    - Follow the instructions for [Markdown and Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown).
+    - The easiest way to get started is by installing the [Doc Writer Profile](https://code.visualstudio.com/docs/configure/profiles#_doc-writer-profile-template). Follow [these instructions](https://code.visualstudio.com/docs/configure/profiles) on creating a profile.
+3. You might want to pick a [color theme](https://code.visualstudio.com/docs/configure/themes).
+    - You also might want to pick your font and size.
+4. Tweak your profile and settings.
+    - I like to turn the markdownlint extension off. I do not feel that I need error messages if I make a mistake in Markdown.
+
+### Zed
+[Zed](https://zed.dev) is probably a bit easier to get up and going.
+
+1. [Download Zed](https://zed.dev) for your system.
+2. Look through the [documentation](https://zed.dev/docs/) on getting started. As with Visual Studio Code, skip over anything that does not apply to you.
+3. Zed is set up to work with [Markdown](https://zed.dev/docs/languages/markdown) by default.
+
+### BBEdit
+BBEdit is the easiest to get up and going and should be relatively familiar looking if you are used to MacOS.
+
+1. [Download BBEdit](https://www.barebones.com/products/bbedit/index.html) using the Free Download link.
+    - The [Free mode](https://www.barebones.com/products/bbedit/download.html) is quite extensive.
+2. Look over the [documentation](https://www.barebones.com/support/bbedit/#docs).
+
+### Obsidian
+[Obsidian](https://obsidian.md) is designed for Markdown note taking and has many of the powerful feature of other text editors.
+
+1. [Download Obsidian](https://obsidian.md/download) for your system.
+2. Go through the [Get started documentation](https://help.obsidian.md)
+
+## Usage
+The power of text editors is their ability to work on one file at a time or across multiple files and folders. You can open a single file, but most of the power of text editors is unleashed by opening a folder of files and working on multiple files at once.
+
+Text editors also work best by taking advantage of keyboard shortcuts. Each editor will have different features and shortcuts. However, Zed can be set up to use the same shortcuts as Visual Studio Code by default. You can also learn keyboard shortcuts one at a time by using the command palette, a dialogue that allows you to search for commands. The command palette shortcut is:
+
+- Visual Studio Code, VSCodium, and Zed: `Cmd + Shift + P` or `Ctrl + Shift + P`
+- BBEdit: `Cmd + Shift + U`
+- Obsidian: `Cmd + P` or `Ctrl + P`.

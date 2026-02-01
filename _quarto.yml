@@ -109,6 +109,8 @@ website:
               file: resources/plaintext.qmd
             - text: "Markdown Syntax Guide"
               file: resources/markdown-syntax.qmd
+            - text: "Text editors"
+              file: resources/text-editors.qmd
 
   page-footer:
     right: |
