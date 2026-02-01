@@ -11,7 +11,7 @@ Weekly assignments serve two purposes: preparing you for the weekly meeting and 
 These weekly assignments are due by the time our meetings start on Mondays at 2pm. They are listed in the [Content section](content/index.qmd) on the week they are due.
 
 ## Commonplace book
-This course will ask you to do tasks and develop skills that are likely quite different from your other courses. As a way to keep track of your thoughts, notes, struggles, and progress, you are expected to keep a commonplace book during the semester.[^1] The commonplace book developed in the 15th and 16th centuries as a humanist learning and reading technique in which one copied down interesting passages, organized them, and possibly commented on them for future use.[^2]
+This course will ask you to do tasks and develop skills that are likely quite different from your other courses. As a way to keep track of your thoughts, notes, struggles, and progress, you are expected to keep a commonplace book during the semester. It will also be a place for you to keep your thoughts and notes for some of the weekly assignments as preparation for in-class discussion.[^1] The commonplace book developed in the 15th and 16th centuries as a humanist learning and reading technique in which one copied down interesting passages, organized them, and possibly commented on them for future use.[^2]
 
 Your commonplace book can be thought of as a blend of notes, journal, and scrapbook. It is a collection of things you find interesting. Commonplacing is having a bit of a resurgence right now. Check out this [blog post](https://ayushithakkar.substack.com/p/how-to-start-a-commonplace-book-and) for ideas on starting one. There is, of course, an [r/commonplacebook](https://www.reddit.com/r/commonplacebook/) community on Reddit and plenty of resources on [using stationery](https://www.1101.com/store/techo/en/howtouse/) for commonplace books. You might take inspiration from the slogan of [Field Notes](https://fieldnotesbrand.com):
 
@@ -20,12 +20,17 @@ Your commonplace book can be thought of as a blend of notes, journal, and scrapb
 Your commonplace book can be digital, analog, or a combination of the two. Decide what tasks fit your needs the best.
 
 ## Self reflections
-The commonplace book will be your place to store your ideas and thoughts throughout the semester, but you will also be asked to write a short self reflection twice during the semester. These can be short (2–3 paragraphs and maybe around one page). These self reflections should discuss: 
+The commonplace book will be your place to store your ideas and thoughts throughout the semester, but you will also be asked to write two short self reflections during the semester. These can be short (2–3 paragraphs and maybe around one page). These self reflections should discuss: 
 
-- what you think is going well in the class
-- what you are excited to learn more about or dive into more deeply
-- where you feel you are struggling
-- what you can do, what your fellow students can do, and what I can do to help you
+- what you think is going well in the class?
+- what you are excited to learn more about or dive into more deeply?
+- where do you feel you are struggling?
+- what you can do, what your fellow students can do, and what I can do to help you?
+
+Self reflections are due: 
+
+- Week 7: 2 March
+- Week 11: 6 April
 
 ## Final project: static website
 The final project for the course is the creation of a static site website using [Quarto](https://quarto.org). The structure and content are up to you. The website should reflect the work you have done during the course and your research interests. You can reuse content from other courses or your current projects. This project, like the course in general, is much more about the journey than the destination.
