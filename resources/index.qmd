@@ -4,3 +4,16 @@ format: html
 ---
 
 This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the [Content page](../content/index.qmd) for each week.
+
+## Main resources for the course
+- Hadley Wickham et al., *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*, Second edition (O'Reilly, 2023), <https://r4ds.hadley.nz>.
+    - This should be your primary go to reference for anything about working with data in R.
+- [Tidyverse website](https://tidyverse.org)
+    - Website that brings together documentation on the tidyverse packages. If you cannot remember how to do something in the tidyverse, this is a great resource.
+- Kieran Healy, [Data Visualization: A Practical Introduction](https://socviz.co) (Princeton University Press, 2018).
+- [Quarto documentation](https://quarto.org/docs/guide/)
+    - We will be working a lot with quarto documents and creating websites using Quarto. If you need to know how to do something with quarto, go here first.
+
+## Bibliography
+
+bib to go here
