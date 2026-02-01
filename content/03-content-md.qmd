@@ -31,7 +31,7 @@ format: html
         - Practice with [Markdown Preview: https://markdownlivepreview.com](https://markdownlivepreview.com)
 
 ## Resources
-See [Working with plain text](../resources/plaintext.qmd) and [Markdown syntax](../resources/markdown-syntax.qmd).
+See the [Working with plain text](../resources/plaintext.qmd) and [Markdown syntax](../resources/markdown-syntax.qmd) resources.
 
 - [John Gruber's introduction of Markdown and its syntax](https://daringfireball.net/projects/markdown/syntax)
 - [Programming Historian: Sarah Simpkin, Getting Started with Markdown](https://programminghistorian.org/en/lessons/getting-started-with-markdown)

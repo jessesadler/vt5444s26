@@ -27,7 +27,7 @@ A short video by [Jenny Bryan](https://jennybryan.org/about/) on how to name fil
 The assignments this week are examples of material that should be placed in your [commonplace book](../assignments.qmd#commonplace-book) even if only the first one explicitly asks you to do so.
 
 - Download a text editor or Markdown app such as [Obsidian](https://obsidian.md) to use for Markdown documents. If you are using a digital commonplace book, you should do it in Markdown.
-    - See the [Text editor guide](../resources/text-editors.qmd) for information on text editors.
+    - See the [Text editor guide](../resources/text-editors.qmd) for information on text editors and how to set them up.
 - Commonplace book writing: Reflect on how you organize your research materials. How could this be improved? What are some of the features or capabilities you would like to have?
 - Find one or more historical datasets related to your research interests and/or think of a dataset you could create from your research. Sketch out what it would look like. 
 - Look at [Responsible datasets in context](https://www.responsible-datasets-in-context.com). How is the data documented? How is the data structured? Does it follow the tenets of tidy data?
