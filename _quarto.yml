@@ -12,12 +12,12 @@ website:
   repo-url: https://github.com/jessesadler/vt5444s26
   repo-actions: [edit,issue]
 
-  announcement:
-    icon: calendar-check
-    dismissable: true
-    content: "The syllabus is being constantly updated. Continue to check in for updates."
-    type: primary
-    position: below-navbar
+  # announcement:
+  #   icon: calendar-check
+  #   dismissable: true
+  #   content: "The syllabus is being constantly updated. Continue to check in for updates."
+  #   type: primary
+  #   position: below-navbar
 
   navbar:
     pinned: true
