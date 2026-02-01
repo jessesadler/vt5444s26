@@ -18,14 +18,14 @@
     "href": "assignments.html#commonplace-book",
     "title": "Assignment overview",
     "section": "Commonplace book",
-    "text": "Commonplace book\nThis course will ask you to do tasks and develop skills that are likely quite different from your other courses. As a way to keep track of your thoughts, notes, struggles, and progress, you are expected to keep a commonplace book during the semester.1 The commonplace book developed in the 15th and 16th centuries as a humanist learning and reading technique in which one copied down interesting passages, organized them, and possibly commented on them for future use.2\nYour commonplace book can be thought of as a blend of notes, journal, and scrapbook. It is a collection of things you find interesting. Commonplacing is having a bit of a resurgence right now. Check out this blog post for ideas on starting one. There is, of course, an r/commonplacebook community on Reddit and plenty of resources on using stationery for commonplace books. You might take inspiration from the slogan of Field Notes:\n\n“I’m not writing it down to remember it later, I’m writing it down to remember it now.”\n\nYour commonplace book can be digital, analog, or a combination of the two. Decide what tasks fit your needs the best."
+    "text": "Commonplace book\nThis course will ask you to do tasks and develop skills that are likely quite different from your other courses. As a way to keep track of your thoughts, notes, struggles, and progress, you are expected to keep a commonplace book during the semester. It will also be a place for you to keep your thoughts and notes for some of the weekly assignments as preparation for in-class discussion.1 The commonplace book developed in the 15th and 16th centuries as a humanist learning and reading technique in which one copied down interesting passages, organized them, and possibly commented on them for future use.2\nYour commonplace book can be thought of as a blend of notes, journal, and scrapbook. It is a collection of things you find interesting. Commonplacing is having a bit of a resurgence right now. Check out this blog post for ideas on starting one. There is, of course, an r/commonplacebook community on Reddit and plenty of resources on using stationery for commonplace books. You might take inspiration from the slogan of Field Notes:\n\n“I’m not writing it down to remember it later, I’m writing it down to remember it now.”\n\nYour commonplace book can be digital, analog, or a combination of the two. Decide what tasks fit your needs the best."
   },
   {
     "objectID": "assignments.html#self-reflections",
     "href": "assignments.html#self-reflections",
     "title": "Assignment overview",
     "section": "Self reflections",
-    "text": "Self reflections\nThe commonplace book will be your place to store your ideas and thoughts throughout the semester, but you will also be asked to write a short self reflection twice during the semester. These can be short (2–3 paragraphs and maybe around one page). These self reflections should discuss:\n\nwhat you think is going well in the class\nwhat you are excited to learn more about or dive into more deeply\nwhere you feel you are struggling\nwhat you can do, what your fellow students can do, and what I can do to help you"
+    "text": "Self reflections\nThe commonplace book will be your place to store your ideas and thoughts throughout the semester, but you will also be asked to write two short self reflections during the semester. These can be short (2–3 paragraphs and maybe around one page). These self reflections should discuss:\n\nwhat you think is going well in the class?\nwhat you are excited to learn more about or dive into more deeply?\nwhere do you feel you are struggling?\nwhat you can do, what your fellow students can do, and what I can do to help you?\n\nSelf reflections are due:\n\nWeek 7: 2 March\nWeek 11: 6 April"
   },
   {
     "objectID": "assignments.html#final-project-static-website",
@@ -82,7 +82,7 @@
     "href": "content/03-content-md.html",
     "title": "The file system and Markdown",
     "section": "",
-    "text": "Anil Dash, How Markdown Took Over the World.\nZachary M. Schrag, The Princeton Guide to Historical Research (Princeton University Press, 2021), https://doi.org/10.2307/j.ctv1pdrrc9, Chapters 11 and 12.\nNiklas Luhmann, “Communicating with Slip Boxes: An Empirical Account”.",
+    "text": "This week will provide the foundations for the remainder of the semester. We will discuss organizing research materials and introduce writing in plain text with Markdown.",
     "crumbs": [
       "Content",
       "Topics",
@@ -93,8 +93,8 @@
     "objectID": "content/03-content-md.html#reading",
     "href": "content/03-content-md.html#reading",
     "title": "The file system and Markdown",
-    "section": "",
-    "text": "Anil Dash, How Markdown Took Over the World.\nZachary M. Schrag, The Princeton Guide to Historical Research (Princeton University Press, 2021), https://doi.org/10.2307/j.ctv1pdrrc9, Chapters 11 and 12.\nNiklas Luhmann, “Communicating with Slip Boxes: An Empirical Account”.",
+    "section": "Reading",
+    "text": "Reading\n\nAnil Dash, How Markdown Took Over the World.\nZachary M. Schrag, The Princeton Guide to Historical Research (Princeton University Press, 2021), https://doi.org/10.2307/j.ctv1pdrrc9, Chapters 11 and 12.\nNiklas Luhmann, “Communicating with Slip Boxes: An Empirical Account”.",
     "crumbs": [
       "Content",
       "Topics",
@@ -130,7 +130,7 @@
     "href": "content/03-content-md.html#resources",
     "title": "The file system and Markdown",
     "section": "Resources",
-    "text": "Resources\nSee Working with plain text and Markdown syntax.\n\nJohn Gruber’s introduction of Markdown and its syntax\nProgramming Historian: Sarah Simpkin, Getting Started with Markdown\nMarkdown Style Guide\nQuarto Markdown style guide\nPandoc attempts to be a universal document converter and provides the backend for many applications that convert Markdown to HTML, PDF, or another format.\n\nPandoc has an in-depth discussion of its flavor of Markdown syntax.\nSee also Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown.",
+    "text": "Resources\nSee the Working with plain text and Markdown syntax resources.\n\nJohn Gruber’s introduction of Markdown and its syntax\nProgramming Historian: Sarah Simpkin, Getting Started with Markdown\nMarkdown Style Guide\nQuarto Markdown style guide\nPandoc attempts to be a universal document converter and provides the backend for many applications that convert Markdown to HTML, PDF, or another format.\n\nPandoc has an in-depth discussion of its flavor of Markdown syntax.\nSee also Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown.",
     "crumbs": [
       "Content",
       "Topics",
@@ -178,7 +178,7 @@
     "href": "content/02-content-data-history.html",
     "title": "History, data, and the digital",
     "section": "",
-    "text": "Taylor Arnold and Lauren Tilton, “New Data: The Role of Statistics in DH,” in Debates in DH 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
+    "text": "No class due to ❄️: This week is meant to get you acquainted with digital humanities in general and this course in particular.",
     "crumbs": [
       "Content",
       "Topics",
@@ -189,8 +189,8 @@
     "objectID": "content/02-content-data-history.html#reading",
     "href": "content/02-content-data-history.html#reading",
     "title": "History, data, and the digital",
-    "section": "",
-    "text": "Taylor Arnold and Lauren Tilton, “New Data: The Role of Statistics in DH,” in Debates in DH 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
+    "section": "Reading",
+    "text": "Reading\n\nTaylor Arnold and Lauren Tilton, “New Data: The Role of Statistics in DH,” in Debates in DH 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
     "crumbs": [
       "Content",
       "Topics",
@@ -238,7 +238,7 @@
     "href": "content/06-content-dplyr.html",
     "title": "Wrangling data",
     "section": "",
-    "text": "Hadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, https://doi.org/10.21105/joss.01686.",
+    "text": "This week we get into working with data in R, demonstrating how to import data and wrangle it using the tidyverse. We will also introduce the use of quarto documents for writing R code.",
     "crumbs": [
       "Content",
       "Topics",
@@ -249,8 +249,8 @@
     "objectID": "content/06-content-dplyr.html#reading",
     "href": "content/06-content-dplyr.html#reading",
     "title": "Wrangling data",
-    "section": "",
-    "text": "Hadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, https://doi.org/10.21105/joss.01686.",
+    "section": "Reading",
+    "text": "Reading\n\nHadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, https://doi.org/10.21105/joss.01686.",
     "crumbs": [
       "Content",
       "Topics",
@@ -298,7 +298,7 @@
     "href": "content/09-content-quarto.html",
     "title": "Making websites with Quarto",
     "section": "",
-    "text": "Olivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” The Code4Lib Journal, no. 60 (April 2025), https://journal.code4lib.org/articles/18372.",
+    "text": "This week we begin to work on the final project for the course. We will work through creating a static website with Quarto and launching it using GitHUb pages.",
     "crumbs": [
       "Content",
       "Topics",
@@ -309,8 +309,8 @@
     "objectID": "content/09-content-quarto.html#reading",
     "href": "content/09-content-quarto.html#reading",
     "title": "Making websites with Quarto",
-    "section": "",
-    "text": "Olivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” The Code4Lib Journal, no. 60 (April 2025), https://journal.code4lib.org/articles/18372.",
+    "section": "Reading",
+    "text": "Reading\n\nOlivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” The Code4Lib Journal, no. 60 (April 2025), https://journal.code4lib.org/articles/18372.",
     "crumbs": [
       "Content",
       "Topics",
@@ -358,7 +358,7 @@
     "href": "content/05-content-ggplot.html",
     "title": "Visualizing data with ggplot2",
     "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.\nWatch Kieran Healy, Trustworthy Data Visualization keynote talk at posit::conf(2025).",
+    "text": "This week we dive into programming with R by learning to create visualizations with ggplot2 and learn how to run R code in RStudio.",
     "crumbs": [
       "Content",
       "Topics",
@@ -369,8 +369,20 @@
     "objectID": "content/05-content-ggplot.html#reading",
     "href": "content/05-content-ggplot.html#reading",
     "title": "Visualizing data with ggplot2",
-    "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.\nWatch Kieran Healy, Trustworthy Data Visualization keynote talk at posit::conf(2025).",
+    "section": "Reading",
+    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.\nJohn Theibault, “Visualizations and Historical Arguments,” in Writing History in the Digital Age, ed. Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), https://doi.org/10.3998/dh.12230987.0001.001, 173–185.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "5: Visualizing data with ggplot2"
+    ]
+  },
+  {
+    "objectID": "content/05-content-ggplot.html#watch",
+    "href": "content/05-content-ggplot.html#watch",
+    "title": "Visualizing data with ggplot2",
+    "section": "Watch",
+    "text": "Watch\nKieran Healy’s keynote presentation at last year’s Posit conference on Trustworthy Data Visualization:",
     "crumbs": [
       "Content",
       "Topics",
@@ -382,7 +394,7 @@
     "href": "content/05-content-ggplot.html#assignment",
     "title": "Visualizing data with ggplot2",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nCreate a GitHub account. You can follow these instructions from the Carpentries. Choose a username that you would be ok sharing. Mine is jessesadler, and so I can be found at https://github.com/jessesadler.\n\nLook through the course website repository and file an issue about something that could be improved or where there is a mistake. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.\n\nDownload R and RStudio\n\nSee the Resources section for instructions.\n\nCommonplace book writing: Reflect on the use of visualization in the humanities.",
     "crumbs": [
       "Content",
       "Topics",
@@ -394,7 +406,7 @@
     "href": "content/05-content-ggplot.html#activities",
     "title": "Visualizing data with ggplot2",
     "section": "Activities",
-    "text": "Activities",
+    "text": "Activities\n\nWorksheet: Getting started with visualization\nIntro to RStudio\nVisualization with ggplot2 in RStudio",
     "crumbs": [
       "Content",
       "Topics",
@@ -406,7 +418,7 @@
     "href": "content/05-content-ggplot.html#resources",
     "title": "Visualizing data with ggplot2",
     "section": "Resources",
-    "text": "Resources",
+    "text": "Resources\nSee Resources pages for RStudio and visualization.\n\nWorking in RStudio\n\nWickham et al., R for Data Science, chapters 2, 6, and 8.\nRStudio User Guide\n\n\n\nVisualization\nMake sure to look at the ggplot2 website that is full of great documentation and examples, including a ggplot2 cheatsheet.\n\nThe Royal Statistical Society Data visualization Guide\nWickham et al., R for Data Science, chapters 1, 9, 10, and 11.\nIf you want some inspiration, look at Nicola Rennie’s visualization projects.",
     "crumbs": [
       "Content",
       "Topics",
@@ -465,6 +477,66 @@
       "Worksheets",
       "How to",
       "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html",
+    "href": "resources/text-editors.html",
+    "title": "Text editors",
+    "section": "",
+    "text": "Cross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\nObsidian is a Markdown focused alternative that is highly extensible but more focused on taking notes.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#recommended-text-editors",
+    "href": "resources/text-editors.html#recommended-text-editors",
+    "title": "Text editors",
+    "section": "",
+    "text": "Cross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\nObsidian is a Markdown focused alternative that is highly extensible but more focused on taking notes.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#benefits-and-drawbacks",
+    "href": "resources/text-editors.html#benefits-and-drawbacks",
+    "title": "Text editors",
+    "section": "Benefits and drawbacks",
+    "text": "Benefits and drawbacks\n\nBenefits\nSee also Working with plain text.\n\nText editors are very powerful tools for working with lots of text across many files and folders.\nThey can work with all different kinds of plain text documents, not only files that you might think of as presenting content (Markdown, HTML, csv, txt, etc.) but also scripts for programming languages (R, Python, Bash, etc.).\nThere are multiple free and open source options for text editors.\nText editors like Visual Studio Code and Zed are full integrated development environments (IDEs) that have all sorts of tools for writing code, including documentation, code completion, and their own command line interface.\n\n\n\nDrawbacks\n\nThis last point gets to one of the main drawbacks of text editors. They can be overly complex and confusing; they can be too much when you just want to quickly jot something down.\nThis is also true for Obsidian, which has an almost endless amount of options for how you can use it.\nYou also need to invest at least some time in learning how to use your chosen editor if you want to get many of the benefits of its power.\nIt is up to you how deep you want to go on this.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#setup",
+    "href": "resources/text-editors.html#setup",
+    "title": "Text editors",
+    "section": "Setup",
+    "text": "Setup\n\nVisual Studio Code and VSCodium\nVisual Studio Code and VSCodium are essentially the same software, but VSCodium does not have access to Microsoft’s Extension Marketplace. These instructions are based on Visual Studio Code.\n\nDownload Visual Studio Code for your system.\n\nRefer to the Visual Studio Code documentation if you have questions, but try not to get caught up in the complexity of what is possible.\n\nSet up Visual Studio Code to work with Markdown files.\n\nFollow the instructions for Markdown and Visual Studio Code.\nThe easiest way to get started is by installing the Doc Writer Profile. Follow these instructions on creating a profile.\n\nYou might want to pick a color theme.\n\nYou also might want to pick your font and size.\n\nTweak your profile and settings.\n\nI like to turn the markdownlint extension off. I do not feel that I need error messages if I make a mistake in Markdown.\n\n\n\n\nZed\nZed is probably a bit easier to get up and going.\n\nDownload Zed for your system.\nLook through the documentation on getting started. As with Visual Studio Code, skip over anything that does not apply to you.\nZed is set up to work with Markdown by default.\n\n\n\nBBEdit\nBBEdit is the easiest to get up and going and should be relatively familiar looking if you are used to MacOS.\n\nDownload BBEdit using the Free Download link.\n\nThe Free mode is quite extensive.\n\nLook over the documentation.\n\n\n\nObsidian\nObsidian is designed for Markdown note taking and has many of the powerful feature of other text editors.\n\nDownload Obsidian for your system.\nGo through the Get started documentation",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#usage",
+    "href": "resources/text-editors.html#usage",
+    "title": "Text editors",
+    "section": "Usage",
+    "text": "Usage\nThe power of text editors is their ability to work on one file at a time or across multiple files and folders. You can open a single file, but most of the power of text editors is unleashed by opening a folder of files and working on multiple files at once.\nText editors also work best by taking advantage of keyboard shortcuts. Each editor will have different features and shortcuts. However, Zed can be set up to use the same shortcuts as Visual Studio Code by default. You can also learn keyboard shortcuts one at a time by using the command palette, a dialogue that allows you to search for commands. The command palette shortcut is:\n\nVisual Studio Code, VSCodium, and Zed: Cmd + Shift + P or Ctrl + Shift + P\nBBEdit: Cmd + Shift + U\nObsidian: Cmd + P or Ctrl + P.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text editors"
     ]
   },
   {
@@ -564,51 +636,39 @@
     ]
   },
   {
-    "objectID": "resources/plaintext.html",
-    "href": "resources/plaintext.html",
-    "title": "Working with Plain Text",
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
     "section": "",
-    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
+    "text": "This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the Content page for each week.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Working with Plain Text"
+      "Overview",
+      "Resources"
     ]
   },
   {
-    "objectID": "resources/plaintext.html#why-write-in-plain-text",
-    "href": "resources/plaintext.html#why-write-in-plain-text",
-    "title": "Working with Plain Text",
-    "section": "",
-    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
+    "objectID": "resources/index.html#main-resources-for-the-course",
+    "href": "resources/index.html#main-resources-for-the-course",
+    "title": "Resources",
+    "section": "Main resources for the course",
+    "text": "Main resources for the course\n\nHadley Wickham et al., R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, Second edition (O’Reilly, 2023), https://r4ds.hadley.nz.\n\nThis should be your primary go to reference for anything about working with data in R.\n\nTidyverse website\n\nWebsite that brings together documentation on the tidyverse packages. If you cannot remember how to do something in the tidyverse, this is a great resource.\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018).\nQuarto documentation\n\nWe will be working a lot with quarto documents and creating websites using Quarto. If you need to know how to do something with quarto, go here first.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Working with Plain Text"
+      "Overview",
+      "Resources"
     ]
   },
   {
-    "objectID": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
-    "href": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
-    "title": "Working with Plain Text",
-    "section": "What do I need to write in plaintext?",
-    "text": "What do I need to write in plaintext?\nIn short, a good text editor. Below are some good options to start with.\n\nCross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend\n\nWindows\n\nA classic text editor for Windows is Notepad++.",
+    "objectID": "resources/index.html#bibliography",
+    "href": "resources/index.html#bibliography",
+    "title": "Resources",
+    "section": "Bibliography",
+    "text": "Bibliography\nbib to go here",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Working with Plain Text"
-    ]
-  },
-  {
-    "objectID": "resources/plaintext.html#plain-text-writing-and-note-taking-apps",
-    "href": "resources/plaintext.html#plain-text-writing-and-note-taking-apps",
-    "title": "Working with Plain Text",
-    "section": "Plain text writing and note taking apps",
-    "text": "Plain text writing and note taking apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\nCheck out Obsidian if you are interested.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
+      "Overview",
+      "Resources"
     ]
   },
   {
@@ -640,15 +700,75 @@
     "text": "Acknowledgements\nThis course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by Cameron Blevins, Lincoln Mullen, Zoë LeBlanc, and Brandon Walsh have been helpful guides in developing a computing heavy DH course. Courses by Andrew Heiss, Kieran Healy, and Clause Wilke have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course."
   },
   {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
+    "objectID": "resources/plaintext.html",
+    "href": "resources/plaintext.html",
+    "title": "Working with Plain Text",
     "section": "",
-    "text": "This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the Content page for each week.",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
     "crumbs": [
       "Resources",
-      "Overview",
-      "Resources"
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#why-write-in-plain-text",
+    "href": "resources/plaintext.html#why-write-in-plain-text",
+    "title": "Working with Plain Text",
+    "section": "",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "href": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "title": "Working with Plain Text",
+    "section": "What do I need to write in plaintext?",
+    "text": "What do I need to write in plaintext?\nIn short, a good text editor. Below are some good options to start with. See the Text editors guide for more in depth discussion of using a text editor.\n\nCross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.\n\nWindows\n\nA classic text editor for Windows is Notepad++.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#markdown-based-apps",
+    "href": "resources/plaintext.html#markdown-based-apps",
+    "title": "Working with Plain Text",
+    "section": "Markdown based apps",
+    "text": "Markdown based apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\n\nObsidian is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.\nTangent Notes is an open source alternative.\niA Writer is a paid application available for Windows and MacOS, as well as iOS. It is a very good looking simple application for writing Markdown.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/dh.html",
+    "href": "resources/dh.html",
+    "title": "General Digital Humanities resources",
+    "section": "",
+    "text": "The best place to start looking for general resources on digital humanities is the Digital Humanities Research Guide.1\nThe Debates in the Digital Humanities series is the best place to get yourself situated in the field, see who is working in digital humanities, and what topics are of interest.\nIf you are looking to keep up with the latest developments in digital humanities, three great resources are Reviews in Digital Humanities, DH Now and dh+lib. Scrolling through these resources will provide a great overview of recent activity.\nThe Association for Computers and the Humanities (ACH) is the primary digital humanities association in the United States and is part of the worldwide Alliance of Digital Humanities Organizations (ADHO). The 2026 ACH Conference will be held virtually on 24–26 June 2026. The Call for Papers is live with proposals due 23 February 2026.",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "General DH resources"
+    ]
+  },
+  {
+    "objectID": "resources/dh.html#footnotes",
+    "href": "resources/dh.html#footnotes",
+    "title": "General Digital Humanities resources",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you see any issues or think something should be added to this guide, please let me know, and I can get it updated. Of particular interest is the Resources page of the guide.↩︎",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "General DH resources"
     ]
   },
   {
@@ -784,6 +904,42 @@
     ]
   },
   {
+    "objectID": "resources/datasets.html",
+    "href": "resources/datasets.html",
+    "title": "Data for DH",
+    "section": "",
+    "text": "Some places where you might look for data for historical research.",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "Data for DH"
+    ]
+  },
+  {
+    "objectID": "resources/datasets.html#open-data-repositories",
+    "href": "resources/datasets.html#open-data-repositories",
+    "title": "Data for DH",
+    "section": "Open data repositories",
+    "text": "Open data repositories\n\nVirginia Tech Data Repository\nZenodo\nHarvard Dataverse",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "Data for DH"
+    ]
+  },
+  {
+    "objectID": "resources/datasets.html#r-data-packages",
+    "href": "resources/datasets.html#r-data-packages",
+    "title": "Data for DH",
+    "section": "R data packages",
+    "text": "R data packages\nMany R packages come with some sample data, and there are even some packages that are primarily or entirely designed to distribute and document data.\n\nRdatasets: a huge table of datasets in R packages.\nUSAboundaries: Contemporary (2024) and historical state, county, and Congressional boundaries from 1629 to 2000.\nhistorydata: Historical datasets that mostly deal with American history.\nHistData: a collection of small data sets that are interesting and important in the history of statistics and data visualization.",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "Data for DH"
+    ]
+  },
+  {
     "objectID": "worksheets/index.html",
     "href": "worksheets/index.html",
     "title": "Interactive worksheets",
@@ -860,7 +1016,7 @@
     "href": "content/04-content-tidy.html",
     "title": "‘Tidy’ historical data",
     "section": "",
-    "text": "Hadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), http://www.jstatsoft.org/v59/i10/.\nKarl Broman and Kara Woo, “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (2018), https://doi.org/10.1080/00031305.2017.1375989.\nKatie Rawson and Trevor Muñoz, “Against Cleaning,” in Debates in the Digital Humanities 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
+    "text": "This week our focus will be on the nature of data for historical research. We will also introduce R and see what working in a programming language looks like.",
     "crumbs": [
       "Content",
       "Topics",
@@ -871,8 +1027,20 @@
     "objectID": "content/04-content-tidy.html#reading",
     "href": "content/04-content-tidy.html#reading",
     "title": "‘Tidy’ historical data",
-    "section": "",
-    "text": "Hadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), http://www.jstatsoft.org/v59/i10/.\nKarl Broman and Kara Woo, “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (2018), https://doi.org/10.1080/00031305.2017.1375989.\nKatie Rawson and Trevor Muñoz, “Against Cleaning,” in Debates in the Digital Humanities 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).",
+    "section": "Reading",
+    "text": "Reading\n\nHadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), http://www.jstatsoft.org/v59/i10/.\nKarl Broman and Kara Woo, “Data Organization in Spreadsheets,” The American Statistician 72, no. 1 (2018), https://doi.org/10.1080/00031305.2017.1375989.\nKatie Rawson and Trevor Muñoz, “Against Cleaning,” in Debates in the Digital Humanities 2019, ed. Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).\nCatherine D’Ignazio and Lauren F. Klein, Data Feminism (The MIT Press, 2020), https://data-feminism.mitpress.mit.edu, Chapter 6: The Numbers Don’t Speak for Themselves.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "4: 'Tidy' historical data"
+    ]
+  },
+  {
+    "objectID": "content/04-content-tidy.html#watch",
+    "href": "content/04-content-tidy.html#watch",
+    "title": "‘Tidy’ historical data",
+    "section": "Watch",
+    "text": "Watch\nA short video by Jenny Bryan on how to name files:",
     "crumbs": [
       "Content",
       "Topics",
@@ -884,7 +1052,7 @@
     "href": "content/04-content-tidy.html#assignment",
     "title": "‘Tidy’ historical data",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\nThe assignments this week are examples of material that should be placed in your commonplace book even if only the first one explicitly asks you to do so.\n\nDownload a text editor or Markdown app such as Obsidian to use for Markdown documents. If you are using a digital commonplace book, you should do it in Markdown.\n\nSee the Text editor guide for information on text editors and how to set them up.\n\nCommonplace book writing: Reflect on how you organize your research materials. How could this be improved? What are some of the features or capabilities you would like to have?\nFind one or more historical datasets related to your research interests and/or think of a dataset you could create from your research. Sketch out what it would look like.\nLook at Responsible datasets in context. How is the data documented? How is the data structured? Does it follow the tenets of tidy data?",
     "crumbs": [
       "Content",
       "Topics",
@@ -896,7 +1064,7 @@
     "href": "content/04-content-tidy.html#activities",
     "title": "‘Tidy’ historical data",
     "section": "Activities",
-    "text": "Activities\n\nVisit from Bipasha Banerjee, AI Research Scientist at University Libraries.\nTidy data\nGetting started with R worksheet",
+    "text": "Activities\n\nVisit from Bipasha Banerjee, AI Research Scientist at University Libraries.\nDiscussion: Organizing your research materials.\n\nWorking with text editors.\nSet up folder structure for the course.\n\nDiscussion: Tidy data in the humanities.\nWorksheet: Getting started with R",
     "crumbs": [
       "Content",
       "Topics",
@@ -908,7 +1076,7 @@
     "href": "content/04-content-tidy.html#resources",
     "title": "‘Tidy’ historical data",
     "section": "Resources",
-    "text": "Resources",
+    "text": "Resources\n\nData Carpentry - Data Organization in Spreadsheets for Social Scientists\nKieran Healy, The Plain Person’s Guide to Plain Text Social Science\nKieran Healy, Modern Plain Text Computing\nSusan Collins, Data Management Plans for Historians: How to Document and Protect Your Research.\nThere are lots of resources on data criticism from a humanities perspective.\n\nLook at the resources in the Critical DH section of the DH research guide.\nThe work of Roopika Risam is a particularly good place to start.",
     "crumbs": [
       "Content",
       "Topics",
@@ -932,7 +1100,7 @@
     "href": "content/08-content-git.html",
     "title": "Reproducible workflows with Git",
     "section": "",
-    "text": "Jenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
+    "text": "Setting aside R for the week, this week we will learn to use git and GitHub to develop reproducible workflows and get our work available on the internet.",
     "crumbs": [
       "Content",
       "Topics",
@@ -943,8 +1111,8 @@
     "objectID": "content/08-content-git.html#reading",
     "href": "content/08-content-git.html#reading",
     "title": "Reproducible workflows with Git",
-    "section": "",
-    "text": "Jenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
+    "section": "Reading",
+    "text": "Reading\n\nJenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
     "crumbs": [
       "Content",
       "Topics",
@@ -992,7 +1160,7 @@
     "href": "content/11-content-networks.html",
     "title": "Network analysis",
     "section": "",
-    "text": "Ruth Ahnert et al., The Network Turn: Changing Perspectives in the Humanities (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.\nCatherine Medici, “Using Network Analysis to Understand Early Modern Women,” Early Modern Women: An Interdisciplinary Journal, 13 no. 1 (2018): 153–62, https://doi.org/10.1353/emw.2018.0058.",
+    "text": "This week we tackle another common technique made possible by digital humanities, network analysis.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1003,8 +1171,8 @@
     "objectID": "content/11-content-networks.html#reading",
     "href": "content/11-content-networks.html#reading",
     "title": "Network analysis",
-    "section": "",
-    "text": "Ruth Ahnert et al., The Network Turn: Changing Perspectives in the Humanities (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.\nCatherine Medici, “Using Network Analysis to Understand Early Modern Women,” Early Modern Women: An Interdisciplinary Journal, 13 no. 1 (2018): 153–62, https://doi.org/10.1353/emw.2018.0058.",
+    "section": "Reading",
+    "text": "Reading\n\nRuth Ahnert et al., The Network Turn: Changing Perspectives in the Humanities (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.\nCatherine Medici, “Using Network Analysis to Understand Early Modern Women,” Early Modern Women: An Interdisciplinary Journal, 13 no. 1 (2018): 153–62, https://doi.org/10.1353/emw.2018.0058.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1052,7 +1220,7 @@
     "href": "content/07-content-snigb.html",
     "title": "Working with SNiGB",
     "section": "",
-    "text": "Hadley Wickham, A personal history of the tidyverse.",
+    "text": "This week is a time to reflect on what we have learned in the first half of the semester before Spring Break. We will explore a new dataset as a way to see how everyone is feeling about organization, Markdown, R, data wrangling, visualization, and quarto documents.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1063,8 +1231,8 @@
     "objectID": "content/07-content-snigb.html#reading",
     "href": "content/07-content-snigb.html#reading",
     "title": "Working with SNiGB",
-    "section": "",
-    "text": "Hadley Wickham, A personal history of the tidyverse.",
+    "section": "Reading",
+    "text": "Reading\n\nHadley Wickham, A personal history of the tidyverse.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1148,7 +1316,7 @@
     "href": "content/10-content-maps.html",
     "title": "Making maps",
     "section": "",
-    "text": "Cameron Blevins, “Space, Nation, and the Triumph of Region: A View of the World from Houston,” Journal of American History 101, no. 1 (2014): 122–47, https://doi.org/10.1093/jahist/jau184.\nRobin Lovelace, Jakub Nowosad, and Jannes Muenchow, Geocomputation with R (2nd Edition), Chapters 1 and 2.",
+    "text": "This week we switch back to R and the analysis of data by diving into the use of spatial data and the creation of maps using R.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1159,8 +1327,8 @@
     "objectID": "content/10-content-maps.html#reading",
     "href": "content/10-content-maps.html#reading",
     "title": "Making maps",
-    "section": "",
-    "text": "Cameron Blevins, “Space, Nation, and the Triumph of Region: A View of the World from Houston,” Journal of American History 101, no. 1 (2014): 122–47, https://doi.org/10.1093/jahist/jau184.\nRobin Lovelace, Jakub Nowosad, and Jannes Muenchow, Geocomputation with R (2nd Edition), Chapters 1 and 2.",
+    "section": "Reading",
+    "text": "Reading\n\nCameron Blevins, “Space, Nation, and the Triumph of Region: A View of the World from Houston,” Journal of American History 101, no. 1 (2014): 122–47, https://doi.org/10.1093/jahist/jau184.\nRobin Lovelace, Jakub Nowosad, and Jannes Muenchow, Geocomputation with R (2nd Edition), Chapters 1 and 2.",
     "crumbs": [
       "Content",
       "Topics",

@@ -44,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a140fdf7524db7967a8ef82d6c8d1b82.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5aec70e3d56b44e6a348e0034acc91f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-44fba0e3fddc22f07d28d3ae0c34b68e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-a140fdf7524db7967a8ef82d6c8d1b82.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5aec70e3d56b44e6a348e0034acc91f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -296,9 +296,6 @@ ul.task-list li input[type="checkbox"] {
         </a>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="9a068a6e33199982116759cf69583bfc" class="alert alert-primary hidden"><i class="bi bi-calendar-check quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>The syllabus is being constantly updated. Continue to check in for updates.</p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -432,9 +429,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
+  <li><a href="#watch" id="toc-watch" class="nav-link" data-scroll-target="#watch">Watch</a></li>
   <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
   <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#working-in-rstudio" id="toc-working-in-rstudio" class="nav-link" data-scroll-target="#working-in-rstudio">Working in RStudio</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/05-content-ggplot.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -462,24 +464,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><em>This week we dive into programming with R by learning to create visualizations with ggplot2 and learn how to run R code in RStudio.</em></p>
 <section id="reading" class="level2">
 <h2 class="anchored" data-anchor-id="reading">Reading</h2>
 <ul>
 <li>Kieran Healy, <a href="https://socviz.co">Data Visualization: A Practical Introduction</a> (Princeton University Press, 2018), Chapters 1 and 3.</li>
 <li>Claus Wilke, <a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization</a> (O’Reilly 2019), Chapters 2 and 5.</li>
-<li>Watch <a href="https://youtu.be/ZamPCbvBAgE?si=HlR5phzzJwKr30ML">Kieran Healy, Trustworthy Data Visualization</a> keynote talk at posit::conf(2025).</li>
+<li>John Theibault, “Visualizations and Historical Arguments,” in <em>Writing History in the Digital Age</em>, ed.&nbsp;Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), <a href="https://doi.org/10.3998/dh.12230987.0001.001" class="uri">https://doi.org/10.3998/dh.12230987.0001.001</a>, 173–185.</li>
 </ul>
+</section>
+<section id="watch" class="level2">
+<h2 class="anchored" data-anchor-id="watch">Watch</h2>
+<p><a href="https://kieranhealy.org">Kieran Healy’s</a> keynote presentation at last year’s Posit conference on Trustworthy Data Visualization:</p>
+<div class="grid">
+<div class="g-col-9">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ZamPCbvBAgE?si=HlR5phzzJwKr30ML" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+</div>
 </section>
 <section id="assignment" class="level2">
 <h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
+<ul>
+<li>Create a <a href="https://github.com">GitHub account</a>. You can follow <a href="https://swcarpentry.github.io/git-novice/#creating-a-github-account">these instructions</a> from the Carpentries. Choose a username that you would be ok sharing. Mine is jessesadler, and so I can be found at <a href="https://github.com/jessesadler" class="uri">https://github.com/jessesadler</a>.
+<ul>
+<li>Look through the <a href="https://github.com/jessesadler/vt5444s26">course website repository</a> and <a href="https://github.com/jessesadler/vt5444s26/issues">file an issue</a> about something that could be improved or where there is a mistake. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.</li>
+</ul></li>
+<li>Download R and RStudio
+<ul>
+<li>See the Resources section for instructions.</li>
+</ul></li>
+<li>Commonplace book writing: Reflect on the use of visualization in the humanities.</li>
+</ul>
 </section>
 <section id="activities" class="level2">
 <h2 class="anchored" data-anchor-id="activities">Activities</h2>
+<ul>
+<li>Worksheet: Getting started with visualization</li>
+<li>Intro to RStudio</li>
+<li>Visualization with <code>ggplot2</code> in RStudio</li>
+</ul>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>See Resources pages for RStudio and visualization.</p>
+<section id="working-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="working-in-rstudio">Working in RStudio</h3>
+<ul>
+<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>, chapters 2, 6, and 8.</li>
+<li><a href="https://docs.posit.co/ide/user/">RStudio User Guide</a></li>
+</ul>
+</section>
+<section id="visualization" class="level3">
+<h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
+<p>Make sure to look at the <a href="https://ggplot2.tidyverse.org">ggplot2 website</a> that is full of great documentation and examples, including a <a href="https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf">ggplot2 cheatsheet</a>.</p>
+<ul>
+<li><a href="https://royal-statistical-society.github.io/datavisguide/">The Royal Statistical Society Data visualization Guide</a></li>
+<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>, chapters 1, 9, 10, and 11.</li>
+<li>If you want some inspiration, look at <a href="https://nrennie.rbind.io">Nicola Rennie’s</a> visualization projects.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
