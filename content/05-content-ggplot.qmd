@@ -30,6 +30,7 @@ format: html
 - Commonplace book writing: Reflect on the use of visualization in the humanities.
 
 ## Activities
+- Visit from [Bipasha Banerjee](https://bipasha-banerjee.github.io), AI Research Scientist at University Libraries.
 - Worksheet: Getting started with visualization 
 - Intro to RStudio
 - Visualization with `ggplot2` in RStudio

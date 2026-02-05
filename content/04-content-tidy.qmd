@@ -33,9 +33,8 @@ The assignments this week are examples of material that should be placed in your
 - Look at [Responsible datasets in context](https://www.responsible-datasets-in-context.com). How is the data documented? How is the data structured? Does it follow the tenets of tidy data?
 
 ## Activities
-- Visit from [Bipasha Banerjee](https://bipasha-banerjee.github.io), AI Research Scientist at University Libraries.
 - Discussion: Organizing your research materials.
-    - Working with text editors.
+    - Working with text editors and Markdown.
     - Set up folder structure for the course.
 - Discussion: Tidy data in the humanities.
 - Worksheet: [Getting started with R](../worksheets/01-worksheet.qmd)
