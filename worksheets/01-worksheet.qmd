@@ -1,52 +1,298 @@
 ---
-title: "Getting started with R"
-format: live-html
+title: "1. Getting started with R"
+format: 
+  live-html:
+    number-sections: true
+    number-depth: 2
 engine: knitr
 ---
 
 {{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
 
-Based on R for Social Sciences
+Let's begin by getting some experience with how R works and what it looks like to run R code.
 
-Non-exercise math
+Writing and running R code is an iterative process.[^1] You write a line or block of code, run it, check if it did what you want, and then repeat the process. You will get errors, but that is ok. Instead of moving on to the next code block, you repeat the process with the code block you are on, checking error messages, changing what you think might be the problem, and trying again. You do this over and over to create a full **script** that accomplishes a set task.
+
+In this web-based R session you can alter the code, fill in blanks, or write your own expressions, and then run it by selecting the blue `Run Code` button. The output, if any, will appear below the code section.
+
+Use hints where they exist and solutions if you need them. You can copy the code in the solution by mousing over the far right side of the solution code.
+
+## R is a calculator
+You can use R as a calculator. If you write a mathematical expression and run it, the answer will be printed out. Run the code below and change it to see what you can do.
 
 ```{webr} 
 2 + 3
 ```
 
+You can multiply (`*`), divide (`/`), use exponents (`^`), and other mathematical expressions, including using parenthes for order of operations. Create your own mathematical calculation below.
 
-Assignment
+```{webr} 
+
+```
+
+When we run code like this that prints out the answer, we say that it prints out to the *console*.
+
+## Creating objects
+Printing out values is nice, but you will probably want to save values to use elsewhere in your script. You save values, by assigning it to a *name* or *variable*. This creates an *object* that is stored in your coding environment. You assign a name to an object with the *assignment operator* (`<-`). Run the code below. What difference do you notice?
+
+```{webr} 
+x <- 5
+```
+
+::: { .callout-tip collapse="true"}
+## What was different?
+Nothing is printed when you run the code.
+:::
+
+You can think of this code as saying `x` gets the value of `5`. When a value is assigned, it does not print out to the console. To print out the value of an *object*, write the name of the object on its own line and run the code block.
 
 ```{webr} 
 #| exercise: assignment
+#| envir: assignment
+#| min-lines: 2
 x ______ 5
+
 ```
 
-::: { .solution exercise="assignment" }
-::: { .callout-tip title="Solution" collapse="false"}
-The assignment operator
+::: { .hint exercise="assignment" }
+::: { .callout-note collapse="false" }
+## Hint 1
+
+Make sure to use the assignment operator (`<-`)
+
 ```r
 x <- 5
 ```
 :::
 :::
 
-Exercises have their own environment, so `x` has to be redefined.
+::: { .hint exercise="assignment" }
+::: { .callout-note collapse="false" }
+## Hint 2
 
-```{webr} 
-#| exercise: variable
+You need to type `Return` or `Enter` after the first line of code to get to the second line of the interactive code block.
+
+:::
+:::
+
+::: { .solution exercise="assignment" }
+::: { .callout-tip title="Solution" collapse="false"}
+To print out the value of `x` to the console, write it on its own line and run the code block.
+```r
 x <- 5
-x * 2
+x
+```
+:::
+:::
+
+::: {.callout-tip}
+## Object vs variable
+
+In R everything is an *object*. Technically `x` is now a named object. However, it is common to also refer to it as a *variable*. These two terms will largely be used synonymously in this course, especially in spoken language.
+
+:::
+
+Once you have created an object, you can use it to create other values. In the next code block, use `x` to calculate a new value.
+
+```{webr}
+#| exercise: object
+#| envir: assignment
+
 ```
 
+::: { .solution exercise="object" }
+::: { .callout-tip title="Solution" collapse="false"}
+You can use `x` as you would the number 5. For instance:
 
-Vector
+```r
+x * 24
+```
+:::
+:::
 
-Make `x` a vector of numbers.
+Next, use the expression you wrote above to create a new named object using the assignment operator. Use whatever name you want.
+
+```{webr}
+#| exercise: assignment2
+#| envir: assignment
+
+```
+
+### On naming
+
+When choosing a name for an object in R, you should be aware of the **rules** but also issues of **style**.
+
+#### Naming rules
+- Object names *must* start with a letter.
+- Names can only contain letters, numbers, `_`, and `.`.
+- Cannot use names that are predefined in R such as `TRUE` or `FALSE`.
+
+#### Naming style
+There are different style conventions for naming objects. It is best to pick one style and be consistent.
+
+```{r}
+#| eval: false
+this_is_snake_case <- value
+orCamelCase <- value
+you.can.use.periods <- value
+BELOUD <- value
+or.JUst_inconsistent <- value
+```
+
+In this course, we will use *snake case*, which is probably the most widely used style. You can use whatever style you like, but *snake case* means you do not have to guess whether you used capital letters or not.
+
+::: {.callout-tip}
+## Be aware: R is case sensitive
+
+This means that `my_obj` is different from `My_obj`. Computers are persnickity. You must be precise in your instructions. Computers do what you type, not what you want.
+
+:::
+
+::: {.callout-tip}
+## Choosing good names
+
+It is best practice to name objects descriptive names even if they are longer. Names like `x` and `y` or `data` tell you nothing about what they are. Use descriptive names that match the data assigned to the object name.[^2]
+
+:::
+
+Now we have two named objects. What happens when you assign a new number to `x`? What happens to the other object you created using `x`? Does it also change? Check by printing the values out to the console. What do the answers to these questions tell you about the nature of objects in R?
+
+```{webr}
+#| exercise: assignment3
+#| envir: assignment
+#| min-lines: 3
+x <- 15
+```
+
+::: { .solution exercise="assignment3" }
+::: { .callout-tip title="Solution" collapse="false"}
+The value of `x` is now 15. But any object created using the original value of `x` remains unchanged.
+
+```r
+x <- 15
+x
+your_object
+```
+:::
+:::
+
+## Do things with functions
+Functions take input, perform specific actions, and then return values. You can identify a function in R by the opening and closing parentheses that follow a name. Within the parentheses are a set of *arguments* that are set to *values*. These arguments are separated by commas.
+
+```{r}
+#| eval: false
+function_name(argument1 = value1, argument2 = value2, ....)
+```
+
+Let's use our first function! 🎉
+
+```{webr} 
+round(x = 42.358964)
+```
+
+### Getting help
+
+That is nice! But rather limited. What else can we do with the `round()` function? Let's read the documentation for the function by placing a question mark immediately in front of the function name.
+
+```{webr} 
+?round
+```
+
+We see that this is actually the documentation of a set or family of functions. There are a couple of sections of the help page that are, well, particularly helpful.
+
+- Description: a short description of what the function is designed to do.
+- Usage: tells you the available *arguments* and their defualt values if any. Note that `digits` is set to `0` for `round()` but `6` for `signif()`.
+- Arguments: provides an explanation of each argument and the type of data it can be.
+- Examples: R code that you can run to see how a function works. Some examples are really helpful; some are less so.
+
+Lets use the `digits` argument. Round `42.358964` to **3** decimal places.
+
+```{webr}
+#| exercise: round
+round(x = 42.358964)
+```
+
+::: { .solution exercise="round" }
+::: { .callout-tip title="Solution" collapse="false"}
+
+```r
+round(x = 42.358964, digits = 3)
+```
+:::
+:::
+
+What do the other functions in the Rounding of Numbers family do? What happens if you set `digits` to a negative number? How about if you set `digits` to something that is not a number? Try it out:
+
+```{webr} 
+
+```
+
+### Function coding style
+There are two ways to define arguments within a function: by name or by position. The *usage* section of a function's help page shows the argument names and the order in which they are expected to occur.
+
+1. You do not need to write the argument names if you put them in the correct order:
+
+```{webr}
+#| edit: false
+round(42.358964, 3)
+```
+
+2. You do not **need** to place arguments in the correct order if you name them. However, it will drive you batty if you do this.
+
+```{webr}
+#| edit: false
+round(digits = 3, x = 42.358964)
+```
+
+3. If you do not name arguments **and** place them in the wrong order, you will get errors or, even worse, incorrect results.
+
+```{webr}
+#| edit: false
+round(3, 42.358964)
+```
+
+4. Most often the two styles will be combined. This is particularly true for dropping the name of the first argument, which generally takes the data you are inputting into the function while naming the other arguments that affect how the function is performed. In this case, writing `x = 42.358964` does not particularly help our understanding of the function, but `digits = 3` does help us remember that we are telling `round()` to round to the 3rd digit.
+
+```{webr}
+#| edit: false
+round(42.358964, digits = 3)
+```
+
+::: {.callout-note collapse="false"}
+## Assignment: `<-` vs `=`
+
+You can also create named objects with the equal sign (`=`) in place of the assignment operator (`<-`). You may see some code that does this. However, the vast majority of R code uses the assignment operator. One benefit of this is that it helps to distinguish assignment of *objects* (`<-`) from the assignment of arguments within functions (`=`).
+
+:::
+
+### Another note on style
+In the R code shown so far there has been spaces between the different elements in a code block. This is *not* necessary. R is *generally* agnostic to white space. The two below examples are the same as far as R is concerned, but I know which one I want to read more.
+
+```{webr}
+#| edit: false
+round(x=42.358964,digits=3)
+round(x = 42.358964, digits = 3)
+```
+
+It may be more typing to use spaces, but you also need to read and understand your own code. Test out spacing in your R code:
+
+```{webr}
+
+```
+
+Spacing *generally* does not matter but try to be consistent and keep things that are supposed to be together, especially the assignment operator: this (`<-`) not this (`< -`). You will also want to avoid putting a space between the function name and the parentheses: `round (42.358964, 3)`.
+
+## Vectors
+So far, the objects we have been dealing with have been limited to one value and have all been numeric. This is fine, but what if we want to make the same calculation on a set of values or find out information about a set of values. We can do this with **vectors**, an ordered set of values that are of the same data type. R was built to work with vectors. In fact, we have already been working with vectors, vectors of length 1.
+
+You can create your own vectors with the `c(...)` function, which stands for combine. `c()` takes any number of values—of the same type—separated by a comma.[^3]
+
+Let's start by making a vector named `households` that contains 5 numbers.
 
 ```{webr}
 #| exercise: vect
-x
+#| envir: vect
+households ______
 ```
 
 ::: { .hint exercise="vect" }
@@ -56,7 +302,7 @@ x
 Make sure to use the assignment operator (`<-`)
 
 ```r
-x <- ______
+households <- ______
 ```
 :::
 :::
@@ -68,69 +314,256 @@ x <- ______
 Vectors are created using the `c()` function, which stands for combine.
 
 ```r
-x <- c(______)
+households <- c(______)
 ```
 :::
 :::
 
 ::: { .solution exercise="vect" }
 ::: { .callout-tip collapse="false"}
-## Fully worked solution:
+## A possible solution:
 
 Values within `c()` are separated by commas.
 
 ```r
-x <- c(1, 3, 5, 7, 9)
+households  <- c(1, 3, 2, 5, 2)
 ```
 
 :::
 :::
 
+We can then use different functions or perform different actions on `households` just as we did with `x` above. For example, we could double the value for each household:
 
-You can also put exercises in a tabset: Make `y` a vector of numbers.
-
-:::: {.panel-tabset}
-
-## Exercise
 
 ```{webr}
-#| exercise: ex_4
-y
+#| exercise: vect_2
+#| envir: vect
+households ______
 ```
 
-## Hint 1
-
-::: { .hint exercise="ex_4"}
-Vectors are created using the `c()`, which stands for combine.
+::: { .solution exercise="vect_2" }
+::: { .callout-tip title="Solution" collapse="false"}
 
 ```r
-y ______ c(______)
+households * 2
 ```
+
+:::
 :::
 
-## Hint 2
-
-::: { .hint exercise="ex_4"}
-Vectors are created using the `c()` function, which stands for combine.
-
-```r
-y <- c(______)
-```
-:::
-
-## Solution
-
-::: { .solution exercise="ex_4" }
-
-```r
-y <- c(1, 3, 5, 7, 9)
-```
-:::
-
-::::
-
-Can run help. Prints out help file. An 
+Or we could use a function to calculate a summary value such as the average of `households` using the `mean()` function.
 
 ```{webr}
-?mean
+#| exercise: vect_3
+#| envir: vect
+
 ```
+
+::: { .solution exercise="vect_3" }
+::: { .callout-tip title="Solution" collapse="false"}
+
+```r
+mean(households)
+```
+
+:::
+:::
+
+Another important characteristic of vectors is their length, which we can find with the aptly named `length()` function. Try it out with `households`.
+
+```{webr}
+#| exercise: vect_4
+#| envir: vect
+
+```
+
+::: { .solution exercise="vect_4" }
+::: { .callout-tip title="Solution" collapse="false"}
+
+```r
+length(households)
+```
+
+:::
+:::
+
+There are a lot of ways in R to create a vector of numbers in R, but a particularly useful way that you will commonly see is with the colon operator (`:`) to create integer from a starting point to an ending point that increase by one.
+
+```{webr}
+#| edit: false
+1:5
+```
+
+Try for yourself. What happens if you create a really long vector?
+
+```{webr}
+
+```
+
+If you want to make more complex vectors of numbers, take a look at the documentation for `seq()` and try it out. The See Also portion of the help page lists other functions you might use.
+
+## Vector types
+So far so good, but we are still only using numbers. What about words? Well, in R, an object that contains words, or really any letters, is known as a *character* vector.
+
+Let's start by trying to print out the word `hello` to the console. *If you get an error, check the hints.*
+
+```{webr}
+#| exercise: hello
+
+```
+
+::: { .hint exercise="hello" }
+::: { .callout-note collapse="false" }
+## You probably got an error
+
+Make sure to read the error message. What do you think you are missing.
+
+:::
+:::
+
+::: { .solution exercise="hello" }
+::: { .callout-tip title="Solution" collapse="false"}
+
+Any set of characters needs to be surrounded by quotation marks.
+
+```r
+"hello"
+```
+
+:::
+:::
+
+::: {.callout-tip collapse="true"}
+## Printing to the console
+
+So far we have printed values to the console in two ways: 
+
+1. Running functions without assigning the output to a named object
+2. Typing out the name of an object and running it.
+
+A third way is to explicitly call the `print()` function. This is usually unnecessary in R where you are usually working interactively.[^4]
+
+:::
+
+Let's take what we learned above and create a character vector object named `historians` in which the number of historians you name is equal to the length of the vector.
+
+```{webr}
+#| exercise: historians
+#| envir: vect
+historians <- ______
+```
+
+::: { .hint exercise="historians" }
+::: { .callout-note collapse="false" }
+## Hint
+
+Make sure to have quotation marks around each historian's name and separate the historians by a comma.
+
+:::
+:::
+
+::: { .solution exercise="historians" }
+::: { .callout-tip title="A possible solution:" collapse="false"}
+Any set of characters needs to be surrounded by quotation marks.
+
+```r
+historians <- c("Natalie Zemon Davis", "Lynn Hunt", "Robert Darnton")
+```
+
+:::
+:::
+
+Some of the functions that we have already used above will work with `historians` but others will not. We can find the length of `historians` but not the mean. Try it out.
+
+```{webr}
+#| exercise: historians_2
+#| envir: vect
+length(historians)
+mean(historians)
+```
+
+If you want to know what type of vector an object is, use the `class()` function. Try it out first on `households` and then on `historians`.
+
+```{webr}
+#| exercise: class_1
+#| envir: vect
+______(households)
+```
+
+```{webr}
+#| exercise: class_2
+#| envir: vect
+______(historians)
+```
+
+### Mixing vector types
+When we defined a vector in R above, we noted that it can only have one data type. So what happens if you mix them? Try it out by creating a new vector that combines `households` and `historians`. You do not need to assign it a name.
+
+```{webr}
+#| exercise: mixed
+#| envir: vect
+c(______)
+```
+
+::: { .solution exercise="assignment" }
+::: { .callout-tip title="Solution" collapse="false"}
+You can use `c()` on vectors.
+
+```r
+c(households, historians)
+```
+
+Try adding more instances of `historians` or `households` within `c()`.
+
+:::
+:::
+
+Notice that there are now quotation marks around the numbers. They are now characters. R combines different vector types by coercing the more specific type—in this case the numeric class—to the less specific type—in this case to character class.
+
+### Logical vectors
+The last main vector type that type that should be mentioned in this intro to working with R worksheet is `logical` made up of `TRUE` and `FALSE`.
+
+```{webr}
+#| edit: false
+c(TRUE, TRUE, FALSE, TRUE, FALSE)
+```
+
+One of the primary ways to create a logical vector is by using conditionals. For instance choose a value for the conditional statement below.
+
+```{webr}
+#| exercise: logical
+c(10, 3, 16, 10, 2, 4) > ______
+```
+
+## Missing data
+Missing values are represented in R by `NA`. Let's create a numeric vector named `rooms` that has some missing values.
+
+```{webr}
+#| edit: false
+rooms <- c(2, 4, 3, NA, 5, 2, NA)
+```
+
+What happens when you try to run a summary function such as `mean()` or `sum()`or `max()` or `min()` on `rooms`?
+
+```{webr}
+#| exercise: 
+______(rooms)
+```
+
+If there are missing values in a numeric vector, R cannot (or chooses not to) make summative mathematical calculations on a vector. R cannot know what the missing values should be, so there uis no way to know what is the maximum or minimum value. To make the calculations you need to explicitly remove `NA`s with the `na.rm` argument. Try the summary functions you used above but this time add `na.rm = TRUE`.
+
+```{webr}
+______(rooms)
+```
+
+This feature, the need to replace the default of `na.rm = FALSE` with `na.rm = TRUE`, makes sure that you acknowledge the presence of missing data. It is features like this that show how R has been designed to work with the realities of data.
+
+
+
+[^1]: R is a [REPL (read-eval-print loop)](https://en.wikipedia.org/wiki/Read–eval–print_loop) based language. It is primarily focused on running interactively, one line at a time.
+
+[^2]: For more on naming objects see [*R for Data Science*](https://r4ds.hadley.nz/workflow-style.html#names) and the [Tidyverse style guide](https://style.tidyverse.org/syntax.html#sec-objectnames).
+
+[^3]: More on data types in the next section.
+
+[^4]: Note that in these worksheets we use the word interactively in two slightly different ways. It is interactive because you can work in the browser, but R is also designed to be an interactive programming language that you can run one code block at a time.

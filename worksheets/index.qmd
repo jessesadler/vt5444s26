@@ -11,7 +11,7 @@ webr:
 
 This section contains interactive worksheets that we will work through during class to get a bit of practice working with R before turning to using R on your own computer within [RStudio](https://posit.co/products/open-source/rstudio). These worksheets provide a sort of coding playground that you can always come back to if you want some practice. Note that more complex worksheets may take a moment for the everything to load.
 
-An interactive code section looks like this. Make changes in the text box and use the [blue Run]{style="color:blue;"} button to run the code. Change the code and run it as many times as you want. The original text can be reset with the `Start Over` button.
+An interactive code section looks like this. Make changes in the text box and use the blue `Run Code` button to run the code. The output, if any, will be printed below the code. Change the code and run it as many times as you want. The original text can be reset with the `Start Over` button.
 
 
 ```{webr} 
@@ -43,6 +43,7 @@ Make sure to delete the underscores before entering the correct number.
 ::: { .solution exercise="ex_1" }
 ::: { .callout-tip collapse="false" }
 ## Solution
+You can copy the code in the solution by mousing over the far right side of the solution code.
 
 ```r
 1 + 2 + 3 + 4
