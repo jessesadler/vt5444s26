@@ -1,0 +1,216 @@
+---
+title: "2. Working with data frames in R"
+format: 
+  live-html:
+    number-sections: true
+    number-depth: 2
+engine: knitr
+webr:
+  packages:
+    - tibble
+    - readr
+    - dplyr
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+In [Getting started with R](01-worksheet.qmd) we focused on running code and working with vectors. Vectors make up the foundation of data in R, but generally we want to work with different types of data that are linked together. We can do this with data frames. This is the type of data you will be familiar with from spreadsheets; data made up of rows and columns. Behind the scenes data frames are made up of a series of vectors (the columns) of the same length (each element is a part of a row). Columns are often referred to in R as *variables*. That means that columns must be of the same data type.
+
+## A note on packages
+In [Getting started with R](01-worksheet.qmd) we encountered our first functions. Functions come from packages. There are a base set of packages that come with R and a subset of these are loaded every time you start R. These packages and the functions they contain are known as **base R**; they are what we have been using. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. This is great, but it also adds complexity. There is (essentially) *always* multiple ways to accomplish the same task.
+
+We will be using many of these extra packages during the course. Most extensively, we will be using the [tidyverse](https://tidyverse.org) set of packages. The **tidyverse** provides an alternative way to work with data from **base R**, though the two are always used together. It is not an either or situation. Whereas a data frame in base R is called a `data.frame`, in the tidyverse it is a `tibble`.[^1] These two data types are interchangeable, but there are slight differences. The most notable difference is the way the data frames are printed to the console.
+
+### To use a package you need to load it
+Everytime you want to use a package that is not in base R in a session, you need to load it. Think of it this way. You download a package once; you load it in each session. Let's do that now with two packages from the tidyverse set of packages: `tibble` to create data frames, `readr` to read in data, and `dplyr` to look at parts of a data frame.[^2] You load a package with the `library()` function.
+
+```{webr}
+#| edit: false
+library(tibble)
+library(readr)
+```
+
+## Creating a data frame
+Let's create our first data frame using the `tibble` package using the aptly named `tibble()` function. Let's do one that has columns for names, age, and historical period of study.
+
+```{webr}
+tibble(
+  name = c("Beth", "Charles", "Franz", "Steph"),
+  age = c(29, 21, 32, 25),
+  period = c("Modern", "Ancient", "Renaissance", "Medieval")
+)
+```
+
+Note the structure of how you create a data frame (and the coding style). The structure consists of a series of vectors, separated by commas, that are set to names (with the equal sign), which become the names set to columns.
+
+Note too how a `tibble` is printed:
+
+- We see the dimensions of the data frame. In this case four rows and three columns (4x3).
+- Below each column name, the data type of the column appears between angled brackets.
+
+::: {.callout-note}
+## Numeric vectors
+The age column is represented as `dbl`, which stands for double-point precision numbers or doubles. Without getting into the mathematical foundations of doubles or [floating point numbers](https://en.wikipedia.org/wiki/Floating-point_arithmetic), they are numbers that can have decimals. The other primary numeric type in R is integer. R will default to using doubles because they are more permissive.
+:::
+
+*Make your own data frame* that mimics a type of data you would like to use this semester. Just make a couple of columns and rows.
+
+```{webr} 
+tibble(
+
+)
+```
+
+## Data from R or packages
+R comes with some built-in data sets and many packages come with datasets. In fact, there are R packages designed to package data sets; see the R packages section of [Data for DH](../resources/datasets.qmd#r-data-packages) under the Resources tab.
+
+The Palmer penguins dataset is a new built in dataset in R that was used to create a plot in the [home page for this section](index.qmd). We can access the dataset by typing `penguins`. Let's first start by seeing the class of the `penguins` object.
+
+```{webr}
+class(penguins)
+```
+
+This is a base R `data.frame` object. Let's see what it looks like when we print it out to the console. Be prepared to scroll!
+
+```{webr}
+penguins
+```
+
+Did you make it all the way down here? By default `data.frame`s print out all rows and columns. Now we can see the difference between `data.frame`s and `tibble`s by changing from a `data.frame` to a `tibble` with the `as_tibble()` function.
+
+```{webr}
+as_tibble(penguins)
+```
+
+Now you can see that `tibble`s by defualt only prints out the first 10 rows of the data frame and as many columns as fits in the console.
+
+## Reading in data
+The most common way you will access a data in the form of a data frame is by reading it in to your R session.
+
+Let's read in data using a url to a dataset on GitHUb with the `read_csv()` function. We use `read_csv()` because the data is in a csv or [comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file. This will read the data in as a `tibble` and we will assign it to the name `interviews`.
+
+```{webr}
+interviews <- read_csv("https://raw.githubusercontent.com/datacarpentry/r-socialsci/main/episodes/data/SAFI_clean.csv")
+```
+
+Let's look at the output we get in reading this data into our session. When something is printed to the console, it is always good practice to read what it says. Sometimes it shows the data, sometimes an error that needs to be fixed, sometimes a warning that we might want to look into, or, as in this case, a message that provides information.
+
+Firstly, we learn that `read_csv()` used the `url()` function to get the data. That is nice but does not really affect us. Next, `read_csv()` provides information about the data we loaded. and how it parsed the different columns. The data frame has 131 rows and 14 columns. There are 7 character columns, 6 numeric columns , and one `dttm` vector, which is short for date time. We also see a message about how we can get more details or quite the message.
+
+Let's print `interviews` to the console to see what it looks like.
+
+```{webr}
+interviews
+```
+
+We see that `read_csv()` reads in data as a `tibble`. You can use the similarly named `read.csv()` (*note the `_` vs the `.`*) to read in the data as a `data.frame`. This might also be the first time you see how `tibble`s treat columns that do not fit within the console.
+
+## Inspecting a data frame
+We will go into more detail about *doing* things with data frames later. For now, let's concentrate on some functions that help us look at the data frame we have read in to our session.
+
+A really useful function when dealing with any data object in R is `str()` which stands for structure.
+
+```{webr}
+str(interviews)
+```
+
+With a tibble that we read in with `read_csv()` we get two sets of overlapping information. We first get the data frame turned on its side (columns now appear as rows), which highlights the column names and variable types. Secondly, it shows how the columns were parsed by `read_csv()`.
+
+You can get a similar view of the data frame turned on its side with the `glimpse()` function.
+
+```{webr}
+glimpse(interviews)
+```
+
+This is great, but you might not need all this information. Say you have forgotten the names of the columns in your data frame. It happens all the time. You can use the `names()` function.
+
+```{webr}
+names(interviews)
+```
+
+Another way to get a sense of the data contained in a data frame is to get some basic summary statistics on each of the columns with the `summary()` function. Currently, this is not all that useful for character columns, but you do get an overview of numeric columns.[^3]
+
+```{webr}
+summary(interviews)
+```
+
+You might also want to look at different rows of the data frame. `head()` and `tail()` by default show, respectively, the first and last six rows. Use the `n` argument to change how many rows to look at.
+
+```{webr}
+#| exercise: head-tail
+______(interviews, n = ______)
+```
+
+::: { .hint exercise="head-tail" }
+::: { .callout-note title="Hint" collapse="false" }
+Change the default value of `n`. The default behavior looks like:
+
+```r
+head(x, n = 6)
+```
+
+:::
+:::
+
+::: { .solution exercise="head-tail" }
+::: { .callout-tip collapse="false"}
+## A possible solution
+Use the `n` argument to choose the number of rows to print.
+
+```r
+head(interviews, n = 15)
+tail(interviews, n = 4)
+```
+:::
+:::
+
+You can view a random subset of rows using the `slice_sample()` function that also uses an `n` argument to choose the number of rows to sample.
+
+```{webr}
+slice_sample(interviews, n = ______)
+```
+
+Check out the [documentation for `slice_smaple()`](https://dplyr.tidyverse.org/reference/slice.html) to see other functions you might use.
+
+## Conclusion: back to vectors
+Let's conclude this introduction to working with data frames in R by returning full circle to vectors. There may be times when you want to concentrate on the data in a single column and you do not need to deal with the whole data frame. You can extract a column from a data frame and turn it back into a vector using the `$` operator. The `$` is placed after the name of the data frame and before the column name you want to extract. No spaces here. Try it out. Maybe run a summary statistic function on the vector.
+
+```{webr}
+#| exercise: extract
+interviews$______
+```
+
+::: { .hint exercise="extract" }
+::: { .callout-note title="Hint" collapse="false" }
+If you have forgotten the names of the columns in `interviews`, scroll back up or run:
+
+```r
+names(interviews)
+```
+
+:::
+:::
+
+::: { .solution exercise="extract" }
+::: { .callout-tip collapse="false"}
+## A possible solution
+
+```r
+interviews$years_liv
+```
+
+You can run a summary statistic on the vector, such as the average years lived in the village.
+
+```r
+mean(interviews$years_liv)
+```
+
+:::
+:::
+
+
+[^1]: In this class data frame and tibble will be used somewhat interchangeably. However, in this worksheet I will try to be consistent in the language that is used. A **data frame** is the general type of tabular data found in spreadsheets that we can read into R. A `tibble` is the type of data frame used by the [tidyverse](https://tidyverse.org). A `data.frame` is the **base R** type of data frame.
+
+[^2]: Generally we will load this packages by loading the whole tidyverse package (`library(tidyverse)`), but in these interactive worksheets it is faster to just load the individual packages we will use for each session.
+
+[^3]: `summary()` may provide some more information about character columns in the next version of R.

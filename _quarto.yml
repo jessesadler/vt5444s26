@@ -86,6 +86,8 @@ website:
           contents:
             - text: "1: Getting started with R"
               file: worksheets/01-worksheet.qmd
+            - text: "2. Data frames in R"
+              file: worksheets/02-worksheet.qmd
     
     - title: "Resources"
       style: "docked"
