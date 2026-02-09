@@ -38,6 +38,7 @@ The assignments this week are examples of material that should be placed in your
     - Set up folder structure for the course.
 - Discussion: Tidy data in the humanities.
 - Worksheet: [Getting started with R](../worksheets/01-worksheet.qmd)
+- Worksheet: [Working with data frames in R](../worksheets/02-worksheet.qmd)
 
 ## Resources
 - [Data Carpentry - Data Organization in Spreadsheets for Social Scientists](https://datacarpentry.org/spreadsheets-socialsci/)

@@ -53,7 +53,7 @@ See also [Working with plain text](plaintext.qmd#why-write-in-plain-text).
 3. Zed is set up to work with [Markdown](https://zed.dev/docs/languages/markdown) by default.
 
 ### BBEdit
-BBEdit is the easiest to get up and going and should be relatively familiar looking if you are used to MacOS.
+BBEdit is the easiest to get up and going and should be relatively familiar looking if you are used to macOS.
 
 1. [Download BBEdit](https://www.barebones.com/products/bbedit/index.html) using the Free Download link.
     - The [Free mode](https://www.barebones.com/products/bbedit/download.html) is quite extensive.

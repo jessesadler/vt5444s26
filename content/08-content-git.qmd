@@ -7,6 +7,9 @@ format: html
 *Setting aside R for the week, this week we will learn to use git and GitHub to develop reproducible workflows and get our work available on the internet.*
 
 ## Reading
+- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz) (2023).
+    - Chapter 20: Spreadsheets
+    - Chapter 28: Quarto
 - Jenny Bryan, "Excuse me, do you have a moment to talk about version control?," *PeerJ Preprints* (2017) <https://peerj.com/preprints/3159v2>.
 
 ## Assignment

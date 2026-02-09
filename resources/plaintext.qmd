@@ -29,4 +29,4 @@ There is currently a renaissance in writing apps that leverage plain text and Ma
 
 - [Obsidian](https://obsidian.md) is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.
 - [Tangent Notes](https://www.tangentnotes.com) is an open source alternative.
-- [iA Writer](https://ia.net/writer) is a paid application available for Windows and MacOS, as well as iOS. It is a very good looking simple application for writing Markdown.
+- [iA Writer](https://ia.net/writer) is a paid application available for Windows and macOS, as well as iOS. It is a very good looking simple application for writing Markdown.

@@ -7,10 +7,16 @@ format: html
 *This week we get into working with data in R, demonstrating how to import data and wrangle it using the tidyverse. We will also introduce the use of quarto documents for writing R code.*
 
 ## Reading
+- Kieran Healy, [*Data Visualization: A Practical Introduction*](https://socviz.co), Chapter 3: Make a plot.
 - Hadley Wickham et al., "Welcome to the Tidyverse," *Journal of Open Source Software* 4, no. 43 (2019): 1686, <https://doi.org/10.21105/joss.01686>.
+- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz) (2023).
+    - Chapter 1: Data visualization
+    - Chapters 2 and 6 on working with R in RStudio.
+    - If you want to explore more on visualization with `ggplot2`, look at chapters 9, 10, and 11.
 
 ## Assignment
-
+- Create a [GitHub account](https://github.com). You can follow [these instructions](https://swcarpentry.github.io/git-novice/#creating-a-github-account) from the Carpentries. Choose a username that you would be ok sharing. Mine is jessesadler, and so I can be found at <https://github.com/jessesadler>.
+    - Look through the [course website repository](https://github.com/jessesadler/vt5444s26) and [file an issue](https://github.com/jessesadler/vt5444s26/issues) about something that could be improved or where there is a mistake. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.
 
 ## Activities
 
