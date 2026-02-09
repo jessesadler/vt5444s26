@@ -111,8 +111,14 @@ website:
               file: resources/plaintext.qmd
             - text: "Markdown Syntax Guide"
               file: resources/markdown-syntax.qmd
-            - text: "Text editors"
+            - text: "Text Editors"
               file: resources/text-editors.qmd
+        - section: "R"
+          contents:
+            - text: "Installing R and RStudio"
+              file: resources/install.qmd
+            - text: "Setting up RStudio"
+              file: resources/rstudio-setup.qmd
 
   page-footer:
     right: |

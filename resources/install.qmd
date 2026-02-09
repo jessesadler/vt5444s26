@@ -1,0 +1,30 @@
+---
+title: "Installing R and RStudio"
+format: html
+---
+
+## Installing R
+Let's start by download R, the programming language.
+
+1. Go to the CRAN (Collective R Archive Network) website: <https://cran.r-project.org/>
+2. Click on the link in the first box of text that corresponds to your operating system.
+3. Download the latest version of R (currently 4.5.2 as of January 2026).
+    - For **macOS**, select the `.pkg` file that corresponds to your processor, likely Apple silicon but possibly Intel if you have an older computer.
+    - For **Windows**, select the links from the first line, either `base` or `install R for the first time`. They go to the same place. Then select the `Download R for Windows` link with the latest version of R.
+4. Double click on the downloaded file (check your `Downloads` folder). Click Yes through all the prompts to install like any other program.
+5. If you use **macOS**, it is a good idea to [download and install XQuartz](https://www.xquartz.org/). You do not need to do this on Windows.
+
+## Download RStudio
+Next, let's download RStudio, the application in which we will run R.
+
+1. Go to the RStudio page on Posit's website: <https://posit.co/download/rstudio-desktop/>
+2. Follow step 2: Install RStudio since you have already complete step 1: Install R. Choose your operating system.
+3. Select the `Download RStudio for Desktop` button.
+4. Install by double clicking on the downloaded file and accept any prompts.
+5. Run RStudio to make sure that everything succeeded.
+
+When you open RStudio, it should look something like this:
+
+![RStudio at startup](../files/img/rstudio-start.png){fig-alt="A screen shot of the RStudio application with three panels."}
+
+Next, check out the [Setting up RStudio](rstudio-setup.qmd) for more information on getting the application and your R environment set up for success.

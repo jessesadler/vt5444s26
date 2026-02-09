@@ -1,0 +1,127 @@
+---
+title: "Setting up RStudio for success"
+format: html
+---
+
+This page provides an overview for setting up and working in RStudio that will set you up for success in creating a reproducible workflow for data analysis in R.
+
+## What are R and RStudio?
+It is important to clearly distinguish between [R](https://www.r-project.org) and [RStudio](https://posit.co/products/open-source/rstudio) because they can easily become intertwined. In short:
+
+- **R** is the programming language
+- **RStudio** is the application in which we will write and run R code. It is the integrated developer environment (IDE) most closely associated with R.
+
+It is possible to run R in many different applications and environments. In fact, Posit, the company behind RStudio is currently building a new IDE for data analysis called [Positron](https://positron.posit.co). You can also run R in the command line or in another IDE such as [Visual Studio Code](https://code.visualstudio.com/docs/languages/r).
+
+![An R session running in the Terminal app](../files/img/r-in-terminal.png){width=50% fig-alt="A screen shot of R running in the Terminal application."}
+
+We will use RStudio because it is a mature, open source application that provides many features that helps people write good R code and is closely integrated with [Quarto](https://quarto.org). It is also the most widely used IDE for R.
+
+## Navigating RStudio
+When you open up RStudio for the first time you will be presented with a three panel view: 
+
+- The left panel is the **console**. This is where you write or send code, run it, and see any output. You type your code after the **prompt**, which in R is `>`.
+- The upper-right panel shows any objects you create in your session.
+- The bottom-right panel shows your project files but also has tabs to show plots you make, packages you have installed, and a viewer for documentation.
+
+![RStudio at startup with three panels: console, environment, and files](../files/img/rstudio-start-annotated.png){fig-alt="A screen shot of the RStudio application with three panels."}
+
+Type in your first R command to make sure everything is working. Type out a mathematical calculation and press `Return` or `Enter` to run the line of code.
+
+### The editor panel
+When you create a new R script or any other type of file, a fourth panel will appear in the upper right and the console will shrink to the bottom-right position. You can create a new R script (this is a text file that ends with the extension `.R`) in many ways.
+
+- Go to File -> New File -> R Script
+- Click on the plus sign with the blank paper behind it in the upper-right corner of the application and select R Script.
+- Similarly, click on the plus sign with the blank paper behind it in the upper-left corner of the Files panel.
+- Or with a keyboard shortcut: `Cmd/Ctrl + Shift + N`.
+
+![RStudio with all four panels: editor, console, environment, and files](../files/img/rstudio-editor-panel.png){fig-alt="A screen shot of the RStudio application with four panels."}
+
+## The workflow
+The basic workflow for RStudio is to work on writing and running code in the left two panels and inspect aspects of what you are doing or what you have created in the right two panels.[^1] Let's concentrate on the two panels on the left.
+
+The **console** can be thought of as where the action happens. It is where code is actually run and where any outputs will be printed. However, the console is also *ephemeral*. You run code block by code block, pushing each line of code further and further up into the console's history, out of sight and out of mind. You can look at your history, but, practically speaking, there is no good, clear way to track what you have done just by using the console.
+
+This is where the **editor panel** comes in. The editor panel shows text documents in which you will save the code and any documentation or explanations that you want to save. We will primarily be working with R scripts and Quarto documents in this course. Here, we will stick to R scripts.
+
+### Scripts and reproducibility
+Scripts are at the foundation of reproducibility. They contain the code that performed a certain set of analysis or created a visualization that can be run by you or someone else later. Unlike the console, scripts are meant to be permanent or at least record what you have done. You save scripts, but you do not save what happened in the console.[^2]
+
+An **R script** is a plain text document in which everything that is typed is assumed to be R code that will be sent to the console. To run code from a script or send it to the console you cannot just type Return/Enter. That moves you to the next line. Instead, you need to use `Cmd + Return` or `Ctrl + Enter`. If you want to write comments in a script to take notes or tell future you or any collaborators why you did something, you need to place a hashtag `#` before it. Anything after `#` will not be run as code.
+
+- Send code to the console from a script: `Cmd + Return` or `Ctrl + Enter`
+- Comment: `#`
+
+Try it out for yourself.
+
+This distinction between *permanent* and *ephemeral* also translates to the panels on the right. The files pane (bottom right) shows the scripts you create and any data or visualization you save. These are permanent. The environment panel shows the objects created in a session by running code in the console. These objects are ephemeral. They exist and can be used in this session, but they can always be recreated from the script.
+
+The script trumps the environment panel; it is the source of truth. The code that creates the object is much more important than the object itself. Think of it this way, if you have it right in the environment but wrong in a script, it will not do you much good when you come back to your code after a break and find that things are out of whack.
+
+![The editor and files panels are the primary sources of truth. The console and environment panels represent the ephemeral objects created in a session.](../files/img/rstudio-permanence.png){fig-alt="A screen shot of the RStudio application showing that the editor and file panels are permanent data and the console and environment panels hold ephemeral data."}
+
+## Setting up RStudio for reproducibility
+We need to make some important changes to the default settings in RStudio to ensure that R scripts remain the source of truth of your analysis not your environment. Go to Tools -> Global Options and uncheck Restore .RData into workspace at startup and set Save workspace to .RData on exit to `Never`.
+
+![RStudio Global Options: Set these options for the Workspace](../files/img/rstudio-workspace.png){width=50% fig-alt="A screen shot of the Settings window for RStudio."}
+
+Let's see what this does. Make sure that you have created objects in your environment. Then, restart your session. You can do this by going to the Session menu -> Restart R. Your environment panel should be empty now. This might seem like it is painful, but it is short-term pain for long-term gain. It will teach you to keep what you want to save in your R script so that you can always recreate objects or rerun analysis later.
+
+In fact, running `Restart R` and then running your script, either one line at a time (hit `Cmd + Return` or `Ctrl + Enter` over and over) or `Cmd/Ctrl + Shift + S` to re-run the entire script, is a good way to ensure that your script is correct. Better to find out now if there is a problem than weeks or months down the road.
+
+## Packages
+After getting RStudio set up, the next step is to install the main packages we will use in the course. R comes with a preinstalled set of packages known as **base R**. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. Generally you will install packages through the central package repository called [CRAN (The Comprehensive R Archive Network)](https://cran.r-project.org), which is also where you downloaded R. There are over 23,000 packages on CRAN.[^3]
+
+### Installing packages
+Most importantly for this class, we need to install the [tidyverse](https://tidyverse.org) set of packages. There are two ways to do this. Either through a function on the console or using the RStudio [GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface). I generally prefer to use the console.
+
+1. You can install packages with the `install.packages()` function with the names of the packages you want to install in a character vector. Let's start by just installing the tidyverse package.
+
+```r
+install.packages("tidyverse")
+```
+
+2. To use the graphical interface to install packages:
+    - Select the Packages tab in the Files panel on the bottom right of RStudio.
+    - Click on Install button on the top left of the panel.
+    - This will open a popup dialogue. Type in the packages you want to install—in this case `tidyverse`—and then click Install.
+    - Note that RStudio will actually run the command `install.packages("tidyverse")` in the console.
+
+![Installing packages with the Packages panel in RStudio](../files/img/install-packages.png){fig-alt="A screen shot of the RStudio application showing the process to install packages using the GUI interface."}
+
+### Using packages
+The tidyverse set of packages is now installed, but to actually use the functions from the package in an R session you need to load the package. This is done with `library()`. Try it for yourself.
+
+```r
+library(tidyverse)
+```
+
+You do not need to put quotation marks around `tidyverse` because the `library()` function knows where to look for something called `tidyverse`. You can put quotation marks around it if you want to. You should get an output in your console that looks like this:
+
+![Output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages](../files/img/load-tidyverse.png){fig-alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages."}
+
+You see a list of the nine core tidyverse packages and their versions: dplyr, forcats, ggplot2, lubridate, purrr, readr, stringr, tibble, tidyr. You will also see a message that there are conflicts. This sounds scary but is expected behavior. This message tells us that dplyr has functions called `filter()` and `lag()`, which are also names for functions in base R. When you use these function after loading the tidyverse, you will use the dplyr version, which is what we want.
+
+Remember, because we set up RStudio for reproducibility, you need to run `library(tidyverse)` every time you begin a new session. Therefore, you should load the packages you will use at the start of your script. Writing `library(tidyverse)` at the top of each script is a good practice to begin with.
+
+### Updating packages
+Packages are often changing, fixing bugs (and adding some) and bringing new features so it is a good idea to update your packages every once in a while.[^4] Again, there is a way to do this in the console and through the Packages panel.
+
+1. Run `update.packages()` and choose `y` to update the packages.
+2. To use the graphical interface to update packages:
+    - Click on Update button on the top left of the Packages tab of the Files panel. It is right next to Install.
+    - You can click the Select All button on the bottom right of the dialogue window that pops up.
+    - Then Install Updates.
+
+![Updating packages with the Packages panel in RStudio](../files/img/update-packages.png){fig-alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red."}
+
+
+
+[^1]: You can move the panels around in Tools -> Global Options if you want to.
+
+[^2]: This is largely true if a bit overdramatic. The History tab shows the code blocks you have run.
+
+[^3]: You can also install packages from other repositories such as [R Universe](https://r-universe.dev/search) or on [GitHub](https://github.com), but we will not need to do that for this course. The process for installing from these other places is similar.
+
+[^4]: How often is up to you. Packages are generally stable, so I find there is usually little downside to updating. I update packages once a week but once a month would be plenty frequent.
