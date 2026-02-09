@@ -30,7 +30,14 @@ You can multiply (`*`), divide (`/`), use exponents (`^`), and other mathematica
 
 ```
 
-When we run code like this that prints out the answer, we say that it prints out to the *console*.
+When we run code like this that prints out the answer, we say that it prints out to the *console*. Everything you write in or send to the console will be interpreted as code. If you want to write some notes for yourself or collaborators, you need to use comments. R will ignore any text after `#` in a line.
+
+```{webr}
+# This is a comment
+8 * 24 # Comment at the end of a line of code
+```
+
+Comments are not that important in an interactive worksheet, but they will become important when you start writing your own R scripts.
 
 ## Creating objects
 Printing out values is nice, but you will probably want to save values to use elsewhere in your script. You save values, by assigning it to a *name* or *variable*. This creates an *object* that is stored in your coding environment. You assign a name to an object with the *assignment operator* (`<-`). Run the code below. What difference do you notice?

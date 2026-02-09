@@ -8,7 +8,7 @@ format: html
 
 ## Reading
 - Kieran Healy, [*Data Visualization: A Practical Introduction*](https://socviz.co) (Princeton University Press, 2018), Chapter 1: Look at data.
-- Claus Wilke, [*Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/) (O'Reilly 2019), Chapters 2 and 5.
+- Claus Wilke, [*Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/) (O'Reilly, 2019), Chapters 2 and 5.
 - John Theibault, "Visualizations and Historical Arguments," in *Writing History in the Digital Age*, ed. Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), <https://doi.org/10.3998/dh.12230987.0001.001>, 173–185.
 
 ## Watch
@@ -25,16 +25,18 @@ format: html
 ## Assignment
 - Download R and RStudio
     - See [Resources: Installing R and RStudio](../resources/install.qmd) for details.
+    - If you want to do more to set up RStudio, go through [Resources: Setting up RStudio](../resources/rstudio-setup.qmd). We will go over this next week in class so do not feel obligated.
 - Commonplace book writing: Reflect on the use of visualization in the humanities.
 
 ## Activities
 - Visit from [Bipasha Banerjee](https://bipasha-banerjee.github.io), AI Research Scientist at University Libraries.
 - Worksheet: Getting started with visualization 
-- Intro to RStudio
+- Intro to RStudio and getting RStudio set up for success
 - Visualization with `ggplot2` in RStudio
 
 ## Resources
-See Resources pages for [Installing R and RStudio](../resources/install.qmd) RStudio and visualization.
+- [Resources: Installing R and RStudio](../resources/install.qmd)
+- [Resources: Setting up RStudio](../resources/rstudio-setup.qmd)
 
 ### Working in RStudio
 - [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz), chapters 2, 6, and 8.
