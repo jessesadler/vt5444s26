@@ -370,7 +370,7 @@
     "href": "content/05-content-ggplot.html#reading",
     "title": "Visualizing data with ggplot2",
     "section": "Reading",
-    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapter 1: Look at data.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.\nJohn Theibault, “Visualizations and Historical Arguments,” in Writing History in the Digital Age, ed. Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), https://doi.org/10.3998/dh.12230987.0001.001, 173–185.",
+    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapter 1: Look at data.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly, 2019), Chapters 2 and 5.\nJohn Theibault, “Visualizations and Historical Arguments,” in Writing History in the Digital Age, ed. Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), https://doi.org/10.3998/dh.12230987.0001.001, 173–185.",
     "crumbs": [
       "Content",
       "Topics",
@@ -394,7 +394,7 @@
     "href": "content/05-content-ggplot.html#assignment",
     "title": "Visualizing data with ggplot2",
     "section": "Assignment",
-    "text": "Assignment\n\nDownload R and RStudio\n\nSee Resources: Installing R and RStudio for details.\n\nCommonplace book writing: Reflect on the use of visualization in the humanities.",
+    "text": "Assignment\n\nDownload R and RStudio\n\nSee Resources: Installing R and RStudio for details.\nIf you want to do more to set up RStudio, go through Resources: Setting up RStudio. We will go over this next week in class so do not feel obligated.\n\nCommonplace book writing: Reflect on the use of visualization in the humanities.",
     "crumbs": [
       "Content",
       "Topics",
@@ -406,7 +406,7 @@
     "href": "content/05-content-ggplot.html#activities",
     "title": "Visualizing data with ggplot2",
     "section": "Activities",
-    "text": "Activities\n\nVisit from Bipasha Banerjee, AI Research Scientist at University Libraries.\nWorksheet: Getting started with visualization\nIntro to RStudio\nVisualization with ggplot2 in RStudio",
+    "text": "Activities\n\nVisit from Bipasha Banerjee, AI Research Scientist at University Libraries.\nWorksheet: Getting started with visualization\nIntro to RStudio and getting RStudio set up for success\nVisualization with ggplot2 in RStudio",
     "crumbs": [
       "Content",
       "Topics",
@@ -418,7 +418,7 @@
     "href": "content/05-content-ggplot.html#resources",
     "title": "Visualizing data with ggplot2",
     "section": "Resources",
-    "text": "Resources\nSee Resources pages for Installing R and RStudio RStudio and visualization.\n\nWorking in RStudio\n\nWickham et al., R for Data Science, chapters 2, 6, and 8.\nRStudio User Guide\n\n\n\nVisualization\nMake sure to look at the ggplot2 website. It is full of great documentation and examples, including a ggplot2 cheatsheet.\n\nThe Royal Statistical Society Data visualization Guide\nWickham et al., R for Data Science, chapters 1, 9, 10, and 11.\nIf you want some inspiration, look at Nicola Rennie’s visualization projects.",
+    "text": "Resources\n\nResources: Installing R and RStudio\nResources: Setting up RStudio\n\n\nWorking in RStudio\n\nWickham et al., R for Data Science, chapters 2, 6, and 8.\nRStudio User Guide\n\n\n\nVisualization\nMake sure to look at the ggplot2 website. It is full of great documentation and examples, including a ggplot2 cheatsheet.\n\nThe Royal Statistical Society Data visualization Guide\nWickham et al., R for Data Science, chapters 1, 9, 10, and 11.\nIf you want some inspiration, look at Nicola Rennie’s visualization projects.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1088,7 +1088,7 @@
     "href": "worksheets/01-worksheet.html#r-is-a-calculator",
     "title": "1. Getting started with R",
     "section": "1 R is a calculator",
-    "text": "1 R is a calculator\nYou can use R as a calculator. If you write a mathematical expression and run it, the answer will be printed out. Run the code below and change it to see what you can do.\n\n\n\n\n\n\n\n\nYou can multiply (*), divide (/), use exponents (^), and other mathematical expressions, including using parentheses for order of operations. Create your own mathematical calculation below.\n\n\n\n\n\n\n\n\nWhen we run code like this that prints out the answer, we say that it prints out to the console.",
+    "text": "1 R is a calculator\nYou can use R as a calculator. If you write a mathematical expression and run it, the answer will be printed out. Run the code below and change it to see what you can do.\n\n\n\n\n\n\n\n\nYou can multiply (*), divide (/), use exponents (^), and other mathematical expressions, including using parentheses for order of operations. Create your own mathematical calculation below.\n\n\n\n\n\n\n\n\nWhen we run code like this that prints out the answer, we say that it prints out to the console. Everything you write in or send to the console will be interpreted as code. If you want to write some notes for yourself or collaborators, you need to use comments. R will ignore any text after # in a line.\n\n\n\n\n\n\n\n\nComments are not that important in an interactive worksheet, but they will become important when you start writing your own R scripts.",
     "crumbs": [
       "Worksheets",
       "How to",
