@@ -250,7 +250,7 @@
     "href": "content/06-content-dplyr.html#reading",
     "title": "Wrangling data",
     "section": "Reading",
-    "text": "Reading\n\nHadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, https://doi.org/10.21105/joss.01686.",
+    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction, Chapter 3: Make a plot.\nHadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, https://doi.org/10.21105/joss.01686.\nHadley Wickham et al., R for Data Science (2023).\n\nChapter 1: Data visualization\nChapters 2 and 6 on working with R in RStudio.\nIf you want to explore more on visualization with ggplot2, look at chapters 9, 10, and 11.",
     "crumbs": [
       "Content",
       "Topics",
@@ -262,7 +262,7 @@
     "href": "content/06-content-dplyr.html#assignment",
     "title": "Wrangling data",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nCreate a GitHub account. You can follow these instructions from the Carpentries. Choose a username that you would be ok sharing. Mine is jessesadler, and so I can be found at https://github.com/jessesadler.\n\nLook through the course website repository and file an issue about something that could be improved or where there is a mistake. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.",
     "crumbs": [
       "Content",
       "Topics",
@@ -370,7 +370,7 @@
     "href": "content/05-content-ggplot.html#reading",
     "title": "Visualizing data with ggplot2",
     "section": "Reading",
-    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapters 1 and 3.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.\nJohn Theibault, “Visualizations and Historical Arguments,” in Writing History in the Digital Age, ed. Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), https://doi.org/10.3998/dh.12230987.0001.001, 173–185.",
+    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018), Chapter 1: Look at data.\nClaus Wilke, Fundamentals of Data Visualization (O’Reilly 2019), Chapters 2 and 5.\nJohn Theibault, “Visualizations and Historical Arguments,” in Writing History in the Digital Age, ed. Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), https://doi.org/10.3998/dh.12230987.0001.001, 173–185.",
     "crumbs": [
       "Content",
       "Topics",
@@ -394,7 +394,7 @@
     "href": "content/05-content-ggplot.html#assignment",
     "title": "Visualizing data with ggplot2",
     "section": "Assignment",
-    "text": "Assignment\n\nCreate a GitHub account. You can follow these instructions from the Carpentries. Choose a username that you would be ok sharing. Mine is jessesadler, and so I can be found at https://github.com/jessesadler.\n\nLook through the course website repository and file an issue about something that could be improved or where there is a mistake. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.\n\nDownload R and RStudio\n\nSee the Resources section for instructions.\n\nCommonplace book writing: Reflect on the use of visualization in the humanities.",
+    "text": "Assignment\n\nDownload R and RStudio\n\nSee Resources: Installing R and RStudio for details.\n\nCommonplace book writing: Reflect on the use of visualization in the humanities.",
     "crumbs": [
       "Content",
       "Topics",
@@ -418,7 +418,7 @@
     "href": "content/05-content-ggplot.html#resources",
     "title": "Visualizing data with ggplot2",
     "section": "Resources",
-    "text": "Resources\nSee Resources pages for RStudio and visualization.\n\nWorking in RStudio\n\nWickham et al., R for Data Science, chapters 2, 6, and 8.\nRStudio User Guide\n\n\n\nVisualization\nMake sure to look at the ggplot2 website that is full of great documentation and examples, including a ggplot2 cheatsheet.\n\nThe Royal Statistical Society Data visualization Guide\nWickham et al., R for Data Science, chapters 1, 9, 10, and 11.\nIf you want some inspiration, look at Nicola Rennie’s visualization projects.",
+    "text": "Resources\nSee Resources pages for Installing R and RStudio RStudio and visualization.\n\nWorking in RStudio\n\nWickham et al., R for Data Science, chapters 2, 6, and 8.\nRStudio User Guide\n\n\n\nVisualization\nMake sure to look at the ggplot2 website. It is full of great documentation and examples, including a ggplot2 cheatsheet.\n\nThe Royal Statistical Society Data visualization Guide\nWickham et al., R for Data Science, chapters 1, 9, 10, and 11.\nIf you want some inspiration, look at Nicola Rennie’s visualization projects.",
     "crumbs": [
       "Content",
       "Topics",
@@ -468,87 +468,135 @@
     "text": "Generative Artificial Intelligence\nGenerative AI tools are getting better and better at writing code, so why do I recommend that you not use it to complete the work in this course? We will be discussing generative AI and large language models (LLMs) more during the semester, but the the short answer is that you are unlikely to learn to code and think computationally if your focus is on the end result and not learning. Just as writing an essay is an essential part of the thinking process, the actual typing of code is important to developing a better understanding of how programming and data analysis works. We will also discuss and demonstrate techniques for reading error messages and getting help with code that will limit the need to use generative AI. Once these foundations are laid, you will be better positioned to decide how and when to use generative AI for coding. How exactly we deal with this issue during the semester will be dependent upon student interest."
   },
   {
-    "objectID": "worksheets/01-worksheet.html",
-    "href": "worksheets/01-worksheet.html",
-    "title": "Getting started with R",
+    "objectID": "worksheets/index.html",
+    "href": "worksheets/index.html",
+    "title": "Interactive worksheets",
     "section": "",
-    "text": "Based on R for Social Sciences\nNon-exercise math\n\n\n\n\n\n\n\n\nAssignment\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe assignment operator\nx &lt;- 5\n\n\n\n\nExercises have their own environment, so x has to be redefined.\n\n\n\n\n\n\n\n\nVector\nMake x a vector of numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 1\n\n\n\n\n\nMake sure to use the assignment operator (&lt;-)\nx &lt;- ______\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 2\n\n\n\n\n\nVectors are created using the c() function, which stands for combine.\nx &lt;- c(______)\n\n\n\n\n\n\n\n\n\n\n\nTipFully worked solution:\n\n\n\n\n\nValues within c() are separated by commas.\nx &lt;- c(1, 3, 5, 7, 9)\n\n\n\n\nYou can also put exercises in a tabset: Make y a vector of numbers.\n\nExerciseHint 1Hint 2Solution\n\n\n\n\n\n\n\n\n\n\n\n\n\nVectors are created using the c(), which stands for combine.\ny ______ c(______)\n\n\n\n\nVectors are created using the c() function, which stands for combine.\ny &lt;- c(______)\n\n\n\n\ny &lt;- c(1, 3, 5, 7, 9)\n\n\n\n\nCan run help. Prints out help file. An",
+    "text": "This section contains interactive worksheets that we will work through during class to get a bit of practice working with R before turning to using R on your own computer within RStudio. These worksheets provide a sort of coding playground that you can always come back to if you want some practice. Note that more complex worksheets may take a moment for the everything to load.\nAn interactive code section looks like this. Make changes in the text box and use the blue Run Code button to run the code. The output, if any, will be printed below the code. Change the code and run it as many times as you want. The original text can be reset with the Start Over button.\n\n\n\n\n\n\n\n\nThe interactive code may not always be complete in which case you will be prompted to complete the code to get it to run correctly. These interactive code blocks may have hints and even solutions.\nFor example, fill in the blank so that the result of the sum is 10.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint\n\n\n\n\n\nMake sure to delete the underscores before entering the correct number.\n1 + 2 + 3 + \n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nYou can copy the code in the solution by mousing over the far right side of the solution code.\n1 + 2 + 3 + 4\n\n\n\n\nWe will be able to practice quite complex skills with these interactive lessons, including data visualizations. Let’s see how this works using the penguins dataset that comes with newer versions of R. The dataset contains body measurements of three species of penguins collected by the Palmer Station in Antarctica. For more about the data, see the palmerpenguins package.\n\n\n\nArtwork by @allison_horst\n\n\nFor instance, we can visualize a comparison of the flipper length to the body weight of the three species of penguins. Try it out by running the code! Test out what happens if you change things.\n\n\n\n\n\n\n\n\nThe ability to run R code in your browser is relatively new and is made possible by the quarto-live extension.",
     "crumbs": [
       "Worksheets",
-      "How to",
-      "1: Getting started with R"
+      "Overview",
+      "Interactive worksheets"
     ]
   },
   {
-    "objectID": "resources/text-editors.html",
-    "href": "resources/text-editors.html",
-    "title": "Text editors",
+    "objectID": "resources/datasets.html",
+    "href": "resources/datasets.html",
+    "title": "Data for DH",
     "section": "",
-    "text": "Cross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\nObsidian is a Markdown focused alternative that is highly extensible but more focused on taking notes.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.",
+    "text": "Some places where you might look for data for historical research.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Text editors"
+      "Digital Humanities",
+      "Data for DH"
     ]
   },
   {
-    "objectID": "resources/text-editors.html#recommended-text-editors",
-    "href": "resources/text-editors.html#recommended-text-editors",
-    "title": "Text editors",
+    "objectID": "resources/datasets.html#open-data-repositories",
+    "href": "resources/datasets.html#open-data-repositories",
+    "title": "Data for DH",
+    "section": "Open data repositories",
+    "text": "Open data repositories\n\nVirginia Tech Data Repository\nZenodo\nHarvard Dataverse",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "Data for DH"
+    ]
+  },
+  {
+    "objectID": "resources/datasets.html#r-data-packages",
+    "href": "resources/datasets.html#r-data-packages",
+    "title": "Data for DH",
+    "section": "R data packages",
+    "text": "R data packages\nMany R packages come with some sample data, and there are even some packages that are primarily or entirely designed to distribute and document data.\n\nRdatasets: a huge table of datasets in R packages.\nUSAboundaries: Contemporary (2024) and historical state, county, and Congressional boundaries from 1629 to 2000.\nhistorydata: Historical datasets that mostly deal with American history.\nHistData: a collection of small data sets that are interesting and important in the history of statistics and data visualization.",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "Data for DH"
+    ]
+  },
+  {
+    "objectID": "resources/rstudio-setup.html",
+    "href": "resources/rstudio-setup.html",
+    "title": "Setting up RStudio for success",
     "section": "",
-    "text": "Cross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\nObsidian is a Markdown focused alternative that is highly extensible but more focused on taking notes.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.",
+    "text": "This page provides an overview for setting up and working in RStudio that will set you up for success in creating a reproducible workflow for data analysis in R.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Text editors"
+      "R",
+      "Setting up RStudio"
     ]
   },
   {
-    "objectID": "resources/text-editors.html#benefits-and-drawbacks",
-    "href": "resources/text-editors.html#benefits-and-drawbacks",
-    "title": "Text editors",
-    "section": "Benefits and drawbacks",
-    "text": "Benefits and drawbacks\n\nBenefits\nSee also Working with plain text.\n\nText editors are very powerful tools for working with lots of text across many files and folders.\nText editors are also interoperable. You do not have to pick just one. You can use one text editor for a certain task and another text editor for a different one. They are all based on your plain text files that are in your file system on your computer.\nThey can work with all different kinds of plain text documents, not only files that you might think of as presenting content (Markdown, HTML, csv, txt, etc.) but also scripts for programming languages (R, Python, Bash, etc.).\nThere are multiple free and open source options for text editors.\nText editors like Visual Studio Code and Zed are full integrated development environments (IDEs) that have all sorts of tools for writing code, including documentation, code completion, and their own command line interface.\n\n\n\nDrawbacks\n\nThis last point gets to one of the main drawbacks of text editors. They can be overly complex and confusing; they can be too much when you just want to quickly jot something down.\nThis is also true for Obsidian, which has an almost endless amount of options for how you can use it.\nYou also need to invest at least some time in learning how to use your chosen editor if you want to get many of the benefits of its power.\nIt is up to you how deep you want to go on this. The goal is to write better research not to create the perfect system.",
+    "objectID": "resources/rstudio-setup.html#what-are-r-and-rstudio",
+    "href": "resources/rstudio-setup.html#what-are-r-and-rstudio",
+    "title": "Setting up RStudio for success",
+    "section": "What are R and RStudio?",
+    "text": "What are R and RStudio?\nIt is important to clearly distinguish between R and RStudio because they can easily become intertwined. In short:\n\nR is the programming language\nRStudio is the application in which we will write and run R code. It is the integrated developer environment (IDE) most closely associated with R.\n\nIt is possible to run R in many different applications and environments. In fact, Posit, the company behind RStudio is currently building a new IDE for data analysis called Positron. You can also run R in the command line or in another IDE such as Visual Studio Code.\n\n\n\nAn R session running in the Terminal app\n\n\nWe will use RStudio because it is a mature, open source application that provides many features that helps people write good R code and is closely integrated with Quarto. It is also the most widely used IDE for R.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Text editors"
+      "R",
+      "Setting up RStudio"
     ]
   },
   {
-    "objectID": "resources/text-editors.html#setup",
-    "href": "resources/text-editors.html#setup",
-    "title": "Text editors",
-    "section": "Setup",
-    "text": "Setup\n\nVisual Studio Code and VSCodium\nVisual Studio Code and VSCodium are essentially the same software, but VSCodium does not have access to Microsoft’s Extension Marketplace. These instructions are based on Visual Studio Code.\n\nDownload Visual Studio Code for your system.\n\nRefer to the Visual Studio Code documentation if you have questions, but try not to get caught up in the complexity of what is possible.\n\nSet up Visual Studio Code to work with Markdown files.\n\nFollow the instructions for Markdown and Visual Studio Code.\nThe easiest way to get started is by installing the Doc Writer Profile. Follow these instructions on creating a profile.\n\nYou might want to pick a color theme.\n\nYou also might want to pick your font and size.\n\nTweak your profile and settings.\n\nI like to turn the markdownlint extension off. I do not feel that I need error messages if I make a mistake in Markdown.\n\n\n\n\nZed\nZed is probably a bit easier to get up and going.\n\nDownload Zed for your system.\nLook through the documentation on getting started. As with Visual Studio Code, skip over anything that does not apply to you.\nZed is set up to work with Markdown by default.\n\n\n\nBBEdit\nBBEdit is the easiest to get up and going and should be relatively familiar looking if you are used to MacOS.\n\nDownload BBEdit using the Free Download link.\n\nThe Free mode is quite extensive.\n\nLook over the documentation.\n\n\n\nObsidian\nObsidian is designed for Markdown note taking and has many of the powerful feature of other text editors.\n\nDownload Obsidian for your system.\nGo through the Get started documentation",
+    "objectID": "resources/rstudio-setup.html#navigating-rstudio",
+    "href": "resources/rstudio-setup.html#navigating-rstudio",
+    "title": "Setting up RStudio for success",
+    "section": "Navigating RStudio",
+    "text": "Navigating RStudio\nWhen you open up RStudio for the first time you will be presented with a three panel view:\n\nThe left panel is the console. This is where you write or send code, run it, and see any output. You type your code after the prompt, which in R is &gt;.\nThe upper-right panel shows any objects you create in your session.\nThe bottom-right panel shows your project files but also has tabs to show plots you make, packages you have installed, and a viewer for documentation.\n\n\n\n\nRStudio at startup with three panels: console, environment, and files\n\n\nType in your first R command to make sure everything is working. Type out a mathematical calculation and press Return or Enter to run the line of code.\n\nThe editor panel\nWhen you create a new R script or any other type of file, a fourth panel will appear in the upper right and the console will shrink to the bottom-right position. You can create a new R script (this is a text file that ends with the extension .R) in many ways.\n\nGo to File -&gt; New File -&gt; R Script\nClick on the plus sign with the blank paper behind it in the upper-right corner of the application and select R Script.\nSimilarly, click on the plus sign with the blank paper behind it in the upper-left corner of the Files panel.\nOr with a keyboard shortcut: Cmd/Ctrl + Shift + N.\n\n\n\n\nRStudio with all four panels: editor, console, environment, and files",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Text editors"
+      "R",
+      "Setting up RStudio"
     ]
   },
   {
-    "objectID": "resources/text-editors.html#usage",
-    "href": "resources/text-editors.html#usage",
-    "title": "Text editors",
-    "section": "Usage",
-    "text": "Usage\nThe power of text editors is their ability to work on one file at a time or across multiple files and folders. You can open a single file, but most of the power of text editors is unleashed by opening a folder of files and working on multiple files at once.\nText editors also work best by taking advantage of keyboard shortcuts. Each editor will have different features and shortcuts. However, Zed can be set up to use the same shortcuts as Visual Studio Code by default. You can also learn keyboard shortcuts one at a time by using the command palette, a dialogue that allows you to search for commands. The command palette shortcut is:\n\nVisual Studio Code, VSCodium, and Zed: Cmd + Shift + P or Ctrl + Shift + P\nBBEdit: Cmd + Shift + U\nObsidian: Cmd + P or Ctrl + P.\n\nAll of these text editors have a shortcut or button to live preview Markdown documents, to see the headings (#) turned into larger headings, links[]() hyperlinked text, and bold (**) and italic (*) into bold and italic text.\n\nVisual Studio Code, VSCodium, and Zed: Cmd/Ctrl + Shift + V\n\nPressing Cmd/Ctrl + K and then V will open the preview to the right.\n\nBBEdit: Control + Cmd + P\nObsidian: Cmd/Ctrl + E to toggle between editing and preview modes.\n\nThis is the merest tip of the iceberg of the powers of these text editors. They can do all sorts of things for you, including searching across thousands of files, linking files to each other, and enabling the use of multiple cursors to make changes in many places at once. One way to see what you can do is to search through the keyboard shortcuts available in a text editor.\n\nVisual Studio Code, VSCodium, and Zed: Cmd/Ctrl K + Cmd/Ctrl S\nBBEdit: Look through the command palette with Cmd + Shift + U\nObsidian: Look through the command palette with Cmd/Ctrl + P",
+    "objectID": "resources/rstudio-setup.html#the-workflow",
+    "href": "resources/rstudio-setup.html#the-workflow",
+    "title": "Setting up RStudio for success",
+    "section": "The workflow",
+    "text": "The workflow\nThe basic workflow for RStudio is to work on writing and running code in the left two panels and inspect aspects of what you are doing or what you have created in the right two panels.1 Let’s concentrate on the two panels on the left.\nThe console can be thought of as where the action happens. It is where code is actually run and where any outputs will be printed. However, the console is also ephemeral. You run code block by code block, pushing each line of code further and further up into the console’s history, out of sight and out of mind. You can look at your history, but, practically speaking, there is no good, clear way to track what you have done just by using the console.\nThis is where the editor panel comes in. The editor panel shows text documents in which you will save the code and any documentation or explanations that you want to save. We will primarily be working with R scripts and Quarto documents in this course. Here, we will stick to R scripts.\n\nScripts and reproducibility\nScripts are at the foundation of reproducibility. They contain the code that performed a certain set of analysis or created a visualization that can be run by you or someone else later. Unlike the console, scripts are meant to be permanent or at least record what you have done. You save scripts, but you do not save what happened in the console.2\nAn R script is a plain text document in which everything that is typed is assumed to be R code that will be sent to the console. To run code from a script or send it to the console you cannot just type Return/Enter. That moves you to the next line. Instead, you need to use Cmd + Return or Ctrl + Enter. If you want to write comments in a script to take notes or tell future you or any collaborators why you did something, you need to place a hashtag # before it. Anything after # will not be run as code.\n\nSend code to the console from a script: Cmd + Return or Ctrl + Enter\nComment: #\n\nTry it out for yourself.\nThis distinction between permanent and ephemeral also translates to the panels on the right. The files pane (bottom right) shows the scripts you create and any data or visualization you save. These are permanent. The environment panel shows the objects created in a session by running code in the console. These objects are ephemeral. They exist and can be used in this session, but they can always be recreated from the script.\nThe script trumps the environment panel; it is the source of truth. The code that creates the object is much more important than the object itself. Think of it this way, if you have it right in the environment but wrong in a script, it will not do you much good when you come back to your code after a break and find that things are out of whack.\n\n\n\nThe editor and files panels are the primary sources of truth. The console and environment panels represent the ephemeral objects created in a session.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Text editors"
+      "R",
+      "Setting up RStudio"
     ]
   },
   {
-    "objectID": "resources/text-editors.html#resources-on-how-historians-are-using-obsidian",
-    "href": "resources/text-editors.html#resources-on-how-historians-are-using-obsidian",
-    "title": "Text editors",
-    "section": "Resources on how historians are using Obsidian",
-    "text": "Resources on how historians are using Obsidian\nThere are a number of resources available on how to use these tools for research. Use these to give ideas about what you can do. There is no one right answer on how to build your research workflow.\n\nObsidian Forum - Resources May 2024: Check out the links in this forum. If you are curious, you can search through the forums for answers to all types of questions.\nJason Heppler - How I use Obsidian: An interesting blog post by a digital historian on the features and customizations that he finds useful.\nElena Razlogova, Notetaking for Historians: This is a really great resource on how a historian is using Obsidian as the center of their research process.",
+    "objectID": "resources/rstudio-setup.html#setting-up-rstudio-for-reproducibility",
+    "href": "resources/rstudio-setup.html#setting-up-rstudio-for-reproducibility",
+    "title": "Setting up RStudio for success",
+    "section": "Setting up RStudio for reproducibility",
+    "text": "Setting up RStudio for reproducibility\nWe need to make some important changes to the default settings in RStudio to ensure that R scripts remain the source of truth of your analysis not your environment. Go to Tools -&gt; Global Options and uncheck Restore .RData into workspace at startup and set Save workspace to .RData on exit to Never.\n\n\n\nRStudio Global Options: Set these options for the Workspace\n\n\nLet’s see what this does. Make sure that you have created objects in your environment. Then, restart your session. You can do this by going to the Session menu -&gt; Restart R. Your environment panel should be empty now. This might seem like it is painful, but it is short-term pain for long-term gain. It will teach you to keep what you want to save in your R script so that you can always recreate objects or rerun analysis later.\nIn fact, running Restart R and then running your script, either one line at a time (hit Cmd + Return or Ctrl + Enter over and over) or Cmd/Ctrl + Shift + S to re-run the entire script, is a good way to ensure that your script is correct. Better to find out now if there is a problem than weeks or months down the road.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Text editors"
+      "R",
+      "Setting up RStudio"
+    ]
+  },
+  {
+    "objectID": "resources/rstudio-setup.html#packages",
+    "href": "resources/rstudio-setup.html#packages",
+    "title": "Setting up RStudio for success",
+    "section": "Packages",
+    "text": "Packages\nAfter getting RStudio set up, the next step is to install the main packages we will use in the course. R comes with a preinstalled set of packages known as base R. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. Generally you will install packages through the central package repository called CRAN (The Comprehensive R Archive Network), which is also where you downloaded R. There are over 23,000 packages on CRAN.3\n\nInstalling packages\nMost importantly for this class, we need to install the tidyverse set of packages. There are two ways to do this. Either through a function on the console or using the RStudio GUI (Graphical User Interface). I generally prefer to use the console.\n\nYou can install packages with the install.packages() function with the names of the packages you want to install in a character vector. Let’s start by just installing the tidyverse package.\n\ninstall.packages(\"tidyverse\")\n\nTo use the graphical interface to install packages:\n\nSelect the Packages tab in the Files panel on the bottom right of RStudio.\nClick on Install button on the top left of the panel.\nThis will open a popup dialogue. Type in the packages you want to install—in this case tidyverse—and then click Install.\nNote that RStudio will actually run the command install.packages(\"tidyverse\") in the console.\n\n\n\n\n\nInstalling packages with the Packages panel in RStudio\n\n\n\n\nUsing packages\nThe tidyverse set of packages is now installed, but to actually use the functions from the package in an R session you need to load the package. This is done with library(). Try it for yourself.\nlibrary(tidyverse)\nYou do not need to put quotation marks around tidyverse because the library() function knows where to look for something called tidyverse. You can put quotation marks around it if you want to. You should get an output in your console that looks like this:\n\n\n\nOutput from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages\n\n\nYou see a list of the nine core tidyverse packages and their versions: dplyr, forcats, ggplot2, lubridate, purrr, readr, stringr, tibble, tidyr. You will also see a message that there are conflicts. This sounds scary but is expected behavior. This message tells us that dplyr has functions called filter() and lag(), which are also names for functions in base R. When you use these function after loading the tidyverse, you will use the dplyr version, which is what we want.\nRemember, because we set up RStudio for reproducibility, you need to run library(tidyverse) every time you begin a new session. Therefore, you should load the packages you will use at the start of your script. Writing library(tidyverse) at the top of each script is a good practice to begin with.\n\n\nUpdating packages\nPackages are often changing, fixing bugs (and adding some) and bringing new features so it is a good idea to update your packages every once in a while.4 Again, there is a way to do this in the console and through the Packages panel.\n\nRun update.packages() and choose y to update the packages.\nTo use the graphical interface to update packages:\n\nClick on Update button on the top left of the Packages tab of the Files panel. It is right next to Install.\nYou can click the Select All button on the bottom right of the dialogue window that pops up.\nThen Install Updates.\n\n\n\n\n\nUpdating packages with the Packages panel in RStudio",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Setting up RStudio"
+    ]
+  },
+  {
+    "objectID": "resources/rstudio-setup.html#footnotes",
+    "href": "resources/rstudio-setup.html#footnotes",
+    "title": "Setting up RStudio for success",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYou can move the panels around in Tools -&gt; Global Options if you want to.↩︎\nThis is largely true if a bit overdramatic. The History tab shows the code blocks you have run.↩︎\nYou can also install packages from other repositories such as R Universe or on GitHub, but we will not need to do that for this course. The process for installing from these other places is similar.↩︎\nHow often is up to you. Packages are generally stable, so I find there is usually little downside to updating. I update packages once a week but once a month would be plenty frequent.↩︎",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Setting up RStudio"
     ]
   },
   {
@@ -648,68 +696,40 @@
     ]
   },
   {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
+    "objectID": "resources/install.html",
+    "href": "resources/install.html",
+    "title": "Installing R and RStudio",
     "section": "",
-    "text": "This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the Content page for each week.",
+    "text": "Let’s start by download R, the programming language.\n\nGo to the CRAN (Collective R Archive Network) website: https://cran.r-project.org/\nClick on the link in the first box of text that corresponds to your operating system.\nDownload the latest version of R (currently 4.5.2 as of January 2026).\n\nFor macOS, select the .pkg file that corresponds to your processor, likely Apple silicon but possibly Intel if you have an older computer.\nFor Windows, select the links from the first line, either base or install R for the first time. They go to the same place. Then select the Download R for Windows link with the latest version of R.\n\nDouble click on the downloaded file (check your Downloads folder). Click Yes through all the prompts to install like any other program.\nIf you use macOS, it is a good idea to download and install XQuartz. You do not need to do this on Windows.",
     "crumbs": [
       "Resources",
-      "Overview",
-      "Resources"
+      "R",
+      "Installing R and RStudio"
     ]
   },
   {
-    "objectID": "resources/index.html#main-resources-for-the-course",
-    "href": "resources/index.html#main-resources-for-the-course",
-    "title": "Resources",
-    "section": "Main resources for the course",
-    "text": "Main resources for the course\n\nHadley Wickham et al., R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, Second edition (O’Reilly, 2023), https://r4ds.hadley.nz.\n\nThis should be your primary go to reference for anything about working with data in R.\n\nTidyverse website\n\nWebsite that brings together documentation on the tidyverse packages. If you cannot remember how to do something in the tidyverse, this is a great resource.\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018).\nQuarto documentation\n\nWe will be working a lot with quarto documents and creating websites using Quarto. If you need to know how to do something with quarto, go here first.",
-    "crumbs": [
-      "Resources",
-      "Overview",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "resources/index.html#bibliography",
-    "href": "resources/index.html#bibliography",
-    "title": "Resources",
-    "section": "Bibliography",
-    "text": "Bibliography\nbib to go here",
-    "crumbs": [
-      "Resources",
-      "Overview",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Digital History Methods",
+    "objectID": "resources/install.html#installing-r",
+    "href": "resources/install.html#installing-r",
+    "title": "Installing R and RStudio",
     "section": "",
-    "text": "Jesse Sadler\n University Libraries\n Newman Library 4064\n\n\n\n\n\n Mondays\n 2pm–4:50pm\n Athenaeum, Newman Library 124\n\n\n\n\n\n jrsadler@vt.edu\n Schedule an appointment"
+    "text": "Let’s start by download R, the programming language.\n\nGo to the CRAN (Collective R Archive Network) website: https://cran.r-project.org/\nClick on the link in the first box of text that corresponds to your operating system.\nDownload the latest version of R (currently 4.5.2 as of January 2026).\n\nFor macOS, select the .pkg file that corresponds to your processor, likely Apple silicon but possibly Intel if you have an older computer.\nFor Windows, select the links from the first line, either base or install R for the first time. They go to the same place. Then select the Download R for Windows link with the latest version of R.\n\nDouble click on the downloaded file (check your Downloads folder). Click Yes through all the prompts to install like any other program.\nIf you use macOS, it is a good idea to download and install XQuartz. You do not need to do this on Windows.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Installing R and RStudio"
+    ]
   },
   {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Digital History Methods",
-    "section": "Course description",
-    "text": "Course description\nThis course will introduce students to computational methods for analyzing data to develop historical interpretations. You will work through the entire data life-cycle: finding, creating, cleaning, analyzing, visualizing, interpreting, and integrating these interpretations into your historical work. This will be done using free and open source programming languages and tools designed for data analysis, specifically we will be using the R programming language. This approach has a steeper learning curve than point-and-click tools that provide an alternative method for creating digital projects. However, it puts you in control, fosters transparency and reproducibility, and follows the guidelines of minimal computing. No previous experience with programming or data analysis is necessary. We will work through a series of examples using provided datasets, and then you will have the opportunity to apply the methods you have learned to your own research, culminating in the creation of a project website.\n\nDigital Scholarship Collaboration hour\n\n Students are encouraged to come to the weekly collaboration hour held in the Athenaeum to work on assignments/projects and ask questions.\n Thursdays\n 12pm–1:00pm\n Athenaeum Collaboration room, Newman Library 126"
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Digital History Methods",
-    "section": "Schedule",
-    "text": "Schedule\n\nMLK Day (19 January)\nHistory, data, and the digital (26 January)\nThe file system and Markdown (2 February)\n“Tidy” historical data (9 February)\nVisualizing data with ggplot2 (16 February)\nWrangling data (23 February)\nWorking with SNiGB (2 March)\nReproducible workflows with Git (16 March)\nMaking websites with Quarto (23 March)\nMaking maps (30 March)\nNetwork analysis (6 April)\nWeb design and visualization (13 April)\nMapping and Network analysis (20 April)\nGroup work on your project (27 April)\nPresentation of final projects (4 May)"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Digital History Methods",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by Cameron Blevins, Lincoln Mullen, Zoë LeBlanc, and Brandon Walsh have been helpful guides in developing a computing heavy DH course. Courses by Andrew Heiss, Kieran Healy, and Clause Wilke have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course."
+    "objectID": "resources/install.html#download-rstudio",
+    "href": "resources/install.html#download-rstudio",
+    "title": "Installing R and RStudio",
+    "section": "Download RStudio",
+    "text": "Download RStudio\nNext, let’s download RStudio, the application in which we will run R.\n\nGo to the RStudio page on Posit’s website: https://posit.co/download/rstudio-desktop/\nFollow step 2: Install RStudio since you have already complete step 1: Install R. Choose your operating system.\nSelect the Download RStudio for Desktop button.\nInstall by double clicking on the downloaded file and accept any prompts.\nRun RStudio to make sure that everything succeeded.\n\nWhen you open RStudio, it should look something like this:\n\n\n\nRStudio at startup\n\n\nNext, check out the Setting up RStudio for more information on getting the application and your R environment set up for success.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Installing R and RStudio"
+    ]
   },
   {
     "objectID": "resources/plaintext.html",
@@ -752,11 +772,75 @@
     "href": "resources/plaintext.html#markdown-based-apps",
     "title": "Working with Plain Text",
     "section": "Markdown based apps",
-    "text": "Markdown based apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\n\nObsidian is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.\nTangent Notes is an open source alternative.\niA Writer is a paid application available for Windows and MacOS, as well as iOS. It is a very good looking simple application for writing Markdown.",
+    "text": "Markdown based apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\n\nObsidian is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.\nTangent Notes is an open source alternative.\niA Writer is a paid application available for Windows and macOS, as well as iOS. It is a very good looking simple application for writing Markdown.",
     "crumbs": [
       "Resources",
       "Organization",
       "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Digital History Methods",
+    "section": "",
+    "text": "Jesse Sadler\n University Libraries\n Newman Library 4064\n\n\n\n\n\n Mondays\n 2pm–4:50pm\n Athenaeum, Newman Library 124\n\n\n\n\n\n jrsadler@vt.edu\n Schedule an appointment"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Digital History Methods",
+    "section": "Course description",
+    "text": "Course description\nThis course will introduce students to computational methods for analyzing data to develop historical interpretations. You will work through the entire data life-cycle: finding, creating, cleaning, analyzing, visualizing, interpreting, and integrating these interpretations into your historical work. This will be done using free and open source programming languages and tools designed for data analysis, specifically we will be using the R programming language. This approach has a steeper learning curve than point-and-click tools that provide an alternative method for creating digital projects. However, it puts you in control, fosters transparency and reproducibility, and follows the guidelines of minimal computing. No previous experience with programming or data analysis is necessary. We will work through a series of examples using provided datasets, and then you will have the opportunity to apply the methods you have learned to your own research, culminating in the creation of a project website.\n\nDigital Scholarship Collaboration hour\n\n Students are encouraged to come to the weekly collaboration hour held in the Athenaeum to work on assignments/projects and ask questions.\n Thursdays\n 12pm–1:00pm\n Athenaeum Collaboration room, Newman Library 126"
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Digital History Methods",
+    "section": "Schedule",
+    "text": "Schedule\n\nMLK Day (19 January)\nHistory, data, and the digital (26 January)\nThe file system and Markdown (2 February)\n“Tidy” historical data (9 February)\nVisualizing data with ggplot2 (16 February)\nWrangling data (23 February)\nWorking with SNiGB (2 March)\nReproducible workflows with Git (16 March)\nMaking websites with Quarto (23 March)\nMaking maps (30 March)\nNetwork analysis (6 April)\nWeb design and visualization (13 April)\nMapping and Network analysis (20 April)\nGroup work on your project (27 April)\nPresentation of final projects (4 May)"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Digital History Methods",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by Cameron Blevins, Lincoln Mullen, Zoë LeBlanc, and Brandon Walsh have been helpful guides in developing a computing heavy DH course. Courses by Andrew Heiss, Kieran Healy, and Clause Wilke have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the Content page for each week.",
+    "crumbs": [
+      "Resources",
+      "Overview",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources/index.html#main-resources-for-the-course",
+    "href": "resources/index.html#main-resources-for-the-course",
+    "title": "Resources",
+    "section": "Main resources for the course",
+    "text": "Main resources for the course\n\nHadley Wickham et al., R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, Second edition (O’Reilly, 2023), https://r4ds.hadley.nz.\n\nThis should be your primary go to reference for anything about working with data in R.\n\nTidyverse website\n\nWebsite that brings together documentation on the tidyverse packages. If you cannot remember how to do something in the tidyverse, this is a great resource.\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018).\nQuarto documentation\n\nWe will be working a lot with quarto documents and creating websites using Quarto. If you need to know how to do something with quarto, go here first.",
+    "crumbs": [
+      "Resources",
+      "Overview",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources/index.html#bibliography",
+    "href": "resources/index.html#bibliography",
+    "title": "Resources",
+    "section": "Bibliography",
+    "text": "Bibliography\nbib to go here",
+    "crumbs": [
+      "Resources",
+      "Overview",
+      "Resources"
     ]
   },
   {
@@ -916,51 +1000,267 @@
     ]
   },
   {
-    "objectID": "resources/datasets.html",
-    "href": "resources/datasets.html",
-    "title": "Data for DH",
+    "objectID": "resources/text-editors.html",
+    "href": "resources/text-editors.html",
+    "title": "Text editors",
     "section": "",
-    "text": "Some places where you might look for data for historical research.",
+    "text": "Cross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\nObsidian is a Markdown focused alternative that is highly extensible but more focused on taking notes.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.",
     "crumbs": [
       "Resources",
-      "Digital Humanities",
-      "Data for DH"
+      "Organization",
+      "Text Editors"
     ]
   },
   {
-    "objectID": "resources/datasets.html#open-data-repositories",
-    "href": "resources/datasets.html#open-data-repositories",
-    "title": "Data for DH",
-    "section": "Open data repositories",
-    "text": "Open data repositories\n\nVirginia Tech Data Repository\nZenodo\nHarvard Dataverse",
-    "crumbs": [
-      "Resources",
-      "Digital Humanities",
-      "Data for DH"
-    ]
-  },
-  {
-    "objectID": "resources/datasets.html#r-data-packages",
-    "href": "resources/datasets.html#r-data-packages",
-    "title": "Data for DH",
-    "section": "R data packages",
-    "text": "R data packages\nMany R packages come with some sample data, and there are even some packages that are primarily or entirely designed to distribute and document data.\n\nRdatasets: a huge table of datasets in R packages.\nUSAboundaries: Contemporary (2024) and historical state, county, and Congressional boundaries from 1629 to 2000.\nhistorydata: Historical datasets that mostly deal with American history.\nHistData: a collection of small data sets that are interesting and important in the history of statistics and data visualization.",
-    "crumbs": [
-      "Resources",
-      "Digital Humanities",
-      "Data for DH"
-    ]
-  },
-  {
-    "objectID": "worksheets/index.html",
-    "href": "worksheets/index.html",
-    "title": "Interactive worksheets",
+    "objectID": "resources/text-editors.html#recommended-text-editors",
+    "href": "resources/text-editors.html#recommended-text-editors",
+    "title": "Text editors",
     "section": "",
-    "text": "This section contains interactive worksheets that we will work through during class to get a bit of practice working with R before turning to using R on your own computer within RStudio. These worksheets provide a sort of coding playground that you can always come back to if you want some practice. Note that more complex worksheets may take a moment for the everything to load.\nAn interactive code section looks like this. Make changes in the text box and use the blue Run button to run the code. Change the code and run it as many times as you want. The original text can be reset with the Start Over button.\n\n\n\n\n\n\n\n\nThe interactive code may not always be complete in which case you will be prompted to complete the code to get it to run correctly. These interactive code blocks may have hints and even solutions.\nFor example, fill in the blank so that the result of the sum is 10.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint\n\n\n\n\n\nMake sure to delete the underscores before entering the correct number.\n1 + 2 + 3 + \n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\n1 + 2 + 3 + 4\n\n\n\n\nWe will be able to practice quite complex skills with these interactive lessons, including data visualizations. Let’s see how this works using the penguins dataset that comes with newer versions of R. The dataset contains body measurements of three species of penguins collected by the Palmer Station in Antarctica. For more about the data, see the palmerpenguins package.\n\n\n\nArtwork by @allison_horst\n\n\nFor instance, we can visualize a comparison of the flipper length to the body weight of the three species of penguins. Try it out by running the code! Test out what happens if you change things.\n\n\n\n\n\n\n\n\nThe ability to run R code in your browser is relatively new and is made possible by the quarto-live extension.",
+    "text": "Cross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\nObsidian is a Markdown focused alternative that is highly extensible but more focused on taking notes.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text Editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#benefits-and-drawbacks",
+    "href": "resources/text-editors.html#benefits-and-drawbacks",
+    "title": "Text editors",
+    "section": "Benefits and drawbacks",
+    "text": "Benefits and drawbacks\n\nBenefits\nSee also Working with plain text.\n\nText editors are very powerful tools for working with lots of text across many files and folders.\nText editors are also interoperable. You do not have to pick just one. You can use one text editor for a certain task and another text editor for a different one. They are all based on your plain text files that are in your file system on your computer.\nThey can work with all different kinds of plain text documents, not only files that you might think of as presenting content (Markdown, HTML, csv, txt, etc.) but also scripts for programming languages (R, Python, Bash, etc.).\nThere are multiple free and open source options for text editors.\nText editors like Visual Studio Code and Zed are full integrated development environments (IDEs) that have all sorts of tools for writing code, including documentation, code completion, and their own command line interface.\n\n\n\nDrawbacks\n\nThis last point gets to one of the main drawbacks of text editors. They can be overly complex and confusing; they can be too much when you just want to quickly jot something down.\nThis is also true for Obsidian, which has an almost endless amount of options for how you can use it.\nYou also need to invest at least some time in learning how to use your chosen editor if you want to get many of the benefits of its power.\nIt is up to you how deep you want to go on this. The goal is to write better research not to create the perfect system.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text Editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#setup",
+    "href": "resources/text-editors.html#setup",
+    "title": "Text editors",
+    "section": "Setup",
+    "text": "Setup\n\nVisual Studio Code and VSCodium\nVisual Studio Code and VSCodium are essentially the same software, but VSCodium does not have access to Microsoft’s Extension Marketplace. These instructions are based on Visual Studio Code.\n\nDownload Visual Studio Code for your system.\n\nRefer to the Visual Studio Code documentation if you have questions, but try not to get caught up in the complexity of what is possible.\n\nSet up Visual Studio Code to work with Markdown files.\n\nFollow the instructions for Markdown and Visual Studio Code.\nThe easiest way to get started is by installing the Doc Writer Profile. Follow these instructions on creating a profile.\n\nYou might want to pick a color theme.\n\nYou also might want to pick your font and size.\n\nTweak your profile and settings.\n\nI like to turn the markdownlint extension off. I do not feel that I need error messages if I make a mistake in Markdown.\n\n\n\n\nZed\nZed is probably a bit easier to get up and going.\n\nDownload Zed for your system.\nLook through the documentation on getting started. As with Visual Studio Code, skip over anything that does not apply to you.\nZed is set up to work with Markdown by default.\n\n\n\nBBEdit\nBBEdit is the easiest to get up and going and should be relatively familiar looking if you are used to macOS.\n\nDownload BBEdit using the Free Download link.\n\nThe Free mode is quite extensive.\n\nLook over the documentation.\n\n\n\nObsidian\nObsidian is designed for Markdown note taking and has many of the powerful feature of other text editors.\n\nDownload Obsidian for your system.\nGo through the Get started documentation",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text Editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#usage",
+    "href": "resources/text-editors.html#usage",
+    "title": "Text editors",
+    "section": "Usage",
+    "text": "Usage\nThe power of text editors is their ability to work on one file at a time or across multiple files and folders. You can open a single file, but most of the power of text editors is unleashed by opening a folder of files and working on multiple files at once.\nText editors also work best by taking advantage of keyboard shortcuts. Each editor will have different features and shortcuts. However, Zed can be set up to use the same shortcuts as Visual Studio Code by default. You can also learn keyboard shortcuts one at a time by using the command palette, a dialogue that allows you to search for commands. The command palette shortcut is:\n\nVisual Studio Code, VSCodium, and Zed: Cmd + Shift + P or Ctrl + Shift + P\nBBEdit: Cmd + Shift + U\nObsidian: Cmd + P or Ctrl + P.\n\nAll of these text editors have a shortcut or button to live preview Markdown documents, to see the headings (#) turned into larger headings, links[]() hyperlinked text, and bold (**) and italic (*) into bold and italic text.\n\nVisual Studio Code, VSCodium, and Zed: Cmd/Ctrl + Shift + V\n\nPressing Cmd/Ctrl + K and then V will open the preview to the right.\n\nBBEdit: Control + Cmd + P\nObsidian: Cmd/Ctrl + E to toggle between editing and preview modes.\n\nThis is the merest tip of the iceberg of the powers of these text editors. They can do all sorts of things for you, including searching across thousands of files, linking files to each other, and enabling the use of multiple cursors to make changes in many places at once. One way to see what you can do is to search through the keyboard shortcuts available in a text editor.\n\nVisual Studio Code, VSCodium, and Zed: Cmd/Ctrl K + Cmd/Ctrl S\nBBEdit: Look through the command palette with Cmd + Shift + U\nObsidian: Look through the command palette with Cmd/Ctrl + P",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text Editors"
+    ]
+  },
+  {
+    "objectID": "resources/text-editors.html#resources-on-how-historians-are-using-obsidian",
+    "href": "resources/text-editors.html#resources-on-how-historians-are-using-obsidian",
+    "title": "Text editors",
+    "section": "Resources on how historians are using Obsidian",
+    "text": "Resources on how historians are using Obsidian\nThere are a number of resources available on how to use these tools for research. Use these to give ideas about what you can do. There is no one right answer on how to build your research workflow.\n\nObsidian Forum - Resources May 2024: Check out the links in this forum. If you are curious, you can search through the forums for answers to all types of questions.\nJason Heppler - How I use Obsidian: An interesting blog post by a digital historian on the features and customizations that he finds useful.\nElena Razlogova, Notetaking for Historians: This is a really great resource on how a historian is using Obsidian as the center of their research process.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Text Editors"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html",
+    "href": "worksheets/01-worksheet.html",
+    "title": "1. Getting started with R",
+    "section": "",
+    "text": "Let’s begin by getting some experience with how R works and what it looks like to run R code.\nWriting and running R code is an iterative process.1 You write a line or block of code, run it, check if it did what you want, and then repeat the process. You will get errors, but that is ok. Instead of moving on to the next code block, you repeat the process with the code block you are on, checking error messages, changing what you think might be the problem, and trying again. You do this over and over to create a full script that accomplishes a set task.\nIn this web-based R session you can alter the code, fill in blanks, or write your own expressions, and then run it by selecting the blue Run Code button. The output, if any, will appear below the code section.\nUse hints where they exist and solutions if you need them. You can copy the code in the solution by mousing over the far right side of the solution code.",
     "crumbs": [
       "Worksheets",
-      "Overview",
-      "Interactive worksheets"
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html#r-is-a-calculator",
+    "href": "worksheets/01-worksheet.html#r-is-a-calculator",
+    "title": "1. Getting started with R",
+    "section": "1 R is a calculator",
+    "text": "1 R is a calculator\nYou can use R as a calculator. If you write a mathematical expression and run it, the answer will be printed out. Run the code below and change it to see what you can do.\n\n\n\n\n\n\n\n\nYou can multiply (*), divide (/), use exponents (^), and other mathematical expressions, including using parentheses for order of operations. Create your own mathematical calculation below.\n\n\n\n\n\n\n\n\nWhen we run code like this that prints out the answer, we say that it prints out to the console.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html#creating-objects",
+    "href": "worksheets/01-worksheet.html#creating-objects",
+    "title": "1. Getting started with R",
+    "section": "2 Creating objects",
+    "text": "2 Creating objects\nPrinting out values is nice, but you will probably want to save values to use elsewhere in your script. You save values, by assigning it to a name or variable. This creates an object that is stored in your coding environment. You assign a name to an object with the assignment operator (&lt;-). Run the code below. What difference do you notice?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipWhat was different?\n\n\n\n\n\nNothing is printed when you run the code.\n\n\n\nYou can think of this code as saying x gets the value of 5. When a value is assigned, it does not print out to the console. To print out the value of an object, write the name of the object on its own line and run the code block.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 1\n\n\n\n\n\nMake sure to use the assignment operator (&lt;-)\nx &lt;- 5\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 2\n\n\n\n\n\nYou need to type Return or Enter after the first line of code to get to the second line of the interactive code block.\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nTo print out the value of x to the console, write it on its own line and run the code block.\nx &lt;- 5\nx\n\n\n\n\n\n\n\n\n\n\nTipObject vs variable\n\n\n\nIn R everything is an object. Technically x is now a named object. However, it is common to also refer to it as a variable. These two terms will largely be used synonymously in this course, especially in spoken language.\n\n\nOnce you have created an object, you can use it to create other values. In the next code block, use x to calculate a new value.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nYou can use x as you would the number 5. For instance:\nx * 24\n\n\n\n\nNext, use the expression you wrote above to create a new named object using the assignment operator. Use whatever name you want.\n\n\n\n\n\n\n\n\n\nOn naming\nWhen choosing a name for an object in R, you should be aware of the rules but also issues of style.\n\nNaming rules\n\nObject names must start with a letter.\nNames can only contain letters, numbers, _, and ..\nCannot use names that are predefined in R such as TRUE or FALSE.\n\n\n\nNaming style\nThere are different style conventions for naming objects. It is best to pick one style and be consistent.\n\nthis_is_snake_case &lt;- value\norCamelCase &lt;- value\nyou.can.use.periods &lt;- value\nBELOUD &lt;- value\nor.JUst_inconsistent &lt;- value\n\nIn this course, we will use snake case, which is probably the most widely used style. You can use whatever style you like, but snake case means you do not have to guess whether you used capital letters or not.\n\n\n\n\n\n\nTipBe aware: R is case sensitive\n\n\n\nThis means that my_obj is different from My_obj. Computers are persnickety. You must be precise in your instructions. Computers do what you type, not what you want.\n\n\n\n\n\n\n\n\nTipChoosing good names\n\n\n\nIt is best practice to name objects descriptive names even if they are longer. Names like x and y or data tell you nothing about what they are. Use descriptive names that match the data assigned to the object name.2\n\n\nNow we have two named objects. What happens when you assign a new number to x? What happens to the other object you created using x? Does it also change? Check by printing the values out to the console. What do the answers to these questions tell you about the nature of objects in R?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nThe value of x is now 15. But any object created using the original value of x remains unchanged.\nx &lt;- 15\nx\nyour_object",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html#do-things-with-functions",
+    "href": "worksheets/01-worksheet.html#do-things-with-functions",
+    "title": "1. Getting started with R",
+    "section": "3 Do things with functions",
+    "text": "3 Do things with functions\nFunctions take input, perform specific actions, and then return values. You can identify a function in R by the opening and closing parentheses that follow a name. Within the parentheses are a set of arguments that are set to values. These arguments are separated by commas.\n\nfunction_name(argument1 = value1, argument2 = value2, ....)\n\nLet’s use our first function! 🎉\n\n\n\n\n\n\n\n\n\nGetting help\nThat is nice! But rather limited. What else can we do with the round() function? Let’s read the documentation for the function by placing a question mark immediately in front of the function name.\n\n\n\n\n\n\n\n\nWe see that this is actually the documentation of a set or family of functions. There are a couple of sections of the help page that are, well, particularly helpful.\n\nDescription: a short description of what the function is designed to do.\nUsage: tells you the available arguments and their default values if any. Note that digits is set to 0 for round() but 6 for signif().\nArguments: provides an explanation of each argument and the type of data it can be.\nExamples: R code that you can run to see how a function works. Some examples are really helpful; some are less so.\n\nLets use the digits argument. Round 42.358964 to 3 decimal places.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nround(x = 42.358964, digits = 3)\n\n\n\n\nWhat do the other functions in the Rounding of Numbers family do? What happens if you set digits to a negative number? How about if you set digits to something that is not a number? Try it out:\n\n\n\n\n\n\n\n\n\n\nFunction coding style\nThere are two ways to define arguments within a function: by name or by position. The usage section of a function’s help page shows the argument names and the order in which they are expected to occur.\n\nYou do not need to write the argument names if you put them in the correct order:\n\n\n\n\n\n\n\n\n\n\nYou do not need to place arguments in the correct order if you name them. However, it will drive you batty if you do this.\n\n\n\n\n\n\n\n\n\n\nIf you do not name arguments and place them in the wrong order, you will get errors or, even worse, incorrect results.\n\n\n\n\n\n\n\n\n\n\nMost often the two styles will be combined. This is particularly true for dropping the name of the first argument, which generally takes the data you are inputting into the function while naming the other arguments that affect how the function is performed. In this case, writing x = 42.358964 does not particularly help our understanding of the function, but digits = 3 does help us remember that we are telling round() to round to the 3rd digit.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteAssignment: &lt;- vs =\n\n\n\n\n\nYou can also create named objects with the equal sign (=) in place of the assignment operator (&lt;-). You may see some code that does this. However, the vast majority of R code uses the assignment operator. One benefit of this is that it helps to distinguish assignment of objects (&lt;-) from the assignment of arguments within functions (=).\n\n\n\n\n\nAnother note on style\nIn the R code shown so far there has been spaces between the different elements in a code block. This is not necessary. R is generally agnostic to white space. The two below examples are the same as far as R is concerned, but I know which one I want to read more.\n\n\n\n\n\n\n\n\nIt may be more typing to use spaces, but you also need to read and understand your own code. Test out spacing in your R code:\n\n\n\n\n\n\n\n\nSpacing generally does not matter but try to be consistent and keep things that are supposed to be together, especially the assignment operator: this (&lt;-) not this (&lt; -). You will also want to avoid putting a space between the function name and the parentheses: round (42.358964, 3).",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html#vectors",
+    "href": "worksheets/01-worksheet.html#vectors",
+    "title": "1. Getting started with R",
+    "section": "4 Vectors",
+    "text": "4 Vectors\nSo far, the objects we have been dealing with have been limited to one value and have all been numeric. This is fine, but what if we want to make the same calculation on a set of values or find out information about a set of values. We can do this with vectors, an ordered set of values that are of the same data type. R was built to work with vectors. In fact, we have already been working with vectors, vectors of length 1.\nYou can create your own vectors with the c(...) function, which stands for combine. c() takes any number of values—of the same type—separated by a comma.3\nLet’s start by making a vector named households that contains 5 numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 1\n\n\n\n\n\nMake sure to use the assignment operator (&lt;-)\nhouseholds &lt;- ______\n\n\n\n\n\n\n\n\n\n\n\nNoteHint 2\n\n\n\n\n\nVectors are created using the c() function, which stands for combine.\nhouseholds &lt;- c(______)\n\n\n\n\n\n\n\n\n\n\n\nTipA possible solution:\n\n\n\n\n\nValues within c() are separated by commas.\nhouseholds  &lt;- c(1, 3, 2, 5, 2)\n\n\n\n\nWe can then use different functions or perform different actions on households just as we did with x above. For example, we could double the value for each household:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nhouseholds * 2\n\n\n\n\nOr we could use a function to calculate a summary value such as the average of households using the mean() function.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nmean(households)\n\n\n\n\nAnother important characteristic of vectors is their length, which we can find with the aptly named length() function. Try it out with households.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nlength(households)\n\n\n\n\nThere are a lot of ways in R to create a vector of numbers in R, but a particularly useful way that you will commonly see is with the colon operator (:) to create integer from a starting point to an ending point that increase by one.\n\n\n\n\n\n\n\n\nTry for yourself. What happens if you create a really long vector?\n\n\n\n\n\n\n\n\nIf you want to make more complex vectors of numbers, take a look at the documentation for seq() and try it out. The See Also portion of the help page lists other functions you might use.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html#vector-types",
+    "href": "worksheets/01-worksheet.html#vector-types",
+    "title": "1. Getting started with R",
+    "section": "5 Vector types",
+    "text": "5 Vector types\nSo far so good, but we are still only using numbers. What about words? Well, in R, an object that contains words, or really any letters, is known as a character vector.\nLet’s start by trying to print out the word hello to the console. If you get an error, check the hints.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteYou probably got an error\n\n\n\n\n\nMake sure to read the error message. What do you think you are missing.\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nAny set of characters needs to be surrounded by quotation marks.\n\"hello\"\n\n\n\n\n\n\n\n\n\n\nTipPrinting to the console\n\n\n\n\n\nSo far we have printed values to the console in two ways:\n\nRunning functions without assigning the output to a named object\nTyping out the name of an object and running it.\n\nA third way is to explicitly call the print() function. This is usually unnecessary in R where you are usually working interactively.4\n\n\n\nLet’s take what we learned above and create a character vector object named historians in which the number of historians you name is equal to the length of the vector.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint\n\n\n\n\n\nMake sure to have quotation marks around each historian’s name and separate the historians by a comma.\n\n\n\n\n\n\n\n\n\n\n\nTipA possible solution:\n\n\n\n\n\nAny set of characters needs to be surrounded by quotation marks.\nhistorians &lt;- c(\"Natalie Zemon Davis\", \"Lynn Hunt\", \"Robert Darnton\")\n\n\n\n\nSome of the functions that we have already used above will work with historians but others will not. We can find the length of historians but not the mean. Try it out.\n\n\n\n\n\n\n\n\nIf you want to know what type of vector an object is, use the class() function. Try it out first on households and then on historians.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMixing vector types\nWhen we defined a vector in R above, we noted that it can only have one data type. So what happens if you mix them? Try it out by creating a new vector that combines households and historians. You do not need to assign it a name.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTipSolution\n\n\n\n\n\nYou can use c() on vectors.\nc(households, historians)\nTry adding more instances of historians or households within c().\n\n\n\n\nNotice that there are now quotation marks around the numbers. They are now characters. R combines different vector types by coercing the more specific type—in this case the numeric class—to the less specific type—in this case to character class.\n\n\nLogical vectors\nThe last main vector type that type that should be mentioned in this intro to working with R worksheet is logical made up of TRUE and FALSE.\n\n\n\n\n\n\n\n\nOne of the primary ways to create a logical vector is by using conditionals. For instance choose a value for the conditional statement below.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html#missing-data",
+    "href": "worksheets/01-worksheet.html#missing-data",
+    "title": "1. Getting started with R",
+    "section": "6 Missing data",
+    "text": "6 Missing data\nMissing values are represented in R by NA. Let’s create a numeric vector named rooms that has some missing values.\n\n\n\n\n\n\n\n\nWhat happens when you try to run a summary function such as mean() or sum()or max() or min() on rooms?\n\n\n\n\n\n\n\n\nIf there are missing values in a numeric vector, R cannot (or chooses not to) make summative mathematical calculations on a vector. R cannot know what the missing values should be, so there uis no way to know what is the maximum or minimum value. To make the calculations you need to explicitly remove NAs with the na.rm argument. Try the summary functions you used above but this time add na.rm = TRUE.\n\n\n\n\n\n\n\n\nThis feature, the need to replace the default of na.rm = FALSE with na.rm = TRUE, makes sure that you acknowledge the presence of missing data. It is features like this that show how R has been designed to work with the realities of data.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/01-worksheet.html#footnotes",
+    "href": "worksheets/01-worksheet.html#footnotes",
+    "title": "1. Getting started with R",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nR is a REPL (read-eval-print loop) based language. It is primarily focused on running interactively, one line at a time.↩︎\nFor more on naming objects see R for Data Science and the Tidyverse style guide.↩︎\nMore on data types in the next section.↩︎\nNote that in these worksheets we use the word interactively in two slightly different ways. It is interactive because you can work in the browser, but R is also designed to be an interactive programming language that you can run one code block at a time.↩︎",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "1: Getting started with R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html",
+    "href": "worksheets/02-worksheet.html",
+    "title": "2. Working with data frames in R",
+    "section": "",
+    "text": "In Getting started with R we focused on running code and working with vectors. Vectors make up the foundation of data in R, but generally we want to work with different types of data that are linked together. We can do this with data frames. This is the type of data you will be familiar with from spreadsheets; data made up of rows and columns. Behind the scenes data frames are made up of a series of vectors (the columns) of the same length (each element is a part of a row). Columns are often referred to in R as variables. That means that columns must be of the same data type.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html#a-note-on-packages",
+    "href": "worksheets/02-worksheet.html#a-note-on-packages",
+    "title": "2. Working with data frames in R",
+    "section": "1 A note on packages",
+    "text": "1 A note on packages\nIn Getting started with R we encountered our first functions. Functions come from packages. There are a base set of packages that come with R and a subset of these are loaded every time you start R. These packages and the functions they contain are known as base R; they are what we have been using. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. This is great, but it also adds complexity. There is (essentially) always multiple ways to accomplish the same task.\nWe will be using many of these extra packages during the course. Most extensively, we will be using the tidyverse set of packages. The tidyverse provides an alternative way to work with data from base R, though the two are always used together. It is not an either or situation. Whereas a data frame in base R is called a data.frame, in the tidyverse it is a tibble.1 These two data types are interchangeable, but there are slight differences. The most notable difference is the way the data frames are printed to the console.\n\nTo use a package you need to load it\nEverytime you want to use a package that is not in base R in a session, you need to load it. Think of it this way. You download a package once; you load it in each session. Let’s do that now with two packages from the tidyverse set of packages: tibble to create data frames, readr to read in data, and dplyr to look at parts of a data frame.2 You load a package with the library() function.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html#creating-a-data-frame",
+    "href": "worksheets/02-worksheet.html#creating-a-data-frame",
+    "title": "2. Working with data frames in R",
+    "section": "2 Creating a data frame",
+    "text": "2 Creating a data frame\nLet’s create our first data frame using the tibble package using the aptly named tibble() function. Let’s do one that has columns for names, age, and historical period of study.\n\n\n\n\n\n\n\n\nNote the structure of how you create a data frame (and the coding style). The structure consists of a series of vectors, separated by commas, that are set to names (with the equal sign), which become the names set to columns.\nNote too how a tibble is printed:\n\nWe see the dimensions of the data frame. In this case four rows and three columns (4x3).\nBelow each column name, the data type of the column appears between angled brackets.\n\n\n\n\n\n\n\nNoteNumeric vectors\n\n\n\nThe age column is represented as dbl, which stands for double-point precision numbers or doubles. Without getting into the mathematical foundations of doubles or floating point numbers, they are numbers that can have decimals. The other primary numeric type in R is integer. R will default to using doubles because they are more permissive.\n\n\nMake your own data frame that mimics a type of data you would like to use this semester. Just make a couple of columns and rows.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html#data-from-r-or-packages",
+    "href": "worksheets/02-worksheet.html#data-from-r-or-packages",
+    "title": "2. Working with data frames in R",
+    "section": "3 Data from R or packages",
+    "text": "3 Data from R or packages\nR comes with some built-in data sets and many packages come with datasets. In fact, there are R packages designed to package data sets; see the R packages section of Data for DH under the Resources tab.\nThe Palmer penguins dataset is a new built in dataset in R that was used to create a plot in the home page for this section. We can access the dataset by typing penguins. Let’s first start by seeing the class of the penguins object.\n\n\n\n\n\n\n\n\nThis is a base R data.frame object. Let’s see what it looks like when we print it out to the console. Be prepared to scroll!\n\n\n\n\n\n\n\n\nDid you make it all the way down here? By default data.frames print out all rows and columns. Now we can see the difference between data.frames and tibbles by changing from a data.frame to a tibble with the as_tibble() function.\n\n\n\n\n\n\n\n\nNow you can see that tibbles by default only prints out the first 10 rows of the data frame and as many columns as fits in the console.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html#reading-in-data",
+    "href": "worksheets/02-worksheet.html#reading-in-data",
+    "title": "2. Working with data frames in R",
+    "section": "4 Reading in data",
+    "text": "4 Reading in data\nThe most common way you will access a data in the form of a data frame is by reading it in to your R session.\nLet’s read in data using a url to a dataset on GitHUb with the read_csv() function. We use read_csv() because the data is in a csv or comma separated values file. This will read the data in as a tibble and we will assign it to the name interviews.\n\n\n\n\n\n\n\n\nLet’s look at the output we get in reading this data into our session. When something is printed to the console, it is always good practice to read what it says. Sometimes it shows the data, sometimes an error that needs to be fixed, sometimes a warning that we might want to look into, or, as in this case, a message that provides information.\nFirstly, we learn that read_csv() used the url() function to get the data. That is nice but does not really affect us. Next, read_csv() provides information about the data we loaded. and how it parsed the different columns. The data frame has 131 rows and 14 columns. There are 7 character columns, 6 numeric columns , and one dttm vector, which is short for date time. We also see a message about how we can get more details or quite the message.\nLet’s print interviews to the console to see what it looks like.\n\n\n\n\n\n\n\n\nWe see that read_csv() reads in data as a tibble. You can use the similarly named read.csv() (note the _ vs the .) to read in the data as a data.frame. This might also be the first time you see how tibbles treat columns that do not fit within the console.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html#inspecting-a-data-frame",
+    "href": "worksheets/02-worksheet.html#inspecting-a-data-frame",
+    "title": "2. Working with data frames in R",
+    "section": "5 Inspecting a data frame",
+    "text": "5 Inspecting a data frame\nWe will go into more detail about doing things with data frames later. For now, let’s concentrate on some functions that help us look at the data frame we have read in to our session.\nA really useful function when dealing with any data object in R is str() which stands for structure.\n\n\n\n\n\n\n\n\nWith a tibble such as interviews we get two sets of overlapping information. We first get the data frame turned on its side (columns now appear as rows), which highlights the column names and variable types. Secondly, it shows how the columns were parsed by read_csv().\nYou can get a similar view of the data frame turned on its side with the glimpse() function.\n\n\n\n\n\n\n\n\nThis is great, but you might not need all this information. Say you have forgotten the names of the columns in your data frame. It happens all the time. You can use the names() function.\n\n\n\n\n\n\n\n\nAnother way to get a sense of the data contained in a data frame is to get some basic summary statistics on each of the columns with the summary() function. Currently, this is not all that useful for character columns, but you do get an overview of numeric columns.3\n\n\n\n\n\n\n\n\nYou might also want to look at different rows of the data frame. head() and tail() by default show, respectively, the first and last six rows. Use the n argument to change how many rows to look at.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint\n\n\n\n\n\nChange the default value of n. The default behavior looks like:\nhead(x, n = 6)\n\n\n\n\n\n\n\n\n\n\n\nTipA possible solution\n\n\n\n\n\nUse the n argument to choose the number of rows to print.\nhead(interviews, n = 15)\ntail(interviews, n = 4)\n\n\n\n\nYou can view a random subset of rows using the slice_sample() function that also uses an n argument to choose the number of rows to sample.\n\n\n\n\n\n\n\n\nCheck out the documentation for slice_sample() to see other functions you might use.",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html#conclusion-back-to-vectors",
+    "href": "worksheets/02-worksheet.html#conclusion-back-to-vectors",
+    "title": "2. Working with data frames in R",
+    "section": "6 Conclusion: back to vectors",
+    "text": "6 Conclusion: back to vectors\nLet’s conclude this introduction to working with data frames in R by returning full circle to vectors. There may be times when you want to concentrate on the data in a single column and you do not need to deal with the whole data frame. You can extract a column from a data frame and turn it back into a vector using the $ operator. The $ is placed after the name of the data frame and before the column name you want to extract. No spaces here. Try it out. Maybe run a summary statistic function on the vector.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteHint\n\n\n\n\n\nIf you have forgotten the names of the columns in interviews, scroll back up or run:\nnames(interviews)\n\n\n\n\n\n\n\n\n\n\n\nTipA possible solution\n\n\n\n\n\ninterviews$years_liv\nYou can run a summary statistic on the vector, such as the average years lived in the village.\nmean(interviews$years_liv)",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
+    ]
+  },
+  {
+    "objectID": "worksheets/02-worksheet.html#footnotes",
+    "href": "worksheets/02-worksheet.html#footnotes",
+    "title": "2. Working with data frames in R",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIn this class data frame and tibble will be used somewhat interchangeably. However, in this worksheet I will try to be consistent in the language that is used. A data frame is the general type of tabular data found in spreadsheets that we can read into R. A tibble is the type of data frame used by the tidyverse. A data.frame is the base R type of data frame.↩︎\nGenerally we will load this packages by loading the whole tidyverse package (library(tidyverse)), but in these interactive worksheets it is faster to just load the individual packages we will use for each session.↩︎\nsummary() may provide some more information about character columns in the next version of R.↩︎",
+    "crumbs": [
+      "Worksheets",
+      "How to",
+      "2. Data frames in R"
     ]
   },
   {
@@ -1076,7 +1376,7 @@
     "href": "content/04-content-tidy.html#activities",
     "title": "‘Tidy’ historical data",
     "section": "Activities",
-    "text": "Activities\n\nDiscussion: Organizing your research materials.\n\nWorking with text editors and Markdown.\nSet up folder structure for the course.\n\nDiscussion: Tidy data in the humanities.\nWorksheet: Getting started with R",
+    "text": "Activities\n\nDiscussion: Organizing your research materials.\n\nWorking with text editors and Markdown.\nSet up folder structure for the course.\n\nDiscussion: Tidy data in the humanities.\nWorksheet: Getting started with R\nWorksheet: Working with data frames in R",
     "crumbs": [
       "Content",
       "Topics",
@@ -1124,7 +1424,7 @@
     "href": "content/08-content-git.html#reading",
     "title": "Reproducible workflows with Git",
     "section": "Reading",
-    "text": "Reading\n\nJenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
+    "text": "Reading\n\nHadley Wickham et al., R for Data Science (2023).\n\nChapter 20: Spreadsheets\nChapter 28: Quarto\n\nJenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1244,7 +1544,7 @@
     "href": "content/07-content-snigb.html#reading",
     "title": "Working with SNiGB",
     "section": "Reading",
-    "text": "Reading\n\nHadley Wickham, A personal history of the tidyverse.",
+    "text": "Reading\n\nHadley Wickham, “A personal history of the tidyverse”.\nHadley Wickham et al., R for Data Science (2023).\n\nChapter 3: Data transformation\nChapter 4: Code style\nChapter 7: Data import",
     "crumbs": [
       "Content",
       "Topics",

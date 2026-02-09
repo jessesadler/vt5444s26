@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>‘Tidy’ historical data – Digital History Methods</title>
+<title>Setting up RStudio for success – Digital History Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/05-content-ggplot.html" rel="next">
-<link href="../content/03-content-md.html" rel="prev">
+<link href="../resources/install.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -264,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Course Details</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/index.html" aria-current="page"> 
+    <a class="nav-link" href="../content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -276,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html"> 
+    <a class="nav-link active" href="../resources/index.html" aria-current="page"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -291,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/04-content-tidy.html">4: ‘Tidy’ historical data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/rstudio-setup.html">Setting up RStudio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -314,8 +348,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Content</span></a>
+  <a href="../resources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
   </div>
 </li>
       </ul>
@@ -323,97 +357,80 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Topics</span></a>
+ <span class="menu-text">Digital Humanities</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">1: MLK Day - No class</span>
+  <div class="sidebar-item-container"> 
+  <a href="../resources/dh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">General DH resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data for DH</span></a>
+  </div>
+</li>
+      </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Organization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/02-content-data-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2: History, data, and the digital</span></a>
+  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zotero Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/03-content-md.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3: The file system and Markdown</span></a>
+  <a href="../resources/plaintext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with Plain Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/04-content-tidy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">4: ‘Tidy’ historical data</span></a>
+  <a href="../resources/markdown-syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown Syntax Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/05-content-ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5: Visualizing data with ggplot2</span></a>
+  <a href="../resources/text-editors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Text Editors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/06-content-dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6: Wrangling data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/07-content-snigb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7: Working with SNiGB</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/08-content-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8: Reproducible workflows with Git</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/09-content-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9: Making websites with Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/10-content-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10: Making maps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/11-content-networks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11: Network analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/12-content-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12: Web design and visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/13-content-gis-sna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13: Mapping and network analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/14-content-build.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14: Group work on your project</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/15-content-presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15: Presentation of final projects</span></a>
+  <a href="../resources/rstudio-setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Setting up RStudio</span></a>
   </div>
 </li>
       </ul>
@@ -428,22 +445,32 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
-  <li><a href="#watch" id="toc-watch" class="nav-link" data-scroll-target="#watch">Watch</a></li>
-  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
-  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#what-are-r-and-rstudio" id="toc-what-are-r-and-rstudio" class="nav-link active" data-scroll-target="#what-are-r-and-rstudio">What are R and RStudio?</a></li>
+  <li><a href="#navigating-rstudio" id="toc-navigating-rstudio" class="nav-link" data-scroll-target="#navigating-rstudio">Navigating RStudio</a>
+  <ul class="collapse">
+  <li><a href="#the-editor-panel" id="toc-the-editor-panel" class="nav-link" data-scroll-target="#the-editor-panel">The editor panel</a></li>
+  </ul></li>
+  <li><a href="#the-workflow" id="toc-the-workflow" class="nav-link" data-scroll-target="#the-workflow">The workflow</a>
+  <ul class="collapse">
+  <li><a href="#scripts-and-reproducibility" id="toc-scripts-and-reproducibility" class="nav-link" data-scroll-target="#scripts-and-reproducibility">Scripts and reproducibility</a></li>
+  </ul></li>
+  <li><a href="#setting-up-rstudio-for-reproducibility" id="toc-setting-up-rstudio-for-reproducibility" class="nav-link" data-scroll-target="#setting-up-rstudio-for-reproducibility">Setting up RStudio for reproducibility</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
+  <ul class="collapse">
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing packages</a></li>
+  <li><a href="#using-packages" id="toc-using-packages" class="nav-link" data-scroll-target="#using-packages">Using packages</a></li>
+  <li><a href="#updating-packages" id="toc-updating-packages" class="nav-link" data-scroll-target="#updating-packages">Updating packages</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/04-content-tidy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/rstudio-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/04-content-tidy.html">4: ‘Tidy’ historical data</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/rstudio-setup.html">Setting up RStudio</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">‘Tidy’ historical data</h1>
-<p class="subtitle lead">9 February 2026</p>
+<h1 class="title">Setting up RStudio for success</h1>
 </div>
 
 
@@ -460,69 +487,164 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This week our focus will be on the nature of data for historical research. We will also introduce <a href="https://www.r-project.org">R</a> and see what working in a programming language looks like.</em></p>
-<section id="reading" class="level2">
-<h2 class="anchored" data-anchor-id="reading">Reading</h2>
+<p>This page provides an overview for setting up and working in RStudio that will set you up for success in creating a reproducible workflow for data analysis in R.</p>
+<section id="what-are-r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-r-and-rstudio">What are R and RStudio?</h2>
+<p>It is important to clearly distinguish between <a href="https://www.r-project.org">R</a> and <a href="https://posit.co/products/open-source/rstudio">RStudio</a> because they can easily become intertwined. In short:</p>
 <ul>
-<li>Hadley Wickham, “Tidy Data,” <em>Journal of Statistical Software</em> 59, no. 10 (2014), <a href="http://www.jstatsoft.org/v59/i10/" class="uri">http://www.jstatsoft.org/v59/i10/</a>.</li>
-<li>Karl Broman and Kara Woo, “Data Organization in Spreadsheets,” <em>The American Statistician</em> 72, no. 1 (2018), <a href="https://doi.org/10.1080/00031305.2017.1375989" class="uri">https://doi.org/10.1080/00031305.2017.1375989</a>.</li>
-<li>Katie Rawson and Trevor Muñoz, “<a href="https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23">Against Cleaning</a>,” in <em>Debates in the Digital Humanities 2019</em>, ed.&nbsp;Matthew K. Gold and Lauren F. Klein (University of Minnesota Press, 2019).</li>
-<li>Catherine D’Ignazio and Lauren F. Klein, <em>Data Feminism</em> (The MIT Press, 2020), <a href="https://data-feminism.mitpress.mit.edu" class="uri">https://data-feminism.mitpress.mit.edu</a>, Chapter 6: <a href="https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3">The Numbers Don’t Speak for Themselves</a>.</li>
+<li><strong>R</strong> is the programming language</li>
+<li><strong>RStudio</strong> is the application in which we will write and run R code. It is the integrated developer environment (IDE) most closely associated with R.</li>
 </ul>
-</section>
-<section id="watch" class="level2">
-<h2 class="anchored" data-anchor-id="watch">Watch</h2>
-<p>A short video by <a href="https://jennybryan.org/about/">Jenny Bryan</a> on how to name files:</p>
-<div class="grid">
-<div class="g-col-9">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ES1LTlnpLMk?si=hP_4NHRcqGe3KYUo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>It is possible to run R in many different applications and environments. In fact, Posit, the company behind RStudio is currently building a new IDE for data analysis called <a href="https://positron.posit.co">Positron</a>. You can also run R in the command line or in another IDE such as <a href="https://code.visualstudio.com/docs/languages/r">Visual Studio Code</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/r-in-terminal.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of R running in the Terminal application."></p>
+<figcaption>An R session running in the Terminal app</figcaption>
+</figure>
 </div>
+<p>We will use RStudio because it is a mature, open source application that provides many features that helps people write good R code and is closely integrated with <a href="https://quarto.org">Quarto</a>. It is also the most widely used IDE for R.</p>
+</section>
+<section id="navigating-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="navigating-rstudio">Navigating RStudio</h2>
+<p>When you open up RStudio for the first time you will be presented with a three panel view:</p>
+<ul>
+<li>The left panel is the <strong>console</strong>. This is where you write or send code, run it, and see any output. You type your code after the <strong>prompt</strong>, which in R is <code>&gt;</code>.</li>
+<li>The upper-right panel shows any objects you create in your session.</li>
+<li>The bottom-right panel shows your project files but also has tabs to show plots you make, packages you have installed, and a viewer for documentation.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/rstudio-start-annotated.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels."></p>
+<figcaption>RStudio at startup with three panels: console, environment, and files</figcaption>
+</figure>
+</div>
+<p>Type in your first R command to make sure everything is working. Type out a mathematical calculation and press <code>Return</code> or <code>Enter</code> to run the line of code.</p>
+<section id="the-editor-panel" class="level3">
+<h3 class="anchored" data-anchor-id="the-editor-panel">The editor panel</h3>
+<p>When you create a new R script or any other type of file, a fourth panel will appear in the upper right and the console will shrink to the bottom-right position. You can create a new R script (this is a text file that ends with the extension <code>.R</code>) in many ways.</p>
+<ul>
+<li>Go to File -&gt; New File -&gt; R Script</li>
+<li>Click on the plus sign with the blank paper behind it in the upper-right corner of the application and select R Script.</li>
+<li>Similarly, click on the plus sign with the blank paper behind it in the upper-left corner of the Files panel.</li>
+<li>Or with a keyboard shortcut: <code>Cmd/Ctrl + Shift + N</code>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/rstudio-editor-panel.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with four panels."></p>
+<figcaption>RStudio with all four panels: editor, console, environment, and files</figcaption>
+</figure>
 </div>
 </section>
-<section id="assignment" class="level2">
-<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
-<p>The assignments this week are examples of material that should be placed in your <a href="../assignments.html#commonplace-book">commonplace book</a> even if only the first one explicitly asks you to do so.</p>
-<ul>
-<li>Download a text editor or Markdown app such as <a href="https://obsidian.md">Obsidian</a> to use for Markdown documents. If you are using a digital commonplace book, you should do it in Markdown.
-<ul>
-<li>See the <a href="../resources/text-editors.html">Text editor guide</a> for information on text editors and how to set them up.</li>
-</ul></li>
-<li>Commonplace book writing: Reflect on how you organize your research materials. How could this be improved? What are some of the features or capabilities you would like to have?</li>
-<li>Find one or more historical datasets related to your research interests and/or think of a dataset you could create from your research. Sketch out what it would look like.</li>
-<li>Look at <a href="https://www.responsible-datasets-in-context.com">Responsible datasets in context</a>. How is the data documented? How is the data structured? Does it follow the tenets of tidy data?</li>
-</ul>
 </section>
-<section id="activities" class="level2">
-<h2 class="anchored" data-anchor-id="activities">Activities</h2>
+<section id="the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-workflow">The workflow</h2>
+<p>The basic workflow for RStudio is to work on writing and running code in the left two panels and inspect aspects of what you are doing or what you have created in the right two panels.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Let’s concentrate on the two panels on the left.</p>
+<p>The <strong>console</strong> can be thought of as where the action happens. It is where code is actually run and where any outputs will be printed. However, the console is also <em>ephemeral</em>. You run code block by code block, pushing each line of code further and further up into the console’s history, out of sight and out of mind. You can look at your history, but, practically speaking, there is no good, clear way to track what you have done just by using the console.</p>
+<p>This is where the <strong>editor panel</strong> comes in. The editor panel shows text documents in which you will save the code and any documentation or explanations that you want to save. We will primarily be working with R scripts and Quarto documents in this course. Here, we will stick to R scripts.</p>
+<section id="scripts-and-reproducibility" class="level3">
+<h3 class="anchored" data-anchor-id="scripts-and-reproducibility">Scripts and reproducibility</h3>
+<p>Scripts are at the foundation of reproducibility. They contain the code that performed a certain set of analysis or created a visualization that can be run by you or someone else later. Unlike the console, scripts are meant to be permanent or at least record what you have done. You save scripts, but you do not save what happened in the console.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>An <strong>R script</strong> is a plain text document in which everything that is typed is assumed to be R code that will be sent to the console. To run code from a script or send it to the console you cannot just type Return/Enter. That moves you to the next line. Instead, you need to use <code>Cmd + Return</code> or <code>Ctrl + Enter</code>. If you want to write comments in a script to take notes or tell future you or any collaborators why you did something, you need to place a hashtag <code>#</code> before it. Anything after <code>#</code> will not be run as code.</p>
 <ul>
-<li>Discussion: Organizing your research materials.
-<ul>
-<li>Working with text editors and Markdown.</li>
-<li>Set up folder structure for the course.</li>
-</ul></li>
-<li>Discussion: Tidy data in the humanities.</li>
-<li>Worksheet: <a href="../worksheets/01-worksheet.html">Getting started with R</a></li>
-<li>Worksheet: <a href="../worksheets/02-worksheet.html">Working with data frames in R</a></li>
+<li>Send code to the console from a script: <code>Cmd + Return</code> or <code>Ctrl + Enter</code></li>
+<li>Comment: <code>#</code></li>
 </ul>
+<p>Try it out for yourself.</p>
+<p>This distinction between <em>permanent</em> and <em>ephemeral</em> also translates to the panels on the right. The files pane (bottom right) shows the scripts you create and any data or visualization you save. These are permanent. The environment panel shows the objects created in a session by running code in the console. These objects are ephemeral. They exist and can be used in this session, but they can always be recreated from the script.</p>
+<p>The script trumps the environment panel; it is the source of truth. The code that creates the object is much more important than the object itself. Think of it this way, if you have it right in the environment but wrong in a script, it will not do you much good when you come back to your code after a break and find that things are out of whack.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/rstudio-permanence.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing that the editor and file panels are permanent data and the console and environment panels hold ephemeral data."></p>
+<figcaption>The editor and files panels are the primary sources of truth. The console and environment panels represent the ephemeral objects created in a session.</figcaption>
+</figure>
+</div>
 </section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+</section>
+<section id="setting-up-rstudio-for-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-rstudio-for-reproducibility">Setting up RStudio for reproducibility</h2>
+<p>We need to make some important changes to the default settings in RStudio to ensure that R scripts remain the source of truth of your analysis not your environment. Go to Tools -&gt; Global Options and uncheck Restore .RData into workspace at startup and set Save workspace to .RData on exit to <code>Never</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/rstudio-workspace.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the Settings window for RStudio."></p>
+<figcaption>RStudio Global Options: Set these options for the Workspace</figcaption>
+</figure>
+</div>
+<p>Let’s see what this does. Make sure that you have created objects in your environment. Then, restart your session. You can do this by going to the Session menu -&gt; Restart R. Your environment panel should be empty now. This might seem like it is painful, but it is short-term pain for long-term gain. It will teach you to keep what you want to save in your R script so that you can always recreate objects or rerun analysis later.</p>
+<p>In fact, running <code>Restart R</code> and then running your script, either one line at a time (hit <code>Cmd + Return</code> or <code>Ctrl + Enter</code> over and over) or <code>Cmd/Ctrl + Shift + S</code> to re-run the entire script, is a good way to ensure that your script is correct. Better to find out now if there is a problem than weeks or months down the road.</p>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>After getting RStudio set up, the next step is to install the main packages we will use in the course. R comes with a preinstalled set of packages known as <strong>base R</strong>. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. Generally you will install packages through the central package repository called <a href="https://cran.r-project.org">CRAN (The Comprehensive R Archive Network)</a>, which is also where you downloaded R. There are over 23,000 packages on CRAN.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<section id="installing-packages" class="level3">
+<h3 class="anchored" data-anchor-id="installing-packages">Installing packages</h3>
+<p>Most importantly for this class, we need to install the <a href="https://tidyverse.org">tidyverse</a> set of packages. There are two ways to do this. Either through a function on the console or using the RStudio <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI (Graphical User Interface)</a>. I generally prefer to use the console.</p>
+<ol type="1">
+<li>You can install packages with the <code>install.packages()</code> function with the names of the packages you want to install in a character vector. Let’s start by just installing the tidyverse package.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>To use the graphical interface to install packages:
 <ul>
-<li><a href="https://datacarpentry.org/spreadsheets-socialsci/">Data Carpentry - Data Organization in Spreadsheets for Social Scientists</a></li>
-<li>Kieran Healy, <a href="https://plain-text.co">The Plain Person’s Guide to Plain Text Social Science</a></li>
-<li>Kieran Healy, <a href="https://mptc.io">Modern Plain Text Computing</a></li>
-<li>Susan Collins, <a href="https://www.historians.org/research-and-publications/perspectives-on-history/october-2017/">Data Management Plans for Historians: How to Document and Protect Your Research</a>.</li>
-<li>There are lots of resources on data criticism from a humanities perspective.
-<ul>
-<li>Look at the resources in the <a href="https://guides.lib.vt.edu/dh/criticaldh">Critical DH section</a> of the DH research guide.</li>
-<li>The work of <a href="https://roopikarisam.com">Roopika Risam</a> is a particularly good place to start.</li>
+<li>Select the Packages tab in the Files panel on the bottom right of RStudio.</li>
+<li>Click on Install button on the top left of the panel.</li>
+<li>This will open a popup dialogue. Type in the packages you want to install—in this case <code>tidyverse</code>—and then click Install.</li>
+<li>Note that RStudio will actually run the command <code>install.packages("tidyverse")</code> in the console.</li>
 </ul></li>
-</ul>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/install-packages.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing the process to install packages using the GUI interface."></p>
+<figcaption>Installing packages with the Packages panel in RStudio</figcaption>
+</figure>
+</div>
+</section>
+<section id="using-packages" class="level3">
+<h3 class="anchored" data-anchor-id="using-packages">Using packages</h3>
+<p>The tidyverse set of packages is now installed, but to actually use the functions from the package in an R session you need to load the package. This is done with <code>library()</code>. Try it for yourself.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You do not need to put quotation marks around <code>tidyverse</code> because the <code>library()</code> function knows where to look for something called <code>tidyverse</code>. You can put quotation marks around it if you want to. You should get an output in your console that looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/load-tidyverse.png" class="img-fluid figure-img" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages."></p>
+<figcaption>Output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages</figcaption>
+</figure>
+</div>
+<p>You see a list of the nine core tidyverse packages and their versions: dplyr, forcats, ggplot2, lubridate, purrr, readr, stringr, tibble, tidyr. You will also see a message that there are conflicts. This sounds scary but is expected behavior. This message tells us that dplyr has functions called <code>filter()</code> and <code>lag()</code>, which are also names for functions in base R. When you use these function after loading the tidyverse, you will use the dplyr version, which is what we want.</p>
+<p>Remember, because we set up RStudio for reproducibility, you need to run <code>library(tidyverse)</code> every time you begin a new session. Therefore, you should load the packages you will use at the start of your script. Writing <code>library(tidyverse)</code> at the top of each script is a good practice to begin with.</p>
+</section>
+<section id="updating-packages" class="level3">
+<h3 class="anchored" data-anchor-id="updating-packages">Updating packages</h3>
+<p>Packages are often changing, fixing bugs (and adding some) and bringing new features so it is a good idea to update your packages every once in a while.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Again, there is a way to do this in the console and through the Packages panel.</p>
+<ol type="1">
+<li>Run <code>update.packages()</code> and choose <code>y</code> to update the packages.</li>
+<li>To use the graphical interface to update packages:
+<ul>
+<li>Click on Update button on the top left of the Packages tab of the Files panel. It is right next to Install.</li>
+<li>You can click the Select All button on the bottom right of the dialogue window that pops up.</li>
+<li>Then Install Updates.</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/update-packages.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red."></p>
+<figcaption>Updating packages with the Packages panel in RStudio</figcaption>
+</figure>
+</div>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>You can move the panels around in Tools -&gt; Global Options if you want to.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This is largely true if a bit overdramatic. The History tab shows the code blocks you have run.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>You can also install packages from other repositories such as <a href="https://r-universe.dev/search">R Universe</a> or on <a href="https://github.com">GitHub</a>, but we will not need to do that for this course. The process for installing from these other places is similar.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>How often is up to you. Packages are generally stable, so I find there is usually little downside to updating. I update packages once a week but once a month would be plenty frequent.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -938,14 +1060,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/03-content-md.html" class="pagination-link" aria-label="3: The file system and Markdown">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3: The file system and Markdown</span>
+      <a href="../resources/install.html" class="pagination-link" aria-label="Installing R and RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Installing R and RStudio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/05-content-ggplot.html" class="pagination-link" aria-label="5: Visualizing data with ggplot2">
-        <span class="nav-page-text">5: Visualizing data with ggplot2</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -956,7 +1075,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/04-content-tidy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/rstudio-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>
