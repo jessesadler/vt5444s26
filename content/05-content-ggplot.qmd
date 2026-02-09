@@ -16,7 +16,7 @@ format: html
 
 ::: {.grid}
 
-:: {.g-col-9}
+::: {.g-col-9}
 {{< video https://youtu.be/ZamPCbvBAgE?si=HlR5phzzJwKr30ML >}}
 :::
 
