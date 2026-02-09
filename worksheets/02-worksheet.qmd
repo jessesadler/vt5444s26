@@ -28,6 +28,7 @@ Everytime you want to use a package that is not in base R in a session, you need
 #| edit: false
 library(tibble)
 library(readr)
+library(dplyr)
 ```
 
 ## Creating a data frame
@@ -82,7 +83,7 @@ Did you make it all the way down here? By default `data.frame`s print out all ro
 as_tibble(penguins)
 ```
 
-Now you can see that `tibble`s by defualt only prints out the first 10 rows of the data frame and as many columns as fits in the console.
+Now you can see that `tibble`s by default only prints out the first 10 rows of the data frame and as many columns as fits in the console.
 
 ## Reading in data
 The most common way you will access a data in the form of a data frame is by reading it in to your R session.
@@ -114,7 +115,7 @@ A really useful function when dealing with any data object in R is `str()` which
 str(interviews)
 ```
 
-With a tibble that we read in with `read_csv()` we get two sets of overlapping information. We first get the data frame turned on its side (columns now appear as rows), which highlights the column names and variable types. Secondly, it shows how the columns were parsed by `read_csv()`.
+With a tibble such as `interviews` we get two sets of overlapping information. We first get the data frame turned on its side (columns now appear as rows), which highlights the column names and variable types. Secondly, it shows how the columns were parsed by `read_csv()`.
 
 You can get a similar view of the data frame turned on its side with the `glimpse()` function.
 
@@ -170,7 +171,7 @@ You can view a random subset of rows using the `slice_sample()` function that al
 slice_sample(interviews, n = ______)
 ```
 
-Check out the [documentation for `slice_smaple()`](https://dplyr.tidyverse.org/reference/slice.html) to see other functions you might use.
+Check out the [documentation for `slice_sample()`](https://dplyr.tidyverse.org/reference/slice.html) to see other functions you might use.
 
 ## Conclusion: back to vectors
 Let's conclude this introduction to working with data frames in R by returning full circle to vectors. There may be times when you want to concentrate on the data in a single column and you do not need to deal with the whole data frame. You can extract a column from a data frame and turn it back into a vector using the `$` operator. The `$` is placed after the name of the data frame and before the column name you want to extract. No spaces here. Try it out. Maybe run a summary statistic function on the vector.

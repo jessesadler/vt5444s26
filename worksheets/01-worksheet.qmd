@@ -24,7 +24,7 @@ You can use R as a calculator. If you write a mathematical expression and run it
 2 + 3
 ```
 
-You can multiply (`*`), divide (`/`), use exponents (`^`), and other mathematical expressions, including using parenthes for order of operations. Create your own mathematical calculation below.
+You can multiply (`*`), divide (`/`), use exponents (`^`), and other mathematical expressions, including using parentheses for order of operations. Create your own mathematical calculation below.
 
 ```{webr} 
 
@@ -144,7 +144,7 @@ In this course, we will use *snake case*, which is probably the most widely used
 ::: {.callout-tip}
 ## Be aware: R is case sensitive
 
-This means that `my_obj` is different from `My_obj`. Computers are persnickity. You must be precise in your instructions. Computers do what you type, not what you want.
+This means that `my_obj` is different from `My_obj`. Computers are persnickety. You must be precise in your instructions. Computers do what you type, not what you want.
 
 :::
 
@@ -201,7 +201,7 @@ That is nice! But rather limited. What else can we do with the `round()` functio
 We see that this is actually the documentation of a set or family of functions. There are a couple of sections of the help page that are, well, particularly helpful.
 
 - Description: a short description of what the function is designed to do.
-- Usage: tells you the available *arguments* and their defualt values if any. Note that `digits` is set to `0` for `round()` but `6` for `signif()`.
+- Usage: tells you the available *arguments* and their default values if any. Note that `digits` is set to `0` for `round()` but `6` for `signif()`.
 - Arguments: provides an explanation of each argument and the type of data it can be.
 - Examples: R code that you can run to see how a function works. Some examples are really helpful; some are less so.
 
