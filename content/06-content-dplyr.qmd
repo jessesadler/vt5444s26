@@ -15,10 +15,16 @@ format: html
     - If you want to explore more on visualization with `ggplot2`, look at chapters 9, 10, and 11.
 
 ## Assignment
+- Create an R script in RStudio named `intro-r.R` in your `r-notes/` project folder and go through the material from [Worksheet 1. Getting started with R](../worksheets/01-worksheet.qmd).
+    - The task is not necessarily to copy or do everything in the worksheet. Rather, play around with how things work using a script in RStudio.
+    - Get used to the differences of writing and running code in a script compared to directly in the console.
+    - Create objects, create vectors of different types, use different functions, look at documentation for functions with `?function_name`.
 - Create a [GitHub account](https://github.com). You can follow [these instructions](https://swcarpentry.github.io/git-novice/#creating-a-github-account) from the Carpentries. Choose a username that you would be ok sharing. Mine is jessesadler, and so I can be found at <https://github.com/jessesadler>.
     - Look through the [course website repository](https://github.com/jessesadler/vt5444s26) and [file an issue](https://github.com/jessesadler/vt5444s26/issues) about something that could be improved or where there is a mistake. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.
 
 ## Activities
-
+- Importing data in R
+- Wrangling data with dplyr
+- Introduction to Quarto documents
 
 ## Resources
