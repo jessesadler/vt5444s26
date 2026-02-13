@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5aec70e3d56b44e6a348e0034acc91f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-44fba0e3fddc22f07d28d3ae0c34b68e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-5aec70e3d56b44e6a348e0034acc91f8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3b44682585a785beacf9142a3d3cfc1d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b4260974a8dd9c083292181e1159cdc3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-3b44682585a785beacf9142a3d3cfc1d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -446,10 +446,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#what-are-r-and-rstudio" id="toc-what-are-r-and-rstudio" class="nav-link active" data-scroll-target="#what-are-r-and-rstudio">What are R and RStudio?</a></li>
-  <li><a href="#navigating-rstudio" id="toc-navigating-rstudio" class="nav-link" data-scroll-target="#navigating-rstudio">Navigating RStudio</a>
+  <li><a href="#navigating-rstudio" id="toc-navigating-rstudio" class="nav-link" data-scroll-target="#navigating-rstudio">Navigating RStudio</a></li>
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects">RStudio projects</a>
   <ul class="collapse">
-  <li><a href="#the-editor-panel" id="toc-the-editor-panel" class="nav-link" data-scroll-target="#the-editor-panel">The editor panel</a></li>
+  <li><a href="#setting-up-your-project-structure" id="toc-setting-up-your-project-structure" class="nav-link" data-scroll-target="#setting-up-your-project-structure">Setting up your project structure</a></li>
   </ul></li>
+  <li><a href="#the-editor-panel" id="toc-the-editor-panel" class="nav-link" data-scroll-target="#the-editor-panel">The editor panel</a></li>
   <li><a href="#the-workflow" id="toc-the-workflow" class="nav-link" data-scroll-target="#the-workflow">The workflow</a>
   <ul class="collapse">
   <li><a href="#scripts-and-reproducibility" id="toc-scripts-and-reproducibility" class="nav-link" data-scroll-target="#scripts-and-reproducibility">Scripts and reproducibility</a></li>
@@ -495,10 +497,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>R</strong> is the programming language</li>
 <li><strong>RStudio</strong> is the application in which we will write and run R code. It is the integrated developer environment (IDE) most closely associated with R.</li>
 </ul>
-<p>It is possible to run R in many different applications and environments. In fact, Posit, the company behind RStudio is currently building a new IDE for data analysis called <a href="https://positron.posit.co">Positron</a>. You can also run R in the command line or in another IDE such as <a href="https://code.visualstudio.com/docs/languages/r">Visual Studio Code</a>.</p>
+<p>It is possible to run R in many different applications and environments. In fact, Posit, the company behind RStudio is currently building a new IDE for data analysis called <a href="https://positron.posit.co">Positron</a>. You can also run R on the command line or in another IDE such as <a href="https://code.visualstudio.com/docs/languages/r">Visual Studio Code</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../files/img/r-in-terminal.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of R running in the Terminal application."></p>
+<p><img src="../files/img/r-in-terminal.png" class="img-fluid figure-img" style="width:60.0%" alt="A screen shot of R running in the Terminal application."></p>
 <figcaption>An R session running in the Terminal app</figcaption>
 </figure>
 </div>
@@ -519,12 +521,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>Type in your first R command to make sure everything is working. Type out a mathematical calculation and press <code>Return</code> or <code>Enter</code> to run the line of code.</p>
-<section id="the-editor-panel" class="level3">
-<h3 class="anchored" data-anchor-id="the-editor-panel">The editor panel</h3>
-<p>When you create a new R script or any other type of file, a fourth panel will appear in the upper right and the console will shrink to the bottom-right position. You can create a new R script (this is a text file that ends with the extension <code>.R</code>) in many ways.</p>
+</section>
+<section id="rstudio-projects" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-projects">RStudio projects</h2>
+<p>One of the foundational features of RStudio is the concept of <strong>projects</strong>. Projects set up your analyses for reproducibility by making it clear where your analysis lives and how your data, scripts, and all other files that belong to an analysis are related to each other. In short, they are all contained in a project folder. Projects are based on R’s notion of the <strong>working directory</strong>. This is the folder where R <em>starts</em> when you ask it to load data files or save scripts. If this is the first time that you have opened RStudio, your working directory is probably your <strong>home</strong> directory. On macOS this is represented with <code>~/</code>, on Windows likely with <code>C:\Users\[your-username]</code>. You can see this at the top of the console panel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/startup-working-directory.png" class="img-fluid figure-img" style="width:40.0%" alt="A screen shot of the top of the console in RStudio that shows the current working directory."></p>
+<figcaption>Current working directory</figcaption>
+</figure>
+</div>
+<p>RStudio projects provide a clear and explicit way to tell R where to start (to set your working directory) and keep all of your analysis together. Let’s create our first project. This project will hold all of the code and data we will work on in our in-class sessions. When you want to work on a project with your own data, follow these steps again to create a new project in a different folder.</p>
+<ol type="1">
+<li>Go to the File menu and select New Project…</li>
+<li>In the New Project Wizard select New Directory.</li>
+<li>Choose New Project for the Project type.</li>
+<li>Name your project and choose where to put it.
+<ul>
+<li>For this first project under Directory name we will use <code>r-notes</code>.</li>
+<li>Then, select Browse… to put the project folder inside your <code>hist5444s26</code> folder that contains the work done for this course. If you have not created this folder yet, do so now in Finder or File Explorer.</li>
+<li>Finally, select <strong>Create Project</strong></li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/rstudio-new-project.png" class="img-fluid figure-img" style="width:75.0%" alt="A screen shot of the three dialogue windows in the RStudio project wizard interface."></p>
+<figcaption>Steps to create a project: (top) select New Directory, (middle) choose New Project for the project type, (bottom) choose what to name the project and where to put it.</figcaption>
+</figure>
+</div>
+<p>RStudio will start back up but now your working directory will be the new project folder you created, in this instance <code>r-notes</code>. You can verify you are in your new project in four different locations in the RStudio interface.</p>
+<ol type="1">
+<li>The name of the RStudio window will now contain <code>r-notes</code>.</li>
+<li>The top of the has the <strong>path</strong> on your computer from your <em>home</em> to the project folder. For me it is <code>~/Documents/hist5444s26/r-notes</code>.</li>
+<li>The project dropdown on the top-right of the RStudio window. You can use this menu to quickly switch between different projects.</li>
+<li>The files panel will show the path to your working directory and a single file named <code>r-notes.Rproj</code>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/rstudio-project-interface.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels. The four locations where you can see the current project are highlighted in maroon."></p>
+<figcaption>RStudio project interface, highlighting areas that show the current project.</figcaption>
+</figure>
+</div>
+<section id="setting-up-your-project-structure" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-your-project-structure">Setting up your project structure</h3>
+<p>Let’s finish setting up the new project by providing some structure, adding folders to separate our raw data, any modified data we create, our scripts we write, and the figures we make. The most important aspect of this is to separate our <strong>raw data</strong> from our modified data we create using R.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Keeping these two types of data separate will protect you from making errors and possible data loss. You can add the folders in the RStudio files panel by clicking ojn the folder with the plus sign, or you can create the folders in Finder or File Explorer. Your folders should be named:</p>
+<ul>
+<li><code>data</code>: Any modified data that you want to store after cleaning or analyzing your raw data.</li>
+<li><code>data-raw</code>: Raw data that you have created or gotten from an external source.</li>
+<li><code>scripts</code>: Where you will keep your R scripts and any other documents such as Quarto documents.</li>
+<li><code>fig</code>: A place to store any visualizations you make in the course of your analysis.</li>
+<li><code>README.md</code>: Lastly you can create a README file to explain the purpose and structure of the project. To create a new Markdown file in RStudio go to File -&gt; New File -&gt; Markdown File.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../files/img/rnotes-project-setup.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of RStudio with the folder structure described above."></p>
+<figcaption>Project folders</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What is the r-notes.Rproj file?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>r-notes.Rproj</code> file is a plain text file that has a couple of project based settings in it. You can click on it in RStudio and it will open a dialogue window. Generally, you do not want to touch the file. Primarily, the file projects the best target for opening up your project. Double-click on any <code>.Rproj</code> file and RStudio will open to that project.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Relative vs absolute paths
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Projects enable you to access files such as data with <strong>relative paths</strong> from your working directory. Within our <code>r-notes</code> project we can access a data file called <code>SAFI_clean.csv</code> using the relative path: <code>data-raw/SAFI_clean.csv</code>.</p>
+<p>If we did not use projects and kept our working directory as our <strong>home</strong> directory, we would have to use <strong>absolute paths</strong>. Absolute paths point to a file or folder regardless of the working directory. On my computer it would be <code>~/Documents/hist5444s26/r-notes/data-raw/SAFI_clean.csv</code>. This might work for those on a Mac because we were specific about naming our folders, but it will not work on Windows.</p>
+<p>If you were to move the <code>r-notes</code> folder into another folder, absolute paths would not even work on your computer any more. However, if you give your <code>r-notes</code> folder to someone else and you use projects and relative paths, the paths will correctly find the data on their computer.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="the-editor-panel" class="level2">
+<h2 class="anchored" data-anchor-id="the-editor-panel">The editor panel</h2>
+<p>Now that you have created a project, we can create our first R script where we will save our code. When you create a new R script or any other type of file, a fourth panel will appear in the upper right and the console will shrink to the bottom-right position. You can create a new R script (this is a text file that ends with the extension <code>.R</code>) in many ways.</p>
 <ul>
 <li>Go to File -&gt; New File -&gt; R Script</li>
-<li>Click on the plus sign with the blank paper behind it in the upper-right corner of the application and select R Script.</li>
+<li>Click on the plus sign with the blank paper behind it in the upper-left corner of RStudio and select R Script.</li>
 <li>Similarly, click on the plus sign with the blank paper behind it in the upper-left corner of the Files panel.</li>
 <li>Or with a keyboard shortcut: <code>Cmd/Ctrl + Shift + N</code>.</li>
 </ul>
@@ -535,15 +624,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-</section>
 <section id="the-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="the-workflow">The workflow</h2>
-<p>The basic workflow for RStudio is to work on writing and running code in the left two panels and inspect aspects of what you are doing or what you have created in the right two panels.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Let’s concentrate on the two panels on the left.</p>
+<p>The basic workflow for RStudio is to work on writing and running code in the left two panels and inspect aspects of what you are doing or what you have created in the right two panels.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Let’s concentrate on the two panels on the left.</p>
 <p>The <strong>console</strong> can be thought of as where the action happens. It is where code is actually run and where any outputs will be printed. However, the console is also <em>ephemeral</em>. You run code block by code block, pushing each line of code further and further up into the console’s history, out of sight and out of mind. You can look at your history, but, practically speaking, there is no good, clear way to track what you have done just by using the console.</p>
 <p>This is where the <strong>editor panel</strong> comes in. The editor panel shows text documents in which you will save the code and any documentation or explanations that you want to save. We will primarily be working with R scripts and Quarto documents in this course. Here, we will stick to R scripts.</p>
 <section id="scripts-and-reproducibility" class="level3">
 <h3 class="anchored" data-anchor-id="scripts-and-reproducibility">Scripts and reproducibility</h3>
-<p>Scripts are at the foundation of reproducibility. They contain the code that performed a certain set of analysis or created a visualization that can be run by you or someone else later. Unlike the console, scripts are meant to be permanent or at least record what you have done. You save scripts, but you do not save what happened in the console.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Scripts are at the foundation of reproducibility. They contain the code that performed a certain set of analysis or created a visualization that can be run by you or someone else later. Unlike the console, scripts are meant to be permanent or at least record what you have done. You save scripts, but you do not save what happened in the console.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>An <strong>R script</strong> is a plain text document in which everything that is typed is assumed to be R code that will be sent to the console. To run code from a script or send it to the console you cannot just type Return/Enter. That moves you to the next line. Instead, you need to use <code>Cmd + Return</code> or <code>Ctrl + Enter</code>. If you want to write comments in a script to take notes or tell future you or any collaborators why you did something, you need to place a hashtag <code>#</code> before it. Anything after <code>#</code> will not be run as code.</p>
 <ul>
 <li>Send code to the console from a script: <code>Cmd + Return</code> or <code>Ctrl + Enter</code></li>
@@ -574,7 +662,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="packages" class="level2">
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>After getting RStudio set up, the next step is to install the main packages we will use in the course. R comes with a preinstalled set of packages known as <strong>base R</strong>. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. Generally you will install packages through the central package repository called <a href="https://cran.r-project.org">CRAN (The Comprehensive R Archive Network)</a>, which is also where you downloaded R. There are over 23,000 packages on CRAN.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>After getting RStudio set up, the next step is to install the main packages we will use in the course. R comes with a preinstalled set of packages known as <strong>base R</strong>. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. Generally you will install packages through the central package repository called <a href="https://cran.r-project.org">CRAN (The Comprehensive R Archive Network)</a>, which is also where you downloaded R. There are over 23,000 packages on CRAN.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <section id="installing-packages" class="level3">
 <h3 class="anchored" data-anchor-id="installing-packages">Installing packages</h3>
 <p>Most importantly for this class, we need to install the <a href="https://tidyverse.org">tidyverse</a> set of packages. There are two ways to do this. Either through a function on the console or using the RStudio <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI (Graphical User Interface)</a>. I generally prefer to use the console.</p>
@@ -605,7 +693,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You do not need to put quotation marks around <code>tidyverse</code> because the <code>library()</code> function knows where to look for something called <code>tidyverse</code>. You can put quotation marks around it if you want to. You should get an output in your console that looks like this:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../files/img/load-tidyverse.png" class="img-fluid figure-img" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages."></p>
+<p><img src="../files/img/load-tidyverse.png" class="img-fluid figure-img" style="width:90.0%" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages."></p>
 <figcaption>Output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages</figcaption>
 </figure>
 </div>
@@ -614,7 +702,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="updating-packages" class="level3">
 <h3 class="anchored" data-anchor-id="updating-packages">Updating packages</h3>
-<p>Packages are often changing, fixing bugs (and adding some) and bringing new features so it is a good idea to update your packages every once in a while.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Again, there is a way to do this in the console and through the Packages panel.</p>
+<p>Packages are often changing, fixing bugs (and adding some) and bringing new features so it is a good idea to update your packages every once in a while.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Again, there is a way to do this in the console and through the Packages panel.</p>
 <ol type="1">
 <li>Run <code>update.packages()</code> and choose <code>y</code> to update the packages.</li>
 <li>To use the graphical interface to update packages:
@@ -626,7 +714,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../files/img/update-packages.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red."></p>
+<p><img src="../files/img/update-packages.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red."></p>
 <figcaption>Updating packages with the Packages panel in RStudio</figcaption>
 </figure>
 </div>
@@ -639,10 +727,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>You can move the panels around in Tools -&gt; Global Options if you want to.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This is largely true if a bit overdramatic. The History tab shows the code blocks you have run.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>You can also install packages from other repositories such as <a href="https://r-universe.dev/search">R Universe</a> or on <a href="https://github.com">GitHub</a>, but we will not need to do that for this course. The process for installing from these other places is similar.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>How often is up to you. Packages are generally stable, so I find there is usually little downside to updating. I update packages once a week but once a month would be plenty frequent.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Raw data may be an oxymoron, but it is a useful one when setting up our projects.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>You can move the panels around in Tools -&gt; Global Options if you want to.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This is largely true if a bit overdramatic. The History tab shows the code blocks you have run.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>You can also install packages from other repositories such as <a href="https://r-universe.dev/search">R Universe</a> or on <a href="https://github.com">GitHub</a>, but we will not need to do that for this course. The process for installing from these other places is similar.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>How often is up to you. Packages are generally stable, so I find there is usually little downside to updating. I update packages once a week but once a month would be plenty frequent.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
