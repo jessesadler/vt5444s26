@@ -463,6 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using-packages" id="toc-using-packages" class="nav-link" data-scroll-target="#using-packages">Using packages</a></li>
   <li><a href="#updating-packages" id="toc-updating-packages" class="nav-link" data-scroll-target="#updating-packages">Updating packages</a></li>
   </ul></li>
+  <li><a href="#other-tweaks" id="toc-other-tweaks" class="nav-link" data-scroll-target="#other-tweaks">Other tweaks</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/rstudio-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -498,10 +499,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>RStudio</strong> is the application in which we will write and run R code. It is the integrated developer environment (IDE) most closely associated with R.</li>
 </ul>
 <p>It is possible to run R in many different applications and environments. In fact, Posit, the company behind RStudio is currently building a new IDE for data analysis called <a href="https://positron.posit.co">Positron</a>. You can also run R on the command line or in another IDE such as <a href="https://code.visualstudio.com/docs/languages/r">Visual Studio Code</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/r-in-terminal.png" class="img-fluid figure-img" style="width:60.0%" alt="A screen shot of R running in the Terminal application."></p>
-<figcaption>An R session running in the Terminal app</figcaption>
+<div id="fig-terminal" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of R running in the Terminal application.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/r-in-terminal.png" class="img-fluid figure-img" style="width:60.0%" alt="A screen shot of R running in the Terminal application.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: An R session running in the Terminal app.
+</figcaption>
 </figure>
 </div>
 <p>We will use RStudio because it is a mature, open source application that provides many features that helps people write good R code and is closely integrated with <a href="https://quarto.org">Quarto</a>. It is also the most widely used IDE for R.</p>
@@ -514,10 +519,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The upper-right panel shows any objects you create in your session.</li>
 <li>The bottom-right panel shows your project files but also has tabs to show plots you make, packages you have installed, and a viewer for documentation.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/rstudio-start-annotated.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels."></p>
-<figcaption>RStudio at startup with three panels: console, environment, and files</figcaption>
+<div id="fig-startup" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application with three panels.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-startup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-start-annotated.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-startup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: RStudio at startup with three panels: console, environment, and files.
+</figcaption>
 </figure>
 </div>
 <p>Type in your first R command to make sure everything is working. Type out a mathematical calculation and press <code>Return</code> or <code>Enter</code> to run the line of code.</p>
@@ -525,10 +534,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="rstudio-projects" class="level2">
 <h2 class="anchored" data-anchor-id="rstudio-projects">RStudio projects</h2>
 <p>One of the foundational features of RStudio is the concept of <strong>projects</strong>. Projects set up your analyses for reproducibility by making it clear where your analysis lives and how your data, scripts, and all other files that belong to an analysis are related to each other. In short, they are all contained in a project folder. Projects are based on R’s notion of the <strong>working directory</strong>. This is the folder where R <em>starts</em> when you ask it to load data files or save scripts. If this is the first time that you have opened RStudio, your working directory is probably your <strong>home</strong> directory. On macOS this is represented with <code>~/</code>, on Windows likely with <code>C:\Users\[your-username]</code>. You can see this at the top of the console panel.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/startup-working-directory.png" class="img-fluid figure-img" style="width:40.0%" alt="A screen shot of the top of the console in RStudio that shows the current working directory."></p>
-<figcaption>Current working directory</figcaption>
+<div id="fig-wd" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the top of the console in RStudio that shows the current working directory.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/startup-working-directory.png" class="img-fluid figure-img" style="width:40.0%" alt="A screen shot of the top of the console in RStudio that shows the current working directory.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Current working directory.
+</figcaption>
 </figure>
 </div>
 <p>RStudio projects provide a clear and explicit way to tell R where to start (to set your working directory) and keep all of your analysis together. Let’s create our first project. This project will hold all of the code and data we will work on in our in-class sessions. When you want to work on a project with your own data, follow these steps again to create a new project in a different folder.</p>
@@ -543,10 +556,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Finally, select <strong>Create Project</strong></li>
 </ul></li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/rstudio-new-project.png" class="img-fluid figure-img" style="width:75.0%" alt="A screen shot of the three dialogue windows in the RStudio project wizard interface."></p>
-<figcaption>Steps to create a project: (top) select New Directory, (middle) choose New Project for the project type, (bottom) choose what to name the project and where to put it.</figcaption>
+<div id="fig-new-project" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the three dialogue windows in the RStudio project wizard interface.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-new-project.png" class="img-fluid figure-img" style="width:75.0%" alt="A screen shot of the three dialogue windows in the RStudio project wizard interface.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Steps to create a project: (top) select New Directory, (middle) choose New Project for the project type, (bottom) choose what to name the project and where to put it.
+</figcaption>
 </figure>
 </div>
 <p>RStudio will start back up but now your working directory will be the new project folder you created, in this instance <code>r-notes</code>. You can verify you are in your new project in four different locations in the RStudio interface.</p>
@@ -556,10 +573,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The project dropdown on the top-right of the RStudio window. You can use this menu to quickly switch between different projects.</li>
 <li>The files panel will show the path to your working directory and a single file named <code>r-notes.Rproj</code>.</li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/rstudio-project-interface.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels. The four locations where you can see the current project are highlighted in maroon."></p>
-<figcaption>RStudio project interface, highlighting areas that show the current project.</figcaption>
+<div id="fig-project" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application with three panels. The four locations where you can see the current project are highlighted in maroon.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-project-interface.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels. The four locations where you can see the current project are highlighted in maroon.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: RStudio project interface, highlighting areas that show the current project.
+</figcaption>
 </figure>
 </div>
 <section id="setting-up-your-project-structure" class="level3">
@@ -572,10 +593,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>fig</code>: A place to store any visualizations you make in the course of your analysis.</li>
 <li><code>README.md</code>: Lastly you can create a README file to explain the purpose and structure of the project. To create a new Markdown file in RStudio go to File -&gt; New File -&gt; Markdown File.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/rnotes-project-setup.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of RStudio with the folder structure described above."></p>
-<figcaption>Project folders</figcaption>
+<div id="fig-project-setup" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of RStudio with the folder structure described above.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-project-setup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rnotes-project-setup.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of RStudio with the folder structure described above.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-project-setup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Project folders.
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -617,10 +642,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Similarly, click on the plus sign with the blank paper behind it in the upper-left corner of the Files panel.</li>
 <li>Or with a keyboard shortcut: <code>Cmd/Ctrl + Shift + N</code>.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/rstudio-editor-panel.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with four panels."></p>
-<figcaption>RStudio with all four panels: editor, console, environment, and files</figcaption>
+<div id="fig-editor-panel" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application with four panels.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-editor-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-editor-panel.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with four panels.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-editor-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: RStudio with all four panels: editor, console, environment, and files.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -640,10 +669,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Try it out for yourself.</p>
 <p>This distinction between <em>permanent</em> and <em>ephemeral</em> also translates to the panels on the right. The files pane (bottom right) shows the scripts you create and any data or visualization you save. These are permanent. The environment panel shows the objects created in a session by running code in the console. These objects are ephemeral. They exist and can be used in this session, but they can always be recreated from the script.</p>
 <p>The script trumps the environment panel; it is the source of truth. The code that creates the object is much more important than the object itself. Think of it this way, if you have it right in the environment but wrong in a script, it will not do you much good when you come back to your code after a break and find that things are out of whack.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/rstudio-permanence.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing that the editor and file panels are permanent data and the console and environment panels hold ephemeral data."></p>
-<figcaption>The editor and files panels are the primary sources of truth. The console and environment panels represent the ephemeral objects created in a session.</figcaption>
+<div id="fig-permanence" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application showing that the editor and file panels are permanent data and the console and environment panels hold ephemeral data.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-permanence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-permanence.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing that the editor and file panels are permanent data and the console and environment panels hold ephemeral data.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-permanence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: The editor and files panels are the primary sources of truth. The console and environment panels represent the ephemeral objects created in a session.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -651,10 +684,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up-rstudio-for-reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-rstudio-for-reproducibility">Setting up RStudio for reproducibility</h2>
 <p>We need to make some important changes to the default settings in RStudio to ensure that R scripts remain the source of truth of your analysis not your environment. Go to Tools -&gt; Global Options and uncheck Restore .RData into workspace at startup and set Save workspace to .RData on exit to <code>Never</code>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/rstudio-workspace.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the Settings window for RStudio."></p>
-<figcaption>RStudio Global Options: Set these options for the Workspace</figcaption>
+<div id="fig-workspace" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the Settings window for RStudio.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-workspace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-workspace.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the Settings window for RStudio.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-workspace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: RStudio Global Options: Set these options for the Workspace.
+</figcaption>
 </figure>
 </div>
 <p>Let’s see what this does. Make sure that you have created objects in your environment. Then, restart your session. You can do this by going to the Session menu -&gt; Restart R. Your environment panel should be empty now. This might seem like it is painful, but it is short-term pain for long-term gain. It will teach you to keep what you want to save in your R script so that you can always recreate objects or rerun analysis later.</p>
@@ -679,10 +716,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Note that RStudio will actually run the command <code>install.packages("tidyverse")</code> in the console.</li>
 </ul></li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/install-packages.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing the process to install packages using the GUI interface."></p>
-<figcaption>Installing packages with the Packages panel in RStudio</figcaption>
+<div id="fig-install-pkgs" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application showing the process to install packages using the GUI interface.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/install-packages.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing the process to install packages using the GUI interface.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Installing packages with the Packages panel in RStudio.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -691,10 +732,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The tidyverse set of packages is now installed, but to actually use the functions from the package in an R session you need to load the package. This is done with <code>library()</code>. Try it for yourself.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You do not need to put quotation marks around <code>tidyverse</code> because the <code>library()</code> function knows where to look for something called <code>tidyverse</code>. You can put quotation marks around it if you want to. You should get an output in your console that looks like this:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/load-tidyverse.png" class="img-fluid figure-img" style="width:90.0%" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages."></p>
-<figcaption>Output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages</figcaption>
+<div id="fig-load-tidyverse" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/load-tidyverse.png" class="img-fluid figure-img" style="width:90.0%" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages.
+</figcaption>
 </figure>
 </div>
 <p>You see a list of the nine core tidyverse packages and their versions: dplyr, forcats, ggplot2, lubridate, purrr, readr, stringr, tibble, tidyr. You will also see a message that there are conflicts. This sounds scary but is expected behavior. This message tells us that dplyr has functions called <code>filter()</code> and <code>lag()</code>, which are also names for functions in base R. When you use these function after loading the tidyverse, you will use the dplyr version, which is what we want.</p>
@@ -712,15 +757,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Then Install Updates.</li>
 </ul></li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../files/img/update-packages.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red."></p>
-<figcaption>Updating packages with the Packages panel in RStudio</figcaption>
+<div id="fig-update-pkgs" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-update-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/update-packages.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-update-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Updating packages with the Packages panel in RStudio.
+</figcaption>
 </figure>
 </div>
-
-
 </section>
+</section>
+<section id="other-tweaks" class="level2">
+<h2 class="anchored" data-anchor-id="other-tweaks">Other tweaks</h2>
+<p>There are also a couple of tweaks that you can make to the appearance and way things work in RStudio that might be worth your time. The settings for RStudio are found under Tools -&gt; Global Options. Under the Appearance tab you can change the color theme for RStudio, choose your font and font size. Another change that I like to make is in the R Markdown tab. This changes the settings for notebook-like files such as R Markdown and Quarto. I like to uncheck Show output inline for all R Markdown documents. This makes Quarto documents act more like scripts. Instead of printing output below a cell block and in the console, the output only goes to the console.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-appearance" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio Appearance settings.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-appearance.png" class="img-fluid figure-img" alt="A screen shot of the RStudio Appearance settings.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Change the color scheme, font, and font size of RStudio in the Appearance settings.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-rmarkdown-settings" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio R Markdown settings.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rmarkdown-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-rmarkdown.png" class="img-fluid figure-img" alt="A screen shot of the RStudio R Markdown settings.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rmarkdown-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: You may want to uncheck Show output inline for all R Markdown documents.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Play around with the themes to make RStudio a nice, fun place to be. You might even look for some different monospaced fonts.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+
+
 </section>
 
 
@@ -732,6 +814,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li id="fn3"><p>This is largely true if a bit overdramatic. The History tab shows the code blocks you have run.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>You can also install packages from other repositories such as <a href="https://r-universe.dev/search">R Universe</a> or on <a href="https://github.com">GitHub</a>, but we will not need to do that for this course. The process for installing from these other places is similar.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>How often is up to you. Packages are generally stable, so I find there is usually little downside to updating. I update packages once a week but once a month would be plenty frequent.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Some free monospaced fonts that you might check out are <a href="https://developer.apple.com/fonts/">Apple’s SF Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a>, <a href="https://sourcefoundry.org/hack/">Hack</a>, <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, and <a href="https://typeof.net/Iosevka/">Iosevka</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
