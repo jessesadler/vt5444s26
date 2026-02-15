@@ -88,6 +88,8 @@ website:
               file: worksheets/01-worksheet.qmd
             - text: "2. Data frames in R"
               file: worksheets/02-worksheet.qmd
+            - text: "3. Getting started with visualization"
+              file: worksheets/03-worksheet.qmd
     
     - title: "Resources"
       style: "docked"
@@ -119,6 +121,8 @@ website:
               file: resources/install.qmd
             - text: "Setting up RStudio"
               file: resources/rstudio-setup.qmd
+            - text: "Visualization with ggplot2"
+              file: resources/ggplot2.qmd
 
   page-footer:
     right: |

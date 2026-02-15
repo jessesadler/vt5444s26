@@ -56,7 +56,7 @@ We will be able to practice quite complex skills with these interactive lessons,
 
 ![Artwork by @allison_horst](../files/img/lter_penguins.png "Title: The Palmer Penguins"){width=50% fig-alt="A cartoon-style drawing of chinstrap, gentoo and adélie penguins."}
 
-For instance, we can visualize a comparison of the flipper length to the body weight of the three species of penguins. Try it out by running the code! Test out what happens if you change things.
+For instance, we can visualize a comparison of the flipper length to the body weight of the three species of penguins. Try it out by running the code! Test out what happens if you change things.[^1]
 
 ```{webr} 
 ggplot(data = penguins, 
@@ -64,13 +64,15 @@ ggplot(data = penguins,
            y = body_mass)) +
   geom_point(aes(color = species, shape = species),
              size = 3, alpha = 0.8, na.rm = TRUE) + 
-  theme_minimal() +
   scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
   labs(title = "Penguin size, Palmer Station LTER",
        x = "Flipper length (mm)",
        y = "Body mass (g)",
        color = "Penguin species",
-       shape = "Penguin species")
+       shape = "Penguin species") + 
+  theme_minimal()
 ```
 
 The ability to run R code in your browser is relatively new and is made possible by the [quarto-live extension](https://r-wasm.github.io/quarto-live/).
+
+[^1]: This visualization follows that from the [palmerpenguins package](https://allisonhorst.github.io/palmerpenguins/index.html) documentation. The only difference is that this visualization uses the data that now comes with R from version 4.5.
