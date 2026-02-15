@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Visualizing data with ggplot2 – Digital History Methods</title>
+<title>Visualization with ggplot2 – Digital History Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/06-content-dplyr.html" rel="next">
-<link href="../content/04-content-tidy.html" rel="prev">
+<link href="../resources/rstudio-setup.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -264,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Course Details</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/index.html" aria-current="page"> 
+    <a class="nav-link" href="../content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -276,7 +310,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html"> 
+    <a class="nav-link active" href="../resources/index.html" aria-current="page"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -291,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/05-content-ggplot.html">5: Visualizing data with ggplot2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/ggplot2.html">Visualization with ggplot2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -314,8 +348,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Content</span></a>
+  <a href="../resources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
   </div>
 </li>
       </ul>
@@ -323,97 +357,86 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Topics</span></a>
+ <span class="menu-text">Digital Humanities</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">1: MLK Day - No class</span>
+  <div class="sidebar-item-container"> 
+  <a href="../resources/dh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">General DH resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data for DH</span></a>
+  </div>
+</li>
+      </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Organization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/02-content-data-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2: History, data, and the digital</span></a>
+  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zotero Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/03-content-md.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3: The file system and Markdown</span></a>
+  <a href="../resources/plaintext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with Plain Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/04-content-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4: ‘Tidy’ historical data</span></a>
+  <a href="../resources/markdown-syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown Syntax Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/05-content-ggplot.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">5: Visualizing data with ggplot2</span></a>
+  <a href="../resources/text-editors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Text Editors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/06-content-dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6: Wrangling data</span></a>
+  <a href="../resources/rstudio-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/07-content-snigb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7: Working with SNiGB</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/08-content-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8: Reproducible workflows with Git</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/09-content-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9: Making websites with Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/10-content-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10: Making maps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/11-content-networks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11: Network analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/12-content-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12: Web design and visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/13-content-gis-sna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13: Mapping and network analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/14-content-build.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14: Group work on your project</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/15-content-presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15: Presentation of final projects</span></a>
+  <a href="../resources/ggplot2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Visualization with ggplot2</span></a>
   </div>
 </li>
       </ul>
@@ -428,26 +451,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
-  <li><a href="#watch" id="toc-watch" class="nav-link" data-scroll-target="#watch">Watch</a></li>
-  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
-  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
-  <ul class="collapse">
-  <li><a href="#working-in-rstudio" id="toc-working-in-rstudio" class="nav-link" data-scroll-target="#working-in-rstudio">Working in RStudio</a></li>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
-  </ul></li>
+  <li><a href="#ggplot2-and-the-grammar-of-graphics" id="toc-ggplot2-and-the-grammar-of-graphics" class="nav-link active" data-scroll-target="#ggplot2-and-the-grammar-of-graphics">ggplot2 and the grammar of graphics</a></li>
+  <li><a href="#ggplot2-reference-guides" id="toc-ggplot2-reference-guides" class="nav-link" data-scroll-target="#ggplot2-reference-guides">ggplot2 reference guides</a></li>
+  <li><a href="#more-in-depth-resources-on-ggplot2-and-visualization" id="toc-more-in-depth-resources-on-ggplot2-and-visualization" class="nav-link" data-scroll-target="#more-in-depth-resources-on-ggplot2-and-visualization">More in depth resources on ggplot2 and visualization</a></li>
+  <li><a href="#for-inspiration" id="toc-for-inspiration" class="nav-link" data-scroll-target="#for-inspiration">For inspiration</a></li>
+  <li><a href="#visualization-and-historical-argument" id="toc-visualization-and-historical-argument" class="nav-link" data-scroll-target="#visualization-and-historical-argument">Visualization and historical argument</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/05-content-ggplot.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/ggplot2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/05-content-ggplot.html">5: Visualizing data with ggplot2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/ggplot2.html">Visualization with ggplot2</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Visualizing data with ggplot2</h1>
-<p class="subtitle lead">16 February 2026</p>
+<h1 class="title">Visualization with ggplot2</h1>
 </div>
 
 
@@ -464,72 +482,182 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This week we dive into programming with R by learning to create visualizations with ggplot2 and learn how to run R code in RStudio.</em></p>
-<section id="reading" class="level2">
-<h2 class="anchored" data-anchor-id="reading">Reading</h2>
-<ul>
-<li>Kieran Healy, <a href="https://socviz.co"><em>Data Visualization: A Practical Introduction</em></a> (Princeton University Press, 2018), Chapter 1: Look at data.</li>
-<li>Claus Wilke, <a href="https://clauswilke.com/dataviz/"><em>Fundamentals of Data Visualization</em></a> (O’Reilly, 2019), Chapters 2 and 5.</li>
-<li>John Theibault, “Visualizations and Historical Arguments,” in <em>Writing History in the Digital Age</em>, ed.&nbsp;Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), <a href="https://doi.org/10.3998/dh.12230987.0001.001" class="uri">https://doi.org/10.3998/dh.12230987.0001.001</a>, 173–185.</li>
-</ul>
-</section>
-<section id="watch" class="level2">
-<h2 class="anchored" data-anchor-id="watch">Watch</h2>
-<p><a href="https://kieranhealy.org">Kieran Healy’s</a> keynote presentation at last year’s Posit conference on Trustworthy Data Visualization:</p>
-<div class="grid">
-<div class="g-col-9">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ZamPCbvBAgE?si=HlR5phzzJwKr30ML" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>This page contains a quick overview of ggplot2 and the grammar of graphics, as well as resources for learning more about how to use ggplot2.</p>
+<section id="ggplot2-and-the-grammar-of-graphics" class="level2">
+<h2 class="anchored" data-anchor-id="ggplot2-and-the-grammar-of-graphics">ggplot2 and the grammar of graphics</h2>
+<p><a href="https://ggplot2.tidyverse.org">ggplot2</a> is built on a grammar of graphics that abstracts data visualizations into separate components.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 28%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data</td>
+<td><code>ggplot(data)</code></td>
+<td>The data to be visualized.</td>
+</tr>
+<tr class="even">
+<td>Aesthetic mappings</td>
+<td><code>aes()</code></td>
+<td>Aesthetic mappings between variables and visual properties.</td>
+</tr>
+<tr class="odd">
+<td>Geometries</td>
+<td><code>geom_*()</code></td>
+<td>The geometric shape used to represent the data.</td>
+</tr>
+<tr class="even">
+<td>Statistics</td>
+<td><code>stat_*()</code></td>
+<td>Any statistical transformations applied to the data.</td>
+</tr>
+<tr class="odd">
+<td>Position</td>
+<td><code>position_()</code></td>
+<td>Any positional adjustment: stack, jitter, dodge, etc.</td>
+</tr>
+<tr class="even">
+<td>Scales</td>
+<td><code>scale_*()</code></td>
+<td>How aesthetic qualities are mapped to the data.</td>
+</tr>
+<tr class="odd">
+<td>Guides</td>
+<td><code>guides()</code> &amp; <code>labs()</code></td>
+<td>Labels for axes and legends to help interpret a plot.</td>
+</tr>
+<tr class="even">
+<td>Coordinate system</td>
+<td><code>coord_*()</code></td>
+<td>How data coordinates are mapped onto the plane of the graphic.</td>
+</tr>
+<tr class="odd">
+<td>Facets</td>
+<td><code>facet_*()</code></td>
+<td>Any breaking up of the data into multiple plots.</td>
+</tr>
+<tr class="even">
+<td>Theme</td>
+<td><code>theme()</code>/<code>theme_*()</code></td>
+<td>The overall visual defaults of a plot.</td>
+</tr>
+</tbody>
+</table>
+<p>Central to how ggplot2 implements the grammar of graphics is the notion of <strong>layers</strong>, which is used in two different but overlapping ways.</p>
+<ol type="1">
+<li>As described in the <a href="https://ggplot2.tidyverse.org/reference/index.html#layers">ggplot2 documentation</a>, “A layer combines data, aesthetic mapping, a geom (geometric object), a stat (statistical transformation), and a position adjustment. Typically, you will create layers using a <code>geom_</code> function, overriding the default position and stat if needed.”</li>
+<li>You also build plots in ggplot2 by adding layers, using <code>+</code> between the different components of the plot to iteratively develop a visualization.</li>
+</ol>
+<p>We can translate the grammar of graphics into generalized ggplot2 code as follows:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>) <span class="sc">+</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  geom_<span class="sc">*</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">stat =</span> <span class="sc">&lt;</span>STAT<span class="sc">&gt;</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">position =</span> <span class="sc">&lt;</span>POSITION<span class="sc">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  scale_<span class="sc">*</span>(<span class="sc">&lt;</span>SCALES<span class="sc">&gt;</span>, <span class="sc">&lt;</span>GUIDES<span class="sc">&gt;</span>) <span class="sc">+</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="sc">&lt;</span>LABELS<span class="sc">&gt;</span>) <span class="sc">+</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  coord_<span class="sc">*</span>() <span class="sc">+</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  facet_<span class="sc">*</span>() <span class="sc">+</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Note that you do not need to specify all of these elements for your plots. ggplot2 will choose reasonable defaults for those elements you do not specify. Let’s now see what this looks like with an actual plot of the <code>penguins</code> data.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">fill =</span> species),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"count"</span>, <span class="co"># default stat for geom_bar(). Calculates y.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="st">"dodge"</span> <span class="co"># position bars next to each other</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>)) <span class="sc">+</span> <span class="co"># fill scale</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">120</span>, <span class="at">by =</span> <span class="dv">20</span>)) <span class="sc">+</span> <span class="co"># More guides for y axis</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>() <span class="sc">+</span> <span class="co"># default coordinates</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"The Palmer Archipelago penguins"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Islands in the Palmer Archipelago, Antarctica"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="cn">NULL</span>, <span class="co"># Remove label for y axis</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Penguin species"</span>) <span class="sc">+</span> </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>, <span class="co"># Change base theme and font</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">base_family =</span> <span class="st">"Times New Roman"</span>) <span class="sc">+</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(), <span class="co"># Remove minor grid lines</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>, <span class="co"># change position of legend</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.direction =</span> <span class="st">"horizontal"</span>) <span class="co"># and legend direction</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot2_files/figure-html/grammar-of-graphics-1.png" class="img-fluid figure-img" width="2800"></p>
+</figure>
 </div>
 </div>
+</div>
 </section>
-<section id="assignment" class="level2">
-<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
+<section id="ggplot2-reference-guides" class="level2">
+<h2 class="anchored" data-anchor-id="ggplot2-reference-guides">ggplot2 reference guides</h2>
+<p>Here are a couple of quick reference guides for working with ggplot2.</p>
 <ul>
-<li>Download R and RStudio
+<li>The documentation for <a href="https://ggplot2.tidyverse.org">ggplot2</a> is really good and should be one of the first places you look for help.
 <ul>
-<li>See <a href="../resources/install.html">Resources: Installing R and RStudio</a> for details.</li>
-<li>If you want to do more to set up RStudio, go through <a href="../resources/rstudio-setup.html">Resources: Setting up RStudio</a>. We will go over this next week in class so do not feel obligated.</li>
+<li>The <a href="https://ggplot2.tidyverse.org/articles/ggplot2.html">Introduction to ggplot2</a> is particularly valuable for going over the grammar of graphics.</li>
 </ul></li>
-<li>Commonplace book writing: Reflect on the use of visualization in the humanities.</li>
+<li>There is also a <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">Data visualization with ggplot2 – Cheat Sheet</a> that provides a nice overview of commonly used aspects of ggplot2. You can view it as either a web page or a PDF.</li>
+<li>The <a href="https://isabella-b.com/blog/ggplot2-theme-elements-reference/">ggplot2 Theme Elements Reference Sheet</a> by Isabella Benabaye is a wonderful for when you want to remember how to change a theme element.</li>
 </ul>
 </section>
-<section id="activities" class="level2">
-<h2 class="anchored" data-anchor-id="activities">Activities</h2>
+<section id="more-in-depth-resources-on-ggplot2-and-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="more-in-depth-resources-on-ggplot2-and-visualization">More in depth resources on ggplot2 and visualization</h2>
+<p>For more in depth discussions for how to use ggplot2 and data visualization in general, start with these resources:</p>
 <ul>
-<li>Visit from <a href="https://bipasha-banerjee.github.io">Bipasha Banerjee</a>, AI Research Scientist at University Libraries.</li>
-<li>Worksheet: Getting started with visualization</li>
-<li>Intro to RStudio and getting RStudio set up for success</li>
-<li>Visualization with ggplot2 in RStudio</li>
+<li>Hadley Wickham et al., <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>, Second edition (O’Reilly, 2023), <a href="https://r4ds.hadley.nz" class="uri">https://r4ds.hadley.nz</a>.
+<ul>
+<li><a href="https://r4ds.hadley.nz/data-visualize.html">Chapter 1. Data visualization</a>: Goes through a similar scatterplot as the <a href="../worksheets/03-worksheet.html">Getting started with visualization worksheet</a> but also contains information about other kinds of plots such as bar plots.</li>
+<li><a href="https://r4ds.hadley.nz/layers.html">Chapter 9. Layers</a>: Provides a more in depth discussion of the grammar of graphics.</li>
+<li><a href="https://r4ds.hadley.nz/EDA.html">Chapter 10. Exploratory data analysis</a>: This chapter is less about the mechanics of visualization with ggplot2 and more about why data visualization is important to understanding data.</li>
+<li><a href="https://r4ds.hadley.nz/communication.html">Chapter 11. Communication</a>: This chapter focuses on how you can polish plots to make them better communicate the point you want to make with them.</li>
+</ul></li>
+<li>Kieran Healy, <a href="https://socviz.co"><em>Data Visualization: A Practical Introduction</em></a> (Princeton University Press, 2018).</li>
+<li>Claus Wilke, <a href="https://clauswilke.com/dataviz/"><em>Fundamentals of Data Visualization</em></a> (O’Reilly, 2019).</li>
+<li>Andreas, Krause, Rennie Nicola, and Tarran Brian. “Best Practices for Data Visualisation”. Version v1.0.1. February 1, 2024. <a href="https://doi.org/10.5281/ZENODO.10600718" class="uri">https://doi.org/10.5281/ZENODO.10600718</a>.
+<ul>
+<li><a href="https://royal-statistical-society.github.io/datavisguide/">The Data visualization guide itself</a>.</li>
+</ul></li>
+<li>The most in depth option is the Second or Third edition of <em>ggplot2: Elegant Graphics for Data Analysis</em>. The second edition from 2016 is available through the Library. The unpublished third edition is available online at <a href="https://ggplot2-book.org" class="uri">https://ggplot2-book.org</a>.</li>
 </ul>
 </section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="for-inspiration" class="level2">
+<h2 class="anchored" data-anchor-id="for-inspiration">For inspiration</h2>
+<p>If you want some inspiration for using ggplot2 to make some truly unique visualizations, check out the data visualization work of <a href="https://nrennie.rbind.io">Nicola Rennie</a>.</p>
 <ul>
-<li><a href="../resources/install.html">Resources: Installing R and RStudio</a></li>
-<li><a href="../resources/rstudio-setup.html">Resources: Setting up RStudio</a></li>
-</ul>
-<section id="working-in-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="working-in-rstudio">Working in RStudio</h3>
-<ul>
-<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>, chapters 2, 6, and 8.</li>
-<li><a href="https://docs.posit.co/ide/user/">RStudio User Guide</a></li>
+<li>She has recently finished a book that goe through 12 different plots she has made, showing how and why she made them: Nicola Rennie, <em>The Art of Data Visualization with Ggplot2: The TidyTuesday Cookbook</em> (CRC Press, 2025), <a href="https://nrennie.rbind.io/art-of-viz/" class="uri">https://nrennie.rbind.io/art-of-viz/</a>.</li>
+<li>You can also look over the different <a href="https://nrennie.rbind.io/projects/data-visualisation/data-viz-challenges/">data challenges</a> she has participated in.</li>
 </ul>
 </section>
-<section id="visualization" class="level3">
-<h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
-<p>Make sure to look at the <a href="https://ggplot2.tidyverse.org">ggplot2 website</a>. It is full of great documentation and examples, including a <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">ggplot2 cheatsheet</a>.</p>
+<section id="visualization-and-historical-argument" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-and-historical-argument">Visualization and historical argument</h2>
 <ul>
-<li><a href="https://royal-statistical-society.github.io/datavisguide/">The Royal Statistical Society Data visualization Guide</a></li>
-<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>, chapters 1, 9, 10, and 11.</li>
-<li>If you want some inspiration, look at <a href="https://nrennie.rbind.io">Nicola Rennie’s</a> visualization projects.</li>
+<li>John Theibault, “Visualizations and Historical Arguments,” in <em>Writing History in the Digital Age</em>, ed.&nbsp;Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), <a href="https://doi.org/10.3998/dh.12230987.0001.001" class="uri">https://doi.org/10.3998/dh.12230987.0001.001</a>, 173–185.</li>
+<li>Kieran Healy and James Moody, “Data Visualization in Sociology,” <em>Annual Review of Sociology</em> 40, no. 1 (2014): 105–28, <a href="https://doi.org/10.1146/annurev-soc-071312-145551" class="uri">https://doi.org/10.1146/annurev-soc-071312-145551</a>.</li>
+<li>Michael Friendly and Howard Wainer, <em>A History of Data Visualization and Graphic Communication</em> (Harvard University Press, 2021), <a href="https://friendly.github.io/HistDataVis/" class="uri">https://friendly.github.io/HistDataVis/</a>.</li>
 </ul>
-<p>Go to <a href="../resources/ggplot2.html">Resources: Visualization with ggplot2</a> for more background and resources.</p>
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Leland Wilkinson, <em>The Grammar of Graphics</em>, Second Edition (Springer-Verlag, 2005), <a href="https://doi.org/10.1007/0-387-28695-0" class="uri">https://doi.org/10.1007/0-387-28695-0</a>; Hadley Wickham, “A Layered Grammar of Graphics,” <em>Journal of Computational and Graphical Statistics</em> 19, no. 1 (2010): 3–28, <a href="https://doi.org/10.1198/jcgs.2009.07098" class="uri">https://doi.org/10.1198/jcgs.2009.07098</a>; Hadley Wickham, <em>ggplot2: Elegant Graphics for Data Analysis</em>, Second Edition (Springer, 2016), <a href="https://doi.org/10.1007/978-3-319-24277-4" class="uri">https://doi.org/10.1007/978-3-319-24277-4</a>, page 4.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -945,14 +1073,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/04-content-tidy.html" class="pagination-link" aria-label="4: 'Tidy' historical data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4: ‘Tidy’ historical data</span>
+      <a href="../resources/rstudio-setup.html" class="pagination-link" aria-label="Setting up RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting up RStudio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/06-content-dplyr.html" class="pagination-link" aria-label="6: Wrangling data">
-        <span class="nav-page-text">6: Wrangling data</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -963,7 +1088,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/05-content-ggplot.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/ggplot2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>
