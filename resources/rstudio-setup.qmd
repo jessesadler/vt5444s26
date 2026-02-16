@@ -57,10 +57,10 @@ RStudio will start back up but now your working directory will be the new projec
 ### Setting up your project structure
 Let's finish setting up the new project by providing some structure, adding folders to separate our raw data, any modified data we create, our scripts we write, and the figures we make. The most important aspect of this is to separate our **raw data** from our modified data we create using R.[^1] Keeping these two types of data separate will protect you from making errors and possible data loss. You can add the folders in the RStudio files panel by clicking ojn the folder with the plus sign, or you can create the folders in Finder or File Explorer. Your folders should be named:
 
-- `data`: Any modified data that you want to store after cleaning or analyzing your raw data.
-- `data-raw`: Raw data that you have created or gotten from an external source.
-- `scripts`: Where you will keep your R scripts and any other documents such as Quarto documents.
-- `fig`: A place to store any visualizations you make in the course of your analysis.
+- `data/`: Any modified data that you want to store after cleaning or analyzing your raw data.
+- `data-raw/`: Raw data that you have created or gotten from an external source.
+- `scripts/`: Where you will keep your R scripts and any other documents such as Quarto documents.
+- `fig/`: A place to store any visualizations you make in the course of your analysis.
 - `README.md`: Lastly you can create a README file to explain the purpose and structure of the project. To create a new Markdown file in RStudio go to File -> New File -> Markdown File.
 
 ![Project folders.](../files/img/rnotes-project-setup.png){#fig-project-setup width=50% fig-alt="A screen shot of RStudio with the folder structure described above."}

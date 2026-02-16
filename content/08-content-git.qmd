@@ -7,15 +7,24 @@ format: html
 *Setting aside R for the week, this week we will learn to use git and GitHub to develop reproducible workflows and get our work available on the internet.*
 
 ## Reading
-- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz) (2023).
-    - Chapter 20: Spreadsheets
-    - Chapter 28: Quarto
+- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz).
+    - Chapter 16: Factors
+    - Chapter 17: Dates and times
+    - Chapter 18: Missing values
+    - Chapter 19: Joins
 - Jenny Bryan, "Excuse me, do you have a moment to talk about version control?," *PeerJ Preprints* (2017) <https://peerj.com/preprints/3159v2>.
 
 ## Assignment
-
+- Expand on your analysis of the SNiGB data in a new Quarto document.
+- Start a data analysis project of your own based on data you have collected or found.
+    - Create an RStudio project in your `hist5444s26/` folder. Set up the project as described in [Setting up RStudio for success](../resources/rstudio-setup.qmd#rstudio-projects).
+    - What can you do with the data? What would you like to be able to do?
+    - Reflect on what you have learned in a Quarto document and in your commonplace book.
 
 ## Activities
-
+- Discussion of your data analysis project
+- Getting familiar with the command line
+- Getting started with git
+- Working with git and GitHub in RStudio
 
 ## Resources

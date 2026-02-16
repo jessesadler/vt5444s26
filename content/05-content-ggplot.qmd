@@ -30,23 +30,24 @@ format: html
 
 ## Activities
 - Visit from [Bipasha Banerjee](https://bipasha-banerjee.github.io), AI Research Scientist at University Libraries.
-- Worksheet: Getting started with visualization 
+- Worksheet: [Getting started with visualization](../worksheets/03-worksheet.qmd)
 - Intro to RStudio and getting RStudio set up for success
 - Visualization with ggplot2 in RStudio
 
 ## Resources
-- [Resources: Installing R and RStudio](../resources/install.qmd)
-- [Resources: Setting up RStudio](../resources/rstudio-setup.qmd)
 
 ### Working in RStudio
+- [Resources: Installing R and RStudio](../resources/install.qmd)
+- [Resources: Setting up RStudio](../resources/rstudio-setup.qmd)
+- [Resources: Using R in RStudio](../resources/rstudio-guide.qmd)
 - [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz), chapters 2, 6, and 8.
 - [RStudio User Guide](https://docs.posit.co/ide/user/)
 
 ### Visualization
-Make sure to look at the [ggplot2 website](https://ggplot2.tidyverse.org). It is full of great documentation and examples, including a [ggplot2 cheatsheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html).
+Go to [Resources: Visualization with ggplot2](../resources/ggplot2.qmd) for more background and resources.
 
+- Make sure to look at the [ggplot2 website](https://ggplot2.tidyverse.org). It is full of great documentation and examples.
+- [ggplot2 cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf).
 - [The Royal Statistical Society Data visualization Guide](https://royal-statistical-society.github.io/datavisguide/)
 - [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz), chapters 1, 9, 10, and 11.
 - If you want some inspiration, look at [Nicola Rennie's](https://nrennie.rbind.io) visualization projects.
-
-Go to [Resources: Visualization with ggplot2](../resources/ggplot2.qmd) for more background and resources.

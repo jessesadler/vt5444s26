@@ -8,15 +8,18 @@ format: html
 
 ## Reading
 - Hadley Wickham, ["A personal history of the tidyverse"](https://hadley.github.io/25-tidyverse-history/).
-- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz) (2023).
+- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz).
     - Chapter 3: Data transformation
     - Chapter 4: Code style
     - Chapter 7: Data import
+    - Chapter 20: Spreadsheets
+    - Chapter 28: Quarto
 
 ## Assignment
-
+- First self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the [assignments page](../assignments.qmd#self-reflections) for details. You can turn in self reflections through email.
+- Download the quarto template and the SNiGB data. Explore the data. See if you can make some exploratory data visualizations. What interests you in the data. Intersperse your notes with your code in the quarto document.
 
 ## Activities
-
+- Pair and share: What were you able to explore in your quarto documents? What are you interested to explore in greater depth?
 
 ## Resources

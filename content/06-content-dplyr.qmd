@@ -9,13 +9,13 @@ format: html
 ## Reading
 - Kieran Healy, [*Data Visualization: A Practical Introduction*](https://socviz.co), Chapter 3: Make a plot.
 - Hadley Wickham et al., "Welcome to the Tidyverse," *Journal of Open Source Software* 4, no. 43 (2019): 1686, <https://doi.org/10.21105/joss.01686>.
-- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz) (2023).
+- Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz).
     - Chapter 1: Data visualization
     - Chapters 2 and 6 on working with R in RStudio.
     - If you want to explore more on visualization with ggplot2, look at chapters 9, 10, and 11.
 
 ## Assignment
-- Create an R script in RStudio named `intro-r.R` in your `r-notes/` project folder and go through the material from one or more of the [worksheets](../worksheets/index.qmd) we have gone through in class.
+- Create an R script named `intro-r.R` in your `r-notes/` project folder and go through the material from one or more of the [worksheets](../worksheets/index.qmd) we have gone through in class.
     - The task is not necessarily to copy or do everything in the worksheets. Rather, play around with how things work using a script in RStudio.
     - Get used to the differences of writing and running code in a script compared to directly in the console.
     - Create objects, create vectors of different types, use different functions, look at documentation for functions with `?function_name`.
@@ -23,8 +23,28 @@ format: html
     - Look through the [course website repository](https://github.com/jessesadler/vt5444s26) and [file an issue](https://github.com/jessesadler/vt5444s26/issues) about something that could be improved or any questions you might have. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.
 
 ## Activities
+- Discussion: Working with scripts in R
 - Importing data in R
 - Wrangling data with dplyr
 - Introduction to Quarto documents
 
 ## Resources
+- [Resources: Using R in RStudio](../resources/rstudio-guide.qmd)
+
+### Importing data in R
+- [readr cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf)
+- [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz)
+    - Chapter 7: Data import
+    - Chapter 20: Spreadsheets
+
+### Wrangling data
+- [Introduction to dplyr](https://dplyr.tidyverse.org/articles/dplyr.html)
+- [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz), Chapter 3: Data transformation.
+- Data Carpentries, R for Social Scientists: [Data Wrangling with dplyr](https://datacarpentry.github.io/r-socialsci/03-dplyr.html)
+
+### Quarto
+- [Quarto cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/quarto.pdf)
+- The [Quarto documentation](https://quarto.org/docs/guide/) is great and comprehensive. A good place to start is with the [Getting started tutorial](https://quarto.org/docs/get-started/hello/rstudio.html).
+- [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz)
+    - Chapter 28: Quarto
+    - Chapter 29: Quarto formats
