@@ -121,6 +121,8 @@ website:
               file: resources/install.qmd
             - text: "Setting up RStudio"
               file: resources/rstudio-setup.qmd
+            - text: "Using R in RStudio"
+              file: resources/rstudio-guide.qmd
             - text: "Visualization with ggplot2"
               file: resources/ggplot2.qmd
 

@@ -11,7 +11,7 @@ engine: knitr
 
 Let's begin by getting some experience with how R works and what it looks like to run R code.
 
-Writing and running R code is an iterative process.[^1] You write a line or block of code, run it, check if it did what you want, and then repeat the process. You will get errors, but that is ok. Instead of moving on to the next code block, you repeat the process with the code block you are on, checking error messages, changing what you think might be the problem, and trying again. You do this over and over to create a full **script** that accomplishes a set task.
+Writing and running R code is an iterative process.[^1] You write a line or expression of code, run it, check if it did what you want, and then repeat the process. You will get errors, but that is ok. Instead of moving on to the next code expression, you repeat the process with the code block you are on, checking error messages, changing what you think might be the problem, and trying again. You do this over and over to create a full **script** that accomplishes a set task.
 
 In this web-based R session you can alter the code, fill in blanks, or write your own expressions, and then run it by selecting the blue `Run Code` button. The output, if any, will appear below the code section.
 

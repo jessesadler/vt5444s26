@@ -93,16 +93,16 @@ Now that you have created a project, we can create our first R script where we w
 ## The workflow
 The basic workflow for RStudio is to work on writing and running code in the left two panels and inspect aspects of what you are doing or what you have created in the right two panels.[^2] Let's concentrate on the two panels on the left.
 
-The **console** can be thought of as where the action happens. It is where code is actually run and where any outputs will be printed. However, the console is also *ephemeral*. You run code block by code block, pushing each line of code further and further up into the console's history, out of sight and out of mind. You can look at your history, but, practically speaking, there is no good, clear way to track what you have done just by using the console.
+The **console** can be thought of as where the action happens. It is where code is actually run and where any outputs will be printed. However, the console is also *ephemeral*. You run code expression by expression, pushing each line of code further and further up into the console's history, out of sight and out of mind. You can look at your history, but, practically speaking, there is no good, clear way to track what you have done just by using the console.
 
 This is where the **editor panel** comes in. The editor panel shows text documents in which you will save the code and any documentation or explanations that you want to save. We will primarily be working with R scripts and Quarto documents in this course. Here, we will stick to R scripts.
 
 ### Scripts and reproducibility
 Scripts are at the foundation of reproducibility. They contain the code that performed a certain set of analysis or created a visualization that can be run by you or someone else later. Unlike the console, scripts are meant to be permanent or at least record what you have done. You save scripts, but you do not save what happened in the console.[^3]
 
-An **R script** is a plain text document in which everything that is typed is assumed to be R code that will be sent to the console. To run code from a script or send it to the console you cannot just type Return/Enter. That moves you to the next line. Instead, you need to use `Cmd + Return` or `Ctrl + Enter`. If you want to write comments in a script to take notes or tell future you or any collaborators why you did something, you need to place a hashtag `#` before it. Anything after `#` will not be run as code.
+An **R script** is a plain text document in which everything that is typed is assumed to be R code that will be sent to the console. To run code from a script (or send it to the console) you cannot just type `Return/Enter`. That moves you to the next line. Instead, place your cursor anywhere within an R expression and press `Cmd + Return` or `Ctrl + Enter`. If you want to write comments in a script to take notes or tell future you or any collaborators why you did something, you need to place a hashtag `#` before it. Anything after `#` will not be run as code.
 
-- Send code to the console from a script: `Cmd + Return` or `Ctrl + Enter`
+- Execute an R expression from a script: place cursor within the expression and press `Cmd + Return` or `Ctrl + Enter`
 - Comment: `#`
 
 Try it out for yourself.
@@ -169,13 +169,21 @@ Packages are often changing, fixing bugs (and adding some) and bringing new feat
 ![Updating packages with the Packages panel in RStudio.](../files/img/update-packages.png){#fig-update-pkgs width=50% fig-alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red."}
 
 ## Other tweaks
-There are also a couple of tweaks that you can make to the appearance and way things work in RStudio that might be worth your time. The settings for RStudio are found under Tools -> Global Options. Under the Appearance tab you can change the color theme for RStudio, choose your font and font size. Another change that I like to make is in the R Markdown tab. This changes the settings for notebook-like files such as R Markdown and Quarto. I like to uncheck Show output inline for all R Markdown documents. This makes Quarto documents act more like scripts. Instead of printing output below a cell block and in the console, the output only goes to the console.
+There are also a couple of tweaks that you can make to the appearance and way things work in RStudio that might be worth your time. The settings for RStudio are found under Tools -> Global Options. Under the Appearance tab you can change the color theme for RStudio, choose your font and font size.
+
+Another change that I like to make is in the R Markdown tab. This changes the settings for notebook-like files such as R Markdown and Quarto. I like to uncheck Show output inline for all R Markdown documents. This makes Quarto documents act more like scripts. Instead of printing output below a cell block and in the console, the output only goes to the console.
 
 ::: {layout-ncol=2}
 ![Change the color scheme, font, and font size of RStudio in the Appearance settings.](../files/img/rstudio-appearance.png){#fig-appearance fig-alt="A screen shot of the RStudio Appearance settings."}
 
 ![You may want to uncheck Show output inline for all R Markdown documents.](../files/img/rstudio-rmarkdown.png){#fig-rmarkdown-settings fig-alt="A screen shot of the RStudio R Markdown settings."}
 :::
+
+The **Code** tab has a couple of settings that you might want to change.
+
+- I suggest using the native pipe operator (`|>`) by checking the box.
+- Under Display you might want to uncheck Show margin. This will turn off the vertical line in the editor pane.
+- At the bottom of Display there is a check box for rainbow parentheses. This turns each set of parentheses a different color, which can help you keep track of where you are in more complex code.
 
 Play around with the themes to make RStudio a nice, fun place to be. You might even look for some different monospaced fonts.[^6]
 
@@ -184,7 +192,7 @@ Play around with the themes to make RStudio a nice, fun place to be. You might e
 
 [^2]: You can move the panels around in Tools -> Global Options if you want to.
 
-[^3]: This is largely true if a bit overdramatic. The History tab shows the code blocks you have run.
+[^3]: This is largely true if a bit overdramatic. The History tab shows the code expressions you have run.
 
 [^4]: You can also install packages from other repositories such as [R Universe](https://r-universe.dev/search) or on [GitHub](https://github.com), but we will not need to do that for this course. The process for installing from these other places is similar.
 
