@@ -431,7 +431,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
   <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
   <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#importing-data-in-r" id="toc-importing-data-in-r" class="nav-link" data-scroll-target="#importing-data-in-r">Importing data in R</a></li>
+  <li><a href="#wrangling-data" id="toc-wrangling-data" class="nav-link" data-scroll-target="#wrangling-data">Wrangling data</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/06-content-dplyr.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -465,7 +470,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Kieran Healy, <a href="https://socviz.co"><em>Data Visualization: A Practical Introduction</em></a>, Chapter 3: Make a plot.</li>
 <li>Hadley Wickham et al., “Welcome to the Tidyverse,” <em>Journal of Open Source Software</em> 4, no. 43 (2019): 1686, <a href="https://doi.org/10.21105/joss.01686" class="uri">https://doi.org/10.21105/joss.01686</a>.</li>
-<li>Hadley Wickham et al., <a href="https://r4ds.hadley.nz"><em>R for Data Science</em></a> (2023).
+<li>Hadley Wickham et al., <a href="https://r4ds.hadley.nz"><em>R for Data Science</em></a>.
 <ul>
 <li>Chapter 1: Data visualization</li>
 <li>Chapters 2 and 6 on working with R in RStudio.</li>
@@ -476,7 +481,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="assignment" class="level2">
 <h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
 <ul>
-<li>Create an R script in RStudio named <code>intro-r.R</code> in your <code>r-notes/</code> project folder and go through the material from one or more of the <a href="../worksheets/index.html">worksheets</a> we have gone through in class.
+<li>Create an R script named <code>intro-r.R</code> in your <code>r-notes/</code> project folder and go through the material from one or more of the <a href="../worksheets/index.html">worksheets</a> we have gone through in class.
 <ul>
 <li>The task is not necessarily to copy or do everything in the worksheets. Rather, play around with how things work using a script in RStudio.</li>
 <li>Get used to the differences of writing and running code in a script compared to directly in the console.</li>
@@ -491,6 +496,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="activities" class="level2">
 <h2 class="anchored" data-anchor-id="activities">Activities</h2>
 <ul>
+<li>Discussion: Working with scripts in R</li>
 <li>Importing data in R</li>
 <li>Wrangling data with dplyr</li>
 <li>Introduction to Quarto documents</li>
@@ -498,8 +504,42 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="../resources/rstudio-guide.html">Resources: Using R in RStudio</a></li>
+</ul>
+<section id="importing-data-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="importing-data-in-r">Importing data in R</h3>
+<ul>
+<li><a href="https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf">readr cheat sheet</a></li>
+<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>
+<ul>
+<li>Chapter 7: Data import</li>
+<li>Chapter 20: Spreadsheets</li>
+</ul></li>
+</ul>
+</section>
+<section id="wrangling-data" class="level3">
+<h3 class="anchored" data-anchor-id="wrangling-data">Wrangling data</h3>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/articles/dplyr.html">Introduction to dplyr</a></li>
+<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>, Chapter 3: Data transformation.</li>
+<li>Data Carpentries, R for Social Scientists: <a href="https://datacarpentry.github.io/r-socialsci/03-dplyr.html">Data Wrangling with dplyr</a></li>
+</ul>
+</section>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
+<ul>
+<li><a href="https://github.com/rstudio/cheatsheets/blob/main/quarto.pdf">Quarto cheat sheet</a></li>
+<li>The <a href="https://quarto.org/docs/guide/">Quarto documentation</a> is great and comprehensive. A good place to start is with the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Getting started tutorial</a>.</li>
+<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>
+<ul>
+<li>Chapter 28: Quarto</li>
+<li>Chapter 29: Quarto formats</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

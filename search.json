@@ -388,7 +388,7 @@
     "href": "resources/rstudio-setup.html#rstudio-projects",
     "title": "Setting up RStudio for success",
     "section": "RStudio projects",
-    "text": "RStudio projects\nOne of the foundational features of RStudio is the concept of projects. Projects set up your analyses for reproducibility by making it clear where your analysis lives and how your data, scripts, and all other files that belong to an analysis are related to each other. In short, they are all contained in a project folder. Projects are based on R’s notion of the working directory. This is the folder where R starts when you ask it to load data files or save scripts. If this is the first time that you have opened RStudio, your working directory is probably your home directory. On macOS this is represented with ~/, on Windows likely with C:\\Users\\[your-username]. You can see this at the top of the console panel.\n\n\n\n\n\n\nFigure 3: Current working directory.\n\n\n\nRStudio projects provide a clear and explicit way to tell R where to start (to set your working directory) and keep all of your analysis together. Let’s create our first project. This project will hold all of the code and data we will work on in our in-class sessions. When you want to work on a project with your own data, follow these steps again to create a new project in a different folder.\n\nGo to the File menu and select New Project…\nIn the New Project Wizard select New Directory.\nChoose New Project for the Project type.\nName your project and choose where to put it.\n\nFor this first project under Directory name we will use r-notes.\nThen, select Browse… to put the project folder inside your hist5444s26 folder that contains the work done for this course. If you have not created this folder yet, do so now in Finder or File Explorer.\nFinally, select Create Project\n\n\n\n\n\n\n\n\nFigure 4: Steps to create a project: (top) select New Directory, (middle) choose New Project for the project type, (bottom) choose what to name the project and where to put it.\n\n\n\nRStudio will start back up but now your working directory will be the new project folder you created, in this instance r-notes. You can verify you are in your new project in four different locations in the RStudio interface.\n\nThe name of the RStudio window will now contain r-notes.\nThe top of the has the path on your computer from your home to the project folder. For me it is ~/Documents/hist5444s26/r-notes.\nThe project dropdown on the top-right of the RStudio window. You can use this menu to quickly switch between different projects.\nThe files panel will show the path to your working directory and a single file named r-notes.Rproj.\n\n\n\n\n\n\n\nFigure 5: RStudio project interface, highlighting areas that show the current project.\n\n\n\n\nSetting up your project structure\nLet’s finish setting up the new project by providing some structure, adding folders to separate our raw data, any modified data we create, our scripts we write, and the figures we make. The most important aspect of this is to separate our raw data from our modified data we create using R.1 Keeping these two types of data separate will protect you from making errors and possible data loss. You can add the folders in the RStudio files panel by clicking ojn the folder with the plus sign, or you can create the folders in Finder or File Explorer. Your folders should be named:\n\ndata: Any modified data that you want to store after cleaning or analyzing your raw data.\ndata-raw: Raw data that you have created or gotten from an external source.\nscripts: Where you will keep your R scripts and any other documents such as Quarto documents.\nfig: A place to store any visualizations you make in the course of your analysis.\nREADME.md: Lastly you can create a README file to explain the purpose and structure of the project. To create a new Markdown file in RStudio go to File -&gt; New File -&gt; Markdown File.\n\n\n\n\n\n\n\nFigure 6: Project folders.\n\n\n\n\n\n\n\n\n\nTipWhat is the r-notes.Rproj file?\n\n\n\nThe r-notes.Rproj file is a plain text file that has a couple of project based settings in it. You can click on it in RStudio and it will open a dialogue window. Generally, you do not want to touch the file. Primarily, the file projects the best target for opening up your project. Double-click on any .Rproj file and RStudio will open to that project.\n\n\n\n\n\n\n\n\nNoteRelative vs absolute paths\n\n\n\nProjects enable you to access files such as data with relative paths from your working directory. Within our r-notes project we can access a data file called SAFI_clean.csv using the relative path: data-raw/SAFI_clean.csv.\nIf we did not use projects and kept our working directory as our home directory, we would have to use absolute paths. Absolute paths point to a file or folder regardless of the working directory. On my computer it would be ~/Documents/hist5444s26/r-notes/data-raw/SAFI_clean.csv. This might work for those on a Mac because we were specific about naming our folders, but it will not work on Windows.\nIf you were to move the r-notes folder into another folder, absolute paths would not even work on your computer any more. However, if you give your r-notes folder to someone else and you use projects and relative paths, the paths will correctly find the data on their computer.",
+    "text": "RStudio projects\nOne of the foundational features of RStudio is the concept of projects. Projects set up your analyses for reproducibility by making it clear where your analysis lives and how your data, scripts, and all other files that belong to an analysis are related to each other. In short, they are all contained in a project folder. Projects are based on R’s notion of the working directory. This is the folder where R starts when you ask it to load data files or save scripts. If this is the first time that you have opened RStudio, your working directory is probably your home directory. On macOS this is represented with ~/, on Windows likely with C:\\Users\\[your-username]. You can see this at the top of the console panel.\n\n\n\n\n\n\nFigure 3: Current working directory.\n\n\n\nRStudio projects provide a clear and explicit way to tell R where to start (to set your working directory) and keep all of your analysis together. Let’s create our first project. This project will hold all of the code and data we will work on in our in-class sessions. When you want to work on a project with your own data, follow these steps again to create a new project in a different folder.\n\nGo to the File menu and select New Project…\nIn the New Project Wizard select New Directory.\nChoose New Project for the Project type.\nName your project and choose where to put it.\n\nFor this first project under Directory name we will use r-notes.\nThen, select Browse… to put the project folder inside your hist5444s26 folder that contains the work done for this course. If you have not created this folder yet, do so now in Finder or File Explorer.\nFinally, select Create Project\n\n\n\n\n\n\n\n\nFigure 4: Steps to create a project: (top) select New Directory, (middle) choose New Project for the project type, (bottom) choose what to name the project and where to put it.\n\n\n\nRStudio will start back up but now your working directory will be the new project folder you created, in this instance r-notes. You can verify you are in your new project in four different locations in the RStudio interface.\n\nThe name of the RStudio window will now contain r-notes.\nThe top of the has the path on your computer from your home to the project folder. For me it is ~/Documents/hist5444s26/r-notes.\nThe project dropdown on the top-right of the RStudio window. You can use this menu to quickly switch between different projects.\nThe files panel will show the path to your working directory and a single file named r-notes.Rproj.\n\n\n\n\n\n\n\nFigure 5: RStudio project interface, highlighting areas that show the current project.\n\n\n\n\nSetting up your project structure\nLet’s finish setting up the new project by providing some structure, adding folders to separate our raw data, any modified data we create, our scripts we write, and the figures we make. The most important aspect of this is to separate our raw data from our modified data we create using R.1 Keeping these two types of data separate will protect you from making errors and possible data loss. You can add the folders in the RStudio files panel by clicking ojn the folder with the plus sign, or you can create the folders in Finder or File Explorer. Your folders should be named:\n\ndata/: Any modified data that you want to store after cleaning or analyzing your raw data.\ndata-raw/: Raw data that you have created or gotten from an external source.\nscripts/: Where you will keep your R scripts and any other documents such as Quarto documents.\nfig/: A place to store any visualizations you make in the course of your analysis.\nREADME.md: Lastly you can create a README file to explain the purpose and structure of the project. To create a new Markdown file in RStudio go to File -&gt; New File -&gt; Markdown File.\n\n\n\n\n\n\n\nFigure 6: Project folders.\n\n\n\n\n\n\n\n\n\nTipWhat is the r-notes.Rproj file?\n\n\n\nThe r-notes.Rproj file is a plain text file that has a couple of project based settings in it. You can click on it in RStudio and it will open a dialogue window. Generally, you do not want to touch the file. Primarily, the file projects the best target for opening up your project. Double-click on any .Rproj file and RStudio will open to that project.\n\n\n\n\n\n\n\n\nNoteRelative vs absolute paths\n\n\n\nProjects enable you to access files such as data with relative paths from your working directory. Within our r-notes project we can access a data file called SAFI_clean.csv using the relative path: data-raw/SAFI_clean.csv.\nIf we did not use projects and kept our working directory as our home directory, we would have to use absolute paths. Absolute paths point to a file or folder regardless of the working directory. On my computer it would be ~/Documents/hist5444s26/r-notes/data-raw/SAFI_clean.csv. This might work for those on a Mac because we were specific about naming our folders, but it will not work on Windows.\nIf you were to move the r-notes folder into another folder, absolute paths would not even work on your computer any more. However, if you give your r-notes folder to someone else and you use projects and relative paths, the paths will correctly find the data on their computer.",
     "crumbs": [
       "Resources",
       "R",
@@ -622,7 +622,7 @@
     "href": "content/08-content-git.html#reading",
     "title": "Reproducible workflows with Git",
     "section": "Reading",
-    "text": "Reading\n\nHadley Wickham et al., R for Data Science (2023).\n\nChapter 20: Spreadsheets\nChapter 28: Quarto\n\nJenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
+    "text": "Reading\n\nHadley Wickham et al., R for Data Science.\n\nChapter 16: Factors\nChapter 17: Dates and times\nChapter 18: Missing values\nChapter 19: Joins\n\nJenny Bryan, “Excuse me, do you have a moment to talk about version control?,” PeerJ Preprints (2017) https://peerj.com/preprints/3159v2.",
     "crumbs": [
       "Content",
       "Topics",
@@ -634,7 +634,7 @@
     "href": "content/08-content-git.html#assignment",
     "title": "Reproducible workflows with Git",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nExpand on your analysis of the SNiGB data in a new Quarto document.\nStart a data analysis project of your own based on data you have collected or found.\n\nCreate an RStudio project in your hist5444s26/ folder. Set up the project as described in Setting up RStudio for success.\nWhat can you do with the data? What would you like to be able to do?\nReflect on what you have learned in a Quarto document and in your commonplace book.",
     "crumbs": [
       "Content",
       "Topics",
@@ -646,7 +646,7 @@
     "href": "content/08-content-git.html#activities",
     "title": "Reproducible workflows with Git",
     "section": "Activities",
-    "text": "Activities",
+    "text": "Activities\n\nDiscussion of your data analysis project\nGetting familiar with the command line\nGetting started with git\nWorking with git and GitHub in RStudio",
     "crumbs": [
       "Content",
       "Topics",
@@ -682,7 +682,7 @@
     "href": "content/07-content-snigb.html#reading",
     "title": "Working with SNiGB",
     "section": "Reading",
-    "text": "Reading\n\nHadley Wickham, “A personal history of the tidyverse”.\nHadley Wickham et al., R for Data Science (2023).\n\nChapter 3: Data transformation\nChapter 4: Code style\nChapter 7: Data import",
+    "text": "Reading\n\nHadley Wickham, “A personal history of the tidyverse”.\nHadley Wickham et al., R for Data Science.\n\nChapter 3: Data transformation\nChapter 4: Code style\nChapter 7: Data import\nChapter 20: Spreadsheets\nChapter 28: Quarto",
     "crumbs": [
       "Content",
       "Topics",
@@ -694,7 +694,7 @@
     "href": "content/07-content-snigb.html#assignment",
     "title": "Working with SNiGB",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nFirst self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the assignments page for details. You can turn in self reflections through email.\nDownload the quarto template and the SNiGB data. Explore the data. See if you can make some exploratory data visualizations. What interests you in the data. Intersperse your notes with your code in the quarto document.",
     "crumbs": [
       "Content",
       "Topics",
@@ -706,7 +706,7 @@
     "href": "content/07-content-snigb.html#activities",
     "title": "Working with SNiGB",
     "section": "Activities",
-    "text": "Activities",
+    "text": "Activities\n\nPair and share: What were you able to explore in your quarto documents? What are you interested to explore in greater depth?",
     "crumbs": [
       "Content",
       "Topics",
@@ -910,7 +910,7 @@
     "href": "content/05-content-ggplot.html#resources",
     "title": "Visualizing data with ggplot2",
     "section": "Resources",
-    "text": "Resources\n\nResources: Installing R and RStudio\nResources: Setting up RStudio\n\n\nWorking in RStudio\n\nWickham et al., R for Data Science, chapters 2, 6, and 8.\nRStudio User Guide\n\n\n\nVisualization\nMake sure to look at the ggplot2 website. It is full of great documentation and examples, including a ggplot2 cheatsheet.\n\nThe Royal Statistical Society Data visualization Guide\nWickham et al., R for Data Science, chapters 1, 9, 10, and 11.\nIf you want some inspiration, look at Nicola Rennie’s visualization projects.\n\nGo to Resources: Visualization with ggplot2 for more background and resources.",
+    "text": "Resources\n\nWorking in RStudio\n\nResources: Installing R and RStudio\nResources: Setting up RStudio\nResources: Using R in RStudio\nWickham et al., R for Data Science, chapters 2, 6, and 8.\nRStudio User Guide\n\n\n\nVisualization\nGo to Resources: Visualization with ggplot2 for more background and resources.\n\nMake sure to look at the ggplot2 website. It is full of great documentation and examples.\nggplot2 cheat sheet.\nThe Royal Statistical Society Data visualization Guide\nWickham et al., R for Data Science, chapters 1, 9, 10, and 11.\nIf you want some inspiration, look at Nicola Rennie’s visualization projects.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1670,7 +1670,7 @@
     "href": "content/06-content-dplyr.html#reading",
     "title": "Wrangling data",
     "section": "Reading",
-    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction, Chapter 3: Make a plot.\nHadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, https://doi.org/10.21105/joss.01686.\nHadley Wickham et al., R for Data Science (2023).\n\nChapter 1: Data visualization\nChapters 2 and 6 on working with R in RStudio.\nIf you want to explore more on visualization with ggplot2, look at chapters 9, 10, and 11.",
+    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction, Chapter 3: Make a plot.\nHadley Wickham et al., “Welcome to the Tidyverse,” Journal of Open Source Software 4, no. 43 (2019): 1686, https://doi.org/10.21105/joss.01686.\nHadley Wickham et al., R for Data Science.\n\nChapter 1: Data visualization\nChapters 2 and 6 on working with R in RStudio.\nIf you want to explore more on visualization with ggplot2, look at chapters 9, 10, and 11.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1682,7 +1682,7 @@
     "href": "content/06-content-dplyr.html#assignment",
     "title": "Wrangling data",
     "section": "Assignment",
-    "text": "Assignment\n\nCreate an R script in RStudio named intro-r.R in your r-notes/ project folder and go through the material from one or more of the worksheets we have gone through in class.\n\nThe task is not necessarily to copy or do everything in the worksheets. Rather, play around with how things work using a script in RStudio.\nGet used to the differences of writing and running code in a script compared to directly in the console.\nCreate objects, create vectors of different types, use different functions, look at documentation for functions with ?function_name.\n\nCreate a GitHub account. You can follow these instructions from the Carpentries. Choose a username that you would be ok sharing in a professional environment. Mine is jessesadler, and so I can be found at https://github.com/jessesadler.\n\nLook through the course website repository and file an issue about something that could be improved or any questions you might have. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.",
+    "text": "Assignment\n\nCreate an R script named intro-r.R in your r-notes/ project folder and go through the material from one or more of the worksheets we have gone through in class.\n\nThe task is not necessarily to copy or do everything in the worksheets. Rather, play around with how things work using a script in RStudio.\nGet used to the differences of writing and running code in a script compared to directly in the console.\nCreate objects, create vectors of different types, use different functions, look at documentation for functions with ?function_name.\n\nCreate a GitHub account. You can follow these instructions from the Carpentries. Choose a username that you would be ok sharing in a professional environment. Mine is jessesadler, and so I can be found at https://github.com/jessesadler.\n\nLook through the course website repository and file an issue about something that could be improved or any questions you might have. It might be easiest to do this by looking at the course website and selecting Report an issue, which is usually on the right side of a page.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1694,7 +1694,7 @@
     "href": "content/06-content-dplyr.html#activities",
     "title": "Wrangling data",
     "section": "Activities",
-    "text": "Activities\n\nImporting data in R\nWrangling data with dplyr\nIntroduction to Quarto documents",
+    "text": "Activities\n\nDiscussion: Working with scripts in R\nImporting data in R\nWrangling data with dplyr\nIntroduction to Quarto documents",
     "crumbs": [
       "Content",
       "Topics",
@@ -1706,7 +1706,7 @@
     "href": "content/06-content-dplyr.html#resources",
     "title": "Wrangling data",
     "section": "Resources",
-    "text": "Resources",
+    "text": "Resources\n\nResources: Using R in RStudio\n\n\nImporting data in R\n\nreadr cheat sheet\nWickham et al., R for Data Science\n\nChapter 7: Data import\nChapter 20: Spreadsheets\n\n\n\n\nWrangling data\n\nIntroduction to dplyr\nWickham et al., R for Data Science, Chapter 3: Data transformation.\nData Carpentries, R for Social Scientists: Data Wrangling with dplyr\n\n\n\nQuarto\n\nQuarto cheat sheet\nThe Quarto documentation is great and comprehensive. A good place to start is with the Getting started tutorial.\nWickham et al., R for Data Science\n\nChapter 28: Quarto\nChapter 29: Quarto formats",
     "crumbs": [
       "Content",
       "Topics",
@@ -1964,7 +1964,7 @@
     "href": "resources/rstudio-guide.html#how-to-find-and-run-commands",
     "title": "Using R in RStudio",
     "section": "How to find and run commands",
-    "text": "How to find and run commands\n\nShow Keyboard Shortcut Reference: Help -&gt; Keyboard Shortcuts Help, Alt + Shift + K, or Option + Shift + K\nCommand palette: Ctrl + Shift + P or Cmd + Shift + P\n\nProvides a text searchable interface to run all of RStudio’s commands.",
+    "text": "How to find and run commands\n\nKeyboard Shortcut Reference: Help -&gt; Keyboard Shortcuts Help, Alt + Shift + K, or Option + Shift + K\nCommand palette: Ctrl + Shift + P or Cmd + Shift + P\n\nProvides a text searchable interface to run all of RStudio’s commands.",
     "crumbs": [
       "Resources",
       "R",
@@ -1976,7 +1976,7 @@
     "href": "resources/rstudio-guide.html#coding-foundations",
     "title": "Using R in RStudio",
     "section": "Coding foundations",
-    "text": "Coding foundations\n\n\n\n\n\n\n\n\nCommand\nWindows\nmacOS\n\n\n\n\nRun R expression while in the console\nEnter\nReturn\n\n\nRun R current expression from the editor pane\nCtrl + Enter\nCmd + Return\n\n\nTab completion for functions and objects\nTab + Tab\nTab + Tab\n\n\nAssignment operator (&lt;-)\nAlt + -\nOption + -\n\n\nInsert pipe operator |&gt; or %&gt;%\nCtrl + Shift + M\nCmd + Shift + M\n\n\nCreate a section in an R script\nCtrl + Shift + R\nCmd + Shift + R\n\n\nComment out code by placing # at beginning of line\nCtrl + Shift + C\nCmd + Shift + C",
+    "text": "Coding foundations\n\n\n\n\n\n\n\n\nCommand\nWindows\nmacOS\n\n\n\n\nRun R expression while in the console\nEnter\nReturn\n\n\nRun R current expression from the editor pane\nCtrl + Enter\nCmd + Return\n\n\nTab completion for functions and objects\nTab + Tab\nTab + Tab\n\n\nAssignment operator (&lt;-)\nAlt + -\nOption + -\n\n\nInsert pipe operator |&gt; or %&gt;%\nCtrl + Shift + M\nCmd + Shift + M\n\n\nCreate a section in an R script\nCtrl + Shift + R\nCmd + Shift + R\n\n\nComment out code by placing # at beginning of line\nCtrl + Shift + C\nCmd + Shift + C\n\n\n\n\nBe aware of the state of your console\nThere will be times where you accidentally run a partial R expression. Maybe you forgot a closing quotation mark or parentheses. Or you forgot a pipe or plus sign in building a ggplot. You will see the consequences of this in the console. Instead of the prompt (&gt;) telling you R is ready for the next expression, it will have a plus sign (+) telling you R does not think you are done with the previous expression. You can get out of this by finishing the code, pressing ESC or Ctrl + C.\n\nPrompt &gt;: R is ready for the next expression.\nContinuation +: R does not think you are done with previous expression.\n\nExit continuation by pressing ESC or Ctrl + C.",
     "crumbs": [
       "Resources",
       "R",
@@ -2000,7 +2000,7 @@
     "href": "resources/rstudio-guide.html#a-reproducible-workflow",
     "title": "Using R in RStudio",
     "section": "A reproducible workflow",
-    "text": "A reproducible workflow\nIn Setting up RStudio for success we set up RStudio to not save our workspace when we restart R. We did this to ensure that the true source for our analysis could be recreated through our script. It is valuable to check this every once in a while by restarting R. You can then rerun your entire script to make sure that you have fully captured your analysis in the script.\n\nRestart R:\n\nUse the command palette: Restart R Session\nSession -&gt; Restart R\nWindows: Ctrl + Shift + F10\nmacOS: Cmd + Shift + 0\n\nRerun script\n\nRun all expressions at once: Ctrl + Shift + S or Cmd + Shift + S\nRun each expression at a time: Ctrl + Enter or Cmd + Return\n\n\nEven though the latter may seem tedious, there are benefits to it. Because Ctrl + Enter or Cmd + Return not only runs the current expression, it also moves the cursor to the next expression, you can hold down Ctrl or Cmd` and hit return quite quickly. This way can also make it easier to identify where a problem occurs, at least as long as you keep looking for errors in the console.",
+    "text": "A reproducible workflow\nIn Setting up RStudio for success we set up RStudio to not save our workspace when we restart R. We did this to ensure that the true source for our analysis could be recreated through our script. It is valuable to check this every once in a while by restarting R. You can then rerun your entire script to make sure that you have fully captured your analysis in the script.\n\nRestart R\n\nUse the command palette: Restart R Session\nSession -&gt; Restart R\nWindows: Ctrl + Shift + F10\nmacOS: Cmd + Shift + 0\n\nRerun script\n\nRun all expressions at once: Ctrl + Shift + S or Cmd + Shift + S\nRun each expression at a time: Ctrl + Enter or Cmd + Return\n\n\nEven though the latter may seem tedious, there are benefits to it. Because Ctrl + Enter or Cmd + Return not only runs the current expression, it also moves the cursor to the next expression, you can hold down Ctrl or Cmd` and hit return quite quickly. This way can also make it easier to identify where a problem occurs, at least as long as you keep looking for errors in the console.",
     "crumbs": [
       "Resources",
       "R",
