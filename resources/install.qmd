@@ -28,3 +28,6 @@ When you open RStudio, it should look something like this:
 ![RStudio at startup](../files/img/rstudio-start.png){fig-alt="A screen shot of the RStudio application with three panels."}
 
 Next, check out the [Setting up RStudio](rstudio-setup.qmd) for more information on getting the application and your R environment set up for success.
+
+## Other options
+If you are unable to download R and RStudio for any reason, you can use a cloud version of RStudio through [Posit cloud](https://posit.cloud). You can get started with the [free plan](https://posit.cloud/plans/free). All you need is to create an account.

@@ -96,7 +96,7 @@ Setting `color = "blue"` within the `aes()` function will quickly show you the s
 A final distinction that is worth a quick mention here. We could *map* `color` and `shape` to `species` within the `ggplot()` function alongside `x` and `y`. However, we need to *set* aesthetics within the specific geom they apply to.
 
 ## Scales
-When we mapped `color` and `shape` to `species` ggplot used its default **scales** to choose which colors and shapes to use. Scales provide the aesthetic choice for what happens when data is mapped to an aesthetic quality, the set of colors, shapes, sizes, etc. Each aesthetic has its own scale. By default, ggplot applies `scale_color_discrete()` for the colors, but you can adjust this using functions that begin with `scale_color_`. Try with `scale_color_brewer(palette = "Pastel1)`. See the [Color Brewer website](https://colorbrewer2.org/#type=qualitative&scheme=Set2&n=3) for other color palettes.
+When we mapped `color` and `shape` to `species` ggplot used its default **scales** to choose which colors and shapes to use. Scales provide the aesthetic choice for what happens when data is mapped to an aesthetic quality, the set of colors, shapes, sizes, etc. Each aesthetic has its own scale. By default, ggplot applies `scale_color_discrete()` for the colors, but you can adjust this using functions that begin with `scale_color_`. Try with `scale_color_brewer(palette = "Pastel1")`. See the [Color Brewer website](https://colorbrewer2.org/#type=qualitative&scheme=Set2&n=3) for other color palettes.
 
 ```{webr}
 ggplot(data = penguins,
