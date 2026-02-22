@@ -1,0 +1,198 @@
+---
+title: "Wrangling data in the tidyverse"
+format: html
+---
+
+When working with a data frame, you will usually want to modify it in some way. You may want to make some calculations based on different columns in the data or calculate some summary statistics. You may only need a subset of the data, either of the rows or columns. You might want to split the data into separate data frames or join together related data frames. Or you may need to clean up the data, changing column names, modifying values in different ways, or changing the shape of the data frame before doing your analysis and visualization. These are some of the more common tasks of **data wrangling**.[^1]
+
+We can break these tasks into three main categories:
+
+1. Manipulating rows and columns.
+2. Joining together related data frames.
+3. Modifying the structure of a data frame.
+
+## Pipes
+Before getting into the details of how to go about doing these data wrangling tasks using the tidyverse, we should introduce a tool that will make this process of data cleaning much easier to write and more legible to read, namely the pipe (`|>`).[^2] In doing almost any data wrangling task, you will want to perform multiple manipulations. You may want to remove some columns, *and then* remove rows with missing data, *and then* calculate the frequency of one or more column, *and then* calculate some summary statistics.
+
+The **pipe** is the *and then*. It links together multiple functions together, taking the output from the left of the pipe and moving it to the function on the right. Using the pipe will look something like this, and remember you can think of it as *and then*:
+
+```
+historians |>
+  read secondary literature |>
+  read primary sources |>
+  write |>
+  do more research |>
+  rewrite |>
+  publish
+```
+
+In this analogy `historians` take the place of the data and the various actions are the functions.
+
+## 1. Manipulating rows and columns with dplyr
+The core set of [dplyr](https://dplyr.tidyverse.org) functions are designed to work with the pipe. They take in a data frame as their input in the first argument (named `.data`); subsequent arguments include the (unquoted) column names that are operated on; and the output is a data frame, which can be *piped* into another function. You can think of these functions as verbs to manipulate rows and columns. The core functions are:
+
+| Function      | Description                          |
+|-------------- |--------------------------------------|
+| `select()`    | Subset **columns**.                                                                                |
+| `filter()`    | Subset **rows** by conditions based on data in columns.                                            |
+| `mutate()`    | Create new columns using information from other columns.                                           |
+| `group_by()`  | Group the data by values in column such as *by village* or *by sex*.                               |
+| `summarize()` | Aggregate the data, usually on grouped data, to create summary tables.                             |
+| `arrange()`   | Arrange the order of rows by values in columns. Often used with `desc()` to reverse default order. |
+
+- To practice with these functions go to the [Wrangling data with dplyr worksheet](../worksheets/04-worksheet.qmd).
+- To read more about the core dplyr functions, see [R for Data Science: Data Transformation](https://r4ds.hadley.nz/data-transform.html).
+- For even more practice, check out the Data Carpentries, R for Social Science episode on [Data Wrangling with dplyr](https://datacarpentry.github.io/r-socialsci/03-dplyr.html).
+
+Let's quickly show how these work using the `penguins` dataset.
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+penguins |> 
+  select(species, bill_len, bill_dep, sex) |> # Subset columns, not strictly necessary
+  filter(!is.na(bill_len) | !is.na(bill_dep)) |> # Remove missing values for bill measurements
+  mutate(bill_ratio = bill_dep / bill_len) |> # Create new column for ration of depth to length
+  group_by(species, sex) |> # Group the data by species and sex
+  summarize(avg_ratio = mean(bill_ratio), # Find the average bill ratio broken down by species and sex
+            n = n(), # Count the number of observations in each group
+            .groups = "drop") |> # Drop the remaining grouping of sex
+  arrange(desc(avg_ratio)) # Arrange the rows by the average ratio in descending order
+```
+
+## 2. Joining together related data frames
+A common data wrangling task is to join together related data frames. This situation can come about by the desire split up a dataset into multiple datasets to keep them clean and tidy. A common example in the humanities might be a dataset that has location names that correspond to latitude and longitude values. Instead of having latitude and longitude columns for all of our data, we might want to have a separate data frame with that information that we only need to join to the rest of the dataset when we want to create a geographic visualization. We can do this with **joins**. Let's see how it works with some data about the location of siblings at different times.
+
+```{r}
+#| echo: false
+#| message: false
+religion <- read_csv("../datasets/religion.csv")
+movements <- read_csv("../datasets/movements.csv")
+locations <- read_csv("../datasets/locations.csv")
+```
+
+```{r}
+# Religious affiliation of the family members
+religion
+
+# Movements of the siblings
+movements
+
+# Latitude and longitude of the locations of the siblings
+locations
+```
+
+There are four main join functions. All take two data frames and join them `by` a column that is shared by both data frames. The names of the column to join by do not need to be the same, but it this case they are, namely `"person"`. The four functions differ in *how* they join the data frames.
+
+| Function       | Description                          |
+|--------------  |--------------------------------------|
+| `left_join()`  | Keep all observations in the first (left) data frame.                                          |
+| `right_join()` | Keep all observations in the second (right) data frame.                                        |
+| `full_join()`  | Keep all observations from *both* data frames.                                                 |
+| `inner_join()` | Only keep observations that are in *both* data frames, dropping rows that do not have a match. |
+
+Let's start with a left join between `religion` and `movements`:
+
+```{r}
+left_join(religion, movements, by = "person")
+```
+
+The `NA`s for `place` and `date` for Elizabeth Zeghers and Jan della Faille de Oude show that there is no movement data for these individuals. We could drop these by doing a right join instead. Note the different in the number of rows. An alternative would be to switch the position of the dataframes within the `left_join()`.
+
+```{r}
+right_join(religion, movements, by = "person")
+```
+
+Now let's check joining the `movements` data frame to the `locations` data frame. Here we have the complication that our columns to join by have different names. We can use the `join_by()` function to tell R which columns are equivalent.
+
+```{r}
+left_join(movements, locations,
+          by = join_by(place == location))
+```
+
+Let's now join all three data frames together using the pipe.
+
+```{r}
+religion |> 
+  right_join(movements, by = "person") |> 
+  left_join(locations,
+            by = join_by(place == location))
+```
+
+Now are data would be ready to map. This ability to quickly join together related datasets makes it possible to greatly simplify the structure of the data if you are in the situation of creating your dataset. Instead of writing the latitude and longitude over and over again, possibly introducing copy and paste errors, you can have it in one place and only use it when necessary.
+
+Download the three data frames to play around with them: [religion](../datasets/religion.csv), [movements](../datasets/movements.csv), and [locations](../datasets/locations.csv).
+
+### Resources
+- A good overview is provided by the [Joins](https://r4ds.hadley.nz/joins.html) chapter of *R for Data Science*.
+- See also the [Two-table verbs article](https://dplyr.tidyverse.org/articles/two-table.html) in the dplyr package.
+
+## 3. Modifying the structure of a data frame
+A second task you may face is needing to alter the structure of your data to make it tidy. This is the specialty of the [tidyr](https://tidyr.tidyverse.org/index.html) package. It takes us back to the principles of tidy data:
+
+1. Each variable is a column; each column is a variable.
+2. Each observation is a row; each row is an observation.
+3. Each value is a cell; each cell is a single value.
+
+### Wide to long
+However, data is not always tidy; sometimes for good reason. For instance, in collecting data it might be easier to create a data frame in a **wide** format in which variable values are spread out in separate columns. For instance, a data frame with the counts for each penguin species by year.
+
+```{r}
+#| echo: false
+penguins_long <- penguins |> 
+  group_by(species, year) |> 
+  summarise(count = n(), .groups = "drop")
+
+penguins_wide <- penguins_long |> 
+  pivot_wider(names_from = year, values_from = count)
+```
+
+```{r}
+penguins_wide
+```
+
+To make this data frame tidy we need to create a new column for year and a new column for the values in the current year columns, in this case count. to do this we use the `pivot_longer()` function. The key arguments for the function are:
+
+- `cols`: Columns to pivot into a longer format, or alternatively the columns to disregard in pivoting using the not operator (`!`).
+- `names_to`: The name new column or columns to create from the information stored in the column names specified by the `cols` argument. Should be a name in quotation marks.
+- `values_to`: The name of the column to create from the data stored in cell values. Should be a name in quotation marks.
+
+Let's see how this works.
+
+```{r}
+penguins_wide |> 
+  pivot_longer(
+    cols = !species,
+    names_to = "year",
+    values_to = "count"
+  )
+```
+
+### Long to wide
+Going from a wider format to a longer format is the more common transformation, but you may find yourself in the situation of wanting to use a wider format to present your data in a table. We can reverse what we did with `pivot_longer()` using `pivot_wider()`. The key arguments mirror those for `pivot_longer()`:
+
+- `names_from`: Column used to create new column names. Does not need to be in quotes because it is a column in the data.
+- `values_from`: Column used to create cell values. Does not need to be in quotes because it is a column in the data.
+
+```{r}
+penguins_long |> 
+  pivot_wider(
+    names_from = year,
+    values_from = count)
+```
+
+### Resources
+These examples provide a short glimpse of the ways that you can manipulate the structure of data frames with tidyr. For more information see:
+
+- A good overview is provided by the [Data tidying](https://r4ds.hadley.nz/data-tidy.html) chapter of *R for Data Science*.
+- The [tidy data article](https://tidyr.tidyverse.org/articles/tidy-data.html) in the tidyr package. It is a code heavy version of Hadley Wickham's [Tidy data paper](https://vita.had.co.nz/papers/tidy-data.html).
+- The [Pivoting article](https://tidyr.tidyverse.org/articles/pivot.html) in the tidyr package.
+- For even more practice, check out the Data Carpentries, R for Social Science episode on [Data Wrangling with tidyr](https://datacarpentry.github.io/r-socialsci/04-tidyr.html).
+
+
+[^1]: Hadley Wickham, "Tidy Data," *Journal of Statistical Software* 59, no. 10 (2014), https://doi.org/10.18637/jss.v059.i10.
+
+[^2]: This is the base R pipe that was introduced in R 4.1 in 2021. You may also see the magrittr pipe (`%>%`). Their functionality is essentially the same. The base R pipe is created using the pipe character (Shift + backslash) and the greater than sign. You can quickly type it out with the keyboard shortcut `Cmd/Ctrl + Shift + M`. To setup RStudio to use the base pipe with this keyboard shortcut, see [Setting up RStudio for success](rstudio-setup.qmd#other-tweaks).
