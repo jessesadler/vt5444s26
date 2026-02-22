@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Zotero Guide – Digital History Methods</title>
+<title>Wrangling data in the tidyverse – Digital History Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../resources/plaintext.html" rel="next">
-<link href="../resources/datasets.html" rel="prev">
+<link href="../resources/ggplot2.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -291,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/zotero.html">Organization</a></li><li class="breadcrumb-item"><a href="../resources/zotero.html">Zotero Guide</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/wrangling.html">Wrangling data in the tidyverse</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -354,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link active">
+  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zotero Guide</span></a>
   </div>
 </li>
@@ -413,7 +447,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/wrangling.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/wrangling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Wrangling data in the tidyverse</span></a>
   </div>
 </li>
@@ -429,45 +463,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-bibliographical-managers" id="toc-why-bibliographical-managers" class="nav-link active" data-scroll-target="#why-bibliographical-managers">Why bibliographical managers?</a>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link active" data-scroll-target="#pipes">Pipes</a></li>
+  <li><a href="#manipulating-rows-and-columns-with-dplyr" id="toc-manipulating-rows-and-columns-with-dplyr" class="nav-link" data-scroll-target="#manipulating-rows-and-columns-with-dplyr">1. Manipulating rows and columns with dplyr</a></li>
+  <li><a href="#joining-together-related-data-frames" id="toc-joining-together-related-data-frames" class="nav-link" data-scroll-target="#joining-together-related-data-frames">2. Joining together related data frames</a>
   <ul class="collapse">
-  <li><a href="#why-zotero" id="toc-why-zotero" class="nav-link" data-scroll-target="#why-zotero">Why Zotero?</a></li>
-  <li><a href="#things-to-keep-in-mind" id="toc-things-to-keep-in-mind" class="nav-link" data-scroll-target="#things-to-keep-in-mind">Things to keep in mind</a></li>
-  <li><a href="#resources-on-zotero-and-bibliographical-managers" id="toc-resources-on-zotero-and-bibliographical-managers" class="nav-link" data-scroll-target="#resources-on-zotero-and-bibliographical-managers">Resources on Zotero and bibliographical managers</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul></li>
-  <li><a href="#getting-zotero" id="toc-getting-zotero" class="nav-link" data-scroll-target="#getting-zotero">1. Getting Zotero</a></li>
-  <li><a href="#adding-items-to-zotero" id="toc-adding-items-to-zotero" class="nav-link" data-scroll-target="#adding-items-to-zotero">2. Adding items to Zotero</a></li>
-  <li><a href="#organizing-your-references" id="toc-organizing-your-references" class="nav-link" data-scroll-target="#organizing-your-references">3. Organizing your references</a>
+  <li><a href="#modifying-the-structure-of-a-data-frame" id="toc-modifying-the-structure-of-a-data-frame" class="nav-link" data-scroll-target="#modifying-the-structure-of-a-data-frame">3. Modifying the structure of a data frame</a>
   <ul class="collapse">
-  <li><a href="#things-to-keep-in-mind-1" id="toc-things-to-keep-in-mind-1" class="nav-link" data-scroll-target="#things-to-keep-in-mind-1">Things to keep in mind</a></li>
+  <li><a href="#wide-to-long" id="toc-wide-to-long" class="nav-link" data-scroll-target="#wide-to-long">Wide to long</a></li>
+  <li><a href="#long-to-wide" id="toc-long-to-wide" class="nav-link" data-scroll-target="#long-to-wide">Long to wide</a></li>
+  <li><a href="#resources-1" id="toc-resources-1" class="nav-link" data-scroll-target="#resources-1">Resources</a></li>
   </ul></li>
-  <li><a href="#read-and-markup-pdfs-and-take-notes" id="toc-read-and-markup-pdfs-and-take-notes" class="nav-link" data-scroll-target="#read-and-markup-pdfs-and-take-notes">4. Read and markup PDFs and take notes</a>
-  <ul class="collapse">
-  <li><a href="#things-to-keep-in-mind-2" id="toc-things-to-keep-in-mind-2" class="nav-link" data-scroll-target="#things-to-keep-in-mind-2">Things to keep in mind</a></li>
-  </ul></li>
-  <li><a href="#style-citations" id="toc-style-citations" class="nav-link" data-scroll-target="#style-citations">5. Style citations</a>
-  <ul class="collapse">
-  <li><a href="#within-zotero" id="toc-within-zotero" class="nav-link" data-scroll-target="#within-zotero">Within Zotero</a></li>
-  <li><a href="#microsoft-word" id="toc-microsoft-word" class="nav-link" data-scroll-target="#microsoft-word">Microsoft Word</a></li>
-  <li><a href="#google-docs" id="toc-google-docs" class="nav-link" data-scroll-target="#google-docs">Google Docs</a></li>
-  <li><a href="#things-to-keep-in-mind-3" id="toc-things-to-keep-in-mind-3" class="nav-link" data-scroll-target="#things-to-keep-in-mind-3">Things to keep in mind</a></li>
-  </ul></li>
-  <li><a href="#collaboration-zotero-groups" id="toc-collaboration-zotero-groups" class="nav-link" data-scroll-target="#collaboration-zotero-groups">6. Collaboration: Zotero Groups</a></li>
-  <li><a href="#i-just-want-to-style-citations" id="toc-i-just-want-to-style-citations" class="nav-link" data-scroll-target="#i-just-want-to-style-citations">I just want to style citations</a>
-  <ul class="collapse">
-  <li><a href="#zoterobib" id="toc-zoterobib" class="nav-link" data-scroll-target="#zoterobib">ZoteroBib</a></li>
-  </ul></li>
-  <li><a href="#what-about-keeping-track-of-primary-sources-from-the-archives" id="toc-what-about-keeping-track-of-primary-sources-from-the-archives" class="nav-link" data-scroll-target="#what-about-keeping-track-of-primary-sources-from-the-archives">What about keeping track of primary sources from the archives?</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/zotero.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/wrangling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/zotero.html">Organization</a></li><li class="breadcrumb-item"><a href="../resources/zotero.html">Zotero Guide</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/wrangling.html">Wrangling data in the tidyverse</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Zotero Guide</h1>
+<h1 class="title">Wrangling data in the tidyverse</h1>
 </div>
 
 
@@ -484,243 +501,381 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="why-bibliographical-managers" class="level2">
-<h2 class="anchored" data-anchor-id="why-bibliographical-managers">Why bibliographical managers?</h2>
+<p>When working with a data frame, you will usually want to modify it in some way. You may want to make some calculations based on different columns in the data or calculate some summary statistics. You may only need a subset of the data, either of the rows or columns. You might want to split the data into separate data frames or join together related data frames. Or you may need to clean up the data, changing column names, modifying values in different ways, or changing the shape of the data frame before doing your analysis and visualization. These are some of the more common tasks of <strong>data wrangling</strong>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>We can break these tasks into three main categories:</p>
 <ol type="1">
-<li>Collect references</li>
-<li>Store PDFs, links, other documents</li>
-<li>Organize your references</li>
-<li>Read and markup PDFs and take notes</li>
-<li>Style citations</li>
-<li>Share references with collaborators</li>
+<li>Manipulating rows and columns.</li>
+<li>Joining together related data frames.</li>
+<li>Modifying the structure of a data frame.</li>
 </ol>
-<section id="why-zotero" class="level3">
-<h3 class="anchored" data-anchor-id="why-zotero">Why Zotero?</h3>
+<section id="pipes" class="level2">
+<h2 class="anchored" data-anchor-id="pipes">Pipes</h2>
+<p>Before getting into the details of how to go about doing these data wrangling tasks using the tidyverse, we should introduce a tool that will make this process of data cleaning much easier to write and more legible to read, namely the pipe (<code>|&gt;</code>).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In doing almost any data wrangling task, you will want to perform multiple manipulations. You may want to remove some columns, <em>and then</em> remove rows with missing data, <em>and then</em> calculate the frequency of one or more column, <em>and then</em> calculate some summary statistics.</p>
+<p>The <strong>pipe</strong> is the <em>and then</em>. It links together multiple functions together, taking the output from the left of the pipe and moving it to the function on the right. Using the pipe will look something like this, and remember you can think of it as <em>and then</em>:</p>
+<pre><code>historians |&gt;
+  read secondary literature |&gt;
+  read primary sources |&gt;
+  write |&gt;
+  do more research |&gt;
+  rewrite |&gt;
+  publish</code></pre>
+<p>In this analogy <code>historians</code> take the place of the data and the various actions are the functions.</p>
+</section>
+<section id="manipulating-rows-and-columns-with-dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="manipulating-rows-and-columns-with-dplyr">1. Manipulating rows and columns with dplyr</h2>
+<p>The core set of <a href="https://dplyr.tidyverse.org">dplyr</a> functions are designed to work with the pipe. They take in a data frame as their input in the first argument (named <code>.data</code>); subsequent arguments include the (unquoted) column names that are operated on; and the output is a data frame, which can be <em>piped</em> into another function. You can think of these functions as verbs to manipulate rows and columns. The core functions are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>select()</code></td>
+<td>Subset <strong>columns</strong>.</td>
+</tr>
+<tr class="even">
+<td><code>filter()</code></td>
+<td>Subset <strong>rows</strong> by conditions based on data in columns.</td>
+</tr>
+<tr class="odd">
+<td><code>mutate()</code></td>
+<td>Create new columns using information from other columns.</td>
+</tr>
+<tr class="even">
+<td><code>group_by()</code></td>
+<td>Group the data by values in column such as <em>by village</em> or <em>by sex</em>.</td>
+</tr>
+<tr class="odd">
+<td><code>summarize()</code></td>
+<td>Aggregate the data, usually on grouped data, to create summary tables.</td>
+</tr>
+<tr class="even">
+<td><code>arrange()</code></td>
+<td>Arrange the order of rows by values in columns. Often used with <code>desc()</code> to reverse default order.</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>It is free and open source.</li>
-<li>Built by and for the humanities. It is a project created and maintained by a group called <a href="https://digitalscholar.org">Digital Scholar</a> that also maintains <a href="https://omeka.org/">Omeka</a> and <a href="https://tropy.org/">Tropy</a>. It came out of the DH group at George Mason University.</li>
-<li>Syncs across devices. There is a web version and iOS version.</li>
-<li>Ability to collaborate through shared groups.</li>
+<li>To practice with these functions go to the <a href="../worksheets/04-worksheet.qmd">Wrangling data with dplyr worksheet</a>.</li>
+<li>To read more about the core dplyr functions, see <a href="https://r4ds.hadley.nz/data-transform.html">R for Data Science: Data Transformation</a>.</li>
+<li>For even more practice, check out the Data Carpentries, R for Social Science episode on <a href="https://datacarpentry.github.io/r-socialsci/03-dplyr.html">Data Wrangling with dplyr</a>.</li>
+</ul>
+<p>Let’s quickly show how these work using the <code>penguins</code> dataset.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, bill_len, bill_dep, sex) <span class="sc">|&gt;</span> <span class="co"># Subset columns, not strictly necessary</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(bill_len) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.na</span>(bill_dep)) <span class="sc">|&gt;</span> <span class="co"># Remove missing values for bill measurements</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bill_ratio =</span> bill_dep <span class="sc">/</span> bill_len) <span class="sc">|&gt;</span> <span class="co"># Create new column for ration of depth to length</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="co"># Group the data by species and sex</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_ratio =</span> <span class="fu">mean</span>(bill_ratio), <span class="co"># Find the average bill ratio broken down by species and sex</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(), <span class="co"># Count the number of observations in each group</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> <span class="co"># Drop the remaining grouping of sex</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_ratio)) <span class="co"># Arrange the rows by the average ratio in descending order</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 4
+  species   sex    avg_ratio     n
+  &lt;fct&gt;     &lt;fct&gt;      &lt;dbl&gt; &lt;int&gt;
+1 Adelie    &lt;NA&gt;       0.485     5
+2 Adelie    female     0.474    73
+3 Adelie    male       0.474    73
+4 Chinstrap female     0.379    34
+5 Chinstrap male       0.377    34
+6 Gentoo    &lt;NA&gt;       0.319     4
+7 Gentoo    male       0.318    61
+8 Gentoo    female     0.313    58</code></pre>
+</div>
+</div>
+</section>
+<section id="joining-together-related-data-frames" class="level2">
+<h2 class="anchored" data-anchor-id="joining-together-related-data-frames">2. Joining together related data frames</h2>
+<p>A common data wrangling task is to join together related data frames. This situation can come about by the desire split up a dataset into multiple datasets to keep them clean and tidy. A common example in the humanities might be a dataset that has location names that correspond to latitude and longitude values. Instead of having latitude and longitude columns for all of our data, we might want to have a separate data frame with that information that we only need to join to the rest of the dataset when we want to create a geographic visualization. We can do this with <strong>joins</strong>. Let’s see how it works with some data about the location of siblings at different times.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Religious affiliation of the family members</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>religion</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 2
+   person                   religion 
+   &lt;chr&gt;                    &lt;chr&gt;    
+ 1 Elizabeth Zeghers        Calvinist
+ 2 Jan della Faille de Oude Catholic 
+ 3 Andries van der Meulen   Calvinist
+ 4 Daniel van der Meulen    Calvinist
+ 5 Anna van der Meulen      Calvinist
+ 6 Sara van der Meulen      Calvinist
+ 7 Jan della Faille         Calvinist
+ 8 Marten della Faille      Catholic 
+ 9 Carlo della Faille       Calvinist
+10 Anna della Faille        Catholic 
+11 Steven della Faille      Calvinist
+12 Jacques della Faille     Calvinist
+13 Hester della Faille      Calvinist</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Movements of the siblings</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>movements</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 74 × 3
+   person                 place     date      
+   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;    
+ 1 Andries van der Meulen Antwerp   1584-07-01
+ 2 Andries van der Meulen Bremen    1585-09-01
+ 3 Anna van der Meulen    Cologne   1584-07-01
+ 4 Anna van der Meulen    Bremen    1588-06-01
+ 5 Anna van der Meulen    Stade     1588-08-01
+ 6 Anna van der Meulen    Bremen    1592-03-01
+ 7 Sara van der Meulen    Antwerp   1584-07-01
+ 8 Sara van der Meulen    Bremen    1585-09-01
+ 9 Sara van der Meulen    Frankfurt 1586-03-01
+10 Sara van der Meulen    Cologne   1586-05-01
+# ℹ 64 more rows</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Latitude and longitude of the locations of the siblings</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>locations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 21 × 3
+   location          lat   lng
+   &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;
+ 1 Antwerp          51.2  4.40
+ 2 Bremen           53.1  8.81
+ 3 Cologne          50.9  6.96
+ 4 Stade            53.6  9.48
+ 5 Frankfurt        50.1  8.68
+ 6 Utrecht          52.1  5.13
+ 7 Leiden           52.2  4.48
+ 8 Geertruidenberg  51.7  4.85
+ 9 Bergen op Zoom   51.5  4.29
+10 The Hague        52.1  4.31
+# ℹ 11 more rows</code></pre>
+</div>
+</div>
+<p>There are four main join functions. All take two data frames and join them <code>by</code> a column that is shared by both data frames. The names of the column to join by do not need to be the same, but it this case they are, namely <code>"person"</code>. The four functions differ in <em>how</em> they join the data frames.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>left_join()</code></td>
+<td>Keep all observations in the first (left) data frame.</td>
+</tr>
+<tr class="even">
+<td><code>right_join()</code></td>
+<td>Keep all observations in the second (right) data frame.</td>
+</tr>
+<tr class="odd">
+<td><code>full_join()</code></td>
+<td>Keep all observations from <em>both</em> data frames.</td>
+</tr>
+<tr class="even">
+<td><code>inner_join()</code></td>
+<td>Only keep observations that are in <em>both</em> data frames, dropping rows that do not have a match.</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s start with a left join between <code>religion</code> and <code>movements</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(religion, movements, <span class="at">by =</span> <span class="st">"person"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 76 × 4
+   person                   religion  place      date      
+   &lt;chr&gt;                    &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;    
+ 1 Elizabeth Zeghers        Calvinist &lt;NA&gt;       NA        
+ 2 Jan della Faille de Oude Catholic  &lt;NA&gt;       NA        
+ 3 Andries van der Meulen   Calvinist Antwerp    1584-07-01
+ 4 Andries van der Meulen   Calvinist Bremen     1585-09-01
+ 5 Daniel van der Meulen    Calvinist Antwerp    1584-07-01
+ 6 Daniel van der Meulen    Calvinist Middelburg 1584-08-01
+ 7 Daniel van der Meulen    Calvinist Delft      1584-09-01
+ 8 Daniel van der Meulen    Calvinist Haarlem    1584-12-01
+ 9 Daniel van der Meulen    Calvinist Delft      1585-02-01
+10 Daniel van der Meulen    Calvinist Bremen     1585-10-01
+# ℹ 66 more rows</code></pre>
+</div>
+</div>
+<p>The <code>NA</code>s for <code>place</code> and <code>date</code> for Elizabeth Zeghers and Jan della Faille de Oude show that there is no movement data for these individuals. We could drop these by doing a right join instead. Note the different in the number of rows. An alternative would be to switch the position of the dataframes within the <code>left_join()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(religion, movements, <span class="at">by =</span> <span class="st">"person"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 74 × 4
+   person                 religion  place      date      
+   &lt;chr&gt;                  &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;    
+ 1 Andries van der Meulen Calvinist Antwerp    1584-07-01
+ 2 Andries van der Meulen Calvinist Bremen     1585-09-01
+ 3 Daniel van der Meulen  Calvinist Antwerp    1584-07-01
+ 4 Daniel van der Meulen  Calvinist Middelburg 1584-08-01
+ 5 Daniel van der Meulen  Calvinist Delft      1584-09-01
+ 6 Daniel van der Meulen  Calvinist Haarlem    1584-12-01
+ 7 Daniel van der Meulen  Calvinist Delft      1585-02-01
+ 8 Daniel van der Meulen  Calvinist Bremen     1585-10-01
+ 9 Daniel van der Meulen  Calvinist Middelburg 1586-05-01
+10 Daniel van der Meulen  Calvinist Delft      1586-06-01
+# ℹ 64 more rows</code></pre>
+</div>
+</div>
+<p>Now let’s check joining the <code>movements</code> data frame to the <code>locations</code> data frame. Here we have the complication that our columns to join by have different names. We can use the <code>join_by()</code> function to tell R which columns are equivalent.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(movements, locations,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">by =</span> <span class="fu">join_by</span>(place <span class="sc">==</span> location))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 74 × 5
+   person                 place     date         lat   lng
+   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt;
+ 1 Andries van der Meulen Antwerp   1584-07-01  51.2  4.40
+ 2 Andries van der Meulen Bremen    1585-09-01  53.1  8.81
+ 3 Anna van der Meulen    Cologne   1584-07-01  50.9  6.96
+ 4 Anna van der Meulen    Bremen    1588-06-01  53.1  8.81
+ 5 Anna van der Meulen    Stade     1588-08-01  53.6  9.48
+ 6 Anna van der Meulen    Bremen    1592-03-01  53.1  8.81
+ 7 Sara van der Meulen    Antwerp   1584-07-01  51.2  4.40
+ 8 Sara van der Meulen    Bremen    1585-09-01  53.1  8.81
+ 9 Sara van der Meulen    Frankfurt 1586-03-01  50.1  8.68
+10 Sara van der Meulen    Cologne   1586-05-01  50.9  6.96
+# ℹ 64 more rows</code></pre>
+</div>
+</div>
+<p>Let’s now join all three data frames together using the pipe.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>religion <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(movements, <span class="at">by =</span> <span class="st">"person"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(locations,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(place <span class="sc">==</span> location))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 74 × 6
+   person                 religion  place      date         lat   lng
+   &lt;chr&gt;                  &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt;
+ 1 Andries van der Meulen Calvinist Antwerp    1584-07-01  51.2  4.40
+ 2 Andries van der Meulen Calvinist Bremen     1585-09-01  53.1  8.81
+ 3 Daniel van der Meulen  Calvinist Antwerp    1584-07-01  51.2  4.40
+ 4 Daniel van der Meulen  Calvinist Middelburg 1584-08-01  51.5  3.61
+ 5 Daniel van der Meulen  Calvinist Delft      1584-09-01  52.0  4.36
+ 6 Daniel van der Meulen  Calvinist Haarlem    1584-12-01  52.4  4.64
+ 7 Daniel van der Meulen  Calvinist Delft      1585-02-01  52.0  4.36
+ 8 Daniel van der Meulen  Calvinist Bremen     1585-10-01  53.1  8.81
+ 9 Daniel van der Meulen  Calvinist Middelburg 1586-05-01  51.5  3.61
+10 Daniel van der Meulen  Calvinist Delft      1586-06-01  52.0  4.36
+# ℹ 64 more rows</code></pre>
+</div>
+</div>
+<p>Now are data would be ready to map. This ability to quickly join together related datasets makes it possible to greatly simplify the structure of the data if you are in the situation of creating your dataset. Instead of writing the latitude and longitude over and over again, possibly introducing copy and paste errors, you can have it in one place and only use it when necessary.</p>
+<p>Download the three data frames to play around with them: <a href="../datasets/religion.csv">religion</a>, <a href="../datasets/movements.csv">movements</a>, and <a href="../datasets/locations.csv">locations</a>.</p>
+<section id="resources" class="level3">
+<h3 class="anchored" data-anchor-id="resources">Resources</h3>
+<ul>
+<li>A good overview is provided by the <a href="https://r4ds.hadley.nz/joins.html">Joins</a> chapter of <em>R for Data Science</em>.</li>
+<li>See also the <a href="https://dplyr.tidyverse.org/articles/two-table.html">Two-table verbs article</a> in the dplyr package.</li>
 </ul>
 </section>
-<section id="things-to-keep-in-mind" class="level3">
-<h3 class="anchored" data-anchor-id="things-to-keep-in-mind">Things to keep in mind</h3>
-<ul>
-<li>Bibliographic managers are an investment. The time to learn how to use them is early in the writing and research process, not right before you turn in a paper. If you just want styled citations, there are other tools like <a href="https://zbib.org">ZoteroBib</a>.</li>
-<li>Take time to read the <a href="https://www.zotero.org/support/">documentation</a>.</li>
-<li>Take time to play around with Zotero or any other software to see how you want to use it and if you like it.</li>
-<li>Bad data in leads to bad data out.</li>
-</ul>
 </section>
-<section id="resources-on-zotero-and-bibliographical-managers" class="level3">
-<h3 class="anchored" data-anchor-id="resources-on-zotero-and-bibliographical-managers">Resources on Zotero and bibliographical managers</h3>
-<p>Check out these resources from the Library on Zotero, including former workshops with step-by-step guides and slides with screenshots for working with Zotero. These resources produced by Lisa Becksford Russell provides a basis upon which this document builds: <a href="https://guides.lib.vt.edu/citationmanagers/Zotero">Zotero Research Guide</a></p>
-</section>
-</section>
-<section id="getting-zotero" class="level2">
-<h2 class="anchored" data-anchor-id="getting-zotero">1. Getting Zotero</h2>
+<section id="modifying-the-structure-of-a-data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="modifying-the-structure-of-a-data-frame">3. Modifying the structure of a data frame</h2>
+<p>A second task you may face is needing to alter the structure of your data to make it tidy. This is the specialty of the <a href="https://tidyr.tidyverse.org/index.html">tidyr</a> package. It takes us back to the principles of tidy data:</p>
 <ol type="1">
-<li>Download Zotero: <a href="https://www.zotero.org" class="uri">https://www.zotero.org</a></li>
-<li>Register for an account. You do not need to use your VT email address.</li>
-<li>You can store your PDFs in the cloud. You get 300 MB free. You do not need to pay for extra storage until you decide you need it. There are also options to store your PDFs in an external folder such as DropBox, iCloud, OneDrive, etc.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Each variable is a column; each column is a variable.</li>
+<li>Each observation is a row; each row is an observation.</li>
+<li>Each value is a cell; each cell is a single value.</li>
 </ol>
-</section>
-<section id="adding-items-to-zotero" class="level2">
-<h2 class="anchored" data-anchor-id="adding-items-to-zotero">2. Adding items to Zotero</h2>
-<p><a href="https://www.zotero.org/support/adding_items_to_zotero">Adding items to Zotero documentation</a></p>
-<ol type="1">
-<li>Export RIS file usually found in a <em>cite</em> button on library or database sites.</li>
-<li>Use Zotero Connector plugin for web browser</li>
-<li>Add Item by Identifier using “magic wand” button in Zotero</li>
-<li>Add PDF and retrieve metadata</li>
-<li>Manually add an item
+<section id="wide-to-long" class="level3">
+<h3 class="anchored" data-anchor-id="wide-to-long">Wide to long</h3>
+<p>However, data is not always tidy; sometimes for good reason. For instance, in collecting data it might be easier to create a data frame in a <strong>wide</strong> format in which variable values are spread out in separate columns. For instance, a data frame with the counts for each penguin species by year.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>penguins_wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  species   `2007` `2008` `2009`
+  &lt;fct&gt;      &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
+1 Adelie        50     50     52
+2 Chinstrap     26     18     24
+3 Gentoo        34     46     44</code></pre>
+</div>
+</div>
+<p>To make this data frame tidy we need to create a new column for year and a new column for the values in the current year columns, in this case count. to do this we use the <code>pivot_longer()</code> function. The key arguments for the function are:</p>
 <ul>
-<li>Edited volume: Created using the Book type and filling out the editor instead of author.</li>
-<li>Book section: Create a book section by right-clicking on an edited volume and choose Create Book Section.</li>
-</ul></li>
-</ol>
-<p><strong>Remember</strong>, always make sure to check the metadata added to a reference. Make sure to check the item type and that the title, publisher, and place of publication are correct and do not have any odd formatting.</p>
-</section>
-<section id="organizing-your-references" class="level2">
-<h2 class="anchored" data-anchor-id="organizing-your-references">3. Organizing your references</h2>
-<p><a href="https://www.zotero.org/support/collections_and_tags">Collections and Tags documentation</a></p>
-<ul>
-<li>Collections
-<ul>
-<li>Categories or folders: A hierarchical organization of items into groups and subgroups.</li>
-<li>The same item can belong to multiple collections.</li>
-<li>Most often will add items to a collection by dragging them.</li>
-<li>Remove an item from a collection by deleting it while within the collection view. This will not delete the item from your Library.</li>
-<li>Can have a “smart” collection by saving an Advanced Search. Advanced Search is under the Edit menu or the magnifier icon on the search bar.</li>
-</ul></li>
-<li>Tags
-<ul>
-<li>Keywords: Each item can have as many tags as you want, but it is up to .</li>
-<li>Tags are good for drilling down into your Library using the tag selector in the lower-left of the app.</li>
-<li>Clicking on multiple tags will perform an <code>AND</code> search.</li>
-</ul></li>
-<li>Related items
-<ul>
-<li><a href="https://www.zotero.org/support/related">Related Items documentation</a></li>
-<li>Chapters within an Edited volume</li>
-<li>Book reviews to book reviewed</li>
-<li>Different versions of a work</li>
-</ul></li>
+<li><code>cols</code>: Columns to pivot into a longer format, or alternatively the columns to disregard in pivoting using the not operator (<code>!</code>).</li>
+<li><code>names_to</code>: The name new column or columns to create from the information stored in the column names specified by the <code>cols</code> argument. Should be a name in quotation marks.</li>
+<li><code>values_to</code>: The name of the column to create from the data stored in cell values. Should be a name in quotation marks.</li>
 </ul>
-<section id="things-to-keep-in-mind-1" class="level3">
-<h3 class="anchored" data-anchor-id="things-to-keep-in-mind-1">Things to keep in mind</h3>
+<p>Let’s see how this works.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>penguins_wide <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">!</span>species,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"count"</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 3
+  species   year  count
+  &lt;fct&gt;     &lt;chr&gt; &lt;int&gt;
+1 Adelie    2007     50
+2 Adelie    2008     50
+3 Adelie    2009     52
+4 Chinstrap 2007     26
+5 Chinstrap 2008     18
+6 Chinstrap 2009     24
+7 Gentoo    2007     34
+8 Gentoo    2008     46
+9 Gentoo    2009     44</code></pre>
+</div>
+</div>
+</section>
+<section id="long-to-wide" class="level3">
+<h3 class="anchored" data-anchor-id="long-to-wide">Long to wide</h3>
+<p>Going from a wider format to a longer format is the more common transformation, but you may find yourself in the situation of wanting to use a wider format to present your data in a table. We can reverse what we did with <code>pivot_longer()</code> using <code>pivot_wider()</code>. The key arguments mirror those for <code>pivot_longer()</code>:</p>
 <ul>
-<li>Tags are portable, but collections are not.</li>
-<li>Tags and collections are only as useful as you make them.</li>
-<li>You have to decide what system is best for you.</li>
+<li><code>names_from</code>: Column used to create new column names. Does not need to be in quotes because it is a column in the data.</li>
+<li><code>values_from</code>: Column used to create cell values. Does not need to be in quotes because it is a column in the data.</li>
 </ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>penguins_long <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> year,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> count)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  species   `2007` `2008` `2009`
+  &lt;fct&gt;      &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
+1 Adelie        50     50     52
+2 Chinstrap     26     18     24
+3 Gentoo        34     46     44</code></pre>
+</div>
+</div>
 </section>
-</section>
-<section id="read-and-markup-pdfs-and-take-notes" class="level2">
-<h2 class="anchored" data-anchor-id="read-and-markup-pdfs-and-take-notes">4. Read and markup PDFs and take notes</h2>
+<section id="resources-1" class="level3">
+<h3 class="anchored" data-anchor-id="resources-1">Resources</h3>
+<p>These examples provide a short glimpse of the ways that you can manipulate the structure of data frames with tidyr. For more information see:</p>
 <ul>
-<li>You can read and markup PDFs within Zotero.
-<ul>
-<li><a href="https://www.zotero.org/support/pdf_reader">PDF Reader documentation</a></li>
-<li>If you prefer to open PDFs in an external PDF reader, you can choose one from the General pane of the Zotero preferences.</li>
-<li>Alternatively, you can right-click on an item and choose Show File to open in your application of choice.</li>
-</ul></li>
-<li>Notes
-<ul>
-<li><a href="https://www.zotero.org/support/notes">Notes documentation</a></li>
-<li>You can export annotations in your PDF into a note by right-clicking on an item and choosing Add Note from Annotations.</li>
-<li>You can create notes that can be standalone items or are attached to a reference.</li>
-<li>As with any other item in Zotero, notes can be tagged and related to other items.</li>
-</ul></li>
+<li>A good overview is provided by the <a href="https://r4ds.hadley.nz/data-tidy.html">Data tidying</a> chapter of <em>R for Data Science</em>.</li>
+<li>The <a href="https://tidyr.tidyverse.org/articles/tidy-data.html">tidy data article</a> in the tidyr package. It is a code heavy version of Hadley Wickham’s <a href="https://vita.had.co.nz/papers/tidy-data.html">Tidy data paper</a>.</li>
+<li>The <a href="https://tidyr.tidyverse.org/articles/pivot.html">Pivoting article</a> in the tidyr package.</li>
+<li>For even more practice, check out the Data Carpentries, R for Social Science episode on <a href="https://datacarpentry.github.io/r-socialsci/04-tidyr.html">Data Wrangling with tidyr</a>.</li>
 </ul>
-<section id="things-to-keep-in-mind-2" class="level3">
-<h3 class="anchored" data-anchor-id="things-to-keep-in-mind-2">Things to keep in mind</h3>
-<ul>
-<li>Annotations created in the built-in PDF reader are stored in the Zotero database, so they won’t be visible in external PDF readers unless you export a PDF with embedded annotations.</li>
-<li>Whether you want to take notes on texts within Zotero is up to you. The benefit is that everything is in the same place. The drawback is that you can only search your notes within Zotero.</li>
-</ul>
-</section>
-</section>
-<section id="style-citations" class="level2">
-<h2 class="anchored" data-anchor-id="style-citations">5. Style citations</h2>
-<section id="within-zotero" class="level3">
-<h3 class="anchored" data-anchor-id="within-zotero">Within Zotero</h3>
-<p><a href="https://www.zotero.org/support/creating_bibliographies">Creating Bibliographies within Zotero documentation</a></p>
-<ul>
-<li>Quick copy styled citations
-<ul>
-<li>Copy Citation: ⌘⇧A</li>
-<li>Copy Bibliography: ⌘⇧C</li>
-<li>Choose format for Quick copy in Preferences → Export</li>
-</ul></li>
-<li>Bibliography or citation list
-<ul>
-<li>Either select the items you want, right-click and choose Create Bibliography from Items…</li>
-<li>Or right-click on a collection and choose Create Bibliography from Collection…</li>
-<li>Then choose the bibliographical style you want, whether to create citations or a bibliography, and how you want the citations exported.</li>
-</ul></li>
-</ul>
-</section>
-<section id="microsoft-word" class="level3">
-<h3 class="anchored" data-anchor-id="microsoft-word">Microsoft Word</h3>
-<p><a href="https://www.zotero.org/support/word_processor_plugin_usage">Using Zotero with Word</a>: The Zotero Word plugin should be installed automatically when you install Zotero. The Zotero Word plugin adds a Zotero tab to Microsoft Word.</p>
-<ul>
-<li>Create a footnote/endnote
-<ul>
-<li>Click the Add/Edit Citation button in the Zotero tab to bring up the citation dialog.</li>
-<li>Search for items and click on them or press Return to select.</li>
-<li>Click on a citation within the dialog to add pages or make other customizations.</li>
-</ul></li>
-<li>Edit a citation
-<ul>
-<li>Click an existing citation in your document and click Add/Edit Citation to open the citation dialog.</li>
-</ul></li>
-<li>Create a bibliography
-<ul>
-<li>Place the cursor where you want the bibliography and click the Add/Edit Bibliography button.</li>
-</ul></li>
-<li>Document preferences: Citation styles
-<ul>
-<li>The Document Preferences window is where you will choose your citation style.</li>
-</ul></li>
-</ul>
-</section>
-<section id="google-docs" class="level3">
-<h3 class="anchored" data-anchor-id="google-docs">Google Docs</h3>
-<p><a href="https://www.zotero.org/support/google_docs">Using Zotero with Google Docs</a>: Google Docs support is provided by the <a href="https://www.zotero.org/download/connectors">Zotero Connector</a> for your browser. The Connector adds a Zotero menu to the Google Docs interface. This provides the same capabilities as with Word with a different interface.</p>
-<ul>
-<li>Authorization
-<ul>
-<li>You will need to authorize Zotero to integrate with Google Docs the first time you use it.</li>
-</ul></li>
-<li>Create a footnote/endnote
-<ul>
-<li>Choose Add/Edit Citation from the Zotero menu.</li>
-<li>Interface to choose references is in Zotero.</li>
-</ul></li>
-<li>Edit a citation
-<ul>
-<li>Click an existing citation in your document and click Edit with Zotero or Add/Edit Citation from the Zotero menu.</li>
-</ul></li>
-<li>Create a bibliography
-<ul>
-<li>Place the cursor where you want the bibliography and click Add/Edit Bibliography from the Zotero menu.</li>
-</ul></li>
-<li>Document preferences: Citation styles
-<ul>
-<li>The Document Preferences window is where you will choose your citation style within the Zotero app.</li>
-</ul></li>
-</ul>
-</section>
-<section id="things-to-keep-in-mind-3" class="level3">
-<h3 class="anchored" data-anchor-id="things-to-keep-in-mind-3">Things to keep in mind</h3>
-<ul>
-<li>By using the Word plugin or Zotero Connector with Google Docs the citations and bibliography are linked to Zotero. This means you can make changes to the Document Preferences or to an individual references and the output will be updated.</li>
-<li>If you share the document with someone else or want to make final manual tweaks to the citations, you will want to unlink the document.</li>
-</ul>
-</section>
-</section>
-<section id="collaboration-zotero-groups" class="level2">
-<h2 class="anchored" data-anchor-id="collaboration-zotero-groups">6. Collaboration: Zotero Groups</h2>
-<p><a href="https://www.zotero.org/support/groups">Zotero Groups</a> provides a way to collaborate with others, sharing references, notes, and (optionally) PDFs. You can create, view, and interact with the Group Library online or in the Zotero app.</p>
-<ul>
-<li>Creating groups
-<ol type="1">
-<li>Within the Zotero app in File → New Library → New Group</li>
-<li>On the <a href="https://www.zotero.org/groups">Zotero Groups webpage</a> choose Create a New Group.</li>
-</ol></li>
-<li>Group types: choose between private, public with closed membership, or public with open membership.</li>
-<li>Set Library Settings</li>
-<li>Group Settings provides information about the group</li>
-<li>Manage Members: Click Send More Invitations to invite people to the group.</li>
-</ul>
-</section>
-<section id="i-just-want-to-style-citations" class="level2">
-<h2 class="anchored" data-anchor-id="i-just-want-to-style-citations">I just want to style citations</h2>
-<p>Zotero is an investment. It takes time and effort to collect, organize, and proofread the references. What if you just want to quickly create footnotes or a bibliography?</p>
-<section id="zoterobib" class="level3">
-<h3 class="anchored" data-anchor-id="zoterobib"><a href="https://zbib.org">ZoteroBib</a></h3>
-<ol type="1">
-<li>Search or manually enter a reference</li>
-<li>Edit citation if necessary</li>
-<li>Copy footnote by clicking on quotation mark</li>
-<li>Copy bibliography entry by clicking on two-pages symbol</li>
-<li>Copy to clipboard to copy full bibliography.</li>
-</ol>
-</section>
-</section>
-<section id="what-about-keeping-track-of-primary-sources-from-the-archives" class="level2">
-<h2 class="anchored" data-anchor-id="what-about-keeping-track-of-primary-sources-from-the-archives">What about keeping track of primary sources from the archives?</h2>
-<p>The makers of Zotero also make an application called <a href="https://tropy.org">Tropy</a> that is designed to organize photos you take of archival sources.</p>
 
 
+</section>
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>See the documentation on <a href="https://www.zotero.org/support/sync#alternative_syncing_solutions">Alternative Syncing solutions</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Hadley Wickham, “Tidy Data,” <em>Journal of Statistical Software</em> 59, no. 10 (2014), https://doi.org/10.18637/jss.v059.i10.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This is the base R pipe that was introduced in R 4.1 in 2021. You may also see the magrittr pipe (<code>%&gt;%</code>). Their functionality is essentially the same. The base R pipe is created using the pipe character (Shift + backslash) and the greater than sign. You can quickly type it out with the keyboard shortcut <code>Cmd/Ctrl + Shift + M</code>. To setup RStudio to use the base pipe with this keyboard shortcut, see <a href="../resources/rstudio-setup.html#other-tweaks">Setting up RStudio for success</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1138,14 +1293,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../resources/datasets.html" class="pagination-link" aria-label="Data for DH">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data for DH</span>
+      <a href="../resources/ggplot2.html" class="pagination-link" aria-label="Visualization with ggplot2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Visualization with ggplot2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../resources/plaintext.html" class="pagination-link" aria-label="Working with Plain Text">
-        <span class="nav-page-text">Working with Plain Text</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -1156,7 +1308,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/zotero.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/wrangling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>

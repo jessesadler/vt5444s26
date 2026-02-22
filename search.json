@@ -960,163 +960,27 @@
     ]
   },
   {
-    "objectID": "resources/install.html",
-    "href": "resources/install.html",
-    "title": "Installing R and RStudio",
+    "objectID": "resources/dh.html",
+    "href": "resources/dh.html",
+    "title": "General Digital Humanities resources",
     "section": "",
-    "text": "Let’s start by download R, the programming language.\n\nGo to the CRAN (Collective R Archive Network) website: https://cran.r-project.org/\nClick on the link in the first box of text that corresponds to your operating system.\nDownload the latest version of R (currently 4.5.2 as of January 2026).\n\nFor macOS, select the .pkg file that corresponds to your processor, likely Apple silicon but possibly Intel if you have an older computer.\nFor Windows, select the links from the first line, either base or install R for the first time. They go to the same place. Then select the Download R for Windows link with the latest version of R.\n\nDouble click on the downloaded file (check your Downloads folder). Click Yes through all the prompts to install like any other program.\nIf you use macOS, it is a good idea to download and install XQuartz. You do not need to do this on Windows.",
+    "text": "The best place to start looking for general resources on digital humanities is the Digital Humanities Research Guide.1\nThe Debates in the Digital Humanities series is the best place to get yourself situated in the field, see who is working in digital humanities, and what topics are of interest.\nIf you are looking to keep up with the latest developments in digital humanities, three great resources are Reviews in Digital Humanities, DH Now and dh+lib. Scrolling through these resources will provide a great overview of recent activity.\nThe Association for Computers and the Humanities (ACH) is the primary digital humanities association in the United States and is part of the worldwide Alliance of Digital Humanities Organizations (ADHO). The 2026 ACH Conference will be held virtually on 24–26 June 2026. The Call for Papers is live with proposals due 23 February 2026.",
     "crumbs": [
       "Resources",
-      "R",
-      "Installing R and RStudio"
+      "Digital Humanities",
+      "General DH resources"
     ]
   },
   {
-    "objectID": "resources/install.html#installing-r",
-    "href": "resources/install.html#installing-r",
-    "title": "Installing R and RStudio",
-    "section": "",
-    "text": "Let’s start by download R, the programming language.\n\nGo to the CRAN (Collective R Archive Network) website: https://cran.r-project.org/\nClick on the link in the first box of text that corresponds to your operating system.\nDownload the latest version of R (currently 4.5.2 as of January 2026).\n\nFor macOS, select the .pkg file that corresponds to your processor, likely Apple silicon but possibly Intel if you have an older computer.\nFor Windows, select the links from the first line, either base or install R for the first time. They go to the same place. Then select the Download R for Windows link with the latest version of R.\n\nDouble click on the downloaded file (check your Downloads folder). Click Yes through all the prompts to install like any other program.\nIf you use macOS, it is a good idea to download and install XQuartz. You do not need to do this on Windows.",
+    "objectID": "resources/dh.html#footnotes",
+    "href": "resources/dh.html#footnotes",
+    "title": "General Digital Humanities resources",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you see any issues or think something should be added to this guide, please let me know, and I can get it updated. Of particular interest is the Resources page of the guide.↩︎",
     "crumbs": [
       "Resources",
-      "R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "resources/install.html#download-rstudio",
-    "href": "resources/install.html#download-rstudio",
-    "title": "Installing R and RStudio",
-    "section": "Download RStudio",
-    "text": "Download RStudio\nNext, let’s download RStudio, the application in which we will run R.\n\nGo to the RStudio page on Posit’s website: https://posit.co/download/rstudio-desktop/\nFollow step 2: Install RStudio since you have already complete step 1: Install R. Choose your operating system.\nSelect the Download RStudio for Desktop button.\nInstall by double clicking on the downloaded file and accept any prompts.\nRun RStudio to make sure that everything succeeded.\n\nWhen you open RStudio, it should look something like this:\n\n\n\nRStudio at startup\n\n\nNext, check out the Setting up RStudio for more information on getting the application and your R environment set up for success.",
-    "crumbs": [
-      "Resources",
-      "R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "resources/install.html#other-options",
-    "href": "resources/install.html#other-options",
-    "title": "Installing R and RStudio",
-    "section": "Other options",
-    "text": "Other options\nIf you are unable to download R and RStudio for any reason, you can use a cloud version of RStudio through Posit cloud. You can get started with the free plan. All you need is to create an account.",
-    "crumbs": [
-      "Resources",
-      "R",
-      "Installing R and RStudio"
-    ]
-  },
-  {
-    "objectID": "resources/index.html",
-    "href": "resources/index.html",
-    "title": "Resources",
-    "section": "",
-    "text": "This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the Content page for each week.",
-    "crumbs": [
-      "Resources",
-      "Overview",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "resources/index.html#main-resources-for-the-course",
-    "href": "resources/index.html#main-resources-for-the-course",
-    "title": "Resources",
-    "section": "Main resources for the course",
-    "text": "Main resources for the course\n\nHadley Wickham et al., R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, Second edition (O’Reilly, 2023), https://r4ds.hadley.nz.\n\nThis should be your primary go to reference for anything about working with data in R.\n\nTidyverse website\n\nWebsite that brings together documentation on the tidyverse packages. If you cannot remember how to do something in the tidyverse, this is a great resource.\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018).\nQuarto documentation\n\nWe will be working a lot with quarto documents and creating websites using Quarto. If you need to know how to do something with quarto, go here first.",
-    "crumbs": [
-      "Resources",
-      "Overview",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "resources/index.html#bibliography",
-    "href": "resources/index.html#bibliography",
-    "title": "Resources",
-    "section": "Bibliography",
-    "text": "Bibliography\nbib to go here",
-    "crumbs": [
-      "Resources",
-      "Overview",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Digital History Methods",
-    "section": "",
-    "text": "Jesse Sadler\n University Libraries\n Newman Library 4064\n\n\n\n\n\n Mondays\n 2pm–4:50pm\n Athenaeum, Newman Library 124\n\n\n\n\n\n jrsadler@vt.edu\n Schedule an appointment"
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Digital History Methods",
-    "section": "Course description",
-    "text": "Course description\nThis course will introduce students to computational methods for analyzing data to develop historical interpretations. You will work through the entire data life-cycle: finding, creating, cleaning, analyzing, visualizing, interpreting, and integrating these interpretations into your historical work. This will be done using free and open source programming languages and tools designed for data analysis, specifically we will be using the R programming language. This approach has a steeper learning curve than point-and-click tools that provide an alternative method for creating digital projects. However, it puts you in control, fosters transparency and reproducibility, and follows the guidelines of minimal computing. No previous experience with programming or data analysis is necessary. We will work through a series of examples using provided datasets, and then you will have the opportunity to apply the methods you have learned to your own research, culminating in the creation of a project website.\n\nDigital Scholarship Collaboration hour\n\n Students are encouraged to come to the weekly collaboration hour held in the Athenaeum to work on assignments/projects and ask questions.\n Thursdays\n 12pm–1:00pm\n Athenaeum Collaboration room, Newman Library 126"
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Digital History Methods",
-    "section": "Schedule",
-    "text": "Schedule\n\nMLK Day (19 January)\nHistory, data, and the digital (26 January)\nThe file system and Markdown (2 February)\n“Tidy” historical data (9 February)\nVisualizing data with ggplot2 (16 February)\nWrangling data (23 February)\nWorking with SNiGB (2 March)\nReproducible workflows with Git (16 March)\nMaking websites with Quarto (23 March)\nMaking maps (30 March)\nNetwork analysis (6 April)\nWeb design and visualization (13 April)\nMapping and Network analysis (20 April)\nGroup work on your project (27 April)\nPresentation of final projects (4 May)"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Digital History Methods",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by Cameron Blevins, Lincoln Mullen, Zoë LeBlanc, and Brandon Walsh have been helpful guides in developing a computing heavy DH course. Courses by Andrew Heiss, Kieran Healy, and Clause Wilke have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course."
-  },
-  {
-    "objectID": "resources/plaintext.html",
-    "href": "resources/plaintext.html",
-    "title": "Working with Plain Text",
-    "section": "",
-    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
-    ]
-  },
-  {
-    "objectID": "resources/plaintext.html#why-write-in-plain-text",
-    "href": "resources/plaintext.html#why-write-in-plain-text",
-    "title": "Working with Plain Text",
-    "section": "",
-    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
-    ]
-  },
-  {
-    "objectID": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
-    "href": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
-    "title": "Working with Plain Text",
-    "section": "What do I need to write in plaintext?",
-    "text": "What do I need to write in plaintext?\nIn short, a good text editor. Below are some good options to start with. See the Text editors guide for more in depth discussion of using a text editor.\n\nCross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.\n\nWindows\n\nA classic text editor for Windows is Notepad++.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
-    ]
-  },
-  {
-    "objectID": "resources/plaintext.html#markdown-based-apps",
-    "href": "resources/plaintext.html#markdown-based-apps",
-    "title": "Working with Plain Text",
-    "section": "Markdown based apps",
-    "text": "Markdown based apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\n\nObsidian is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.\nTangent Notes is an open source alternative.\niA Writer is a paid application available for Windows and macOS, as well as iOS. It is a very good looking simple application for writing Markdown.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
+      "Digital Humanities",
+      "General DH resources"
     ]
   },
   {
@@ -1192,27 +1056,235 @@
     ]
   },
   {
-    "objectID": "resources/dh.html",
-    "href": "resources/dh.html",
-    "title": "General Digital Humanities resources",
+    "objectID": "resources/plaintext.html",
+    "href": "resources/plaintext.html",
+    "title": "Working with Plain Text",
     "section": "",
-    "text": "The best place to start looking for general resources on digital humanities is the Digital Humanities Research Guide.1\nThe Debates in the Digital Humanities series is the best place to get yourself situated in the field, see who is working in digital humanities, and what topics are of interest.\nIf you are looking to keep up with the latest developments in digital humanities, three great resources are Reviews in Digital Humanities, DH Now and dh+lib. Scrolling through these resources will provide a great overview of recent activity.\nThe Association for Computers and the Humanities (ACH) is the primary digital humanities association in the United States and is part of the worldwide Alliance of Digital Humanities Organizations (ADHO). The 2026 ACH Conference will be held virtually on 24–26 June 2026. The Call for Papers is live with proposals due 23 February 2026.",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
     "crumbs": [
       "Resources",
-      "Digital Humanities",
-      "General DH resources"
+      "Organization",
+      "Working with Plain Text"
     ]
   },
   {
-    "objectID": "resources/dh.html#footnotes",
-    "href": "resources/dh.html#footnotes",
-    "title": "General Digital Humanities resources",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nIf you see any issues or think something should be added to this guide, please let me know, and I can get it updated. Of particular interest is the Resources page of the guide.↩︎",
+    "objectID": "resources/plaintext.html#why-write-in-plain-text",
+    "href": "resources/plaintext.html#why-write-in-plain-text",
+    "title": "Working with Plain Text",
+    "section": "",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
     "crumbs": [
       "Resources",
-      "Digital Humanities",
-      "General DH resources"
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "href": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "title": "Working with Plain Text",
+    "section": "What do I need to write in plaintext?",
+    "text": "What do I need to write in plaintext?\nIn short, a good text editor. Below are some good options to start with. See the Text editors guide for more in depth discussion of using a text editor.\n\nCross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.\n\nWindows\n\nA classic text editor for Windows is Notepad++.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "resources/plaintext.html#markdown-based-apps",
+    "href": "resources/plaintext.html#markdown-based-apps",
+    "title": "Working with Plain Text",
+    "section": "Markdown based apps",
+    "text": "Markdown based apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\n\nObsidian is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.\nTangent Notes is an open source alternative.\niA Writer is a paid application available for Windows and macOS, as well as iOS. It is a very good looking simple application for writing Markdown.",
+    "crumbs": [
+      "Resources",
+      "Organization",
+      "Working with Plain Text"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Digital History Methods",
+    "section": "",
+    "text": "Jesse Sadler\n University Libraries\n Newman Library 4064\n\n\n\n\n\n Mondays\n 2pm–4:50pm\n Athenaeum, Newman Library 124\n\n\n\n\n\n jrsadler@vt.edu\n Schedule an appointment"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Digital History Methods",
+    "section": "Course description",
+    "text": "Course description\nThis course will introduce students to computational methods for analyzing data to develop historical interpretations. You will work through the entire data life-cycle: finding, creating, cleaning, analyzing, visualizing, interpreting, and integrating these interpretations into your historical work. This will be done using free and open source programming languages and tools designed for data analysis, specifically we will be using the R programming language. This approach has a steeper learning curve than point-and-click tools that provide an alternative method for creating digital projects. However, it puts you in control, fosters transparency and reproducibility, and follows the guidelines of minimal computing. No previous experience with programming or data analysis is necessary. We will work through a series of examples using provided datasets, and then you will have the opportunity to apply the methods you have learned to your own research, culminating in the creation of a project website.\n\nDigital Scholarship Collaboration hour\n\n Students are encouraged to come to the weekly collaboration hour held in the Athenaeum to work on assignments/projects and ask questions.\n Thursdays\n 12pm–1:00pm\n Athenaeum Collaboration room, Newman Library 126"
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Digital History Methods",
+    "section": "Schedule",
+    "text": "Schedule\n\nMLK Day (19 January)\nHistory, data, and the digital (26 January)\nThe file system and Markdown (2 February)\n“Tidy” historical data (9 February)\nVisualizing data with ggplot2 (16 February)\nWrangling data (23 February)\nWorking with SNiGB (2 March)\nReproducible workflows with Git (16 March)\nMaking websites with Quarto (23 March)\nMaking maps (30 March)\nNetwork analysis (6 April)\nWeb design and visualization (13 April)\nMapping and Network analysis (20 April)\nGroup work on your project (27 April)\nPresentation of final projects (4 May)"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Digital History Methods",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by Cameron Blevins, Lincoln Mullen, Zoë LeBlanc, and Brandon Walsh have been helpful guides in developing a computing heavy DH course. Courses by Andrew Heiss, Kieran Healy, and Clause Wilke have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This section contains resources and guides on the skills, methods, and tools we will be using for the course. These resources reorganize and augment the list of resources listed under the Content page for each week.",
+    "crumbs": [
+      "Resources",
+      "Overview",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources/index.html#main-resources-for-the-course",
+    "href": "resources/index.html#main-resources-for-the-course",
+    "title": "Resources",
+    "section": "Main resources for the course",
+    "text": "Main resources for the course\n\nHadley Wickham et al., R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, Second edition (O’Reilly, 2023), https://r4ds.hadley.nz.\n\nThis should be your primary go to reference for anything about working with data in R.\n\nTidyverse website\n\nWebsite that brings together documentation on the tidyverse packages. If you cannot remember how to do something in the tidyverse, this is a great resource.\n\nKieran Healy, Data Visualization: A Practical Introduction (Princeton University Press, 2018).\nQuarto documentation\n\nWe will be working a lot with quarto documents and creating websites using Quarto. If you need to know how to do something with quarto, go here first.",
+    "crumbs": [
+      "Resources",
+      "Overview",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources/index.html#bibliography",
+    "href": "resources/index.html#bibliography",
+    "title": "Resources",
+    "section": "Bibliography",
+    "text": "Bibliography\nbib to go here",
+    "crumbs": [
+      "Resources",
+      "Overview",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources/install.html",
+    "href": "resources/install.html",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "Let’s start by download R, the programming language.\n\nGo to the CRAN (Collective R Archive Network) website: https://cran.r-project.org/\nClick on the link in the first box of text that corresponds to your operating system.\nDownload the latest version of R (currently 4.5.2 as of January 2026).\n\nFor macOS, select the .pkg file that corresponds to your processor, likely Apple silicon but possibly Intel if you have an older computer.\nFor Windows, select the links from the first line, either base or install R for the first time. They go to the same place. Then select the Download R for Windows link with the latest version of R.\n\nDouble click on the downloaded file (check your Downloads folder). Click Yes through all the prompts to install like any other program.\nIf you use macOS, it is a good idea to download and install XQuartz. You do not need to do this on Windows.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "resources/install.html#installing-r",
+    "href": "resources/install.html#installing-r",
+    "title": "Installing R and RStudio",
+    "section": "",
+    "text": "Let’s start by download R, the programming language.\n\nGo to the CRAN (Collective R Archive Network) website: https://cran.r-project.org/\nClick on the link in the first box of text that corresponds to your operating system.\nDownload the latest version of R (currently 4.5.2 as of January 2026).\n\nFor macOS, select the .pkg file that corresponds to your processor, likely Apple silicon but possibly Intel if you have an older computer.\nFor Windows, select the links from the first line, either base or install R for the first time. They go to the same place. Then select the Download R for Windows link with the latest version of R.\n\nDouble click on the downloaded file (check your Downloads folder). Click Yes through all the prompts to install like any other program.\nIf you use macOS, it is a good idea to download and install XQuartz. You do not need to do this on Windows.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "resources/install.html#download-rstudio",
+    "href": "resources/install.html#download-rstudio",
+    "title": "Installing R and RStudio",
+    "section": "Download RStudio",
+    "text": "Download RStudio\nNext, let’s download RStudio, the application in which we will run R.\n\nGo to the RStudio page on Posit’s website: https://posit.co/download/rstudio-desktop/\nFollow step 2: Install RStudio since you have already complete step 1: Install R. Choose your operating system.\nSelect the Download RStudio for Desktop button.\nInstall by double clicking on the downloaded file and accept any prompts.\nRun RStudio to make sure that everything succeeded.\n\nWhen you open RStudio, it should look something like this:\n\n\n\nRStudio at startup\n\n\nNext, check out the Setting up RStudio for more information on getting the application and your R environment set up for success.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "resources/install.html#other-options",
+    "href": "resources/install.html#other-options",
+    "title": "Installing R and RStudio",
+    "section": "Other options",
+    "text": "Other options\nIf you are unable to download R and RStudio for any reason, you can use a cloud version of RStudio through Posit cloud. You can get started with the free plan. All you need is to create an account.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Installing R and RStudio"
+    ]
+  },
+  {
+    "objectID": "resources/wrangling.html",
+    "href": "resources/wrangling.html",
+    "title": "Wrangling data in the tidyverse",
+    "section": "",
+    "text": "When working with a data frame, you will usually want to modify it in some way. You may want to make some calculations based on different columns in the data or calculate some summary statistics. You may only need a subset of the data, either of the rows or columns. You might want to split the data into separate data frames or join together related data frames. Or you may need to clean up the data, changing column names, modifying values in different ways, or changing the shape of the data frame before doing your analysis and visualization. These are some of the more common tasks of data wrangling.1\nWe can break these tasks into three main categories:",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Wrangling data in the tidyverse"
+    ]
+  },
+  {
+    "objectID": "resources/wrangling.html#pipes",
+    "href": "resources/wrangling.html#pipes",
+    "title": "Wrangling data in the tidyverse",
+    "section": "Pipes",
+    "text": "Pipes\nBefore getting into the details of how to go about doing these data wrangling tasks using the tidyverse, we should introduce a tool that will make this process of data cleaning much easier to write and more legible to read, namely the pipe (|&gt;).2 In doing almost any data wrangling task, you will want to perform multiple manipulations. You may want to remove some columns, and then remove rows with missing data, and then calculate the frequency of one or more column, and then calculate some summary statistics.\nThe pipe is the and then. It links together multiple functions together, taking the output from the left of the pipe and moving it to the function on the right. Using the pipe will look something like this, and remember you can think of it as and then:\nhistorians |&gt;\n  read secondary literature |&gt;\n  read primary sources |&gt;\n  write |&gt;\n  do more research |&gt;\n  rewrite |&gt;\n  publish\nIn this analogy historians take the place of the data and the various actions are the functions.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Wrangling data in the tidyverse"
+    ]
+  },
+  {
+    "objectID": "resources/wrangling.html#manipulating-rows-and-columns-with-dplyr",
+    "href": "resources/wrangling.html#manipulating-rows-and-columns-with-dplyr",
+    "title": "Wrangling data in the tidyverse",
+    "section": "1. Manipulating rows and columns with dplyr",
+    "text": "1. Manipulating rows and columns with dplyr\nThe core set of dplyr functions are designed to work with the pipe. They take in a data frame as their input in the first argument (named .data); subsequent arguments include the (unquoted) column names that are operated on; and the output is a data frame, which can be piped into another function. You can think of these functions as verbs to manipulate rows and columns. The core functions are:\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nselect()\nSubset columns.\n\n\nfilter()\nSubset rows by conditions based on data in columns.\n\n\nmutate()\nCreate new columns using information from other columns.\n\n\ngroup_by()\nGroup the data by values in column such as by village or by sex.\n\n\nsummarize()\nAggregate the data, usually on grouped data, to create summary tables.\n\n\narrange()\nArrange the order of rows by values in columns. Often used with desc() to reverse default order.\n\n\n\n\nTo practice with these functions go to the Wrangling data with dplyr worksheet.\nTo read more about the core dplyr functions, see R for Data Science: Data Transformation.\nFor even more practice, check out the Data Carpentries, R for Social Science episode on Data Wrangling with dplyr.\n\nLet’s quickly show how these work using the penguins dataset.\n\nlibrary(tidyverse)\n\n\npenguins |&gt; \n  select(species, bill_len, bill_dep, sex) |&gt; # Subset columns, not strictly necessary\n  filter(!is.na(bill_len) | !is.na(bill_dep)) |&gt; # Remove missing values for bill measurements\n  mutate(bill_ratio = bill_dep / bill_len) |&gt; # Create new column for ration of depth to length\n  group_by(species, sex) |&gt; # Group the data by species and sex\n  summarize(avg_ratio = mean(bill_ratio), # Find the average bill ratio broken down by species and sex\n            n = n(), # Count the number of observations in each group\n            .groups = \"drop\") |&gt; # Drop the remaining grouping of sex\n  arrange(desc(avg_ratio)) # Arrange the rows by the average ratio in descending order\n\n# A tibble: 8 × 4\n  species   sex    avg_ratio     n\n  &lt;fct&gt;     &lt;fct&gt;      &lt;dbl&gt; &lt;int&gt;\n1 Adelie    &lt;NA&gt;       0.485     5\n2 Adelie    female     0.474    73\n3 Adelie    male       0.474    73\n4 Chinstrap female     0.379    34\n5 Chinstrap male       0.377    34\n6 Gentoo    &lt;NA&gt;       0.319     4\n7 Gentoo    male       0.318    61\n8 Gentoo    female     0.313    58",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Wrangling data in the tidyverse"
+    ]
+  },
+  {
+    "objectID": "resources/wrangling.html#joining-together-related-data-frames",
+    "href": "resources/wrangling.html#joining-together-related-data-frames",
+    "title": "Wrangling data in the tidyverse",
+    "section": "2. Joining together related data frames",
+    "text": "2. Joining together related data frames\nA common data wrangling task is to join together related data frames. This situation can come about by the desire split up a dataset into multiple datasets to keep them clean and tidy. A common example in the humanities might be a dataset that has location names that correspond to latitude and longitude values. Instead of having latitude and longitude columns for all of our data, we might want to have a separate data frame with that information that we only need to join to the rest of the dataset when we want to create a geographic visualization. We can do this with joins. Let’s see how it works with some data about the location of siblings at different times.\n\n# Religious affiliation of the family members\nreligion\n\n# A tibble: 13 × 2\n   person                   religion \n   &lt;chr&gt;                    &lt;chr&gt;    \n 1 Elizabeth Zeghers        Calvinist\n 2 Jan della Faille de Oude Catholic \n 3 Andries van der Meulen   Calvinist\n 4 Daniel van der Meulen    Calvinist\n 5 Anna van der Meulen      Calvinist\n 6 Sara van der Meulen      Calvinist\n 7 Jan della Faille         Calvinist\n 8 Marten della Faille      Catholic \n 9 Carlo della Faille       Calvinist\n10 Anna della Faille        Catholic \n11 Steven della Faille      Calvinist\n12 Jacques della Faille     Calvinist\n13 Hester della Faille      Calvinist\n\n# Movements of the siblings\nmovements\n\n# A tibble: 74 × 3\n   person                 place     date      \n   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;    \n 1 Andries van der Meulen Antwerp   1584-07-01\n 2 Andries van der Meulen Bremen    1585-09-01\n 3 Anna van der Meulen    Cologne   1584-07-01\n 4 Anna van der Meulen    Bremen    1588-06-01\n 5 Anna van der Meulen    Stade     1588-08-01\n 6 Anna van der Meulen    Bremen    1592-03-01\n 7 Sara van der Meulen    Antwerp   1584-07-01\n 8 Sara van der Meulen    Bremen    1585-09-01\n 9 Sara van der Meulen    Frankfurt 1586-03-01\n10 Sara van der Meulen    Cologne   1586-05-01\n# ℹ 64 more rows\n\n# Latitude and longitude of the locations of the siblings\nlocations\n\n# A tibble: 21 × 3\n   location          lat   lng\n   &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;\n 1 Antwerp          51.2  4.40\n 2 Bremen           53.1  8.81\n 3 Cologne          50.9  6.96\n 4 Stade            53.6  9.48\n 5 Frankfurt        50.1  8.68\n 6 Utrecht          52.1  5.13\n 7 Leiden           52.2  4.48\n 8 Geertruidenberg  51.7  4.85\n 9 Bergen op Zoom   51.5  4.29\n10 The Hague        52.1  4.31\n# ℹ 11 more rows\n\n\nThere are four main join functions. All take two data frames and join them by a column that is shared by both data frames. The names of the column to join by do not need to be the same, but it this case they are, namely \"person\". The four functions differ in how they join the data frames.\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nleft_join()\nKeep all observations in the first (left) data frame.\n\n\nright_join()\nKeep all observations in the second (right) data frame.\n\n\nfull_join()\nKeep all observations from both data frames.\n\n\ninner_join()\nOnly keep observations that are in both data frames, dropping rows that do not have a match.\n\n\n\nLet’s start with a left join between religion and movements:\n\nleft_join(religion, movements, by = \"person\")\n\n# A tibble: 76 × 4\n   person                   religion  place      date      \n   &lt;chr&gt;                    &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;    \n 1 Elizabeth Zeghers        Calvinist &lt;NA&gt;       NA        \n 2 Jan della Faille de Oude Catholic  &lt;NA&gt;       NA        \n 3 Andries van der Meulen   Calvinist Antwerp    1584-07-01\n 4 Andries van der Meulen   Calvinist Bremen     1585-09-01\n 5 Daniel van der Meulen    Calvinist Antwerp    1584-07-01\n 6 Daniel van der Meulen    Calvinist Middelburg 1584-08-01\n 7 Daniel van der Meulen    Calvinist Delft      1584-09-01\n 8 Daniel van der Meulen    Calvinist Haarlem    1584-12-01\n 9 Daniel van der Meulen    Calvinist Delft      1585-02-01\n10 Daniel van der Meulen    Calvinist Bremen     1585-10-01\n# ℹ 66 more rows\n\n\nThe NAs for place and date for Elizabeth Zeghers and Jan della Faille de Oude show that there is no movement data for these individuals. We could drop these by doing a right join instead. Note the different in the number of rows. An alternative would be to switch the position of the dataframes within the left_join().\n\nright_join(religion, movements, by = \"person\")\n\n# A tibble: 74 × 4\n   person                 religion  place      date      \n   &lt;chr&gt;                  &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;    \n 1 Andries van der Meulen Calvinist Antwerp    1584-07-01\n 2 Andries van der Meulen Calvinist Bremen     1585-09-01\n 3 Daniel van der Meulen  Calvinist Antwerp    1584-07-01\n 4 Daniel van der Meulen  Calvinist Middelburg 1584-08-01\n 5 Daniel van der Meulen  Calvinist Delft      1584-09-01\n 6 Daniel van der Meulen  Calvinist Haarlem    1584-12-01\n 7 Daniel van der Meulen  Calvinist Delft      1585-02-01\n 8 Daniel van der Meulen  Calvinist Bremen     1585-10-01\n 9 Daniel van der Meulen  Calvinist Middelburg 1586-05-01\n10 Daniel van der Meulen  Calvinist Delft      1586-06-01\n# ℹ 64 more rows\n\n\nNow let’s check joining the movements data frame to the locations data frame. Here we have the complication that our columns to join by have different names. We can use the join_by() function to tell R which columns are equivalent.\n\nleft_join(movements, locations,\n          by = join_by(place == location))\n\n# A tibble: 74 × 5\n   person                 place     date         lat   lng\n   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt;\n 1 Andries van der Meulen Antwerp   1584-07-01  51.2  4.40\n 2 Andries van der Meulen Bremen    1585-09-01  53.1  8.81\n 3 Anna van der Meulen    Cologne   1584-07-01  50.9  6.96\n 4 Anna van der Meulen    Bremen    1588-06-01  53.1  8.81\n 5 Anna van der Meulen    Stade     1588-08-01  53.6  9.48\n 6 Anna van der Meulen    Bremen    1592-03-01  53.1  8.81\n 7 Sara van der Meulen    Antwerp   1584-07-01  51.2  4.40\n 8 Sara van der Meulen    Bremen    1585-09-01  53.1  8.81\n 9 Sara van der Meulen    Frankfurt 1586-03-01  50.1  8.68\n10 Sara van der Meulen    Cologne   1586-05-01  50.9  6.96\n# ℹ 64 more rows\n\n\nLet’s now join all three data frames together using the pipe.\n\nreligion |&gt; \n  right_join(movements, by = \"person\") |&gt; \n  left_join(locations,\n            by = join_by(place == location))\n\n# A tibble: 74 × 6\n   person                 religion  place      date         lat   lng\n   &lt;chr&gt;                  &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt;\n 1 Andries van der Meulen Calvinist Antwerp    1584-07-01  51.2  4.40\n 2 Andries van der Meulen Calvinist Bremen     1585-09-01  53.1  8.81\n 3 Daniel van der Meulen  Calvinist Antwerp    1584-07-01  51.2  4.40\n 4 Daniel van der Meulen  Calvinist Middelburg 1584-08-01  51.5  3.61\n 5 Daniel van der Meulen  Calvinist Delft      1584-09-01  52.0  4.36\n 6 Daniel van der Meulen  Calvinist Haarlem    1584-12-01  52.4  4.64\n 7 Daniel van der Meulen  Calvinist Delft      1585-02-01  52.0  4.36\n 8 Daniel van der Meulen  Calvinist Bremen     1585-10-01  53.1  8.81\n 9 Daniel van der Meulen  Calvinist Middelburg 1586-05-01  51.5  3.61\n10 Daniel van der Meulen  Calvinist Delft      1586-06-01  52.0  4.36\n# ℹ 64 more rows\n\n\nNow are data would be ready to map. This ability to quickly join together related datasets makes it possible to greatly simplify the structure of the data if you are in the situation of creating your dataset. Instead of writing the latitude and longitude over and over again, possibly introducing copy and paste errors, you can have it in one place and only use it when necessary.\nDownload the three data frames to play around with them: religion, movements, and locations.\n\nResources\n\nA good overview is provided by the Joins chapter of R for Data Science.\nSee also the Two-table verbs article in the dplyr package.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Wrangling data in the tidyverse"
+    ]
+  },
+  {
+    "objectID": "resources/wrangling.html#modifying-the-structure-of-a-data-frame",
+    "href": "resources/wrangling.html#modifying-the-structure-of-a-data-frame",
+    "title": "Wrangling data in the tidyverse",
+    "section": "3. Modifying the structure of a data frame",
+    "text": "3. Modifying the structure of a data frame\nA second task you may face is needing to alter the structure of your data to make it tidy. This is the specialty of the tidyr package. It takes us back to the principles of tidy data:\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value.\n\n\nWide to long\nHowever, data is not always tidy; sometimes for good reason. For instance, in collecting data it might be easier to create a data frame in a wide format in which variable values are spread out in separate columns. For instance, a data frame with the counts for each penguin species by year.\n\npenguins_wide\n\n# A tibble: 3 × 4\n  species   `2007` `2008` `2009`\n  &lt;fct&gt;      &lt;int&gt;  &lt;int&gt;  &lt;int&gt;\n1 Adelie        50     50     52\n2 Chinstrap     26     18     24\n3 Gentoo        34     46     44\n\n\nTo make this data frame tidy we need to create a new column for year and a new column for the values in the current year columns, in this case count. to do this we use the pivot_longer() function. The key arguments for the function are:\n\ncols: Columns to pivot into a longer format, or alternatively the columns to disregard in pivoting using the not operator (!).\nnames_to: The name new column or columns to create from the information stored in the column names specified by the cols argument. Should be a name in quotation marks.\nvalues_to: The name of the column to create from the data stored in cell values. Should be a name in quotation marks.\n\nLet’s see how this works.\n\npenguins_wide |&gt; \n  pivot_longer(\n    cols = !species,\n    names_to = \"year\",\n    values_to = \"count\"\n  )\n\n# A tibble: 9 × 3\n  species   year  count\n  &lt;fct&gt;     &lt;chr&gt; &lt;int&gt;\n1 Adelie    2007     50\n2 Adelie    2008     50\n3 Adelie    2009     52\n4 Chinstrap 2007     26\n5 Chinstrap 2008     18\n6 Chinstrap 2009     24\n7 Gentoo    2007     34\n8 Gentoo    2008     46\n9 Gentoo    2009     44\n\n\n\n\nLong to wide\nGoing from a wider format to a longer format is the more common transformation, but you may find yourself in the situation of wanting to use a wider format to present your data in a table. We can reverse what we did with pivot_longer() using pivot_wider(). The key arguments mirror those for pivot_longer():\n\nnames_from: Column used to create new column names. Does not need to be in quotes because it is a column in the data.\nvalues_from: Column used to create cell values. Does not need to be in quotes because it is a column in the data.\n\n\npenguins_long |&gt; \n  pivot_wider(\n    names_from = year,\n    values_from = count)\n\n# A tibble: 3 × 4\n  species   `2007` `2008` `2009`\n  &lt;fct&gt;      &lt;int&gt;  &lt;int&gt;  &lt;int&gt;\n1 Adelie        50     50     52\n2 Chinstrap     26     18     24\n3 Gentoo        34     46     44\n\n\n\n\nResources\nThese examples provide a short glimpse of the ways that you can manipulate the structure of data frames with tidyr. For more information see:\n\nA good overview is provided by the Data tidying chapter of R for Data Science.\nThe tidy data article in the tidyr package. It is a code heavy version of Hadley Wickham’s Tidy data paper.\nThe Pivoting article in the tidyr package.\nFor even more practice, check out the Data Carpentries, R for Social Science episode on Data Wrangling with tidyr.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Wrangling data in the tidyverse"
+    ]
+  },
+  {
+    "objectID": "resources/wrangling.html#footnotes",
+    "href": "resources/wrangling.html#footnotes",
+    "title": "Wrangling data in the tidyverse",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nHadley Wickham, “Tidy Data,” Journal of Statistical Software 59, no. 10 (2014), https://doi.org/10.18637/jss.v059.i10.↩︎\nThis is the base R pipe that was introduced in R 4.1 in 2021. You may also see the magrittr pipe (%&gt;%). Their functionality is essentially the same. The base R pipe is created using the pipe character (Shift + backslash) and the greater than sign. You can quickly type it out with the keyboard shortcut Cmd/Ctrl + Shift + M. To setup RStudio to use the base pipe with this keyboard shortcut, see Setting up RStudio for success.↩︎",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Wrangling data in the tidyverse"
     ]
   },
   {
