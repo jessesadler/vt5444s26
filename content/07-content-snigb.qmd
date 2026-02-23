@@ -4,7 +4,7 @@ subtitle: "2 March 2026"
 format: html
 ---
 
-*This week is a time to reflect on what we have learned in the first half of the semester before Spring Break. We will explore a new dataset as a way to see how everyone is feeling about organization, Markdown, R, data wrangling, visualization, and quarto documents.*
+*This week is a time to reflect on what we have learned in the first half of the semester before Spring Break. We will explore a new dataset as a way to see how everyone is feeling about organization, Markdown, R, data wrangling, and visualization, while introducing Quarto documents.*
 
 ## Reading
 - Hadley Wickham, ["A personal history of the tidyverse"](https://hadley.github.io/25-tidyverse-history/).
@@ -13,13 +13,23 @@ format: html
     - Chapter 4: Code style
     - Chapter 7: Data import
     - Chapter 20: Spreadsheets
-    - Chapter 28: Quarto
 
 ## Assignment
 - First self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the [assignments page](../assignments.qmd#self-reflections) for details. You can turn in self reflections through email.
-- Download the quarto template and the SNiGB data. Explore the data. See if you can make some exploratory data visualizations. What interests you in the data. Intersperse your notes with your code in the quarto document.
+- Download the SNiGB data into the `data-raw/` folder in  your `r-notes` project, reate a `snigb.R` file in your scripts folder, and explore the data.
+    - Download the SNiGB data from this [GoogleDrive](https://drive.google.com/drive/folders/12KyAjUC7NjQCmuQz8MHNBFe08KTDAEIr?usp=share_link).
+    - What interests you in the data? What questions do you think you might be able to answer given the nature of the data? See if you can make some exploratory data visualizations. Record your thoughts in code comments and in your commonplace book.
 
 ## Activities
-- Pair and share: What were you able to explore in your quarto documents? What are you interested to explore in greater depth?
+- Pair and share: What were you able to explore in your script? What are you interested to explore in greater depth?
+- Introduction to Quarto documents
+- Discussion: Current thoughts and next steps
 
 ## Resources
+
+### Quarto
+- [Quarto cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/quarto.pdf)
+- The [Quarto documentation](https://quarto.org/docs/guide/) is great and comprehensive. A good place to start is with the [Getting started tutorial](https://quarto.org/docs/get-started/hello/rstudio.html).
+- [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz)
+    - Chapter 28: Quarto
+    - Chapter 29: Quarto formats

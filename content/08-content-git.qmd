@@ -8,6 +8,7 @@ format: html
 
 ## Reading
 - Hadley Wickham et al., [*R for Data Science*](https://r4ds.hadley.nz).
+    - Chapter 28: Quarto
     - Chapter 16: Factors
     - Chapter 17: Dates and times
     - Chapter 18: Missing values
@@ -15,7 +16,7 @@ format: html
 - Jenny Bryan, "Excuse me, do you have a moment to talk about version control?," *PeerJ Preprints* (2017) <https://peerj.com/preprints/3159v2>.
 
 ## Assignment
-- Expand on your analysis of the SNiGB data in a new Quarto document.
+- Expand on your analysis of the SNiGB data in a Quarto document.
 - Start a data analysis project of your own based on data you have collected or found.
     - Create an RStudio project in your `hist5444s26/` folder. Set up the project as described in [Setting up RStudio for success](../resources/rstudio-setup.qmd#rstudio-projects).
     - What can you do with the data? What would you like to be able to do?

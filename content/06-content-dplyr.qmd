@@ -4,7 +4,7 @@ subtitle: "23 February 2026"
 format: html
 ---
 
-*This week we get into working with data in R, demonstrating how to import data and wrangle it using the tidyverse. We will also introduce the use of quarto documents for writing R code.*
+*This week we get into working with data in R, demonstrating how to import data and wrangle it using the tidyverse.*
 
 ## Reading
 - Kieran Healy, [*Data Visualization: A Practical Introduction*](https://socviz.co), Chapter 3: Make a plot.
@@ -26,10 +26,13 @@ format: html
 - Discussion: Working with scripts in R
 - Importing data in R
 - Wrangling data with dplyr
-- Introduction to Quarto documents
+    - Work through Data Carpentries, R for Social Scientists: [Data Wrangling with dplyr](https://datacarpentry.github.io/r-socialsci/03-dplyr.html)
 
 ## Resources
 - [Resources: Using R in RStudio](../resources/rstudio-guide.qmd)
+- [Resources: Importing data](../resources/importing.qmd)
+- [Resources: Wrangling data in the tidyverse](../resources/wrangling.qmd)
+- [Worksheets: Wrangling data with dplyr](../worksheets/04-worksheet.qmd)
 
 ### Importing data in R
 - [readr cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf)
@@ -41,10 +44,3 @@ format: html
 - [Introduction to dplyr](https://dplyr.tidyverse.org/articles/dplyr.html)
 - [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz), Chapter 3: Data transformation.
 - Data Carpentries, R for Social Scientists: [Data Wrangling with dplyr](https://datacarpentry.github.io/r-socialsci/03-dplyr.html)
-
-### Quarto
-- [Quarto cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/quarto.pdf)
-- The [Quarto documentation](https://quarto.org/docs/guide/) is great and comprehensive. A good place to start is with the [Getting started tutorial](https://quarto.org/docs/get-started/hello/rstudio.html).
-- [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz)
-    - Chapter 28: Quarto
-    - Chapter 29: Quarto formats
