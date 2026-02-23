@@ -1,0 +1,205 @@
+---
+title: "Importing data"
+format: html
+---
+
+We have seen how you can access data from R like `penguins` and various packages make data available, but you will quickly want to work with data you have on your own computer. The tidyverse has a set of packages to import rectangular data:
+
+- [readr](https://readr.tidyverse.org): Import plain text data files such as comma-separated values (csv).
+- [readxl](https://readxl.tidyverse.org): Import data from Excel. It is downloaded with the tidyverse, but you need to load it explicitly.
+- [googlesheets4](https://googlesheets4.tidyverse.org): Import data from Google Sheets. This package needs to be installed separately with `install.packages("googlesheets4")`.
+
+Importing does two very important things:
+
+1. It provides you with access to your data in your R session.
+2. It protects your data. Any changes you make to the data are on a copy of the data. You can only change the raw data that you read in by explicitly writing out data to the same file. To prevent this, we have separate `data-raw/` and `data/` folders. This means no more going to close a spreadsheet and being uncertain when the application asks if you want to save changes.
+
+There are three main tasks to perform in importing data in R and possibly a fourth if reading from a spreadsheet.
+
+1. Locate the path to the data from the working directory.
+2. Declare how missing values are identified in the data if different from the default.
+3. Explicitly declare the column types if you want to override the default parsing.
+4. If reading in Excel or GoogleSheet data, you may want to identify the sheet and cell range of the data.
+
+## Resources
+Below you will find a fully worked out example using readr. readxl and googlesheets4 work similarly with the added complexity of spreadsheets and data permissions with GoogleSheets. Here are some important resources if you have questions importing data.
+
+### Importing data with readr
+- Start with the example below, but also with the [Data import](https://r4ds.hadley.nz/data-import.html) chapter of *R for Data Science*.
+- [readr documentation](https://readr.tidyverse.org/index.html)
+- [here package documentation](https://here.r-lib.org/index.html)
+- [Malcolm Barrett - Why should I use the here package when I'm already using projects?](https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects)
+
+### Spreadsheets
+- Start with the [Spreadsheets](https://r4ds.hadley.nz/spreadsheets.html) chapter of *R for Data Science*.
+- [readxl documentation](https://readxl.tidyverse.org/index.html)
+- [googlesheets4 documentation](https://googlesheets4.tidyverse.org/index.html)
+
+## readr example
+Let's start with an example of reading in data using `read_csv()` from readr. We will be using this [example dataset]("../datasets/readr-example.csv"). Right-click the link to download the file and place it in your `data-raw/` folder in your `r-notes` project.
+
+### 1. Locate the path to the data from the working directory
+The first and main task is to locate where the data is. It is here that the benefits of [RStudio Projects](rstudio-setup.qmd#rstudio-projects) becomes clear. You want to use **relative paths** from your working directory to your data (such as `data-raw/readr-example.csv`) and not **absolute paths** (such as `/Users/jrsadler/Documents/r-notes/data-raw/readr-example.csv`). The former will work for anyone you give your project folder to. The latter only works for me and only with my current folder structure.
+
+The first argument of `read_csv()` is the path to the data within quotations. Use **tab complete** to help you fill in the correct path. If you have downloaded the [example dataset]("../datasets/readr-example.csv") and placed it in your `data-raw/` folder, you should be able to write `read_csv("data-")` and then hit tab to complete the path, selecting the correct file along the way. Let's see what we get if we only do this step and assign the imported data to an object named `data`.
+
+```{r}
+#| label: setup1
+#| echo: false
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+#| eval: false
+library(tidyverse)
+# Read the data without further specifications
+data <- read_csv("data-raw/readr-example.csv")
+```
+
+```{r}
+#| label: setup2
+#| echo: false
+data <- read_csv("../datasets/readr-example.csv")
+```
+
+We get a tibble that is 20 rows and 12 columns and an overview of the column types that `read_csv()` guessed based on the data. Yay! We have successfully imported the data.
+
+#### Here package
+An alternative approach that is even more robust is to use the [here package](https://here.r-lib.org), which helps to create paths to your data regardless of the organization of your project. The here package is particularly useful if you are working with [Quarto](https://quarto.org) or [R Markdown](https://rmarkdown.rstudio.com) documents, which render from the location of the document and not necessarily the top level of your project.
+
+The here package uses the `here()` function, which takes the components of your path from the root of the project to the file as characters separated by commas. In this case, it would be: `here("data-raw", "readr-example.csv")`:
+
+```{r}
+#| eval: false
+library(here)
+# Read the data with the here package
+data <- read_csv(here("data-raw", "readr-example.csv"))
+```
+
+### Parsing
+
+Let's look at `data` to see how it did. You may want to go into the Files pane in RStudio and choose `View File` after clicking on `readr-example.csv` to see what the raw data looks like.
+
+```{r}
+# Look at the data
+data
+```
+
+Going column by column:
+
+- a: Looks good.
+- b: Looks good. `read_csv()` correctly identified both `NA` and the one blank cell as missing data.
+- c: Looks good.
+- d: Looks good. `T` and `F` were correctly turned into a logical vector.
+- e: Parsed as a character vector, but the value of `none` is missing data. Additionally, we could turn this into a factor.
+- f: Parsed as a double-precision vector but is all whole numbers. We could denote this to an integer.
+- g: Parsed as a character vector because of the presence of dollar signs and commas but is actually numeric data.
+- h: Parsed as a numeric vector, but if you look closely, this is actually a date is the format of `yyyymmdd` without dashes.
+- i: Correctly parsed as a date vector.
+- j: Parsed as character vector but contains date data.
+- k: Parsed as character vector but contains date data.
+- l: Correctly parsed as date-time vector.
+
+We need to make some changes to our data. It would be possible to make these changes after reading in the data with our [data wrangling](wrangling.qmd) tools, or we can do it while reading in the data.
+
+This is also a good reminder that you need to check your data when you import it.
+
+### 2. Missing values
+We can deal with the extra missing value from the data with the `na` argument that has defaults for both blank cells and `"NA"`. In this case, we need to add `"none"`. But we also need to be careful. We do not want to use only `"none"`; we want to add it to the default.
+
+```{r}
+#| eval: false
+read_csv(here("data-raw", "readr-example.csv"),
+         na = c("", "NA", "none")) # Add none as NA for column e
+```
+
+```{r}
+#| echo: false
+read_csv("../datasets/readr-example.csv",
+         na = c("", "NA", "none"),
+         show_col_types = FALSE)
+```
+
+
+### 3. Column types
+`read_csv()` allows you to view exactly how it parsed the data and how you can change its guesses with `spec()`.
+
+```{r}
+spec(data)
+```
+
+This shows the functions used to parse each column. We can change the column type by changing the `col_*()` function used. The structure is very similar to the output of `spec()`. You can list the columns you want to change through the `col_types` argument either within the `cols()` function to keep all columns or `cols_only()` to only include the columns you explicitly specify. Let's start by making column `e` a factor, `f` an integer, and `g` numeric. We will discuss dates more below.
+
+```{r}
+#| eval: false
+read_csv(here("data-raw", "readr-example.csv"),
+         na = c("", "NA", "none"), # Add none as NA for column e
+         col_types = cols(
+           e = col_factor(),
+           f = col_integer(),
+           g = col_number()
+         ))
+```
+
+```{r}
+#| echo: false
+read_csv("../datasets/readr-example.csv",
+         na = c("", "NA", "none"),
+         show_col_types = FALSE,
+         col_types = cols(
+           e = col_factor(),
+           f = col_integer(),
+           g = col_number()
+         ))
+```
+
+### 3. Column types: Parsing dates
+Dates can be difficult to parse because there are so many different ways to write dates. Therefore, we may need to do a bit more work and tell `read_csv()` not only that a column is a date, but also what format it is in. You declare the format using abbreviations defined by the POSIX standard. These are:
+
+- Year: `"%Y"` (4 digits); `"%y"` (2 digits)
+- Month: `"%m"` (2 digits), `"%b"` (abbreviated name), `"%B"` (full name)
+- Day: `"%d"` (2 digits), `"%e"` (optional leading space), `"%a"` (abbreviated name)
+- Shortcuts:
+    - `"%D"` = `"%m/%d/%y"` or 02/23/26
+    - `"%F"` = `"%Y-%m-%d"` or 2026-02-23
+    - `"%x"` = `"%y/%m/%d"` or 26/02/23
+
+See [date format specifications](https://readr.tidyverse.org/reference/parse_datetime.html) in the readr documentation for more choices and details.
+
+In the case of the example data we can use:
+
+```{r}
+#| eval: false
+read_csv(here("data-raw", "readr-example.csv"),
+         na = c("", "NA", "none"), # Add none as NA for column e
+         col_types = cols(
+           e = col_factor(),
+           f = col_integer(),
+           g = col_number(),
+           h = col_date("%Y%m%d"), # date as 8 digit number (20260223)
+           # i is correctly parsed as 2026-02-23
+           j = col_date("%d %B %Y"), # 23 February 2026
+           k = col_date("%b %d %Y") # Feb 23 2026
+           # l is correctly parsed as datetime (2026-02-23 14:00)
+         ))
+```
+
+```{r}
+#| echo: false
+read_csv("../datasets/readr-example.csv",
+         na = c("", "NA", "none"),
+         show_col_types = FALSE,
+         col_types = cols(
+           e = col_factor(),
+           f = col_integer(),
+           g = col_number(),
+           h = col_date("%Y%m%d"), # date as 8 digit number (20260223)
+           # i is correctly parsed as 2026-02-23
+           j = col_date("%d %B %Y"), # 23 February 2026
+           k = col_date("%b %d %Y") # Feb 23 2026
+           # l is correctly parsed as datetime (2026-02-23 14:00)
+         ))
+```
+
+Hopefully this example shows the flexibility of `read_csv()`, the importance of checking your data, and the complexity of dates. It may not look as nice, but I prefer the format of column `h`, making a date as an 8 digit number in the form of a four-digit year, a two-digit month, and a two-digit day. This way spreadsheets will not interpret your data as dates.

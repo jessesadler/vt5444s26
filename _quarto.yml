@@ -123,6 +123,8 @@ website:
               file: resources/rstudio-setup.qmd
             - text: "Using R in RStudio"
               file: resources/rstudio-guide.qmd
+            - text: "Importing data"
+              file: resources/importing.qmd
             - text: "Visualization with ggplot2"
               file: resources/ggplot2.qmd
             - text: "Wrangling data in the tidyverse"
