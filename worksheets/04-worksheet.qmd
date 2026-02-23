@@ -1,0 +1,97 @@
+---
+title: "4. Wrangling data with dplyr"
+format: 
+  live-html:
+    number-sections: true
+    number-depth: 2
+engine: knitr
+webr:
+  packages:
+    - dplyr
+---
+
+{{< include ../_extensions/r-wasm/live/_knitr.qmd >}}
+
+This worksheet provides a short interactive overview of the core verbs (functions) in [dplyr](https://dplyr.tidyverse.org/index.html) to wrangle data. For more background and resources on data wrangling, see [Resources: Wrangling data in the tidyverse](../resources/wrangling.qmd).
+
+| Function      | Description                          |
+|-------------- |--------------------------------------|
+| `select()`    | Subset **columns**.                                                                                |
+| `filter()`    | Subset **rows** by conditions based on data in columns.                                            |
+| `mutate()`    | Create new columns using information from other columns.                                           |
+| `group_by()`  | Group the data by values in column such as *by village* or *by sex*.                               |
+| `summarize()` | Aggregate the data, usually on grouped data, to create summary tables.                             |
+| `arrange()`   | Arrange the order of rows by values in columns. Often used with `desc()` to reverse default order. |
+
+We will use the `penguins` data for this demonstration and will make it into a tibble to get the nice tibble printout.
+
+```{webr}
+#| message: false
+#| edit: false
+penguins <- as_tibble(penguins)
+penguins
+```
+
+## Subsetting
+You can subset columns using `select()` to either explicitly keep columns or to discard columns using the not operator (`!`). To subset rows you can use `filter()`, which will keep rows based on one or more conditional statements. As we subset the data frame, keep your eye on the number of columns and rows of the resulting data frame at the top of the print out. The full `penguins` dataset has **8** columns, and **344** rows.
+
+```{webr}
+penguins |> 
+    select(species, body_mass, sex, year) |> 
+    filter(species == "Gentoo",
+           body_mass >= 5000,
+           sex == "female")
+```
+
+Try subsetting columns with `select()`:
+
+```{webr}
+penguins |> 
+  select(______)
+```
+
+Try subsetting rows with `filter()`: 
+
+```{webr}
+penguins |> 
+  filter(______)
+```
+
+## Mutating
+`mutate()` adds columns, usually based on the values in other columns. The argument structure within the function is the name of the new column equals the condition used to create the value. By default the condition is done by row and the new column is placed at the end of the data frame. Because of this, we can remove unnecessary columns to make it easier to see the new column and remove missing values using `is.na()`.
+
+```{webr}
+penguins |> 
+  select(species, bill_len, bill_dep, sex) |> 
+  filter(!is.na(bill_len) | !is.na(bill_dep)) |> 
+  mutate(bill_ratio = bill_dep / bill_len)
+```
+
+Try `mutate()`: Create a new column named `flipper_to_mass` that calculates the ration of flipper length to body mass. 
+
+```{webr}
+penguins |> 
+  select(!island:bill_dep) |> 
+  mutate(______)
+```
+
+## Summarizing
+`summarize()` aggregates data, applying a summary function to a data frame that is usually grouped by values in a column created through `group_by()`. For instance, we might look at the average ratio of `bill_dep` to `bill_len` per penguin species and sex. Because we want to use `sex` as a group, we should probably remove any rows that have missing values for sex.
+
+```{webr}
+penguins |> 
+  filter(!is.na(sex)) |> 
+  group_by(species, sex) |> 
+  summarize(bill_ratio = mean(bill_dep / bill_len)) |>
+  arrange(desc(bill_ratio))
+```
+
+You will notice a message that tells us the resulting data frame still is still grouped by `species`. Look at the documentation for [`summarize()`](https://dplyr.tidyverse.org/reference/summarise.html) to see if you can quiet the message by altering the above code chunk and running it again.
+
+Now make your own summary. Find the average weight of the penguins by species and sex.
+
+```{webr}
+penguins |> 
+  filter(!is.na(sex)) |> 
+  ______
+```

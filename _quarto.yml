@@ -90,6 +90,8 @@ website:
               file: worksheets/02-worksheet.qmd
             - text: "3. Getting started with visualization"
               file: worksheets/03-worksheet.qmd
+            - text: "4. Wrangling data with dplyr"
+              file: worksheets/04-worksheet.qmd
     
     - title: "Resources"
       style: "docked"
