@@ -36,7 +36,7 @@ Below you will find a fully worked out example using readr. readxl and googleshe
 - [googlesheets4 documentation](https://googlesheets4.tidyverse.org/index.html)
 
 ## readr example
-Let's start with an example of reading in data using `read_csv()` from readr. We will be using this [example dataset]("../datasets/readr-example.csv"). Right-click the link to download the file and place it in your `data-raw/` folder in your `r-notes` project.
+Let's start with an example of reading in data using `read_csv()` from readr. We will be using this [example dataset](../datasets/readr-example.csv). Right-click the link to download the file and place it in your `data-raw/` folder in your `r-notes` project.
 
 ### 1. Locate the path to the data from the working directory
 The first and main task is to locate where the data is. It is here that the benefits of [RStudio Projects](rstudio-setup.qmd#rstudio-projects) becomes clear. You want to use **relative paths** from your working directory to your data (such as `data-raw/readr-example.csv`) and not **absolute paths** (such as `/Users/jrsadler/Documents/r-notes/data-raw/readr-example.csv`). The former will work for anyone you give your project folder to. The latter only works for me and only with my current folder structure.
