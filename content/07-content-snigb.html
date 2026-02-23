@@ -431,7 +431,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
   <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
   <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/07-content-snigb.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -459,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This week is a time to reflect on what we have learned in the first half of the semester before Spring Break. We will explore a new dataset as a way to see how everyone is feeling about organization, Markdown, R, data wrangling, visualization, and quarto documents.</em></p>
+<p><em>This week is a time to reflect on what we have learned in the first half of the semester before Spring Break. We will explore a new dataset as a way to see how everyone is feeling about organization, Markdown, R, data wrangling, and visualization, while introducing Quarto documents.</em></p>
 <section id="reading" class="level2">
 <h2 class="anchored" data-anchor-id="reading">Reading</h2>
 <ul>
@@ -470,7 +473,6 @@ ul.task-list li input[type="checkbox"] {
 <li>Chapter 4: Code style</li>
 <li>Chapter 7: Data import</li>
 <li>Chapter 20: Spreadsheets</li>
-<li>Chapter 28: Quarto</li>
 </ul></li>
 </ul>
 </section>
@@ -478,19 +480,37 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
 <ul>
 <li>First self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the <a href="../assignments.html#self-reflections">assignments page</a> for details. You can turn in self reflections through email.</li>
-<li>Download the quarto template and the SNiGB data. Explore the data. See if you can make some exploratory data visualizations. What interests you in the data. Intersperse your notes with your code in the quarto document.</li>
+<li>Download the SNiGB data into the <code>data-raw/</code> folder in your <code>r-notes</code> project, reate a <code>snigb.R</code> file in your scripts folder, and explore the data.
+<ul>
+<li>Download the SNiGB data from this <a href="https://drive.google.com/drive/folders/12KyAjUC7NjQCmuQz8MHNBFe08KTDAEIr?usp=share_link">GoogleDrive</a>.</li>
+<li>What interests you in the data? What questions do you think you might be able to answer given the nature of the data? See if you can make some exploratory data visualizations. Record your thoughts in code comments and in your commonplace book.</li>
+</ul></li>
 </ul>
 </section>
 <section id="activities" class="level2">
 <h2 class="anchored" data-anchor-id="activities">Activities</h2>
 <ul>
-<li>Pair and share: What were you able to explore in your quarto documents? What are you interested to explore in greater depth?</li>
+<li>Pair and share: What were you able to explore in your script? What are you interested to explore in greater depth?</li>
+<li>Introduction to Quarto documents</li>
+<li>Discussion: Current thoughts and next steps</li>
 </ul>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
+<ul>
+<li><a href="https://github.com/rstudio/cheatsheets/blob/main/quarto.pdf">Quarto cheat sheet</a></li>
+<li>The <a href="https://quarto.org/docs/guide/">Quarto documentation</a> is great and comprehensive. A good place to start is with the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Getting started tutorial</a>.</li>
+<li><a href="https://r4ds.hadley.nz">Wickham et al., <em>R for Data Science</em></a>
+<ul>
+<li>Chapter 28: Quarto</li>
+<li>Chapter 29: Quarto formats</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

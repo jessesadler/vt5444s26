@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>General Digital Humanities resources – Digital History Methods</title>
+<title>Importing data – Digital History Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../resources/datasets.html" rel="next">
-<link href="../resources/index.html" rel="prev">
+<link href="../resources/ggplot2.html" rel="next">
+<link href="../resources/rstudio-guide.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -291,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/dh.html">Digital Humanities</a></li><li class="breadcrumb-item"><a href="../resources/dh.html">General DH resources</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/importing.html">Importing data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -331,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/dh.html" class="sidebar-item-text sidebar-link active">
+  <a href="../resources/dh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">General DH resources</span></a>
   </div>
 </li>
@@ -407,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/importing.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/importing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Importing data</span></a>
   </div>
 </li>
@@ -430,16 +465,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#importing-data-with-readr" id="toc-importing-data-with-readr" class="nav-link" data-scroll-target="#importing-data-with-readr">Importing data with readr</a></li>
+  <li><a href="#spreadsheets" id="toc-spreadsheets" class="nav-link" data-scroll-target="#spreadsheets">Spreadsheets</a></li>
+  </ul></li>
+  <li><a href="#readr-example" id="toc-readr-example" class="nav-link" data-scroll-target="#readr-example">readr example</a>
+  <ul class="collapse">
+  <li><a href="#locate-the-path-to-the-data-from-the-working-directory" id="toc-locate-the-path-to-the-data-from-the-working-directory" class="nav-link" data-scroll-target="#locate-the-path-to-the-data-from-the-working-directory">1. Locate the path to the data from the working directory</a></li>
+  <li><a href="#parsing" id="toc-parsing" class="nav-link" data-scroll-target="#parsing">Parsing</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values">2. Missing values</a></li>
+  <li><a href="#column-types" id="toc-column-types" class="nav-link" data-scroll-target="#column-types">3. Column types</a></li>
+  <li><a href="#column-types-parsing-dates" id="toc-column-types-parsing-dates" class="nav-link" data-scroll-target="#column-types-parsing-dates">3. Column types: Parsing dates</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/importing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/dh.html">Digital Humanities</a></li><li class="breadcrumb-item"><a href="../resources/dh.html">General DH resources</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/importing.html">Importing data</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">General Digital Humanities resources</h1>
+<h1 class="title">Importing data</h1>
 </div>
 
 
@@ -456,20 +509,297 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The best place to start looking for general resources on digital humanities is the <a href="https://guides.lib.vt.edu/dh">Digital Humanities Research Guide</a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>The <a href="https://dhdebates.gc.cuny.edu/">Debates in the Digital Humanities series</a> is the best place to get yourself situated in the field, see who is working in digital humanities, and what topics are of interest.</p>
-<p>If you are looking to keep up with the latest developments in digital humanities, three great resources are <a href="https://reviewsindh.pubpub.org">Reviews in Digital Humanities</a>, <a href="https://digitalhumanitiesnow.org/">DH Now</a> and <a href="https://dhandlib.org">dh+lib</a>. Scrolling through these resources will provide a great overview of recent activity.</p>
-<p>The <a href="https://ach.org">Association for Computers and the Humanities</a> (ACH) is the primary digital humanities association in the United States and is part of the worldwide <a href="https://adho.org">Alliance of Digital Humanities Organizations</a> (ADHO). The <a href="https://ach2026.ach.org/en/">2026 ACH Conference</a> will be held virtually on 24–26 June 2026. The <a href="https://ach2026.ach.org/en/cfp/">Call for Papers</a> is live with proposals due 23 February 2026.</p>
-
-
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>If you see any issues or think something should be added to this guide, please let me know, and I can get it updated. Of particular interest is the <a href="https://guides.lib.vt.edu/dh/resources">Resources page</a> of the guide.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>We have seen how you can access data from R like <code>penguins</code> and various packages make data available, but you will quickly want to work with data you have on your own computer. The tidyverse has a set of packages to import rectangular data:</p>
+<ul>
+<li><a href="https://readr.tidyverse.org">readr</a>: Import plain text data files such as comma-separated values (csv).</li>
+<li><a href="https://readxl.tidyverse.org">readxl</a>: Import data from Excel. It is downloaded with the tidyverse, but you need to load it explicitly.</li>
+<li><a href="https://googlesheets4.tidyverse.org">googlesheets4</a>: Import data from Google Sheets. This package needs to be installed separately with <code>install.packages("googlesheets4")</code>.</li>
+</ul>
+<p>Importing does two very important things:</p>
+<ol type="1">
+<li>It provides you with access to your data in your R session.</li>
+<li>It protects your data. Any changes you make to the data are on a copy of the data. You can only change the raw data that you read in by explicitly writing out data to the same file. To prevent this, we have separate <code>data-raw/</code> and <code>data/</code> folders. This means no more going to close a spreadsheet and being uncertain when the application asks if you want to save changes.</li>
 </ol>
-</section></div></main> <!-- /main -->
+<p>There are three main tasks to perform in importing data in R and possibly a fourth if reading from a spreadsheet.</p>
+<ol type="1">
+<li>Locate the path to the data from the working directory.</li>
+<li>Declare how missing values are identified in the data if different from the default.</li>
+<li>Explicitly declare the column types if you want to override the default parsing.</li>
+<li>If reading in Excel or GoogleSheet data, you may want to identify the sheet and cell range of the data.</li>
+</ol>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>Below you will find a fully worked out example using readr. readxl and googlesheets4 work similarly with the added complexity of spreadsheets and data permissions with GoogleSheets. Here are some important resources if you have questions importing data.</p>
+<section id="importing-data-with-readr" class="level3">
+<h3 class="anchored" data-anchor-id="importing-data-with-readr">Importing data with readr</h3>
+<ul>
+<li>Start with the example below, but also with the <a href="https://r4ds.hadley.nz/data-import.html">Data import</a> chapter of <em>R for Data Science</em>.</li>
+<li><a href="https://readr.tidyverse.org/index.html">readr documentation</a></li>
+<li><a href="https://here.r-lib.org/index.html">here package documentation</a></li>
+<li><a href="https://malco.io/articles/2018-11-05-why-should-i-use-the-here-package-when-i-m-already-using-projects">Malcolm Barrett - Why should I use the here package when I’m already using projects?</a></li>
+</ul>
+</section>
+<section id="spreadsheets" class="level3">
+<h3 class="anchored" data-anchor-id="spreadsheets">Spreadsheets</h3>
+<ul>
+<li>Start with the <a href="https://r4ds.hadley.nz/spreadsheets.html">Spreadsheets</a> chapter of <em>R for Data Science</em>.</li>
+<li><a href="https://readxl.tidyverse.org/index.html">readxl documentation</a></li>
+<li><a href="https://googlesheets4.tidyverse.org/index.html">googlesheets4 documentation</a></li>
+</ul>
+</section>
+</section>
+<section id="readr-example" class="level2">
+<h2 class="anchored" data-anchor-id="readr-example">readr example</h2>
+<p>Let’s start with an example of reading in data using <code>read_csv()</code> from readr. We will be using this <a href="&quot;../datasets/readr-example.csv&quot;">example dataset</a>. Right-click the link to download the file and place it in your <code>data-raw/</code> folder in your <code>r-notes</code> project.</p>
+<section id="locate-the-path-to-the-data-from-the-working-directory" class="level3">
+<h3 class="anchored" data-anchor-id="locate-the-path-to-the-data-from-the-working-directory">1. Locate the path to the data from the working directory</h3>
+<p>The first and main task is to locate where the data is. It is here that the benefits of <a href="../resources/rstudio-setup.html#rstudio-projects">RStudio Projects</a> becomes clear. You want to use <strong>relative paths</strong> from your working directory to your data (such as <code>data-raw/readr-example.csv</code>) and not <strong>absolute paths</strong> (such as <code>/Users/jrsadler/Documents/r-notes/data-raw/readr-example.csv</code>). The former will work for anyone you give your project folder to. The latter only works for me and only with my current folder structure.</p>
+<p>The first argument of <code>read_csv()</code> is the path to the data within quotations. Use <strong>tab complete</strong> to help you fill in the correct path. If you have downloaded the <a href="&quot;../datasets/readr-example.csv&quot;">example dataset</a> and placed it in your <code>data-raw/</code> folder, you should be able to write <code>read_csv("data-")</code> and then hit tab to complete the path, selecting the correct file along the way. Let’s see what we get if we only do this step and assign the imported data to an object named <code>data</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the data without further specifications</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-raw/readr-example.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 20 Columns: 12
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (6): a, b, e, g, j, k
+dbl  (3): c, f, h
+lgl  (1): d
+dttm (1): l
+date (1): i
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>We get a tibble that is 20 rows and 12 columns and an overview of the column types that <code>read_csv()</code> guessed based on the data. Yay! We have successfully imported the data.</p>
+<section id="here-package" class="level4">
+<h4 class="anchored" data-anchor-id="here-package">Here package</h4>
+<p>An alternative approach that is even more robust is to use the <a href="https://here.r-lib.org">here package</a>, which helps to create paths to your data regardless of the organization of your project. The here package is particularly useful if you are working with <a href="https://quarto.org">Quarto</a> or <a href="https://rmarkdown.rstudio.com">R Markdown</a> documents, which render from the location of the document and not necessarily the top level of your project.</p>
+<p>The here package uses the <code>here()</code> function, which takes the components of your path from the root of the project to the file as characters separated by commas. In this case, it would be: <code>here("data-raw", "readr-example.csv")</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the data with the here package</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"readr-example.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="parsing" class="level3">
+<h3 class="anchored" data-anchor-id="parsing">Parsing</h3>
+<p>Let’s look at <code>data</code> to see how it did. You may want to go into the Files pane in RStudio and choose <code>View File</code> after clicking on <code>readr-example.csv</code> to see what the raw data looks like.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 12
+   a     b         c d     e            f g             h i          j     k    
+   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;
+ 1 p     b      95.2 TRUE  Asia        48 $42,498… 1.47e7 1585-05-06 20 J… Feb …
+ 2 x     b      71.1 FALSE none        36 $141,97… 1.58e7 1366-12-10 23 A… Jun …
+ 3 e     d      15.6 FALSE Africa      35 $15,852… 1.55e7 1606-06-05 4 Ju… Sep …
+ 4 o     b      57.6 TRUE  Africa      46 $66,555… 1.46e7 1675-01-14 20 O… Dec …
+ 5 v     d      91.1 TRUE  Americas    23 $143,74… 1.35e7 1400-05-12 27 J… Oct …
+ 6 r     d      40.0 TRUE  Asia        36 $46,013… 1.34e7 1578-09-14 26 J… Nov …
+ 7 h     &lt;NA&gt;   70.8 TRUE  Asia        43 $126,68… 1.32e7 1492-08-28 5 No… Aug …
+ 8 p     e      82.0 TRUE  Europe      43 $85,459… 1.37e7 1214-10-11 17 F… Feb …
+ 9 u     &lt;NA&gt;   96.9 FALSE Americas    37 $143,00… 1.56e7 1310-10-12 27 O… Nov …
+10 i     d      12.1 FALSE Americas    48 $162,34… 1.61e7 1299-01-20 25 S… Aug …
+11 f     d      36.4 FALSE Americas    39 $15,815… 1.56e7 1251-03-17 7 Ju… Apr …
+12 l     &lt;NA&gt;   36.6 FALSE none        43 $168,76… 1.62e7 1341-03-12 25 J… Dec …
+13 z     &lt;NA&gt;   88.5 FALSE Asia        21 $8,913.… 1.21e7 1355-12-18 21 J… May …
+14 b     &lt;NA&gt;   23.7 TRUE  none        49 $20,651… 1.33e7 1228-07-07 26 J… Aug …
+15 e     c      42.9 FALSE Americas    42 $82,921… 1.51e7 1423-09-03 19 S… Feb …
+16 j     d      43.1 TRUE  Europe      20 $165,14… 1.35e7 1309-05-14 26 F… Oct …
+17 u     b      46.3 FALSE Asia        40 $14,301… 1.27e7 1422-10-19 19 A… Mar …
+18 n     b      28.1 TRUE  Americas    38 $39,063… 1.36e7 1439-03-14 11 O… Jul …
+19 z     &lt;NA&gt;   91.4 FALSE Africa      32 $47,703… 1.43e7 1295-04-12 17 S… Oct …
+20 t     a      67.1 FALSE Asia        44 $75,697… 1.52e7 1524-10-09 15 F… Sep …
+# ℹ 1 more variable: l &lt;dttm&gt;</code></pre>
+</div>
+</div>
+<p>Going column by column:</p>
+<ul>
+<li>a: Looks good.</li>
+<li>b: Looks good. <code>read_csv()</code> correctly identified both <code>NA</code> and the one blank cell as missing data.</li>
+<li>c: Looks good.</li>
+<li>d: Looks good. <code>T</code> and <code>F</code> were correctly turned into a logical vector.</li>
+<li>e: Parsed as a character vector, but the value of <code>none</code> is missing data. Additionally, we could turn this into a factor.</li>
+<li>f: Parsed as a double-precision vector but is all whole numbers. We could denote this to an integer.</li>
+<li>g: Parsed as a character vector because of the presence of dollar signs and commas but is actually numeric data.</li>
+<li>h: Parsed as a numeric vector, but if you look closely, this is actually a date is the format of <code>yyyymmdd</code> without dashes.</li>
+<li>i: Correctly parsed as a date vector.</li>
+<li>j: Parsed as character vector but contains date data.</li>
+<li>k: Parsed as character vector but contains date data.</li>
+<li>l: Correctly parsed as date-time vector.</li>
+</ul>
+<p>We need to make some changes to our data. It would be possible to make these changes after reading in the data with our <a href="../resources/wrangling.html">data wrangling</a> tools, or we can do it while reading in the data.</p>
+<p>This is also a good reminder that you need to check your data when you import it.</p>
+</section>
+<section id="missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="missing-values">2. Missing values</h3>
+<p>We can deal with the extra missing value from the data with the <code>na</code> argument that has defaults for both blank cells and <code>"NA"</code>. In this case, we need to add <code>"none"</code>. But we also need to be careful. We do not want to use only <code>"none"</code>; we want to add it to the default.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"readr-example.csv"</span>),</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">na =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"NA"</span>, <span class="st">"none"</span>)) <span class="co"># Add none as NA for column e</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 12
+   a     b         c d     e            f g             h i          j     k    
+   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;
+ 1 p     b      95.2 TRUE  Asia        48 $42,498… 1.47e7 1585-05-06 20 J… Feb …
+ 2 x     b      71.1 FALSE &lt;NA&gt;        36 $141,97… 1.58e7 1366-12-10 23 A… Jun …
+ 3 e     d      15.6 FALSE Africa      35 $15,852… 1.55e7 1606-06-05 4 Ju… Sep …
+ 4 o     b      57.6 TRUE  Africa      46 $66,555… 1.46e7 1675-01-14 20 O… Dec …
+ 5 v     d      91.1 TRUE  Americas    23 $143,74… 1.35e7 1400-05-12 27 J… Oct …
+ 6 r     d      40.0 TRUE  Asia        36 $46,013… 1.34e7 1578-09-14 26 J… Nov …
+ 7 h     &lt;NA&gt;   70.8 TRUE  Asia        43 $126,68… 1.32e7 1492-08-28 5 No… Aug …
+ 8 p     e      82.0 TRUE  Europe      43 $85,459… 1.37e7 1214-10-11 17 F… Feb …
+ 9 u     &lt;NA&gt;   96.9 FALSE Americas    37 $143,00… 1.56e7 1310-10-12 27 O… Nov …
+10 i     d      12.1 FALSE Americas    48 $162,34… 1.61e7 1299-01-20 25 S… Aug …
+11 f     d      36.4 FALSE Americas    39 $15,815… 1.56e7 1251-03-17 7 Ju… Apr …
+12 l     &lt;NA&gt;   36.6 FALSE &lt;NA&gt;        43 $168,76… 1.62e7 1341-03-12 25 J… Dec …
+13 z     &lt;NA&gt;   88.5 FALSE Asia        21 $8,913.… 1.21e7 1355-12-18 21 J… May …
+14 b     &lt;NA&gt;   23.7 TRUE  &lt;NA&gt;        49 $20,651… 1.33e7 1228-07-07 26 J… Aug …
+15 e     c      42.9 FALSE Americas    42 $82,921… 1.51e7 1423-09-03 19 S… Feb …
+16 j     d      43.1 TRUE  Europe      20 $165,14… 1.35e7 1309-05-14 26 F… Oct …
+17 u     b      46.3 FALSE Asia        40 $14,301… 1.27e7 1422-10-19 19 A… Mar …
+18 n     b      28.1 TRUE  Americas    38 $39,063… 1.36e7 1439-03-14 11 O… Jul …
+19 z     &lt;NA&gt;   91.4 FALSE Africa      32 $47,703… 1.43e7 1295-04-12 17 S… Oct …
+20 t     a      67.1 FALSE Asia        44 $75,697… 1.52e7 1524-10-09 15 F… Sep …
+# ℹ 1 more variable: l &lt;dttm&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="column-types" class="level3">
+<h3 class="anchored" data-anchor-id="column-types">3. Column types</h3>
+<p><code>read_csv()</code> allows you to view exactly how it parsed the data and how you can change its guesses with <code>spec()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">spec</span>(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cols(
+  a = col_character(),
+  b = col_character(),
+  c = col_double(),
+  d = col_logical(),
+  e = col_character(),
+  f = col_double(),
+  g = col_character(),
+  h = col_double(),
+  i = col_date(format = ""),
+  j = col_character(),
+  k = col_character(),
+  l = col_datetime(format = "")
+)</code></pre>
+</div>
+</div>
+<p>This shows the functions used to parse each column. We can change the column type by changing the <code>col_*()</code> function used. The structure is very similar to the output of <code>spec()</code>. You can list the columns you want to change through the <code>col_types</code> argument either within the <code>cols()</code> function to keep all columns or <code>cols_only()</code> to only include the columns you explicitly specify. Let’s start by making column <code>e</code> a factor, <code>f</code> an integer, and <code>g</code> numeric. We will discuss dates more below.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"readr-example.csv"</span>),</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">na =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"NA"</span>, <span class="st">"none"</span>), <span class="co"># Add none as NA for column e</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">e =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">f =</span> <span class="fu">col_integer</span>(),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">g =</span> <span class="fu">col_number</span>()</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>         ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 12
+   a     b         c d     e            f       g       h i          j     k    
+   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;fct&gt;    &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;
+ 1 p     b      95.2 TRUE  Asia        48  42499.  1.47e7 1585-05-06 20 J… Feb …
+ 2 x     b      71.1 FALSE &lt;NA&gt;        36 141972.  1.58e7 1366-12-10 23 A… Jun …
+ 3 e     d      15.6 FALSE Africa      35  15853.  1.55e7 1606-06-05 4 Ju… Sep …
+ 4 o     b      57.6 TRUE  Africa      46  66555.  1.46e7 1675-01-14 20 O… Dec …
+ 5 v     d      91.1 TRUE  Americas    23 143748.  1.35e7 1400-05-12 27 J… Oct …
+ 6 r     d      40.0 TRUE  Asia        36  46013.  1.34e7 1578-09-14 26 J… Nov …
+ 7 h     &lt;NA&gt;   70.8 TRUE  Asia        43 126687.  1.32e7 1492-08-28 5 No… Aug …
+ 8 p     e      82.0 TRUE  Europe      43  85460.  1.37e7 1214-10-11 17 F… Feb …
+ 9 u     &lt;NA&gt;   96.9 FALSE Americas    37 143003.  1.56e7 1310-10-12 27 O… Nov …
+10 i     d      12.1 FALSE Americas    48 162346.  1.61e7 1299-01-20 25 S… Aug …
+11 f     d      36.4 FALSE Americas    39  15816.  1.56e7 1251-03-17 7 Ju… Apr …
+12 l     &lt;NA&gt;   36.6 FALSE &lt;NA&gt;        43 168766.  1.62e7 1341-03-12 25 J… Dec …
+13 z     &lt;NA&gt;   88.5 FALSE Asia        21   8913.  1.21e7 1355-12-18 21 J… May …
+14 b     &lt;NA&gt;   23.7 TRUE  &lt;NA&gt;        49  20651.  1.33e7 1228-07-07 26 J… Aug …
+15 e     c      42.9 FALSE Americas    42  82922.  1.51e7 1423-09-03 19 S… Feb …
+16 j     d      43.1 TRUE  Europe      20 165148.  1.35e7 1309-05-14 26 F… Oct …
+17 u     b      46.3 FALSE Asia        40  14301   1.27e7 1422-10-19 19 A… Mar …
+18 n     b      28.1 TRUE  Americas    38  39064.  1.36e7 1439-03-14 11 O… Jul …
+19 z     &lt;NA&gt;   91.4 FALSE Africa      32  47704.  1.43e7 1295-04-12 17 S… Oct …
+20 t     a      67.1 FALSE Asia        44  75697.  1.52e7 1524-10-09 15 F… Sep …
+# ℹ 1 more variable: l &lt;dttm&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="column-types-parsing-dates" class="level3">
+<h3 class="anchored" data-anchor-id="column-types-parsing-dates">3. Column types: Parsing dates</h3>
+<p>Dates can be difficult to parse because there are so many different ways to write dates. Therefore, we may need to do a bit more work and tell <code>read_csv()</code> not only that a column is a date, but also what format it is in. You declare the format using abbreviations defined by the POSIX standard. These are:</p>
+<ul>
+<li>Year: <code>"%Y"</code> (4 digits); <code>"%y"</code> (2 digits)</li>
+<li>Month: <code>"%m"</code> (2 digits), <code>"%b"</code> (abbreviated name), <code>"%B"</code> (full name)</li>
+<li>Day: <code>"%d"</code> (2 digits), <code>"%e"</code> (optional leading space), <code>"%a"</code> (abbreviated name)</li>
+<li>Shortcuts:
+<ul>
+<li><code>"%D"</code> = <code>"%m/%d/%y"</code> or 02/23/26</li>
+<li><code>"%F"</code> = <code>"%Y-%m-%d"</code> or 2026-02-23</li>
+<li><code>"%x"</code> = <code>"%y/%m/%d"</code> or 26/02/23</li>
+</ul></li>
+</ul>
+<p>See <a href="https://readr.tidyverse.org/reference/parse_datetime.html">date format specifications</a> in the readr documentation for more choices and details.</p>
+<p>In the case of the example data we can use:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"readr-example.csv"</span>),</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">na =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"NA"</span>, <span class="st">"none"</span>), <span class="co"># Add none as NA for column e</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">e =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">f =</span> <span class="fu">col_integer</span>(),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">g =</span> <span class="fu">col_number</span>(),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">h =</span> <span class="fu">col_date</span>(<span class="st">"%Y%m%d"</span>), <span class="co"># date as 8 digit number (20260223)</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>           <span class="co"># i is correctly parsed as 2026-02-23</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">j =</span> <span class="fu">col_date</span>(<span class="st">"%d %B %Y"</span>), <span class="co"># 23 February 2026</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">k =</span> <span class="fu">col_date</span>(<span class="st">"%b %d %Y"</span>) <span class="co"># Feb 23 2026</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>           <span class="co"># l is correctly parsed as datetime (2026-02-23 14:00)</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>         ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 12
+   a     b         c d     e           f      g h          i          j         
+   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;lgl&gt; &lt;fct&gt;   &lt;int&gt;  &lt;dbl&gt; &lt;date&gt;     &lt;date&gt;     &lt;date&gt;    
+ 1 p     b      95.2 TRUE  Asia       48 4.25e4 1465-12-20 1585-05-06 1503-01-20
+ 2 x     b      71.1 FALSE &lt;NA&gt;       36 1.42e5 1582-09-13 1366-12-10 1390-04-23
+ 3 e     d      15.6 FALSE Africa     35 1.59e4 1546-08-15 1606-06-05 1585-07-04
+ 4 o     b      57.6 TRUE  Africa     46 6.66e4 1463-11-27 1675-01-14 1237-10-20
+ 5 v     d      91.1 TRUE  Americ…    23 1.44e5 1352-03-26 1400-05-12 1394-07-27
+ 6 r     d      40.0 TRUE  Asia       36 4.60e4 1335-05-25 1578-09-14 1593-07-26
+ 7 h     &lt;NA&gt;   70.8 TRUE  Asia       43 1.27e5 1315-03-20 1492-08-28 1237-11-05
+ 8 p     e      82.0 TRUE  Europe     43 8.55e4 1370-01-09 1214-10-11 1650-02-17
+ 9 u     &lt;NA&gt;   96.9 FALSE Americ…    37 1.43e5 1562-05-23 1310-10-12 1660-10-27
+10 i     d      12.1 FALSE Americ…    48 1.62e5 1608-06-21 1299-01-20 1263-09-25
+11 f     d      36.4 FALSE Americ…    39 1.58e4 1559-05-08 1251-03-17 1235-06-07
+12 l     &lt;NA&gt;   36.6 FALSE &lt;NA&gt;       43 1.69e5 1620-05-18 1341-03-12 1455-07-25
+13 z     &lt;NA&gt;   88.5 FALSE Asia       21 8.91e3 1214-05-25 1355-12-18 1242-06-21
+14 b     &lt;NA&gt;   23.7 TRUE  &lt;NA&gt;       49 2.07e4 1333-08-10 1228-07-07 1606-01-26
+15 e     c      42.9 FALSE Americ…    42 8.29e4 1506-05-03 1423-09-03 1411-09-19
+16 j     d      43.1 TRUE  Europe     20 1.65e5 1350-09-21 1309-05-14 1480-02-26
+17 u     b      46.3 FALSE Asia       40 1.43e4 1268-03-06 1422-10-19 1512-08-19
+18 n     b      28.1 TRUE  Americ…    38 3.91e4 1356-02-05 1439-03-14 1378-10-11
+19 z     &lt;NA&gt;   91.4 FALSE Africa     32 4.77e4 1426-05-17 1295-04-12 1252-09-17
+20 t     a      67.1 FALSE Asia       44 7.57e4 1521-10-04 1524-10-09 1412-02-15
+# ℹ 2 more variables: k &lt;date&gt;, l &lt;dttm&gt;</code></pre>
+</div>
+</div>
+<p>Hopefully this example shows the flexibility of <code>read_csv()</code>, the importance of checking your data, and the complexity of dates. It may not look as nice, but I prefer the format of column <code>h</code>, making a date as an 8 digit number in the form of a four-digit year, a two-digit month, and a two-digit day. This way spreadsheets will not interpret your data as dates.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -885,13 +1215,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../resources/index.html" class="pagination-link" aria-label="Resources">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resources</span>
+      <a href="../resources/rstudio-guide.html" class="pagination-link" aria-label="Using R in RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Using R in RStudio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../resources/datasets.html" class="pagination-link" aria-label="Data for DH">
-        <span class="nav-page-text">Data for DH</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../resources/ggplot2.html" class="pagination-link" aria-label="Visualization with ggplot2">
+        <span class="nav-page-text">Visualization with ggplot2</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -903,7 +1233,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/dh.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/importing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>
