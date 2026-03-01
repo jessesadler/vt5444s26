@@ -137,6 +137,10 @@ website:
               file: resources/ggplot2.qmd
             - text: "Wrangling data in the tidyverse"
               file: resources/wrangling.qmd
+        - section: "Git and GitHub"
+          contents:
+            - text: "Getting started with Git"
+              file: resources/git.qmd
 
   page-footer:
     right: |

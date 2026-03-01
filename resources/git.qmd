@@ -1,0 +1,29 @@
+---
+title: "Git"
+format: html
+---
+
+## Installing Git
+
+Check if you have git installed by going to the Terminal tab in the console pane of RStudio and running `git --version`. If you get a version, you have git. If you get an error, you do not.
+
+### Windows
+You can install Git and the command line Bash with [Git for Windows](https://gitforwindows.org). You can follow the instructions for Git for Windows at the [Carpentries](https://carpentries.github.io/workshop-template/install_instructions/#the-bash-shell).
+
+### MacOS
+Go into your Terminal app and type `git --version`. If git is not installed already, follow the instructions to Install the "command line developer tools". You do not need to download the Xcode application.
+
+You can do this on the command line with: `xcode-select --install`.
+
+## Git resources
+- [Software Carpentry - Introduction to Git](https://swcarpentry.github.io/git-novice/)
+- [Chacon, Pro Git](https://git-scm.com/book/en/v2)
+- [GitHub docs](https://docs.github.com/en)
+- [Wizard Zines: Git cheatsheet](https://wizardzines.com/git-cheat-sheet.pdf)
+
+## RStudio and Git
+- Jenny Bryan, [Happy Git and GitHub for the useR](http://happygitwithr.com).
+- [usethis: Managing Git(Hub) Credentials](https://usethis.r-lib.org/articles/git-credentials.html).
+- Julie Lowndes and Allison Horst, [R for Excel Users: GitHub](https://rstudio-conf-2020.github.io/r-for-excel/github.html).
+- Maëlle Salmon, [git and GitHub in R for the casual user](https://masalmon.eu/2023/01/12/git-github-casual/).
+- Garrick Aden-Buie, [Pull Request Flow with usethis](https://www.garrickadenbuie.com/blog/pull-request-flow-usethis).
