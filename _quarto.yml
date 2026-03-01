@@ -1,6 +1,10 @@
 project:
   type: website
-
+  render:
+    - "*.qmd"
+    - "!files/*qmd"
+  resources:
+    - "files/"
 execute:
   freeze: auto # Re-render only when source changes
 
@@ -125,6 +129,8 @@ website:
               file: resources/rstudio-setup.qmd
             - text: "Using R in RStudio"
               file: resources/rstudio-guide.qmd
+            - text: "Quarto documents"
+              file: resources/quarto-docs.qmd
             - text: "Importing data"
               file: resources/importing.qmd
             - text: "Visualization with ggplot2"

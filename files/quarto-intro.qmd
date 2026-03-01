@@ -1,0 +1,52 @@
+---
+title: "Quarto template"
+format: html
+---
+
+This is a Quarto document. It mixes together Markdown text and code and can be rendered into a variety of formats such as HTML web pages and PDFs. There are three types of content. The text at the top of the document surrounded by three dashes is the **YAML header**, which controls details for the output of the document and settings that affect the whole document. The second type of content is Markdown text; the type of text you are reading right now. Any [Markdown](https://quarto.org/docs/authoring/markdown-basics.html) styling is *open* to you to use how **you** want. The third type of content is **code chunks**, which are open and closed by three back ticks (```).
+
+Let's make our first code chunk. It looks like the below text. You can write it out manually or use the keyboard shortcut: `Cmd + Option + I` or `Ctrl + Alt + I`.
+
+```{r}
+# Put your R code here
+17 + 5
+```
+
+You can place as many or as few lines of R code in a code chunk as you want. Anything within the three back ticks acts as if it were an R script. You can run a code expression using `Ctrl + Enter` or `Cmd + Return` or run the entire chunk with the run button to the right of the chunk.
+
+```{r}
+#| label: penguins-summary
+#| message: false
+library(tidyverse)
+
+penguins |>
+  filter(!is.na(body_mass)) |> 
+  group_by(species, island) |>
+  summarise(mean_mass = mean(body_mass),
+            n = n(),
+            .groups = "drop")
+```
+
+You will notice something a little different about the comments in the above code chunk. Intsead of a comment, `#|` sets code chunk options in the form of `option: value` just like in the YAML at the top of the document. The above chunk includes a label and tells Quarto not to output messages, such as the startup message when you load the tidyverse package. See 
+
+```{r}
+#| echo: false
+#| fig-width: 6
+#| fig-asp: 0.618
+#| fig-align: center
+
+ggplot(data = penguins, 
+       aes(x = flipper_len,
+           y = body_mass)) +
+  geom_point(aes(color = species, shape = species),
+             size = 3, alpha = 0.8, na.rm = TRUE) + 
+  scale_color_manual(values = c("darkorange", "purple", "cyan4")) +
+  labs(title = "Penguin size, Palmer Station LTER",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") + 
+  theme_minimal()
+```
+
+You can make data visualizations and have their output included right in the document. With the option `#| echo: false` only the plot will be output, not the code that created it. Click the **Render** button at the top of script pane in RStudio or use or press `Cmd/Ctrl + Shift + K` to see what the output looks like.
