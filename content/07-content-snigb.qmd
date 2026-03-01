@@ -21,6 +21,7 @@ format: html
     - What interests you in the data? What questions do you think you might be able to answer given the nature of the data? See if you can make some exploratory data visualizations. Record your thoughts in code comments and in your commonplace book.
 
 ## Activities
+- Continue Wrangling data with dplyr
 - Pair and share: What were you able to explore in your script? What are you interested to explore in greater depth?
 - Introduction to Quarto documents
 - Discussion: Current thoughts and next steps
@@ -28,6 +29,7 @@ format: html
 ## Resources
 
 ### Quarto
+- [Resources: Quarto documents](../resources/quarto-docs.qmd)
 - [Quarto cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/quarto.pdf)
 - The [Quarto documentation](https://quarto.org/docs/guide/) is great and comprehensive. A good place to start is with the [Getting started tutorial](https://quarto.org/docs/get-started/hello/rstudio.html).
 - [Wickham et al., *R for Data Science*](https://r4ds.hadley.nz)

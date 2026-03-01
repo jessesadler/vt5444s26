@@ -16,11 +16,15 @@ format: html
 - Jenny Bryan, "Excuse me, do you have a moment to talk about version control?," *PeerJ Preprints* (2017) <https://peerj.com/preprints/3159v2>.
 
 ## Assignment
-- Expand on your analysis of the SNiGB data in a Quarto document.
-- Start a data analysis project of your own based on data you have collected or found.
-    - Create an RStudio project in your `hist5444s26/` folder. Set up the project as described in [Setting up RStudio for success](../resources/rstudio-setup.qmd#rstudio-projects).
-    - What can you do with the data? What would you like to be able to do?
-    - Reflect on what you have learned in a Quarto document and in your commonplace book.
+- Install Git if you do not already have it installed on your computer.
+    - Follow the instructions in [Resources: Git](../resources/git.qmd).
+- Practice data wrangling and visualization with R. You can:
+    - Expand on your analysis of the SNiGB data in a Quarto document.
+    - Start a data analysis project of your own based on data you have collected or found.
+        - Create an RStudio project in your `hist5444s26/` folder. Set up the project as described in [Setting up RStudio for success](../resources/rstudio-setup.qmd#rstudio-projects).
+        - What can you do with the data? What would you like to be able to do?
+        - Reflect on what you have learned in a Quarto document and in your commonplace book.
+- Think about setting goals for the rest of the semester.
 
 ## Activities
 - Discussion of your data analysis project
@@ -29,3 +33,4 @@ format: html
 - Working with git and GitHub in RStudio
 
 ## Resources
+[Resources: Git](../resources/git.qmd)
