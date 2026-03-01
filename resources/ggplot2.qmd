@@ -1,6 +1,10 @@
 ---
 title: "Visualization with ggplot2"
-format: html
+format:
+  html:
+    fig-dpi: 400
+    fig-width: 6
+    fig-asp: 0.618
 ---
 
 This page contains a quick overview of ggplot2 and the grammar of graphics, as well as resources for learning more about how to use ggplot2.
@@ -54,7 +58,8 @@ library(ggplot2)
 
 ```{r}
 #| label: grammar-of-graphics
-#| fig-dpi: 400
+#| out-width: "70%"
+#| fig-align: center
 
 ggplot(data = penguins) +
   geom_bar(
