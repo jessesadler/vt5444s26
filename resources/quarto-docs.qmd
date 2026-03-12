@@ -44,7 +44,7 @@ Quarto documents can be edited in either the [Visual editor](https://quarto.org/
 
 ## Quarto's three components
 
-### YAML header
+### 1. YAML header
 
 The YAML header provides a way to indicate the title of the document, document metadata such as author, the output format(s), and document wide options. [YAML](https://en.wikipedia.org/wiki/YAML) is a way to store data in a human-readable form. Its basic structure is `key: value`. The YAML heading is set off by three dashes `---`. A somewhat complex heading might look like this:
 
@@ -71,10 +71,10 @@ execute:
 
 The available keys can be found in the documentation for each type of output. Many options are shared across document output types, but some are not. See the [HTML options](https://quarto.org/docs/reference/formats/html.html) for the widest number of options. It can be difficult to write these YAML headers, but happily in practice it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a [project](https://quarto.org/docs/projects/quarto-projects.html) such as a website.
 
-### Markdown
+### 2. Markdown
 Unlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use [Resources: Markdown syntax](markdown-syntax.qmd) for Markdown foundations, and look at the [Quarto Markdown documentation](https://quarto.org/docs/projects/quarto-projects.html) for more details on the style of Markdown you can use in Quarto documents.
 
-### Code chunks
+### 3. Code chunks
 With Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:
 
 ```{r}
