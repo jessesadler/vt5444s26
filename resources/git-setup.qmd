@@ -1,0 +1,113 @@
+---
+title: "Setting up Git and GitHub"
+format: html
+execute: 
+  eval: false
+---
+
+Once you have [installed Git](git-install.qmd), you have to set it up and make sure your computer can communicate with GitHub. This is something you should only need to do once on your computer.
+
+## Setting up Git
+The primary way to set up Git is through the command line interface. There are only a few commands you need to run, and they are not too intimidating. However, the [usethis package](https://usethis.r-lib.org/index.html) has implemented some R functions that can be used to set up Git.[^1] This page will show instructions for both ways to set up Git. You only need to do one way. The tasks to do are:
+
+1. Provide a name to associate with the changes you make.
+2. Provide an email.
+3. Choose a default text editor for your commit messages.
+4. Configure the default name for an initial branch.
+
+### With the command line interface
+You can set up Git in the Terminal app on MacOS, GitBash in Windows, or the Terminal tab in RStudio. For another resource on setting up Git with the command line, see [Software Carpentries: Setting up Git](https://swcarpentry.github.io/git-novice/02-setup.html). This will set up your Git configuration file.
+
+First, tell Git your name and email. This information is used to identify you when you make saved changes to a product. This way, if many people are working on a project together, you will know who made what changes. Your user name can be anything you want and does not have to be the same as your GitHub profile; first and last name is a good default. The email you use should be the same as the one you have associated with your GitHub account.
+
+```{bash}
+$ git config --global user.name "Your Name"
+$ git config --global user.email "your.email@email.com"
+```
+
+It is standard for your saved change states (commits) to have a message that identifies them and describes why the changes were made. You can type these messages as you make your commits, but if you forget, a text editor will launch. The below example uses nano, which is a *relatively* friendly command line text editor.
+
+```{bash}
+$ git config --global core.editor "nano -w"
+```
+
+Lastly, we want to set up the name of our default branch. For information on branches, see [The Git and GitHub workflow](git-workflow.qmd). The default branch used to be called `master`, but people have moved away from this in favor of `main`.
+
+```{bash}
+$ git config --global init.defaultBranch main
+```
+
+You can check the changes that you made by printing the contents of your configuration file to the command line.
+
+```{bash}
+$ git config --list --global
+```
+
+### With usethis
+An alternative is to use usethis to modify your Git configuration with R code. It will do the exact same thing.
+
+```{r}
+library(usethis)
+use_git_config(
+  user.name = "Your Name",
+  user.email = "your.email@email.com",
+  core.editor = "nano")
+
+# Change default branch to main
+git_default_branch_configure()
+```
+
+To check your configuration use [gert](https://docs.ropensci.org/gert/index.html), which provides the basis for the git functions in usethis. Or you can run `git_sitrep()` from usethis, which will provide a more complete situation report of your Git setup.
+
+```{r}
+gert::git_config()
+git_sitrep()
+```
+
+## Setting up GitHub
+Follow [the instructions](https://swcarpentry.github.io/git-novice/#creating-a-github-account) from the Carpentries on creating a [GitHub](https://github.com) account and setting up multi-factor authentication.
+
+### Connecting your computer to GitHub
+Connecting your computer to GitHub can be a bit tricky because of the need to access GitHub in a secure fashion. You have to tell GitHub you are who you are and, therefore, have the ability to make changes to your projects. To do this we will follow the instructions from [*Happy Git and GitHub for the useR*](https://happygitwithr.com/https-pat) and the [Managing Git(Hub) Credentials](https://usethis.r-lib.org/articles/git-credentials.html) advice from usethis. This uses HTTPS and [Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to make the connection between your computer and GitHub.[^2]
+
+#### Generate a personal access token
+First, we need to generate a GitHub Personal access token (PAT). This is different from the password for your GitHub account. You can do this from the [Tokens page](https://github.com/settings/tokens) on GitHub: via Settings → Developer settings (all the way at the bottom of the left sidebar) → Personal access tokens. We will use the Personal access tokens (classic), which are more permissive. You can create a new token by selecting Generate new token →  Generate new token (classic) or via usethis.
+
+```{r}
+create_github_token()
+```
+
+Provide a name for the token, maybe for the computer you are using, or after our class. `create_github_token()` preselects scopes that should work for your purposes. You can then select `Generate token`. **Stay on the page** so you can copy the PAT you generated.
+
+#### Store your personal access token
+To store your PAT, copy it and then run:
+
+```{r}
+gitcreds::gitcreds_set()
+```
+
+If you do not have a PAT stored, you can now paste your PAT. If you already had one, you can select an option to exit, replace your PAT, or see it.
+
+It may also be a good idea to store your PAT in a password manager alongside your 
+
+#### Check that things work
+Now let's check that things worked. First, restart your R session: Session → Restart R. Load usethis again and then run `gh_token_help()`.
+
+```{r}
+library(usethis)
+gh_token_help()
+```
+
+To get even more information about your setup run `git_sitrep()`.
+
+```{r}
+`git_sitrep()`
+```
+
+### Ongoing maintenance
+If you set the expiration of your token for 30 days, the default, you will need to regenerate it often. You can do this by going to the [tokens page](https://github.com/settings/tokens), selecting regenerate, and then run `gitcreds::gitcreds_set()` and paste it in.
+
+
+[^1]: The [usethis functions](https://usethis.r-lib.org/articles/usethis-setup.html#configure-user-name-and-user-email) work by running the command line commands for you.
+
+[^2]: If you are curious to read more about the difference between the different protocols (HTTPS and SSH), see the discussion in [Happy Git](https://happygitwithr.com/https-pat#https-vs-ssh).

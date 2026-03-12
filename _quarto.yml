@@ -139,8 +139,16 @@ website:
               file: resources/wrangling.qmd
         - section: "Git and GitHub"
           contents:
-            - text: "Getting started with Git"
-              file: resources/git.qmd
+            - text: "Git and GitHub: An overview"
+              file: resources/git-overview.qmd
+            - text: "Installing Git"
+              file: resources/git-install.qmd
+            - text: "Setting up Git and GitHub"
+              file: resources/git-setup.qmd
+            - text: "The Git and GitHub workflow"
+              file: resources/git-workflow.qmd
+            - text: "Git Glossary"
+              file: resources/git-glossary.qmd
 
   page-footer:
     right: |

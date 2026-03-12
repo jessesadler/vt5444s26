@@ -1,0 +1,54 @@
+---
+title: "Git and GitHub: An overview"
+format: html
+---
+
+## What is Git?
+[Git](https://git-scm.com) is a command line version control system. Think of it as the versioning system you might be familiar with from Google Docs but much more robust and much more explicitly invoked. You might also think of it as a way to replace the manual versioning system of `final-doc`, `final-doc1`, `really-final-doc123` as demonstrated in [PhD comics](https://phdcomics.com/comics/archive.php?comicid=1531):
+
+![Final.doc by PhD Comics.](../files/img/phd101212s.gif){width=50% fig-alt="A 9-panel comic showing a student completing a paper named Final.doc but then going through multiple revisions that ends with the student in frustration with a document with a long, convoluted file name."}
+
+Git allows you to track changes to the files in a project with named save states. Git can track many types of files, but it is designed to work with plain text files such as programming scripts and Markdown files. A Git project is usually referred to as a **repository**, which is a different way of saying a folder.[^1] The named save states are called **commits**. If you later decide a change you made is not beneficial, you can roll it back and return to a previous save state (commit). The primary feature of Git is to make it safe to make changes in your project because you know that you can always revert any changes that do not work out. This whole commit **history** becomes part of the project. Git can scale from a single document to large-scale software projects.
+
+There are a variety of ways to use Git, but it is built as a command line tool. You run git commands in a terminal that take the form `git command option`. However, there are also a variety of graphical user interface tools to run Git. We will be using Git in RStudio, and the guides will demonstrate the different ways you can use Git. You can use Git on your own just on your computer to track your changes and allow you to return to previous states. However, you can unlock even more capabilities by adding in an external website that stores your project and your commit history, enabling you to host your files online and collaborate with other people on a project. This is where GitHub and other similar websites come in.
+
+## What is GitHub?
+[GitHub](https://github.com) is a website that hosts git repositories or projects. It acts as what is known as a **remote** server, a location of your project files that is not on your local computer. GitHub is only one of many options for hosting your Git repositories. Others include [GitLab](https://about.gitlab.com) and [Codeberg](https://codeberg.org). It is the mostly widely used place to host your Git projects and provides some nice additional features, but it is important to know that while GitHub is tied to Git, Git is not dependent on GitHub in any way.
+
+So what do you get with the combination of Git and GitHub? Three main capabilities are:
+
+1. Share your work with others.
+2. Make it possible to collaborate with other people.
+3. Hosting the files for a static website made with markdown files such as a Quarto website.
+
+Let's go over these one-by-one. By placing your project on GitHub, if your project is Public, other people can see it. Not only that, other people can collaborate with you by **pulling** the repository to their own computer, making changes (**commits**), and then **pushing** the changes back up to GitHub.[^2] Finally, in this course we will use GitHub to host the websites you make with [Quarto](https://quarto.org/docs/websites/) just like this syllabus, which can be found at [this GitHub repository](https://github.com/jessesadler/vt5444s26).
+
+## Resources
+Git is complex, but you only need to use a very small portion of the capabilities of Git to make it beneficial. The course resources will try to provide a solid basis for the most used Git commands with an emphasis on using Git with R and RStudio. We will be using three different interfaces to setup and run Git commands: the command line through the Terminal tab in RStudio, through R via the [usethis package](https://usethis.r-lib.org/reference/index.html#git-and-github) helper functions run in the Console tab, and RStudio's graphical Git interface.
+
+- [Installing Git](git-install.qmd)
+- [Setting up Git and GitHub](git-setup.qmd)
+- [The Git and GitHub workflow](git-workflow.qmd)
+- [Git glossary](git-glossary.qmd)
+
+If you find yourself wanting more documentation, use the below resources are a good place to start.
+
+## Git resources
+- [Software Carpentry - Introduction to Git](https://swcarpentry.github.io/git-novice/)
+- Scott Chacon and Ben Straub, [*Pro Git*](https://git-scm.com/book/en/v2): This is the official Git documentation book and is actually more readable than you might assume.
+- [GitHub docs](https://docs.github.com/en): Unsurprisingly, GitHub has a lot of documentation to help you get started with Git and how you can use GitHub.
+- [Wizard Zines: Git cheatsheet](https://wizardzines.com/git-cheat-sheet.pdf): This goes into more complex situations than you are likely to face, but it is a good overview of useful commands.
+
+## RStudio and Git
+- Jenny Bryan, [*Happy Git and GitHub for the useR*](http://happygitwithr.com).
+    - This is an invaluable resource for using Git and GitHub from the perspective of R and RStudio.
+- [usethis package](https://usethis.r-lib.org/index.html) Git and GitHub setup
+    - [usethis setup](https://usethis.r-lib.org/articles/usethis-setup.html).
+    - [Managing Git(Hub) Credentials](https://usethis.r-lib.org/articles/git-credentials.html).
+- Julie Lowndes and Allison Horst, [R for Excel Users: GitHub](https://rstudio-conf-2020.github.io/r-for-excel/github.html).
+- Maëlle Salmon, [git and GitHub in R for the casual user](https://masalmon.eu/2023/01/12/git-github-casual/).
+- Garrick Aden-Buie, [Pull Request Flow with usethis](https://www.garrickadenbuie.com/blog/pull-request-flow-usethis).
+
+[^1]: See the [Git glossary](git-glossary.qmd) for more complete definitions of these terms.
+
+[^2]: See [The Git and GitHub workflow](git-workflow.qmd) for a more in-depth discussion of this workflow.

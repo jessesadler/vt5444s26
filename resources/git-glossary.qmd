@@ -1,0 +1,49 @@
+---
+title: "Git glossary"
+format: html
+---
+
+- **Repository**: The project folder both on your computer and on the remote server, namely GitHub. This is often shortened to repo.
+- **Initialize**: Make your project folder a Git repository.
+- **Status**: Check on the status of the project. What files have been changed since the last commit? Which files, if any, have been placed on the stage.
+- **Add**: Add files to the *stage* as the first step to making a commit.
+- **Commit**: A save state for your project with a corresponding message. The commit includes all differences to the files that were added to the stage from the previous commit.
+- **Commit message**: The message associated with the commit. Commit messages should have a short but descriptive title and then can contain a longer description of the changes. It is best to emphasize why the changes were made since what changes were made can be seen through the diffs.
+- **Ignore**: Use of a `.gitignore` file to ignore, or not track, certain files, folders, or types of files. This is useful for files that are only useful on you local computer or large files that do not need to be tracked such as data.
+- **Diff**: The line-by-line differences for a file between two different commits.
+- **Log**: The commit history.
+- **Branch**: A named set of commits. The default branch will be called `main`, but you can work on multiple parallel branches at a time.
+    - Feature branch: One way you may hear people refer to a branch is a feature branch. This is a branch that implements a single feature. Only once the feature is completed is it *merged* into the main branch.
+    - GitHub pages branch: Many static sites that use GitHub will deploy their websites through a special GitHub pages branch.
+- **Merge**: Merge the differences between two branches together.
+- **Remote**: A remote Git server such as GitHub.
+    - Origin: In your own projects the remote server is typically named `origin`.
+    - Upstream: If you *fork* a project, the remote server of the original project is typically named `upstream`.
+- **Fork**: A copy of someone else's project (repository) that you have control over on your GitHub account and/or on your computer.
+- **Clone**: Download a repository from a remote server, such as GitHub, to your local computer and create the push/pull connection.
+- **Push**: Send all of the commits, and the changes made within those commits, that are not on the remote server to the server, namely to your GitHub repository.
+- **Pull**: Download all of the commits, and the changes made within those commits, that are on the remote server to your computer.
+- **Pull request**: A pull request, or PR, is something you generally do when collaborating with others. You make changes to a project, generally on a feature branch, then *push* the commits to GitHub. You then request that the project *pull* in those changes, hence a pull request.
+
+## Git actions and commands
+
+| Action               | Description           | Command line                 |
+|---------             |--------------------   |-------------                 |
+| Initialize | Initialize a Git repository               | `git init`         |
+| Status     | Check the status of changes               | `git status`       |
+| Add        | Add files to the stage                    | `git add filename` |
+| Commit     | A named saved state for added files       | `git commit -m "message"` |
+| Diff       | Differences in a file between commits     | `git diff`         |
+| Log        | History of commits                        | `git log`          |
+| Branch     | Named set of commits                      | `git branch`       |
+| Push       | Send commits to GitHub                    | `git push`         |
+| Pull       | Download commits from GitHub              | `git pull`         |
+
+## FAQ
+- How often should you commit?
+    - A commit should complete a single problem or accomplishment. How large is a single problem? It depends. It might be a single line of code. It might be writing a full document.
+    - The commit message should focus on why the changes were made because the exact nature of the changes can be shown with inspecting the commit.
+- How often should you push?
+    - Less often than you commit. It is easier to alter things or deal with any problems associated with Git when the changes are local than after you have pushed to GitHub.
+    - Once you have a coherent chunk of commits is a good time to push. Pushing also serves as a backup of your project.
+    - Pushing makes your work public, so it is a good idea to have some level of completeness or have code that works.

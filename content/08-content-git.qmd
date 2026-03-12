@@ -17,7 +17,7 @@ format: html
 
 ## Assignment
 - Install Git if you do not already have it installed on your computer.
-    - Follow the instructions in [Resources: Git](../resources/git.qmd).
+    - Follow the instructions in [Resources: Installing Git](../resources/git-install.qmd).
 - Practice data wrangling and visualization with R. You can:
     - Expand on your analysis of the SNiGB data in a Quarto document.
     - Start a data analysis project of your own based on data you have collected or found.
@@ -33,4 +33,8 @@ format: html
 - Working with git and GitHub in RStudio
 
 ## Resources
-[Resources: Git](../resources/git.qmd)
+- [Git and GitHub: An overview](../resources/git-overview.qmd): This page contains more resources on Git and GitHub.
+- [Installing Git](../resources/git-install.qmd)
+- [Setting up Git and GitHub](../resources/git-setup.qmd)
+- [The Git and GitHub workflow](../resources/git-workflow.qmd)
+- [Git glossary](../resources/git-glossary.qmd)
