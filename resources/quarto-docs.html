@@ -477,8 +477,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting started with Git</span></a>
+  <a href="../resources/git-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub: An overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git and GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Git and GitHub workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git Glossary</span></a>
   </div>
 </li>
       </ul>
@@ -500,9 +524,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#quartos-three-components" id="toc-quartos-three-components" class="nav-link" data-scroll-target="#quartos-three-components">Quarto’s three components</a>
   <ul class="collapse">
-  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">YAML header</a></li>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">Markdown</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code chunks</a></li>
+  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">1. YAML header</a></li>
+  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">2. Markdown</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">3. Code chunks</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -601,7 +625,7 @@ Figure&nbsp;3: Dialogue box to create a new Quarto document.
 <section id="quartos-three-components" class="level2">
 <h2 class="anchored" data-anchor-id="quartos-three-components">Quarto’s three components</h2>
 <section id="yaml-header" class="level3">
-<h3 class="anchored" data-anchor-id="yaml-header">YAML header</h3>
+<h3 class="anchored" data-anchor-id="yaml-header">1. YAML header</h3>
 <p>The YAML header provides a way to indicate the title of the document, document metadata such as author, the output format(s), and document wide options. <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> is a way to store data in a human-readable form. Its basic structure is <code>key: value</code>. The YAML heading is set off by three dashes <code>---</code>. A somewhat complex heading might look like this:</p>
 <pre><code>---
 title: "My title here"
@@ -624,11 +648,11 @@ execute:
 <p>The available keys can be found in the documentation for each type of output. Many options are shared across document output types, but some are not. See the <a href="https://quarto.org/docs/reference/formats/html.html">HTML options</a> for the widest number of options. It can be difficult to write these YAML headers, but happily in practice it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a <a href="https://quarto.org/docs/projects/quarto-projects.html">project</a> such as a website.</p>
 </section>
 <section id="markdown" class="level3">
-<h3 class="anchored" data-anchor-id="markdown">Markdown</h3>
+<h3 class="anchored" data-anchor-id="markdown">2. Markdown</h3>
 <p>Unlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use <a href="../resources/markdown-syntax.html">Resources: Markdown syntax</a> for Markdown foundations, and look at the <a href="https://quarto.org/docs/projects/quarto-projects.html">Quarto Markdown documentation</a> for more details on the style of Markdown you can use in Quarto documents.</p>
 </section>
 <section id="code-chunks" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks">Code chunks</h3>
+<h3 class="anchored" data-anchor-id="code-chunks">3. Code chunks</h3>
 <p>With Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>

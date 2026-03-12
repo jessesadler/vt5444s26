@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wrangling data in the tidyverse – Digital History Methods</title>
+<title>The Git and GitHub workflow – Digital History Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../resources/git-overview.html" rel="next">
-<link href="../resources/ggplot2.html" rel="prev">
+<link href="../resources/git-glossary.html" rel="next">
+<link href="../resources/git-setup.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -326,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/wrangling.html">Wrangling data in the tidyverse</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/git-overview.html">Git and GitHub</a></li><li class="breadcrumb-item"><a href="../resources/git-workflow.html">The Git and GitHub workflow</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -460,7 +460,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/wrangling.html" class="sidebar-item-text sidebar-link active">
+  <a href="../resources/wrangling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wrangling data in the tidyverse</span></a>
   </div>
 </li>
@@ -495,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/git-workflow.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/git-workflow.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">The Git and GitHub workflow</span></a>
   </div>
 </li>
@@ -517,28 +517,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pipes" id="toc-pipes" class="nav-link active" data-scroll-target="#pipes">Pipes</a></li>
-  <li><a href="#manipulating-rows-and-columns-with-dplyr" id="toc-manipulating-rows-and-columns-with-dplyr" class="nav-link" data-scroll-target="#manipulating-rows-and-columns-with-dplyr">1. Manipulating rows and columns with dplyr</a></li>
-  <li><a href="#joining-together-related-data-frames" id="toc-joining-together-related-data-frames" class="nav-link" data-scroll-target="#joining-together-related-data-frames">2. Joining together related data frames</a>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">TL;DR</a></li>
+  <li><a href="#github-first" id="toc-github-first" class="nav-link" data-scroll-target="#github-first">GitHub first</a>
   <ul class="collapse">
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#make-a-new-repository-on-github" id="toc-make-a-new-repository-on-github" class="nav-link" data-scroll-target="#make-a-new-repository-on-github">1. Make a new repository on GitHub</a></li>
+  <li><a href="#new-rstudio-project-from-the-github-repository" id="toc-new-rstudio-project-from-the-github-repository" class="nav-link" data-scroll-target="#new-rstudio-project-from-the-github-repository">2. New RStudio project from the GitHub repository</a></li>
+  <li><a href="#make-local-changes" id="toc-make-local-changes" class="nav-link" data-scroll-target="#make-local-changes">3. Make local changes</a></li>
+  <li><a href="#push-local-changes-to-github" id="toc-push-local-changes-to-github" class="nav-link" data-scroll-target="#push-local-changes-to-github">4. Push local changes to GitHub</a></li>
   </ul></li>
-  <li><a href="#modifying-the-structure-of-a-data-frame" id="toc-modifying-the-structure-of-a-data-frame" class="nav-link" data-scroll-target="#modifying-the-structure-of-a-data-frame">3. Modifying the structure of a data frame</a>
+  <li><a href="#local-first" id="toc-local-first" class="nav-link" data-scroll-target="#local-first">Local first</a>
   <ul class="collapse">
-  <li><a href="#wide-to-long" id="toc-wide-to-long" class="nav-link" data-scroll-target="#wide-to-long">Wide to long</a></li>
-  <li><a href="#long-to-wide" id="toc-long-to-wide" class="nav-link" data-scroll-target="#long-to-wide">Long to wide</a></li>
-  <li><a href="#resources-1" id="toc-resources-1" class="nav-link" data-scroll-target="#resources-1">Resources</a></li>
+  <li><a href="#initialize-your-project-as-a-git-project" id="toc-initialize-your-project-as-a-git-project" class="nav-link" data-scroll-target="#initialize-your-project-as-a-git-project">1. Initialize your project as a Git project</a></li>
+  <li><a href="#ignore-files" id="toc-ignore-files" class="nav-link" data-scroll-target="#ignore-files">2. Ignore files</a></li>
+  <li><a href="#stage-and-commit" id="toc-stage-and-commit" class="nav-link" data-scroll-target="#stage-and-commit">3. Stage and commit</a></li>
+  <li><a href="#connect-to-github" id="toc-connect-to-github" class="nav-link" data-scroll-target="#connect-to-github">4. Connect to GitHub</a></li>
   </ul></li>
+  <li><a href="#the-ongoing-workflow" id="toc-the-ongoing-workflow" class="nav-link" data-scroll-target="#the-ongoing-workflow">The ongoing workflow</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/wrangling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/git-workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/wrangling.html">Wrangling data in the tidyverse</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/git-overview.html">Git and GitHub</a></li><li class="breadcrumb-item"><a href="../resources/git-workflow.html">The Git and GitHub workflow</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Wrangling data in the tidyverse</h1>
+<h1 class="title">The Git and GitHub workflow</h1>
 </div>
 
 
@@ -555,383 +559,213 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>When working with a data frame, you will usually want to modify it in some way. You may want to make some calculations based on different columns in the data or calculate some summary statistics. You may only need a subset of the data, either of the rows or columns. You might want to split the data into separate data frames or join together related data frames. Or you may need to clean up the data, changing column names, modifying values in different ways, or changing the shape of the data frame before doing your analysis and visualization. These are some of the more common tasks of <strong>data wrangling</strong>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>We can break these tasks into three main categories:</p>
+<p>This page will break down the basic Git and GitHub workflow, concentrating on the workflow using R and RStudio. It will discuss three different interfaces for working with Git and GitHub: the command line, the <a href="https://usethis.r-lib.org/reference/index.html#git-and-github">usethis package</a> helper functions, and RStudio’s graphical Git interface.</p>
+<ul>
+<li>Command line interface commands look like <code>git command option</code> and will be run in the <strong>Terminal</strong> tab in RStudio.</li>
+<li>The usethis package functions all take the form of <code>use_*()</code>. They are R functions that do the command line commands for you. They will be run in the <strong>Console</strong> tab in RStudio.</li>
+<li>The graphical Git interface in RStudio is found in the Git tab in the upper-right pane. The project must be initialized as a Git project for the tab to appear. See <a href="#fig-git-pane" class="quarto-xref">Figure&nbsp;2</a>.</li>
+</ul>
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">TL;DR</h2>
+<p>The basic steps for using Git are fairly straightforward, but they do involve more overhead than you will be used to in working on a project. One way to think about it is that Git forces you to be explicit about organizing the changes you make to your project.</p>
 <ol type="1">
-<li>Manipulating rows and columns.</li>
-<li>Joining together related data frames.</li>
-<li>Modifying the structure of a data frame.</li>
+<li>Initialize your repository (project folder) as a Git project.</li>
+<li>Make changes to the documents in the folder.</li>
+<li>Add the changed files to the <em>stage</em>.</li>
+<li>Commit those changed files as a save state with a commit message.</li>
+<li>Repeat steps 2–4.</li>
+<li>Push your changes to GitHub repository.</li>
 </ol>
-<section id="pipes" class="level2">
-<h2 class="anchored" data-anchor-id="pipes">Pipes</h2>
-<p>Before getting into the details of how to go about doing these data wrangling tasks using the tidyverse, we should introduce a tool that will make this process of data cleaning much easier to write and more legible to read, namely the pipe (<code>|&gt;</code>).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In doing almost any data wrangling task, you will want to perform multiple manipulations. You may want to remove some columns, <em>and then</em> remove rows with missing data, <em>and then</em> calculate the frequency of one or more column, <em>and then</em> calculate some summary statistics.</p>
-<p>The <strong>pipe</strong> is the <em>and then</em>. It links together multiple functions together, taking the output from the left of the pipe and moving it to the function on the right. Using the pipe will look something like this, and remember you can think of it as <em>and then</em>:</p>
-<pre><code>historians |&gt;
-  read secondary literature |&gt;
-  read primary sources |&gt;
-  write |&gt;
-  do more research |&gt;
-  rewrite |&gt;
-  publish</code></pre>
-<p>In this analogy <code>historians</code> take the place of the data and the various actions are the functions.</p>
+<p>There are many different ways you can go about doing these foundational steps. Adding in GitHub to the mix brings in further complexity. Do you create the repository on GitHub first or on your computer. Let’s go through creating a repository on GitHub first, which makes things a bit easier because each step actually combines multiple steps into one. Then, we will go through how to get our <code>r-notes</code> project on GitHub, which is a bit more manual.</p>
+<p>For more background, see the options described in <a href="https://happygitwithr.com/usage-intro">Happy Git</a>.</p>
 </section>
-<section id="manipulating-rows-and-columns-with-dplyr" class="level2">
-<h2 class="anchored" data-anchor-id="manipulating-rows-and-columns-with-dplyr">1. Manipulating rows and columns with dplyr</h2>
-<p>The core set of <a href="https://dplyr.tidyverse.org">dplyr</a> functions are designed to work with the pipe. They take in a data frame as their input in the first argument (named <code>.data</code>); subsequent arguments include the (unquoted) column names that are operated on; and the output is a data frame, which can be <em>piped</em> into another function. You can think of these functions as verbs to manipulate rows and columns. The core functions are:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>select()</code></td>
-<td>Subset <strong>columns</strong>.</td>
-</tr>
-<tr class="even">
-<td><code>filter()</code></td>
-<td>Subset <strong>rows</strong> by conditions based on data in columns.</td>
-</tr>
-<tr class="odd">
-<td><code>mutate()</code></td>
-<td>Create new columns using information from other columns.</td>
-</tr>
-<tr class="even">
-<td><code>group_by()</code></td>
-<td>Group the data by values in column such as <em>by village</em> or <em>by sex</em>.</td>
-</tr>
-<tr class="odd">
-<td><code>summarize()</code></td>
-<td>Aggregate the data, usually on grouped data, to create summary tables.</td>
-</tr>
-<tr class="even">
-<td><code>arrange()</code></td>
-<td>Arrange the order of rows by values in columns. Often used with <code>desc()</code> to reverse default order.</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>To practice with these functions go to the <a href="../worksheets/04-worksheet.html">Wrangling data with dplyr worksheet</a>.</li>
-<li>To read more about the core dplyr functions, see <a href="https://r4ds.hadley.nz/data-transform.html">R for Data Science: Data Transformation</a>.</li>
-<li>For even more practice, check out the Data Carpentries, R for Social Science episode on <a href="https://datacarpentry.github.io/r-socialsci/03-dplyr.html">Data Wrangling with dplyr</a>.</li>
-</ul>
-<p>Let’s quickly show how these work using the <code>penguins</code> dataset.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, bill_len, bill_dep, sex) <span class="sc">|&gt;</span> <span class="co"># Subset columns, not strictly necessary</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(bill_len) <span class="sc">|</span> <span class="sc">!</span><span class="fu">is.na</span>(bill_dep)) <span class="sc">|&gt;</span> <span class="co"># Remove missing values for bill measurements</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bill_ratio =</span> bill_dep <span class="sc">/</span> bill_len) <span class="sc">|&gt;</span> <span class="co"># Create new column for ration of depth to length</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="co"># Group the data by species and sex</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_ratio =</span> <span class="fu">mean</span>(bill_ratio), <span class="co"># Find the average bill ratio broken down by species and sex</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(), <span class="co"># Count the number of observations in each group</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> <span class="co"># Drop the remaining grouping of sex</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_ratio)) <span class="co"># Arrange the rows by the average ratio in descending order</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 4
-  species   sex    avg_ratio     n
-  &lt;fct&gt;     &lt;fct&gt;      &lt;dbl&gt; &lt;int&gt;
-1 Adelie    &lt;NA&gt;       0.485     5
-2 Adelie    female     0.474    73
-3 Adelie    male       0.474    73
-4 Chinstrap female     0.379    34
-5 Chinstrap male       0.377    34
-6 Gentoo    &lt;NA&gt;       0.319     4
-7 Gentoo    male       0.318    61
-8 Gentoo    female     0.313    58</code></pre>
-</div>
-</div>
-</section>
-<section id="joining-together-related-data-frames" class="level2">
-<h2 class="anchored" data-anchor-id="joining-together-related-data-frames">2. Joining together related data frames</h2>
-<p>A common data wrangling task is to join together related data frames. This situation can come about by the desire split up a dataset into multiple datasets to keep them clean and tidy. A common example in the humanities might be a dataset that has location names that correspond to latitude and longitude values. Instead of having latitude and longitude columns for all of our data, we might want to have a separate data frame with that information that we only need to join to the rest of the dataset when we want to create a geographic visualization. We can do this with <strong>joins</strong>. Let’s see how it works with some data about the location of siblings at different times.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Religious affiliation of the family members</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>religion</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 13 × 2
-   person                   religion 
-   &lt;chr&gt;                    &lt;chr&gt;    
- 1 Elizabeth Zeghers        Calvinist
- 2 Jan della Faille de Oude Catholic 
- 3 Andries van der Meulen   Calvinist
- 4 Daniel van der Meulen    Calvinist
- 5 Anna van der Meulen      Calvinist
- 6 Sara van der Meulen      Calvinist
- 7 Jan della Faille         Calvinist
- 8 Marten della Faille      Catholic 
- 9 Carlo della Faille       Calvinist
-10 Anna della Faille        Catholic 
-11 Steven della Faille      Calvinist
-12 Jacques della Faille     Calvinist
-13 Hester della Faille      Calvinist</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Movements of the siblings</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>movements</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 74 × 3
-   person                 place     date      
-   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;    
- 1 Andries van der Meulen Antwerp   1584-07-01
- 2 Andries van der Meulen Bremen    1585-09-01
- 3 Anna van der Meulen    Cologne   1584-07-01
- 4 Anna van der Meulen    Bremen    1588-06-01
- 5 Anna van der Meulen    Stade     1588-08-01
- 6 Anna van der Meulen    Bremen    1592-03-01
- 7 Sara van der Meulen    Antwerp   1584-07-01
- 8 Sara van der Meulen    Bremen    1585-09-01
- 9 Sara van der Meulen    Frankfurt 1586-03-01
-10 Sara van der Meulen    Cologne   1586-05-01
-# ℹ 64 more rows</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Latitude and longitude of the locations of the siblings</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>locations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 21 × 3
-   location          lat   lng
-   &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;
- 1 Antwerp          51.2  4.40
- 2 Bremen           53.1  8.81
- 3 Cologne          50.9  6.96
- 4 Stade            53.6  9.48
- 5 Frankfurt        50.1  8.68
- 6 Utrecht          52.1  5.13
- 7 Leiden           52.2  4.48
- 8 Geertruidenberg  51.7  4.85
- 9 Bergen op Zoom   51.5  4.29
-10 The Hague        52.1  4.31
-# ℹ 11 more rows</code></pre>
-</div>
-</div>
-<p>There are four main join functions. All take two data frames and join them <code>by</code> a column that is shared by both data frames. The names of the column to join by do not need to be the same, but it this case they are, namely <code>"person"</code>. The four functions differ in <em>how</em> they join the data frames.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>left_join()</code></td>
-<td>Keep all observations in the first (left) data frame.</td>
-</tr>
-<tr class="even">
-<td><code>right_join()</code></td>
-<td>Keep all observations in the second (right) data frame.</td>
-</tr>
-<tr class="odd">
-<td><code>full_join()</code></td>
-<td>Keep all observations from <em>both</em> data frames.</td>
-</tr>
-<tr class="even">
-<td><code>inner_join()</code></td>
-<td>Only keep observations that are in <em>both</em> data frames, dropping rows that do not have a match.</td>
-</tr>
-</tbody>
-</table>
-<p>Let’s start with a left join between <code>religion</code> and <code>movements</code>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(religion, movements, <span class="at">by =</span> <span class="st">"person"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 76 × 4
-   person                   religion  place      date      
-   &lt;chr&gt;                    &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;    
- 1 Elizabeth Zeghers        Calvinist &lt;NA&gt;       NA        
- 2 Jan della Faille de Oude Catholic  &lt;NA&gt;       NA        
- 3 Andries van der Meulen   Calvinist Antwerp    1584-07-01
- 4 Andries van der Meulen   Calvinist Bremen     1585-09-01
- 5 Daniel van der Meulen    Calvinist Antwerp    1584-07-01
- 6 Daniel van der Meulen    Calvinist Middelburg 1584-08-01
- 7 Daniel van der Meulen    Calvinist Delft      1584-09-01
- 8 Daniel van der Meulen    Calvinist Haarlem    1584-12-01
- 9 Daniel van der Meulen    Calvinist Delft      1585-02-01
-10 Daniel van der Meulen    Calvinist Bremen     1585-10-01
-# ℹ 66 more rows</code></pre>
-</div>
-</div>
-<p>The <code>NA</code>s for <code>place</code> and <code>date</code> for Elizabeth Zeghers and Jan della Faille de Oude show that there is no movement data for these individuals. We could drop these by doing a right join instead. Note the different in the number of rows. An alternative would be to switch the position of the dataframes within the <code>left_join()</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">right_join</span>(religion, movements, <span class="at">by =</span> <span class="st">"person"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 74 × 4
-   person                 religion  place      date      
-   &lt;chr&gt;                  &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;    
- 1 Andries van der Meulen Calvinist Antwerp    1584-07-01
- 2 Andries van der Meulen Calvinist Bremen     1585-09-01
- 3 Daniel van der Meulen  Calvinist Antwerp    1584-07-01
- 4 Daniel van der Meulen  Calvinist Middelburg 1584-08-01
- 5 Daniel van der Meulen  Calvinist Delft      1584-09-01
- 6 Daniel van der Meulen  Calvinist Haarlem    1584-12-01
- 7 Daniel van der Meulen  Calvinist Delft      1585-02-01
- 8 Daniel van der Meulen  Calvinist Bremen     1585-10-01
- 9 Daniel van der Meulen  Calvinist Middelburg 1586-05-01
-10 Daniel van der Meulen  Calvinist Delft      1586-06-01
-# ℹ 64 more rows</code></pre>
-</div>
-</div>
-<p>Now let’s check joining the <code>movements</code> data frame to the <code>locations</code> data frame. Here we have the complication that our columns to join by have different names. We can use the <code>join_by()</code> function to tell R which columns are equivalent.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(movements, locations,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">by =</span> <span class="fu">join_by</span>(place <span class="sc">==</span> location))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 74 × 5
-   person                 place     date         lat   lng
-   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt;
- 1 Andries van der Meulen Antwerp   1584-07-01  51.2  4.40
- 2 Andries van der Meulen Bremen    1585-09-01  53.1  8.81
- 3 Anna van der Meulen    Cologne   1584-07-01  50.9  6.96
- 4 Anna van der Meulen    Bremen    1588-06-01  53.1  8.81
- 5 Anna van der Meulen    Stade     1588-08-01  53.6  9.48
- 6 Anna van der Meulen    Bremen    1592-03-01  53.1  8.81
- 7 Sara van der Meulen    Antwerp   1584-07-01  51.2  4.40
- 8 Sara van der Meulen    Bremen    1585-09-01  53.1  8.81
- 9 Sara van der Meulen    Frankfurt 1586-03-01  50.1  8.68
-10 Sara van der Meulen    Cologne   1586-05-01  50.9  6.96
-# ℹ 64 more rows</code></pre>
-</div>
-</div>
-<p>Let’s now join all three data frames together using the pipe.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>religion <span class="sc">|&gt;</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right_join</span>(movements, <span class="at">by =</span> <span class="st">"person"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(locations,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">join_by</span>(place <span class="sc">==</span> location))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 74 × 6
-   person                 religion  place      date         lat   lng
-   &lt;chr&gt;                  &lt;chr&gt;     &lt;chr&gt;      &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt;
- 1 Andries van der Meulen Calvinist Antwerp    1584-07-01  51.2  4.40
- 2 Andries van der Meulen Calvinist Bremen     1585-09-01  53.1  8.81
- 3 Daniel van der Meulen  Calvinist Antwerp    1584-07-01  51.2  4.40
- 4 Daniel van der Meulen  Calvinist Middelburg 1584-08-01  51.5  3.61
- 5 Daniel van der Meulen  Calvinist Delft      1584-09-01  52.0  4.36
- 6 Daniel van der Meulen  Calvinist Haarlem    1584-12-01  52.4  4.64
- 7 Daniel van der Meulen  Calvinist Delft      1585-02-01  52.0  4.36
- 8 Daniel van der Meulen  Calvinist Bremen     1585-10-01  53.1  8.81
- 9 Daniel van der Meulen  Calvinist Middelburg 1586-05-01  51.5  3.61
-10 Daniel van der Meulen  Calvinist Delft      1586-06-01  52.0  4.36
-# ℹ 64 more rows</code></pre>
-</div>
-</div>
-<p>Now are data would be ready to map. This ability to quickly join together related datasets makes it possible to greatly simplify the structure of the data if you are in the situation of creating your dataset. Instead of writing the latitude and longitude over and over again, possibly introducing copy and paste errors, you can have it in one place and only use it when necessary.</p>
-<p>Download the three data frames to play around with them: <a href="../datasets/religion.csv">religion</a>, <a href="../datasets/movements.csv">movements</a>, and <a href="../datasets/locations.csv">locations</a>.</p>
-<section id="resources" class="level3">
-<h3 class="anchored" data-anchor-id="resources">Resources</h3>
-<ul>
-<li>A good overview is provided by the <a href="https://r4ds.hadley.nz/joins.html">Joins</a> chapter of <em>R for Data Science</em>.</li>
-<li>See also the <a href="https://dplyr.tidyverse.org/articles/two-table.html">Two-table verbs article</a> in the dplyr package.</li>
-</ul>
-</section>
-</section>
-<section id="modifying-the-structure-of-a-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="modifying-the-structure-of-a-data-frame">3. Modifying the structure of a data frame</h2>
-<p>A second task you may face is needing to alter the structure of your data to make it tidy. This is the specialty of the <a href="https://tidyr.tidyverse.org/index.html">tidyr</a> package. It takes us back to the principles of tidy data:</p>
+<section id="github-first" class="level2">
+<h2 class="anchored" data-anchor-id="github-first">GitHub first</h2>
+<p>These instructions follow <a href="https://happygitwithr.com/new-github-first">Happy Git: New project, GitHub first</a>.</p>
+<section id="make-a-new-repository-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="make-a-new-repository-on-github">1. Make a new repository on GitHub</h3>
 <ol type="1">
-<li>Each variable is a column; each column is a variable.</li>
-<li>Each observation is a row; each row is an observation.</li>
-<li>Each value is a cell; each cell is a single value.</li>
+<li>Go to <a href="https://github.com">GitHub</a> and make sure you are signed in. In the upper-right click on the plus button and select <code>New Repository</code>.</li>
+<li>Name your repository using the naming rules we have already defined. Make it short with <strong>no</strong> spaces, use lowercase letters.</li>
+<li>Under configuration, you can keep everything as is, but select Add README to On.</li>
+<li>Select Create Repository.
+<ul>
+<li>You will now be taken to the GitHub repository for your project.</li>
+<li>This initialize the repository and makes the first commit.</li>
+</ul></li>
+<li>Click on the <span style="color:green"><strong>green Code button</strong></span> on the top right.
+<ul>
+<li>Make sure HTTPS is selected.</li>
+<li>Copy the URL to your clipboard.</li>
+</ul></li>
 </ol>
-<section id="wide-to-long" class="level3">
-<h3 class="anchored" data-anchor-id="wide-to-long">Wide to long</h3>
-<p>However, data is not always tidy; sometimes for good reason. For instance, in collecting data it might be easier to create a data frame in a <strong>wide</strong> format in which variable values are spread out in separate columns. For instance, a data frame with the counts for each penguin species by year.</p>
+</section>
+<section id="new-rstudio-project-from-the-github-repository" class="level3">
+<h3 class="anchored" data-anchor-id="new-rstudio-project-from-the-github-repository">2. New RStudio project from the GitHub repository</h3>
+<p>This step combines a number of steps that are usually separate. It creates a new folder that is an RStudio project, creates the connection between that project folder and the GitHub repository, and downloads the README we created in step 1. We can do this all with <code>usethis::create_from_github()</code>. Paste the url you copied from the GitHub repository that ends in <code>.git</code> into the first argument and choose where to put the new repository in the second argument.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>penguins_wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 4
-  species   `2007` `2008` `2009`
-  &lt;fct&gt;      &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
-1 Adelie        50     50     52
-2 Chinstrap     26     18     24
-3 Gentoo        34     46     44</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_from_github</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://github.com/YOU/YOUR_REPO.git"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">destdir =</span> <span class="st">"~/path/to/hist5444s26/"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-<p>To make this data frame tidy we need to create a new column for year and a new column for the values in the current year columns, in this case count. to do this we use the <code>pivot_longer()</code> function. The key arguments for the function are:</p>
-<ul>
-<li><code>cols</code>: Columns to pivot into a longer format, or alternatively the columns to disregard in pivoting using the not operator (<code>!</code>).</li>
-<li><code>names_to</code>: The name new column or columns to create from the information stored in the column names specified by the <code>cols</code> argument. Should be a name in quotation marks.</li>
-<li><code>values_to</code>: The name of the column to create from the data stored in cell values. Should be a name in quotation marks.</li>
-</ul>
-<p>Let’s see how this works.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>penguins_wide <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">!</span>species,</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"count"</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 9 × 3
-  species   year  count
-  &lt;fct&gt;     &lt;chr&gt; &lt;int&gt;
-1 Adelie    2007     50
-2 Adelie    2008     50
-3 Adelie    2009     52
-4 Chinstrap 2007     26
-5 Chinstrap 2008     18
-6 Chinstrap 2009     24
-7 Gentoo    2007     34
-8 Gentoo    2008     46
-9 Gentoo    2009     44</code></pre>
-</div>
-</div>
+<p>You should now be in a new RStudio project and in the upper-right pane you should have a Git tab.</p>
 </section>
-<section id="long-to-wide" class="level3">
-<h3 class="anchored" data-anchor-id="long-to-wide">Long to wide</h3>
-<p>Going from a wider format to a longer format is the more common transformation, but you may find yourself in the situation of wanting to use a wider format to present your data in a table. We can reverse what we did with <code>pivot_longer()</code> using <code>pivot_wider()</code>. The key arguments mirror those for <code>pivot_longer()</code>:</p>
-<ul>
-<li><code>names_from</code>: Column used to create new column names. Does not need to be in quotes because it is a column in the data.</li>
-<li><code>values_from</code>: Column used to create cell values. Does not need to be in quotes because it is a column in the data.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>penguins_long <span class="sc">|&gt;</span> </span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> year,</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> count)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 4
-  species   `2007` `2008` `2009`
-  &lt;fct&gt;      &lt;int&gt;  &lt;int&gt;  &lt;int&gt;
-1 Adelie        50     50     52
-2 Chinstrap     26     18     24
-3 Gentoo        34     46     44</code></pre>
-</div>
-</div>
-</section>
-<section id="resources-1" class="level3">
-<h3 class="anchored" data-anchor-id="resources-1">Resources</h3>
-<p>These examples provide a short glimpse of the ways that you can manipulate the structure of data frames with tidyr. For more information see:</p>
-<ul>
-<li>A good overview is provided by the <a href="https://r4ds.hadley.nz/data-tidy.html">Data tidying</a> chapter of <em>R for Data Science</em>.</li>
-<li>The <a href="https://tidyr.tidyverse.org/articles/tidy-data.html">tidy data article</a> in the tidyr package. It is a code heavy version of Hadley Wickham’s <a href="https://vita.had.co.nz/papers/tidy-data.html">Tidy data paper</a>.</li>
-<li>The <a href="https://tidyr.tidyverse.org/articles/pivot.html">Pivoting article</a> in the tidyr package.</li>
-<li>For even more practice, check out the Data Carpentries, R for Social Science episode on <a href="https://datacarpentry.github.io/r-socialsci/04-tidyr.html">Data Wrangling with tidyr</a>.</li>
-</ul>
-
-
-</section>
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Hadley Wickham, “Tidy Data,” <em>Journal of Statistical Software</em> 59, no. 10 (2014), https://doi.org/10.18637/jss.v059.i10.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This is the base R pipe that was introduced in R 4.1 in 2021. You may also see the magrittr pipe (<code>%&gt;%</code>). Their functionality is essentially the same. The base R pipe is created using the pipe character (Shift + backslash) and the greater than sign. You can quickly type it out with the keyboard shortcut <code>Cmd/Ctrl + Shift + M</code>. To setup RStudio to use the base pipe with this keyboard shortcut, see <a href="../resources/rstudio-setup.html#other-tweaks">Setting up RStudio for success</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<section id="make-local-changes" class="level3">
+<h3 class="anchored" data-anchor-id="make-local-changes">3. Make local changes</h3>
+<ol type="1">
+<li>Make changes to your files. Create new files.</li>
+<li>Add the changed files to the stage by going to the RStudio Git tab and clicking on the check boxes alongside the files that have been modified.</li>
+<li>Optionally look at the changes that have been made since the last commit by clicking on the <code>Diff</code> button above the list of files.</li>
+<li>If not already in the Commit dialogue window, click on the Commit button.</li>
+<li>Type in a commit message in the message box on the right and then click the Commit button.</li>
+<li>Repeat steps 1–5 as many times as you want.</li>
 </ol>
-</section></div></main> <!-- /main -->
+</section>
+<section id="push-local-changes-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="push-local-changes-to-github">4. Push local changes to GitHub</h3>
+<p>There is no hard and fast rule for when you should push. Usually less often than you commit. It is more complex to change things back after you push.</p>
+<ol type="1">
+<li>Click on the blue <code>Pull</code> button in the RStudio Git tab.
+<ul>
+<li>This is done out of caution. In cases where you are working with other people, it is best to make sure you are up to date before pushing.</li>
+</ul></li>
+<li>Click on the green <code>Push</code> button in the RStudio Git tab to send your changes to GitHub.</li>
+<li>Confirm that the changes are on GitHub by going to the url of the repository.</li>
+</ol>
+<p>You can now repeat steps 3 and 4 to make local changes and push to GitHub.</p>
+</section>
+</section>
+<section id="local-first" class="level2">
+<h2 class="anchored" data-anchor-id="local-first">Local first</h2>
+<p>These instructions follow <a href="https://happygitwithr.com/new-github-first">Happy Git: New project, Existing project, GitHub last</a>.</p>
+<section id="initialize-your-project-as-a-git-project" class="level3">
+<h3 class="anchored" data-anchor-id="initialize-your-project-as-a-git-project">1. Initialize your project as a Git project</h3>
+<p>If it is a new RStudio project and a new folder, you can check on the Create a Git repository checkbox in the creation process. Your project will be set up as a Git repository from the beginning.</p>
+<p>If it is a project you have already worked on (such as <code>r-notes</code>), open your project in RStudio. In the console run:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_git</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You will be asked if you want to commit your files. In a larger project like <code>r-notes</code> you will want to do this manually, so select the number corresponding to no. In <a href="#fig-use-git" class="quarto-xref">Figure&nbsp;1</a> this would be 2: Absolutely Not or 3: Negative. You do, however, want to restart RStudio.</p>
+<p>The <code>use_git()</code> function runs <code>git init</code> on the command line and also adds a <code>.gitignore</code> file with good defaults ignored. If you ran <code>git init</code> in the Terminal tab, you can run <code>use_git_ignore()</code> to do the same thing. You should now have a Git tab in the upper-right pane and it should look like <a href="#fig-git-pane" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div class="quarto-layout-panel" data-layout="[65,35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 65.0%;justify-content: flex-start;">
+<div id="fig-use-git" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio console after running use_git(). It shows options for what to do with uncommitted files. 1 is For sure, 2 is Absolutely not, and 3 is Negative.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-use-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/use-git.png" class="img-fluid figure-img" alt="A screen shot of the RStudio console after running use_git(). It shows options for what to do with uncommitted files. 1 is For sure, 2 is Absolutely not, and 3 is Negative.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-use-git-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The output from running use_git().
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: flex-start;">
+<div id="fig-git-pane" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio Git and Files pane showing the state of things after initializing a project as a git repository.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-git-pane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/git-pane.png" class="img-fluid figure-img" alt="A screen shot of the RStudio Git and Files pane showing the state of things after initializing a project as a git repository.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-pane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The Git tab in RStudio with files yet to be committed.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ignore-files" class="level3">
+<h3 class="anchored" data-anchor-id="ignore-files">2. Ignore files</h3>
+<p>There will be files you will not want to track via Git. In particular, data files, especially larger ones, and files produced by other files, such as the html output from Quarto documents. You can add specific files, folders, or file types to your <code>.gitignore</code> file.</p>
+<ol type="1">
+<li>Ignore data folders
+<ul>
+<li>Add <code>data-raw/</code> to a new line in <code>.gitignore</code></li>
+</ul></li>
+<li>Ignore Quarto produced files
+<ul>
+<li>Add <code>*_files/</code> and <code>*.html</code> on new lines in <code>.gitignore</code>. The asterisk stands in for any character, so we ar ignoring all folders that end in <code>_files</code> and all HTML files.</li>
+</ul></li>
+</ol>
+</section>
+<section id="stage-and-commit" class="level3">
+<h3 class="anchored" data-anchor-id="stage-and-commit">3. Stage and commit</h3>
+<p>Now it is time to stage and commit the files. Remember that this is a two step process. Stage the files, then commit the changes.</p>
+<ol type="1">
+<li>Stage the files
+<ul>
+<li><code>git add filename</code> in the Terminal tab</li>
+<li>Or click on the Staged checkbox in the Git tab in RStudio.</li>
+</ul></li>
+<li>Commit
+<ul>
+<li><code>git commit -m "First commit"</code> in the Terminal tab</li>
+<li>Or click on the Commit button in the Git tab in RStudio and then write a commit message.</li>
+</ul></li>
+<li>Check the status of the project with <code>git status</code> in the Terminal tab
+<ul>
+<li>This should return “nothing to commit, working tree clean”.</li>
+</ul></li>
+</ol>
+</section>
+<section id="connect-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="connect-to-github">4. Connect to GitHub</h3>
+<p>There is a fast way and a manual way to do this. Follow these instructions to do it manually, but you can also run <code>use_github()</code>. This will:</p>
+<ul>
+<li>Create a new repository on GitHub with the same name as you local project folder.</li>
+<li>Set that repository as the remote server for the project named <code>origin</code>.</li>
+<li>Push the contents of your local project to GitHub.</li>
+<li>Open a browser to the repository on GitHub.</li>
+</ul>
+<p>It can do all of this because Git knows who you are and usethis has access to your GitHub personal access token. This is really useful, but it is also helpful to know what all of these steps are, so let’s go through them using the command line interface.</p>
+<ol type="1">
+<li>Go to GitHub and create a new repository
+<ol type="1">
+<li>Clicking on the plus button in the upper-right and select <code>New Repository</code>.</li>
+<li>Name the repository the <em>exact</em> same name as the RStudio project, such as <code>r-notes</code>.</li>
+<li>Select Create Repository, making sure <em>not</em> to add anything. It should be an empty repository.</li>
+</ol></li>
+<li>Add the GitHub repository as a remote server
+<ol type="1">
+<li>Click on the <span style="color:green"><strong>green Code button</strong></span> on the top right and copy the HTTPS URL.</li>
+<li>In the Terminal tab of the RStudio project that you are connecting to GitHub run <code>git remote add origin https://github.com/jessesalder/r-notes.git</code>.
+<ul>
+<li>This adds a remote server named <code>origin</code> at the url you provide.</li>
+</ul></li>
+</ol></li>
+<li>Push local files to GitHub
+<ol type="1">
+<li><code>git push --set-upstream origin main</code>.
+<ul>
+<li>Use of <code>--set-upstream</code> makes it so you only need to use the simple command <code>git push</code> or <code>git pull</code> in the future instead of <code>git push origin main</code>, where <code>origin</code> is the name of the remote server and <code>main</code> is the branch that you are pushing.</li>
+</ul></li>
+</ol></li>
+<li>Check that changes propagated to GitHub.
+<ol type="1">
+<li>Celebrate 🎉 your success if they did.</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="the-ongoing-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-ongoing-workflow">The ongoing workflow</h2>
+<p>Now you can do your work and practice the Git and GitHub workflow.</p>
+<ol type="1">
+<li>Make changes to your project.</li>
+<li>Add the changes to the stage and then commit with a message about the changes.</li>
+<li>Repeat steps 1 and 2 until you feel you have made good progress.</li>
+<li>Push the changes to GitHub.</li>
+<li>Repeat.</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1347,13 +1181,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../resources/ggplot2.html" class="pagination-link" aria-label="Visualization with ggplot2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Visualization with ggplot2</span>
+      <a href="../resources/git-setup.html" class="pagination-link" aria-label="Setting up Git and GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting up Git and GitHub</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../resources/git-overview.html" class="pagination-link" aria-label="Git and GitHub: An overview">
-        <span class="nav-page-text">Git and GitHub: An overview</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../resources/git-glossary.html" class="pagination-link" aria-label="Git Glossary">
+        <span class="nav-page-text">Git Glossary</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1365,7 +1199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/wrangling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/git-workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>

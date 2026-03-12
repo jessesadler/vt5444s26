@@ -472,7 +472,7 @@
     "href": "resources/quarto-docs.html#quartos-three-components",
     "title": "Quarto documents",
     "section": "Quarto’s three components",
-    "text": "Quarto’s three components\n\nYAML header\nThe YAML header provides a way to indicate the title of the document, document metadata such as author, the output format(s), and document wide options. YAML is a way to store data in a human-readable form. Its basic structure is key: value. The YAML heading is set off by three dashes ---. A somewhat complex heading might look like this:\n---\ntitle: \"My title here\"\nauthor:\n  - name: \"Jesse Sadler\"\n    email: jrsadler@vt.edu\n    affiliation: \"University Libraries\"\ndate: last-modified\nformat:\n  html:\n    toc: true\n    abstract: |\n      This is the abstract.\n\n      It has two paragraphs.\nexecute:\n  echo: false\n  warning: false\n---\nThe available keys can be found in the documentation for each type of output. Many options are shared across document output types, but some are not. See the HTML options for the widest number of options. It can be difficult to write these YAML headers, but happily in practice it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a project such as a website.\n\n\nMarkdown\nUnlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use Resources: Markdown syntax for Markdown foundations, and look at the Quarto Markdown documentation for more details on the style of Markdown you can use in Quarto documents.\n\n\nCode chunks\nWith Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:\n\n```{r}\n24 + 87\n```\n\n[1] 111\n\n\nYou can create code chunks in RStudio with:\n\nThe keyboard shortcut: Cmd + Option + I or Ctrl + Alt + I.\nTyping the chunk delimiters ```{r} and ```.\n\nOnce inside a code chunk, text functions as it does in an R script. Comments are made with #. Everything else is code. You can run the expressions in a chunk with Cmd + Return or Ctrl + Enter. Or you can run the entire chunk with the play button at the top right of the chunk. The output of the chunks will either be placed directly below the chunk or sent to the console. You can alter this in Global Options -&gt; R Markdown tab -&gt; Show output inline for all R Markdown documents checkbox. See also Other tweaks section in Setting up RStudio for success.\nThe primary difference between code chunks and R scripts is that code chunks can have special comments created with #| that provide options for the output of the chunk. These are formatted as YAML and override any defaults set in the YAML header. You can see the full list of options in the Quarto documentation.\n\n```{r}\n#| label: some-math\n#| eval: false\n24 + 87\n```\n\nThe label option names the chunk, making it easier to refer to the chunk and to see it in the outline in RStudio. label names should be short and not include spaces. It is recommended to use a dash between words.\nThe main options that affect the execution of code are:\n\neval: false prevents the code from being run. The code displays but does not run.\necho: false prevents the code from being shown in the output, but the code is run and outputs are shown. This is useful when you want people to see the output but the code does not need to be read by the audience.\ninclude: false prevents the code and outputs from being shown, though the code is run. This is useful for setup code.\nmessage: false or warning: false prevents messages or warnings from being output in the rendered document.\n\nThe other options you might want to change are the figure output. See R for Data Science for more details.\n\nTo set the size of the plot from ggplot2:\n\nfig-width: 6\nfig-asp: 0.618: Aspect ration of width to height. With this you do not need to set the width. 0.618 is the golden ratio.\nfig-width: 4: But you can set width instead of aspect.\n\nControl the output size within the output document:\n\nout-width: \"70%\": This would take up 70% of the content area.\nfig-align: center: How to align the plots.",
+    "text": "Quarto’s three components\n\n1. YAML header\nThe YAML header provides a way to indicate the title of the document, document metadata such as author, the output format(s), and document wide options. YAML is a way to store data in a human-readable form. Its basic structure is key: value. The YAML heading is set off by three dashes ---. A somewhat complex heading might look like this:\n---\ntitle: \"My title here\"\nauthor:\n  - name: \"Jesse Sadler\"\n    email: jrsadler@vt.edu\n    affiliation: \"University Libraries\"\ndate: last-modified\nformat:\n  html:\n    toc: true\n    abstract: |\n      This is the abstract.\n\n      It has two paragraphs.\nexecute:\n  echo: false\n  warning: false\n---\nThe available keys can be found in the documentation for each type of output. Many options are shared across document output types, but some are not. See the HTML options for the widest number of options. It can be difficult to write these YAML headers, but happily in practice it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a project such as a website.\n\n\n2. Markdown\nUnlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use Resources: Markdown syntax for Markdown foundations, and look at the Quarto Markdown documentation for more details on the style of Markdown you can use in Quarto documents.\n\n\n3. Code chunks\nWith Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:\n\n```{r}\n24 + 87\n```\n\n[1] 111\n\n\nYou can create code chunks in RStudio with:\n\nThe keyboard shortcut: Cmd + Option + I or Ctrl + Alt + I.\nTyping the chunk delimiters ```{r} and ```.\n\nOnce inside a code chunk, text functions as it does in an R script. Comments are made with #. Everything else is code. You can run the expressions in a chunk with Cmd + Return or Ctrl + Enter. Or you can run the entire chunk with the play button at the top right of the chunk. The output of the chunks will either be placed directly below the chunk or sent to the console. You can alter this in Global Options -&gt; R Markdown tab -&gt; Show output inline for all R Markdown documents checkbox. See also Other tweaks section in Setting up RStudio for success.\nThe primary difference between code chunks and R scripts is that code chunks can have special comments created with #| that provide options for the output of the chunk. These are formatted as YAML and override any defaults set in the YAML header. You can see the full list of options in the Quarto documentation.\n\n```{r}\n#| label: some-math\n#| eval: false\n24 + 87\n```\n\nThe label option names the chunk, making it easier to refer to the chunk and to see it in the outline in RStudio. label names should be short and not include spaces. It is recommended to use a dash between words.\nThe main options that affect the execution of code are:\n\neval: false prevents the code from being run. The code displays but does not run.\necho: false prevents the code from being shown in the output, but the code is run and outputs are shown. This is useful when you want people to see the output but the code does not need to be read by the audience.\ninclude: false prevents the code and outputs from being shown, though the code is run. This is useful for setup code.\nmessage: false or warning: false prevents messages or warnings from being output in the rendered document.\n\nThe other options you might want to change are the figure output. See R for Data Science for more details.\n\nTo set the size of the plot from ggplot2:\n\nfig-width: 6\nfig-asp: 0.618: Aspect ration of width to height. With this you do not need to set the width. 0.618 is the golden ratio.\nfig-width: 4: But you can set width instead of aspect.\n\nControl the output size within the output document:\n\nout-width: \"70%\": This would take up 70% of the content area.\nfig-align: center: How to align the plots.",
     "crumbs": [
       "Resources",
       "R",
@@ -624,51 +624,183 @@
     ]
   },
   {
-    "objectID": "resources/git.html",
-    "href": "resources/git.html",
-    "title": "Git",
+    "objectID": "resources/git-workflow.html",
+    "href": "resources/git-workflow.html",
+    "title": "The Git and GitHub workflow",
     "section": "",
-    "text": "Check if you have git installed by going to the Terminal tab in the console pane of RStudio and running git --version. If you get a version, you have git. If you get an error, you do not.\n\n\nYou can install Git and the command line Bash with Git for Windows. You can follow the instructions for Git for Windows at the Carpentries.\n\n\n\nGo into your Terminal app and type git --version. If git is not installed already, follow the instructions to Install the “command line developer tools”. You do not need to download the Xcode application.\nYou can do this on the command line with: xcode-select --install.",
+    "text": "This page will break down the basic Git and GitHub workflow, concentrating on the workflow using R and RStudio. It will discuss three different interfaces for working with Git and GitHub: the command line, the usethis package helper functions, and RStudio’s graphical Git interface.",
     "crumbs": [
       "Resources",
       "Git and GitHub",
-      "Getting started with Git"
+      "The Git and GitHub workflow"
     ]
   },
   {
-    "objectID": "resources/git.html#installing-git",
-    "href": "resources/git.html#installing-git",
-    "title": "Git",
-    "section": "",
-    "text": "Check if you have git installed by going to the Terminal tab in the console pane of RStudio and running git --version. If you get a version, you have git. If you get an error, you do not.\n\n\nYou can install Git and the command line Bash with Git for Windows. You can follow the instructions for Git for Windows at the Carpentries.\n\n\n\nGo into your Terminal app and type git --version. If git is not installed already, follow the instructions to Install the “command line developer tools”. You do not need to download the Xcode application.\nYou can do this on the command line with: xcode-select --install.",
+    "objectID": "resources/git-workflow.html#tldr",
+    "href": "resources/git-workflow.html#tldr",
+    "title": "The Git and GitHub workflow",
+    "section": "TL;DR",
+    "text": "TL;DR\nThe basic steps for using Git are fairly straightforward, but they do involve more overhead than you will be used to in working on a project. One way to think about it is that Git forces you to be explicit about organizing the changes you make to your project.\n\nInitialize your repository (project folder) as a Git project.\nMake changes to the documents in the folder.\nAdd the changed files to the stage.\nCommit those changed files as a save state with a commit message.\nRepeat steps 2–4.\nPush your changes to GitHub repository.\n\nThere are many different ways you can go about doing these foundational steps. Adding in GitHub to the mix brings in further complexity. Do you create the repository on GitHub first or on your computer. Let’s go through creating a repository on GitHub first, which makes things a bit easier because each step actually combines multiple steps into one. Then, we will go through how to get our r-notes project on GitHub, which is a bit more manual.\nFor more background, see the options described in Happy Git.",
     "crumbs": [
       "Resources",
       "Git and GitHub",
-      "Getting started with Git"
+      "The Git and GitHub workflow"
     ]
   },
   {
-    "objectID": "resources/git.html#git-resources",
-    "href": "resources/git.html#git-resources",
-    "title": "Git",
+    "objectID": "resources/git-workflow.html#github-first",
+    "href": "resources/git-workflow.html#github-first",
+    "title": "The Git and GitHub workflow",
+    "section": "GitHub first",
+    "text": "GitHub first\nThese instructions follow Happy Git: New project, GitHub first.\n\n1. Make a new repository on GitHub\n\nGo to GitHub and make sure you are signed in. In the upper-right click on the plus button and select New Repository.\nName your repository using the naming rules we have already defined. Make it short with no spaces, use lowercase letters.\nUnder configuration, you can keep everything as is, but select Add README to On.\nSelect Create Repository.\n\nYou will now be taken to the GitHub repository for your project.\nThis initialize the repository and makes the first commit.\n\nClick on the green Code button on the top right.\n\nMake sure HTTPS is selected.\nCopy the URL to your clipboard.\n\n\n\n\n2. New RStudio project from the GitHub repository\nThis step combines a number of steps that are usually separate. It creates a new folder that is an RStudio project, creates the connection between that project folder and the GitHub repository, and downloads the README we created in step 1. We can do this all with usethis::create_from_github(). Paste the url you copied from the GitHub repository that ends in .git into the first argument and choose where to put the new repository in the second argument.\n\ncreate_from_github(\n  \"https://github.com/YOU/YOUR_REPO.git\",\n  destdir = \"~/path/to/hist5444s26/\"\n)\n\nYou should now be in a new RStudio project and in the upper-right pane you should have a Git tab.\n\n\n3. Make local changes\n\nMake changes to your files. Create new files.\nAdd the changed files to the stage by going to the RStudio Git tab and clicking on the check boxes alongside the files that have been modified.\nOptionally look at the changes that have been made since the last commit by clicking on the Diff button above the list of files.\nIf not already in the Commit dialogue window, click on the Commit button.\nType in a commit message in the message box on the right and then click the Commit button.\nRepeat steps 1–5 as many times as you want.\n\n\n\n4. Push local changes to GitHub\nThere is no hard and fast rule for when you should push. Usually less often than you commit. It is more complex to change things back after you push.\n\nClick on the blue Pull button in the RStudio Git tab.\n\nThis is done out of caution. In cases where you are working with other people, it is best to make sure you are up to date before pushing.\n\nClick on the green Push button in the RStudio Git tab to send your changes to GitHub.\nConfirm that the changes are on GitHub by going to the url of the repository.\n\nYou can now repeat steps 3 and 4 to make local changes and push to GitHub.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "The Git and GitHub workflow"
+    ]
+  },
+  {
+    "objectID": "resources/git-workflow.html#local-first",
+    "href": "resources/git-workflow.html#local-first",
+    "title": "The Git and GitHub workflow",
+    "section": "Local first",
+    "text": "Local first\nThese instructions follow Happy Git: New project, Existing project, GitHub last.\n\n1. Initialize your project as a Git project\nIf it is a new RStudio project and a new folder, you can check on the Create a Git repository checkbox in the creation process. Your project will be set up as a Git repository from the beginning.\nIf it is a project you have already worked on (such as r-notes), open your project in RStudio. In the console run:\n\nlibrary(usethis)\nuse_git()\n\nYou will be asked if you want to commit your files. In a larger project like r-notes you will want to do this manually, so select the number corresponding to no. In Figure 1 this would be 2: Absolutely Not or 3: Negative. You do, however, want to restart RStudio.\nThe use_git() function runs git init on the command line and also adds a .gitignore file with good defaults ignored. If you ran git init in the Terminal tab, you can run use_git_ignore() to do the same thing. You should now have a Git tab in the upper-right pane and it should look like Figure 2.\n\n\n\n\n\n\n\n\n\nFigure 1: The output from running use_git().\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: The Git tab in RStudio with files yet to be committed.\n\n\n\n\n\n\n\n\n2. Ignore files\nThere will be files you will not want to track via Git. In particular, data files, especially larger ones, and files produced by other files, such as the html output from Quarto documents. You can add specific files, folders, or file types to your .gitignore file.\n\nIgnore data folders\n\nAdd data-raw/ to a new line in .gitignore\n\nIgnore Quarto produced files\n\nAdd *_files/ and *.html on new lines in .gitignore. The asterisk stands in for any character, so we ar ignoring all folders that end in _files and all HTML files.\n\n\n\n\n3. Stage and commit\nNow it is time to stage and commit the files. Remember that this is a two step process. Stage the files, then commit the changes.\n\nStage the files\n\ngit add filename in the Terminal tab\nOr click on the Staged checkbox in the Git tab in RStudio.\n\nCommit\n\ngit commit -m \"First commit\" in the Terminal tab\nOr click on the Commit button in the Git tab in RStudio and then write a commit message.\n\nCheck the status of the project with git status in the Terminal tab\n\nThis should return “nothing to commit, working tree clean”.\n\n\n\n\n4. Connect to GitHub\nThere is a fast way and a manual way to do this. Follow these instructions to do it manually, but you can also run use_github(). This will:\n\nCreate a new repository on GitHub with the same name as you local project folder.\nSet that repository as the remote server for the project named origin.\nPush the contents of your local project to GitHub.\nOpen a browser to the repository on GitHub.\n\nIt can do all of this because Git knows who you are and usethis has access to your GitHub personal access token. This is really useful, but it is also helpful to know what all of these steps are, so let’s go through them using the command line interface.\n\nGo to GitHub and create a new repository\n\nClicking on the plus button in the upper-right and select New Repository.\nName the repository the exact same name as the RStudio project, such as r-notes.\nSelect Create Repository, making sure not to add anything. It should be an empty repository.\n\nAdd the GitHub repository as a remote server\n\nClick on the green Code button on the top right and copy the HTTPS URL.\nIn the Terminal tab of the RStudio project that you are connecting to GitHub run git remote add origin https://github.com/jessesalder/r-notes.git.\n\nThis adds a remote server named origin at the url you provide.\n\n\nPush local files to GitHub\n\ngit push --set-upstream origin main.\n\nUse of --set-upstream makes it so you only need to use the simple command git push or git pull in the future instead of git push origin main, where origin is the name of the remote server and main is the branch that you are pushing.\n\n\nCheck that changes propagated to GitHub.\n\nCelebrate 🎉 your success if they did.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "The Git and GitHub workflow"
+    ]
+  },
+  {
+    "objectID": "resources/git-workflow.html#the-ongoing-workflow",
+    "href": "resources/git-workflow.html#the-ongoing-workflow",
+    "title": "The Git and GitHub workflow",
+    "section": "The ongoing workflow",
+    "text": "The ongoing workflow\nNow you can do your work and practice the Git and GitHub workflow.\n\nMake changes to your project.\nAdd the changes to the stage and then commit with a message about the changes.\nRepeat steps 1 and 2 until you feel you have made good progress.\nPush the changes to GitHub.\nRepeat.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "The Git and GitHub workflow"
+    ]
+  },
+  {
+    "objectID": "resources/git-overview.html",
+    "href": "resources/git-overview.html",
+    "title": "Git and GitHub: An overview",
+    "section": "",
+    "text": "Git is a command line version control system. Think of it as the versioning system you might be familiar with from Google Docs but much more robust and much more explicitly invoked. You might also think of it as a way to replace the manual versioning system of final-doc, final-doc1, really-final-doc123 as demonstrated in PhD comics:\n\n\n\nFinal.doc by PhD Comics.\n\n\nGit allows you to track changes to the files in a project with named save states. Git can track many types of files, but it is designed to work with plain text files such as programming scripts and Markdown files. A Git project is usually referred to as a repository, which is a different way of saying a folder.1 The named save states are called commits. If you later decide a change you made is not beneficial, you can roll it back and return to a previous save state (commit). The primary feature of Git is to make it safe to make changes in your project because you know that you can always revert any changes that do not work out. This whole commit history becomes part of the project. Git can scale from a single document to large-scale software projects.\nThere are a variety of ways to use Git, but it is built as a command line tool. You run git commands in a terminal that take the form git command option. However, there are also a variety of graphical user interface tools to run Git. We will be using Git in RStudio, and the guides will demonstrate the different ways you can use Git. You can use Git on your own just on your computer to track your changes and allow you to return to previous states. However, you can unlock even more capabilities by adding in an external website that stores your project and your commit history, enabling you to host your files online and collaborate with other people on a project. This is where GitHub and other similar websites come in.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git and GitHub: An overview"
+    ]
+  },
+  {
+    "objectID": "resources/git-overview.html#what-is-git",
+    "href": "resources/git-overview.html#what-is-git",
+    "title": "Git and GitHub: An overview",
+    "section": "",
+    "text": "Git is a command line version control system. Think of it as the versioning system you might be familiar with from Google Docs but much more robust and much more explicitly invoked. You might also think of it as a way to replace the manual versioning system of final-doc, final-doc1, really-final-doc123 as demonstrated in PhD comics:\n\n\n\nFinal.doc by PhD Comics.\n\n\nGit allows you to track changes to the files in a project with named save states. Git can track many types of files, but it is designed to work with plain text files such as programming scripts and Markdown files. A Git project is usually referred to as a repository, which is a different way of saying a folder.1 The named save states are called commits. If you later decide a change you made is not beneficial, you can roll it back and return to a previous save state (commit). The primary feature of Git is to make it safe to make changes in your project because you know that you can always revert any changes that do not work out. This whole commit history becomes part of the project. Git can scale from a single document to large-scale software projects.\nThere are a variety of ways to use Git, but it is built as a command line tool. You run git commands in a terminal that take the form git command option. However, there are also a variety of graphical user interface tools to run Git. We will be using Git in RStudio, and the guides will demonstrate the different ways you can use Git. You can use Git on your own just on your computer to track your changes and allow you to return to previous states. However, you can unlock even more capabilities by adding in an external website that stores your project and your commit history, enabling you to host your files online and collaborate with other people on a project. This is where GitHub and other similar websites come in.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git and GitHub: An overview"
+    ]
+  },
+  {
+    "objectID": "resources/git-overview.html#what-is-github",
+    "href": "resources/git-overview.html#what-is-github",
+    "title": "Git and GitHub: An overview",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\nGitHub is a website that hosts git repositories or projects. It acts as what is known as a remote server, a location of your project files that is not on your local computer. GitHub is only one of many options for hosting your Git repositories. Others include GitLab and Codeberg. It is the mostly widely used place to host your Git projects and provides some nice additional features, but it is important to know that while GitHub is tied to Git, Git is not dependent on GitHub in any way.\nSo what do you get with the combination of Git and GitHub? Three main capabilities are:\n\nShare your work with others.\nMake it possible to collaborate with other people.\nHosting the files for a static website made with markdown files such as a Quarto website.\n\nLet’s go over these one-by-one. By placing your project on GitHub, if your project is Public, other people can see it. Not only that, other people can collaborate with you by pulling the repository to their own computer, making changes (commits), and then pushing the changes back up to GitHub.2 Finally, in this course we will use GitHub to host the websites you make with Quarto just like this syllabus, which can be found at this GitHub repository.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git and GitHub: An overview"
+    ]
+  },
+  {
+    "objectID": "resources/git-overview.html#resources",
+    "href": "resources/git-overview.html#resources",
+    "title": "Git and GitHub: An overview",
+    "section": "Resources",
+    "text": "Resources\nGit is complex, but you only need to use a very small portion of the capabilities of Git to make it beneficial. The course resources will try to provide a solid basis for the most used Git commands with an emphasis on using Git with R and RStudio. We will be using three different interfaces to setup and run Git commands: the command line through the Terminal tab in RStudio, through R via the usethis package helper functions run in the Console tab, and RStudio’s graphical Git interface.\n\nInstalling Git\nSetting up Git and GitHub\nThe Git and GitHub workflow\nGit glossary\n\nIf you find yourself wanting more documentation, use the below resources are a good place to start.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git and GitHub: An overview"
+    ]
+  },
+  {
+    "objectID": "resources/git-overview.html#git-resources",
+    "href": "resources/git-overview.html#git-resources",
+    "title": "Git and GitHub: An overview",
     "section": "Git resources",
-    "text": "Git resources\n\nSoftware Carpentry - Introduction to Git\nChacon, Pro Git\nGitHub docs\nWizard Zines: Git cheatsheet",
+    "text": "Git resources\n\nSoftware Carpentry - Introduction to Git\nScott Chacon and Ben Straub, Pro Git: This is the official Git documentation book and is actually more readable than you might assume.\nGitHub docs: Unsurprisingly, GitHub has a lot of documentation to help you get started with Git and how you can use GitHub.\nWizard Zines: Git cheatsheet: This goes into more complex situations than you are likely to face, but it is a good overview of useful commands.",
     "crumbs": [
       "Resources",
       "Git and GitHub",
-      "Getting started with Git"
+      "Git and GitHub: An overview"
     ]
   },
   {
-    "objectID": "resources/git.html#rstudio-and-git",
-    "href": "resources/git.html#rstudio-and-git",
-    "title": "Git",
+    "objectID": "resources/git-overview.html#rstudio-and-git",
+    "href": "resources/git-overview.html#rstudio-and-git",
+    "title": "Git and GitHub: An overview",
     "section": "RStudio and Git",
-    "text": "RStudio and Git\n\nJenny Bryan, Happy Git and GitHub for the useR.\nusethis: Managing Git(Hub) Credentials.\nJulie Lowndes and Allison Horst, R for Excel Users: GitHub.\nMaëlle Salmon, git and GitHub in R for the casual user.\nGarrick Aden-Buie, Pull Request Flow with usethis.",
+    "text": "RStudio and Git\n\nJenny Bryan, Happy Git and GitHub for the useR.\n\nThis is an invaluable resource for using Git and GitHub from the perspective of R and RStudio.\n\nusethis package Git and GitHub setup\n\nusethis setup.\nManaging Git(Hub) Credentials.\n\nJulie Lowndes and Allison Horst, R for Excel Users: GitHub.\nMaëlle Salmon, git and GitHub in R for the casual user.\nGarrick Aden-Buie, Pull Request Flow with usethis.",
     "crumbs": [
       "Resources",
       "Git and GitHub",
-      "Getting started with Git"
+      "Git and GitHub: An overview"
+    ]
+  },
+  {
+    "objectID": "resources/git-overview.html#footnotes",
+    "href": "resources/git-overview.html#footnotes",
+    "title": "Git and GitHub: An overview",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSee the Git glossary for more complete definitions of these terms.↩︎\nSee The Git and GitHub workflow for a more in-depth discussion of this workflow.↩︎",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git and GitHub: An overview"
+    ]
+  },
+  {
+    "objectID": "resources/git-glossary.html",
+    "href": "resources/git-glossary.html",
+    "title": "Git glossary",
+    "section": "",
+    "text": "Repository: The project folder both on your computer and on the remote server, namely GitHub. This is often shortened to repo.\nInitialize: Make your project folder a Git repository.\nStatus: Check on the status of the project. What files have been changed since the last commit? Which files, if any, have been placed on the stage.\nAdd: Add files to the stage as the first step to making a commit.\nCommit: A save state for your project with a corresponding message. The commit includes all differences to the files that were added to the stage from the previous commit.\nCommit message: The message associated with the commit. Commit messages should have a short but descriptive title and then can contain a longer description of the changes. It is best to emphasize why the changes were made since what changes were made can be seen through the diffs.\nIgnore: Use of a .gitignore file to ignore, or not track, certain files, folders, or types of files. This is useful for files that are only useful on you local computer or large files that do not need to be tracked such as data.\nDiff: The line-by-line differences for a file between two different commits.\nLog: The commit history.\nBranch: A named set of commits. The default branch will be called main, but you can work on multiple parallel branches at a time.\n\nFeature branch: One way you may hear people refer to a branch is a feature branch. This is a branch that implements a single feature. Only once the feature is completed is it merged into the main branch.\nGitHub pages branch: Many static sites that use GitHub will deploy their websites through a special GitHub pages branch.\n\nMerge: Merge the differences between two branches together.\nRemote: A remote Git server such as GitHub.\n\nOrigin: In your own projects the remote server is typically named origin.\nUpstream: If you fork a project, the remote server of the original project is typically named upstream.\n\nFork: A copy of someone else’s project (repository) that you have control over on your GitHub account and/or on your computer.\nClone: Download a repository from a remote server, such as GitHub, to your local computer and create the push/pull connection.\nPush: Send all of the commits, and the changes made within those commits, that are not on the remote server to the server, namely to your GitHub repository.\nPull: Download all of the commits, and the changes made within those commits, that are on the remote server to your computer.\nPull request: A pull request, or PR, is something you generally do when collaborating with others. You make changes to a project, generally on a feature branch, then push the commits to GitHub. You then request that the project pull in those changes, hence a pull request.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git Glossary"
+    ]
+  },
+  {
+    "objectID": "resources/git-glossary.html#git-actions-and-commands",
+    "href": "resources/git-glossary.html#git-actions-and-commands",
+    "title": "Git glossary",
+    "section": "Git actions and commands",
+    "text": "Git actions and commands\n\n\n\n\n\n\n\n\nAction\nDescription\nCommand line\n\n\n\n\nInitialize\nInitialize a Git repository\ngit init\n\n\nStatus\nCheck the status of changes\ngit status\n\n\nAdd\nAdd files to the stage\ngit add filename\n\n\nCommit\nA named saved state for added files\ngit commit -m \"message\"\n\n\nDiff\nDifferences in a file between commits\ngit diff\n\n\nLog\nHistory of commits\ngit log\n\n\nBranch\nNamed set of commits\ngit branch\n\n\nPush\nSend commits to GitHub\ngit push\n\n\nPull\nDownload commits from GitHub\ngit pull",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git Glossary"
+    ]
+  },
+  {
+    "objectID": "resources/git-glossary.html#faq",
+    "href": "resources/git-glossary.html#faq",
+    "title": "Git glossary",
+    "section": "FAQ",
+    "text": "FAQ\n\nHow often should you commit?\n\nA commit should complete a single problem or accomplishment. How large is a single problem? It depends. It might be a single line of code. It might be writing a full document.\nThe commit message should focus on why the changes were made because the exact nature of the changes can be shown with inspecting the commit.\n\nHow often should you push?\n\nLess often than you commit. It is easier to alter things or deal with any problems associated with Git when the changes are local than after you have pushed to GitHub.\nOnce you have a coherent chunk of commits is a good time to push. Pushing also serves as a backup of your project.\nPushing makes your work public, so it is a good idea to have some level of completeness or have code that works.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Git Glossary"
     ]
   },
   {
@@ -1412,7 +1544,7 @@
     "href": "content/08-content-git.html#assignment",
     "title": "Reproducible workflows with Git",
     "section": "Assignment",
-    "text": "Assignment\n\nInstall Git if you do not already have it installed on your computer.\n\nFollow the instructions in Resources: Git.\n\nPractice data wrangling and visualization with R. You can:\n\nExpand on your analysis of the SNiGB data in a Quarto document.\nStart a data analysis project of your own based on data you have collected or found.\n\nCreate an RStudio project in your hist5444s26/ folder. Set up the project as described in Setting up RStudio for success.\nWhat can you do with the data? What would you like to be able to do?\nReflect on what you have learned in a Quarto document and in your commonplace book.\n\n\nThink about setting goals for the rest of the semester.",
+    "text": "Assignment\n\nInstall Git if you do not already have it installed on your computer.\n\nFollow the instructions in Resources: Installing Git.\n\nPractice data wrangling and visualization with R. You can:\n\nExpand on your analysis of the SNiGB data in a Quarto document.\nStart a data analysis project of your own based on data you have collected or found.\n\nCreate an RStudio project in your hist5444s26/ folder. Set up the project as described in Setting up RStudio for success.\nWhat can you do with the data? What would you like to be able to do?\nReflect on what you have learned in a Quarto document and in your commonplace book.\n\n\nThink about setting goals for the rest of the semester.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1436,7 +1568,7 @@
     "href": "content/08-content-git.html#resources",
     "title": "Reproducible workflows with Git",
     "section": "Resources",
-    "text": "Resources\nResources: Git",
+    "text": "Resources\n\nGit and GitHub: An overview: This page contains more resources on Git and GitHub.\nInstalling Git\nSetting up Git and GitHub\nThe Git and GitHub workflow\nGit glossary",
     "crumbs": [
       "Content",
       "Topics",
@@ -1729,6 +1861,114 @@
       "Resources",
       "R",
       "Visualization with ggplot2"
+    ]
+  },
+  {
+    "objectID": "resources/git-install.html",
+    "href": "resources/git-install.html",
+    "title": "Installing Git",
+    "section": "",
+    "text": "Check if you have git installed by going to the Terminal tab in the console pane of RStudio and running git --version. If you get a version as in Figure 1, you have git. If you get an error or another message, you do not.\nIf git is installed, you can move on to Setting up Git and GitHub, otherwise follow the instructions below.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Installing Git"
+    ]
+  },
+  {
+    "objectID": "resources/git-install.html#windows",
+    "href": "resources/git-install.html#windows",
+    "title": "Installing Git",
+    "section": "Windows",
+    "text": "Windows\nYou can install Git and the command line Bash with Git for Windows. You can follow the instructions for Git for Windows at the Carpentries.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Installing Git"
+    ]
+  },
+  {
+    "objectID": "resources/git-install.html#macos",
+    "href": "resources/git-install.html#macos",
+    "title": "Installing Git",
+    "section": "MacOS",
+    "text": "MacOS\nGo into your Terminal app and type git --version and then press return to run it. If you have git installed, it will tell you the version.\nIf git is not installed already, follow the instructions to Install the “command line developer tools”. You do not need to download the Xcode application.\nYou can do this on the command line with: xcode-select --install.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Installing Git"
+    ]
+  },
+  {
+    "objectID": "resources/git-install.html#check-that-you-have-git-in-rstudio",
+    "href": "resources/git-install.html#check-that-you-have-git-in-rstudio",
+    "title": "Installing Git",
+    "section": "Check that you have Git in RStudio",
+    "text": "Check that you have Git in RStudio\nAfter you download Git, you should restart RStudio to make sure you have a clean Terminal. Return to the Terminal tab as shown in Figure 1 and run git --version to check that you have Git installed.\nIf everything works, you can move on to Setting up Git and GitHub. If you are still getting an error, check the resources on installing Git.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Installing Git"
+    ]
+  },
+  {
+    "objectID": "resources/git-install.html#resources-installing-git",
+    "href": "resources/git-install.html#resources-installing-git",
+    "title": "Installing Git",
+    "section": "Resources: Installing Git",
+    "text": "Resources: Installing Git\n\nCarpentries instructions for installing Git.\nJenny Bryan, Happy Git and GitHub for the useR: Install Git.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Installing Git"
+    ]
+  },
+  {
+    "objectID": "resources/git-setup.html",
+    "href": "resources/git-setup.html",
+    "title": "Setting up Git and GitHub",
+    "section": "",
+    "text": "Once you have installed Git, you have to set it up and make sure your computer can communicate with GitHub. This is something you should only need to do once on your computer.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Setting up Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "resources/git-setup.html#setting-up-git",
+    "href": "resources/git-setup.html#setting-up-git",
+    "title": "Setting up Git and GitHub",
+    "section": "Setting up Git",
+    "text": "Setting up Git\nThe primary way to set up Git is through the command line interface. There are only a few commands you need to run, and they are not too intimidating. However, the usethis package has implemented some R functions that can be used to set up Git.1 This page will show instructions for both ways to set up Git. You only need to do one way. The tasks to do are:\n\nProvide a name to associate with the changes you make.\nProvide an email.\nChoose a default text editor for your commit messages.\nConfigure the default name for an initial branch.\n\n\nWith the command line interface\nYou can set up Git in the Terminal app on MacOS, GitBash in Windows, or the Terminal tab in RStudio. For another resource on setting up Git with the command line, see Software Carpentries: Setting up Git. This will set up your Git configuration file.\nFirst, tell Git your name and email. This information is used to identify you when you make saved changes to a product. This way, if many people are working on a project together, you will know who made what changes. Your user name can be anything you want and does not have to be the same as your GitHub profile; first and last name is a good default. The email you use should be the same as the one you have associated with your GitHub account.\n\n$ git config --global user.name \"Your Name\"\n$ git config --global user.email \"your.email@email.com\"\n\nIt is standard for your saved change states (commits) to have a message that identifies them and describes why the changes were made. You can type these messages as you make your commits, but if you forget, a text editor will launch. The below example uses nano, which is a relatively friendly command line text editor.\n\n$ git config --global core.editor \"nano -w\"\n\nLastly, we want to set up the name of our default branch. For information on branches, see The Git and GitHub workflow. The default branch used to be called master, but people have moved away from this in favor of main.\n\n$ git config --global init.defaultBranch main\n\nYou can check the changes that you made by printing the contents of your configuration file to the command line.\n\n$ git config --list --global\n\n\n\nWith usethis\nAn alternative is to use usethis to modify your Git configuration with R code. It will do the exact same thing.\n\nlibrary(usethis)\nuse_git_config(\n  user.name = \"Your Name\",\n  user.email = \"your.email@email.com\",\n  core.editor = \"nano\")\n\n# Change default branch to main\ngit_default_branch_configure()\n\nTo check your configuration use gert, which provides the basis for the git functions in usethis. Or you can run git_sitrep() from usethis, which will provide a more complete situation report of your Git setup.\n\ngert::git_config()\ngit_sitrep()",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Setting up Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "resources/git-setup.html#setting-up-github",
+    "href": "resources/git-setup.html#setting-up-github",
+    "title": "Setting up Git and GitHub",
+    "section": "Setting up GitHub",
+    "text": "Setting up GitHub\nFollow the instructions from the Carpentries on creating a GitHub account and setting up multi-factor authentication.\n\nConnecting your computer to GitHub\nConnecting your computer to GitHub can be a bit tricky because of the need to access GitHub in a secure fashion. You have to tell GitHub you are who you are and, therefore, have the ability to make changes to your projects. To do this we will follow the instructions from Happy Git and GitHub for the useR and the Managing Git(Hub) Credentials advice from usethis. This uses HTTPS and Personal Access Tokens to make the connection between your computer and GitHub.2\n\nGenerate a personal access token\nFirst, we need to generate a GitHub Personal access token (PAT). This is different from the password for your GitHub account. You can do this from the Tokens page on GitHub: via Settings → Developer settings (all the way at the bottom of the left sidebar) → Personal access tokens. We will use the Personal access tokens (classic), which are more permissive. You can create a new token by selecting Generate new token → Generate new token (classic) or via usethis.\n\ncreate_github_token()\n\nProvide a name for the token, maybe for the computer you are using, or after our class. create_github_token() preselects scopes that should work for your purposes. You can then select Generate token. Stay on the page so you can copy the PAT you generated.\n\n\nStore your personal access token\nTo store your PAT, copy it and then run:\n\ngitcreds::gitcreds_set()\n\nIf you do not have a PAT stored, you can now paste your PAT. If you already had one, you can select an option to exit, replace your PAT, or see it.\nIt may also be a good idea to store your PAT in a password manager alongside your\n\n\nCheck that things work\nNow let’s check that things worked. First, restart your R session: Session → Restart R. Load usethis again and then run gh_token_help().\n\nlibrary(usethis)\ngh_token_help()\n\nTo get even more information about your setup run git_sitrep().\n\n`git_sitrep()`\n\n\n\n\nOngoing maintenance\nIf you set the expiration of your token for 30 days, the default, you will need to regenerate it often. You can do this by going to the tokens page, selecting regenerate, and then run gitcreds::gitcreds_set() and paste it in.",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Setting up Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "resources/git-setup.html#footnotes",
+    "href": "resources/git-setup.html#footnotes",
+    "title": "Setting up Git and GitHub",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe usethis functions work by running the command line commands for you.↩︎\nIf you are curious to read more about the difference between the different protocols (HTTPS and SSH), see the discussion in Happy Git.↩︎",
+    "crumbs": [
+      "Resources",
+      "Git and GitHub",
+      "Setting up Git and GitHub"
     ]
   },
   {
