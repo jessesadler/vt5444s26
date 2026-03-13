@@ -128,13 +128,16 @@ It can do all of this because Git knows who you are and usethis has access to yo
     3. Select Create Repository, making sure *not* to add anything. It should be an empty repository.
 2. Add the GitHub repository as a remote server
     1. Click on the [**green Code button**]{style="color:green"} on the top right and copy the HTTPS URL.
-    2. In the Terminal tab of the RStudio project that you are connecting to GitHub run `git remote add origin https://github.com/jessesalder/r-notes.git`.
+    2. In the Terminal tab of the RStudio project that you are connecting to GitHub run `git remote add origin your-url-here`
         - This adds a remote server named `origin` at the url you provide.
-3. Push local files to GitHub
-    1. `git push --set-upstream origin main`.
-        - Use of `--set-upstream` makes it so you only need to use the simple command `git push` or `git pull` in the future instead of `git push origin main`, where `origin` is the name of the remote server and `main` is the branch that you are pushing.
-4. Check that changes propagated to GitHub.
-    1. Celebrate 🎉 your success if they did.
+3. Check the status of the remote server.
+    - Run `git remote -v` in the Terminal tab.
+    - The output to this should be the name of the remote (`origin`) followed by the Git url. You should have both fetch and push capabilities.
+4. Push local files to GitHub
+    - Run `git push --set-upstream origin main` in the Terminal tab.
+    - Use of `--set-upstream` makes it so you only need to use the simple command `git push` or `git pull` in the future instead of `git push origin main`, where `origin` is the name of the remote server and `main` is the branch that you are pushing.
+5. Check that changes propagated to GitHub.
+    - Celebrate 🎉 your success if they did.
 
 ## The ongoing workflow
 Now you can do your work and practice the Git and GitHub workflow.

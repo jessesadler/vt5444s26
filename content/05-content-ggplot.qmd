@@ -7,7 +7,8 @@ format: html
 *This week we dive into programming with R by learning to create visualizations with ggplot2 and learn how to run R code in RStudio.*
 
 ## Reading
-- Kieran Healy, [*Data Visualization: A Practical Introduction*](https://socviz.co) (Princeton University Press, 2018), Chapter 1: Look at data.
+- Kieran Healy, *Data Visualization: A Practical Introduction* (Princeton University Press, 2018), Chapter 1: Look at data.
+    - The [second edition](https://socviz.co) is now available in preview.
 - Claus Wilke, [*Fundamentals of Data Visualization*](https://clauswilke.com/dataviz/) (O'Reilly, 2019), Chapters 2 and 5.
 - John Theibault, "Visualizations and Historical Arguments," in *Writing History in the Digital Age*, ed. Jack Dougherty and Kristen Nawrotzki (University of Michigan Press, 2013), <https://doi.org/10.3998/dh.12230987.0001.001>, 173–185.
 
