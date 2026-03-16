@@ -732,22 +732,25 @@ Figure&nbsp;2: The Git tab in RStudio with files yet to be committed.
 <li>Add the GitHub repository as a remote server
 <ol type="1">
 <li>Click on the <span style="color:green"><strong>green Code button</strong></span> on the top right and copy the HTTPS URL.</li>
-<li>In the Terminal tab of the RStudio project that you are connecting to GitHub run <code>git remote add origin https://github.com/jessesalder/r-notes.git</code>.
+<li>In the Terminal tab of the RStudio project that you are connecting to GitHub run <code>git remote add origin your-url-here</code>
 <ul>
 <li>This adds a remote server named <code>origin</code> at the url you provide.</li>
 </ul></li>
 </ol></li>
-<li>Push local files to GitHub
-<ol type="1">
-<li><code>git push --set-upstream origin main</code>.
+<li>Check the status of the remote server.
 <ul>
+<li>Run <code>git remote -v</code> in the Terminal tab.</li>
+<li>The output to this should be the name of the remote (<code>origin</code>) followed by the Git url. You should have both fetch and push capabilities.</li>
+</ul></li>
+<li>Push local files to GitHub
+<ul>
+<li>Run <code>git push --set-upstream origin main</code> in the Terminal tab.</li>
 <li>Use of <code>--set-upstream</code> makes it so you only need to use the simple command <code>git push</code> or <code>git pull</code> in the future instead of <code>git push origin main</code>, where <code>origin</code> is the name of the remote server and <code>main</code> is the branch that you are pushing.</li>
 </ul></li>
-</ol></li>
 <li>Check that changes propagated to GitHub.
-<ol type="1">
+<ul>
 <li>Celebrate 🎉 your success if they did.</li>
-</ol></li>
+</ul></li>
 </ol>
 </section>
 </section>
