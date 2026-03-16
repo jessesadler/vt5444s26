@@ -4,15 +4,28 @@ subtitle: "23 March 2026"
 format: html
 ---
 
-*This week we begin to work on the final project for the course. We will work through creating a static website with Quarto and launching it using GitHUb pages.*
+*This week we begin to work on the final project for the course. We will work through creating a static website with Quarto and launching it using GitHub pages.*
 
 ## Reading
 - Olivia Wikle and Evan Peter Williamson, "Static Web Methodology as a Sustainable Approach to Digital Humanities Projects," *The Code4Lib Journal*, no. 60 (April 2025), <https://journal.code4lib.org/articles/18372>.
 
-## Assignment
+## Watch
+Mine Çetinkaya-Rundel & Julia Stewart Lowndes, Hello Quarto: Share, Collaborate, Teach, Reimagine at RStudio conf 2022.
 
+::: {.grid}
+
+::: {.g-col-9}
+{{< video https://youtu.be/p7Hxu4coDl8?si=vWTopEp9-_0fZg8x >}}
+:::
+
+:::
+
+## Assignment
+- Try your best to get your `r-notes` project on GitHub following the Local first instructions on [The Git and GitHub workflow](../resources/git-workflow.qmd).
+- Practice writing some R code.
 
 ## Activities
 
 
 ## Resources
+- [Quarto: Creating a website](https://quarto.org/docs/websites/)
