@@ -992,7 +992,7 @@
     "href": "content/09-content-quarto.html",
     "title": "Making websites with Quarto",
     "section": "",
-    "text": "This week we begin to work on the final project for the course. We will work through creating a static website with Quarto and launching it using GitHUb pages.",
+    "text": "This week we begin to work on the final project for the course. We will work through creating a static website with Quarto and launching it using GitHub pages.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1012,11 +1012,23 @@
     ]
   },
   {
+    "objectID": "content/09-content-quarto.html#watch",
+    "href": "content/09-content-quarto.html#watch",
+    "title": "Making websites with Quarto",
+    "section": "Watch",
+    "text": "Watch\nMine Çetinkaya-Rundel & Julia Stewart Lowndes, Hello Quarto: Share, Collaborate, Teach, Reimagine at RStudio conf 2022.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "9: Making websites with Quarto"
+    ]
+  },
+  {
     "objectID": "content/09-content-quarto.html#assignment",
     "href": "content/09-content-quarto.html#assignment",
     "title": "Making websites with Quarto",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nTry your best to get your r-notes project on GitHub following the Local first instructions on The Git and GitHub workflow.\nPractice writing some R code.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1040,7 +1052,7 @@
     "href": "content/09-content-quarto.html#resources",
     "title": "Making websites with Quarto",
     "section": "Resources",
-    "text": "Resources",
+    "text": "Resources\n\nQuarto: Creating a website",
     "crumbs": [
       "Content",
       "Topics",
