@@ -101,7 +101,7 @@ gh_token_help()
 To get even more information about your setup run `git_sitrep()`.
 
 ```{r}
-`git_sitrep()`
+git_sitrep()
 ```
 
 ### Ongoing maintenance
