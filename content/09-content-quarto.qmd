@@ -25,7 +25,19 @@ Mine Çetinkaya-Rundel & Julia Stewart Lowndes, Hello Quarto: Share, Collaborate
 - Practice writing some R code.
 
 ## Activities
-
+- Git and GitHub check in
+- Quarto documents with SNiGB data
+- Static websites
+- Quarto websites
 
 ## Resources
-- [Quarto: Creating a website](https://quarto.org/docs/websites/)
+
+### Quarto resources
+- [Elen Le Foll, Quarto for reproducible research workflows and academic publishing](https://elenlefoll.quarto.pub/quarto4research/)
+- [Branded Websites, Presentations, Dashboards, and PDFs with Quarto posit::conf(2025) workshop](https://posit-conf-2025.github.io/quarto-brand/)
+- Quarto documentation: [Creating a website](https://quarto.org/docs/websites/)
+- Quarto documentation: [HTML Documents](https://quarto.org/docs/output-formats/html-basics.html)
+
+### DH and static websites
+- *Digital Humanities Quarterly* special issue on [Minimal Computing](https://dhq.digitalhumanities.org/vol/16/2/index.html).
+- [Lib-Static](https://lib-static.github.io).

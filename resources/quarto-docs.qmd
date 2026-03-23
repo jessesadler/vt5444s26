@@ -25,7 +25,7 @@ The rest of this page goes over the foundations of Quarto documents, but there a
 ## Quarto foundations
 A Quarto document is a plain text file that has a `.qmd` extension. It contains three basic components:
 
-1. A [YAML header](https://en.wikipedia.org/wiki/YAML) contained within lines with three dashes (---).
+1. A [YAML header](https://en.wikipedia.org/wiki/YAML) contained within lines with three dashes (`---`).
 2. Markdown text.
 3. Code chunks set off by three back ticks (```).
 
@@ -69,10 +69,10 @@ execute:
 ---
 ```
 
-The available keys can be found in the documentation for each type of output. Many options are shared across document output types, but some are not. See the [HTML options](https://quarto.org/docs/reference/formats/html.html) for the widest number of options. It can be difficult to write these YAML headers, but happily in practice it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a [project](https://quarto.org/docs/projects/quarto-projects.html) such as a website.
+The available keys can be found in the documentation for each type of output.[^1] Many options are shared across document output types, but some are not. See the [HTML options](https://quarto.org/docs/reference/formats/html.html) for the widest number of options. It can be difficult to write these YAML headers. There are a lot of different options, and the indentation level must be formatted correctly. Happily, in practice, it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a [project](https://quarto.org/docs/projects/quarto-projects.html) such as a website.
 
 ### 2. Markdown
-Unlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use [Resources: Markdown syntax](markdown-syntax.qmd) for Markdown foundations, and look at the [Quarto Markdown documentation](https://quarto.org/docs/projects/quarto-projects.html) for more details on the style of Markdown you can use in Quarto documents.
+Unlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use [Resources: Markdown syntax](markdown-syntax.qmd) for Markdown foundations, and look at the [Quarto Markdown documentation](https://quarto.org/docs/authoring/markdown-basics.html) for more details on the style of Markdown you can use in Quarto documents.
 
 ### 3. Code chunks
 With Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:
@@ -117,5 +117,26 @@ The other options you might want to change are the **figure output**. See [*R fo
     - `out-width: "70%"`: This would take up 70% of the content area.
     - `fig-align: center`: How to align the plots.
 
+## Output formats
+You can create a number of different types of documents from Quarto documents. The default is HTML documents ready to be put on the web or viewed through your browser, but you can also make [PDFs](https://quarto.org/docs/output-formats/pdf-basics.html), [presentations](https://quarto.org/docs/presentations/), [dashboards](https://quarto.org/docs/dashboards/), and even [Word documents](https://quarto.org/docs/output-formats/ms-word.html). It is also possible to combine multiple Quarto documents together into [projects](https://quarto.org/docs/projects/quarto-projects.html) such as [websites](https://quarto.org/docs/websites/) and [books](https://quarto.org/docs/books/).
+
+You control the output of individual documents either in the document YAML or in rendering the document via the command line. Generally, you will want to use the document YAM using the `format` key.
+
+- HTML: `format: html`
+- PDF: `format: pdf` or `format: typst`
+- Presentation: `format: revealjs`
+- Word: `format: docx`
+
+Most options within the YAML are shared across output formats, but not all formats have all the capabilities. Look at the [reference documentation](https://quarto.org/docs/reference/) for each type to see the available options.
+
+### A note on PDF formats
+If you want to output a PDF, you have two different choices, `format: pdf` uses [Pandoc](https://pandoc.org) to create the PDF; `format: typst` uses [Typst](https://typst.app). The Pandoc format has more options, but Typst is a more modern PDF engine and has nicer looking defaults.
+
+### Project outputs
+Projects contain multiple Quarto documents and use a `_quarto.yml` file to share the YAML metadata options across all of the documents within the project. If you want different YAML options in one or more documents within the project, you can modify the YAML in the document itself. The options written in the document will take precedence over those written in the `_quarto.yml` file. This means that generally the YAML heading for individual documents in a project might only have a title. See [Quarto websites](quarto-websites.qmd) for more on working with Quarto projects.
+
 ## Conclusion
 This is just the tip of the iceberg for what you can do with Quarto documents. But you can do a lot with these foundations. Check out the [Resources](#resources) above for places to start if this document does not cover a question you have.
+
+
+[^1]: See the [Output formats](#output-formats) section for more details on output formats.

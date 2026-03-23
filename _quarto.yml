@@ -129,8 +129,6 @@ website:
               file: resources/rstudio-setup.qmd
             - text: "Using R in RStudio"
               file: resources/rstudio-guide.qmd
-            - text: "Quarto documents"
-              file: resources/quarto-docs.qmd
             - text: "Importing data"
               file: resources/importing.qmd
             - text: "Visualization with ggplot2"
@@ -149,6 +147,12 @@ website:
               file: resources/git-workflow.qmd
             - text: "Git Glossary"
               file: resources/git-glossary.qmd
+        - section: "Quarto"
+          contents:
+            - text: "Quarto documents"
+              file: resources/quarto-docs.qmd
+            - test: "Quarto websites"
+              file: resources/quarto-websites.qmd
 
   page-footer:
     right: |

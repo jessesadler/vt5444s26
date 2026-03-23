@@ -27,7 +27,6 @@ format: html
 - Think about setting goals for the rest of the semester.
 
 ## Activities
-- Discussion of your data analysis project
 - Getting familiar with the command line
 - Getting started with git
 - Working with git and GitHub in RStudio
