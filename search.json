@@ -1012,7 +1012,7 @@
     "href": "content/10-content-maps.html#reading",
     "title": "Making maps",
     "section": "Reading",
-    "text": "Reading\n\nCameron Blevins, “Space, Nation, and the Triumph of Region: A View of the World from Houston,” Journal of American History 101, no. 1 (2014): 122–47, https://doi.org/10.1093/jahist/jau184.\nRobin Lovelace, Jakub Nowosad, and Jannes Muenchow, Geocomputation with R (2nd Edition), Chapters 1 and 2.",
+    "text": "Reading\n\nCameron Blevins, “Space, Nation, and the Triumph of Region: A View of the World from Houston,” Journal of American History 101, no. 1 (2014): 122–47, https://doi.org/10.1093/jahist/jau184.\nLuca Scholz, “Deceptive Contiguity: The Polygon in Spatial History,” Cartographica: The International Journal for Geographic Information and Geovisualization 54, no. 3 (2019): 206–16, https://doi.org/10.3138/cart.54.3.2018-0018.\nRobin Lovelace, Jakub Nowosad, and Jannes Muenchow, Geocomputation with R (2nd Edition), Chapter 1.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1024,7 +1024,7 @@
     "href": "content/10-content-maps.html#assignment",
     "title": "Making maps",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nMake an outline, mindmap, or drawing of what you might include in a project website.\nStart to develop content for a Quarto project website. They do not need to be fully developed at this point. You can work on your test website created in class or start your project website. It is up to you.\n\nA basic home page\nAn about page\nOne or more content pages",
     "crumbs": [
       "Content",
       "Topics",
@@ -1036,7 +1036,7 @@
     "href": "content/10-content-maps.html#activities",
     "title": "Making maps",
     "section": "Activities",
-    "text": "Activities",
+    "text": "Activities\n\nQuarto website overview.\nDiscussion: Data visualization, mapping, and historical argument.\nA (hopefully) gentle introduction to mapping\nMapping data in R.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1684,7 +1684,7 @@
     "href": "content/11-content-networks.html#assignment",
     "title": "Network analysis",
     "section": "Assignment",
-    "text": "Assignment\n\nExplore Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks and Six Degrees of Francis Bacon",
+    "text": "Assignment\n\nSecond self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the assignments page for details. You can turn in self reflections through email.\nExplore Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks and Six Degrees of Francis Bacon",
     "crumbs": [
       "Content",
       "Topics",
