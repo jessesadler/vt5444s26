@@ -11,6 +11,7 @@ format: html
 - Catherine Medici, "Using Network Analysis to Understand Early Modern Women," *Early Modern Women: An Interdisciplinary Journal*, 13 no. 1 (2018): 153–62, <https://doi.org/10.1353/emw.2018.0058>.
 
 ## Assignment
+- Second self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the [assignments page](../assignments.qmd#self-reflections) for details. You can turn in self reflections through email.
 - Explore [Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks](https://tudornetworks.net) and [Six Degrees of Francis Bacon](http://www.sixdegreesoffrancisbacon.com)
 
 ## Activities

@@ -8,12 +8,20 @@ format: html
 
 ## Reading
 - Cameron Blevins, "Space, Nation, and the Triumph of Region: A View of the World from Houston," *Journal of American History* 101, no. 1 (2014): 122–47, <https://doi.org/10.1093/jahist/jau184>.
-- Robin Lovelace, Jakub Nowosad, and Jannes Muenchow, [*Geocomputation with R*](https://r.geocompx.org) (2nd Edition), Chapters 1 and 2.
+- Luca Scholz, "Deceptive Contiguity: The Polygon in Spatial History," *Cartographica: The International Journal for Geographic Information and Geovisualization* 54, no. 3 (2019): 206–16, <https://doi.org/10.3138/cart.54.3.2018-0018>.
+- Robin Lovelace, Jakub Nowosad, and Jannes Muenchow, [*Geocomputation with R*](https://r.geocompx.org) (2nd Edition), Chapter 1.
 
 ## Assignment
-
+- Make an outline, mindmap, or drawing of what you might include in a project website.
+- Start to develop content for a Quarto project website. They do not need to be fully developed at this point. You can work on your test website created in class or start your project website. It is up to you.
+    - A basic home page
+    - An about page
+    - One or more content pages
 
 ## Activities
-
+- Quarto website overview.
+- Discussion: Data visualization, mapping, and historical argument.
+- A (hopefully) gentle introduction to mapping
+- Mapping data in R.
 
 ## Resources
