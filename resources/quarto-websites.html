@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Making websites with Quarto – Digital History Methods</title>
+<title>Quarto websites – Digital History Methods</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,8 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/10-content-maps.html" rel="next">
-<link href="../content/08-content-git.html" rel="prev">
+<link href="../resources/quarto-docs.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -266,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Course Details</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/index.html" aria-current="page"> 
+    <a class="nav-link" href="../content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -278,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html"> 
+    <a class="nav-link active" href="../resources/index.html" aria-current="page"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -293,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/09-content-quarto.html">9: Making websites with Quarto</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto</a></li><li class="breadcrumb-item"><a href="../resources/quarto-websites.html">Quarto websites</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -316,8 +350,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Content</span></a>
+  <a href="../resources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
   </div>
 </li>
       </ul>
@@ -325,97 +359,168 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Topics</span></a>
+ <span class="menu-text">Digital Humanities</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">1: MLK Day - No class</span>
+  <div class="sidebar-item-container"> 
+  <a href="../resources/dh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">General DH resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data for DH</span></a>
+  </div>
+</li>
+      </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Organization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/02-content-data-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2: History, data, and the digital</span></a>
+  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zotero Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/03-content-md.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3: The file system and Markdown</span></a>
+  <a href="../resources/plaintext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with Plain Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/04-content-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4: ‘Tidy’ historical data</span></a>
+  <a href="../resources/markdown-syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown Syntax Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/05-content-ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5: Visualizing data with ggplot2</span></a>
+  <a href="../resources/text-editors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Text Editors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/06-content-dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6: Wrangling data</span></a>
+  <a href="../resources/rstudio-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/07-content-snigb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7: Working with SNiGB</span></a>
+  <a href="../resources/rstudio-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using R in RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/08-content-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8: Reproducible workflows with Git</span></a>
+  <a href="../resources/importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/09-content-quarto.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">9: Making websites with Quarto</span></a>
+  <a href="../resources/ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization with ggplot2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/10-content-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10: Making maps</span></a>
+  <a href="../resources/wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wrangling data in the tidyverse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Git and GitHub</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub: An overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/11-content-networks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11: Network analysis</span></a>
+  <a href="../resources/git-install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing Git</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/12-content-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12: Web design and visualization</span></a>
+  <a href="../resources/git-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git and GitHub</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/13-content-gis-sna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13: Mapping and network analysis</span></a>
+  <a href="../resources/git-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Git and GitHub workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/14-content-build.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14: Group work on your project</span></a>
+  <a href="../resources/git-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quarto</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-docs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto documents</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/15-content-presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15: Presentation of final projects</span></a>
+  <a href="../resources/quarto-websites.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quarto websites</span></a>
   </div>
 </li>
       </ul>
@@ -430,26 +535,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
-  <li><a href="#watch" id="toc-watch" class="nav-link" data-scroll-target="#watch">Watch</a></li>
-  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
-  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a>
   <ul class="collapse">
-  <li><a href="#quarto-resources" id="toc-quarto-resources" class="nav-link" data-scroll-target="#quarto-resources">Quarto resources</a></li>
-  <li><a href="#dh-and-static-websites" id="toc-dh-and-static-websites" class="nav-link" data-scroll-target="#dh-and-static-websites">DH and static websites</a></li>
+  <li><a href="#examples-of-quarto-websites" id="toc-examples-of-quarto-websites" class="nav-link" data-scroll-target="#examples-of-quarto-websites">Examples of Quarto websites</a></li>
   </ul></li>
+  <li><a href="#creating-a-quarto-website" id="toc-creating-a-quarto-website" class="nav-link" data-scroll-target="#creating-a-quarto-website">Creating a Quarto website</a></li>
+  <li><a href="#render-and-preview-your-website" id="toc-render-and-preview-your-website" class="nav-link" data-scroll-target="#render-and-preview-your-website">Render and preview your website</a></li>
+  <li><a href="#how-quarto-websites-work" id="toc-how-quarto-websites-work" class="nav-link" data-scroll-target="#how-quarto-websites-work">How Quarto websites work</a>
+  <ul class="collapse">
+  <li><a href="#quarto-documents" id="toc-quarto-documents" class="nav-link" data-scroll-target="#quarto-documents">1. Quarto documents</a></li>
+  <li><a href="#configuration-file" id="toc-configuration-file" class="nav-link" data-scroll-target="#configuration-file">2. Configuration file</a></li>
+  <li><a href="#styles-and-theme" id="toc-styles-and-theme" class="nav-link" data-scroll-target="#styles-and-theme">3. Styles and theme</a></li>
+  </ul></li>
+  <li><a href="#deploying-quarto-websites-to-github-pages" id="toc-deploying-quarto-websites-to-github-pages" class="nav-link" data-scroll-target="#deploying-quarto-websites-to-github-pages">Deploying Quarto websites to GitHub Pages</a></li>
+  <li><a href="#the-website-workflow" id="toc-the-website-workflow" class="nav-link" data-scroll-target="#the-website-workflow">The website workflow</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/09-content-quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/quarto-websites.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/09-content-quarto.html">9: Making websites with Quarto</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto</a></li><li class="breadcrumb-item"><a href="../resources/quarto-websites.html">Quarto websites</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Making websites with Quarto</h1>
-<p class="subtitle lead">23 March 2026</p>
+<h1 class="title">Quarto websites</h1>
 </div>
 
 
@@ -466,61 +575,191 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This week we begin to work on the final project for the course. We will work through creating a static website with Quarto and launching it using GitHub pages.</em></p>
-<section id="reading" class="level2">
-<h2 class="anchored" data-anchor-id="reading">Reading</h2>
-<ul>
-<li>Olivia Wikle and Evan Peter Williamson, “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects,” <em>The Code4Lib Journal</em>, no. 60 (April 2025), <a href="https://journal.code4lib.org/articles/18372" class="uri">https://journal.code4lib.org/articles/18372</a>.</li>
-</ul>
-</section>
-<section id="watch" class="level2">
-<h2 class="anchored" data-anchor-id="watch">Watch</h2>
-<p>Mine Çetinkaya-Rundel &amp; Julia Stewart Lowndes, Hello Quarto: Share, Collaborate, Teach, Reimagine at RStudio conf 2022.</p>
-<div class="grid">
-<div class="g-col-9">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/p7Hxu4coDl8?si=vWTopEp9-_0fZg8x" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-</div>
-</section>
-<section id="assignment" class="level2">
-<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
-<ul>
-<li>Try your best to get your <code>r-notes</code> project on GitHub following the Local first instructions on <a href="../resources/git-workflow.html">The Git and GitHub workflow</a>.</li>
-<li>Practice writing some R code.</li>
-</ul>
-</section>
-<section id="activities" class="level2">
-<h2 class="anchored" data-anchor-id="activities">Activities</h2>
-<ul>
-<li>Git and GitHub check in</li>
-<li>Quarto documents with SNiGB data</li>
-<li>Static websites</li>
-<li>Quarto websites</li>
-</ul>
-</section>
+<p><a href="https://quarto.org/docs/websites/">Quarto websites</a> are a collection of Quarto documents using <code>format: html</code> with a set structure and consistent visual style. This page will guide you through setting up a Quarto website project, outline some of the structures and features of Quarto websites, and show how to deploy a Quarto website to the internet using GitHub Pages.</p>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<section id="quarto-resources" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-resources">Quarto resources</h3>
+<p>The Quarto documentation is the best place to look when you have a question. The documentation will be linked extensively below, but the most important pages are:</p>
 <ul>
-<li><a href="https://elenlefoll.quarto.pub/quarto4research/">Elen Le Foll, Quarto for reproducible research workflows and academic publishing</a></li>
-<li><a href="https://posit-conf-2025.github.io/quarto-brand/">Branded Websites, Presentations, Dashboards, and PDFs with Quarto posit::conf(2025) workshop</a></li>
-<li>Quarto documentation: <a href="https://quarto.org/docs/websites/">Creating a website</a></li>
-<li>Quarto documentation: <a href="https://quarto.org/docs/output-formats/html-basics.html">HTML Documents</a></li>
+<li><a href="https://quarto.org/docs/websites/">Creating a website</a></li>
+<li><a href="https://quarto.org/docs/websites/website-navigation.html">Website navigation</a></li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html">HTML basics</a></li>
+<li><a href="https://quarto.org/docs/output-formats/html-themes.html">HTML theming</a></li>
+<li><a href="https://quarto.org/docs/publishing/github-pages.html">Publishing to GitHUb Pages</a></li>
+</ul>
+<p>Posit has also created a YouTube series on <a href="https://youtu.be/l7r24gTEkEY?si=QGzhARrLgHJ-gpxk">building a Quarto website</a>. This series also discusses making a <a href="https://quarto.org/docs/websites/website-blog.html">blog with Quarto</a>. A blog is a Quarto website that has some additional features to allow you to have a page listing the blog posts. Otherwise, there is a great deal of overlap.</p>
+<section id="examples-of-quarto-websites" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-quarto-websites">Examples of Quarto websites</h3>
+<p>There are a lot of Quarto websites out in the world. A couple that you might want to look at include:</p>
+<ul>
+<li>The website for <a href="https://jessesadler.github.io/vt5444s26/">this class</a> is a Quarto website.</li>
+<li><a href="https://openscapes.org">OpenScapes</a></li>
+<li><a href="https://www.andrewheiss.com/">Andrew Heiss</a></li>
+<li><a href="https://laderast.github.io">Ted Laderas</a></li>
+<li><a href="https://affcom.ku.edu">Affective Communication &amp; Computing Lab</a></li>
 </ul>
 </section>
-<section id="dh-and-static-websites" class="level3">
-<h3 class="anchored" data-anchor-id="dh-and-static-websites">DH and static websites</h3>
+</section>
+<section id="creating-a-quarto-website" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-quarto-website">Creating a Quarto website</h2>
+<p>Creating a website with RStudio is done in the same way as creating a new project. Go to File -&gt; New Project… or click on New Project in the Project dropdown at the top-right of RStudio. See <a href="../resources/rstudio-setup.html#rstudio-projects">Setting up RStudio for success</a> for more details. When in the New Project dialogue window, select New Directory, and then under Project Type choose Quarto Website as in <a href="#fig-website-create" class="quarto-xref">Figure&nbsp;1</a>. Give the new project folder a name, remembering the naming guidelines, and place it in your <code>vt5444s26</code> folder. This will be an example website, so do not worry about the name right now. You can also</p>
+<div id="fig-website-create" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio new project wizard with an orange box highlighting the selection of Quarto website as the type of project.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-website-create-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/quarto-web-create.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the RStudio new project wizard with an orange box highlighting the selection of Quarto website as the type of project.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-website-create-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Create a Quarto website project.
+</figcaption>
+</figure>
+</div>
+<p>RStudio will start up a new session in your new project folder with a few template documents to get you started on your website as shown in <a href="#fig-website-files" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div id="fig-website-files" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of RStudio showing the files created by making a new Quarto website project. The files are: _quarto.yml, .gitignore, about.qmd, index.qmd, an Rproj file, and styles.css.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-website-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/quarto-web-files.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of RStudio showing the files created by making a new Quarto website project. The files are: _quarto.yml, .gitignore, about.qmd, index.qmd, an Rproj file, and styles.css.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-website-files-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Project files for a freshly created Quarto website project.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="render-and-preview-your-website" class="level2">
+<h2 class="anchored" data-anchor-id="render-and-preview-your-website">Render and preview your website</h2>
+<p>Click on the <code>Render</code> button at the top of the RStudio editor panel to <a href="https://quarto.org/docs/websites/#website-preview">build your website and preview what it looks like</a>. This can also be done by running the command <code>quarto preview</code> in the Terminal.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> When the website is rendered, a new <code>_site</code> folder will be created. This folder contains all of the HTML files that make up your website. You will also see the preview of the site open in the View panel on the right. You can click on the Show in new window button as shown in <a href="#fig-website-preview" class="quarto-xref">Figure&nbsp;3</a> to open the preview in your browser.</p>
+<div id="fig-website-preview" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the Viewer panel in RStudio showing a preview of the newly created website. There is a purple arrow pointing to the external viewer button.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-website-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/quarto-web-preview.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the Viewer panel in RStudio showing a preview of the newly created website. There is a purple arrow pointing to the external viewer button.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-website-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Preview of the newly created Quarto website.
+</figcaption>
+</figure>
+</div>
+<p>Open up <code>index.qmd</code> and make some changes to the text. Save the file and then click on Render, or check the box for Render on save, and see what happens. The website updates with the new content. This is the basic workflow for working on a Quarto website. Make some changes and then see what they look like by previewing them.</p>
+</section>
+<section id="how-quarto-websites-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-quarto-websites-work">How Quarto websites work</h2>
+<p>Let’s now dig into the files that were created with the website project to understand a bit more about the different types of files and how they work to create a website. There are three types of files in the website template that represent the three main types of files used to create a Quarto website.</p>
+<ol type="1">
+<li>Quarto documents: Each document is a web page.</li>
+<li><code>_quarto.yml</code>: Configuration file that determines the structure of the website and website wide settings.</li>
+<li>A CSS or SCSS style sheet that sets the style for the website.</li>
+</ol>
+<p>Let’s go through these one by one.</p>
+<section id="quarto-documents" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-documents">1. Quarto documents</h3>
+<p>Each document is a web page. <code>index.qmd</code> and <code>about.qmd</code> are special pages. All other Quarto documents are other web pages. See the <a href="https://quarto.org/docs/reference/formats/html.html">HTML documents</a> documentation on options for HTML documents.</p>
 <ul>
-<li><em>Digital Humanities Quarterly</em> special issue on <a href="https://dhq.digitalhumanities.org/vol/16/2/index.html">Minimal Computing</a>.</li>
-<li><a href="https://lib-static.github.io">Lib-Static</a>.</li>
+<li><code>index.qmd</code> is the home page.</li>
+<li><code>about.qmd</code> is about page that has some special themes.</li>
 </ul>
+<p>The YAML heading for each document can be very simple because <code>_quarto.yml</code> can be used to set the options for the whole site.</p>
+</section>
+<section id="configuration-file" class="level3">
+<h3 class="anchored" data-anchor-id="configuration-file">2. Configuration file</h3>
+<p><code>_quarto.yml</code> is a YAML file that determines the structure of the website and sets website wide options. The <a href="https://quarto.org/docs/websites/website-navigation.html">Website navigation</a> documentation shows the different options for setting up the structure of the website. You can use a <a href="https://quarto.org/docs/websites/website-navigation.html#top-navigation">top navigation bar</a>, a <a href="https://quarto.org/docs/websites/website-navigation.html#side-navigation">side bar</a>, or a <a href="https://quarto.org/docs/websites/website-navigation.html#hybrid-navigation">combination of the two</a>.</p>
+<p>The <code>_quarto.yml</code> configuration file can also be used to set website-wide options for the webpages such as whether to include a table of contents or the numbering of sections among many others. See the <a href="https://quarto.org/docs/reference/formats/html.html">HTML options page</a> for a complete list of choices available to you.</p>
+</section>
+<section id="styles-and-theme" class="level3">
+<h3 class="anchored" data-anchor-id="styles-and-theme">3. Styles and theme</h3>
+<p>The <a href="https://quarto.org/docs/output-formats/html-themes.html">HTML theming</a> and <a href="https://quarto.org/docs/output-formats/html-themes-more.html">More about themes</a> documentation goes into the details on styling you website.</p>
+<p>Quarto websites use a base theme that is set within the <code>_quarto.yml</code> configuration file. Quarto themes are based on the 25 <a href="https://bootswatch.com/">bootswatch</a> themes, which can be set under the <code>theme</code> key. You can also set important <a href="https://quarto.org/docs/output-formats/html-themes.html#basic-options">base styling options</a> within the <code>_quarto.yml</code> file.</p>
+<p>But, if you want to alter any aspect of the style of you website, you can do so using CSS (Cascading Style Sheets). However, Quarto is set up to use <a href="https://sass-lang.com">Sass</a> or a <code>.scss</code> file. See the <a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables">Sass variables</a> documentation on how to change styling options with a <code>.scss</code> file.</p>
+</section>
+</section>
+<section id="deploying-quarto-websites-to-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="deploying-quarto-websites-to-github-pages">Deploying Quarto websites to GitHub Pages</h2>
+<p>These instructions show how to deploy a Quarto website to GitHub pages using a GitHub Action. See the <a href="https://quarto.org/docs/publishing/github-pages.html">instructions here</a> from the Quarto documentation for more details. GitHub pages uses a special <code>gh-pages</code> branch to host static websites created by tools such as Quarto.</p>
+<ol type="1">
+<li><p>Set up local repository to use GitHub Actions</p>
+<ol type="1">
+<li>Add <code>/.quarto/</code> and <code>/_site/</code> to <code>.gitignore</code> file.
+<ul>
+<li>The <code>_site/</code> folder is created from the Quarto files and will be created by the GitHub action set up in step 7.</li>
+</ul></li>
+<li>Set <code>freeze: auto</code> in <code>_quarto.yml</code>.
+<ul>
+<li>This makes it so Quarto will only rerender a file if it has changed, making the preview and render workflow faster. See the documentation on use of <a href="https://quarto.org/docs/projects/code-execution.html#freeze">freeze</a>.</li>
+</ul></li>
+<li>Render site to create a <code>_freeze</code> folder.</li>
+<li>Add and commit files.</li>
+</ol></li>
+<li><p>Create connection to GitHub using <a href="../resources/git-workflow.html#local-first">Local first method</a></p>
+<ol type="1">
+<li>Create empty repository on GitHub with the same name as your website project.</li>
+<li>Add remote with <code>git remote add origin your-url-here</code></li>
+<li>Push and <code>set-upstream</code> to GitHub: <code>git push --set-upstream origin main</code></li>
+</ol></li>
+<li><p>Create <code>gh-pages</code> branch on local repository</p>
+<ul>
+<li>Make sure you have committed all changes to your current working branch with <code>git status</code>.</li>
+<li>Close all of your tabs in RStudio. The following actions will delete all of your files on the new branch. This is ok!</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure all changes are committed before running this!</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising gh-pages branch"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Switch back to main branch</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Check GitHub Pages setup</p>
+<ul>
+<li>Go to GitHub</li>
+<li>Click on the Branches dropdown in the upper left that should say main and then click View all branches.</li>
+<li>Go to Settings -&gt; Pages</li>
+<li>check that the Source branch for your repository is <code>gh-pages</code> and that the site directory is set to the <code>/(root)</code> repository as shown in <a href="#fig-gh-pages" class="quarto-xref">Figure&nbsp;4</a>.</li>
+</ul></li>
+<li><p>Make first publish</p>
+<ul>
+<li>Make sure you are on your <code>main</code> branch. You can check this in the Git Tab of RStudio or by running <code>git branch</code> in the Terminal.</li>
+<li>Run <code>quarto publish gh-pages</code> in the Terminal and then enter Y for yes.</li>
+</ul></li>
+<li><p>Add GitHub publish action</p>
+<ul>
+<li>Add <code>.github/workflows/publish.yml</code> copying from the <a href="https://quarto.org/docs/publishing/github-pages.html#publish-action">Publish action</a> in the Quarto documentation.</li>
+<li>Add and commit the new file.</li>
+</ul></li>
+<li><p>Push your project to GitHub</p>
+<ul>
+<li>Make a push to GitHub: <code>git push</code>.</li>
+<li>You should now be able to return to the repository page on GitHub and see an Action running. Click on the Action tab to see the progress.</li>
+<li>If the action runs correctly, the website should be online and updated.</li>
+<li>In the repository page on GitHub click on the gear button in the About section on the right. Click on the box to use your GitHub pages website as the url of the project. This will make it easier to click over to your website.</li>
+</ul></li>
+</ol>
+<div id="fig-gh-pages" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of GitHub showing how to get to the GitHub Pages web page through Settings and Pages.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gh-pages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/gh-pages-deploy.png" class="img-fluid figure-img" style="width:75.0%" alt="A screen shot of GitHub showing how to get to the GitHub Pages web page through Settings and Pages.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gh-pages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Make sure that your GitHub Pages branch is correctly set up.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-website-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-website-workflow">The website workflow</h2>
+<p>With the GitHub Action set up the website workflow is largely the same as the normal Git and GitHub workflow with one minor change. You should make sure to preview and render your changes before making a push to GitHub.</p>
+<ol type="1">
+<li>Make changes to your website project.</li>
+<li>Preview the website to see that everything works and to ensure that the <code>_freeze</code> folder is updated.</li>
+<li>Add and commit the local changes.</li>
+<li>Repeat steps 1–3.</li>
+<li>Push to GitHub to make your changes live to your website.</li>
+</ol>
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Quarto is first and foremost a command line tool. Therefore, all of the commands you run in RStudio can also be done in the Terminal.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -936,14 +1175,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/08-content-git.html" class="pagination-link" aria-label="8: Reproducible workflows with Git">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8: Reproducible workflows with Git</span>
+      <a href="../resources/quarto-docs.html" class="pagination-link" aria-label="Quarto documents">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quarto documents</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/10-content-maps.html" class="pagination-link" aria-label="10: Making maps">
-        <span class="nav-page-text">10: Making maps</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -954,7 +1190,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/09-content-quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/quarto-websites.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>
