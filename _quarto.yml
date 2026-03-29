@@ -135,6 +135,8 @@ website:
               file: resources/ggplot2.qmd
             - text: "Wrangling data in the tidyverse"
               file: resources/wrangling.qmd
+            - text: "Mapping with R"
+              file: resources/mapping.qmd
         - section: "Git and GitHub"
           contents:
             - text: "Git and GitHub: An overview"

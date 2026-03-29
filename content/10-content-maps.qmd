@@ -21,7 +21,39 @@ format: html
 ## Activities
 - Quarto website overview.
 - Discussion: Data visualization, mapping, and historical argument.
-- A (hopefully) gentle introduction to mapping
+- A (hopefully) gentle introduction to mapping.
 - Mapping data in R.
 
+## Spatial Digital History projects
+- [Mapping Inequality](https://dsl.richmond.edu/panorama/redlining/)
+- [Visualizing Emancipation](https://dsl.richmond.edu/emancipation/)
+- [Slave Voyages](https://www.slavevoyages.org/)
+- [Mapping the Republic of Letters](http://republicofletters.stanford.edu)
+- [Pleiades: gazetteer and graph of ancient places](https://pleiades.stoa.org)
+- [Ancient World Mapping Center](http://awmc.unc.edu)
+- [World Historical Gazetteer](https://whgazetteer.org/)
+
+## Packages to install
+- [sf: Simple features for R](https://r-spatial.github.io/sf/index.html)
+- [terra: Raster geographic data in R](https://rspatial.github.io/terra/index.html)
+- [tidyterra](https://dieghernan.github.io/tidyterra/): Integrate terra objects into the tidyverse and ggplot2.
+- [USAboundaries](https://docs.ropensci.org/USAboundaries/index.html): historical boundaries from 1629 to 2000 for states and counties from the Newberry Library’s Atlas of [Historical County Boundaries](https://publications.newberry.org/ahcbp/) and historical city population data from Erik Steiner's [United States Historical City Populations, 1790–2010](https://github.com/cestastanford/historical-us-city-populations).
+- [rnaturalearth](https://docs.ropensci.org/rnaturalearth/index.html): Provides access to the [Natural Earth](https://www.naturalearthdata.com/) vector data.
+- [tidygeocoder](https://jessecambon.github.io/tidygeocoder/): Package to geocode locations using any of the many [supported geocoding services](https://jessecambon.github.io/tidygeocoder/articles/geocoder_services.html).
+- [elevatr](https://github.com/USEPA/elevatr): An R package for accessing elevation data.
+- [leaflet](https://rstudio.github.io/leaflet/): An R package for the [Leaflet](https://leafletjs.com/) open-source JavaScript library for interactive maps.
+
 ## Resources
+See [Resources: Mapping with R](../resources/mapping.qmd) for more in depth discussion on resources for working with spatial data in R and in historical research.
+
+- Robin Lovelace, Jakub Nowosad, and Jannes Muenchow, [*Geocomputation with R*](https://r.geocompx.org) (2nd Edition).
+    - Specifically, read over [Chapter 2: Geographic data in R](https://r.geocompx.org/spatial-class). This chapter provides an overview of vector and raster data in R, as well as coordinate reference systems.
+    - Skim over the content of the other chapters in the book to see what may be of interest to you.
+- Edzer Pebesma and Roger Bivand, *Spatial Data Science: With Applications in R* (2025), <https://www.r-spatial.org/book>.
+- Kyle E. Walker, *Analyzing US Census Data: Methods, Maps, and Models in R* (CRC Press, 2023), <https://walker-data.com/census-r/>.
+- [Spatial Data Science with R and terra](https://rspatial.org/index.html)
+- Kieran Healy, *Data Visualization: A Practical Introduction*, [Chapter 7: Draw Maps](https://socviz.co/07-maps.html).
+- Martijn Tennekes and Jakub Nowosad, *Spatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R* (2025), <https://tmap.geocompx.org>.
+- Jesse Sadler, [An Exploration of Simple Features for R](https://www.jessesadler.com/post/simple-feature-objects/).
+- [Data Carpentries: Introduction to Geospatial Concepts](https://datacarpentry.org/organization-geospatial/index.html).
+- [Data Carpentries: Introduction to Geospatial Raster and Vector Data with R](https://datacarpentry.github.io/r-raster-vector-geospatial/index.html).
