@@ -204,6 +204,7 @@ library(tidyterra)
 library(elevatr)
 ```
 
+### 1. Get elevation raster
 The [elevatr](https://github.com/USEPA/elevatr) package provides a way to download elevation data, using a spatial data object to define the boundaries of the raster to be returned. Currently, `get_elev_raster()` returns a `raster` object, which we can update to a `terra` object with the `rast()` function. The `z` level provides a zoom level between 1 and 14 with 1 as the most zoomed out and 14 as the highest resolution. The larger geographic area you want the lower zoom level you will need. Setting `clip = locations` returns a raster only inside the boundaries of the `virginia` `sf` object.
 
 ```{r}
@@ -215,6 +216,7 @@ va_elev
 
 A `terra` object (specifically this is a `SpatRaster`) is similar to an `sf` object in that it is normal R data object with spatial attributes. However, instead of holding data in a data frame, a `terra` object uses a matrix of values. It will rarely be useful to see the values themselves, but the print method for `SpatRaster` provides an overview of the dimensions of the raster, the number of layers (`nlyr`), the name of the layer(s), and the minimum and maximum values.
 
+### 2. Clean the raster data
 The [tidyterra](https://dieghernan.github.io/tidyterra/) makes it possible to manipulate `terra` objects using dplyr verbs, provides special geoms for plotting `terra` objects in ggplot2, and color palettes designed for geographic data. You might notice that the minimum value is less than 0, which is probably an error. We can change anything less than 0 to -1 with `mutate()`, treating the `name` of the layer as the column name. First, we might want to rename the layer `name` to a more descriptive name than the file number.
 
 ```{r}
@@ -231,6 +233,7 @@ va_elev <- va_elev |>
 va_elev
 ```
 
+### 3. Reproject the data
 Next, we need to project the `terra` object into the CRS for virginia. In terra you do this with `project()`.
 
 ```{r}
@@ -239,6 +242,7 @@ va_elev <- project(va_elev, "EPSG:32146")
 va_elev
 ```
 
+### 4. Map the data
 Let's take a look at what we have. We can plot with ggplot2 using `geom_spatraster()` from tidyterra and play around with different `scale_fill_*()` functions provided by tidyterra. Check out the color palette options at the [tidyterra website](https://dieghernan.github.io/tidyterra/reference/index.html#scales). This example uses wikipedia colors. Within `geom_spatraster()` setting the `fill` aesthetic will be done automatically, so it is not strictly necessary in this case where there is only the one layer.
 
 ```{r}
