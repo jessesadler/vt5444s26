@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setting up RStudio for success – Digital History Methods</title>
+<title>Mapping with R – Digital History Methods</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -67,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../resources/rstudio-guide.html" rel="next">
-<link href="../resources/install.html" rel="prev">
+<link href="../resources/git-overview.html" rel="next">
+<link href="../resources/wrangling.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -328,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/rstudio-setup.html">Setting up RStudio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/mapping.html">Mapping with R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -432,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/rstudio-setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="../resources/rstudio-setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting up RStudio</span></a>
   </div>
 </li>
@@ -462,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/mapping.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/mapping.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Mapping with R</span></a>
   </div>
 </li>
@@ -542,35 +542,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-are-r-and-rstudio" id="toc-what-are-r-and-rstudio" class="nav-link active" data-scroll-target="#what-are-r-and-rstudio">What are R and RStudio?</a></li>
-  <li><a href="#navigating-rstudio" id="toc-navigating-rstudio" class="nav-link" data-scroll-target="#navigating-rstudio">Navigating RStudio</a></li>
-  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects">RStudio projects</a>
+  <li><a href="#geospatial-concepts" id="toc-geospatial-concepts" class="nav-link active" data-scroll-target="#geospatial-concepts">Geospatial concepts</a>
   <ul class="collapse">
-  <li><a href="#setting-up-your-project-structure" id="toc-setting-up-your-project-structure" class="nav-link" data-scroll-target="#setting-up-your-project-structure">Setting up your project structure</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types</a></li>
+  <li><a href="#coordinate-reference-systems" id="toc-coordinate-reference-systems" class="nav-link" data-scroll-target="#coordinate-reference-systems">Coordinate Reference Systems</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
-  <li><a href="#the-editor-panel" id="toc-the-editor-panel" class="nav-link" data-scroll-target="#the-editor-panel">The editor panel</a></li>
-  <li><a href="#the-workflow" id="toc-the-workflow" class="nav-link" data-scroll-target="#the-workflow">The workflow</a>
+  <li><a href="#packages-for-spatial-data-in-r" id="toc-packages-for-spatial-data-in-r" class="nav-link" data-scroll-target="#packages-for-spatial-data-in-r">Packages for spatial data in R</a>
   <ul class="collapse">
-  <li><a href="#scripts-and-reproducibility" id="toc-scripts-and-reproducibility" class="nav-link" data-scroll-target="#scripts-and-reproducibility">Scripts and reproducibility</a></li>
+  <li><a href="#spatial-packages" id="toc-spatial-packages" class="nav-link" data-scroll-target="#spatial-packages">Spatial packages</a></li>
+  <li><a href="#spatial-data-packages" id="toc-spatial-data-packages" class="nav-link" data-scroll-target="#spatial-data-packages">Spatial data packages</a></li>
+  <li><a href="#visualization-of-spatial-data" id="toc-visualization-of-spatial-data" class="nav-link" data-scroll-target="#visualization-of-spatial-data">Visualization of spatial data</a></li>
   </ul></li>
-  <li><a href="#setting-up-rstudio-for-reproducibility" id="toc-setting-up-rstudio-for-reproducibility" class="nav-link" data-scroll-target="#setting-up-rstudio-for-reproducibility">Setting up RStudio for reproducibility</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
+  <li><a href="#vector-data-in-r" id="toc-vector-data-in-r" class="nav-link" data-scroll-target="#vector-data-in-r">Vector data in R</a>
   <ul class="collapse">
-  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages">Installing packages</a></li>
-  <li><a href="#using-packages" id="toc-using-packages" class="nav-link" data-scroll-target="#using-packages">Using packages</a></li>
-  <li><a href="#updating-packages" id="toc-updating-packages" class="nav-link" data-scroll-target="#updating-packages">Updating packages</a></li>
+  <li><a href="#geocode-locations" id="toc-geocode-locations" class="nav-link" data-scroll-target="#geocode-locations">1. Geocode locations</a></li>
+  <li><a href="#convert-locations-to-sf-object" id="toc-convert-locations-to-sf-object" class="nav-link" data-scroll-target="#convert-locations-to-sf-object">2. Convert locations to sf object</a></li>
+  <li><a href="#get-a-base-map" id="toc-get-a-base-map" class="nav-link" data-scroll-target="#get-a-base-map">3. Get a base map</a></li>
+  <li><a href="#reproject-the-data" id="toc-reproject-the-data" class="nav-link" data-scroll-target="#reproject-the-data">4. Reproject the data</a></li>
+  <li><a href="#map-the-data" id="toc-map-the-data" class="nav-link" data-scroll-target="#map-the-data">5. Map the data</a></li>
   </ul></li>
-  <li><a href="#other-tweaks" id="toc-other-tweaks" class="nav-link" data-scroll-target="#other-tweaks">Other tweaks</a></li>
+  <li><a href="#raster-data-in-r" id="toc-raster-data-in-r" class="nav-link" data-scroll-target="#raster-data-in-r">Raster data in R</a></li>
+  <li><a href="#put-it-all-together" id="toc-put-it-all-together" class="nav-link" data-scroll-target="#put-it-all-together">Put it all together</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/rstudio-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/mapping.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/rstudio-setup.html">Setting up RStudio</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/mapping.html">Mapping with R</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Setting up RStudio for success</h1>
+<h1 class="title">Mapping with R</h1>
 </div>
 
 
@@ -587,340 +591,371 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This page provides an overview for setting up and working in RStudio that will set you up for success in creating a reproducible workflow for data analysis in R.</p>
-<section id="what-are-r-and-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-r-and-rstudio">What are R and RStudio?</h2>
-<p>It is important to clearly distinguish between <a href="https://www.r-project.org">R</a> and <a href="https://posit.co/products/open-source/rstudio">RStudio</a> because they can easily become intertwined. In short:</p>
-<ul>
-<li><strong>R</strong> is the programming language</li>
-<li><strong>RStudio</strong> is the application in which we will write and run R code. It is the integrated developer environment (IDE) most closely associated with R.</li>
-</ul>
-<p>It is possible to run R in many different applications and environments. In fact, Posit, the company behind RStudio is currently building a new IDE for data analysis called <a href="https://positron.posit.co">Positron</a>. You can also run R on the command line or in another IDE such as <a href="https://code.visualstudio.com/docs/languages/r">Visual Studio Code</a>.</p>
-<div id="fig-terminal" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of R running in the Terminal application.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/r-in-terminal.png" class="img-fluid figure-img" style="width:60.0%" alt="A screen shot of R running in the Terminal application.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-terminal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: An R session running in the Terminal app.
-</figcaption>
-</figure>
-</div>
-<p>We will use RStudio because it is a mature, open source application that provides many features that helps people write good R code and is closely integrated with <a href="https://quarto.org">Quarto</a>. It is also the most widely used IDE for R.</p>
-</section>
-<section id="navigating-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="navigating-rstudio">Navigating RStudio</h2>
-<p>When you open up RStudio for the first time you will be presented with a three panel view:</p>
-<ul>
-<li>The left panel is the <strong>console</strong>. This is where you write or send code, run it, and see any output. You type your code after the <strong>prompt</strong>, which in R is <code>&gt;</code>.</li>
-<li>The upper-right panel shows any objects you create in your session.</li>
-<li>The bottom-right panel shows your project files but also has tabs to show plots you make, packages you have installed, and a viewer for documentation.</li>
-</ul>
-<div id="fig-startup" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application with three panels.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-startup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-start-annotated.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-startup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: RStudio at startup with three panels: console, environment, and files.
-</figcaption>
-</figure>
-</div>
-<p>Type in your first R command to make sure everything is working. Type out a mathematical calculation and press <code>Return</code> or <code>Enter</code> to run the line of code.</p>
-</section>
-<section id="rstudio-projects" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio-projects">RStudio projects</h2>
-<p>One of the foundational features of RStudio is the concept of <strong>projects</strong>. Projects set up your analyses for reproducibility by making it clear where your analysis lives and how your data, scripts, and all other files that belong to an analysis are related to each other. In short, they are all contained in a project folder. Projects are based on R’s notion of the <strong>working directory</strong>. This is the folder where R <em>starts</em> when you ask it to load data files or save scripts. If this is the first time that you have opened RStudio, your working directory is probably your <strong>home</strong> directory. On macOS this is represented with <code>~/</code>, on Windows likely with <code>C:\Users\[your-username]</code>. You can see this at the top of the console panel.</p>
-<div id="fig-wd" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the top of the console in RStudio that shows the current working directory.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/startup-working-directory.png" class="img-fluid figure-img" style="width:40.0%" alt="A screen shot of the top of the console in RStudio that shows the current working directory.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Current working directory.
-</figcaption>
-</figure>
-</div>
-<p>RStudio projects provide a clear and explicit way to tell R where to start (to set your working directory) and keep all of your analysis together. Let’s create our first project. This project will hold all of the code and data we will work on in our in-class sessions. When you want to work on a project with your own data, follow these steps again to create a new project in a different folder.</p>
+<p>This page provides an introduction to mapping in R. It provides a very short overview of geospatial concepts and then introduces working with vector and raster data in R by creating a map of Virginia.</p>
+<section id="geospatial-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial-concepts">Geospatial concepts</h2>
+<p>There are two main concepts in dealing with geospatial data:</p>
 <ol type="1">
-<li>Go to the File menu and select New Project…</li>
-<li>In the New Project Wizard select New Directory.</li>
-<li>Choose New Project for the Project type.</li>
-<li>Name your project and choose where to put it.
+<li>The type of data and how it is represented: vector or raster.</li>
+<li>How the data relates to the surface of the Earth: Coordinate reference system. Without a coordinate reference system (CRS), either implicit or explicit, the data is not spatial.</li>
+</ol>
+<section id="data-types" class="level3">
+<h3 class="anchored" data-anchor-id="data-types">Data types</h3>
+<section id="vector-data" class="level4">
+<h4 class="anchored" data-anchor-id="vector-data">Vector data</h4>
 <ul>
-<li>For this first project under Directory name we will use <code>r-notes</code>.</li>
-<li>Then, select Browse… to put the project folder inside your <code>hist5444s26</code> folder that contains the work done for this course. If you have not created this folder yet, do so now in Finder or File Explorer.</li>
-<li>Finally, select <strong>Create Project</strong></li>
+<li>Vector data are based on points, lines, and polygons within a coordinate system.</li>
+<li>Vector data are similar to the sorts of data we have been working with in creating scatter plots or line plots. It is represented in a data frame and has <code>x</code> and <code>y</code> coordinates.</li>
+<li>If you are working with points, lines, and polygons (land, oceans, lakes, political borders), you are dealing with vector data.</li>
+</ul>
+</section>
+<section id="raster-data" class="level4">
+<h4 class="anchored" data-anchor-id="raster-data">Raster data</h4>
+<ul>
+<li>Raster data is based on a grid of cells in which each cell has one value.</li>
+<li>Raster data is not represented by a data frame but by a matrix: a vector with two dimensions. It does not work through <code>x/y</code> coordinates but from a point of origin, the extent of each cell, and the number of cells.</li>
+<li>Raster data can either be continuous (elevation) or discrete/categorical (soil type).</li>
+<li>Digital photography is based on raster data. If you zoom into raster data it will become pixelated.</li>
+</ul>
+</section>
+</section>
+<section id="coordinate-reference-systems" class="level3">
+<h3 class="anchored" data-anchor-id="coordinate-reference-systems">Coordinate Reference Systems</h3>
+<ul>
+<li>Vector and raster data is made into spatial data by possessing a Coordinate Reference System (CRS), which translates coordinates (vector) or a grid of cells (raster) to space on the surface of the earth.</li>
+<li>There are two types of coordinate reference systems: Geographic and projected.
+<ul>
+<li>Geographic coordinate reference systems are measured in degrees of latitude and longitude, which are angles from the earth’s center to its surface.</li>
+<li>Projected coordinate reference systems transform the angular measurements on a spherical earth to a flat surface using linear units such as meters or feet.</li>
+<li>Check out the <a href="https://www.geo-projections.com">Map Projection Explorer</a> to get an idea of how different projections look and what they may be useful for.</li>
 </ul></li>
-</ol>
-<div id="fig-new-project" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the three dialogue windows in the RStudio project wizard interface.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-new-project.png" class="img-fluid figure-img" style="width:75.0%" alt="A screen shot of the three dialogue windows in the RStudio project wizard interface.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Steps to create a project: (top) select New Directory, (middle) choose New Project for the project type, (bottom) choose what to name the project and where to put it.
-</figcaption>
-</figure>
-</div>
-<p>RStudio will start back up but now your working directory will be the new project folder you created, in this instance <code>r-notes</code>. You can verify you are in your new project in four different locations in the RStudio interface.</p>
-<ol type="1">
-<li>The name of the RStudio window will now contain <code>r-notes</code>.</li>
-<li>The top of the has the <strong>path</strong> on your computer from your <em>home</em> to the project folder. For me it is <code>~/Documents/hist5444s26/r-notes</code>.</li>
-<li>The project dropdown on the top-right of the RStudio window. You can use this menu to quickly switch between different projects.</li>
-<li>The files panel will show the path to your working directory and a single file named <code>r-notes.Rproj</code>.</li>
-</ol>
-<div id="fig-project" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application with three panels. The four locations where you can see the current project are highlighted in maroon.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-project-interface.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with three panels. The four locations where you can see the current project are highlighted in maroon.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: RStudio project interface, highlighting areas that show the current project.
-</figcaption>
-</figure>
-</div>
-<section id="setting-up-your-project-structure" class="level3">
-<h3 class="anchored" data-anchor-id="setting-up-your-project-structure">Setting up your project structure</h3>
-<p>Let’s finish setting up the new project by providing some structure, adding folders to separate our raw data, any modified data we create, our scripts we write, and the figures we make. The most important aspect of this is to separate our <strong>raw data</strong> from our modified data we create using R.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Keeping these two types of data separate will protect you from making errors and possible data loss. You can add the folders in the RStudio files panel by clicking ojn the folder with the plus sign, or you can create the folders in Finder or File Explorer. Your folders should be named:</p>
+<li>Components of coordinate reference systems:
 <ul>
-<li><code>data/</code>: Any modified data that you want to store after cleaning or analyzing your raw data.</li>
-<li><code>data-raw/</code>: Raw data that you have created or gotten from an external source.</li>
-<li><code>scripts/</code>: Where you will keep your R scripts and any other documents such as Quarto documents.</li>
-<li><code>fig/</code>: A place to store any visualizations you make in the course of your analysis.</li>
-<li><code>README.md</code>: Lastly you can create a README file to explain the purpose and structure of the project. To create a new Markdown file in RStudio go to File -&gt; New File -&gt; Markdown File.</li>
-</ul>
-<div id="fig-project-setup" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of RStudio with the folder structure described above.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-project-setup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rnotes-project-setup.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of RStudio with the folder structure described above.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-project-setup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Project folders.
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>What is the r-notes.Rproj file?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <code>r-notes.Rproj</code> file is a plain text file that has a couple of project based settings in it. You can click on it in RStudio and it will open a dialogue window. Generally, you do not want to touch the file. Primarily, the file projects the best target for opening up your project. Double-click on any <code>.Rproj</code> file and RStudio will open to that project.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Relative vs absolute paths
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Projects enable you to access files such as data with <strong>relative paths</strong> from your working directory. Within our <code>r-notes</code> project we can access a data file called <code>SAFI_clean.csv</code> using the relative path: <code>data-raw/SAFI_clean.csv</code>.</p>
-<p>If we did not use projects and kept our working directory as our <strong>home</strong> directory, we would have to use <strong>absolute paths</strong>. Absolute paths point to a file or folder regardless of the working directory. On my computer it would be <code>~/Documents/hist5444s26/r-notes/data-raw/SAFI_clean.csv</code>. This might work for those on a Mac because we were specific about naming our folders, but it will not work on Windows.</p>
-<p>If you were to move the <code>r-notes</code> folder into another folder, absolute paths would not even work on your computer any more. However, if you give your <code>r-notes</code> folder to someone else and you use projects and relative paths, the paths will correctly find the data on their computer.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="the-editor-panel" class="level2">
-<h2 class="anchored" data-anchor-id="the-editor-panel">The editor panel</h2>
-<p>Now that you have created a project, we can create our first R script where we will save our code. When you create a new R script or any other type of file, a fourth panel will appear in the upper right and the console will shrink to the bottom-right position. You can create a new R script (this is a text file that ends with the extension <code>.R</code>) in many ways.</p>
+<li><strong>Datum</strong>: A model of the shape of the Earth. Common global datums are WGS84 and NAD83.</li>
+<li><strong>Projection</strong>: Mathematical projection of 3D model of the Earth to 2D. Projections are often named based on a property they preserve:
 <ul>
-<li>Go to File -&gt; New File -&gt; R Script</li>
-<li>Click on the plus sign with the blank paper behind it in the upper-left corner of RStudio and select R Script.</li>
-<li>Similarly, click on the plus sign with the blank paper behind it in the upper-left corner of the Files panel.</li>
-<li>Or with a keyboard shortcut: <code>Cmd/Ctrl + Shift + N</code>.</li>
-</ul>
-<div id="fig-editor-panel" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application with four panels.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-editor-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-editor-panel.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application with four panels.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-editor-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: RStudio with all four panels: editor, console, environment, and files.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="the-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="the-workflow">The workflow</h2>
-<p>The basic workflow for RStudio is to work on writing and running code in the left two panels and inspect aspects of what you are doing or what you have created in the right two panels.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Let’s concentrate on the two panels on the left.</p>
-<p>The <strong>console</strong> can be thought of as where the action happens. It is where code is actually run and where any outputs will be printed. However, the console is also <em>ephemeral</em>. You run code expression by expression, pushing each line of code further and further up into the console’s history, out of sight and out of mind. You can look at your history, but, practically speaking, there is no good, clear way to track what you have done just by using the console.</p>
-<p>This is where the <strong>editor panel</strong> comes in. The editor panel shows text documents in which you will save the code and any documentation or explanations that you want to save. We will primarily be working with R scripts and Quarto documents in this course. Here, we will stick to R scripts.</p>
-<section id="scripts-and-reproducibility" class="level3">
-<h3 class="anchored" data-anchor-id="scripts-and-reproducibility">Scripts and reproducibility</h3>
-<p>Scripts are at the foundation of reproducibility. They contain the code that performed a certain set of analysis or created a visualization that can be run by you or someone else later. Unlike the console, scripts are meant to be permanent or at least record what you have done. You save scripts, but you do not save what happened in the console.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p>An <strong>R script</strong> is a plain text document in which everything that is typed is assumed to be R code that will be sent to the console. To run code from a script (or send it to the console) you cannot just type <code>Return/Enter</code>. That moves you to the next line. Instead, place your cursor anywhere within an R expression and press <code>Cmd + Return</code> or <code>Ctrl + Enter</code>. If you want to write comments in a script to take notes or tell future you or any collaborators why you did something, you need to place a hashtag <code>#</code> before it. Anything after <code>#</code> will not be run as code.</p>
-<ul>
-<li>Execute an R expression from a script: place cursor within the expression and press <code>Cmd + Return</code> or <code>Ctrl + Enter</code></li>
-<li>Comment: <code>#</code></li>
-</ul>
-<p>Try it out for yourself.</p>
-<p>This distinction between <em>permanent</em> and <em>ephemeral</em> also translates to the panels on the right. The files pane (bottom right) shows the scripts you create and any data or visualization you save. These are permanent. The environment panel shows the objects created in a session by running code in the console. These objects are ephemeral. They exist and can be used in this session, but they can always be recreated from the script.</p>
-<p>The script trumps the environment panel; it is the source of truth. The code that creates the object is much more important than the object itself. Think of it this way, if you have it right in the environment but wrong in a script, it will not do you much good when you come back to your code after a break and find that things are out of whack.</p>
-<div id="fig-permanence" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application showing that the editor and file panels are permanent data and the console and environment panels hold ephemeral data.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-permanence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-permanence.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing that the editor and file panels are permanent data and the console and environment panels hold ephemeral data.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-permanence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: The editor and files panels are the primary sources of truth. The console and environment panels represent the ephemeral objects created in a session.
-</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="setting-up-rstudio-for-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-rstudio-for-reproducibility">Setting up RStudio for reproducibility</h2>
-<p>We need to make some important changes to the default settings in RStudio to ensure that R scripts remain the source of truth of your analysis not your environment. Go to Tools -&gt; Global Options and uncheck Restore .RData into workspace at startup and set Save workspace to .RData on exit to <code>Never</code>.</p>
-<div id="fig-workspace" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the Settings window for RStudio.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-workspace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-workspace.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the Settings window for RStudio.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-workspace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: RStudio Global Options: Set these options for the Workspace.
-</figcaption>
-</figure>
-</div>
-<p>Let’s see what this does. Make sure that you have created objects in your environment. Then, restart your session. You can do this by going to the Session menu -&gt; Restart R. Your environment panel should be empty now. This might seem like it is painful, but it is short-term pain for long-term gain. It will teach you to keep what you want to save in your R script so that you can always recreate objects or rerun analysis later.</p>
-<p>In fact, running <code>Restart R</code> and then running your script, either one line at a time (hit <code>Cmd + Return</code> or <code>Ctrl + Enter</code> over and over) or <code>Cmd/Ctrl + Shift + S</code> to re-run the entire script, is a good way to ensure that your script is correct. Better to find out now if there is a problem than weeks or months down the road.</p>
-</section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>After getting RStudio set up, the next step is to install the main packages we will use in the course. R comes with a preinstalled set of packages known as <strong>base R</strong>. The real power of R comes from combining this strong foundation for data analysis with other packages built by community members. Generally you will install packages through the central package repository called <a href="https://cran.r-project.org">CRAN (The Comprehensive R Archive Network)</a>, which is also where you downloaded R. There are over 23,000 packages on CRAN.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<section id="installing-packages" class="level3">
-<h3 class="anchored" data-anchor-id="installing-packages">Installing packages</h3>
-<p>Most importantly for this class, we need to install the <a href="https://tidyverse.org">tidyverse</a> set of packages. There are two ways to do this. Either through a function on the console or using the RStudio <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI (Graphical User Interface)</a>. I generally prefer to use the console.</p>
-<ol type="1">
-<li>You can install packages with the <code>install.packages()</code> function with the names of the packages you want to install in a character vector. Let’s start by just installing the tidyverse package.</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>To use the graphical interface to install packages:
-<ul>
-<li>Select the Packages tab in the Files panel on the bottom right of RStudio.</li>
-<li>Click on Install button on the top left of the panel.</li>
-<li>This will open a popup dialogue. Type in the packages you want to install—in this case <code>tidyverse</code>—and then click Install.</li>
-<li>Note that RStudio will actually run the command <code>install.packages("tidyverse")</code> in the console.</li>
+<li>Equal-area preserves area</li>
+<li>Azimuthal preserve direction</li>
+<li>Equidistant preserve distance</li>
+<li>Conformal preserve local shape</li>
 </ul></li>
-</ol>
-<div id="fig-install-pkgs" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application showing the process to install packages using the GUI interface.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/install-packages.png" class="img-fluid figure-img" alt="A screen shot of the RStudio application showing the process to install packages using the GUI interface.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Installing packages with the Packages panel in RStudio.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="using-packages" class="level3">
-<h3 class="anchored" data-anchor-id="using-packages">Using packages</h3>
-<p>The tidyverse set of packages is now installed, but to actually use the functions from the package in an R session you need to load the package. This is done with <code>library()</code>. Try it for yourself.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You do not need to put quotation marks around <code>tidyverse</code> because the <code>library()</code> function knows where to look for something called <code>tidyverse</code>. You can put quotation marks around it if you want to. You should get an output in your console that looks like this:</p>
-<div id="fig-load-tidyverse" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/load-tidyverse.png" class="img-fluid figure-img" style="width:90.0%" alt="A screen shot of the output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-load-tidyverse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Output from loading the tidyverse, showing the packages loaded and functions that conflict with those from other packages.
-</figcaption>
-</figure>
-</div>
-<p>You see a list of the nine core tidyverse packages and their versions: dplyr, forcats, ggplot2, lubridate, purrr, readr, stringr, tibble, tidyr. You will also see a message that there are conflicts. This sounds scary but is expected behavior. This message tells us that dplyr has functions called <code>filter()</code> and <code>lag()</code>, which are also names for functions in base R. When you use these function after loading the tidyverse, you will use the dplyr version, which is what we want.</p>
-<p>Remember, because we set up RStudio for reproducibility, you need to run <code>library(tidyverse)</code> every time you begin a new session. Therefore, you should load the packages you will use at the start of your script. Writing <code>library(tidyverse)</code> at the top of each script is a good practice to begin with.</p>
-</section>
-<section id="updating-packages" class="level3">
-<h3 class="anchored" data-anchor-id="updating-packages">Updating packages</h3>
-<p>Packages are often changing, fixing bugs (and adding some) and bringing new features so it is a good idea to update your packages every once in a while.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Again, there is a way to do this in the console and through the Packages panel.</p>
-<ol type="1">
-<li>Run <code>update.packages()</code> and choose <code>y</code> to update the packages.</li>
-<li>To use the graphical interface to update packages:
-<ul>
-<li>Click on Update button on the top left of the Packages tab of the Files panel. It is right next to Install.</li>
-<li>You can click the Select All button on the bottom right of the dialogue window that pops up.</li>
-<li>Then Install Updates.</li>
 </ul></li>
-</ol>
-<div id="fig-update-pkgs" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-update-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/update-packages.png" class="img-fluid figure-img" style="width:50.0%" alt="A screen shot of the RStudio application showing the process to update packages using the GUI interface. The Select All button is highlighted in red.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-update-pkgs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Updating packages with the Packages panel in RStudio.
-</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="other-tweaks" class="level2">
-<h2 class="anchored" data-anchor-id="other-tweaks">Other tweaks</h2>
-<p>There are also a couple of tweaks that you can make to the appearance and way things work in RStudio that might be worth your time. The settings for RStudio are found under Tools -&gt; Global Options. Under the Appearance tab you can change the color theme for RStudio, choose your font and font size.</p>
-<p>Another change that I like to make is in the R Markdown tab. This changes the settings for notebook-like files such as R Markdown and Quarto. I like to uncheck Show output inline for all R Markdown documents. This makes Quarto documents act more like scripts. Instead of printing output below a cell block and in the console, the output only goes to the console.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-appearance" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio Appearance settings.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-appearance.png" class="img-fluid figure-img" alt="A screen shot of the RStudio Appearance settings.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-appearance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Change the color scheme, font, and font size of RStudio in the Appearance settings.
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-rmarkdown-settings" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio R Markdown settings.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rmarkdown-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/rstudio-rmarkdown.png" class="img-fluid figure-img" alt="A screen shot of the RStudio R Markdown settings.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rmarkdown-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: You may want to uncheck Show output inline for all R Markdown documents.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>The <strong>Code</strong> tab has a couple of settings that you might want to change.</p>
-<ul>
-<li>I suggest using the native pipe operator (<code>|&gt;</code>) by checking the box.</li>
-<li>Under Display you might want to uncheck Show margin. This will turn off the vertical line in the editor pane.</li>
-<li>At the bottom of Display there is a check box for rainbow parentheses. This turns each set of parentheses a different color, which can help you keep track of where you are in more complex code.</li>
 </ul>
-<p>Play around with the themes to make RStudio a nice, fun place to be. You might even look for some different monospaced fonts.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li>Lovelace, Nowosad, and Muenchow, <em>Geocomputation with R</em>, <a href="https://r.geocompx.org/spatial-class#crs-intro">Chapter 2: Geographic Data in R</a>.</li>
+<li><a href="https://datacarpentry.org/organization-geospatial/index.html">Data Carpentries: Introduction to Geospatial Concepts</a>.</li>
+</ul>
+</section>
+</section>
+<section id="packages-for-spatial-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="packages-for-spatial-data-in-r">Packages for spatial data in R</h2>
+<section id="spatial-packages" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-packages">Spatial packages</h3>
+<ul>
+<li><a href="https://r-spatial.github.io/sf/index.html">sf: Simple features for R</a>: vector data in R.</li>
+<li><a href="https://rspatial.github.io/terra/index.html">terra: Raster geographic data in R</a>: raster data in R.</li>
+<li><a href="https://dieghernan.github.io/tidyterra/">tidyterra</a>: Integrate terra objects into the tidyverse and ggplot2.</li>
+</ul>
+</section>
+<section id="spatial-data-packages" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-data-packages">Spatial data packages</h3>
+<ul>
+<li><a href="https://docs.ropensci.org/USAboundaries/index.html">USAboundaries</a>: Historical boundaries from 1629 to 2000 for states and counties from the Newberry Library’s Atlas of <a href="https://publications.newberry.org/ahcbp/">Historical County Boundaries</a> and historical city population data from Erik Steiner’s <a href="https://github.com/cestastanford/historical-us-city-populations">United States Historical City Populations, 1790–2010</a>.</li>
+<li><a href="https://docs.ropensci.org/rnaturalearth/index.html">rnaturalearth</a>: Provides access to the <a href="https://www.naturalearthdata.com/">Natural Earth</a> vector data.</li>
+<li><a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a>: Package to geocode locations using any of the many <a href="https://jessecambon.github.io/tidygeocoder/articles/geocoder_services.html">supported geocoding services</a>.</li>
+<li><a href="https://docs.ropensci.org/osmdata/">osmdata</a>: Access to OpenStreetMap data.</li>
+<li><a href="https://walker-data.com/tidycensus/">tidycensus</a>: Access to US Census Bureau data in a tidy format, including the option to bind the data spatially on import.</li>
+<li><a href="https://github.com/walkerke/tigris">tigris</a>: Access to cartographic elements provided by the US Census Bureau TIGER, including cartographic boundaries, roads, and water.</li>
+<li><a href="https://ropengov.github.io/giscoR/">giscoR</a>: Access to European geospatial data.</li>
+<li><a href="https://github.com/USEPA/elevatr">elevatr</a>: An R package for accessing elevation data.</li>
+</ul>
+</section>
+<section id="visualization-of-spatial-data" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-of-spatial-data">Visualization of spatial data</h3>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/index.html">ggplot2</a>.</li>
+<li><a href="https://r-tmap.github.io/tmap/">tmap: Thematic maps in R</a>: An alternative to plotting maps with ggplot2.</li>
+<li><a href="https://rstudio.github.io/leaflet/">leaflet</a>: An R package for the <a href="https://leafletjs.com/">Leaflet</a> open-source JavaScript library for interactive maps.</li>
+<li><a href="https://r-spatial.github.io/mapview/">mapview</a>: Make quick interactive maps to view spatial data.</li>
+<li><a href="https://www.rayshader.com">rayshader</a>: Create 3D maps in R.</li>
+</ul>
+</section>
+</section>
+<section id="vector-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="vector-data-in-r">Vector data in R</h2>
+<p>The basis for working with vector spatial data in R is provide by the <a href="https://r-spatial.github.io/sf/index.html">sf: Simple features for R</a> package. An <code>sf</code> object is a data frame that contains a special <code>geometry</code> column that brings together the coordinates and spatial type (point, line, polygon, etc.) and spatial attributes of the coordinate reference system (CRS) of the data. See <a href="#fig-sf" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div id="fig-sf" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screenshot of the printout for an sf object in R showing the geospatial attributes at the top followed by a data frame. There are boxes and labels pointing to the different aspects of an sf object.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/sf-object.png" class="img-fluid figure-img" style="width:75.0%" alt="A screenshot of the printout for an sf object in R showing the geospatial attributes at the top followed by a data frame. There are boxes and labels pointing to the different aspects of an sf object.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Overview of an sf object in R.
+</figcaption>
+</figure>
+</div>
+<p>Aside from the special <code>geometry</code> column, <code>sf</code> objects behave very similar to data frames and, therefore, fit well within the th <a href="https://tidyverse.org">tidyverse</a> set of packages. This means you can usually make use of the workflows discussed in <a href="../resources/wrangling.html">Wrangling data in the tidyverse</a> as is.</p>
+<p>Vector data will generally consist of points, lines, or polygons with attributes you want to represent graphically and, optionally, a separate base map such as <a href="#fig-va-map" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-va-map" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A map of Virginia counties with black points at Blacksburg and Charlottesville." width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-va-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mapping_files/figure-html/fig-va-map-1.png" id="fig-va-map" class="img-fluid figure-img" alt="A map of Virginia counties with black points at Blacksburg and Charlottesville." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-va-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Let’s go through the process of creating this map. For this map we need to geocode the locations, get a base map of the counties of Virginia, project the points and base map to the coordinate reference system for the state, and then make the map. We will do this using the following packages:</p>
+<ul>
+<li><a href="https://r-spatial.github.io/sf/index.html">sf</a> to represent the geospatial data.</li>
+<li><a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a> to geocode the locations.</li>
+<li><a href="https://docs.ropensci.org/USAboundaries/index.html">USAboundaries</a> for the base map and to find the CRS for the state.</li>
+<li><a href="https://ggplot2.tidyverse.org/index.html">ggplot2</a> to plot the map.</li>
+</ul>
+<p>Do note that there are a variety of ways to achieve the same result.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygeocoder)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(USAboundaries)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="geocode-locations" class="level3">
+<h3 class="anchored" data-anchor-id="geocode-locations">1. Geocode locations</h3>
+<p>One of the most straightforward but also flexible packages for geocoding locations in R is <a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a>. You can geocode a character vector of locations with <code>geo()</code> or a data frame of locations with <code>geocode()</code>. tidygeocoder provides a number of services for doing the geocoding, defaulting to <a href="https://nominatim.org">OpenStreetMap data</a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>locations <span class="ot">&lt;-</span> <span class="fu">geo</span>(<span class="fu">c</span>(<span class="st">"Blacksburg"</span>, <span class="st">"Charlottesville"</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>locations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  address           lat  long
+  &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;
+1 Blacksburg       37.2 -80.4
+2 Charlottesville  38.0 -78.5</code></pre>
+</div>
+</div>
+</section>
+<section id="convert-locations-to-sf-object" class="level3">
+<h3 class="anchored" data-anchor-id="convert-locations-to-sf-object">2. Convert locations to sf object</h3>
+<p><code>locations</code> has geographic data, but it is not technically geospatial. The addresses have latitude and longitude values, but the coordinate reference system used is implicit. When data is geocoded it is almost always returned using the web Mercator projection known as EPSG 4326. The EPSG standard is a convenient method for defining a CRS. You can look up EPSG codes using <a href="https://spatialreference.org">Spatial Reference</a>. We can convert the data frame to a spatial data frame—an <code>sf</code> object—with the <code>st_as_sf()</code> function.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>locations_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(locations, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>locations_sf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 2 features and 1 field
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -80.41368 ymin: 37.22966 xmax: -78.47668 ymax: 38.02931
+Geodetic CRS:  WGS 84
+# A tibble: 2 × 2
+  address                     geometry
+* &lt;chr&gt;                    &lt;POINT [°]&gt;
+1 Blacksburg      (-80.41368 37.22966)
+2 Charlottesville (-78.47668 38.02931)</code></pre>
+</div>
+</div>
+<p>Notice the differences between <code>locations</code> and <code>locations_sf</code>. The latter has combined the <code>long</code> and <code>lat</code> columns into a single <code>geometry</code> column, while we also get attributes about the object’s CRS as shown above in <a href="#fig-sf" class="quarto-xref">Figure&nbsp;1</a>.</p>
+</section>
+<section id="get-a-base-map" class="level3">
+<h3 class="anchored" data-anchor-id="get-a-base-map">3. Get a base map</h3>
+<p>There are many packages that provide vector mapping data in R. <a href="https://docs.ropensci.org/rnaturalearth/index.html">rnaturalearth</a> is a great starting point. It contains worldwide data for administrative boundaries and natural features such as lakes, rivers, and oceans. <a href="https://github.com/walkerke/tigris">tigris</a> provides access to census bureau geographic data. In this example we will use <a href="https://docs.ropensci.org/USAboundaries/index.html">USAboundaries</a>, which provides contemporary and historical boundaries in the United states. Note that both rnaturalearth and USAboundaries provide most of the data through secondary packages. If these packages are needed, you will be prompted to install them. Both rnaturalearth and USAboundaries return <code>sf</code> objects with a CRS of EPSG:4326.</p>
+<p>Here, we want county data for a single state.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>virginia <span class="ot">&lt;-</span> <span class="fu">us_counties</span>(<span class="at">states =</span> <span class="st">"Virginia"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="reproject-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="reproject-the-data">4. Reproject the data</h3>
+<p>Now we have the data, but we might want to change our data from using the web Mercator projection to a CRS that more accurately reflects the local area. USAboundaries provides both a data frame of the <a href="https://en.wikipedia.org/wiki/State_Plane_Coordinate_System">State Plane Coordinate System</a> projections as EPSG codes and a function to quickly return the code for a state. We can then use <code>st_transform()</code> to reproject the data.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find EPSG code for Virginia</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">state_plane</span>(<span class="at">state =</span> <span class="st">"VA"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32146</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Project</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>locs_proj <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(locs, <span class="st">"EPSG:32146"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>virginia_proj <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(virginia, <span class="st">"EPSG:32146"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="map-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="map-the-data">5. Map the data</h3>
+<p>ggplot2 has the ability to plot <code>sf</code> through <code>geom_sf()</code>. This is a special geom in that it can plot different geometric objects—points, lines, polygons—based on the <code>geometric type</code> of the <code>sf</code> object. Note that in creating maps with ggplot2 you will often being providing multiple data objects to separate geom layers. When doing this, the <code>data</code> argument should be written out, thus <code>geom_sf(data = virginia_proj)</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> virginia_proj) <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> locs_proj) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Map of Virginia counties"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"With points showing the locations of Blacksburg and Charlottesville"</span>) <span class="sc">+</span> </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-va-map2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A map of Virginia counties with black points at Blacksburg and Charlottesville." width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-va-map2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mapping_files/figure-html/fig-va-map2-1.png" id="fig-va-map2" class="img-fluid figure-img" alt="A map of Virginia counties with black points at Blacksburg and Charlottesville." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-va-map2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="raster-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="raster-data-in-r">Raster data in R</h2>
+<p>Historical data is generally vector data, but there may be times when raster data can either supplement a map with vector data or be a meaningful way to present historically relevant data in itself. One particularly relevant form of raster data elevation. Let’s get some elevation data using the following packages:</p>
+<ul>
+<li><a href="https://rspatial.github.io/terra/index.html">terra: Raster geographic data in R</a>: raster data in R.</li>
+<li><a href="https://dieghernan.github.io/tidyterra/">tidyterra</a>: Integrate terra objects into the tidyverse and ggplot2.</li>
+<li><a href="https://github.com/USEPA/elevatr">elevatr</a>: An R package for accessing elevation data.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyterra)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(elevatr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The <a href="https://github.com/USEPA/elevatr">elevatr</a> package provides a way to download elevation data, using a spatial data object to define the boundaries of the raster to be returned. Currently, <code>get_elev_raster()</code> returns a <code>raster</code> object, which we can update to a <code>terra</code> object with the <code>rast()</code> function. The <code>z</code> level provides a zoom level between 1 and 14 with 1 as the most zoomed out and 14 as the highest resolution. The larger geographic area you want the lower zoom level you will need. Setting <code>clip = locations</code> returns a raster only inside the boundaries of the <code>virginia</code> <code>sf</code> object.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>va_elev <span class="ot">&lt;-</span> <span class="fu">get_elev_raster</span>(virginia, <span class="at">z =</span> <span class="dv">7</span>, <span class="at">clip =</span> <span class="st">"locations"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>va_elev <span class="ot">&lt;-</span> <span class="fu">rast</span>(va_elev)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>va_elev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+size        : 573, 1650, 1  (nrow, ncol, nlyr)
+resolution  : 0.005109401, 0.005109401  (x, y)
+extent      : -83.67501, -75.2445, 36.53983, 39.46752  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +datum=WGS84 +no_defs 
+source(s)   : memory
+name        : fileebbf42b15c4f 
+min value   :             -315 
+max value   :             1682 </code></pre>
+</div>
+</div>
+<p>A <code>terra</code> object (specifically this is a <code>SpatRaster</code>) is similar to an <code>sf</code> object in that it is normal R data object with spatial attributes. However, instead of holding data in a data frame, a <code>terra</code> object uses a matrix of values. It will rarely be useful to see the values themselves, but the print method for <code>SpatRaster</code> provides an overview of the dimensions of the raster, the number of layers (<code>nlyr</code>), the name of the layer(s), and the minimum and maximum values.</p>
+<p>The <a href="https://dieghernan.github.io/tidyterra/">tidyterra</a> makes it possible to manipulate <code>terra</code> objects using dplyr verbs, provides special geoms for plotting <code>terra</code> objects in ggplot2, and color palettes designed for geographic data. You might notice that the minimum value is less than 0, which is probably an error. We can change anything less than 0 to -1 with <code>mutate()</code>, treating the <code>name</code> of the layer as the column name. First, we might want to rename the layer <code>name</code> to a more descriptive name than the file number.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(va_elev)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "fileebbf42b15c4f"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename in place</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(va_elev) <span class="ot">&lt;-</span> <span class="st">"altitude"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Change values less than 0</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>va_elev <span class="ot">&lt;-</span> va_elev <span class="sc">|&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">altitude =</span> <span class="fu">if_else</span>(<span class="at">condition =</span> altitude <span class="sc">&lt;</span> <span class="dv">0</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">true =</span> <span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                            <span class="at">false =</span> altitude))</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>va_elev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+size        : 573, 1650, 1  (nrow, ncol, nlyr)
+resolution  : 0.005109401, 0.005109401  (x, y)
+extent      : -83.67501, -75.2445, 36.53983, 39.46752  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +datum=WGS84 +no_defs 
+source(s)   : memory
+name        : altitude 
+min value   :       -1 
+max value   :     1682 </code></pre>
+</div>
+</div>
+<p>Next, we need to project the <code>terra</code> object into the CRS for virginia. In terra you do this with <code>project()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># project the data</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>va_elev <span class="ot">&lt;-</span> <span class="fu">project</span>(va_elev, <span class="st">"EPSG:32146"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>va_elev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+size        : 729, 1632, 1  (nrow, ncol, nlyr)
+resolution  : 462.7398, 462.7398  (x, y)
+extent      : 3036571, 3791763, 1875117, 2212454  (xmin, xmax, ymin, ymax)
+coord. ref. : NAD83 / Virginia North (EPSG:32146) 
+source(s)   : memory
+name        : altitude 
+min value   :    -1.00 
+max value   :  1666.06 </code></pre>
+</div>
+</div>
+<p>Let’s take a look at what we have. We can plot with ggplot2 using <code>geom_spatraster()</code> from tidyterra and play around with different <code>scale_fill_*()</code> functions provided by tidyterra. Check out the color palette options at the <a href="https://dieghernan.github.io/tidyterra/reference/index.html#scales">tidyterra website</a>. This example uses wikipedia colors. Within <code>geom_spatraster()</code> setting the <code>fill</code> aesthetic will be done automatically, so it is not strictly necessary in this case where there is only the one layer.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_spatraster</span>(<span class="at">data =</span> va_elev, <span class="fu">aes</span>(<span class="at">fill =</span> altitude)) <span class="sc">+</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_wiki_c</span>() <span class="sc">+</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-elev" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A map of the elevation of Virginia." width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mapping_files/figure-html/fig-elev-1.png" id="fig-elev" class="img-fluid figure-img" alt="A map of the elevation of Virginia." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-elev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="put-it-all-together" class="level2">
+<h2 class="anchored" data-anchor-id="put-it-all-together">Put it all together</h2>
+<p>Finally, let’s put it all together, plotting the raster and vector data together. Note that layers are plotted in order, so we want to plot the raster first and then the vector data. We also need to make the <code>fill</code> of the counties base map (<code>virginia_proj</code>) to transparent using <code>NA</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_spatraster</span>(<span class="at">data =</span> va_elev) <span class="sc">+</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> virginia_proj, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> locs_proj) <span class="sc">+</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_wiki_c</span>() <span class="sc">+</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Map of Virginia counties"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"With points showing the locations of Blacksburg and Charlottesville"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Altitude"</span>) <span class="sc">+</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-va-elev" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A map of Virginia counties with black points at Blacksburg and Charlottesville." width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-va-elev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mapping_files/figure-html/fig-va-elev-1.png" id="fig-va-elev" class="img-fluid figure-img" alt="A map of Virginia counties with black points at Blacksburg and Charlottesville." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-va-elev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="further-resources" class="level2">
+<h2 class="anchored" data-anchor-id="further-resources">Further resources</h2>
+<ul>
+<li>Robin Lovelace, Jakub Nowosad, and Jannes Muenchow, <a href="https://r.geocompx.org"><em>Geocomputation with R</em></a> (2nd Edition).
+<ul>
+<li>Specifically, read over <a href="https://r.geocompx.org/spatial-class">Chapter 2: Geographic data in R</a>. This chapter provides an overview of vector and raster data in R, as well as coordinate reference systems.</li>
+<li>Skim over the content of the other chapters in the book to see what may be of interest to you.</li>
+</ul></li>
+<li>Edzer Pebesma and Roger Bivand, <em>Spatial Data Science: With Applications in R</em> (2025), <a href="https://www.r-spatial.org/book" class="uri">https://www.r-spatial.org/book</a>.</li>
+<li>Kyle E. Walker, <em>Analyzing US Census Data: Methods, Maps, and Models in R</em> (CRC Press, 2023), <a href="https://walker-data.com/census-r/" class="uri">https://walker-data.com/census-r/</a>.</li>
+<li><a href="https://rspatial.org/index.html">Spatial Data Science with R and terra</a></li>
+<li>Kieran Healy, <em>Data Visualization: A Practical Introduction</em>, <a href="https://socviz.co/07-maps.html">Chapter 7: Draw Maps</a>.</li>
+<li>Martijn Tennekes and Jakub Nowosad, <em>Spatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R</em> (2025), <a href="https://tmap.geocompx.org" class="uri">https://tmap.geocompx.org</a>.</li>
+<li>Jesse Sadler, <a href="https://www.jessesadler.com/post/simple-feature-objects/">An Exploration of Simple Features for R</a>.</li>
+<li><a href="https://datacarpentry.org/organization-geospatial/index.html">Data Carpentries: Introduction to Geospatial Concepts</a>.</li>
+<li><a href="https://datacarpentry.github.io/r-raster-vector-geospatial/index.html">Data Carpentries: Introduction to Geospatial Raster and Vector Data with R</a>.</li>
+</ul>
 
 
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Raw data may be an oxymoron, but it is a useful one when setting up our projects.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>You can move the panels around in Tools -&gt; Global Options if you want to.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>This is largely true if a bit overdramatic. The History tab shows the code expressions you have run.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>You can also install packages from other repositories such as <a href="https://r-universe.dev/search">R Universe</a> or on <a href="https://github.com">GitHub</a>, but we will not need to do that for this course. The process for installing from these other places is similar.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>How often is up to you. Packages are generally stable, so I find there is usually little downside to updating. I update packages once a week but once a month would be plenty frequent.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Some free monospaced fonts that you might check out are <a href="https://developer.apple.com/fonts/">Apple’s SF Mono</a>, <a href="https://github.com/tonsky/FiraCode">Fira Code</a>, <a href="https://sourcefoundry.org/hack/">Hack</a>, <a href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>, and <a href="https://typeof.net/Iosevka/">Iosevka</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1336,13 +1371,13 @@ Figure&nbsp;14: You may want to uncheck Show output inline for all R Markdown do
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../resources/install.html" class="pagination-link" aria-label="Installing R and RStudio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Installing R and RStudio</span>
+      <a href="../resources/wrangling.html" class="pagination-link" aria-label="Wrangling data in the tidyverse">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Wrangling data in the tidyverse</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../resources/rstudio-guide.html" class="pagination-link" aria-label="Using R in RStudio">
-        <span class="nav-page-text">Using R in RStudio</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../resources/git-overview.html" class="pagination-link" aria-label="Git and GitHub: An overview">
+        <span class="nav-page-text">Git and GitHub: An overview</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1354,7 +1389,7 @@ Figure&nbsp;14: You may want to uncheck Show output inline for all R Markdown do
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/rstudio-setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/mapping.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>

@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2a479c85bda5745b81d337aa9d3d91bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-33ca1bd5c1400e80970044bf4f2cc76b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2a479c85bda5745b81d337aa9d3d91bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4803f501640633601bd38d81d8b937b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-74515f5a1dcf9cffe084f6f336b47049.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4803f501640633601bd38d81d8b937b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -433,6 +433,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
   <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
   <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
+  <li><a href="#spatial-digital-history-projects" id="toc-spatial-digital-history-projects" class="nav-link" data-scroll-target="#spatial-digital-history-projects">Spatial Digital History projects</a></li>
+  <li><a href="#packages-to-install" id="toc-packages-to-install" class="nav-link" data-scroll-target="#packages-to-install">Packages to install</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/10-content-maps.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -487,12 +489,53 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Quarto website overview.</li>
 <li>Discussion: Data visualization, mapping, and historical argument.</li>
-<li>A (hopefully) gentle introduction to mapping</li>
+<li>A (hopefully) gentle introduction to mapping.</li>
 <li>Mapping data in R.</li>
+</ul>
+</section>
+<section id="spatial-digital-history-projects" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-digital-history-projects">Spatial Digital History projects</h2>
+<ul>
+<li><a href="https://dsl.richmond.edu/panorama/redlining/">Mapping Inequality</a></li>
+<li><a href="https://dsl.richmond.edu/emancipation/">Visualizing Emancipation</a></li>
+<li><a href="https://www.slavevoyages.org/">Slave Voyages</a></li>
+<li><a href="http://republicofletters.stanford.edu">Mapping the Republic of Letters</a></li>
+<li><a href="https://pleiades.stoa.org">Pleiades: gazetteer and graph of ancient places</a></li>
+<li><a href="http://awmc.unc.edu">Ancient World Mapping Center</a></li>
+<li><a href="https://whgazetteer.org/">World Historical Gazetteer</a></li>
+</ul>
+</section>
+<section id="packages-to-install" class="level2">
+<h2 class="anchored" data-anchor-id="packages-to-install">Packages to install</h2>
+<ul>
+<li><a href="https://r-spatial.github.io/sf/index.html">sf: Simple features for R</a></li>
+<li><a href="https://rspatial.github.io/terra/index.html">terra: Raster geographic data in R</a></li>
+<li><a href="https://dieghernan.github.io/tidyterra/">tidyterra</a>: Integrate terra objects into the tidyverse and ggplot2.</li>
+<li><a href="https://docs.ropensci.org/USAboundaries/index.html">USAboundaries</a>: historical boundaries from 1629 to 2000 for states and counties from the Newberry Library’s Atlas of <a href="https://publications.newberry.org/ahcbp/">Historical County Boundaries</a> and historical city population data from Erik Steiner’s <a href="https://github.com/cestastanford/historical-us-city-populations">United States Historical City Populations, 1790–2010</a>.</li>
+<li><a href="https://docs.ropensci.org/rnaturalearth/index.html">rnaturalearth</a>: Provides access to the <a href="https://www.naturalearthdata.com/">Natural Earth</a> vector data.</li>
+<li><a href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a>: Package to geocode locations using any of the many <a href="https://jessecambon.github.io/tidygeocoder/articles/geocoder_services.html">supported geocoding services</a>.</li>
+<li><a href="https://github.com/USEPA/elevatr">elevatr</a>: An R package for accessing elevation data.</li>
+<li><a href="https://rstudio.github.io/leaflet/">leaflet</a>: An R package for the <a href="https://leafletjs.com/">Leaflet</a> open-source JavaScript library for interactive maps.</li>
 </ul>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>See <a href="../resources/mapping.html">Resources: Mapping with R</a> for more in depth discussion on resources for working with spatial data in R and in historical research.</p>
+<ul>
+<li>Robin Lovelace, Jakub Nowosad, and Jannes Muenchow, <a href="https://r.geocompx.org"><em>Geocomputation with R</em></a> (2nd Edition).
+<ul>
+<li>Specifically, read over <a href="https://r.geocompx.org/spatial-class">Chapter 2: Geographic data in R</a>. This chapter provides an overview of vector and raster data in R, as well as coordinate reference systems.</li>
+<li>Skim over the content of the other chapters in the book to see what may be of interest to you.</li>
+</ul></li>
+<li>Edzer Pebesma and Roger Bivand, <em>Spatial Data Science: With Applications in R</em> (2025), <a href="https://www.r-spatial.org/book" class="uri">https://www.r-spatial.org/book</a>.</li>
+<li>Kyle E. Walker, <em>Analyzing US Census Data: Methods, Maps, and Models in R</em> (CRC Press, 2023), <a href="https://walker-data.com/census-r/" class="uri">https://walker-data.com/census-r/</a>.</li>
+<li><a href="https://rspatial.org/index.html">Spatial Data Science with R and terra</a></li>
+<li>Kieran Healy, <em>Data Visualization: A Practical Introduction</em>, <a href="https://socviz.co/07-maps.html">Chapter 7: Draw Maps</a>.</li>
+<li>Martijn Tennekes and Jakub Nowosad, <em>Spatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R</em> (2025), <a href="https://tmap.geocompx.org" class="uri">https://tmap.geocompx.org</a>.</li>
+<li>Jesse Sadler, <a href="https://www.jessesadler.com/post/simple-feature-objects/">An Exploration of Simple Features for R</a>.</li>
+<li><a href="https://datacarpentry.org/organization-geospatial/index.html">Data Carpentries: Introduction to Geospatial Concepts</a>.</li>
+<li><a href="https://datacarpentry.github.io/r-raster-vector-geospatial/index.html">Data Carpentries: Introduction to Geospatial Raster and Vector Data with R</a>.</li>
+</ul>
 
 
 </section>

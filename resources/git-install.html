@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2a479c85bda5745b81d337aa9d3d91bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-33ca1bd5c1400e80970044bf4f2cc76b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-2a479c85bda5745b81d337aa9d3d91bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4803f501640633601bd38d81d8b937b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-74515f5a1dcf9cffe084f6f336b47049.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4803f501640633601bd38d81d8b937b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -425,6 +425,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Wrangling data in the tidyverse</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping with R</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -504,6 +510,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#windows" id="toc-windows" class="nav-link active" data-scroll-target="#windows">Windows</a></li>
   <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos">MacOS</a></li>
   <li><a href="#check-that-you-have-git-in-rstudio" id="toc-check-that-you-have-git-in-rstudio" class="nav-link" data-scroll-target="#check-that-you-have-git-in-rstudio">Check that you have Git in RStudio</a></li>
+  <li><a href="#terminal-settings-in-rstudio" id="toc-terminal-settings-in-rstudio" class="nav-link" data-scroll-target="#terminal-settings-in-rstudio">Terminal settings in RStudio</a>
+  <ul class="collapse">
+  <li><a href="#windows-1" id="toc-windows-1" class="nav-link" data-scroll-target="#windows-1">Windows</a></li>
+  </ul></li>
+  <li><a href="#macos-1" id="toc-macos-1" class="nav-link" data-scroll-target="#macos-1">macOS</a></li>
   <li><a href="#resources-installing-git" id="toc-resources-installing-git" class="nav-link" data-scroll-target="#resources-installing-git">Resources: Installing Git</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/git-install.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -557,6 +568,27 @@ Figure&nbsp;1: Check if Git is installed on your computer in the RStudio Termina
 <h2 class="anchored" data-anchor-id="check-that-you-have-git-in-rstudio">Check that you have Git in RStudio</h2>
 <p>After you download Git, you should restart RStudio to make sure you have a clean Terminal. Return to the Terminal tab as shown in <a href="#fig-gitcheck" class="quarto-xref">Figure&nbsp;1</a> and run <code>git --version</code> to check that you have Git installed.</p>
 <p>If everything works, you can move on to <a href="../resources/git-setup.html">Setting up Git and GitHub</a>. If you are still getting an error, check the resources on installing Git.</p>
+</section>
+<section id="terminal-settings-in-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="terminal-settings-in-rstudio">Terminal settings in RStudio</h2>
+<section id="windows-1" class="level3">
+<h3 class="anchored" data-anchor-id="windows-1">Windows</h3>
+<p>If you are on windows, the Terminal tab in RStudio may use the Command-Prompt by default. If the <em>prompt</em>—the character to the left of your cursor—is not a dollar sign (<code>$</code>), you should change your settings in RStudio to use Bash for new Terminals. Go to Tools -&gt; Global Options. On the Terminal tab make sure that Bash is set for new terminals as shown in <a href="#fig-rstudio-bash" class="quarto-xref">Figure&nbsp;2</a>.</p>
+</section>
+</section>
+<section id="macos-1" class="level2">
+<h2 class="anchored" data-anchor-id="macos-1">macOS</h2>
+<p>The default shell in macOS is <a href="https://en.wikipedia.org/wiki/Z_shell">Zsh</a> and not <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>. If the <em>prompt</em>—the character to the left of your cursor—is a percentage sign (<code>%</code>), you are running Zsh. If it is a dollar sign (<code>$</code>), you are running Bash. The differences between these two shell programs are minimal and running one or the other will not affect anything you do in this course. If you want to change the shell in RStudio you can go to Tools -&gt; Global Options as shown in <a href="#fig-rstudio-bash" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div id="fig-rstudio-bash" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the RStudio settings with a purple arrow pointing to the New terminals open with setting and purple text that says set to Bash.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-bash-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../files/img/rstudio-bash.png" class="img-fluid figure-img" style="width:60.0%" alt="A screen shot of the RStudio settings with a purple arrow pointing to the New terminals open with setting and purple text that says set to Bash.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-bash-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Terminal settings in RStudio.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="resources-installing-git" class="level2">
 <h2 class="anchored" data-anchor-id="resources-installing-git">Resources: Installing Git</h2>
