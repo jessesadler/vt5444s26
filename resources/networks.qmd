@@ -32,7 +32,7 @@ The basic structures of a graph can be defined though these five summaries.
     - Eigenvector centrality: focuses on prestige or rank. It uses neighbors to find centrality.    
 
 ## Network data structure
-Network data is different from other types of data we have encountered because it is made up of two related structure: an **edge list** and a **node list**, though the latter can be created from the former if the nodes do not have attributes. Within R these two data structures are represented by data frames:
+Network data is different from other types of data we have encountered because it is made up of two related structure: an **edge list** and a **node list**.[^1] Within R these two data structures are represented by data frames:
 
 - Edge list: A data frame with at least two columns of the node pairs that are joined by an edge. These columns are often named `from` and `to` even if there is no direction for the connection. Further columns provide attributes for the edges such as weight, count, or type.
 - Node list: A data frame with at least one column containing all of the unique nodes in the graph. This column is often named `id`. Further columns provide attributes for the node such as name, type, etc.
@@ -70,7 +70,7 @@ node_list <- tibble(id = 1:4,
 node_list
 ```
 
-This is the basic data structure of all network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.
+There are other ways to represent network data, but node and edge lists provides a solid foundation for working with network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.
 
 ## Packages for network analysis in R
 We will be using three main packages for network analysis in R, though there are many more you can explore in [CRAN network analysis task view](https://cran.r-project.org/web/views/NetworkAnalysis.html).
@@ -78,6 +78,7 @@ We will be using three main packages for network analysis in R, though there are
 - [igraph](https://r.igraph.org) an R package for working with network data.
 - [tidygraph](https://tidygraph.data-imaginist.com) a tidy API for graph/network manipulation.
 - [ggraph](https://ggraph.data-imaginist.com) an extension of ggplot2 aimed at supporting network graphs.
+- [netrankr](https://schochastics.github.io/netrankr/index.html): Implementation or various centrality measures.
 
 igraph will provide the network algorithms, but we will access these through the tidygraph package that integrates with the [tidyverse](https://tidyverse.org). Finally, ggraph provides extensions to ggplot2 to integrate the visualization of network graphs.
 
@@ -156,7 +157,7 @@ network |>
 ```
 
 ## Visualize the graph
-Finally, let's visualize the graph with ggraph. ggraph adds node and edge geoms to ggplot2 and implements a graph style that removes the x and y grid. This is because the question of where to layout nodes on an x-y plane is one of the more complex problems in network analysis and a number of algorithms have been developed to do this. Instead of using `ggplot()` a graph visualization is begun with `ggraph()`.[^1]
+Finally, let's visualize the graph with ggraph. ggraph adds node and edge geoms to ggplot2 and implements a graph style that removes the x and y grid. This is because the question of where to layout nodes on an x-y plane is one of the more complex problems in network analysis and a number of algorithms have been developed to do this. Instead of using `ggplot()` a graph visualization is begun with `ggraph()`.[^2]
 
 ```{r}
 #| label: fig-graph
@@ -209,4 +210,6 @@ Even this very simple graph visualization with made up data shows something abou
     - [YouTube channel](https://www.youtube.com/@HistoricalNetworkResearch)
 
 
-[^1]: By using `set.seed()` the layout algorithm will be done in the same way each time it is run.
+[^1]: A node list can be created from an edge list if the nodes do not have attributes.
+
+[^2]: By using `set.seed()` the layout algorithm will be done in the same way each time it is run.

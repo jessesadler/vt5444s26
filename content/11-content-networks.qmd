@@ -59,3 +59,4 @@ Martin Grandjean's, [Introduction to Social Network Analysis](https://www.martin
     - Michael Antonov et al., "Igraph Enables Fast and Robust Network Analysis Across Programming Languages," arXiv:2311.10260, preprint, arXiv, November 16, 2023, <http://arxiv.org/abs/2311.10260>.
 - [tidygraph](https://tidygraph.data-imaginist.com) a tidy API for graph/network manipulation.
 - [ggraph](https://ggraph.data-imaginist.com) an extension of ggplot2 aimed at supporting network graphs.
+- [netrankr](https://schochastics.github.io/netrankr/index.html): Implementation or various centrality measures.

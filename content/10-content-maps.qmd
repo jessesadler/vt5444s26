@@ -19,7 +19,7 @@ format: html
     - One or more content pages
 
 ## Activities
-- Quarto website overview.
+- Quarto website overview and deploy to GitHub Pages.
 - Discussion: Data visualization, mapping, and historical argument.
 - A (hopefully) gentle introduction to mapping.
 - Mapping data in R.
