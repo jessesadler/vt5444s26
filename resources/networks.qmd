@@ -1,0 +1,212 @@
+---
+title: "Networks in R"
+format: html
+---
+
+This page provides an introduction to network analysis in R. It provides a very short overview of the main concepts of network analysis, the structure of network data, and then introduces the packages for working with network data and visualizing it using ggplot2.
+
+## Network analysis concepts
+Networks are made up of entities and connections between those entities. The vocabulary around these concepts differs based on software and discipline, but the entities are referred to as **nodes** or **vertices** and the connections are referred to as **edges** or **links**. A collection of nodes and edges make up a **graph** whether it is visualized or not.
+
+There are a variety of terms to characterize a graph or to understand aspects about the nodes and edges that constitute a graph.
+
+### Five number summary
+The basic structures of a graph can be defined though these five summaries.
+
+1. Size: number of nodes
+2. Density: (0–1) proportion of observed ties to possible ties.
+3. Components: subgroup in which all nodes are connected.
+4. Diameter: longest of the shortest paths across all pairs of nodes.
+5. Cluster: (0–1) proportion of closed triangles to the total number of open and closed triangles.
+
+### Graph terms and measurements
+- Directed: Whether the order of node pairs represents flow of the connection. Graphs can be directed or undirected.
+- Neighbors: Two nodes are *adjacent* and neighbors if joined by an edge.
+- Degree: number of edges connected to the node.
+- Walk: distance between nodes.
+- Path: a walk without repeated nodes or edges.
+- Distance: shortest path between nodes.
+- Centrality: measurement of the importance of a node within a graph. There are three main types of centrality measurements.
+    - Closeness centrality: closeness is inversely related to the total distance of a node to all other nodes.
+    - Betweenness centrality: related to the position of the node on paths between other nodes. If many paths go through a node it has a high centrality.
+    - Eigenvector centrality: focuses on prestige or rank. It uses neighbors to find centrality.    
+
+## Network data structure
+Network data is different from other types of data we have encountered because it is made up of two related structure: an **edge list** and a **node list**, though the latter can be created from the former if the nodes do not have attributes. Within R these two data structures are represented by data frames:
+
+- Edge list: A data frame with at least two columns of the node pairs that are joined by an edge. These columns are often named `from` and `to` even if there is no direction for the connection. Further columns provide attributes for the edges such as weight, count, or type.
+- Node list: A data frame with at least one column containing all of the unique nodes in the graph. This column is often named `id`. Further columns provide attributes for the node such as name, type, etc.
+
+Let's look at a simple example:
+
+```{r}
+#| label: node-edge
+#| message: false
+library(tidyverse)
+# Data frame of node pairs
+tibble(from = c(1, 2, 2, 3, 4),
+       to = c(2, 3, 4, 2, 1))
+
+# Data frame of nodes
+tibble(id = 1:4)
+```
+
+A more complex graph might have attributes for edges and nodes.
+
+```{r}
+#| label: node-edge-lists
+#| message: false
+library(tidyverse)
+# Data frame of node pairs
+edge_list <- tibble(from = c(1, 2, 2, 3, 4),
+                    to = c(2, 3, 4, 2, 1),
+                    type = c("History", "English", "Art History", "History", "English"))
+edge_list
+
+# Data frame of nodes
+node_list <- tibble(id = 1:4,
+                    name = LETTERS[1:4],
+                    university = c("VT", "JMU", "UVA", "GMU"))
+node_list
+```
+
+This is the basic data structure of all network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.
+
+## Packages for network analysis in R
+We will be using three main packages for network analysis in R, though there are many more you can explore in [CRAN network analysis task view](https://cran.r-project.org/web/views/NetworkAnalysis.html).
+
+- [igraph](https://r.igraph.org) an R package for working with network data.
+- [tidygraph](https://tidygraph.data-imaginist.com) a tidy API for graph/network manipulation.
+- [ggraph](https://ggraph.data-imaginist.com) an extension of ggplot2 aimed at supporting network graphs.
+
+igraph will provide the network algorithms, but we will access these through the tidygraph package that integrates with the [tidyverse](https://tidyverse.org). Finally, ggraph provides extensions to ggplot2 to integrate the visualization of network graphs.
+
+## Creating network objects
+Let's start by loading the packages listed above.
+
+```{r}
+#| label: load-pkgs
+#| message: false
+library(igraph)
+library(tidygraph)
+library(ggraph)
+```
+
+There are two ways to turn the edge list and node list into a network object. We can either go directly to a `tbl_graph` object from tidygraph using the `tbl_graph()` function or first create an `igraph` object using `graph_from_data_frame()`. I have found that with larger graphs `graph_from_data_frame()` works more consistently. Both methods are shown below.
+
+```{r}
+#| label: tbl_graph
+# Create a tbl_graph with tidygraph
+tbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)
+```
+
+```{r}
+#| label: igraph-object
+# Create an igraph object
+graph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)
+```
+
+You will notice that the way these objects print to the console are quite different. A `tbl_graph` object prints out as two data frames for the nodes and edges. An `igraph` object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data `attr`, and then provides a graphical overview of the edge list. Let's create a variable by first making an `igraph` object and then converting to `tbl_graph`.
+
+```{r}
+#| label: convert-tbl-graph
+network <- graph_from_data_frame(d = edge_list,
+                                 vertices = node_list,
+                                 directed = FALSE) |>
+  as_tbl_graph()
+network
+```
+
+## Summary of the graph
+
+Let's get our five number summary of this graph using igraph functions.
+
+```{r}
+#| label: 5-nr-summary
+# 1. Size
+gorder(network)
+# 2. Density (0-1)
+edge_density(network)
+# 3. Components: only one, all nodes have at least one edge
+components(network)
+# 4. Diameter
+diameter(network)
+# 5. Clustering coefficient (0-1)
+transitivity(network)
+```
+
+## Calculate node properties
+Let's make a calculation of the centrality of the nodes using dplyr methods. `centrality_degree()` measure the degrees and strength of nodes within the graph.
+
+```{r}
+#| label: centrality
+network |> 
+  mutate(centrality = centrality_degree())
+```
+
+You can see that a new attribute column has been created and the most central node according to this calculation is B from JMU. There are many more calculations you can make to understand the nature of the nodes and edges in a graph. Check the [igraph](https://r.igraph.org) and [tidygraph](https://tidygraph.data-imaginist.com/reference/index.html) documentation for possibilities.
+
+Note that by default dplyr functions will work on the nodes data frame. To alter the edges data frame activate it with the `activate()` function.
+
+```{r}
+#| label: activate
+network |>
+  activate(edges) |>
+  filter(type == "History")
+```
+
+## Visualize the graph
+Finally, let's visualize the graph with ggraph. ggraph adds node and edge geoms to ggplot2 and implements a graph style that removes the x and y grid. This is because the question of where to layout nodes on an x-y plane is one of the more complex problems in network analysis and a number of algorithms have been developed to do this. Instead of using `ggplot()` a graph visualization is begun with `ggraph()`.[^1]
+
+```{r}
+#| label: fig-graph
+#| message: false
+#| fig-alt: "A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle."
+set.seed(9528)
+
+ggraph(network, layout = "nicely") + 
+  geom_edge_link() + 
+  geom_node_point() + 
+  theme_graph()
+```
+
+There are different styles for the shape of the edges and many different [layouts](https://ggraph.data-imaginist.com/articles/Layouts.html). You can also use any of the [layouts from igraph](https://r.igraph.org/reference/index.html#visualization). Let's finish this up by adding some additional information from the attribute data. This shows that ggraph implements [scales for edges](https://ggraph.data-imaginist.com/reference/index.html#scales) allowing you to have to scales of the same type for edge and node.
+
+```{r}
+#| label: fig-graph-final
+#| message: false
+#| fig-alt: "A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle."
+set.seed(5493)
+
+network |> 
+  mutate(centrality = centrality_degree()) |>
+  ggraph(layout = "kk") + 
+  geom_edge_link(aes(color = type),
+                 linewidth = 2) + 
+  geom_node_point(aes(size = centrality)) + 
+  geom_node_text(aes(label = university), repel = TRUE) + 
+  scale_edge_color_brewer(palette = "Dark2") + 
+  labs(size = "Degree Centrality",
+       edge_color = "Discipline") + 
+  theme_graph(base_size = 16)
+```
+
+Even this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data.
+
+## Further resources
+
+### Working with network data in R
+- Katherine Ognyanova, [Static and dynamic network visualization with R](https://kateto.net/network-visualization).
+- Eric D. Kolaczyk and Gábor Csárdi, *Statistical Analysis of Network Data with R*, (Springer, 2014), <https://doi.org/10.1007/978-1-4939-0983-4>.
+- Jesse Sadler, [Introduction to Network Analysis with R: Creating static and interactive network graphs](https://www.jessesadler.com/post/network-analysis-with-r/).
+
+### Network Analysis
+- Ruth Ahnert et al., *The Network Turn: Changing Perspectives in the Humanities* (Cambridge University Press, 2020), <https://doi.org/10.1017/9781108866804>.
+- Mark Granovetter, “The Strength of Weak Ties,” *American Journal of Sociology* 78, no. 6 (1973): 1360–80, <http://www.jstor.org/stable/2776392>.
+- [Journal of Historical Network Research](https://jhnr.net).
+- Florian Kerschbaumer et al., eds., *The Power of Networks: Prospects of Historical Network Research* (Routledge, 2020), <https://doi.org/10.4324/9781315189062>.
+- [The Historical Analysis Research Community](https://historicalnetworkresearch.org)
+    - [YouTube channel](https://www.youtube.com/@HistoricalNetworkResearch)
+
+
+[^1]: By using `set.seed()` the layout algorithm will be done in the same way each time it is run.

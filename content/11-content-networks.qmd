@@ -7,14 +7,55 @@ format: html
 *This week we tackle another common technique made possible by digital humanities, network analysis.*
 
 ## Reading
+- Kieran Healy, *Data Visualization: A Practical Introduction*, [Chapter 7: Draw Maps](https://socviz.co/07-maps.html).
 - Ruth Ahnert et al., *The Network Turn: Changing Perspectives in the Humanities* (Cambridge University Press, 2020), <https://doi.org/10.1017/9781108866804>.
+    - Introduction, 1–9.
+    - Chapter 1: Networks Are Always Metaphorical, 13–24.
+    - Chapter 5: Quantifying Culture, 73–88.
 - Catherine Medici, "Using Network Analysis to Understand Early Modern Women," *Early Modern Women: An Interdisciplinary Journal*, 13 no. 1 (2018): 153–62, <https://doi.org/10.1353/emw.2018.0058>.
 
+## Watch
+Martin Grandjean's, [Introduction to Social Network Analysis](https://www.martingrandjean.ch/introduction-to-social-network-analysis/). This is a five-part series. Make sure to watch at least the first video.
+
+::: {.grid}
+
+::: {.g-col-9}
+{{< video https://youtu.be/lnLW6ITFY3M?si=KzZwJDd08JhIq1BT >}}
+:::
+
+:::
+
 ## Assignment
+- Practice making maps with Healy, *Data Visualization: A Practical Introduction* and with your own data in a Quarto document.
 - Second self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the [assignments page](../assignments.qmd#self-reflections) for details. You can turn in self reflections through email.
-- Explore [Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks](https://tudornetworks.net) and [Six Degrees of Francis Bacon](http://www.sixdegreesoffrancisbacon.com)
+- Explore [Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks](https://tudornetworks.net) and [Six Degrees of Francis Bacon](http://www.sixdegreesoffrancisbacon.com).
 
 ## Activities
+- Pair and share: What were you able to do with mapping data? What questions do you still have?
+- Discussion: Network analysis and historical argument.
+- An introduction to network analysis and network data structures.
+- Network analysis with SNiGB.
 
+## Packages to install
+- [igraph](https://r.igraph.org) an R package for working with network data.
+- [tidygraph](https://tidygraph.data-imaginist.com) a tidy API for graph/network manipulation.
+- [ggraph](https://ggraph.data-imaginist.com) an extension of ggplot2 aimed at supporting network graphs.
 
 ## Resources
+- Mark Granovetter, “The Strength of Weak Ties,” *American Journal of Sociology* 78, no. 6 (1973): 1360–80, <http://www.jstor.org/stable/2776392>.
+- Florian Kerschbaumer et al., eds., *The Power of Networks: Prospects of Historical Network Research* (Routledge, 2020), <https://doi.org/10.4324/9781315189062>.
+- [Journal of Historical Network Research](https://jhnr.net).
+- [Awesome Network Analysis](https://github.com/briatte/awesome-network-analysis).
+
+### Network analysis with R
+- Katherine Ognyanova, [Static and dynamic network visualization with R](https://kateto.net/network-visualization).
+- Eric D. Kolaczyk and Gábor Csárdi, *Statistical Analysis of Network Data with R*, (Springer, 2014), <https://doi.org/10.1007/978-1-4939-0983-4>.
+- Jesse Sadler, [Introduction to Network Analysis with R: Creating static and interactive network graphs](https://www.jessesadler.com/post/network-analysis-with-r/).
+
+### Network analysis R packages
+[CRAN network analysis task view](https://cran.r-project.org/web/views/NetworkAnalysis.html)
+
+- [igraph](https://r.igraph.org) an R package for working with network data.
+    - Michael Antonov et al., "Igraph Enables Fast and Robust Network Analysis Across Programming Languages," arXiv:2311.10260, preprint, arXiv, November 16, 2023, <http://arxiv.org/abs/2311.10260>.
+- [tidygraph](https://tidygraph.data-imaginist.com) a tidy API for graph/network manipulation.
+- [ggraph](https://ggraph.data-imaginist.com) an extension of ggplot2 aimed at supporting network graphs.

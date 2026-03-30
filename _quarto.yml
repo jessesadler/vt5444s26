@@ -137,6 +137,8 @@ website:
               file: resources/wrangling.qmd
             - text: "Mapping with R"
               file: resources/mapping.qmd
+            - text: "Networks with R"
+              file: resources/networks.qmd
         - section: "Git and GitHub"
           contents:
             - text: "Git and GitHub: An overview"
