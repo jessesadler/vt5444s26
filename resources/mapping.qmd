@@ -43,6 +43,7 @@ There are two main concepts in dealing with geospatial data:
 - [Data Carpentries: Introduction to Geospatial Concepts](https://datacarpentry.org/organization-geospatial/index.html).
 
 ## Packages for spatial data in R
+See the [CRAN spatial analysis task view](https://cran.r-project.org/web/views/Spatial.html) for a complete guide to packages for spatial data in R.
 
 ### Spatial packages
 - [sf: Simple features for R](https://r-spatial.github.io/sf/index.html): vector data in R.
@@ -189,6 +190,25 @@ ggplot() +
        subtitle = "With points showing the locations of Blacksburg and Charlottesville") + 
   theme_minimal()
 ```
+
+### Create an interactive plot with leaflet
+[leaflet for R](https://rstudio.github.io/leaflet/index.html) provides an interface to the widely used [leaflet](https://leafletjs.com) JavaScript library. Let's take our map and create a simple interactive map.
+
+```{r}
+#| label: fig-leaflet
+#| fig-alt: "A map of Virginia counties with black points at Blacksburg and Charlottesville."
+library(leaflet)
+
+leaflet() |> 
+  addTiles() |> 
+  addPolygons(data = virginia,
+              fillOpacity = 0,
+              color = "#000",
+              weight = 2) |>
+  addMarkers(data = locs, label = ~address)
+```
+
+You can make quite complex maps using leaflet, and, as you can see here, they can be placed right into Quarto documents.
 
 ## Raster data in R
 Historical data is generally vector data, but there may be times when raster data can either supplement a map with vector data or be a meaningful way to present historically relevant data in itself. One particularly relevant form of raster data elevation. Let's get some elevation data using the following packages:
