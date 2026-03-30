@@ -6,12 +6,16 @@ format: html
 
 
 ## Reading
-- Accessibility
+- Kieran Healy, *Data Visualization: A Practical Introduction*, [Chapter 8: Refine your plots](https://socviz.co/08-polishing.html).
+- Nicola Rennie, *The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook* (CRC Press, 2025), <https://nrennie.rbind.io/art-of-viz/>.
+    - Pick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.
 
 ## Assignment
 
 
 ## Activities
-
+- Data visualization.
+- Making tables in R.
+- Accessibility.
 
 ## Resources
