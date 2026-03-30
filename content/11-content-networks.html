@@ -431,9 +431,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
+  <li><a href="#watch" id="toc-watch" class="nav-link" data-scroll-target="#watch">Watch</a></li>
   <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
   <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#packages-to-install" id="toc-packages-to-install" class="nav-link" data-scroll-target="#packages-to-install">Packages to install</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#network-analysis-with-r" id="toc-network-analysis-with-r" class="nav-link" data-scroll-target="#network-analysis-with-r">Network analysis with R</a></li>
+  <li><a href="#network-analysis-r-packages" id="toc-network-analysis-r-packages" class="nav-link" data-scroll-target="#network-analysis-r-packages">Network analysis R packages</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/11-content-networks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -465,24 +471,81 @@ ul.task-list li input[type="checkbox"] {
 <section id="reading" class="level2">
 <h2 class="anchored" data-anchor-id="reading">Reading</h2>
 <ul>
-<li>Ruth Ahnert et al., <em>The Network Turn: Changing Perspectives in the Humanities</em> (Cambridge University Press, 2020), <a href="https://doi.org/10.1017/9781108866804" class="uri">https://doi.org/10.1017/9781108866804</a>.</li>
+<li>Kieran Healy, <em>Data Visualization: A Practical Introduction</em>, <a href="https://socviz.co/07-maps.html">Chapter 7: Draw Maps</a>.</li>
+<li>Ruth Ahnert et al., <em>The Network Turn: Changing Perspectives in the Humanities</em> (Cambridge University Press, 2020), <a href="https://doi.org/10.1017/9781108866804" class="uri">https://doi.org/10.1017/9781108866804</a>.
+<ul>
+<li>Introduction, 1–9.</li>
+<li>Chapter 1: Networks Are Always Metaphorical, 13–24.</li>
+<li>Chapter 5: Quantifying Culture, 73–88.</li>
+</ul></li>
 <li>Catherine Medici, “Using Network Analysis to Understand Early Modern Women,” <em>Early Modern Women: An Interdisciplinary Journal</em>, 13 no. 1 (2018): 153–62, <a href="https://doi.org/10.1353/emw.2018.0058" class="uri">https://doi.org/10.1353/emw.2018.0058</a>.</li>
 </ul>
+</section>
+<section id="watch" class="level2">
+<h2 class="anchored" data-anchor-id="watch">Watch</h2>
+<p>Martin Grandjean’s, <a href="https://www.martingrandjean.ch/introduction-to-social-network-analysis/">Introduction to Social Network Analysis</a>. This is a five-part series. Make sure to watch at least the first video.</p>
+<div class="grid">
+<div class="g-col-9">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/lnLW6ITFY3M?si=KzZwJDd08JhIq1BT" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+</div>
 </section>
 <section id="assignment" class="level2">
 <h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
 <ul>
+<li>Practice making maps with Healy, <em>Data Visualization: A Practical Introduction</em> and with your own data in a Quarto document.</li>
 <li>Second self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the <a href="../assignments.html#self-reflections">assignments page</a> for details. You can turn in self reflections through email.</li>
-<li>Explore <a href="https://tudornetworks.net">Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks</a> and <a href="http://www.sixdegreesoffrancisbacon.com">Six Degrees of Francis Bacon</a></li>
+<li>Explore <a href="https://tudornetworks.net">Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks</a> and <a href="http://www.sixdegreesoffrancisbacon.com">Six Degrees of Francis Bacon</a>.</li>
 </ul>
 </section>
 <section id="activities" class="level2">
 <h2 class="anchored" data-anchor-id="activities">Activities</h2>
+<ul>
+<li>Pair and share: What were you able to do with mapping data? What questions do you still have?</li>
+<li>Discussion: Network analysis and historical argument.</li>
+<li>An introduction to network analysis and network data structures.</li>
+<li>Network analysis with SNiGB.</li>
+</ul>
+</section>
+<section id="packages-to-install" class="level2">
+<h2 class="anchored" data-anchor-id="packages-to-install">Packages to install</h2>
+<ul>
+<li><a href="https://r.igraph.org">igraph</a> an R package for working with network data.</li>
+<li><a href="https://tidygraph.data-imaginist.com">tidygraph</a> a tidy API for graph/network manipulation.</li>
+<li><a href="https://ggraph.data-imaginist.com">ggraph</a> an extension of ggplot2 aimed at supporting network graphs.</li>
+</ul>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li>Mark Granovetter, “The Strength of Weak Ties,” <em>American Journal of Sociology</em> 78, no. 6 (1973): 1360–80, <a href="http://www.jstor.org/stable/2776392" class="uri">http://www.jstor.org/stable/2776392</a>.</li>
+<li>Florian Kerschbaumer et al., eds., <em>The Power of Networks: Prospects of Historical Network Research</em> (Routledge, 2020), <a href="https://doi.org/10.4324/9781315189062" class="uri">https://doi.org/10.4324/9781315189062</a>.</li>
+<li><a href="https://jhnr.net">Journal of Historical Network Research</a>.</li>
+<li><a href="https://github.com/briatte/awesome-network-analysis">Awesome Network Analysis</a>.</li>
+</ul>
+<section id="network-analysis-with-r" class="level3">
+<h3 class="anchored" data-anchor-id="network-analysis-with-r">Network analysis with R</h3>
+<ul>
+<li>Katherine Ognyanova, <a href="https://kateto.net/network-visualization">Static and dynamic network visualization with R</a>.</li>
+<li>Eric D. Kolaczyk and Gábor Csárdi, <em>Statistical Analysis of Network Data with R</em>, (Springer, 2014), <a href="https://doi.org/10.1007/978-1-4939-0983-4" class="uri">https://doi.org/10.1007/978-1-4939-0983-4</a>.</li>
+<li>Jesse Sadler, <a href="https://www.jessesadler.com/post/network-analysis-with-r/">Introduction to Network Analysis with R: Creating static and interactive network graphs</a>.</li>
+</ul>
+</section>
+<section id="network-analysis-r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="network-analysis-r-packages">Network analysis R packages</h3>
+<p><a href="https://cran.r-project.org/web/views/NetworkAnalysis.html">CRAN network analysis task view</a></p>
+<ul>
+<li><a href="https://r.igraph.org">igraph</a> an R package for working with network data.
+<ul>
+<li>Michael Antonov et al., “Igraph Enables Fast and Robust Network Analysis Across Programming Languages,” arXiv:2311.10260, preprint, arXiv, November 16, 2023, <a href="http://arxiv.org/abs/2311.10260" class="uri">http://arxiv.org/abs/2311.10260</a>.</li>
+</ul></li>
+<li><a href="https://tidygraph.data-imaginist.com">tidygraph</a> a tidy API for graph/network manipulation.</li>
+<li><a href="https://ggraph.data-imaginist.com">ggraph</a> an extension of ggplot2 aimed at supporting network graphs.</li>
+<li><a href="https://schochastics.github.io/netrankr/index.html">netrankr</a>: Implementation or various centrality measures.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

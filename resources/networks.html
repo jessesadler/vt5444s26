@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Quarto documents – Digital History Methods</title>
+<title>Networks in R – Digital History Methods</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -67,8 +67,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../resources/quarto-websites.html" rel="next">
-<link href="../resources/git-glossary.html" rel="prev">
+<link href="../resources/git-overview.html" rel="next">
+<link href="../resources/mapping.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -328,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto</a></li><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto documents</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/networks.html">Networks with R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -468,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/networks.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/networks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Networks with R</span></a>
   </div>
 </li>
@@ -526,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/quarto-docs.html" class="sidebar-item-text sidebar-link active">
+  <a href="../resources/quarto-docs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quarto documents</span></a>
   </div>
 </li>
@@ -548,33 +548,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#quarto-foundations" id="toc-quarto-foundations" class="nav-link" data-scroll-target="#quarto-foundations">Quarto foundations</a>
+  <li><a href="#network-analysis-concepts" id="toc-network-analysis-concepts" class="nav-link active" data-scroll-target="#network-analysis-concepts">Network analysis concepts</a>
   <ul class="collapse">
-  <li><a href="#quarto-in-rstudio" id="toc-quarto-in-rstudio" class="nav-link" data-scroll-target="#quarto-in-rstudio">Quarto in RStudio</a></li>
+  <li><a href="#five-number-summary" id="toc-five-number-summary" class="nav-link" data-scroll-target="#five-number-summary">Five number summary</a></li>
+  <li><a href="#graph-terms-and-measurements" id="toc-graph-terms-and-measurements" class="nav-link" data-scroll-target="#graph-terms-and-measurements">Graph terms and measurements</a></li>
   </ul></li>
-  <li><a href="#quartos-three-components" id="toc-quartos-three-components" class="nav-link" data-scroll-target="#quartos-three-components">Quarto’s three components</a>
+  <li><a href="#network-data-structure" id="toc-network-data-structure" class="nav-link" data-scroll-target="#network-data-structure">Network data structure</a></li>
+  <li><a href="#packages-for-network-analysis-in-r" id="toc-packages-for-network-analysis-in-r" class="nav-link" data-scroll-target="#packages-for-network-analysis-in-r">Packages for network analysis in R</a></li>
+  <li><a href="#creating-network-objects" id="toc-creating-network-objects" class="nav-link" data-scroll-target="#creating-network-objects">Creating network objects</a></li>
+  <li><a href="#summary-of-the-graph" id="toc-summary-of-the-graph" class="nav-link" data-scroll-target="#summary-of-the-graph">Summary of the graph</a></li>
+  <li><a href="#calculate-node-properties" id="toc-calculate-node-properties" class="nav-link" data-scroll-target="#calculate-node-properties">Calculate node properties</a></li>
+  <li><a href="#visualize-the-graph" id="toc-visualize-the-graph" class="nav-link" data-scroll-target="#visualize-the-graph">Visualize the graph</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further resources</a>
   <ul class="collapse">
-  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header">1. YAML header</a></li>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">2. Markdown</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">3. Code chunks</a></li>
+  <li><a href="#working-with-network-data-in-r" id="toc-working-with-network-data-in-r" class="nav-link" data-scroll-target="#working-with-network-data-in-r">Working with network data in R</a></li>
+  <li><a href="#network-analysis" id="toc-network-analysis" class="nav-link" data-scroll-target="#network-analysis">Network Analysis</a></li>
   </ul></li>
-  <li><a href="#output-formats" id="toc-output-formats" class="nav-link" data-scroll-target="#output-formats">Output formats</a>
-  <ul class="collapse">
-  <li><a href="#a-note-on-pdf-formats" id="toc-a-note-on-pdf-formats" class="nav-link" data-scroll-target="#a-note-on-pdf-formats">A note on PDF formats</a></li>
-  <li><a href="#project-outputs" id="toc-project-outputs" class="nav-link" data-scroll-target="#project-outputs">Project outputs</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/quarto-docs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/networks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto</a></li><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto documents</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/networks.html">Networks with R</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Quarto documents</h1>
+<h1 class="title">Networks in R</h1>
 </div>
 
 
@@ -591,183 +590,375 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Quarto documents provide a way to mix together <a href="../resources/plaintext.html">Markdown text</a> with code and its results. Whereas <strong>R scripts</strong> are designed primarily for writing and running code—with comments (<code>#</code>) giving a means to document the code—<strong>Quarto documents</strong> allow you to write prose alongside code. You can then output the Quarto document into a number of formats, including web pages, PDFs, slides, and even Word documents. Projects of connected Quarto documents can create <a href="https://quarto.org/docs/books/">books</a> and full <a href="https://quarto.org/docs/websites/">websites</a>. Why might you use Quarto documents instead of an R script?</p>
+<p>This page provides an introduction to network analysis in R. It provides a very short overview of the main concepts of network analysis, the structure of network data, and then introduces the packages for working with network data and visualizing it using ggplot2.</p>
+<section id="network-analysis-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="network-analysis-concepts">Network analysis concepts</h2>
+<p>Networks are made up of entities and connections between those entities. The vocabulary around these concepts differs based on software and discipline, but the entities are referred to as <strong>nodes</strong> or <strong>vertices</strong> and the connections are referred to as <strong>edges</strong> or <strong>links</strong>. A collection of nodes and edges make up a <strong>graph</strong> whether it is visualized or not.</p>
+<p>There are a variety of terms to characterize a graph or to understand aspects about the nodes and edges that constitute a graph.</p>
+<section id="five-number-summary" class="level3">
+<h3 class="anchored" data-anchor-id="five-number-summary">Five number summary</h3>
+<p>The basic structures of a graph can be defined though these five summaries.</p>
 <ol type="1">
-<li>To communicate a data analysis with calculations and visualizations, but you do not need the code that produced the analysis to be shown in the final document.</li>
-<li>If you want to write extensive text or write structured text with Markdown between your blocks of code.</li>
-<li>If you want to create a stylized output such as web pages, PDFs, slides, and more from Markdown whether it includes code or not.</li>
+<li>Size: number of nodes</li>
+<li>Density: (0–1) proportion of observed ties to possible ties.</li>
+<li>Components: subgroup in which all nodes are connected.</li>
+<li>Diameter: longest of the shortest paths across all pairs of nodes.</li>
+<li>Cluster: (0–1) proportion of closed triangles to the total number of open and closed triangles.</li>
 </ol>
-<p>To get familiar with Quarto, <strong>please download</strong> this <a href="../files/quarto-intro.qmd">Quarto template document</a>, place it in your <code>r-notes</code> project, read through it, and then render it into an HTML document.</p>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<p>The rest of this page goes over the foundations of Quarto documents, but there are a couple of very good resources that should be consulted to get a fuller understanding of how and why to use Quarto documents.</p>
+</section>
+<section id="graph-terms-and-measurements" class="level3">
+<h3 class="anchored" data-anchor-id="graph-terms-and-measurements">Graph terms and measurements</h3>
 <ul>
-<li>A good place to start is with the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Getting started with Quarto tutorial for RStudio</a>. It provides an overview of how to write and render Quarto documents into a variety of formats in RStudio. Make sure to go through all three pages of Hello, Quarto, Computations, and Authoring.</li>
-<li>Once you have gone through the tutorial, look over the <a href="https://r4ds.hadley.nz/quarto.html">Quarto</a> chapter of <em>R for Data Science</em>.</li>
-<li>The <a href="https://quarto.org/docs/guide/">Quarto documentation</a> is very good and very in depth. It is a good place to return to each time you have a question. Some particularly useful pages include:
+<li>Directed: Whether the order of node pairs represents flow of the connection. Graphs can be directed or undirected.</li>
+<li>Neighbors: Two nodes are <em>adjacent</em> and neighbors if joined by an edge.</li>
+<li>Degree: number of edges connected to the node.</li>
+<li>Walk: distance between nodes.</li>
+<li>Path: a walk without repeated nodes or edges.</li>
+<li>Distance: shortest path between nodes.</li>
+<li>Centrality: measurement of the importance of a node within a graph. There are three main types of centrality measurements.
 <ul>
-<li><a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown basics</a></li>
-<li><a href="https://quarto.org/docs/computations/r.html">Using R</a></li>
-<li><a href="https://quarto.org/docs/tools/rstudio.html">Quarto in RStudio</a></li>
-<li><a href="https://quarto.org/docs/output-formats/html-basics.html">HTML basics</a></li>
+<li>Closeness centrality: closeness is inversely related to the total distance of a node to all other nodes.</li>
+<li>Betweenness centrality: related to the position of the node on paths between other nodes. If many paths go through a node it has a high centrality.</li>
+<li>Eigenvector centrality: focuses on prestige or rank. It uses neighbors to find centrality.</li>
 </ul></li>
 </ul>
 </section>
-<section id="quarto-foundations" class="level2">
-<h2 class="anchored" data-anchor-id="quarto-foundations">Quarto foundations</h2>
-<p>A Quarto document is a plain text file that has a <code>.qmd</code> extension. It contains three basic components:</p>
-<ol type="1">
-<li>A <a href="https://en.wikipedia.org/wiki/YAML">YAML header</a> contained within lines with three dashes (<code>---</code>).</li>
-<li>Markdown text.</li>
-<li>Code chunks set off by three back ticks (```).</li>
-</ol>
-<div id="fig-quarto-doc" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of a Quarto document in RStudio showing the three main components of a YAML header, markdown content, and code chunks.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-quarto-doc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/quarto-doc.png" class="img-fluid figure-img" style="width:60.0%" alt="A screen shot of a Quarto document in RStudio showing the three main components of a YAML header, markdown content, and code chunks.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-doc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A Quarto document in RStudio.
-</figcaption>
-</figure>
-</div>
-<p>The key distinguishing feature between Quarto documents and R scripts is that you can <strong>render</strong> Quarto documents to different outputs. Rendering a Quarto document with the Render button or <code>Cmd/Ctrl + Shift + K</code> runs the R (or Python) code, producing outputs and converting the document to a Markdown document. It then uses <a href="https://pandoc.org/">Pandoc</a> to convert the Markdown document to whatever output is specified in the YAML heading. The process is shown in <a href="#fig-quarto-flow" class="quarto-xref">Figure&nbsp;2</a>.</p>
-<div id="fig-quarto-flow" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A diagram showing the flow of Quarto documents from qmd file through knitr to markdown and then through Pandoc to multiple outputs.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-quarto-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/quarto-flow.png" class="img-fluid figure-img" style="width:60.0%" alt="A diagram showing the flow of Quarto documents from qmd file through knitr to markdown and then through Pandoc to multiple outputs.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Diagram of the process of rendering a Quarto document. Image is from Wickham et al., <em>R for Data Science</em>, Quarto.
-</figcaption>
-</figure>
-</div>
-<section id="quarto-in-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-in-rstudio">Quarto in RStudio</h3>
-<p>The <a href="https://quarto.org/docs/get-started/">Get Started</a> page of the Quarto documentation shows that you can write Quarto documents in a variety of applications. However, RStudio has many built-in functions that make it easier to work with Quarto documents. You can make a new Quarto document by going to File -&gt; New Document -&gt; Quarto Document… You can add information to the dialogue to fill in the YAML heading, or you can choose Create Empty Document.</p>
-<div id="fig-quarto-new" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screenshot of the new Quarto Document dialogue in RStudio.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-quarto-new-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../files/img/quarto-new.png" class="img-fluid figure-img" style="width:60.0%" alt="A screenshot of the new Quarto Document dialogue in RStudio.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-new-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Dialogue box to create a new Quarto document.
-</figcaption>
-</figure>
-</div>
-<p>Quarto documents can be edited in either the <a href="https://quarto.org/docs/visual-editor/">Visual editor</a> or the Source editor. The Visual editor styles your text as you go, whereas the source editor will give you an interface that is more similar to R scripts. You can change back and forth with the buttons at the top of the editor pane, but do note that this can slightly change how your Markdown is written.</p>
 </section>
-</section>
-<section id="quartos-three-components" class="level2">
-<h2 class="anchored" data-anchor-id="quartos-three-components">Quarto’s three components</h2>
-<section id="yaml-header" class="level3">
-<h3 class="anchored" data-anchor-id="yaml-header">1. YAML header</h3>
-<p>The YAML header provides a way to indicate the title of the document, document metadata such as author, the output format(s), and document wide options. <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> is a way to store data in a human-readable form. Its basic structure is <code>key: value</code>. The YAML heading is set off by three dashes <code>---</code>. A somewhat complex heading might look like this:</p>
-<pre><code>---
-title: "My title here"
-author:
-  - name: "Jesse Sadler"
-    email: jrsadler@vt.edu
-    affiliation: "University Libraries"
-date: last-modified
-format:
-  html:
-    toc: true
-    abstract: |
-      This is the abstract.
-
-      It has two paragraphs.
-execute:
-  echo: false
-  warning: false
----</code></pre>
-<p>The available keys can be found in the documentation for each type of output.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Many options are shared across document output types, but some are not. See the <a href="https://quarto.org/docs/reference/formats/html.html">HTML options</a> for the widest number of options. It can be difficult to write these YAML headers. There are a lot of different options, and the indentation level must be formatted correctly. Happily, in practice, it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a <a href="https://quarto.org/docs/projects/quarto-projects.html">project</a> such as a website.</p>
-</section>
-<section id="markdown" class="level3">
-<h3 class="anchored" data-anchor-id="markdown">2. Markdown</h3>
-<p>Unlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use <a href="../resources/markdown-syntax.html">Resources: Markdown syntax</a> for Markdown foundations, and look at the <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto Markdown documentation</a> for more details on the style of Markdown you can use in Quarto documents.</p>
-</section>
-<section id="code-chunks" class="level3">
-<h3 class="anchored" data-anchor-id="code-chunks">3. Code chunks</h3>
-<p>With Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:</p>
+<section id="network-data-structure" class="level2">
+<h2 class="anchored" data-anchor-id="network-data-structure">Network data structure</h2>
+<p>Network data is different from other types of data we have encountered because it is made up of two related structure: an <strong>edge list</strong> and a <strong>node list</strong>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Within R these two data structures are represented by data frames:</p>
+<ul>
+<li>Edge list: A data frame with at least two columns of the node pairs that are joined by an edge. These columns are often named <code>from</code> and <code>to</code> even if there is no direction for the connection. Further columns provide attributes for the edges such as weight, count, or type.</li>
+<li>Node list: A data frame with at least one column containing all of the unique nodes in the graph. This column is often named <code>id</code>. Further columns provide attributes for the node such as name, type, etc.</li>
+</ul>
+<p>Let’s look at a simple example:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dv">24</span> <span class="sc">+</span> <span class="dv">87</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame of node pairs</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">from =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">to =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 111</code></pre>
+<pre><code># A tibble: 5 × 2
+   from    to
+  &lt;dbl&gt; &lt;dbl&gt;
+1     1     2
+2     2     3
+3     2     4
+4     3     2
+5     4     1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame of nodes</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 1
+     id
+  &lt;int&gt;
+1     1
+2     2
+3     3
+4     4</code></pre>
 </div>
 </div>
-<p>You can create code chunks in RStudio with:</p>
-<ol type="1">
-<li>The keyboard shortcut: <code>Cmd + Option + I</code> or <code>Ctrl + Alt + I</code>.</li>
-<li>Typing the chunk delimiters <code>```{r}</code> and <code>```</code>.</li>
-</ol>
-<p>Once inside a code chunk, text functions as it does in an R script. Comments are made with <code>#</code>. Everything else is code. You can run the expressions in a chunk with <code>Cmd + Return</code> or <code>Ctrl + Enter</code>. Or you can run the entire chunk with the <strong>play</strong> button at the top right of the chunk. The output of the chunks will either be placed directly below the chunk or sent to the console. You can alter this in Global Options -&gt; R Markdown tab -&gt; Show output inline for all R Markdown documents checkbox. See also Other tweaks section in <a href="../resources/rstudio-setup.html#other-tweaks">Setting up RStudio for success</a>.</p>
-<p>The primary difference between code chunks and R scripts is that code chunks can have special comments created with <code>#|</code> that provide options for the output of the chunk. These are formatted as YAML and override any defaults set in the YAML header. You can see the full list of options in the <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto documentation</a>.</p>
+<p>A more complex graph might have attributes for edges and nodes.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: some-math</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="dv">24</span> <span class="sc">+</span> <span class="dv">87</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame of node pairs</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>edge_list <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">from =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">to =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"History"</span>, <span class="st">"English"</span>, <span class="st">"Art History"</span>, <span class="st">"History"</span>, <span class="st">"English"</span>))</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>edge_list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+   from    to type       
+  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      
+1     1     2 History    
+2     2     3 English    
+3     2     4 Art History
+4     3     2 History    
+5     4     1 English    </code></pre>
 </div>
-<p>The <code>label</code> option names the chunk, making it easier to refer to the chunk and to see it in the outline in RStudio. <code>label</code> names should be short and not include spaces. It is recommended to use a dash between words.</p>
-<p>The main options that affect the <strong>execution</strong> of code are:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame of nodes</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>node_list <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>],</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">university =</span> <span class="fu">c</span>(<span class="st">"VT"</span>, <span class="st">"JMU"</span>, <span class="st">"UVA"</span>, <span class="st">"GMU"</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>node_list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+     id name  university
+  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
+1     1 A     VT        
+2     2 B     JMU       
+3     3 C     UVA       
+4     4 D     GMU       </code></pre>
+</div>
+</div>
+<p>There are other ways to represent network data, but node and edge lists provides a solid foundation for working with network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.</p>
+</section>
+<section id="packages-for-network-analysis-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="packages-for-network-analysis-in-r">Packages for network analysis in R</h2>
+<p>We will be using three main packages for network analysis in R, though there are many more you can explore in <a href="https://cran.r-project.org/web/views/NetworkAnalysis.html">CRAN network analysis task view</a>.</p>
 <ul>
-<li><code>eval: false</code> prevents the code from being run. The code displays but does not run.</li>
-<li><code>echo: false</code> prevents the code from being shown in the output, but the code is run and outputs are shown. This is useful when you want people to see the output but the code does not need to be read by the audience.</li>
-<li><code>include: false</code> prevents the code and outputs from being shown, though the code is run. This is useful for setup code.</li>
-<li><code>message: false</code> or <code>warning: false</code> prevents messages or warnings from being output in the rendered document.</li>
+<li><a href="https://r.igraph.org">igraph</a> an R package for working with network data.</li>
+<li><a href="https://tidygraph.data-imaginist.com">tidygraph</a> a tidy API for graph/network manipulation.</li>
+<li><a href="https://ggraph.data-imaginist.com">ggraph</a> an extension of ggplot2 aimed at supporting network graphs.</li>
+<li><a href="https://schochastics.github.io/netrankr/index.html">netrankr</a>: Implementation or various centrality measures.</li>
 </ul>
-<p>The other options you might want to change are the <strong>figure output</strong>. See <a href="https://r4ds.hadley.nz/quarto.html#sec-figures"><em>R for Data Science</em></a> for more details.</p>
+<p>igraph will provide the network algorithms, but we will access these through the tidygraph package that integrates with the <a href="https://tidyverse.org">tidyverse</a>. Finally, ggraph provides extensions to ggplot2 to integrate the visualization of network graphs.</p>
+</section>
+<section id="creating-network-objects" class="level2">
+<h2 class="anchored" data-anchor-id="creating-network-objects">Creating network objects</h2>
+<p>Let’s start by loading the packages listed above.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>There are two ways to turn the edge list and node list into a network object. We can either go directly to a <code>tbl_graph</code> object from tidygraph using the <code>tbl_graph()</code> function or first create an <code>igraph</code> object using <code>graph_from_data_frame()</code>. I have found that with larger graphs <code>graph_from_data_frame()</code> works more consistently. Both methods are shown below.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a tbl_graph with tidygraph</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_graph</span>(<span class="at">nodes =</span> node_list, <span class="at">edges =</span> edge_list, <span class="at">directed =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 4 nodes and 5 edges
+#
+# An undirected multigraph with 1 component
+#
+# Node Data: 4 × 3 (active)
+     id name  university
+  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     
+1     1 A     VT        
+2     2 B     JMU       
+3     3 C     UVA       
+4     4 D     GMU       
+#
+# Edge Data: 5 × 3
+   from    to type       
+  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      
+1     1     2 History    
+2     2     3 English    
+3     2     4 Art History
+# ℹ 2 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an igraph object</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">graph_from_data_frame</span>(<span class="at">d =</span> edge_list, <span class="at">vertices =</span> node_list, <span class="at">directed =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>IGRAPH 198f26f UN-- 4 5 -- 
++ attr: name (v/c), university (v/c), type (e/c)
++ edges from 198f26f (vertex names):
+[1] A--B B--C B--D B--C A--D</code></pre>
+</div>
+</div>
+<p>You will notice that the way these objects print to the console are quite different. A <code>tbl_graph</code> object prints out as two data frames for the nodes and edges. An <code>igraph</code> object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data <code>attr</code>, and then provides a graphical overview of the edge list. Let’s create a variable by first making an <code>igraph</code> object and then converting to <code>tbl_graph</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>network <span class="ot">&lt;-</span> <span class="fu">graph_from_data_frame</span>(<span class="at">d =</span> edge_list,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">vertices =</span> node_list,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">directed =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_graph</span>()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>network</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 4 nodes and 5 edges
+#
+# An undirected multigraph with 1 component
+#
+# Node Data: 4 × 2 (active)
+  name  university
+  &lt;chr&gt; &lt;chr&gt;     
+1 A     VT        
+2 B     JMU       
+3 C     UVA       
+4 D     GMU       
+#
+# Edge Data: 5 × 3
+   from    to type       
+  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      
+1     1     2 History    
+2     2     3 English    
+3     2     4 Art History
+# ℹ 2 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="summary-of-the-graph" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-the-graph">Summary of the graph</h2>
+<p>Let’s get our five number summary of this graph using igraph functions.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Size</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gorder</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Density (0-1)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">edge_density</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8333333</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Components: only one, all nodes have at least one edge</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">components</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$membership
+A B C D 
+1 1 1 1 
+
+$csize
+[1] 4
+
+$no
+[1] 1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Diameter</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">diameter</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Clustering coefficient (0-1)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">transitivity</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6</code></pre>
+</div>
+</div>
+</section>
+<section id="calculate-node-properties" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-node-properties">Calculate node properties</h2>
+<p>Let’s make a calculation of the centrality of the nodes using dplyr methods. <code>centrality_degree()</code> measure the degrees and strength of nodes within the graph.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>network <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">centrality =</span> <span class="fu">centrality_degree</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 4 nodes and 5 edges
+#
+# An undirected multigraph with 1 component
+#
+# Node Data: 4 × 3 (active)
+  name  university centrality
+  &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;
+1 A     VT                  2
+2 B     JMU                 4
+3 C     UVA                 2
+4 D     GMU                 2
+#
+# Edge Data: 5 × 3
+   from    to type       
+  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      
+1     1     2 History    
+2     2     3 English    
+3     2     4 Art History
+# ℹ 2 more rows</code></pre>
+</div>
+</div>
+<p>You can see that a new attribute column has been created and the most central node according to this calculation is B from JMU. There are many more calculations you can make to understand the nature of the nodes and edges in a graph. Check the <a href="https://r.igraph.org">igraph</a> and <a href="https://tidygraph.data-imaginist.com/reference/index.html">tidygraph</a> documentation for possibilities.</p>
+<p>Note that by default dplyr functions will work on the nodes data frame. To alter the edges data frame activate it with the <code>activate()</code> function.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>network <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">activate</span>(edges) <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(type <span class="sc">==</span> <span class="st">"History"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tbl_graph: 4 nodes and 2 edges
+#
+# An unrooted forest with 2 trees
+#
+# Edge Data: 2 × 3 (active)
+   from    to type   
+  &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+1     1     2 History
+2     2     3 History
+#
+# Node Data: 4 × 2
+  name  university
+  &lt;chr&gt; &lt;chr&gt;     
+1 A     VT        
+2 B     JMU       
+3 C     UVA       
+# ℹ 1 more row</code></pre>
+</div>
+</div>
+</section>
+<section id="visualize-the-graph" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-the-graph">Visualize the graph</h2>
+<p>Finally, let’s visualize the graph with ggraph. ggraph adds node and edge geoms to ggplot2 and implements a graph style that removes the x and y grid. This is because the question of where to layout nodes on an x-y plane is one of the more complex problems in network analysis and a number of algorithms have been developed to do this. Instead of using <code>ggplot()</code> a graph visualization is begun with <code>ggraph()</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">9528</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggraph</span>(network, <span class="at">layout =</span> <span class="st">"nicely"</span>) <span class="sc">+</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>() <span class="sc">+</span> </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_graph</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-graph" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="networks_files/figure-html/fig-graph-1.png" id="fig-graph" class="img-fluid figure-img" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>There are different styles for the shape of the edges and many different <a href="https://ggraph.data-imaginist.com/articles/Layouts.html">layouts</a>. You can also use any of the <a href="https://r.igraph.org/reference/index.html#visualization">layouts from igraph</a>. Let’s finish this up by adding some additional information from the attribute data. This shows that ggraph implements <a href="https://ggraph.data-imaginist.com/reference/index.html#scales">scales for edges</a> allowing you to have to scales of the same type for edge and node.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">5493</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>network <span class="sc">|&gt;</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">centrality =</span> <span class="fu">centrality_degree</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"kk"</span>) <span class="sc">+</span> </span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_edge_link</span>(<span class="fu">aes</span>(<span class="at">color =</span> type),</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> centrality)) <span class="sc">+</span> </span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> university), <span class="at">repel =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> </span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_edge_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span> </span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">size =</span> <span class="st">"Degree Centrality"</span>,</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">edge_color =</span> <span class="st">"Discipline"</span>) <span class="sc">+</span> </span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_graph</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-graph-final" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-graph-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="networks_files/figure-html/fig-graph-final-1.png" id="fig-graph-final" class="img-fluid figure-img" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-graph-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Even this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data.</p>
+</section>
+<section id="further-resources" class="level2">
+<h2 class="anchored" data-anchor-id="further-resources">Further resources</h2>
+<section id="working-with-network-data-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-network-data-in-r">Working with network data in R</h3>
 <ul>
-<li>To set the size of the plot from ggplot2:
+<li>Katherine Ognyanova, <a href="https://kateto.net/network-visualization">Static and dynamic network visualization with R</a>.</li>
+<li>Eric D. Kolaczyk and Gábor Csárdi, <em>Statistical Analysis of Network Data with R</em>, (Springer, 2014), <a href="https://doi.org/10.1007/978-1-4939-0983-4" class="uri">https://doi.org/10.1007/978-1-4939-0983-4</a>.</li>
+<li>Jesse Sadler, <a href="https://www.jessesadler.com/post/network-analysis-with-r/">Introduction to Network Analysis with R: Creating static and interactive network graphs</a>.</li>
+</ul>
+</section>
+<section id="network-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="network-analysis">Network Analysis</h3>
 <ul>
-<li><code>fig-width: 6</code></li>
-<li><code>fig-asp: 0.618</code>: Aspect ration of width to height. With this you do not need to set the width. <code>0.618</code> is the golden ratio.</li>
-<li><code>fig-width: 4</code>: But you can set width instead of aspect.</li>
+<li>Ruth Ahnert et al., <em>The Network Turn: Changing Perspectives in the Humanities</em> (Cambridge University Press, 2020), <a href="https://doi.org/10.1017/9781108866804" class="uri">https://doi.org/10.1017/9781108866804</a>.</li>
+<li>Mark Granovetter, “The Strength of Weak Ties,” <em>American Journal of Sociology</em> 78, no. 6 (1973): 1360–80, <a href="http://www.jstor.org/stable/2776392" class="uri">http://www.jstor.org/stable/2776392</a>.</li>
+<li><a href="https://jhnr.net">Journal of Historical Network Research</a>.</li>
+<li>Florian Kerschbaumer et al., eds., <em>The Power of Networks: Prospects of Historical Network Research</em> (Routledge, 2020), <a href="https://doi.org/10.4324/9781315189062" class="uri">https://doi.org/10.4324/9781315189062</a>.</li>
+<li><a href="https://historicalnetworkresearch.org">The Historical Analysis Research Community</a>
+<ul>
+<li><a href="https://www.youtube.com/@HistoricalNetworkResearch">YouTube channel</a></li>
 </ul></li>
-<li>Control the output size within the output document:
-<ul>
-<li><code>out-width: "70%"</code>: This would take up 70% of the content area.</li>
-<li><code>fig-align: center</code>: How to align the plots.</li>
-</ul></li>
 </ul>
-</section>
-</section>
-<section id="output-formats" class="level2">
-<h2 class="anchored" data-anchor-id="output-formats">Output formats</h2>
-<p>You can create a number of different types of documents from Quarto documents. The default is HTML documents ready to be put on the web or viewed through your browser, but you can also make <a href="https://quarto.org/docs/output-formats/pdf-basics.html">PDFs</a>, <a href="https://quarto.org/docs/presentations/">presentations</a>, <a href="https://quarto.org/docs/dashboards/">dashboards</a>, and even <a href="https://quarto.org/docs/output-formats/ms-word.html">Word documents</a>. It is also possible to combine multiple Quarto documents together into <a href="https://quarto.org/docs/projects/quarto-projects.html">projects</a> such as <a href="https://quarto.org/docs/websites/">websites</a> and <a href="https://quarto.org/docs/books/">books</a>.</p>
-<p>You control the output of individual documents either in the document YAML or in rendering the document via the command line. Generally, you will want to use the document YAM using the <code>format</code> key.</p>
-<ul>
-<li>HTML: <code>format: html</code></li>
-<li>PDF: <code>format: pdf</code> or <code>format: typst</code></li>
-<li>Presentation: <code>format: revealjs</code></li>
-<li>Word: <code>format: docx</code></li>
-</ul>
-<p>Most options within the YAML are shared across output formats, but not all formats have all the capabilities. Look at the <a href="https://quarto.org/docs/reference/">reference documentation</a> for each type to see the available options.</p>
-<section id="a-note-on-pdf-formats" class="level3">
-<h3 class="anchored" data-anchor-id="a-note-on-pdf-formats">A note on PDF formats</h3>
-<p>If you want to output a PDF, you have two different choices, <code>format: pdf</code> uses <a href="https://pandoc.org">Pandoc</a> to create the PDF; <code>format: typst</code> uses <a href="https://typst.app">Typst</a>. The Pandoc format has more options, but Typst is a more modern PDF engine and has nicer looking defaults.</p>
-</section>
-<section id="project-outputs" class="level3">
-<h3 class="anchored" data-anchor-id="project-outputs">Project outputs</h3>
-<p>Projects contain multiple Quarto documents and use a <code>_quarto.yml</code> file to share the YAML metadata options across all of the documents within the project. If you want different YAML options in one or more documents within the project, you can modify the YAML in the document itself. The options written in the document will take precedence over those written in the <code>_quarto.yml</code> file. This means that generally the YAML heading for individual documents in a project might only have a title. See <a href="../resources/quarto-websites.html">Quarto websites</a> for more on working with Quarto projects.</p>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>This is just the tip of the iceberg for what you can do with Quarto documents. But you can do a lot with these foundations. Check out the <a href="#resources">Resources</a> above for places to start if this document does not cover a question you have.</p>
 
 
+</section>
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>See the <a href="#output-formats">Output formats</a> section for more details on output formats.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>A node list can be created from an edge list if the nodes do not have attributes.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>By using <code>set.seed()</code> the layout algorithm will be done in the same way each time it is run.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1185,13 +1376,13 @@ execute:
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../resources/git-glossary.html" class="pagination-link" aria-label="Git Glossary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Git Glossary</span>
+      <a href="../resources/mapping.html" class="pagination-link" aria-label="Mapping with R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Mapping with R</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../resources/quarto-websites.html" class="pagination-link" aria-label="Quarto websites">
-        <span class="nav-page-text">Quarto websites</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../resources/git-overview.html" class="pagination-link" aria-label="Git and GitHub: An overview">
+        <span class="nav-page-text">Git and GitHub: An overview</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1203,7 +1394,7 @@ execute:
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/quarto-docs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/networks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>
