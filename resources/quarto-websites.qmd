@@ -74,12 +74,22 @@ But, if you want to alter any aspect of the style of you website, you can do so 
 These instructions show how to deploy a Quarto website to GitHub pages using a GitHub Action. See the [instructions here](https://quarto.org/docs/publishing/github-pages.html) from the Quarto documentation for more details. GitHub pages uses a special `gh-pages` branch to host static websites created by tools such as Quarto.
 
 1. Set up local repository to use GitHub Actions
-	1. Add `/.quarto/` and `/_site/` to `.gitignore` file.
-        - The `_site/` folder is created from the Quarto files and will be created by the GitHub action set up in step 7.
-	2. Set `freeze: auto` in `_quarto.yml`.
-        - This makes it so Quarto will only rerender a file if it has changed, making the preview and render workflow faster. See the documentation on use of [freeze](https://quarto.org/docs/projects/code-execution.html#freeze).
+	1. Add `/.quarto/` and `/_site/` to `.gitignore` file.The `_site/` folder is created from the Quarto files and will be created by the GitHub action set up in step 7.
+
+		``` {.txt filename=".gitignore"}
+		/.quarto/
+		/_site/
+		```
+
+	2. Set `freeze: auto` in `_quarto.yml`: This makes it so Quarto will only rerender a file if it has changed, making the preview and render workflow faster. See the documentation on use of [freeze](https://quarto.org/docs/projects/code-execution.html#freeze).
+
+		``` {.yaml filename="_quarto.yml"}
+		execute:
+		  freeze: auto
+		```
+
 	3. Render site to create a `_freeze` folder.
-    4. Add and commit files.
+    4. Add and commit the changes to `.gitignore`, `_quarto.yml` and the `_freeze` folder. Anytime changes occur in `_freeze`, these should be included in your commit.
 2. Create connection to GitHub using [Local first method](git-workflow.qmd#local-first)
 	1. Create empty repository on GitHub with the same name as your website project.
 	2. Add remote with `git remote add origin your-url-here`
