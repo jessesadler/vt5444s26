@@ -687,16 +687,24 @@ Figure&nbsp;3: Preview of the newly created Quarto website.
 <ol type="1">
 <li><p>Set up local repository to use GitHub Actions</p>
 <ol type="1">
-<li>Add <code>/.quarto/</code> and <code>/_site/</code> to <code>.gitignore</code> file.
-<ul>
-<li>The <code>_site/</code> folder is created from the Quarto files and will be created by the GitHub action set up in step 7.</li>
-</ul></li>
-<li>Set <code>freeze: auto</code> in <code>_quarto.yml</code>.
-<ul>
-<li>This makes it so Quarto will only rerender a file if it has changed, making the preview and render workflow faster. See the documentation on use of <a href="https://quarto.org/docs/projects/code-execution.html#freeze">freeze</a>.</li>
-</ul></li>
-<li>Render site to create a <code>_freeze</code> folder.</li>
-<li>Add and commit files.</li>
+<li><p>Add <code>/.quarto/</code> and <code>/_site/</code> to <code>.gitignore</code> file.The <code>_site/</code> folder is created from the Quarto files and will be created by the GitHub action set up in step 7.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.gitignore</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename=".gitignore"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>/_site/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+<li><p>Set <code>freeze: auto</code> in <code>_quarto.yml</code>: This makes it so Quarto will only rerender a file if it has changed, making the preview and render workflow faster. See the documentation on use of <a href="https://quarto.org/docs/projects/code-execution.html#freeze">freeze</a>.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">freeze</span><span class="kw">:</span><span class="at"> auto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></li>
+<li><p>Render site to create a <code>_freeze</code> folder.</p></li>
+<li><p>Add and commit the changes to <code>.gitignore</code>, <code>_quarto.yml</code> and the <code>_freeze</code> folder. Anytime changes occur in <code>_freeze</code>, these should be included in your commit.</p></li>
 </ol></li>
 <li><p>Create connection to GitHub using <a href="../resources/git-workflow.html#local-first">Local first method</a></p>
 <ol type="1">
@@ -709,12 +717,12 @@ Figure&nbsp;3: Preview of the newly created Quarto website.
 <li>Make sure you have committed all changes to your current working branch with <code>git status</code>.</li>
 <li>Close all of your tabs in RStudio. The following actions will delete all of your files on the new branch. This is ok!</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure all changes are committed before running this!</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising gh-pages branch"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure all changes are committed before running this!</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising gh-pages branch"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Switch back to main branch</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Check GitHub Pages setup</p>
 <ul>
 <li>Go to GitHub</li>
