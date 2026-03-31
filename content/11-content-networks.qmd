@@ -7,7 +7,6 @@ format: html
 *This week we tackle another common technique made possible by digital humanities, network analysis.*
 
 ## Reading
-- Kieran Healy, *Data Visualization: A Practical Introduction*, [Chapter 7: Draw Maps](https://socviz.co/07-maps.html).
 - Ruth Ahnert et al., *The Network Turn: Changing Perspectives in the Humanities* (Cambridge University Press, 2020), <https://doi.org/10.1017/9781108866804>.
     - Introduction, 1–9.
     - Chapter 1: Networks Are Always Metaphorical, 13–24.
@@ -26,7 +25,6 @@ Martin Grandjean's, [Introduction to Social Network Analysis](https://www.martin
 :::
 
 ## Assignment
-- Practice making maps with Healy, *Data Visualization: A Practical Introduction* and with your own data in a Quarto document.
 - Second self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the [assignments page](../assignments.qmd#self-reflections) for details. You can turn in self reflections through email.
 - Explore [Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks](https://tudornetworks.net) and [Six Degrees of Francis Bacon](http://www.sixdegreesoffrancisbacon.com).
 

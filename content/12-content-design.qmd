@@ -6,12 +6,15 @@ format: html
 
 
 ## Reading
-- Kieran Healy, *Data Visualization: A Practical Introduction*, [Chapter 8: Refine your plots](https://socviz.co/08-polishing.html).
+- Kieran Healy, *Data Visualization: A Practical Introduction*
+    - [Chapter 7: Draw Maps](https://socviz.co/07-maps.html)
+    - [Chapter 8: Refine your plots](https://socviz.co/08-polishing.html)
 - Nicola Rennie, *The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook* (CRC Press, 2025), <https://nrennie.rbind.io/art-of-viz/>.
     - Pick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.
 
 ## Assignment
-
+- Practice making maps with Healy, *Data Visualization: A Practical Introduction* and with your own data in a Quarto document.
+- Practice with networks using the SNiGB associates data in a Quarto document. 
 
 ## Activities
 - Data visualization.
