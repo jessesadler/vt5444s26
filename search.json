@@ -1060,7 +1060,7 @@
     "href": "content/12-content-design.html",
     "title": "Web design and visualization",
     "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction, Chapter 8: Refine your plots.\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.",
+    "text": "Kieran Healy, Data Visualization: A Practical Introduction\n\nChapter 7: Draw Maps\nChapter 8: Refine your plots\n\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1072,7 +1072,7 @@
     "href": "content/12-content-design.html#reading",
     "title": "Web design and visualization",
     "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction, Chapter 8: Refine your plots.\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.",
+    "text": "Kieran Healy, Data Visualization: A Practical Introduction\n\nChapter 7: Draw Maps\nChapter 8: Refine your plots\n\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1084,7 +1084,7 @@
     "href": "content/12-content-design.html#assignment",
     "title": "Web design and visualization",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nPractice making maps with Healy, Data Visualization: A Practical Introduction and with your own data in a Quarto document.\nPractice with networks using the SNiGB associates data in a Quarto document.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1816,7 +1816,7 @@
     "href": "content/11-content-networks.html#reading",
     "title": "Network analysis",
     "section": "Reading",
-    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction, Chapter 7: Draw Maps.\nRuth Ahnert et al., The Network Turn: Changing Perspectives in the Humanities (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.\n\nIntroduction, 1–9.\nChapter 1: Networks Are Always Metaphorical, 13–24.\nChapter 5: Quantifying Culture, 73–88.\n\nCatherine Medici, “Using Network Analysis to Understand Early Modern Women,” Early Modern Women: An Interdisciplinary Journal, 13 no. 1 (2018): 153–62, https://doi.org/10.1353/emw.2018.0058.",
+    "text": "Reading\n\nRuth Ahnert et al., The Network Turn: Changing Perspectives in the Humanities (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.\n\nIntroduction, 1–9.\nChapter 1: Networks Are Always Metaphorical, 13–24.\nChapter 5: Quantifying Culture, 73–88.\n\nCatherine Medici, “Using Network Analysis to Understand Early Modern Women,” Early Modern Women: An Interdisciplinary Journal, 13 no. 1 (2018): 153–62, https://doi.org/10.1353/emw.2018.0058.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1840,7 +1840,7 @@
     "href": "content/11-content-networks.html#assignment",
     "title": "Network analysis",
     "section": "Assignment",
-    "text": "Assignment\n\nPractice making maps with Healy, Data Visualization: A Practical Introduction and with your own data in a Quarto document.\nSecond self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the assignments page for details. You can turn in self reflections through email.\nExplore Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks and Six Degrees of Francis Bacon.",
+    "text": "Assignment\n\nSecond self reflection due. 2–3 paragraph self reflection on how things are going, what questions you have, and what you are excited about learning. See the assignments page for details. You can turn in self reflections through email.\nExplore Ruth Ahnert, Sebastian Ahnert, and Kim Albrecht, Tudor Networks and Six Degrees of Francis Bacon.",
     "crumbs": [
       "Content",
       "Topics",
