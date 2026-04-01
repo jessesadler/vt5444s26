@@ -156,13 +156,38 @@ locations_sf
 Notice the differences between `locations` and `locations_sf`. The latter has combined the `long` and `lat` columns into a single `geometry` column, while we also get attributes about the object's CRS as shown above in @fig-sf.
 
 ### 3. Get a base map
-There are many packages that provide vector mapping data in R. [rnaturalearth](https://docs.ropensci.org/rnaturalearth/index.html) is a great starting point. It contains worldwide data for administrative boundaries and natural features such as lakes, rivers, and oceans. [tigris](https://github.com/walkerke/tigris) provides access to census bureau geographic data. In this example we will use [USAboundaries](https://docs.ropensci.org/USAboundaries/index.html), which provides contemporary and historical boundaries in the United states. Note that both rnaturalearth and USAboundaries provide most of the data through secondary packages. If these packages are needed, you will be prompted to install them. Both rnaturalearth and USAboundaries return `sf` objects with a CRS of EPSG:4326.
+There are many packages that provide vector mapping data in R. [rnaturalearth](https://docs.ropensci.org/rnaturalearth/index.html) is a great starting point. It contains worldwide data for administrative boundaries and natural features such as lakes, rivers, and oceans. [tigris](https://github.com/walkerke/tigris) provides access to census bureau geographic data. In this example we will use [USAboundaries](https://docs.ropensci.org/USAboundaries/index.html), which provides contemporary and historical boundaries in the United states. Both rnaturalearth and USAboundaries provide most of the data through secondary packages. If these packages are needed, you will be prompted to install them.
 
-Here, we want county data for a single state.
+
+::: {.callout-warning collapse=false}
+## Installing data packages on Windows
+If the installation fails on Windows with an error that the package cannot be built, there are two options to solve the issue.
+
+1. Download and install [RTools](https://cran.r-project.org/bin/windows/Rtools/), which makes it possible to build packages.
+2. Install the package from a different repository: 
+
+```{r}
+#| eval: false
+install.packages("USAboundariesData", repos = c("https://ropensci.r-universe.dev"))
+```
+
+The process is the same for rnaturalearth:
+
+```{r}
+#| eval: false
+install.packages("rnaturalearth")
+install.packages("rnaturalearthdata", repos = c("https://ropensci.r-universe.dev"))
+install.packages("rnaturalearthhires", repos = c("https://ropensci.r-universe.dev"))
+```
+
+:::
+
+Both rnaturalearth and USAboundaries return `sf` objects with a CRS of EPSG:4326. Here, we want county data for a single state.
 
 ```{r}
 virginia <- us_counties(states = "Virginia")
 ```
+
 
 ### 4. Reproject the data
 Now we have the data, but we might want to change our data from using the web Mercator projection to a CRS that more accurately reflects the local area. USAboundaries provides both a data frame of the [State Plane Coordinate System](https://en.wikipedia.org/wiki/State_Plane_Coordinate_System) projections as EPSG codes and a function to quickly return the code for a state. We can then use `st_transform()` to reproject the data.
