@@ -743,9 +743,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an igraph object</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">graph_from_data_frame</span>(<span class="at">d =</span> edge_list, <span class="at">vertices =</span> node_list, <span class="at">directed =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH 198f26f UN-- 4 5 -- 
+<pre><code>IGRAPH a5eaf3f UN-- 4 5 -- 
 + attr: name (v/c), university (v/c), type (e/c)
-+ edges from 198f26f (vertex names):
++ edges from a5eaf3f (vertex names):
 [1] A--B B--C B--D B--C A--D</code></pre>
 </div>
 </div>
@@ -794,17 +794,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 0.8333333</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Components: only one, all nodes have at least one edge</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">components</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">count_components</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>$membership
-A B C D 
-1 1 1 1 
-
-$csize
-[1] 4
-
-$no
-[1] 1</code></pre>
+<pre><code>[1] 1</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Diameter</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">diameter</span>(network)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -884,7 +876,7 @@ $no
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_graph</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-graph" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
+<div id="fig-graph" class="quarto-float quarto-figure quarto-figure-center anchored" width="672" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="networks_files/figure-html/fig-graph-1.png" id="fig-graph" class="img-fluid figure-img" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
@@ -912,7 +904,7 @@ Figure&nbsp;1
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">edge_color =</span> <span class="st">"Discipline"</span>) <span class="sc">+</span> </span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_graph</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-graph-final" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
+<div id="fig-graph-final" class="quarto-float quarto-figure quarto-figure-center anchored" width="672" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="networks_files/figure-html/fig-graph-final-1.png" id="fig-graph-final" class="img-fluid figure-img" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">

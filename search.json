@@ -1060,7 +1060,7 @@
     "href": "content/12-content-design.html",
     "title": "Web design and visualization",
     "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction\n\nChapter 7: Draw Maps\nChapter 8: Refine your plots\n\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.",
+    "text": "This week we return to questions of visualization, style, and accessibility for data visualizations and websites.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1071,8 +1071,8 @@
     "objectID": "content/12-content-design.html#reading",
     "href": "content/12-content-design.html#reading",
     "title": "Web design and visualization",
-    "section": "",
-    "text": "Kieran Healy, Data Visualization: A Practical Introduction\n\nChapter 7: Draw Maps\nChapter 8: Refine your plots\n\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.",
+    "section": "Reading",
+    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction\n\nChapter 7: Draw Maps\nChapter 8: Refine your plots\n\nClaus Wilke, Fundamentals of Data Visualization\n\nChapter 4: Color scales\n\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.\n\nNicola Rennie, How to create a more accessible line chart.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1084,7 +1084,7 @@
     "href": "content/12-content-design.html#assignment",
     "title": "Web design and visualization",
     "section": "Assignment",
-    "text": "Assignment\n\nPractice making maps with Healy, Data Visualization: A Practical Introduction and with your own data in a Quarto document.\nPractice with networks using the SNiGB associates data in a Quarto document.",
+    "text": "Assignment\n\nPractice making maps with Healy, Data Visualization: A Practical Introduction and with your own data in a Quarto document.\nPractice with networks using the SNiGB associates data. Download this Quarto document as a starting point. Make sure to put the document in your r-notes RStudio project and have the SNiGB data, which can be found in this GoogleDrive.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1096,7 +1096,7 @@
     "href": "content/12-content-design.html#activities",
     "title": "Web design and visualization",
     "section": "Activities",
-    "text": "Activities\n\nData visualization.\nMaking tables in R.\nAccessibility.",
+    "text": "Activities\n\nData visualization\nMaking tables in R\nAccessibility",
     "crumbs": [
       "Content",
       "Topics",
@@ -1108,7 +1108,7 @@
     "href": "content/12-content-design.html#resources",
     "title": "Web design and visualization",
     "section": "Resources",
-    "text": "Resources",
+    "text": "Resources\n\nTLOS Digital Accessibility\nAchim Zeileis and Paul Murrell, “Coloring in R’s Blind Spot,” preprint, arXiv, March 8, 2023, https://arxiv.org/abs/2303.04918.",
     "crumbs": [
       "Content",
       "Topics",
@@ -2360,7 +2360,7 @@
     "href": "resources/networks.html#creating-network-objects",
     "title": "Networks in R",
     "section": "Creating network objects",
-    "text": "Creating network objects\nLet’s start by loading the packages listed above.\n\nlibrary(igraph)\nlibrary(tidygraph)\nlibrary(ggraph)\n\nThere are two ways to turn the edge list and node list into a network object. We can either go directly to a tbl_graph object from tidygraph using the tbl_graph() function or first create an igraph object using graph_from_data_frame(). I have found that with larger graphs graph_from_data_frame() works more consistently. Both methods are shown below.\n\n# Create a tbl_graph with tidygraph\ntbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\n\n# Create an igraph object\ngraph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)\n\nIGRAPH 198f26f UN-- 4 5 -- \n+ attr: name (v/c), university (v/c), type (e/c)\n+ edges from 198f26f (vertex names):\n[1] A--B B--C B--D B--C A--D\n\n\nYou will notice that the way these objects print to the console are quite different. A tbl_graph object prints out as two data frames for the nodes and edges. An igraph object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data attr, and then provides a graphical overview of the edge list. Let’s create a variable by first making an igraph object and then converting to tbl_graph.\n\nnetwork &lt;- graph_from_data_frame(d = edge_list,\n                                 vertices = node_list,\n                                 directed = FALSE) |&gt;\n  as_tbl_graph()\nnetwork\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 2 (active)\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows",
+    "text": "Creating network objects\nLet’s start by loading the packages listed above.\n\nlibrary(igraph)\nlibrary(tidygraph)\nlibrary(ggraph)\n\nThere are two ways to turn the edge list and node list into a network object. We can either go directly to a tbl_graph object from tidygraph using the tbl_graph() function or first create an igraph object using graph_from_data_frame(). I have found that with larger graphs graph_from_data_frame() works more consistently. Both methods are shown below.\n\n# Create a tbl_graph with tidygraph\ntbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\n\n# Create an igraph object\ngraph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)\n\nIGRAPH a5eaf3f UN-- 4 5 -- \n+ attr: name (v/c), university (v/c), type (e/c)\n+ edges from a5eaf3f (vertex names):\n[1] A--B B--C B--D B--C A--D\n\n\nYou will notice that the way these objects print to the console are quite different. A tbl_graph object prints out as two data frames for the nodes and edges. An igraph object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data attr, and then provides a graphical overview of the edge list. Let’s create a variable by first making an igraph object and then converting to tbl_graph.\n\nnetwork &lt;- graph_from_data_frame(d = edge_list,\n                                 vertices = node_list,\n                                 directed = FALSE) |&gt;\n  as_tbl_graph()\nnetwork\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 2 (active)\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows",
     "crumbs": [
       "Resources",
       "R",
@@ -2372,7 +2372,7 @@
     "href": "resources/networks.html#summary-of-the-graph",
     "title": "Networks in R",
     "section": "Summary of the graph",
-    "text": "Summary of the graph\nLet’s get our five number summary of this graph using igraph functions.\n\n# 1. Size\ngorder(network)\n\n[1] 4\n\n# 2. Density (0-1)\nedge_density(network)\n\n[1] 0.8333333\n\n# 3. Components: only one, all nodes have at least one edge\ncomponents(network)\n\n$membership\nA B C D \n1 1 1 1 \n\n$csize\n[1] 4\n\n$no\n[1] 1\n\n# 4. Diameter\ndiameter(network)\n\n[1] 2\n\n# 5. Clustering coefficient (0-1)\ntransitivity(network)\n\n[1] 0.6",
+    "text": "Summary of the graph\nLet’s get our five number summary of this graph using igraph functions.\n\n# 1. Size\ngorder(network)\n\n[1] 4\n\n# 2. Density (0-1)\nedge_density(network)\n\n[1] 0.8333333\n\n# 3. Components: only one, all nodes have at least one edge\ncount_components(network)\n\n[1] 1\n\n# 4. Diameter\ndiameter(network)\n\n[1] 2\n\n# 5. Clustering coefficient (0-1)\ntransitivity(network)\n\n[1] 0.6",
     "crumbs": [
       "Resources",
       "R",
