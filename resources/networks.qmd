@@ -129,7 +129,7 @@ gorder(network)
 # 2. Density (0-1)
 edge_density(network)
 # 3. Components: only one, all nodes have at least one edge
-components(network)
+count_components(network)
 # 4. Diameter
 diameter(network)
 # 5. Clustering coefficient (0-1)

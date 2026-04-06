@@ -4,21 +4,27 @@ subtitle: "13 April 2026"
 format: html
 ---
 
+*This week we return to questions of visualization, style, and accessibility for data visualizations and websites.*
 
 ## Reading
 - Kieran Healy, *Data Visualization: A Practical Introduction*
     - [Chapter 7: Draw Maps](https://socviz.co/07-maps.html)
     - [Chapter 8: Refine your plots](https://socviz.co/08-polishing.html)
+- Claus Wilke, *Fundamentals of Data Visualization*
+    - [Chapter 4: Color scales](https://clauswilke.com/dataviz/color-basics.html)
 - Nicola Rennie, *The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook* (CRC Press, 2025), <https://nrennie.rbind.io/art-of-viz/>.
     - Pick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.
+- Nicola Rennie, [How to create a more accessible line chart](https://nrennie.rbind.io/blog/accessible-line-chart/).
 
 ## Assignment
 - Practice making maps with Healy, *Data Visualization: A Practical Introduction* and with your own data in a Quarto document.
-- Practice with networks using the SNiGB associates data in a Quarto document. 
+- Practice with networks using the SNiGB associates data. Download this [Quarto document](../files/snigb-networks.qmd) as a starting point. Make sure to put the document in your `r-notes` RStudio project and have the SNiGB data, which can be found in this [GoogleDrive](https://drive.google.com/drive/folders/12KyAjUC7NjQCmuQz8MHNBFe08KTDAEIr?usp=share_link).
 
 ## Activities
-- Data visualization.
-- Making tables in R.
-- Accessibility.
+- Data visualization
+- Making tables in R
+- Accessibility
 
 ## Resources
+- [TLOS Digital Accessibility](https://tlos.vt.edu/digital-accessibility.html)
+- Achim Zeileis and Paul Murrell, "Coloring in R's Blind Spot," preprint, arXiv, March 8, 2023, <https://arxiv.org/abs/2303.04918>.
