@@ -1120,7 +1120,7 @@
     "href": "content/12-content-design.html#reading",
     "title": "Web design and visualization",
     "section": "Reading",
-    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction\n\nChapter 7: Draw Maps\nChapter 8: Refine your plots\n\nClaus Wilke, Fundamentals of Data Visualization\n\nChapter 4: Color scales\n\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.\n\nNicola Rennie, How to create a more accessible line chart.",
+    "text": "Reading\n\nKieran Healy, Data Visualization: A Practical Introduction\n\nChapter 7: Draw Maps\nChapter 8: Refine your plots\n\nClaus Wilke, Fundamentals of Data Visualization\n\nChapter 4: Color scales\nChapter 19: Common pitfalls of color use\nChapter 20: Redundant coding\n\nNicola Rennie, The Art of Data Visualization with ggplot2: The TidyTuesday Cookbook (CRC Press, 2025), https://nrennie.rbind.io/art-of-viz/.\n\nPick a chapter to read through. Follow along with the code and/or get inspiration on the types of visualizations you can make.\n\nNicola Rennie, How to create a more accessible line chart.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1936,7 +1936,7 @@
     "href": "content/13-content-gis-sna.html",
     "title": "Mapping and network analysis",
     "section": "",
-    "text": "Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add",
+    "text": "Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add resources to the shared Zotero Library.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1948,7 +1948,7 @@
     "href": "content/13-content-gis-sna.html#reading",
     "title": "Mapping and network analysis",
     "section": "",
-    "text": "Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add",
+    "text": "Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add resources to the shared Zotero Library.",
     "crumbs": [
       "Content",
       "Topics",
