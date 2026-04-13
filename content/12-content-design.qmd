@@ -21,10 +21,14 @@ format: html
 - Practice with networks using the SNiGB associates data. Download this [Quarto document](../files/snigb-networks.qmd) as a starting point. Make sure to put the document in your `r-notes` RStudio project and have the SNiGB data, which can be found in this [GoogleDrive](https://drive.google.com/drive/folders/12KyAjUC7NjQCmuQz8MHNBFe08KTDAEIr?usp=share_link).
 
 ## Activities
+- Go over making networks with SNiGB
 - Data visualization
-- Making tables in R
 - Accessibility
 
 ## Resources
+See [Resources: Digital accessibility](../resources/accessibility.qmd) and [Resources: Colors with ggplot2](../resources/ggplot2-color.qmd).
+
+- [Web Accessibility Initiative](https://www.w3.org/WAI/)
+- [Accessibility at Virginia Tech](https://accessibility.vt.edu/index.html)
 - [TLOS Digital Accessibility](https://tlos.vt.edu/digital-accessibility.html)
-- Achim Zeileis and Paul Murrell, "Coloring in R's Blind Spot," preprint, arXiv, March 8, 2023, <https://arxiv.org/abs/2303.04918>.
+- Achim Zeileis and Paul Murrell, "Coloring in R's Blind Spot," 2023, <https://arxiv.org/abs/2303.04918>.

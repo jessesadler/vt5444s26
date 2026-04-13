@@ -55,8 +55,6 @@ A more complex graph might have attributes for edges and nodes.
 
 ```{r}
 #| label: node-edge-lists
-#| message: false
-library(tidyverse)
 # Data frame of node pairs
 edge_list <- tibble(from = c(1, 2, 2, 3, 4),
                     to = c(2, 3, 4, 2, 1),
