@@ -155,8 +155,10 @@ website:
           contents:
             - text: "Quarto documents"
               file: resources/quarto-docs.qmd
-            - test: "Quarto websites"
+            - text: "Quarto websites"
               file: resources/quarto-websites.qmd
+            - text: "Digital accessibility"
+              file: resources/accessibility.qmd
 
   page-footer:
     right: |

@@ -1,0 +1,115 @@
+---
+title: "Digital accessibility"
+format: html
+---
+
+Digital accessibility is on people's minds more than ever with the [ADA Title II Digital Accessibility](https://accessibility.vt.edu/title-ii.html) deadline of 24 April 2026 quickly approaching. But even without this looming deadline, the principles of [Universal Design for Learning](https://tlos.vt.edu/services/udl.html) and our desire to make our work accessible to as many people as possible, provides ample reasons to think about accessibility when producing any kind of documents for consumption but especially digital documents.
+
+## General resources
+- A good place to start is with the resources on [digital accessibility](https://tlos.vt.edu/digital-accessibility.html) created by TLOS (Technology-enhanced learning and online strategies).
+- The World Wide Web Consortium's Web Accessibility Initiative provides a plethora of resources for what web accessibility entails, the different standards—such as [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/), and [lists of tools](https://www.w3.org/WAI/test-evaluate/tools/list/) to test your content.
+- Another useful resource is the [Web Accessibility in Mind (WebAIM)](https://webaim.org).
+
+## Tools for testing websites
+Two tools that will provide you with a good start to ensuring your pages are accessible are [WAVE](https://wave.webaim.org) and [Axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd).
+
+- [WAVE - Web accessibility evaluation tool](https://wave.webaim.org) is a website where you can paste in a url and run a check on the website.
+- [Axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) is a Google Chrome extension that you can access through the Developer menu in Chrome. One benefit of Axe DevTools is that you can run the checker on a local preview of your website by opening that preview in Chrome.
+- Chrome also has its own [accessibility pane](https://developer.chrome.com/blog/new-in-devtools-65/#a11y-pane) in its developer tools.
+- In addition, there are some fairly simple tools built into Quarto to use Axe to [check for accessibility issues](https://quarto.org/docs/output-formats/html-accessibility.html) on individual pages.
+
+Two issues that are prominent in making websites more accessible is ensuring adequate color contrast and writing alternative text for images so that they can be understood by people using screen readers.
+
+## Color contrast
+All of the above tools will point out issues with color contrast and whether contrast levels pass the WCAG 2.1 standard. [WebAIM's color contrast tool](https://webaim.org/resources/contrastchecker/) is a good general purpose tool for testing out color contrast.
+
+Color contrast and accounting for different forms of colorblindness is important when building visualizations. See the resources page on creating accessible plots with ggplot2.
+
+## Alternative text
+Alternative text is a brief description of images that is accessible to screen readers, making your content accessible to low sight readers. Alt text should describe the text within the context in which the image appears. Here are some dos and don'ts with alt text:
+
+### Dos 
+- Alt text should describe the "why" of an image—its core function/purpose/information.
+- Choose what to describe by: 
+    - Identifying why the image was included or what readers are meant to learn from the image.
+    - Moving from larger to smaller details.
+- Alt text should be written in a similar voice/style to the rest of the text.
+- Alt text should be as short as possible to explain the image.
+- If there is text in an image, it should be included in the alt text.
+- Make sure that every sentence ends with a period/proper punctuation.
+- Alt text should illustrate any clear patterns made by data visualizations (e.g., a data point that is significantly different from the rest or important within the context).
+
+### Don'ts
+- Do not repeat information about the image included in the body text or caption. 
+- Do not include information in alt text that is not part of the image.
+- Do not use phrases like "picture of" or "image of."
+- Exception: if the type of image is important to the context (i.e., logo, illustration, painting, cartoon).
+
+### Some resources on alt text
+- [VT Press Guide](https://docs.google.com/document/d/18fVfI15MFuNo5cMpb-3C9M5cCd36nC5k_l_zYUeinHg/edit?usp=sharing)
+- [W3 Alt Text](https://www.w3.org/WAI/tutorials/images/)
+- [Harvard Alt text](https://accessibility.huit.harvard.edu/describe-content-images)
+- [MIT Press Guide](https://dhjhkxawhe8q4.cloudfront.net/mit-press/wp-content/uploads/2024/07/12142558/Alt-Text-Style-Guide-June-2024.pdf)
+- [Section 508: Alternative text](https://www.section508.gov/create/alternative-text/)
+- [Ask UP: What is alt text](https://ask.up.hcommons.org/what-is-alt-text/)
+
+### Alt text in Quarto
+
+#### Images
+- Images in Quarto use the [Markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html#links-images) of:
+    - `![](image_location.png)`.
+- Add a **caption** by placing text within the square brackets:
+    - `![This is a caption of the image](image_location.png)`.
+- Add [**alt text**](https://quarto.org/docs/authoring/figures.html#alt-text) with the `fig-alt` attribute to the image:
+    - `![This is a caption of the image](image_location.png){fig-alt="This is alternative text."}`
+
+The following code will produce the following image if you have a folder named `img` with images in it:
+
+``` markdown
+![The Palmer Penguins!](img/lter_penguins.png){fig-alt="Cartoon of Chinstrap, Gentoo, and Adélie penguins with color splashes behind them."}
+```
+
+![The Palmer Penguins!](../files/img/lter_penguins.png){width=60% fig-alt="Cartoon of Chinstrap, Gentoo, and Adélie penguins with color splashes behind them."}
+
+#### Plots
+You can also add alt text and captions to plots you make using R within a Quarto document. If you create a plot in R and then save it as an image file, which you then use on your website, use the process above of placing an image in the text.
+
+To provide alt text for a plot, use the same `fig-alt` attribute but this time as a chunk option. For instance:
+
+``` markdown
+#| caption: "The flipper length compared to the body mass of Palmer Penguins."
+#| fig-alt: |
+#|   The plot shows flipper length on the x-axis, with values that range from 
+#|   170 to 230, and body mass on the y-axis, with values that range from 3000 
+#|   to 6000. The three species are displayed using different colors and shapes.
+#|   Adélie and Chinstrap are of similar size, while Gentoo are both heavier and
+#|   have longer flippers.
+
+ggplot(data = penguins,
+       mapping = aes(x = flipper_len, y = body_mass)) + 
+  geom_point(mapping = aes(color = species, shape = species)) + 
+  theme_minimal()
+```
+
+```{r}
+#| label: fig-alt
+#| echo: false
+#| message: false
+#| warning: false
+#| caption: "The flipper length compared to the body mass of Palmer Penguins."
+#| fig-alt: |
+#|   The plot shows flipper length on the x-axis, with values that range from 
+#|   170 to 230, and body mass on the y-axis, with values that range from 3000 
+#|   to 6000. The three species are displayed using different colors and shapes.
+#|   Adélie and Chinstrap are of similar size, while Gentoo are both heavier and
+#|   have longer flippers.
+
+
+library(ggplot2)
+#| caption: 
+#| fig-alt: 
+ggplot(data = penguins,
+       mapping = aes(x = flipper_len, y = body_mass)) + 
+  geom_point(mapping = aes(color = species, shape = species)) + 
+  theme_minimal()
+```
