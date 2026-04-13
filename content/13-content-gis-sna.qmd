@@ -5,7 +5,7 @@ format: html
 ---
 
 ## Reading
-Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add 
+Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add resources to the shared [Zotero Library](https://www.zotero.org/groups/6406819/vts/library).
 
 ## Assignment
 - Create a quarto document that makes an analysis of data from your project.
