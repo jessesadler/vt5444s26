@@ -972,39 +972,87 @@
     ]
   },
   {
-    "objectID": "resources/datasets.html",
-    "href": "resources/datasets.html",
-    "title": "Data for DH",
+    "objectID": "resources/dh.html",
+    "href": "resources/dh.html",
+    "title": "General Digital Humanities resources",
     "section": "",
-    "text": "Some places where you might look for data for historical research.",
+    "text": "The best place to start looking for general resources on digital humanities is the Digital Humanities Research Guide.1\nThe Debates in the Digital Humanities series is the best place to get yourself situated in the field, see who is working in digital humanities, and what topics are of interest.\nIf you are looking to keep up with the latest developments in digital humanities, three great resources are Reviews in Digital Humanities, DH Now and dh+lib. Scrolling through these resources will provide a great overview of recent activity.\nThe Association for Computers and the Humanities (ACH) is the primary digital humanities association in the United States and is part of the worldwide Alliance of Digital Humanities Organizations (ADHO). The 2026 ACH Conference will be held virtually on 24–26 June 2026. The Call for Papers is live with proposals due 23 February 2026.",
     "crumbs": [
       "Resources",
       "Digital Humanities",
-      "Data for DH"
+      "General DH resources"
     ]
   },
   {
-    "objectID": "resources/datasets.html#open-data-repositories",
-    "href": "resources/datasets.html#open-data-repositories",
-    "title": "Data for DH",
-    "section": "Open data repositories",
-    "text": "Open data repositories\n\nVirginia Tech Data Repository\nZenodo\nHarvard Dataverse",
+    "objectID": "resources/dh.html#footnotes",
+    "href": "resources/dh.html#footnotes",
+    "title": "General Digital Humanities resources",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you see any issues or think something should be added to this guide, please let me know, and I can get it updated. Of particular interest is the Resources page of the guide.↩︎",
     "crumbs": [
       "Resources",
       "Digital Humanities",
-      "Data for DH"
+      "General DH resources"
     ]
   },
   {
-    "objectID": "resources/datasets.html#r-data-packages",
-    "href": "resources/datasets.html#r-data-packages",
-    "title": "Data for DH",
-    "section": "R data packages",
-    "text": "R data packages\nMany R packages come with some sample data, and there are even some packages that are primarily or entirely designed to distribute and document data.\n\nRdatasets: a huge table of datasets in R packages.\nUSAboundaries: Contemporary (2024) and historical state, county, and Congressional boundaries from 1629 to 2000.\nhistorydata: Historical datasets that mostly deal with American history.\nHistData: a collection of small data sets that are interesting and important in the history of statistics and data visualization.",
+    "objectID": "resources/accessibility.html",
+    "href": "resources/accessibility.html",
+    "title": "Digital accessibility",
+    "section": "",
+    "text": "Digital accessibility is on people’s minds more than ever with the ADA Title II Digital Accessibility deadline of 24 April 2026 quickly approaching. But even without this looming deadline, the principles of Universal Design for Learning and our desire to make our work accessible to as many people as possible, provides ample reasons to think about accessibility when producing any kind of documents for consumption but especially digital documents.",
     "crumbs": [
       "Resources",
-      "Digital Humanities",
-      "Data for DH"
+      "Quarto",
+      "Digital accessibility"
+    ]
+  },
+  {
+    "objectID": "resources/accessibility.html#general-resources",
+    "href": "resources/accessibility.html#general-resources",
+    "title": "Digital accessibility",
+    "section": "General resources",
+    "text": "General resources\n\nA good place to start is with the resources on digital accessibility created by TLOS (Technology-enhanced learning and online strategies).\nThe World Wide Web Consortium’s Web Accessibility Initiative provides a plethora of resources for what web accessibility entails, the different standards—such as Web Content Accessibility Guidelines (WCAG) 2.1, and lists of tools to test your content.\nAnother useful resource is the Web Accessibility in Mind (WebAIM).",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Digital accessibility"
+    ]
+  },
+  {
+    "objectID": "resources/accessibility.html#tools-for-testing-websites",
+    "href": "resources/accessibility.html#tools-for-testing-websites",
+    "title": "Digital accessibility",
+    "section": "Tools for testing websites",
+    "text": "Tools for testing websites\nTwo tools that will provide you with a good start to ensuring your pages are accessible are WAVE and Axe DevTools.\n\nWAVE - Web accessibility evaluation tool is a website where you can paste in a url and run a check on the website.\nAxe DevTools is a Google Chrome extension that you can access through the Developer menu in Chrome. One benefit of Axe DevTools is that you can run the checker on a local preview of your website by opening that preview in Chrome.\nChrome also has its own accessibility pane in its developer tools.\nIn addition, there are some fairly simple tools built into Quarto to use Axe to check for accessibility issues on individual pages.\n\nTwo issues that are prominent in making websites more accessible is ensuring adequate color contrast and writing alternative text for images so that they can be understood by people using screen readers.",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Digital accessibility"
+    ]
+  },
+  {
+    "objectID": "resources/accessibility.html#color-contrast",
+    "href": "resources/accessibility.html#color-contrast",
+    "title": "Digital accessibility",
+    "section": "Color contrast",
+    "text": "Color contrast\nAll of the above tools will point out issues with color contrast and whether contrast levels pass the WCAG 2.1 standard. WebAIM’s color contrast tool is a good general purpose tool for testing out color contrast.\nColor contrast and accounting for different forms of colorblindness is important when building visualizations. See the resources page on creating accessible plots with ggplot2.",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Digital accessibility"
+    ]
+  },
+  {
+    "objectID": "resources/accessibility.html#alternative-text",
+    "href": "resources/accessibility.html#alternative-text",
+    "title": "Digital accessibility",
+    "section": "Alternative text",
+    "text": "Alternative text\nAlternative text is a brief description of images that is accessible to screen readers, making your content accessible to low sight readers. Alt text should describe the text within the context in which the image appears. Here are some dos and don’ts with alt text:\n\nDos\n\nAlt text should describe the “why” of an image—its core function/purpose/information.\nChoose what to describe by:\n\nIdentifying why the image was included or what readers are meant to learn from the image.\nMoving from larger to smaller details.\n\nAlt text should be written in a similar voice/style to the rest of the text.\nAlt text should be as short as possible to explain the image.\nIf there is text in an image, it should be included in the alt text.\nMake sure that every sentence ends with a period/proper punctuation.\nAlt text should illustrate any clear patterns made by data visualizations (e.g., a data point that is significantly different from the rest or important within the context).\n\n\n\nDon’ts\n\nDo not repeat information about the image included in the body text or caption.\nDo not include information in alt text that is not part of the image.\nDo not use phrases like “picture of” or “image of.”\nException: if the type of image is important to the context (i.e., logo, illustration, painting, cartoon).\n\n\n\nSome resources on alt text\n\nVT Press Guide\nW3 Alt Text\nHarvard Alt text\nMIT Press Guide\nSection 508: Alternative text\nAsk UP: What is alt text\n\n\n\nAlt text in Quarto\n\nImages\n\nImages in Quarto use the Markdown syntax of:\n\n![](image_location.png).\n\nAdd a caption by placing text within the square brackets:\n\n![This is a caption of the image](image_location.png).\n\nAdd alt text with the fig-alt attribute to the image:\n\n![This is a caption of the image](image_location.png){fig-alt=\"This is alternative text.\"}\n\n\nThe following code will produce the following image if you have a folder named img with images in it:\n![The Palmer Penguins!](img/lter_penguins.png){fig-alt=\"Cartoon of Chinstrap, Gentoo, and Adélie penguins with color splashes behind them.\"}\n\n\n\nThe Palmer Penguins!\n\n\n\n\nPlots\nYou can also add alt text and captions to plots you make using R within a Quarto document. If you create a plot in R and then save it as an image file, which you then use on your website, use the process above of placing an image in the text.\nTo provide alt text for a plot, use the same fig-alt attribute but this time as a chunk option. For instance:\n#| caption: \"The flipper length compared to the body mass of Palmer Penguins.\"\n#| fig-alt: |\n#|   The plot shows flipper length on the x-axis, with values that range from \n#|   170 to 230, and body mass on the y-axis, with values that range from 3000 \n#|   to 6000. The three species are displayed using different colors and shapes.\n#|   Adélie and Chinstrap are of similar size, while Gentoo are both heavier and\n#|   have longer flippers.\n\nggplot(data = penguins,\n       mapping = aes(x = flipper_len, y = body_mass)) + \n  geom_point(mapping = aes(color = species, shape = species)) + \n  theme_minimal()\n\n\n\n\n\n\n\n\nFigure 1",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Digital accessibility"
     ]
   },
   {
@@ -1096,7 +1144,7 @@
     "href": "content/12-content-design.html#activities",
     "title": "Web design and visualization",
     "section": "Activities",
-    "text": "Activities\n\nData visualization\nMaking tables in R\nAccessibility",
+    "text": "Activities\n\nGo over making networks with SNiGB\nData visualization\nAccessibility",
     "crumbs": [
       "Content",
       "Topics",
@@ -1108,7 +1156,7 @@
     "href": "content/12-content-design.html#resources",
     "title": "Web design and visualization",
     "section": "Resources",
-    "text": "Resources\n\nTLOS Digital Accessibility\nAchim Zeileis and Paul Murrell, “Coloring in R’s Blind Spot,” preprint, arXiv, March 8, 2023, https://arxiv.org/abs/2303.04918.",
+    "text": "Resources\nSee Resources: Digital accessibility and Resources: Colors with ggplot2.\n\nWeb Accessibility Initiative\nAccessibility at Virginia Tech\nTLOS Digital Accessibility\nAchim Zeileis and Paul Murrell, “Coloring in R’s Blind Spot,” 2023, https://arxiv.org/abs/2303.04918.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1884,11 +1932,35 @@
     ]
   },
   {
+    "objectID": "content/13-content-gis-sna.html",
+    "href": "content/13-content-gis-sna.html",
+    "title": "Mapping and network analysis",
+    "section": "",
+    "text": "Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "13: Mapping and network analysis"
+    ]
+  },
+  {
+    "objectID": "content/13-content-gis-sna.html#reading",
+    "href": "content/13-content-gis-sna.html#reading",
+    "title": "Mapping and network analysis",
+    "section": "",
+    "text": "Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "13: Mapping and network analysis"
+    ]
+  },
+  {
     "objectID": "content/13-content-gis-sna.html#assignment",
     "href": "content/13-content-gis-sna.html#assignment",
     "title": "Mapping and network analysis",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nCreate a quarto document that makes an analysis of data from your project.\nCommonplace book writing: What are you excited to work on? What skills do you need to concentrate on improving?",
     "crumbs": [
       "Content",
       "Topics",
@@ -1900,7 +1972,7 @@
     "href": "content/13-content-gis-sna.html#activities",
     "title": "Mapping and network analysis",
     "section": "Activities",
-    "text": "Activities",
+    "text": "Activities\n\nTime to go over visualization, mapping, and networks.\nPractice and plan for website projects.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1912,7 +1984,7 @@
     "href": "content/13-content-gis-sna.html#resources",
     "title": "Mapping and network analysis",
     "section": "Resources",
-    "text": "Resources",
+    "text": "Resources\n\nResources: Mapping in R\nResources: Networks in R",
     "crumbs": [
       "Content",
       "Topics",
@@ -1984,27 +2056,87 @@
     "text": "Acknowledgements\nThis course has benefited from a number of different similar Digital Humanities courses and syllabi built using Quarto. Courses by Cameron Blevins, Lincoln Mullen, Zoë LeBlanc, and Brandon Walsh have been helpful guides in developing a computing heavy DH course. Courses by Andrew Heiss, Kieran Healy, and Clause Wilke have been useful for improving the Quarto website and integrating quarto-live into the site. I would also like to thank the Department of History at Virginia Tech for allowing me to teach this course and my colleagues in the University Libraries for their support and helping collaborate on the course."
   },
   {
-    "objectID": "resources/dh.html",
-    "href": "resources/dh.html",
-    "title": "General Digital Humanities resources",
+    "objectID": "resources/datasets.html",
+    "href": "resources/datasets.html",
+    "title": "Data for DH",
     "section": "",
-    "text": "The best place to start looking for general resources on digital humanities is the Digital Humanities Research Guide.1\nThe Debates in the Digital Humanities series is the best place to get yourself situated in the field, see who is working in digital humanities, and what topics are of interest.\nIf you are looking to keep up with the latest developments in digital humanities, three great resources are Reviews in Digital Humanities, DH Now and dh+lib. Scrolling through these resources will provide a great overview of recent activity.\nThe Association for Computers and the Humanities (ACH) is the primary digital humanities association in the United States and is part of the worldwide Alliance of Digital Humanities Organizations (ADHO). The 2026 ACH Conference will be held virtually on 24–26 June 2026. The Call for Papers is live with proposals due 23 February 2026.",
+    "text": "Some places where you might look for data for historical research.",
     "crumbs": [
       "Resources",
       "Digital Humanities",
-      "General DH resources"
+      "Data for DH"
     ]
   },
   {
-    "objectID": "resources/dh.html#footnotes",
-    "href": "resources/dh.html#footnotes",
-    "title": "General Digital Humanities resources",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nIf you see any issues or think something should be added to this guide, please let me know, and I can get it updated. Of particular interest is the Resources page of the guide.↩︎",
+    "objectID": "resources/datasets.html#open-data-repositories",
+    "href": "resources/datasets.html#open-data-repositories",
+    "title": "Data for DH",
+    "section": "Open data repositories",
+    "text": "Open data repositories\n\nVirginia Tech Data Repository\nZenodo\nHarvard Dataverse",
     "crumbs": [
       "Resources",
       "Digital Humanities",
-      "General DH resources"
+      "Data for DH"
+    ]
+  },
+  {
+    "objectID": "resources/datasets.html#r-data-packages",
+    "href": "resources/datasets.html#r-data-packages",
+    "title": "Data for DH",
+    "section": "R data packages",
+    "text": "R data packages\nMany R packages come with some sample data, and there are even some packages that are primarily or entirely designed to distribute and document data.\n\nRdatasets: a huge table of datasets in R packages.\nUSAboundaries: Contemporary (2024) and historical state, county, and Congressional boundaries from 1629 to 2000.\nhistorydata: Historical datasets that mostly deal with American history.\nHistData: a collection of small data sets that are interesting and important in the history of statistics and data visualization.",
+    "crumbs": [
+      "Resources",
+      "Digital Humanities",
+      "Data for DH"
+    ]
+  },
+  {
+    "objectID": "resources/ggplot2-color.html",
+    "href": "resources/ggplot2-color.html",
+    "title": "Colors with ggplot2",
+    "section": "",
+    "text": "Colors can do much to make your visualizations look better, be easier to interpret, and create consistency. However, if you choose colors poorly, you visualization may become difficult to read and inaccessible to those with visual impairments. Two good resources to begin with are:\nFor background information on color in Base R, see Achim Zeileis and Paul Murrell, “Coloring in R’s Blind Spot,” March 8, 2023, https://arxiv.org/abs/2303.04918.\nThere are a number of color palette visualizers that help to test out color choices. These also provide tools to approximate different forms of color blindness.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Colors with ggplot2"
+    ]
+  },
+  {
+    "objectID": "resources/ggplot2-color.html#types-of-data-and-color",
+    "href": "resources/ggplot2-color.html#types-of-data-and-color",
+    "title": "Colors with ggplot2",
+    "section": "Types of data and color",
+    "text": "Types of data and color\nThere are three main types of data types that can be mapped to different color palettes: qualitative, sequential, and diverging. We can show this with the default ggplot2 palettes and two other color palette sets that come with ggplot2, ColorBrewer and Viridis.\n\nQualitative data\nQualitative data, also called discrete and categorical, represents distinct categories that do not have any natural order.\n\nDefault qualitative colorsColorBrewer colorsViridis colors\n\n\n\nplot_qualitative\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_brewer(palette = \"Set1\")\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_viridis_d()\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\n\n\n\nSequential data\nSequential data represents continuous numeric values.\n\nDefault continuous colorsColorBrewer: Multiple huesViridis colors\n\n\n\nplot_sequential\n\n\n\n\n\n\n\nFigure 4\n\n\n\n\n\n\n\n\nplot_sequential +\n  scale_color_distiller(palette = \"YlOrRd\")\n\n\n\n\n\n\n\nFigure 5\n\n\n\n\n\n\n\n\nplot_sequential +\n  scale_color_viridis_c()\n\n\n\n\n\n\n\nFigure 6\n\n\n\n\n\n\n\n\n\n\nDiverging data\nDiverging data can be either continuous sequential data or qualitative. However, it should have a meaningful midpoint and two different extremes. Examples include ranked choices like below or data with a meaningful midpoint at zero. Do not use diverging palettes if your data is not diverging.\n\nDefault ggplot2 colorsDiverging colors with ColorBrewer\n\n\nggplot2 does not have default diverging colors nor does Viridis. But ColorBrewer provides a number of choices for diverging data.\n\nplot_diverging\n\n\n\n\n\n\n\nFigure 7\n\n\n\n\n\n\n\n\nplot_diverging +\n  scale_fill_brewer(palette = \"PRGn\")\n\n\n\n\n\n\n\nFigure 8",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Colors with ggplot2"
+    ]
+  },
+  {
+    "objectID": "resources/ggplot2-color.html#color-palette-choices",
+    "href": "resources/ggplot2-color.html#color-palette-choices",
+    "title": "Colors with ggplot2",
+    "section": "Color palette choices",
+    "text": "Color palette choices\nYou are not short of choice for color palettes when working in R. You can make your own color palettes or you can turn to the paletteer package, which includes almost 3,000 color palettes.\n\nManual colors\nYou can create a manual palette either with either the hundreds of named R colors such as of hex codes such as #861F41 and #E5751F using scale_color/fill_manual() for qualitative data and scale_color/fill_gradient() for sequential data.\n\nNamed colorsHokie hex colors: Maroon, burnt orange, and sustainable teal\n\n\n\nplot_qualitative + \n  scale_color_manual(\n      values = c(\"darkorange\", \"purple\", \"cyan4\")\n  )\n\n\n\n\n\n\n\nFigure 9\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_manual(\n      values = c(\"#861F41\", \"#E5751F\", \"#508590\")\n  )\n\n\n\n\n\n\n\nFigure 10\n\n\n\n\n\n\n\n\n\n\nPaletteer\nThere are dozens of color palette packages for R. The paletteer package package collects these and provides a consistent way to access these packages. The package provides color scale functions for continuous or sequential data (scale_color/fill_paletteer_c()) and discrete or qualitative data (scale_color/fill_paletteer_d()), as well as a binned option that turns sequential into qualitative bins (scale_color/fill_paletteer_binned()). The basic structure is scale_color_c(\"package:palette\").\nUse the paletteer package website and the included data frames that list the available packages and palettes to help find options. A great resource for this is the R Graph Gallery Palette Finder, which uses paletteer for its data. If you do not find the palette you are looking for, make sure to select the Show more palette button. This interactive selector also provides the R code to use the color scale.\n\nnationalparkcolors: Blue Ride ParkwayMetBrewer: Van Goghcolorblindr: OkabeIto\n\n\n\nlibrary(paletteer)\n\nplot_qualitative + \n  scale_color_paletteer_d(\"nationalparkcolors::BlueRidgePkwy\")\n\n\n\n\n\n\n\nFigure 11\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"MetBrewer::VanGogh2\")\n\n\n\n\n\n\n\nFigure 12\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"colorblindr::OkabeIto\")\n\n\n\n\n\n\n\nFigure 13",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Colors with ggplot2"
+    ]
+  },
+  {
+    "objectID": "resources/ggplot2-color.html#accessibility-and-color",
+    "href": "resources/ggplot2-color.html#accessibility-and-color",
+    "title": "Colors with ggplot2",
+    "section": "Accessibility and color",
+    "text": "Accessibility and color\nYou will notice that some of the above plots are easier to interpret and some of more difficult based on the color palettes.\nMaking accessible plots is a multi-faceted task. It involves design, understanding the argument made by the visualization, and adding metadata such as alternative text as shown in Digital accessibility. This resource will focus on the issue of color choice to make plots more legible to more people. The interpretation of visualizations should not rely solely on color, but good color choices can increase accessibility. For a fuller discussion of accessible design, see Nicola Rennie, How to create a more accessible line chart.\nThere are a couple of packages that provide tools to approximate colorblindness and that provide colorblind friendly palettes. These include:\n\ncolorBlindness\ndichromat\nplotcolr\n\n\nEvaluating palettes\nHere we will use the colorBlindness package to evaluate the palettes we have been using. colorBlindness provides two useful functions for evaluating color palettes.\n\ncvdPlot(): Approximate colorblindness for a given plot.\ndisplayAllColors(): Create a matrix of colors that approximates colorblindness for a given palette.\n\nLet’s start with the default ggplot2 colors:\n\ncvdPlot(): DefaultdisplayAllColors(): Default\n\n\n\nlibrary(colorBlindness)\n\ncvdPlot(plot_qualitative + guides(color = \"none\"))\n\n\n\n\n\n\n\nFigure 14\n\n\n\n\n\n\n\nCan access the qualitative color scale with scales::hue_pal(). The use of (3) at the end tells how many colors to make.\n\ndisplayAllColors(scales::hue_pal()(3))\n\n\n\n\n\n\n\nFigure 15\n\n\n\n\n\n\n\n\nYou will notice that the default color palette does not perform very well, especially in grayscale. This is because the default palettes uses colors that all have the same hue. A better default choice is Viridis.\n\ncvdPlot(): ViridisdisplayAllColors(): Viridis\n\n\n\ncvdPlot(\n  plot_qualitative + \n    guides(color = \"none\") + \n    scale_color_viridis_d()\n  )\n\n\n\n\n\n\n\nFigure 16\n\n\n\n\n\n\n\nCan access the qualitative color scale with scales::hue_pal(). The use of (3) at the end tells how many colors to make.\n\ndisplayAllColors(scales::viridis_pal()(3))\n\n\n\n\n\n\n\nFigure 17\n\n\n\n\n\n\n\n\n\n\nOther accessible color palettes\nThis does not mean that your choices are limited. Many packages provide palettes specifically designed to be colorblind friendly, while you can also use the palettes visualizers of the tools from ColorBlindness to check your choices.\nPaletteer includes palettes from colorBlindness, colorblindr, dichromat, as well as many others. Claus Wilke suggests the palette created by Okabe and Ito that is made available through colorblindr.\n\n\n\n\n\n\nTip\n\n\n\nYou can find the palettes from a specific package using dplyr. For instance:\n\npalettes_d_names |&gt;\n  filter(package == \"colorblindr\")\n\n# A tibble: 2 × 5\n  package     palette        length type        novelty\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt; &lt;chr&gt;       &lt;lgl&gt;  \n1 colorblindr OkabeIto_black      8 qualitative FALSE  \n2 colorblindr OkabeIto            8 qualitative FALSE  \n\n\n\n\n\nggthemes: Color BlindcolorBlindness: palette Martin\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"ggthemes::Color_Blind\")\n\n\n\n\n\n\n\nFigure 18\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"colorBlindness::paletteMartin\")\n\n\n\n\n\n\n\nFigure 19",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Colors with ggplot2"
     ]
   },
   {
@@ -2336,7 +2468,7 @@
     "href": "resources/networks.html#network-data-structure",
     "title": "Networks in R",
     "section": "Network data structure",
-    "text": "Network data structure\nNetwork data is different from other types of data we have encountered because it is made up of two related structure: an edge list and a node list.1 Within R these two data structures are represented by data frames:\n\nEdge list: A data frame with at least two columns of the node pairs that are joined by an edge. These columns are often named from and to even if there is no direction for the connection. Further columns provide attributes for the edges such as weight, count, or type.\nNode list: A data frame with at least one column containing all of the unique nodes in the graph. This column is often named id. Further columns provide attributes for the node such as name, type, etc.\n\nLet’s look at a simple example:\n\nlibrary(tidyverse)\n# Data frame of node pairs\ntibble(from = c(1, 2, 2, 3, 4),\n       to = c(2, 3, 4, 2, 1))\n\n# A tibble: 5 × 2\n   from    to\n  &lt;dbl&gt; &lt;dbl&gt;\n1     1     2\n2     2     3\n3     2     4\n4     3     2\n5     4     1\n\n# Data frame of nodes\ntibble(id = 1:4)\n\n# A tibble: 4 × 1\n     id\n  &lt;int&gt;\n1     1\n2     2\n3     3\n4     4\n\n\nA more complex graph might have attributes for edges and nodes.\n\nlibrary(tidyverse)\n# Data frame of node pairs\nedge_list &lt;- tibble(from = c(1, 2, 2, 3, 4),\n                    to = c(2, 3, 4, 2, 1),\n                    type = c(\"History\", \"English\", \"Art History\", \"History\", \"English\"))\nedge_list\n\n# A tibble: 5 × 3\n   from    to type       \n  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n4     3     2 History    \n5     4     1 English    \n\n# Data frame of nodes\nnode_list &lt;- tibble(id = 1:4,\n                    name = LETTERS[1:4],\n                    university = c(\"VT\", \"JMU\", \"UVA\", \"GMU\"))\nnode_list\n\n# A tibble: 4 × 3\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n\n\nThere are other ways to represent network data, but node and edge lists provides a solid foundation for working with network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.",
+    "text": "Network data structure\nNetwork data is different from other types of data we have encountered because it is made up of two related structure: an edge list and a node list.1 Within R these two data structures are represented by data frames:\n\nEdge list: A data frame with at least two columns of the node pairs that are joined by an edge. These columns are often named from and to even if there is no direction for the connection. Further columns provide attributes for the edges such as weight, count, or type.\nNode list: A data frame with at least one column containing all of the unique nodes in the graph. This column is often named id. Further columns provide attributes for the node such as name, type, etc.\n\nLet’s look at a simple example:\n\nlibrary(tidyverse)\n# Data frame of node pairs\ntibble(from = c(1, 2, 2, 3, 4),\n       to = c(2, 3, 4, 2, 1))\n\n# A tibble: 5 × 2\n   from    to\n  &lt;dbl&gt; &lt;dbl&gt;\n1     1     2\n2     2     3\n3     2     4\n4     3     2\n5     4     1\n\n# Data frame of nodes\ntibble(id = 1:4)\n\n# A tibble: 4 × 1\n     id\n  &lt;int&gt;\n1     1\n2     2\n3     3\n4     4\n\n\nA more complex graph might have attributes for edges and nodes.\n\n# Data frame of node pairs\nedge_list &lt;- tibble(from = c(1, 2, 2, 3, 4),\n                    to = c(2, 3, 4, 2, 1),\n                    type = c(\"History\", \"English\", \"Art History\", \"History\", \"English\"))\nedge_list\n\n# A tibble: 5 × 3\n   from    to type       \n  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n4     3     2 History    \n5     4     1 English    \n\n# Data frame of nodes\nnode_list &lt;- tibble(id = 1:4,\n                    name = LETTERS[1:4],\n                    university = c(\"VT\", \"JMU\", \"UVA\", \"GMU\"))\nnode_list\n\n# A tibble: 4 × 3\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n\n\nThere are other ways to represent network data, but node and edge lists provides a solid foundation for working with network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.",
     "crumbs": [
       "Resources",
       "R",
@@ -2360,7 +2492,7 @@
     "href": "resources/networks.html#creating-network-objects",
     "title": "Networks in R",
     "section": "Creating network objects",
-    "text": "Creating network objects\nLet’s start by loading the packages listed above.\n\nlibrary(igraph)\nlibrary(tidygraph)\nlibrary(ggraph)\n\nThere are two ways to turn the edge list and node list into a network object. We can either go directly to a tbl_graph object from tidygraph using the tbl_graph() function or first create an igraph object using graph_from_data_frame(). I have found that with larger graphs graph_from_data_frame() works more consistently. Both methods are shown below.\n\n# Create a tbl_graph with tidygraph\ntbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\n\n# Create an igraph object\ngraph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)\n\nIGRAPH a5eaf3f UN-- 4 5 -- \n+ attr: name (v/c), university (v/c), type (e/c)\n+ edges from a5eaf3f (vertex names):\n[1] A--B B--C B--D B--C A--D\n\n\nYou will notice that the way these objects print to the console are quite different. A tbl_graph object prints out as two data frames for the nodes and edges. An igraph object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data attr, and then provides a graphical overview of the edge list. Let’s create a variable by first making an igraph object and then converting to tbl_graph.\n\nnetwork &lt;- graph_from_data_frame(d = edge_list,\n                                 vertices = node_list,\n                                 directed = FALSE) |&gt;\n  as_tbl_graph()\nnetwork\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 2 (active)\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows",
+    "text": "Creating network objects\nLet’s start by loading the packages listed above.\n\nlibrary(igraph)\nlibrary(tidygraph)\nlibrary(ggraph)\n\nThere are two ways to turn the edge list and node list into a network object. We can either go directly to a tbl_graph object from tidygraph using the tbl_graph() function or first create an igraph object using graph_from_data_frame(). I have found that with larger graphs graph_from_data_frame() works more consistently. Both methods are shown below.\n\n# Create a tbl_graph with tidygraph\ntbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\n\n# Create an igraph object\ngraph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)\n\nIGRAPH 65998c0 UN-- 4 5 -- \n+ attr: name (v/c), university (v/c), type (e/c)\n+ edges from 65998c0 (vertex names):\n[1] A--B B--C B--D B--C A--D\n\n\nYou will notice that the way these objects print to the console are quite different. A tbl_graph object prints out as two data frames for the nodes and edges. An igraph object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data attr, and then provides a graphical overview of the edge list. Let’s create a variable by first making an igraph object and then converting to tbl_graph.\n\nnetwork &lt;- graph_from_data_frame(d = edge_list,\n                                 vertices = node_list,\n                                 directed = FALSE) |&gt;\n  as_tbl_graph()\nnetwork\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 2 (active)\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows",
     "crumbs": [
       "Resources",
       "R",
