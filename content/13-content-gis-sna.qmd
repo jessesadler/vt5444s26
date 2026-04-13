@@ -5,12 +5,16 @@ format: html
 ---
 
 ## Reading
-
+Background reading on mapping or network analysis. Find one or more sources that are related to what you want to do for your project. Add 
 
 ## Assignment
-
+- Create a quarto document that makes an analysis of data from your project.
+- Commonplace book writing: What are you excited to work on? What skills do you need to concentrate on improving?
 
 ## Activities
-
+- Time to go over visualization, mapping, and networks.
+- Practice and plan for website projects.
 
 ## Resources
+- [Resources: Mapping in R](../resources/mapping.qmd)
+- [Resources: Networks in R](../resources/networks.qmd)
