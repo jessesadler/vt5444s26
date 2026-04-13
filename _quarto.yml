@@ -133,6 +133,8 @@ website:
               file: resources/importing.qmd
             - text: "Visualization with ggplot2"
               file: resources/ggplot2.qmd
+            - text: "Colors with ggplot2"
+              file: resources/ggplot2-color.qmd
             - text: "Wrangling data in the tidyverse"
               file: resources/wrangling.qmd
             - text: "Mapping with R"
