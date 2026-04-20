@@ -17,7 +17,9 @@ The Quarto documentation is the best place to look when you have a question. The
 Posit has also created a YouTube series on [building a Quarto website](https://youtu.be/l7r24gTEkEY?si=QGzhARrLgHJ-gpxk). This series also discusses making a [blog with Quarto](https://quarto.org/docs/websites/website-blog.html). A blog is a Quarto website that has some additional features to allow you to have a page listing the blog posts. Otherwise, there is a great deal of overlap.
 
 ### Examples of Quarto websites
-There are a lot of Quarto websites out in the world. A couple that you might want to look at include:
+There are a lot of Quarto websites out in the world. Explore the [gallery of websites](https://quarto.org/docs/gallery/#websites) on the Quarto site for inspiration.
+
+A couple that you might want to look at include:
 
 - The website for [this class](https://jessesadler.github.io/vt5444s26/) is a Quarto website.
 - [OpenScapes](https://openscapes.org)

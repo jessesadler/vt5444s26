@@ -228,6 +228,7 @@ There are a couple of packages that provide tools to approximate colorblindness 
 - [colorBlindness](https://cran.r-project.org/web/packages/colorBlindness/index.html)
 - [dichromat](https://cran.r-project.org/web/packages/dichromat/index.html)
 - [plotcolr](https://github.com/thedatacollective/plotcolr)
+- [cols4all](https://cols4all.github.io/cols4all-R/)
 
 ### Evaluating palettes
 Here we will use the colorBlindness package to evaluate the palettes we have been using. colorBlindness provides two useful functions for evaluating color palettes.
