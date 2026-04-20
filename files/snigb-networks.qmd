@@ -2,7 +2,6 @@
 title: "Networks with SNiGB"
 format: html
 ---
-
 Use this document as a starting point for practicing network analysis with the Social Network in Georgian Britain.
 
 ```{r}
@@ -24,14 +23,7 @@ edges <- read_csv(here("data-raw", "associations.csv"))
 individuals <- read_csv(here("data-raw", "individuals.csv"))
 ```
 
-```{r}
-#| label: look-at-data
-# Take a look at the data
-
-```
-
-
-Not all of the individuals are in the associates data, so let's find out who is in the associates data. Each person might be in either from `from` or the `to` column. The `unique()` function helps to find distinct names.
+View the data frames using RStudio's viewer or print the data frames out to the console. Not all of the individuals are in the associates data, so let's find out who is in the associates data. Each person might be in either from `from` or the `to` column. The `unique()` function helps to find distinct names.
 
 ```{r}
 #| label: nodes
@@ -47,21 +39,21 @@ Now we are ready to use the edges and nodes to create a graph object. For whatev
 assoc_graph <- graph_from_data_frame(d = edges, vertices = nodes, directed = FALSE)
 ```
 
-Look at the network you have created and find the 5 number summary as discussed in the [Networks with R](https://jessesadler.github.io/vt5444s26/resources/networks.html) resource page.
+Look at the network you have created and find the 5 number summary as discussed in the [Networks with R](https://jessesadler.github.io/vt5444s26/resources/networks.html) resource page. Some of the calculations like diameter may take a while to run on a network of this size.
 
 ```{r}
 #| label: 5-nr-summary
 # Investigate graph: 5 number summary
 # 1. Size
-
+gorder(assoc_graph)
 # 2. Density (0-1)
-
-# 3. Components
-
+edge_density(assoc_graph)
+# 3. Components: only one, all nodes have at least one edge
+count_components(assoc_graph)
 # 4. Diameter
-
+diameter(assoc_graph)
 # 5. Clustering coefficient (0-1)
-
+transitivity(assoc_graph)
 ```
 
 You will notice that the network has many different components; there are small clusters of connected people that are completely unconnected to the largest network. We can remove these eccentricities and concentrate on the large network with `largest_component()` from igraph.
@@ -80,7 +72,7 @@ Now rerun the five-number summary on the new network.
 
 # 2. Density (0-1)
 
-# 3. Components
+# 3. Components: only one, all nodes have at least one edge
 
 # 4. Diameter
 
@@ -113,13 +105,13 @@ assoc_tbl |>
 There are many different [centrality measures](https://tidygraph.data-imaginist.com/reference/index.html#centrality) in tidygrapgh. Play around with different ones and see what they do.
 
 ### Add id column
-You will notice that the tidygraph represents the nodes in the edge tibble as integers. It will make it easier to identify these values if the node tibble also has these values. The values are calculated in sequential order of the nodes, so we can redo this and add it as a column.
+You will notice that the tidygraph represents the nodes in the edge tibble as integers. It will make it easier to identify the names associated with these values if the node tibble also has these values. The values are calculated in sequential order of the nodes, so we can add it as a column with `mutate()`.
 
 ```{r}
 #| label: add-id
 assoc_tbl <- assoc_tbl |> 
-  mutate(id = seq_along(assoc_tbl)) |> # Add id column from 1 to end of the tbl
-  select(id, everything()) # Move the id column to the front
+  mutate(node_id = seq_along(assoc_tbl)) |> # Add id column from 1 to end of the tbl
+  select(node_id, everything()) # Move the id column to the front
 ```
 
 Let's now look at a couple of different ways to explore connections in the graph.
@@ -136,44 +128,91 @@ female_graph
 
 You will notice that there are over 1,000 components, which tells us something about how men connect women together in this data. Explore this graph or create your own subgraph to investigate the data.
 
+```{r}
+#| label: explore-subgraphs
+
+
+```
+
+
 ## Ego graphs
-Neighborhoods or ego graphs provide a way to create a subgraph based on the connection to one or more node. Find an individual to investigate. You can search through `individuals` to find someone you might be interested in and do a filter for their name in `assoc_tbl`. One trick to do this is to use `str_starts()` within `filter()`. This lets you write the beginning of the name without having to write everything exactly perfectly. For instance:
+Neighborhoods or ego graphs provide a way to create a subgraph based on the connection to one or more node. Find an individual to investigate. One way is to view the `nodes` data frame by clicking on it in RStudio to explore the individuals in the network. You can either use the row number in the data viewer or do a filter for their name in `assoc_tbl`. One trick to do this is to use `str_starts()` within `filter()`. This lets you write the beginning of the name without having to write everything exactly perfectly. For instance:
 
 ```{r}
 #| label: find-individual
 assoc_tbl |> 
-  filter(str_starts(name, "Jane Austen"))
+  filter(str_starts(name, "Jane Austen")) |> 
+  pull(node_id) # only get values from id column
 ```
 
-This shows the `id` for Jane Austen, which can be used to make the ego graph.
+This shows the `node_id` for Jane Austen, which can be used to make the ego graph. Assign the id value of the person you choose to `individual_1` below. By using a variable, you will only need to change the `node_id` in one place if you want to explore another individual.
 
 ```{r}
-#| label: austen-ego
-to_local_neighborhood(assoc_tbl, node = 1)
+#| label: ego
+individual_1 <- # add id value for the person you chose here.
+to_local_neighborhood(assoc_tbl, node = individual_1)
 ```
 
-Within tidygraph, this creates a temporary representation of the graph. Notice the `$neighborhood` at the beginning of the print out of the object. This is because `to_local_neighborhood()` actually returns a list. Run `class(to_local_neighborhood(assoc_tbl, node = 1))` to confirm this. If you want to actually create a new tidygraph object, you need to use `convert()` in the following manner:
+Within tidygraph, this creates a temporary representation of the graph. Notice the `$neighborhood` at the beginning of the print out of the object. This is because `to_local_neighborhood()` actually returns a list. Run `class(to_local_neighborhood(assoc_tbl, node = individual_1))` to confirm this. If you want to actually create a new tidygraph object, you need to use `convert()` with the graph object and the function used for the conversion as arguments in the following manner:
 
 ```{r}
 #| label: tidy-convert
-ja_ego <- convert(assoc_tbl, to_local_neighborhood, node = 7550)
+# Assign this to a variable
+convert(assoc_tbl, to_local_neighborhood, node = individual_1)
 ```
 
-See the [documentation](https://tidygraph.data-imaginist.com/reference/morph.html) for a fuller explanation of this.
+Make sure to assign the above to a variable so that you can use it below.
 
-You can now plot with either the igraph version of `plot()` of using ggraph. Here is the basic plot.
+See the [documentation](https://tidygraph.data-imaginist.com/reference/morph.html) for a fuller explanation of using `convert()`.
+
+You can now plot with either the igraph version of `plot()` or use ggraph. Here is the basic plot. If the labels are distracting, you can remove them using `vertex.label = NA`. You can also make the size of the nodes smaller with `vertex.size`. See the [igraph plotting documentation](https://r.igraph.org/reference/plot.common.html) for more details. 
 
 ```{r}
 #| label: base-ego-plot
-plot(ja_ego)
+plot()
 ```
 
 Try to create a plot with ggraph following the instructions in [visualize the graph](https://jessesadler.github.io/vt5444s26/resources/networks.html#visualize-the-graph).
 
 ```{r}
 #| label: ego-ggraph
+# place graph object in first position
+ggraph(, layout = "nicely") + 
+  geom_edge_link() + 
+  geom_node_point() + 
+  theme_graph()
+```
+
+## Shortest paths between nodes
+Another way to investigate the graph is to look at how two people are connected to each other. This can be done by finding the shortest paths between two nodes. Find an individual in the data who is not a neighbor (someone who is not directly connected) of the individual you chose above. Unfortunately, the process to do this is a bit more complicated than we might want. It demonstrates how we can go back and forth between tidygraph and igraph.
+
+The tidygraph function `to_shortest_path()` only provides a single path between nodes even when there may be multiple paths that are the same distance. igraph's `all_shortest_paths()` provides this information, but it returns a complicated list in which the first element contains the various paths between the nodes. One way to deal with this is to get a vector of all the nodes and then create a subgraph with only those nodes.
+
+```{r}
+#| label: shortest-paths
+individual_2 <- # add id value for the person you chose here.
+
+# This is fairly complex, but you can try running one line at a time
+# to see what each function does.
+all_paths <- assoc_tbl |> 
+  all_shortest_paths(from = individual_1, to = individual_2) |> 
+  first() |> # choose first element of the list
+  list_c() |> # convert the list to a vector
+  unique() |> # reduce the vector to the unique nodes
+  as_ids() # convert from igraph vertices to character vector of names
+
+# Create the subgraph
+all_paths_subgraph <- assoc_tbl |> 
+  filter(name %in% all_paths)
+```
+
+You can now calculate aspects of the graph or of the different nodes on this subgraph or create a plot.
+
+```{r}
+#| label: shortest-paths-experiment
 
 ```
+
 
 ## Conclusion
 There are many other ways to explore this network data. Make sure to look through the [igraph](https://r.igraph.org/index.html) and [tidygraph](https://tidygraph.data-imaginist.com/index.html) documentation for ideas.

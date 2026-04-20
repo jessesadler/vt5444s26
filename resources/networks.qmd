@@ -93,12 +93,14 @@ library(ggraph)
 
 There are two ways to turn the edge list and node list into a network object. We can either go directly to a `tbl_graph` object from tidygraph using the `tbl_graph()` function or first create an `igraph` object using `graph_from_data_frame()`. I have found that with larger graphs `graph_from_data_frame()` works more consistently. Both methods are shown below.
 
+### Create a tidygraph object
 ```{r}
 #| label: tbl_graph
 # Create a tbl_graph with tidygraph
 tbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)
 ```
 
+### Create an igraph object
 ```{r}
 #| label: igraph-object
 # Create an igraph object
@@ -107,6 +109,7 @@ graph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)
 
 You will notice that the way these objects print to the console are quite different. A `tbl_graph` object prints out as two data frames for the nodes and edges. An `igraph` object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data `attr`, and then provides a graphical overview of the edge list. Let's create a variable by first making an `igraph` object and then converting to `tbl_graph`.
 
+### Create a tidygraph object through igraph 
 ```{r}
 #| label: convert-tbl-graph
 network <- graph_from_data_frame(d = edge_list,
@@ -190,7 +193,7 @@ network |>
   theme_graph(base_size = 16)
 ```
 
-Even this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data.
+Even this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data. Download the [SNiGB networks Quarto document](../files/snigb-networks.qmd) to help you get started.
 
 ## Further resources
 
