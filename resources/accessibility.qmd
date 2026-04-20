@@ -56,12 +56,14 @@ Alternative text is a brief description of images that is accessible to screen r
 ### Alt text in Quarto
 
 #### Images
+The basics of working with images and providing alternative text are shown below. If you want to do more with images, including sizing and arranging, see the Quarto documentation on [Figures](https://quarto.org/docs/authoring/figures.html). You may also want to look at the [Lightbox figures documentation](https://quarto.org/docs/output-formats/html-lightbox-figures.html) for another tool for working with images.
+
 - Images in Quarto use the [Markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html#links-images) of:
     - `![](image_location.png)`.
 - Add a **caption** by placing text within the square brackets:
-    - `![This is a caption of the image](image_location.png)`.
+    - `![The caption](image_location.png)`.
 - Add [**alt text**](https://quarto.org/docs/authoring/figures.html#alt-text) with the `fig-alt` attribute to the image:
-    - `![This is a caption of the image](image_location.png){fig-alt="This is alternative text."}`
+    - `![The caption](image_location.png){fig-alt="This is alt text."}`
 
 The following code will produce the following image if you have a folder named `img` with images in it:
 

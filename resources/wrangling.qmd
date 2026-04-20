@@ -53,15 +53,24 @@ library(tidyverse)
 
 ```{r}
 penguins |> 
-  select(species, bill_len, bill_dep, sex) |> # Subset columns, not strictly necessary
-  filter(!is.na(bill_len) | !is.na(bill_dep)) |> # Remove missing values for bill measurements
-  mutate(bill_ratio = bill_dep / bill_len) |> # Create new column for ration of depth to length
-  group_by(species, sex) |> # Group the data by species and sex
-  summarize(avg_ratio = mean(bill_ratio), # Find the average bill ratio broken down by species and sex
-            n = n(), # Count the number of observations in each group
-            .groups = "drop") |> # Drop the remaining grouping of sex
-  arrange(desc(avg_ratio)) # Arrange the rows by the average ratio in descending order
+  select(species, bill_len, bill_dep, sex) |> # <1>
+  filter(!is.na(bill_len) | !is.na(bill_dep)) |> # <2>
+  mutate(bill_ratio = bill_dep / bill_len) |> # <3>
+  group_by(species, sex) |> # <4>
+  summarize(avg_ratio = mean(bill_ratio), # <5>
+            n = n(), # <6>
+            .groups = "drop") |> # <7>
+  arrange(desc(avg_ratio)) # <8>
 ```
+
+1. Subset columns; not strictly necessary because of summarization further in pipeline.
+2. Remove missing values for bill measurements.
+3. Create new column for ratio of bill depth to bill length.
+4. Group the data by species and sex.
+5. Find the average bill ratio broken down by species and sex.
+6. Count the number of observations in each group.
+7. Drop the remaining grouping of sex.
+8. Arrange the rows by the average ratio in descending order.
 
 ## 2. Joining together related data frames
 A common data wrangling task is to join together related data frames. This situation can come about by the desire split up a dataset into multiple datasets to keep them clean and tidy. A common example in the humanities might be a dataset that has location names that correspond to latitude and longitude values. Instead of having latitude and longitude columns for all of our data, we might want to have a separate data frame with that information that we only need to join to the rest of the dataset when we want to create a geographic visualization. We can do this with **joins**. Let's see how it works with some data about the location of siblings at different times.

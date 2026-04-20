@@ -41,3 +41,7 @@ Mine Çetinkaya-Rundel & Julia Stewart Lowndes, Hello Quarto: Share, Collaborate
 ### DH and static websites
 - *Digital Humanities Quarterly* special issue on [Minimal Computing](https://dhq.digitalhumanities.org/vol/16/2/index.html).
 - [Lib-Static](https://lib-static.github.io).
+- Amanda Visconti, "Building a Static Website with Jekyll and GitHub Pages," *The Programming Historian* (2016), <https://doi.org/10.46430/phen0048>.
+
+### Static webistes
+- Brian Rinaldi, *Static Site Generators* (O’Reilly Media, 2015), <https://learning.oreilly.com/library/view/static-site-generators/9781492048558/>.
