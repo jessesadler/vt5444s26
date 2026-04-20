@@ -163,6 +163,8 @@ website:
               file: resources/quarto-websites.qmd
             - text: "Digital accessibility"
               file: resources/accessibility.qmd
+            - text: "Interactive tables in Quarto"
+              file: resources/quarto-tables.qmd
 
   page-footer:
     right: |

@@ -1,0 +1,100 @@
+---
+title: "Interactive tables in Quarto"
+format: html
+---
+
+You can create complex data visualization with R and Quarto, but there may be times when you just want to show your table of data in a way that is useful to readers. There are a number of ways to format tables. This page provides a preview of what you can do with tables in Quarto.
+
+If you want a nicely formatted static table, look at the [gt package](https://gt.rstudio.com). The documentation for the package is very thorough and provides many examples.
+
+A minimally interactive option is `rmarkdown::paged_table()`, which can be chosen as the default table output within the [`df-print` option in Quarto's YAML](https://quarto.org/docs/computations/r.html#data-frames). But you can get even fancier with either the [DT package](https://rstudio.github.io/DT/) or [reactable](https://glin.github.io/reactable/).
+
+## Examples
+Let's show examples using the movements of two sibling groups at the end of the 16th century.
+
+```{r}
+#| label: setup
+#| message: false
+library(tidyverse)
+library(DT)
+library(reactable)
+```
+
+```{r}
+#| label: load-data
+#| message: false
+#| echo: false
+movements <- read_csv("../datasets/movements.csv")
+locations <- read_csv("../datasets/locations.csv")
+```
+
+```{r}
+#| label: load-data-show
+#| eval: false
+movements <- read_csv("https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/movements.csv")
+```
+
+### Regular tibble output
+
+```{r}
+#| label: tibble-output
+movements
+```
+
+### RMarkdown paged
+
+```{r}
+#| label: paged-output
+rmarkdown::paged_table(movements)
+```
+
+### DT
+
+```{r}
+#| label: dt-output
+datatable(movements)
+```
+
+### reactable
+
+```{r}
+#| label: reactable-output
+reactable(movements)
+```
+
+## reactable
+The [DT package](https://rstudio.github.io/DT/) provides a nice default with a search box and includes many [options](https://rstudio.github.io/DT/options.html) for styling the table. However, [reactable](https://glin.github.io/reactable/) takes this even further, and so that is the package we will concentrate on here.
+
+### Resources and examples
+The below will show some examples to help get you started, but look at the [documentation](https://glin.github.io/reactable/) for the many options available to you.
+
+- Scroll through the [Examples](https://glin.github.io/reactable/articles/examples.html) to get an idea of the basics.
+- Go through the [demos](https://glin.github.io/reactable/index.html#demos) to see what is possible.
+- A good example of a reactable that is also useful in its contents is [Nicola Rennie's Data Science Resources](https://nrennie.rbind.io/data-science-resources/).
+
+### Movements example
+The below is a relatively simple example that adds a search box, increases the default page side, changes some visual aspects of the table, and provides capitalized header values.
+
+```{r}
+#| label: movements-reactable
+movements <- movements |> 
+  arrange(date) |> 
+  mutate(date = paste(day(date), # Transform to use of words for date
+                      month(date, label = TRUE, abbr = FALSE),
+                      year(date)))
+
+
+reactable(movements,
+          defaultPageSize = 15,
+          searchable = TRUE,
+          bordered = TRUE,
+          highlight = TRUE,
+          columns = list(
+            person = colDef(name = "Person"),
+            place = colDef(name = "Place"),
+            date = colDef(name = "Date")
+            )
+          )
+```
+
+You can get quite creative with reactable, including adding [filtering widgets](https://glin.github.io/reactable/articles/examples.html#cross-widget-interactions) and a [button to download the data](https://glin.github.io/reactable/articles/examples.html#javascript-api) among many other options.
