@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -438,6 +457,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../resources/mapping-lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping: Creating lines from points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../resources/networks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Networks with R</span></a>
   </div>
@@ -512,6 +537,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Digital accessibility</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interactive tables in Quarto</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -573,7 +604,119 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="bibliography" class="level2">
 <h2 class="anchored" data-anchor-id="bibliography">Bibliography</h2>
-<p>bib to go here</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-ahnert_ahnert2019" class="csl-entry" role="listitem">
+Ahnert, Ruth, and Sebastian E. Ahnert. <span>“Metadata, Surveillance and the Tudor State.”</span> <em>History Workshop Journal</em> 87 (2019): 27–51. <a href="https://doi.org/10.1093/hwj/dby033">https://doi.org/10.1093/hwj/dby033</a>.
+</div>
+<div id="ref-ahnert_ahnert2015" class="csl-entry" role="listitem">
+Ahnert, Ruth, and Sebastian E. Ahnert. <span>“Protestant Letter Networks in the Reign of <span>Mary I</span>: A Quantitative Approach.”</span> <em>English Literary History</em> 82, no. 1 (2015): 1–33. <a href="https://doi.org/10.1353/elh.2015.0000">https://doi.org/10.1353/elh.2015.0000</a>.
+</div>
+<div id="ref-ahnert_ahnert2023" class="csl-entry" role="listitem">
+Ahnert, Ruth, and Sebastian E. Ahnert. <em>Tudor <span>Networks</span> of <span>Power</span></em>. Oxford University Press, 2023. <a href="https://doi.org/10.1093/oso/9780198858973.001.0001">https://doi.org/10.1093/oso/9780198858973.001.0001</a>.
+</div>
+<div id="ref-ahnert_etal2020" class="csl-entry" role="listitem">
+Ahnert, Ruth, Sebastian E. Ahnert, Catherine Nicole Coleman, and Scott B. Weingart. <em>The <span>Network Turn</span>: <span>Changing Perspectives</span> in the <span>Humanities</span></em>. Cambridge University Press, 2020.
+</div>
+<div id="ref-albrecht_etal" class="csl-entry" role="listitem">
+Albrecht, Kim, Ruth Ahnert, and Sebastian Ahnert. <em>Tudor <span>Networks</span></em>. Http://tudornetworks.net/, n.d.
+</div>
+<div id="ref-antonov_etal2023" class="csl-entry" role="listitem">
+Antonov, Michael, Gábor Csárdi, Szabolcs Horvát, et al. <em>Igraph <span>Enables Fast</span> and <span>Robust Network Analysis Across Programming Languages</span></em>. arXiv:2311.10260. arXiv, 2023. <a href="https://arxiv.org/abs/2311.10260">https://arxiv.org/abs/2311.10260</a>.
+</div>
+<div id="ref-arnold_tilton2019" class="csl-entry" role="listitem">
+Arnold, Taylor, and Lauren Tilton. <span>“New <span>Data</span>? <span>The Role</span> of <span>Statistics</span> in <span>DH</span>.”</span> In <em>Debates in the <span>Digital Humanities</span> 2019</em>, edited by Matthew K. Gold and Lauren F. Klein. University of Minnesota Press, 2019.
+</div>
+<div id="ref-blevins2014" class="csl-entry" role="listitem">
+Blevins, Cameron. <span>“Space, <span>Nation</span>, and the <span>Triumph</span> of <span>Region</span>: <span>A View</span> of the <span>World</span> from <span>Houston</span>.”</span> <em>Journal of American History</em> 101, no. 1 (2014): 122–47. <a href="https://doi.org/10.1093/jahist/jau184">https://doi.org/10.1093/jahist/jau184</a>.
+</div>
+<div id="ref-broman_woo2018" class="csl-entry" role="listitem">
+Broman, Karl W., and Kara H. Woo. <span>“Data Organization in Spreadsheets.”</span> <em>The American Statistician</em> 72, no. 1 (2018): 2–10. <a href="https://doi.org/10.1080/00031305.2017.1375989">https://doi.org/10.1080/00031305.2017.1375989</a>.
+</div>
+<div id="ref-bryan2017" class="csl-entry" role="listitem">
+Bryan, Jennifer. <em>Excuse Me, Do You Have a Moment to Talk about Version Control?</em> Preprint. PeerJ Preprints, 2017. <a href="https://doi.org/10.7287/peerj.preprints.3159v2">https://doi.org/10.7287/peerj.preprints.3159v2</a>.
+</div>
+<div id="ref-dombrowski2022" class="csl-entry" role="listitem">
+Dombrowski, Quinn. <span>“Minimizing <span>Computing Maximizes Labor</span>.”</span> <em>Digital Humanities Quarterly</em> 16, no. 2 (2022). <a href="https://doi.org/10.63744/nkueftfvhghb">https://doi.org/10.63744/nkueftfvhghb</a>.
+</div>
+<div id="ref-estrellado_etal" class="csl-entry" role="listitem">
+Estrellado, Ryan A., Emily A. Freer, and Isabella C. Velásquez. <span>“What <span>Does Data Science</span> in <span>Education Look Like</span>?”</span> In <em>Data Science in Education Using R</em>. Https://datascienceineducation.com/c03, n.d.
+</div>
+<div id="ref-friendly_wainer2021" class="csl-entry" role="listitem">
+Friendly, Michael, and Howard Wainer. <em>A History of Data Visualization and Graphic Communication</em>. Harvard University Press, 2021.
+</div>
+<div id="ref-healy2019" class="csl-entry" role="listitem">
+Healy, Kieran. <em>Data <span>Visualization</span>: <span>A Practical Introduction</span></em>. Princeton University Press, 2019.
+</div>
+<div id="ref-healy_moody2014" class="csl-entry" role="listitem">
+Healy, Kieran, and James Moody. <span>“Data <span>Visualization</span> in <span>Sociology</span>.”</span> <em>Annual Review of Sociology</em> 40, no. 1 (2014): 105–28. <a href="https://doi.org/10.1146/annurev-soc-071312-145551">https://doi.org/10.1146/annurev-soc-071312-145551</a>.
+</div>
+<div id="ref-kerschbaumer_etal2020" class="csl-entry" role="listitem">
+Kerschbaumer, Florian, Linda Von Keyserlingk-Rehbein, Martin Stark, and Marten Düring, eds. <em>The <span>Power</span> of <span>Networks</span>: <span>Prospects</span> of <span>Historical Network Research</span></em>. Routledge, 2020. <a href="https://doi.org/10.4324/9781315189062">https://doi.org/10.4324/9781315189062</a>.
+</div>
+<div id="ref-lovelace_etal2019" class="csl-entry" role="listitem">
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. <em>Chapter 9 <span>Making</span> Maps with <span>R</span> <span>Geocomputation</span> with <span>R</span></em>. 2019.
+</div>
+<div id="ref-luhmann1981" class="csl-entry" role="listitem">
+Luhmann, Niklas. <em>Communicating with Slip Boxes: An Empirical Account</em>. Https://luhmann.surge.sh/communicating-with-slip-boxes, 1981.
+</div>
+<div id="ref-medici2018" class="csl-entry" role="listitem">
+Medici, Catherine. <span>“Using Network Analysis to Understand Early Modern Women.”</span> <em>Early Modern Women</em> 13, no. 1 (2018): 153–62. <a href="https://doi.org/10.1353/emw.2018.0058">https://doi.org/10.1353/emw.2018.0058</a>.
+</div>
+<div id="ref-ognyanova2019" class="csl-entry" role="listitem">
+Ognyanova, Katherine. <em>Network <span>Visualization</span> with <span>R</span></em>. 2025.
+</div>
+<div id="ref-pebesma_bivand2021" class="csl-entry" role="listitem">
+Pebesma, Edzer, and Roger Bivand. <em>Spatial <span>Data Science</span>: <span>With Applications</span> in <span>R</span></em>. 2025.
+</div>
+<div id="ref-rawson_munoz2019" class="csl-entry" role="listitem">
+Rawson, Katie, and Trevor Muñoz. <span>“Against <span>Cleaning</span>.”</span> In <em>Debates in the <span>Digital Humanities</span> 2019</em>, edited by Matthew K. Gold and Lauren F. Klein. University of Minnesota Press, 2019.
+</div>
+<div id="ref-rennie2025" class="csl-entry" role="listitem">
+Rennie, Nicola. <em>The <span>Art</span> of <span>Data Visualization</span> with Ggplot2: <span>The TidyTuesday Cookbook</span></em>. CRC Press, 2025.
+</div>
+<div id="ref-risam_gil2022" class="csl-entry" role="listitem">
+Risam, Roopika, and Alex Gil. <span>“Introduction: <span>The Questions</span> of <span>Minimal Computing</span>.”</span> <em>Digital Humanities Quarterly</em> 16, no. 2 (2022).
+</div>
+<div id="ref-ryan_ahnert2021" class="csl-entry" role="listitem">
+Ryan, Yann C., and Sebastian E. Ahnert. <span>“The Measure of the Archive: <span>The</span> Robustness of Network Analysis in Early Modern Correspondence.”</span> <em>Journal of Cultural Analytics</em> 7 (2021): 57–88. <a href="https://doi.org/10.22148/001c.25943">https://doi.org/10.22148/001c.25943</a>.
+</div>
+<div id="ref-schrag2021" class="csl-entry" role="listitem">
+Schrag, Zachary M. <em>The <span>Princeton Guide</span> to <span>Historical Research</span></em>. Princeton University Press, 2021. <a href="https://doi.org/10.2307/j.ctv1pdrrc9">https://doi.org/10.2307/j.ctv1pdrrc9</a>.
+</div>
+<div id="ref-scott_carrington2014" class="csl-entry" role="listitem">
+Scott, John, and Peter Carrington, eds. <em>The <span>SAGE Handbook</span> of <span>Social Network Analysis</span></em>. SAGE Publications Ltd, 2014. <a href="https://doi.org/10.4135/9781446294413">https://doi.org/10.4135/9781446294413</a>.
+</div>
+<div id="ref-solokov2025" class="csl-entry" role="listitem">
+Solokov, Alex. <span>“Beyond the <span>Binary</span>: <span>Improving Data Visualization</span> for <span>Intersectional Identities</span>.”</span> <em>Nightingale: Journal of the Data Visualization Society</em>, March 2025.
+</div>
+<div id="ref-tennekes_nowosad2025" class="csl-entry" role="listitem">
+Tennekes, Martijn, and Jakub Nowosad. <em>Spatial <span>Data Visualization</span> with Tmap: <span>A Practical Guide</span> to <span>Thematic Mapping</span> in <span>R</span></em>. 2025.
+</div>
+<div id="ref-walker2023" class="csl-entry" role="listitem">
+Walker, Kyle E. <em>Analyzing <span>US</span> Census Data: Methods, Maps, and Models in <span>R</span></em>. First edition. <span>CRC</span> the <span>R</span> Series. CRC Press, 2023.
+</div>
+<div id="ref-wickham2010" class="csl-entry" role="listitem">
+Wickham, Hadley. <span>“A Layered Grammar of Graphics.”</span> <em>Journal of Computational and Graphical Statistics</em> 19, no. 1 (2010): 3–28. <a href="https://doi.org/10.1198/jcgs.2009.07098">https://doi.org/10.1198/jcgs.2009.07098</a>.
+</div>
+<div id="ref-wickham2016" class="csl-entry" role="listitem">
+Wickham, Hadley. <em>Ggplot2: <span>Elegant Graphics</span> for <span>Data Analysis</span></em>. Second Edition. Use <span>R</span>! Springer, 2016. <a href="https://doi.org/10.1007/978-3-319-24277-4">https://doi.org/10.1007/978-3-319-24277-4</a>.
+</div>
+<div id="ref-wickham2014" class="csl-entry" role="listitem">
+Wickham, Hadley. <span>“Tidy <span>Data</span>.”</span> <em>Journal of Statistical Software</em> 59, no. 10 (2014). <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>.
+</div>
+<div id="ref-wickham_etal2019" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, et al. <span>“Welcome to the <span>Tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4, no. 43 (2019): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+<div id="ref-wikle_williamson2025" class="csl-entry" role="listitem">
+Wikle, Olivia, and Evan Peter Williamson. <span>“Static <span>Web Methodology</span> as a <span>Sustainable Approach</span> to <span>Digital Humanities Projects</span>.”</span> <em>The Code4Lib Journal</em>, no. 60 (April 2025).
+</div>
+<div id="ref-wilke2019" class="csl-entry" role="listitem">
+Wilke, Claus. <em>Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures</em>. O’Reilly Media, 2019.
+</div>
+<div id="ref-wilkinson2005" class="csl-entry" role="listitem">
+Wilkinson, Leland. <em>The <span>Grammar</span> of <span>Graphics</span></em>. Second. Statistics and <span>Computing</span>. Springer-Verlag, 2005. <a href="https://doi.org/10.1007/0-387-28695-0">https://doi.org/10.1007/0-387-28695-0</a>.
+</div>
+</div>
 
 
 </section>

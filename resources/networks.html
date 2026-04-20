@@ -68,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../resources/git-overview.html" rel="next">
-<link href="../resources/mapping.html" rel="prev">
+<link href="../resources/mapping-lines.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -474,6 +474,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../resources/mapping-lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping: Creating lines from points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../resources/networks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Networks with R</span></a>
   </div>
@@ -548,6 +554,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Digital accessibility</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interactive tables in Quarto</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -567,7 +579,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#network-data-structure" id="toc-network-data-structure" class="nav-link" data-scroll-target="#network-data-structure">Network data structure</a></li>
   <li><a href="#packages-for-network-analysis-in-r" id="toc-packages-for-network-analysis-in-r" class="nav-link" data-scroll-target="#packages-for-network-analysis-in-r">Packages for network analysis in R</a></li>
-  <li><a href="#creating-network-objects" id="toc-creating-network-objects" class="nav-link" data-scroll-target="#creating-network-objects">Creating network objects</a></li>
+  <li><a href="#creating-network-objects" id="toc-creating-network-objects" class="nav-link" data-scroll-target="#creating-network-objects">Creating network objects</a>
+  <ul class="collapse">
+  <li><a href="#create-a-tidygraph-object" id="toc-create-a-tidygraph-object" class="nav-link" data-scroll-target="#create-a-tidygraph-object">Create a tidygraph object</a></li>
+  <li><a href="#create-an-igraph-object" id="toc-create-an-igraph-object" class="nav-link" data-scroll-target="#create-an-igraph-object">Create an igraph object</a></li>
+  <li><a href="#create-a-tidygraph-object-through-igraph" id="toc-create-a-tidygraph-object-through-igraph" class="nav-link" data-scroll-target="#create-a-tidygraph-object-through-igraph">Create a tidygraph object through igraph</a></li>
+  </ul></li>
   <li><a href="#summary-of-the-graph" id="toc-summary-of-the-graph" class="nav-link" data-scroll-target="#summary-of-the-graph">Summary of the graph</a></li>
   <li><a href="#calculate-node-properties" id="toc-calculate-node-properties" class="nav-link" data-scroll-target="#calculate-node-properties">Calculate node properties</a></li>
   <li><a href="#visualize-the-graph" id="toc-visualize-the-graph" class="nav-link" data-scroll-target="#visualize-the-graph">Visualize the graph</a></li>
@@ -725,6 +742,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>There are two ways to turn the edge list and node list into a network object. We can either go directly to a <code>tbl_graph</code> object from tidygraph using the <code>tbl_graph()</code> function or first create an <code>igraph</code> object using <code>graph_from_data_frame()</code>. I have found that with larger graphs <code>graph_from_data_frame()</code> works more consistently. Both methods are shown below.</p>
+<section id="create-a-tidygraph-object" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-tidygraph-object">Create a tidygraph object</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a tbl_graph with tidygraph</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_graph</span>(<span class="at">nodes =</span> node_list, <span class="at">edges =</span> edge_list, <span class="at">directed =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -750,17 +769,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 2 more rows</code></pre>
 </div>
 </div>
+</section>
+<section id="create-an-igraph-object" class="level3">
+<h3 class="anchored" data-anchor-id="create-an-igraph-object">Create an igraph object</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an igraph object</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">graph_from_data_frame</span>(<span class="at">d =</span> edge_list, <span class="at">vertices =</span> node_list, <span class="at">directed =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH 65998c0 UN-- 4 5 -- 
+<pre><code>IGRAPH d72d103 UN-- 4 5 -- 
 + attr: name (v/c), university (v/c), type (e/c)
-+ edges from 65998c0 (vertex names):
++ edges from d72d103 (vertex names):
 [1] A--B B--C B--D B--C A--D</code></pre>
 </div>
 </div>
 <p>You will notice that the way these objects print to the console are quite different. A <code>tbl_graph</code> object prints out as two data frames for the nodes and edges. An <code>igraph</code> object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data <code>attr</code>, and then provides a graphical overview of the edge list. Let’s create a variable by first making an <code>igraph</code> object and then converting to <code>tbl_graph</code>.</p>
+</section>
+<section id="create-a-tidygraph-object-through-igraph" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-tidygraph-object-through-igraph">Create a tidygraph object through igraph</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>network <span class="ot">&lt;-</span> <span class="fu">graph_from_data_frame</span>(<span class="at">d =</span> edge_list,</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">vertices =</span> node_list,</span>
@@ -789,6 +814,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 2 more rows</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="summary-of-the-graph" class="level2">
 <h2 class="anchored" data-anchor-id="summary-of-the-graph">Summary of the graph</h2>
@@ -887,7 +913,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_node_point</span>() <span class="sc">+</span> </span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_graph</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-graph" class="quarto-float quarto-figure quarto-figure-center anchored" width="672" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle.">
+<div id="fig-graph" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="networks_files/figure-html/fig-graph-1.png" id="fig-graph" class="img-fluid figure-img" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
@@ -915,7 +941,7 @@ Figure&nbsp;1
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">edge_color =</span> <span class="st">"Discipline"</span>) <span class="sc">+</span> </span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_graph</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-graph-final" class="quarto-float quarto-figure quarto-figure-center anchored" width="672" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle.">
+<div id="fig-graph-final" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-graph-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="networks_files/figure-html/fig-graph-final-1.png" id="fig-graph-final" class="img-fluid figure-img" alt="A simple network graph showing 4 points. Three are connected in a triangle with one other connected to a point in the triangle." width="672">
@@ -927,7 +953,7 @@ Figure&nbsp;2
 </div>
 </div>
 </div>
-<p>Even this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data.</p>
+<p>Even this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data. Download the <a href="../files/snigb-networks.qmd">SNiGB networks Quarto document</a> to help you get started.</p>
 </section>
 <section id="further-resources" class="level2">
 <h2 class="anchored" data-anchor-id="further-resources">Further resources</h2>
@@ -1379,8 +1405,8 @@ Figure&nbsp;2
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../resources/mapping.html" class="pagination-link" aria-label="Mapping with R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Mapping with R</span>
+      <a href="../resources/mapping-lines.html" class="pagination-link" aria-label="Mapping: Creating lines from points">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Mapping: Creating lines from points</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

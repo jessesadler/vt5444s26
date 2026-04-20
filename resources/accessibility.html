@@ -67,6 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../resources/quarto-tables.html" rel="next">
 <link href="../resources/quarto-websites.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -473,6 +474,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../resources/mapping-lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping: Creating lines from points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../resources/networks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Networks with R</span></a>
   </div>
@@ -545,6 +552,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../resources/accessibility.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Digital accessibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interactive tables in Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -663,6 +676,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="alt-text-in-quarto">Alt text in Quarto</h3>
 <section id="images" class="level4">
 <h4 class="anchored" data-anchor-id="images">Images</h4>
+<p>The basics of working with images and providing alternative text are shown below. If you want to do more with images, including sizing and arranging, see the Quarto documentation on <a href="https://quarto.org/docs/authoring/figures.html">Figures</a>. You may also want to look at the <a href="https://quarto.org/docs/output-formats/html-lightbox-figures.html">Lightbox figures documentation</a> for another tool for working with images.</p>
 <ul>
 <li>Images in Quarto use the <a href="https://quarto.org/docs/authoring/markdown-basics.html#links-images">Markdown syntax</a> of:
 <ul>
@@ -670,11 +684,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Add a <strong>caption</strong> by placing text within the square brackets:
 <ul>
-<li><code>![This is a caption of the image](image_location.png)</code>.</li>
+<li><code>![The caption](image_location.png)</code>.</li>
 </ul></li>
 <li>Add <a href="https://quarto.org/docs/authoring/figures.html#alt-text"><strong>alt text</strong></a> with the <code>fig-alt</code> attribute to the image:
 <ul>
-<li><code>![This is a caption of the image](image_location.png){fig-alt="This is alternative text."}</code></li>
+<li><code>![The caption](image_location.png){fig-alt="This is alt text."}</code></li>
 </ul></li>
 </ul>
 <p>The following code will produce the following image if you have a folder named <code>img</code> with images in it:</p>
@@ -704,7 +718,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  theme_minimal()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell" data-caption="The flipper length compared to the body mass of Palmer Penguins.">
 <div class="cell-output-display">
-<div id="fig-alt" class="quarto-float quarto-figure quarto-figure-center anchored" width="672" alt="The plot shows flipper length on the x-axis, with values that range from  170 to 230, and body mass on the y-axis, with values that range from 3000  to 6000. The three species are displayed using different colors and shapes. Adélie and Chinstrap are of similar size, while Gentoo are both heavier and have longer flippers.">
+<div id="fig-alt" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot shows flipper length on the x-axis, with values that range from  170 to 230, and body mass on the y-axis, with values that range from 3000  to 6000. The three species are displayed using different colors and shapes. Adélie and Chinstrap are of similar size, while Gentoo are both heavier and have longer flippers." width="672">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-alt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="accessibility_files/figure-html/fig-alt-1.png" id="fig-alt" class="img-fluid figure-img" alt="The plot shows flipper length on the x-axis, with values that range from  170 to 230, and body mass on the y-axis, with values that range from 3000  to 6000. The three species are displayed using different colors and shapes. Adélie and Chinstrap are of similar size, while Gentoo are both heavier and have longer flippers." width="672">
@@ -1143,6 +1157,9 @@ Figure&nbsp;1
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../resources/quarto-tables.html" class="pagination-link" aria-label="Interactive tables in Quarto">
+        <span class="nav-page-text">Interactive tables in Quarto</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mapping: Creating lines from points – Digital History Methods</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../resources/networks.html" rel="next">
+<link href="../resources/mapping.html" rel="prev">
+<link href="../files/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-07116d1373335be4228012648192d20b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e10163df97b281adf5585e16a6a6e503.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-07116d1373335be4228012648192d20b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="../site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="../site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="../site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Digital History Methods</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Course Details</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../content/index.html"> 
+<span class="menu-text">Content</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../worksheets/index.html"> 
+<span class="menu-text">Worksheets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../resources/index.html" aria-current="page"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/mapping-lines.html">Mapping: Creating lines from points</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Digital Humanities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/dh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">General DH resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data for DH</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Organization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zotero Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/plaintext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with Plain Text</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/markdown-syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown Syntax Guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/text-editors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Text Editors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing R and RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/rstudio-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/rstudio-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using R in RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization with ggplot2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/ggplot2-color.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Colors with ggplot2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wrangling data in the tidyverse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping with R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/mapping-lines.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Mapping: Creating lines from points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Networks with R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Git and GitHub</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub: An overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git and GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Git and GitHub workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quarto</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-docs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto documents</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-websites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto websites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digital accessibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interactive tables in Quarto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link active" data-scroll-target="#the-data">The data</a></li>
+  <li><a href="#the-workflow" id="toc-the-workflow" class="nav-link" data-scroll-target="#the-workflow">The workflow</a></li>
+  <li><a href="#one-line-for-each-individual" id="toc-one-line-for-each-individual" class="nav-link" data-scroll-target="#one-line-for-each-individual">One line for each individual</a></li>
+  <li><a href="#one-line-for-each-journey" id="toc-one-line-for-each-journey" class="nav-link" data-scroll-target="#one-line-for-each-journey">One line for each journey</a></li>
+  <li><a href="#bonus-creating-great-circles" id="toc-bonus-creating-great-circles" class="nav-link" data-scroll-target="#bonus-creating-great-circles">Bonus: Creating great circles</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/mapping-lines.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/install.html">R</a></li><li class="breadcrumb-item"><a href="../resources/mapping-lines.html">Mapping: Creating lines from points</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Mapping: Creating lines from points</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<style type="text/css">
+div.leaflet-control {
+  text-align: left;
+}
+</style>
+</div>
+<p>A common task for mapping humanities data is to create lines from sets of points to demonstrate the movement of people, objects, or ideas. To do this we need to get the data in the right format, create point data using the sf package as described in <a href="../resources/mapping.html">Mapping with R</a>, and then connect the points into lines using a <code>group_by()</code> and <code>summarize()</code> pipeline.</p>
+<p>Two different ways to organize the data are demonstrated here, resulting in different types of line data. This page also demonstrates the usefulness of joins between multiple data frames and working with geocoded data as demonstrated in <a href="../resources/wrangling.html">Wrangling data in the tidyverse</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Download
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="../files/lines-from-points.qmd">Download</a> a version of this Quarto document to follow along.</p>
+</div>
+</div>
+<p>We start, as always, by loading the packages we will be using. The main packages are tidyverse and sf, but we will also be creating interactive maps with <a href="https://rstudio.github.io/leaflet/">leaflet</a> and using <a href="https://emilhvitfeldt.github.io/paletteer/">paletteer</a> for a color palette.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(paletteer)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The data</h2>
+<p>The data is available through the <a href="https://github.com/jessesadler/vt5444s26/tree/main/datasets">datasets folder on the class syllabus</a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>movements <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/movements.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>locations <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/locations.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The <code>movements</code> data shows the date and location of siblings from two different families at the end of the 16th century.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>movements</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 74 × 3
+   person                 place     date      
+   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;    
+ 1 Andries van der Meulen Antwerp   1584-07-01
+ 2 Andries van der Meulen Bremen    1585-09-01
+ 3 Anna van der Meulen    Cologne   1584-07-01
+ 4 Anna van der Meulen    Bremen    1588-06-01
+ 5 Anna van der Meulen    Stade     1588-08-01
+ 6 Anna van der Meulen    Bremen    1592-03-01
+ 7 Sara van der Meulen    Antwerp   1584-07-01
+ 8 Sara van der Meulen    Bremen    1585-09-01
+ 9 Sara van der Meulen    Frankfurt 1586-03-01
+10 Sara van der Meulen    Cologne   1586-05-01
+# ℹ 64 more rows</code></pre>
+</div>
+</div>
+<p>The <code>locations</code> data has the latitude and longitude values for the locations that these individuals visited in their travels. This data could have been created by geocoding the locations with tidygeocoder as shown in <a href="../resources/mapping.html#geocode-locations">Mapping with R</a>. It is best practice to save this output to a data folder so you are not re-geocoding the locations every time you run the code.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>locations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 21 × 3
+   location          lat   lng
+   &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;
+ 1 Antwerp          51.2  4.40
+ 2 Bremen           53.1  8.81
+ 3 Cologne          50.9  6.96
+ 4 Stade            53.6  9.48
+ 5 Frankfurt        50.1  8.68
+ 6 Utrecht          52.1  5.13
+ 7 Leiden           52.2  4.48
+ 8 Geertruidenberg  51.7  4.85
+ 9 Bergen op Zoom   51.5  4.29
+10 The Hague        52.1  4.31
+# ℹ 11 more rows</code></pre>
+</div>
+</div>
+<p>Let’s convert the locations data to an sf object to make it truly spatial data. This data can be used to make the points on the map.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>locations_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(locations,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lng"</span>, <span class="st">"lat"</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4326</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-workflow">The workflow</h2>
+<p>We can now work on creating lines from the data. First, we will take the data as it is, creating one line for each individuals in the <code>movements</code> data. Secondly, we will create separate lines for each journey between cities, which will entail a bit more wrangling of the data.</p>
+<p>The basic workflow is:</p>
+<ol type="1">
+<li>Join the <code>movements</code> data to the latitude and longitude values in <code>locations</code> using a <code>left_join()</code>.</li>
+<li>Convert the resulting data frame into an sf object with <code>st_as_sf()</code>.</li>
+<li>Group and summarize the data and the cast from points to lines using <code>st_cast()</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is possible to combine steps one and two by doing a join on <code>locations_sf</code>. However, the sf object must be the first data frame in a <code>left_join()</code> in order to create an sf object, and this puts the <code>geometry</code> column on the left side of the data frame, which I find aesthetically displeasing.</p>
+</div>
+</div>
+</section>
+<section id="one-line-for-each-individual" class="level2">
+<h2 class="anchored" data-anchor-id="one-line-for-each-individual">One line for each individual</h2>
+<p>Let’s start by doing steps one and two. This is a common workflow when working with geographic data, especially vector data in the form of points, joining geocoded data to attribute data and then turning it into an sf object.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>movements_geo <span class="ot">&lt;-</span> <span class="fu">left_join</span>(movements, locations,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">by =</span> <span class="fu">join_by</span>(place <span class="sc">==</span> location))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>movements_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(movements_geo,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lng"</span>, <span class="st">"lat"</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">crs =</span> <span class="dv">4326</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now we can move onto the third step, which is the most crucial. This uses the group by and summarize workflow that is familiar from data wrangling in the tidyverse, but there are some aspects when working with sf objects. <code>summarise()</code> works on the geometry column by default so it can be left blank. However, we set <code>do_union = FALSE</code> to have the points be arranged in order from top to bottom of the data frame. This is why the pipeline begins with <code>arrange()</code>. It is <code>st_cast()</code> that does the actual transformation from points to lines. In this case, it transforms the <code>geometry</code> column from <code>"MULTIPOINT"</code> to <code>"LINESTRING"</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>movements_lines <span class="ot">&lt;-</span> movements_sf <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(date) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(person) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">do_union =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_cast</span>(<span class="st">"LINESTRING"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="1">Arrange the rows from earliest to latest date to ensure lines are made in the right order.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="2">Group by person so that each person will have one line.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="3">Summarize <code>geometry</code> column, turning <code>POINT</code> data to <code>MULTIPOINT</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="4">Cast <code>MULTIPOINT</code> to <code>LINESTRING</code>.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>movements_lines</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 11 features and 1 field
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: -0.1276474 ymin: 50.11064 xmax: 10.00991 ymax: 53.59979
+Geodetic CRS:  WGS 84
+# A tibble: 11 × 2
+   person                                                               geometry
+   &lt;chr&gt;                                                        &lt;LINESTRING [°]&gt;
+ 1 Andries van der Meulen                 (4.399708 51.22111, 8.807165 53.07582)
+ 2 Anna della Faille                       (4.64356 52.38371, 4.399708 51.22111)
+ 3 Anna van der Meulen    (6.959974 50.93836, 8.807165 53.07582, 9.475438 53.59…
+ 4 Carlo della Faille     (4.686789 51.76895, 4.604206 51.64844, 4.399708 51.22…
+ 5 Daniel van der Meulen  (4.399708 51.22111, 3.613696 51.49973, 4.362724 51.99…
+ 6 Hester della Faille    (4.64356 52.38371, 8.807165 53.07582, 4.481109 52.151…
+ 7 Jacques della Faille   (4.64356 52.38371, 10.00991 53.54376, 7.2058 53.36704…
+ 8 Jan della Faille       (4.399708 51.22111, 4.481109 52.15182, 4.846743 51.69…
+ 9 Marten della Faille    (4.399708 51.22111, 4.289741 51.49659, 4.311346 52.07…
+10 Sara van der Meulen    (4.399708 51.22111, 8.807165 53.07582, 8.682092 50.11…
+11 Steven della Faille    (4.686789 51.76895, 4.399708 51.22111, 4.351697 50.84…</code></pre>
+</div>
+</div>
+<p>You can see that each individual has a single row. Their movements are represented by a single line, but those with many movements have more stopping points in the line. We can see the results by creating a <a href="https://rstudio.github.io/leaflet/">leaflet map</a>, using paletteer to help create a palette to represent the individuals.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a palette</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">colorFactor</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> <span class="fu">as.character</span>(<span class="fu">paletteer_d</span>(<span class="st">"colorBlindness::paletteMartin"</span>)),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">domain =</span> movements_lines<span class="sc">$</span>person</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolylines</span>(<span class="at">data =</span> movements_lines,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="sc">~</span><span class="fu">pal</span>(person),</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">opacity =</span> <span class="fl">0.8</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">label =</span> <span class="sc">~</span>person) <span class="sc">|&gt;</span> </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">data =</span> locations_sf,</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">radius =</span> <span class="dv">5</span>,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>                   <span class="at">label =</span> <span class="sc">~</span>location) <span class="sc">|&gt;</span> </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLegend</span>(<span class="st">"bottomleft"</span>, <span class="at">pal =</span> pal, <span class="at">values =</span> movements_lines<span class="sc">$</span>person)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-lines" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-1d41e4aca70d114c2642" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1d41e4aca70d114c2642">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addPolylines","args":[[[[{"lng":[4.3997081,8.8071646],"lat":[51.2211097,53.0758196]}]],[[{"lng":[4.6435597,4.3997081],"lat":[52.3837057,51.2211097]}]],[[{"lng":[6.959974,8.8071646,9.475438,8.8071646],"lat":[50.938361,53.0758196,53.599794,53.0758196]}]],[[{"lng":[4.6867891,4.6042057,4.3997081,4.351697],"lat":[51.7689546,51.6484352,51.2211097,50.8465573]}]],[[{"lng":[4.3997081,3.6136962,4.3627245,4.6435597,4.3627245,8.8071646,3.6136962,4.3627245,-0.1276474,8.8071646,8.682091700000001,3.4150058,4.3997081,8.8071646,4.4811089,8.8071646,4.4811089,4.3997081,4.4811089,8.8071646,4.4811089,4.3997081,4.4811089,6.959974,4.4811089,3.6136962,4.4811089],"lat":[51.2211097,51.4997302,51.9994572,52.3837057,51.9994572,53.0758196,51.4997302,51.9994572,51.5073219,53.0758196,50.1106444,51.4943387,51.2211097,53.0758196,52.1518157,53.0758196,52.1518157,51.2211097,52.1518157,53.0758196,52.1518157,51.2211097,52.1518157,50.938361,52.1518157,51.4997302,52.1518157]}]],[[{"lng":[4.6435597,8.8071646,4.4811089],"lat":[52.3837057,53.0758196,52.1518157]}]],[[{"lng":[4.6435597,10.0099133,7.2058004,4.6435597,4.3113461,-0.1276474,4.6435597],"lat":[52.3837057,53.5437641,53.3670442,52.3837057,52.0799838,51.5073219,52.3837057]}]],[[{"lng":[4.3997081,4.4811089,4.8467431,4.4811089,4.3997081,4.4811089,4.3997081,4.4811089],"lat":[51.2211097,52.1518157,51.696467,52.1518157,51.2211097,52.1518157,51.2211097,52.1518157]}]],[[{"lng":[4.3997081,4.2897408,4.3113461,4.3997081],"lat":[51.2211097,51.4965864,52.0799838,51.2211097]}]],[[{"lng":[4.3997081,8.8071646,8.682091700000001,6.959974,8.682091700000001,8.8071646,5.1276803],"lat":[51.2211097,53.0758196,50.1106444,50.938361,50.1106444,53.0758196,52.0809517]}]],[[{"lng":[4.6867891,4.3997081,4.351697,4.6435597,4.8979755,5.1276803],"lat":[51.7689546,51.2211097,50.8465573,52.3837057,52.3745403,52.0809517]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":["#000000","#006565","#DC7CAF","#DC93CD","#3A4ABD","#B66DFF","#8DC5FF","#A63F31","#A05000","#A1CA11","#FFFF6D"],"weight":5,"opacity":0.8,"fill":false,"fillColor":["#000000","#006565","#DC7CAF","#DC93CD","#3A4ABD","#B66DFF","#8DC5FF","#A63F31","#A05000","#A1CA11","#FFFF6D"],"fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,["Andries van der Meulen","Anna della Faille","Anna van der Meulen","Carlo della Faille","Daniel van der Meulen","Hester della Faille","Jacques della Faille","Jan della Faille","Marten della Faille","Sara van der Meulen","Steven della Faille"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[51.2211097,53.0758196,50.938361,53.599794,50.1106444,52.0809517,52.1518157,51.696467,51.4965864,52.0799838,51.7689546,51.6484352,50.8465573,52.3837057,52.3745403,53.5437641,53.3670442,51.5073219,51.4997302,51.9994572,51.4943387],[4.3997081,8.8071646,6.959974,9.475438,8.682091700000001,5.1276803,4.4811089,4.8467431,4.2897408,4.3113461,4.6867891,4.6042057,4.351697,4.6435597,4.8979755,10.0099133,7.2058004,-0.1276474,3.6136962,4.3627245,3.4150058],5,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.5},null,null,null,null,["Antwerp","Bremen","Cologne","Stade","Frankfurt","Utrecht","Leiden","Geertruidenberg","Bergen op Zoom","The Hague","Dordrecht","Zevenbergen","Brussels","Haarlem","Amsterdam","Hamburg","Emden","London","Middelburg","Delft","Vlissingen"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#000000","#006565","#DC7CAF","#DC93CD","#3A4ABD","#B66DFF","#8DC5FF","#A63F31","#A05000","#A1CA11","#FFFF6D"],"labels":["Andries van der Meulen","Anna della Faille","Anna van der Meulen","Carlo della Faille","Daniel van der Meulen","Hester della Faille","Jacques della Faille","Jan della Faille","Marten della Faille","Sara van der Meulen","Steven della Faille"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomleft","type":"factor","title":null,"extra":null,"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[50.1106444,53.599794],"lng":[-0.1276474,10.0099133]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A single line representing the movements of individuals.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is currently a <a href="https://github.com/quarto-dev/quarto-cli/issues/7843">bug in how Quarto renders leaflet legends</a>. You can fix it with <a href="https://github.com/quarto-dev/quarto-cli/issues/7843#issuecomment-1847350443">this solution</a>. For an example, see how it is done <a href="https://github.com/jessesadler/vt5444s26/blob/main/resources/mapping-lines.qmd">on this page</a>.</p>
+</div>
+</div>
+</section>
+<section id="one-line-for-each-journey" class="level2">
+<h2 class="anchored" data-anchor-id="one-line-for-each-journey">One line for each journey</h2>
+<p>This get’s us the visualization we wanted, but it loses the data about the date of the journey and the direction. This can be rectified by making one line for each journey. However, to do this we need to do a bit of data wrangling. I am sure that there are many ways to do this process, but this is how I would proceed.</p>
+<p>First, we need have start and destination locations on each row, so that each row represents a single journey. The key to this is the <code>lag()</code> function that fills in the previous value combined with grouping by person. To see how <code>lag()</code> works run <code>lag(1:5)</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a>movements_wide <span class="ot">&lt;-</span> movements <span class="sc">|&gt;</span> </span>
+<span id="annotated-cell-10-2"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(date) <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-10-3" class="code-annotation-target"><a href="#annotated-cell-10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(person) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-10-4" class="code-annotation-target"><a href="#annotated-cell-10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">start =</span> <span class="fu">lag</span>(place), <span class="at">.after =</span> person) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-10-5" class="code-annotation-target"><a href="#annotated-cell-10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-10-6" class="code-annotation-target"><a href="#annotated-cell-10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">destination =</span> place) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-10-7" class="code-annotation-target"><a href="#annotated-cell-10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(start)) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-10-8" class="code-annotation-target"><a href="#annotated-cell-10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowid_to_column</span>(<span class="st">"journey_id"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="3" data-code-annotation="1">It is important to group the data so that <code>lag()</code> looks to the previous value for each person, not just from the previous row.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="4" data-code-annotation="2">Create a new column named <code>start</code> and place it after the <code>person</code> column for convenience.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="5" data-code-annotation="3">Ungroup the data frame since we are done acting on the grouped data.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="6" data-code-annotation="4">Rename the <code>place</code> column to <code>destination</code> to better represent the nature of the data in the column.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="7" data-code-annotation="5">Remove the <code>NA</code>s introduced into the <code>start</code> column by <code>lag()</code> where there was no previous location.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="8" data-code-annotation="6">Add an id column to keep track of each journey. This will be used for grouping in the next step.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>movements_wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 63 × 5
+   journey_id person                 start      destination date      
+        &lt;int&gt; &lt;chr&gt;                  &lt;chr&gt;      &lt;chr&gt;       &lt;date&gt;    
+ 1          1 Daniel van der Meulen  Antwerp    Middelburg  1584-08-01
+ 2          2 Daniel van der Meulen  Middelburg Delft       1584-09-01
+ 3          3 Jan della Faille       Antwerp    Leiden      1584-11-01
+ 4          4 Daniel van der Meulen  Delft      Haarlem     1584-12-01
+ 5          5 Daniel van der Meulen  Haarlem    Delft       1585-02-01
+ 6          6 Andries van der Meulen Antwerp    Bremen      1585-09-01
+ 7          7 Sara van der Meulen    Antwerp    Bremen      1585-09-01
+ 8          8 Anna della Faille      Haarlem    Antwerp     1585-09-01
+ 9          9 Steven della Faille    Dordrecht  Antwerp     1585-09-01
+10         10 Jacques della Faille   Haarlem    Hamburg     1585-10-01
+# ℹ 53 more rows</code></pre>
+</div>
+</div>
+<p><code>movements_wide</code> accomplishes one goal in turning each row into a single journey, but now the task of adding our spatial data is more difficult. We have two locations per row, but we only want one <code>geometry</code> column. The solution is to transform our data from its current wide format to a longer format in which each journey is split into two rows, one for the start and one for the destination. An example of this is shown in <a href="../resources/wrangling.html#modifying-the-structure-of-a-data-frame">Wrangling data in the tidyverse</a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a>movements_long <span class="ot">&lt;-</span> movements_wide <span class="sc">|&gt;</span> </span>
+<span id="annotated-cell-12-2"><a href="#annotated-cell-12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-12-3" class="code-annotation-target"><a href="#annotated-cell-12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> start<span class="sc">:</span>destination,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-12-4" class="code-annotation-target"><a href="#annotated-cell-12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"type"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-12" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-12-5" class="code-annotation-target"><a href="#annotated-cell-12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"location"</span></span>
+<span id="annotated-cell-12-6"><a href="#annotated-cell-12-6" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="3" data-code-annotation="1">The columns to pivot.</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="4" data-code-annotation="2">The name of the column for the column names that will be pivoted.</span>
+</dd>
+<dt data-target-cell="annotated-cell-12" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-12" data-code-lines="5" data-code-annotation="3">The name of the column for the values in the pivoted columns.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>The meaning of the arguments are more clear when you see the outcome.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>movements_long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 126 × 5
+   journey_id person                date       type        location  
+        &lt;int&gt; &lt;chr&gt;                 &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;     
+ 1          1 Daniel van der Meulen 1584-08-01 start       Antwerp   
+ 2          1 Daniel van der Meulen 1584-08-01 destination Middelburg
+ 3          2 Daniel van der Meulen 1584-09-01 start       Middelburg
+ 4          2 Daniel van der Meulen 1584-09-01 destination Delft     
+ 5          3 Jan della Faille      1584-11-01 start       Antwerp   
+ 6          3 Jan della Faille      1584-11-01 destination Leiden    
+ 7          4 Daniel van der Meulen 1584-12-01 start       Delft     
+ 8          4 Daniel van der Meulen 1584-12-01 destination Haarlem   
+ 9          5 Daniel van der Meulen 1585-02-01 start       Haarlem   
+10          5 Daniel van der Meulen 1585-02-01 destination Delft     
+# ℹ 116 more rows</code></pre>
+</div>
+</div>
+<p>Now we can do the same as before, joining the locations data by the single <code>location</code> column, converting it to an sf object and then creating lines.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>movements_long_sf <span class="ot">&lt;-</span> movements_long <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(locations, <span class="at">by =</span> <span class="st">"location"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lng"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(journey_id) <span class="sc">|&gt;</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">do_union =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_cast</span>(<span class="st">"LINESTRING"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The result, as before, is a sf data frame with two columns: <code>journey_id</code> and <code>geometry</code>. We can get back the attribute columns for the journeys by joining <code>movements_long_sf</code> and <code>movements_wide</code>, being careful to place <code>movements_long_sf</code> as the first data frame so that the result is an sf object.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>journeys_sf <span class="ot">&lt;-</span> <span class="fu">left_join</span>(movements_long_sf, movements_wide, <span class="at">by =</span> <span class="st">"journey_id"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>journeys_sf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Simple feature collection with 63 features and 5 fields
+Geometry type: LINESTRING
+Dimension:     XY
+Bounding box:  xmin: -0.1276474 ymin: 50.11064 xmax: 10.00991 ymax: 53.59979
+Geodetic CRS:  WGS 84
+# A tibble: 63 × 6
+   journey_id                       geometry person start destination date      
+        &lt;int&gt;               &lt;LINESTRING [°]&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;       &lt;date&gt;    
+ 1          1 (4.399708 51.22111, 3.613696 … Danie… Antw… Middelburg  1584-08-01
+ 2          2 (3.613696 51.49973, 4.362724 … Danie… Midd… Delft       1584-09-01
+ 3          3 (4.399708 51.22111, 4.481109 … Jan d… Antw… Leiden      1584-11-01
+ 4          4 (4.362724 51.99946, 4.64356 5… Danie… Delft Haarlem     1584-12-01
+ 5          5 (4.64356 52.38371, 4.362724 5… Danie… Haar… Delft       1585-02-01
+ 6          6 (4.399708 51.22111, 8.807165 … Andri… Antw… Bremen      1585-09-01
+ 7          7 (4.399708 51.22111, 8.807165 … Sara … Antw… Bremen      1585-09-01
+ 8          8 (4.64356 52.38371, 4.399708 5… Anna … Haar… Antwerp     1585-09-01
+ 9          9 (4.686789 51.76895, 4.399708 … Steve… Dord… Antwerp     1585-09-01
+10         10 (4.64356 52.38371, 10.00991 5… Jacqu… Haar… Hamburg     1585-10-01
+# ℹ 53 more rows</code></pre>
+</div>
+</div>
+<p>Now we can plot the data, but first let’s create a label column that we can use in the leaflet map using <code>paste()</code> to create a character vector and <code>&lt;br/&gt;</code> to implement line breaks in the HTML used for the popups.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>journeys_sf <span class="ot">&lt;-</span> journeys_sf <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">paste</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    person, <span class="st">"&lt;br/&gt;"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    start, <span class="st">"to"</span>, destination, <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">day</span>(date), <span class="fu">month</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="fu">year</span>(date)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolylines</span>(<span class="at">data =</span> journeys_sf,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="sc">~</span><span class="fu">pal</span>(person),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">opacity =</span> <span class="fl">0.8</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">popup =</span> <span class="sc">~</span>label) <span class="sc">|&gt;</span> </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">data =</span> locations_sf,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">radius =</span> <span class="dv">5</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">label =</span> <span class="sc">~</span>location) <span class="sc">|&gt;</span> </span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addLegend</span>(<span class="st">"bottomleft"</span>, <span class="at">pal =</span> pal, <span class="at">values =</span> journeys_sf<span class="sc">$</span>person)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-journeys" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-journeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-d2433e2107ba72652d0f" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d2433e2107ba72652d0f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addPolylines","args":[[[[{"lng":[4.3997081,3.6136962],"lat":[51.2211097,51.4997302]}]],[[{"lng":[3.6136962,4.3627245],"lat":[51.4997302,51.9994572]}]],[[{"lng":[4.3997081,4.4811089],"lat":[51.2211097,52.1518157]}]],[[{"lng":[4.3627245,4.6435597],"lat":[51.9994572,52.3837057]}]],[[{"lng":[4.6435597,4.3627245],"lat":[52.3837057,51.9994572]}]],[[{"lng":[4.3997081,8.8071646],"lat":[51.2211097,53.0758196]}]],[[{"lng":[4.3997081,8.8071646],"lat":[51.2211097,53.0758196]}]],[[{"lng":[4.6435597,4.3997081],"lat":[52.3837057,51.2211097]}]],[[{"lng":[4.6867891,4.3997081],"lat":[51.7689546,51.2211097]}]],[[{"lng":[4.6435597,10.0099133],"lat":[52.3837057,53.5437641]}]],[[{"lng":[4.3627245,8.8071646],"lat":[51.9994572,53.0758196]}]],[[{"lng":[4.6435597,8.8071646],"lat":[52.3837057,53.0758196]}]],[[{"lng":[4.4811089,4.8467431],"lat":[52.1518157,51.696467]}]],[[{"lng":[10.0099133,7.2058004],"lat":[53.5437641,53.3670442]}]],[[{"lng":[7.2058004,4.6435597],"lat":[53.3670442,52.3837057]}]],[[{"lng":[4.3997081,4.351697],"lat":[51.2211097,50.8465573]}]],[[{"lng":[8.8071646,8.682091700000001],"lat":[53.0758196,50.1106444]}]],[[{"lng":[4.8467431,4.4811089],"lat":[51.696467,52.1518157]}]],[[{"lng":[8.682091700000001,6.959974],"lat":[50.1106444,50.938361]}]],[[{"lng":[4.4811089,4.3997081],"lat":[52.1518157,51.2211097]}]],[[{"lng":[8.8071646,3.6136962],"lat":[53.0758196,51.4997302]}]],[[{"lng":[3.6136962,4.3627245],"lat":[51.4997302,51.9994572]}]],[[{"lng":[4.6435597,4.3113461],"lat":[52.3837057,52.0799838]}]],[[{"lng":[4.3997081,4.4811089],"lat":[51.2211097,52.1518157]}]],[[{"lng":[4.3113461,-0.1276474],"lat":[52.0799838,51.5073219]}]],[[{"lng":[4.3627245,-0.1276474],"lat":[51.9994572,51.5073219]}]],[[{"lng":[-0.1276474,8.8071646],"lat":[51.5073219,53.0758196]}]],[[{"lng":[-0.1276474,4.6435597],"lat":[51.5073219,52.3837057]}]],[[{"lng":[4.3997081,4.2897408],"lat":[51.2211097,51.4965864]}]],[[{"lng":[4.2897408,4.3113461],"lat":[51.4965864,52.0799838]}]],[[{"lng":[6.959974,8.8071646],"lat":[50.938361,53.0758196]}]],[[{"lng":[4.3113461,4.3997081],"lat":[52.0799838,51.2211097]}]],[[{"lng":[8.8071646,9.475438],"lat":[53.0758196,53.599794]}]],[[{"lng":[6.959974,8.682091700000001],"lat":[50.938361,50.1106444]}]],[[{"lng":[8.8071646,8.682091700000001],"lat":[53.0758196,50.1106444]}]],[[{"lng":[8.682091700000001,3.4150058],"lat":[50.1106444,51.4943387]}]],[[{"lng":[3.4150058,4.3997081],"lat":[51.4943387,51.2211097]}]],[[{"lng":[4.3997081,8.8071646],"lat":[51.2211097,53.0758196]}]],[[{"lng":[8.8071646,4.4811089],"lat":[53.0758196,52.1518157]}]],[[{"lng":[8.8071646,4.4811089],"lat":[53.0758196,52.1518157]}]],[[{"lng":[4.6867891,4.6042057],"lat":[51.7689546,51.6484352]}]],[[{"lng":[9.475438,8.8071646],"lat":[53.599794,53.0758196]}]],[[{"lng":[8.682091700000001,8.8071646],"lat":[50.1106444,53.0758196]}]],[[{"lng":[4.351697,4.6435597],"lat":[50.8465573,52.3837057]}]],[[{"lng":[4.4811089,8.8071646],"lat":[52.1518157,53.0758196]}]],[[{"lng":[8.8071646,4.4811089],"lat":[53.0758196,52.1518157]}]],[[{"lng":[4.4811089,4.3997081],"lat":[52.1518157,51.2211097]}]],[[{"lng":[4.3997081,4.4811089],"lat":[51.2211097,52.1518157]}]],[[{"lng":[4.4811089,8.8071646],"lat":[52.1518157,53.0758196]}]],[[{"lng":[8.8071646,4.4811089],"lat":[53.0758196,52.1518157]}]],[[{"lng":[4.6042057,4.3997081],"lat":[51.6484352,51.2211097]}]],[[{"lng":[4.3997081,4.351697],"lat":[51.2211097,50.8465573]}]],[[{"lng":[4.6435597,4.8979755],"lat":[52.3837057,52.3745403]}]],[[{"lng":[4.4811089,4.3997081],"lat":[52.1518157,51.2211097]}]],[[{"lng":[4.3997081,4.4811089],"lat":[51.2211097,52.1518157]}]],[[{"lng":[4.4811089,4.3997081],"lat":[52.1518157,51.2211097]}]],[[{"lng":[4.3997081,4.4811089],"lat":[51.2211097,52.1518157]}]],[[{"lng":[8.8071646,5.1276803],"lat":[53.0758196,52.0809517]}]],[[{"lng":[4.4811089,6.959974],"lat":[52.1518157,50.938361]}]],[[{"lng":[6.959974,4.4811089],"lat":[50.938361,52.1518157]}]],[[{"lng":[4.4811089,3.6136962],"lat":[52.1518157,51.4997302]}]],[[{"lng":[4.8979755,5.1276803],"lat":[52.3745403,52.0809517]}]],[[{"lng":[3.6136962,4.4811089],"lat":[51.4997302,52.1518157]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":["#3A4ABD","#3A4ABD","#A63F31","#3A4ABD","#3A4ABD","#000000","#A1CA11","#006565","#FFFF6D","#8DC5FF","#3A4ABD","#B66DFF","#A63F31","#8DC5FF","#8DC5FF","#FFFF6D","#A1CA11","#A63F31","#A1CA11","#A63F31","#3A4ABD","#3A4ABD","#8DC5FF","#A63F31","#8DC5FF","#3A4ABD","#3A4ABD","#8DC5FF","#A05000","#A05000","#DC7CAF","#A05000","#DC7CAF","#A1CA11","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#B66DFF","#3A4ABD","#DC93CD","#DC7CAF","#A1CA11","#FFFF6D","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#DC93CD","#DC93CD","#FFFF6D","#A63F31","#A63F31","#3A4ABD","#3A4ABD","#A1CA11","#3A4ABD","#3A4ABD","#3A4ABD","#FFFF6D","#3A4ABD"],"weight":5,"opacity":0.8,"fill":false,"fillColor":["#3A4ABD","#3A4ABD","#A63F31","#3A4ABD","#3A4ABD","#000000","#A1CA11","#006565","#FFFF6D","#8DC5FF","#3A4ABD","#B66DFF","#A63F31","#8DC5FF","#8DC5FF","#FFFF6D","#A1CA11","#A63F31","#A1CA11","#A63F31","#3A4ABD","#3A4ABD","#8DC5FF","#A63F31","#8DC5FF","#3A4ABD","#3A4ABD","#8DC5FF","#A05000","#A05000","#DC7CAF","#A05000","#DC7CAF","#A1CA11","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#B66DFF","#3A4ABD","#DC93CD","#DC7CAF","#A1CA11","#FFFF6D","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#3A4ABD","#DC93CD","#DC93CD","#FFFF6D","#A63F31","#A63F31","#3A4ABD","#3A4ABD","#A1CA11","#3A4ABD","#3A4ABD","#3A4ABD","#FFFF6D","#3A4ABD"],"fillOpacity":0.2,"smoothFactor":1,"noClip":false},["Daniel van der Meulen <br/> Antwerp to Middelburg <br> 1 Aug 1584","Daniel van der Meulen <br/> Middelburg to Delft <br> 1 Sep 1584","Jan della Faille <br/> Antwerp to Leiden <br> 1 Nov 1584","Daniel van der Meulen <br/> Delft to Haarlem <br> 1 Dec 1584","Daniel van der Meulen <br/> Haarlem to Delft <br> 1 Feb 1585","Andries van der Meulen <br/> Antwerp to Bremen <br> 1 Sep 1585","Sara van der Meulen <br/> Antwerp to Bremen <br> 1 Sep 1585","Anna della Faille <br/> Haarlem to Antwerp <br> 1 Sep 1585","Steven della Faille <br/> Dordrecht to Antwerp <br> 1 Sep 1585","Jacques della Faille <br/> Haarlem to Hamburg <br> 1 Oct 1585","Daniel van der Meulen <br/> Delft to Bremen <br> 1 Oct 1585","Hester della Faille <br/> Haarlem to Bremen <br> 1 Oct 1585","Jan della Faille <br/> Leiden to Geertruidenberg <br> 1 Nov 1585","Jacques della Faille <br/> Hamburg to Emden <br> 1 Nov 1585","Jacques della Faille <br/> Emden to Haarlem <br> 1 Dec 1585","Steven della Faille <br/> Antwerp to Brussels <br> 1 Jan 1586","Sara van der Meulen <br/> Bremen to Frankfurt <br> 1 Mar 1586","Jan della Faille <br/> Geertruidenberg to Leiden <br> 1 Apr 1586","Sara van der Meulen <br/> Frankfurt to Cologne <br> 1 May 1586","Jan della Faille <br/> Leiden to Antwerp <br> 1 May 1586","Daniel van der Meulen <br/> Bremen to Middelburg <br> 1 May 1586","Daniel van der Meulen <br/> Middelburg to Delft <br> 1 Jun 1586","Jacques della Faille <br/> Haarlem to The Hague <br> 1 Jul 1586","Jan della Faille <br/> Antwerp to Leiden <br> 1 Aug 1586","Jacques della Faille <br/> The Hague to London <br> 1 Aug 1586","Daniel van der Meulen <br/> Delft to London <br> 1 Aug 1586","Daniel van der Meulen <br/> London to Bremen <br> 1 Nov 1586","Jacques della Faille <br/> London to Haarlem <br> 1 May 1587","Marten della Faille <br/> Antwerp to Bergen op Zoom <br> 1 Aug 1587","Marten della Faille <br/> Bergen op Zoom to The Hague <br> 1 Feb 1588","Anna van der Meulen <br/> Cologne to Bremen <br> 1 Jun 1588","Marten della Faille <br/> The Hague to Antwerp <br> 1 Jul 1588","Anna van der Meulen <br/> Bremen to Stade <br> 1 Aug 1588","Sara van der Meulen <br/> Cologne to Frankfurt <br> 1 Jun 1589","Daniel van der Meulen <br/> Bremen to Frankfurt <br> 1 Apr 1590","Daniel van der Meulen <br/> Frankfurt to Vlissingen <br> 1 Dec 1590","Daniel van der Meulen <br/> Vlissingen to Antwerp <br> 1 Feb 1591","Daniel van der Meulen <br/> Antwerp to Bremen <br> 1 Mar 1591","Hester della Faille <br/> Bremen to Leiden <br> 1 Oct 1591","Daniel van der Meulen <br/> Bremen to Leiden <br> 1 Oct 1591","Carlo della Faille <br/> Dordrecht to Zevenbergen <br> 1 Jan 1592","Anna van der Meulen <br/> Stade to Bremen <br> 1 Mar 1592","Sara van der Meulen <br/> Frankfurt to Bremen <br> 1 Mar 1592","Steven della Faille <br/> Brussels to Haarlem <br> 1 Sep 1593","Daniel van der Meulen <br/> Leiden to Bremen <br> 1 Sep 1593","Daniel van der Meulen <br/> Bremen to Leiden <br> 1 Oct 1593","Daniel van der Meulen <br/> Leiden to Antwerp <br> 1 Aug 1594","Daniel van der Meulen <br/> Antwerp to Leiden <br> 1 Oct 1594","Daniel van der Meulen <br/> Leiden to Bremen <br> 1 Dec 1594","Daniel van der Meulen <br/> Bremen to Leiden <br> 1 Feb 1595","Carlo della Faille <br/> Zevenbergen to Antwerp <br> 1 Nov 1595","Carlo della Faille <br/> Antwerp to Brussels <br> 1 Jan 1596","Steven della Faille <br/> Haarlem to Amsterdam <br> 1 Jan 1596","Jan della Faille <br/> Leiden to Antwerp <br> 1 Jul 1596","Jan della Faille <br/> Antwerp to Leiden <br> 1 Sep 1596","Daniel van der Meulen <br/> Leiden to Antwerp <br> 1 Jan 1598","Daniel van der Meulen <br/> Antwerp to Leiden <br> 1 Feb 1598","Sara van der Meulen <br/> Bremen to Utrecht <br> 1 Jun 1598","Daniel van der Meulen <br/> Leiden to Cologne <br> 1 Jun 1599","Daniel van der Meulen <br/> Cologne to Leiden <br> 1 Jul 1599","Daniel van der Meulen <br/> Leiden to Middelburg <br> 1 Dec 1599","Steven della Faille <br/> Amsterdam to Utrecht <br> 1 Jan 1600","Daniel van der Meulen <br/> Middelburg to Leiden <br> 1 Jan 1600"],null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[51.2211097,53.0758196,50.938361,53.599794,50.1106444,52.0809517,52.1518157,51.696467,51.4965864,52.0799838,51.7689546,51.6484352,50.8465573,52.3837057,52.3745403,53.5437641,53.3670442,51.5073219,51.4997302,51.9994572,51.4943387],[4.3997081,8.8071646,6.959974,9.475438,8.682091700000001,5.1276803,4.4811089,4.8467431,4.2897408,4.3113461,4.6867891,4.6042057,4.351697,4.6435597,4.8979755,10.0099133,7.2058004,-0.1276474,3.6136962,4.3627245,3.4150058],5,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.5},null,null,null,null,["Antwerp","Bremen","Cologne","Stade","Frankfurt","Utrecht","Leiden","Geertruidenberg","Bergen op Zoom","The Hague","Dordrecht","Zevenbergen","Brussels","Haarlem","Amsterdam","Hamburg","Emden","London","Middelburg","Delft","Vlissingen"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#000000","#006565","#DC7CAF","#DC93CD","#3A4ABD","#B66DFF","#8DC5FF","#A63F31","#A05000","#A1CA11","#FFFF6D"],"labels":["Andries van der Meulen","Anna della Faille","Anna van der Meulen","Carlo della Faille","Daniel van der Meulen","Hester della Faille","Jacques della Faille","Jan della Faille","Marten della Faille","Sara van der Meulen","Steven della Faille"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomleft","type":"factor","title":null,"extra":null,"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[50.1106444,53.599794],"lng":[-0.1276474,10.0099133]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-journeys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Multiple line representing the journeys of individuals.
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="bonus-creating-great-circles" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-creating-great-circles">Bonus: Creating great circles</h2>
+<p>The lines that are created this way are <a href="https://en.wikipedia.org/wiki/Rhumb_line">rhumb lines</a>, straight lines at a constant bearing. But another way to represent the lines is with <a href="https://en.wikipedia.org/wiki/Great-circle_distance">great circles</a>, which represent the shortest distance between points on a spherical representation of the earth.</p>
+<p>Happily, there is a function in sf designed specifically for this, <code>st_segmentize()</code>. This function adds segments to the line, making it appear curved. The function depends on the <a href="https://r-spatial.github.io/lwgeom/">lwgeom packge</a>, which needs to be installed separately to use the function. <code>st_segmentize()</code> also takes advantage of the <a href="https://r-quantities.github.io/units/">units package</a>, which allows you to specify the type of units a numeric value represents. This is used for calculating the longest distance between segments of the line. Let’s see how this works with <code>journeys_sf</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>journeys_gc <span class="ot">&lt;-</span> journeys_sf <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_segmentize</span>(units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">20</span>, km))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you compare the <code>geometry</code> column of <code>journeys_gc</code> to <code>journeys_sf</code>, you will notice how many more segments there are in each line in <code>journeys_gc</code>. Substitute <code>journeys_gc</code> for <code>journeys_sf</code> in the above map to see the difference. This difference is more noticeable the longer the distance of the line.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>blacksburg_london <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">location =</span> <span class="fu">c</span>(<span class="st">"Blacksburg"</span>, <span class="st">"London"</span>),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">lat =</span> <span class="fu">c</span>(<span class="fl">37.22966</span>, <span class="fl">51.50732</span>),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">lng =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">80.41368</span>, <span class="sc">-</span><span class="fl">0.1276474</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lng"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>rhumb <span class="ot">&lt;-</span> blacksburg_london <span class="sc">|&gt;</span> </span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># do not need group by because want to summarize all rows (2) into one</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">do_union =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_cast</span>(<span class="st">"LINESTRING"</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>great_circle <span class="ot">&lt;-</span> rhumb <span class="sc">|&gt;</span> </span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_segmentize</span>(units<span class="sc">::</span><span class="fu">set_units</span>(<span class="dv">20</span>, km))</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>comparison <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(rhumb, great_circle) <span class="sc">|&gt;</span> </span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_column</span>(<span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Rhumb line"</span>, <span class="st">"Great circle"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Let’s see what the difference looks like.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a palette</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">colorFactor</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> <span class="fu">as.character</span>(<span class="fu">paletteer_d</span>(<span class="st">"colorblindr::OkabeIto"</span>)),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">domain =</span> comparison<span class="sc">$</span>type</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">|&gt;</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolylines</span>(<span class="at">data =</span> comparison,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">opacity =</span> <span class="dv">1</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">label =</span> <span class="sc">~</span>type,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="sc">~</span><span class="fu">pal</span>(type)) <span class="sc">|&gt;</span> </span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">data =</span> blacksburg_london,</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">radius =</span> <span class="dv">5</span>,</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>                   <span class="at">label =</span> <span class="sc">~</span>location)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fig-rhumb-vs-gc" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rhumb-vs-gc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-32f34fe623c1460da348" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-32f34fe623c1460da348">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addPolylines","args":[[[[{"lng":[-80.41368,-0.1276474],"lat":[37.22966,51.50732]}]],[[{"lng":[-80.41368,-80.31183983996482,-80.20979957065956,-80.1075585012622,-80.00511594039685,-79.9024711961553,-79.79962357611895,-79.69657238738088,-79.59331693656868,-79.48985652986721,-79.38619047304209,-79.28231807146335,-79.17823863012956,-79.07395145369239,-78.96945584648132,-78.86475111252915,-78.75983655559747,-78.65471147920289,-78.54937518664339,-78.44382698102531,-78.33806616529061,-78.23209204224455,-78.1259039145839,-78.01950108492545,-77.91288285583498,-77.80604852985674,-77.69899740954324,-77.59172879748559,-77.48424199634417,-77.37653630887989,-77.26861103798572,-77.16046548671889,-77.05209895833327,-76.94351075631256,-76.8347001844036,-76.72566654665037,-76.61640914742843,-76.5069272914797,-76.3972202839479,-76.28728743041444,-76.1771280369346,-76.06674141007453,-75.95612685694844,-75.84528368525652,-75.73421120332316,-75.62290872013585,-75.51137554538452,-75.39961098950134,-75.28761436370112,-75.17538498002222,-75.06292215136791,-74.95022519154836,-74.83729341532306,-74.72412613844389,-74.61072267769866,-74.4970823509551,-74.38320447720562,-74.26908837661242,-74.15473337055323,-74.04013878166765,-73.92530393390389,-73.81022815256631,-73.69491076436327,-73.5793510974558,-73.46354848150661,-73.34750224772978,-73.23121172894116,-73.114676259609,-72.99789517590564,-72.88086781575925,-72.76359351890669,-72.64607162694649,-72.52830148339285,-72.41028243372988,-72.29201382546661,-72.17349500819266,-72.05472533363438,-71.93570415571163,-71.81643083059534,-71.69690471676529,-71.57712517506901,-71.45709156878087,-71.33680326366201,-71.21625962802086,-71.09546003277426,-70.97440385150909,-70.85309046054486,-70.73151923899648,-70.60968956883806,-70.48760083496705,-70.36525242526918,-70.24264373068394,-70.11977414527084,-69.99664306627604,-69.87324989419993,-69.74959403286509,-69.62567488948503,-69.5014918747335,-69.37704440281448,-69.25233189153283,-69.12735376236549,-69.00210944053336,-68.87659835507388,-68.7508199389142,-68.62477362894492,-68.49845886609455,-68.37187509540466,-68.24502176610555,-68.11789833169256,-67.99050425000311,-67.86283898329431,-67.73490199832119,-67.60669276641561,-67.47821076356568,-67.34945547049604,-67.22042637274849,-67.09112296076343,-66.96154472996182,-66.83169118082785,-66.70156181899208,-66.57115615531539,-66.44047370597336,-66.30951399254134,-66.17827654208008,-66.04676088722199,-65.91496656625803,-65.78289312322504,-65.65054010799388,-65.51790707635793,-65.38499359012229,-65.25179921719356,-65.1183235316701,-64.98456611393287,-64.85052655073696,-64.71620443530337,-64.58159936741177,-64.44671095349329,-64.31153880672426,-64.17608254712023,-64.0403418016306,-63.90431620423372,-63.76800539603249,-63.63140902535051,-63.49452674782862,-63.35735822652192,-63.21990313199748,-63.08216114243208,-62.9441319437108,-62.80581522952582,-62.66721070147574,-62.52831806916529,-62.38913705030546,-62.24966737081401,-62.10990876491631,-61.96986097524675,-61.82952375295027,-61.68889685778434,-61.54798005822141,-61.40677313155146,-61.26527586398498,-61.12348805075629,-60.98140949622706,-60.83904001399006,-60.69637942697345,-60.55342756754493,-60.41018427761638,-60.26664940874863,-60.12282282225644,-59.97870438931363,-59.8342939910585,-59.68959151869916,-59.54459687361934,-59.39930996748396,-59.25373072234504,-59.10785907074765,-58.96169495583585,-58.81523833145874,-58.6684891622765,-58.52144742386656,-58.37411310282951,-58.22648619689524,-58.07856671502896,-57.93035467753698,-57.78185011617271,-57.63305307424221,-57.48396360670992,-57.33458178030403,-57.18490767362171,-57.0349413772342,-56.88468299379173,-56.73413263812793,-56.5832904373644,-56.43215653101454,-56.28073107108744,-56.12901422219119,-55.97700616163593,-55.82470707953652,-55.67211717891476,-55.51923667580118,-55.36606579933638,-55.21260479187193,-55.05885390907062,-54.90481342000632,-54.75048360726319,-54.5958647670343,-54.44095720921968,-54.28576125752355,-54.13027724955126,-53.97450553690499,-53.81844648527917,-53.66210047455489,-53.50546789889364,-53.34854916683011,-53.19134470136424,-53.03385494005246,-52.8760803350977,-52.71802135343891,-52.55967847683924,-52.40105220197341,-52.24214304051404,-52.08295151921675,-51.92347818000448,-51.76372358005037,-51.60368829185967,-51.44337290335045,-51.28277801793297,-51.12190425458797,-50.96075224794356,-50.79932264835085,-50.63761612195822,-50.47563335078428,-50.31337503278917,-50.15084188194487,-49.98803462830352,-49.82495401806472,-49.66160081364092,-49.49797579372134,-49.33407975333455,-49.1699135039089,-49.00547787333193,-48.84077370600735,-48.67580186291104,-48.51056322164465,-48.34505867648778,-48.17928913844827,-48.01325553531058,-47.84695881168213,-47.68039992903815,-47.51357986576411,-47.34649961719649,-47.17916019566121,-47.0115626305105,-46.84370796815716,-46.6755972721071,-46.50723162298956,-46.33861211858519,-46.16973987385197,-46.00061602094885,-45.83124170925726,-45.66161810540012,-45.49174639325872,-45.32162777398725,-45.15126346602477,-44.98065470510517,-44.8098027442642,-44.63870885384443,-44.46737432149769,-44.29580045218484,-44.12398856817313,-43.95194000903106,-43.77965613162053,-43.60713831008647,-43.43438793584389,-43.2614064175622,-43.08819518114689,-42.91475566971855,-42.74108934358915,-42.56719768023569,-42.39308217427089,-42.21874433741132,-42.04418569844262,-41.86940780318207,-41.69441221443805,-41.51920051196706,-41.3437742924275,-41.16813516933087,-40.99228477298999,-40.81622475046416,-40.63995676550178,-40.46348249847972,-40.28680364633993,-40.10992192252303,-39.93283905689898,-39.75555679569496,-39.57807690141988,-39.40040115278634,-39.22253134462949,-39.04446928782266,-38.86621680919041,-38.68777575141831,-38.50914797295979,-38.33033534794015,-38.15133976605728,-37.97216313247969,-37.79280736774137,-37.61327440763381,-37.43356620309481,-37.25368472009461,-37.07363193951875,-36.89340985704823,-36.71302048303653,-36.53246584238377,-36.35174797440794,-36.17086893271309,-35.98983078505483,-35.80863561320265,-35.62728551279957,-35.44578259321884,-35.26412897741767,-35.08232680178853,-34.90037821600694,-34.71828538287718,-34.5360504781747,-34.35367569048606,-34.17116322104602,-33.98851528357181,-33.80573410409505,-33.62282192079061,-33.43978098380316,-33.25661355507074,-33.0733219081462,-32.88990832801571,-32.70637511091496,-32.52272456414286,-32.3389590058726,-32.15508076496047,-31.97109218075232,-31.78699560288749,-31.60279339110059,-31.41848791502085,-31.23408155396942,-31.04957669675431,-30.86497574146321,-30.68028109525423,-30.49549517414448,-30.31062040279684,-30.12565921430433,-29.94061404997296,-29.75548735910246,-29.57028159876518,-29.38499923358313,-29.19964273550346,-29.01421458357206,-28.82871726370544,-28.64315326846122,-28.45752509680693,-28.27183525388719,-28.08608625078975,-27.90028060430973,-27.7144208367128,-27.52850947549709,-27.34254905315353,-27.1565421069254,-26.97049117856645,-26.78439881409807,-26.59826756356557,-26.41209998079319,-26.22589862313845,-26.03966605124566,-25.8534048287984,-25.66711752227167,-25.48080670068293,-25.29447493534275,-25.10812479960512,-24.92175886861679,-24.73537971906654,-24.54898992893405,-24.36259207723819,-24.1761887437855,-23.98978250891801,-23.80337595326125,-23.61697165747219,-23.43057220198688,-23.24418016676844,-23.05779813105522,-22.87142867310865,-22.68507436996197,-22.49873779716873,-22.31242152855197,-22.12612813595365,-21.93986018898471,-21.75362025477537,-21.56741089772643,-21.3812346792609,-21.19509415757651,-21.00899188739891,-20.82293041973568,-20.6369123016315,-20.4509400759238,-20.26501628099976,-20.0791434505544,-19.89332411334942,-19.70756079297362,-19.52185600760438,-19.33621226977039,-19.15063208611568,-18.96511795716526,-18.77967237709191,-18.59429783348477,-18.40899680711914,-18.22377177172814,-18.03862519377594,-17.85355953223274,-17.66857723835125,-17.48368075544533,-17.29887251867029,-17.11415495480489,-16.92953048203569,-16.74500150974305,-16.56057043828926,-16.37623965880877,-16.19201155300044,-16.00788849292206,-15.82387284078695,-15.63996694876275,-15.4561731587728,-15.27249380229935,-15.08893120018948,-14.9054876624632,-14.72216548812412,-14.53896696497242,-14.35589436942035,-14.17294996631037,-13.99013600873556,-13.80745473786294,-13.62490838275903,-13.44249916021843,-13.26022927459468,-13.07810091763409,-12.89611626831214,-12.71427749267261,-12.53258674366955,-12.35104616101191,-12.16965787101111,-11.9884239864312,-11.80734660634215,-11.62642781597577,-11.44566968658455,-11.26507427530342,-11.08464362501445,-10.90437976421424,-10.72428470688462,-10.54436045236579,-10.36460898523299,-10.1850322751755,-10.00563227687906,-9.826410929911162,-9.647370158609107,-9.468511871971344,-9.289837963551548,-9.111350311355835,-8.933050777742892,-8.754941209327086,-8.577023436884701,-8.399299275262962,-8.221770523292179,-8.044438963700799,-7.867306363033606,-7.690374471572625,-7.513645023261233,-7.33711973563112,-7.160800309732252,-6.984688430065717,-6.808785764519627,-6.633093964307875,-6.457614663911784,-6.282349481024738,-6.107300016499636,-5.932467854299318,-5.757854561449761,-5.583461687996248,-5.409290766962243,-5.235343314311137,-5.061620828910975,-4.888124792501571,-4.71485666966484,-4.54181790779765,-4.369009937087355,-4.196434170490193,-4.024092003712326,-3.851984815193447,-3.680113966093302,-3.508480800280381,-3.337086644323847,-3.165932807487366,-2.995020581726038,-2.824351241685548,-2.653926044703894,-2.48374623081574,-2.313813022758978,-2.144127625983884,-1.97469122866471,-1.805505001713442,-1.636570098796199,-1.467887656351621,-1.299458793611905,-1.131284612625763,-0.963366198283893,-0.7957046183464058,-0.6283009234726933,-0.461156147253206,-0.2942713062434166,-0.1276474000000007],"lat":[37.22966,37.30351460262332,37.37728177275318,37.45096110426216,37.52455218932582,37.59805461841728,37.67146798030178,37.74479186203122,37.81802584893879,37.8911695246336,37.96422247099542,38.03718426816931,38.11005449456044,38.18283272682888,38.25551853988429,38.3281115068811,38.40061119921307,38.47301718650846,38.54532903662493,38.61754631564469,38.68966858786936,38.76169541581544,38.83362636020911,38.90546097998177,38.97719883226509,39.04883947238653,39.12038245386458,39.1918273284042,39.26317364589241,39.33442095439375,39.40556880014591,39.47661672755541,39.54756427919327,39.61841099579078,39.68915641623551,39.75980007756704,39.8303415149729,39.90078026178486,39.97111584947478,40.04134780765099,40.11147566405441,40.18149894455487,40.25141717314764,40.32122987194981,40.39093656119678,40.46053675923906,40.53002998253888,40.59941574566693,40.66869356129939,40.73786294021477,40.80692339129101,40.87587442150257,40.94471553591777,41.01344623769594,41.08206602808505,41.150574406419,41.21897087011541,41.28725491467321,41.35542603367048,41.42348371876238,41.49142745967916,41.55925674422423,41.62697105827243,41.69456988576843,41.76205270872498,41.8294190072217,41.89666825940367,41.96379994148015,42.03081352772358,42.09770849046862,42.16448430011127,42.23114042510815,42.29767633197594,42.36409148529086,42.43038534768854,42.49655737986348,42.56260704056928,42.62853378661868,42.69433707288363,42.76001635229576,42.82557107584691,42.89100069258967,42.95630464963827,43.02148239216953,43.08653336342391,43.15145700470674,43.2162527553898,43.28092005291262,43.34545833278452,43.40986702858623,43.47414557197214,43.53829339267253,43.60230991849582,43.66619457533128,43.72994678715176,43.79356597601662,43.85705156207479,43.92040296356816,43.98361959683498,44.04670087631354,44.10964621454605,44.17245502218267,44.23512670798576,44.29766067883435,44.36005633972869,44.42231309379522,44.48443034229157,44.54640748461173,44.60824391829163,44.66993903901476,44.73149224061814,44.79290291509824,44.85417045261752,44.91529424151094,44.97627366829258,45.03710811766285,45.09779697251562,45.15833961394571,45.2187354212565,45.27898377196811,45.33908404182529,45.39903560480604,45.45883783313022,45.51849009726845,45.57799176595137,45.63734220617886,45.69654078322998,45.75558686067265,45.81447980037404,45.87321896251098,45.93180370558059,45.9902333864114,46.0485073601746,46.10662498039545,46.16458559896535,46.22238856615354,46.28003323062001,46.33751893942761,46.39484503805542,46.45201087041175,46.50901577884775,46.56585910417124,46.6225401856608,46.67905836108014,46.73541296669299,46.79160333727788,46.84762880614363,46.90348870514504,46.95918236469862,47.01470911379897,47.07006828003549,47.12525918960898,47.18028116734911,47.23513353673181,47.28981561989724,47.34432673766779,47.39866620956684,47.45283335383735,47.50682748746129,47.56064792617897,47.61429398450892,47.66776497576811,47.72106021209254,47.77417900445795,47.82712066270119,47.87988449554175,47.93246981060355,47.9848759144374,48.03710211254347,48.08914770939427,48.14101200845806,48.19269431222241,48.24419392221839,48.29551013904472,48.34664226239289,48.39758959107189,48.44835142303396,48.49892705540034,48.54931578448759,48.59951690583392,48.6495297142265,48.69935350372845,48.74898756770671,48.7984311988601,48.84768368924776,48.89674433031786,48.94561241293684,48.99428722741908,49.04276806355662,49.09105421064965,49.1391449575371,49.18703959262774,49.23473740393158,49.28223767909174,49.32953970541666,49.37664276991245,49.42354615931623,49.47024916012904,49.51675105864985,49.56305114100942,49.60914869320493,49.65504300113463,49.70073335063319,49.74621902750721,49.79149931757115,49.83657350668369,49.88144088078434,49.92610072593067,49.97055232833554,50.01479497440508,50.05882795077673,50.1026505443578,50.14626204236441,50.18966173236066,50.2328489022984,50.27582284055705,50.31858283598396,50.36112817793517,50.40345815631639,50.44557206162443,50.48746918498878,50.529148818214,50.57061025382177,50.61185278509396,50.65287570611548,50.69367831181802,50.73425989802334,50.77461976148783,50.81475719994663,50.85467151215846,50.89436199795071,50.93382795826457,50.97306869520102,51.01208351206651,51.05087171341944,51.08943260511663,51.12776549436009,51.16586968974434,51.20374450130373,51.24138924056012,51.27880322057095,51.31598575597741,51.35293616305293,51.38965375975201,51.42613786575913,51.46238780253819,51.49840289338175,51.53418246346095,51.56972583987547,51.60503235170364,51.64010133005286,51.67493210811017,51.70952402119315,51.74387640680092,51.77798860466524,51.81185995680195,51.84548980756259,51.87887750368597,51.91202239435029,51.94492383122491,51.97758116852273,52.00999376305248,52.04216097427113,52.07408216433652,52.10575669815995,52.13718394345923,52.16836327081131,52.19929405370544,52.22997566859613,52.26040749495644,52.29058891533111,52.32051931538984,52.35019808398056,52.37962461318295,52.4087982983616,52.43771853821966,52.466384734852,52.49479629379888,52.52295262409919,52.55085313834385,52.57849725272933,52.60588438711085,52.63301396505557,52.65988541389603,52.68649816478325,52.71285165273963,52.73894531671223,52.7647785996254,52.79035094843374,52.81566181417472,52.84071065202116,52.86549692133377,52.89002008571333,52.91427961305263,52.93827497558868,52.96200564995428,52.98547111722948,53.0086708629932,53.03160437737409,53.05427115510156,53.07667069555637,53.09880250282126,53.12066608573079,53.14226095792148,53.16358663788139,53.18464264899933,53.20542851961397,53.2259437830626,53.24618797772939,53.26616064709356,53.28586133977697,53.30528960959154,53.32444501558626,53.34332712209374,53.36193549877638,53.38026972067235,53.39832936824075,53.41611402740682,53.43362328960637,53.45085675182986,53.4678140166661,53.48449469234544,53.50089839278252,53.5170247376183,53.53287335226202,53.54844386793229,53.56373592169786,53.57874915651777,53.59348322128091,53.6079377708453,53.62211246607637,53.63600697388526,53.64962096726589,53.66295412533191,53.67600613335304,53.68877668279035,53.70126547133165,53.71347220292549,53.7253965878152,53.73703834257182,53.74839719012655,53.75947285980266,53.77026508734639,53.78077361495772,53.79099819131986,53.80093857162842,53.81059451761988,53.81996579759905,53.8290521864663,53.83785346574354,53.84636942359992,53.85459985487643,53.86254456111018,53.87020335055746,53.87757603821629,53.88466244584839,53.89146240199992,53.89797574202194,53.90420230808974,53.91014194922144,53.91579452129608,53.92115988707059,53.92623791619604,53.93102848523321,53.93553147766724,53.93974678392155,53.94367430137075,53.94731393435305,53.9506655941816,53.95372919915511,53.95650467456755,53.95899195271716,53.96119097291447,53.96310168148972,53.96472403179905,53.96605798423028,53.96710350620765,53.96786057219555,53.96832916370178,53.96850926927968,53.96840088452953,53.96800401209902,53.96731866168295,53.96634485002221,53.9650826009015,53.96353194514674,53.96169292062123,53.95956557222112,53.95714995187012,53.95444611851315,53.95145413810937,53.94817408362434,53.94460603502111,53.94075007925082,53.93660631024233,53.93217482889088,53.9274557430461,53.92244916749922,53.91715522396942,53.91157404108915,53.90570575438909,53.89955050628183,53.8931084460452,53.88637972980447,53.8793645205138,53.87206298793717,53.86447530862807,53.85660166590904,53.84844224984974,53.83999725724482,53.83126689159079,53.82225136306215,53.81295088848665,53.80336569132032,53.79349600162109,53.78334205602209,53.77290409770421,53.76218237636789,53.75117714820419,53.73988867586516,53.72831722843361,53.71646308139225,53.70432651659172,53.69190782221878,53.67920729276301,53.66622522898331,53.65296193787384,53.63941773262897,53.62559293260799,53.61148786329892,53.59710285628191,53.58243824919202,53.56749438568136,53.55227161538065,53.53677029386031,53.52099078259101,53.5049334489035,53.48859866594813,53.47198681265374,53.45509827368602,53.43793343940547,53.42049270582476,53.4027764745656,53.38478515281545,53.36651915328324,53.34797889415506,53.32916479904938,53.31007729697149,53.29071682226814,53.27108381458112,53.25117871880084,53.23100198501962,53.21055406848416,53.18983542954808,53.16884653362396,53.14758785113494,53.12605985746617,53.10426303291587,53.08219786264598,53.05986483663276,53.03726444961688,53.0143972010533,52.99126359506093,52.96786414037211,52.94419935028162,52.92026974259568,52.8960758395807,52.87161816791172,52.84689725862069,52.82191364704471,52.79666787277387,52.77116047959902,52.74539201545957,52.71936303239079,52.69307408647126,52.66652573777012,52.63971855029419,52.61265309193499,52.5853299344156,52.55774965323769,52.52991282762827,52.50182004048622,52.47347187832926,52.44486893124039,52.41601179281457,52.38690106010534,52.35753733357137,52.32792121702303,52.29805331756904,52.26793424556291,52.23756461454988,52.20694504121326,52.17607614532136,52.14495854967413,52.11359288005013,52.08197976515333,52.05011983656013,52.01801372866635,51.98566207863459,51.95306552634133,51.92022471432438,51.88714028773038,51.85381289426249,51.82024318412809,51.78643180998671,51.75237942689824,51.71808669227096,51.68355426581002,51.6487828094661,51.61377298738404,51.57852546585184,51.54304091324985,51.50731999999999]}]]],null,null,{"interactive":true,"className":"","stroke":true,"color":["#999999","#E69F00"],"weight":5,"opacity":1,"fill":false,"fillColor":["#999999","#E69F00"],"fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,["Rhumb line","Great circle"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[37.22966,51.50732],[-80.41368,-0.1276474],5,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.5},null,null,null,null,["Blacksburg","London"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.22966,53.96850926927968],"lng":[-80.41368,-0.1276474]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rhumb-vs-gc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Rhumb line vs great circle.
+</figcaption>
+</figure>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jessesadler\.github\.io\/vt5444s26\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../resources/mapping.html" class="pagination-link" aria-label="Mapping with R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Mapping with R</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../resources/networks.html" class="pagination-link" aria-label="Networks with R">
+        <span class="nav-page-text">Networks with R</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2026, <a href="https://www.jessesadler.com">Jesse Sadler</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/mapping-lines.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

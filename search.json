@@ -268,7 +268,7 @@
     "href": "resources/wrangling.html#manipulating-rows-and-columns-with-dplyr",
     "title": "Wrangling data in the tidyverse",
     "section": "1. Manipulating rows and columns with dplyr",
-    "text": "1. Manipulating rows and columns with dplyr\nThe core set of dplyr functions are designed to work with the pipe. They take in a data frame as their input in the first argument (named .data); subsequent arguments include the (unquoted) column names that are operated on; and the output is a data frame, which can be piped into another function. You can think of these functions as verbs to manipulate rows and columns. The core functions are:\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nselect()\nSubset columns.\n\n\nfilter()\nSubset rows by conditions based on data in columns.\n\n\nmutate()\nCreate new columns using information from other columns.\n\n\ngroup_by()\nGroup the data by values in column such as by village or by sex.\n\n\nsummarize()\nAggregate the data, usually on grouped data, to create summary tables.\n\n\narrange()\nArrange the order of rows by values in columns. Often used with desc() to reverse default order.\n\n\n\n\nTo practice with these functions go to the Wrangling data with dplyr worksheet.\nTo read more about the core dplyr functions, see R for Data Science: Data Transformation.\nFor even more practice, check out the Data Carpentries, R for Social Science episode on Data Wrangling with dplyr.\n\nLet’s quickly show how these work using the penguins dataset.\n\nlibrary(tidyverse)\n\n\npenguins |&gt; \n  select(species, bill_len, bill_dep, sex) |&gt; # Subset columns, not strictly necessary\n  filter(!is.na(bill_len) | !is.na(bill_dep)) |&gt; # Remove missing values for bill measurements\n  mutate(bill_ratio = bill_dep / bill_len) |&gt; # Create new column for ration of depth to length\n  group_by(species, sex) |&gt; # Group the data by species and sex\n  summarize(avg_ratio = mean(bill_ratio), # Find the average bill ratio broken down by species and sex\n            n = n(), # Count the number of observations in each group\n            .groups = \"drop\") |&gt; # Drop the remaining grouping of sex\n  arrange(desc(avg_ratio)) # Arrange the rows by the average ratio in descending order\n\n# A tibble: 8 × 4\n  species   sex    avg_ratio     n\n  &lt;fct&gt;     &lt;fct&gt;      &lt;dbl&gt; &lt;int&gt;\n1 Adelie    &lt;NA&gt;       0.485     5\n2 Adelie    female     0.474    73\n3 Adelie    male       0.474    73\n4 Chinstrap female     0.379    34\n5 Chinstrap male       0.377    34\n6 Gentoo    &lt;NA&gt;       0.319     4\n7 Gentoo    male       0.318    61\n8 Gentoo    female     0.313    58",
+    "text": "1. Manipulating rows and columns with dplyr\nThe core set of dplyr functions are designed to work with the pipe. They take in a data frame as their input in the first argument (named .data); subsequent arguments include the (unquoted) column names that are operated on; and the output is a data frame, which can be piped into another function. You can think of these functions as verbs to manipulate rows and columns. The core functions are:\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nselect()\nSubset columns.\n\n\nfilter()\nSubset rows by conditions based on data in columns.\n\n\nmutate()\nCreate new columns using information from other columns.\n\n\ngroup_by()\nGroup the data by values in column such as by village or by sex.\n\n\nsummarize()\nAggregate the data, usually on grouped data, to create summary tables.\n\n\narrange()\nArrange the order of rows by values in columns. Often used with desc() to reverse default order.\n\n\n\n\nTo practice with these functions go to the Wrangling data with dplyr worksheet.\nTo read more about the core dplyr functions, see R for Data Science: Data Transformation.\nFor even more practice, check out the Data Carpentries, R for Social Science episode on Data Wrangling with dplyr.\n\nLet’s quickly show how these work using the penguins dataset.\n\nlibrary(tidyverse)\n\n\npenguins |&gt; \n1  select(species, bill_len, bill_dep, sex) |&gt;\n2  filter(!is.na(bill_len) | !is.na(bill_dep)) |&gt;\n3  mutate(bill_ratio = bill_dep / bill_len) |&gt;\n4  group_by(species, sex) |&gt;\n5  summarize(avg_ratio = mean(bill_ratio),\n6            n = n(),\n7            .groups = \"drop\") |&gt;\n8  arrange(desc(avg_ratio))\n\n\n1\n\nSubset columns; not strictly necessary because of summarization further in pipeline.\n\n2\n\nRemove missing values for bill measurements.\n\n3\n\nCreate new column for ratio of bill depth to bill length.\n\n4\n\nGroup the data by species and sex.\n\n5\n\nFind the average bill ratio broken down by species and sex.\n\n6\n\nCount the number of observations in each group.\n\n7\n\nDrop the remaining grouping of sex.\n\n8\n\nArrange the rows by the average ratio in descending order.\n\n\n\n\n# A tibble: 8 × 4\n  species   sex    avg_ratio     n\n  &lt;fct&gt;     &lt;fct&gt;      &lt;dbl&gt; &lt;int&gt;\n1 Adelie    &lt;NA&gt;       0.485     5\n2 Adelie    female     0.474    73\n3 Adelie    male       0.474    73\n4 Chinstrap female     0.379    34\n5 Chinstrap male       0.377    34\n6 Gentoo    &lt;NA&gt;       0.319     4\n7 Gentoo    male       0.318    61\n8 Gentoo    female     0.313    58",
     "crumbs": [
       "Resources",
       "R",
@@ -448,7 +448,7 @@
     "href": "resources/quarto-websites.html#resources",
     "title": "Quarto websites",
     "section": "Resources",
-    "text": "Resources\nThe Quarto documentation is the best place to look when you have a question. The documentation will be linked extensively below, but the most important pages are:\n\nCreating a website\nWebsite navigation\nHTML basics\nHTML theming\nPublishing to GitHUb Pages\n\nPosit has also created a YouTube series on building a Quarto website. This series also discusses making a blog with Quarto. A blog is a Quarto website that has some additional features to allow you to have a page listing the blog posts. Otherwise, there is a great deal of overlap.\n\nExamples of Quarto websites\nThere are a lot of Quarto websites out in the world. A couple that you might want to look at include:\n\nThe website for this class is a Quarto website.\nOpenScapes\nAndrew Heiss\nTed Laderas\nAffective Communication & Computing Lab",
+    "text": "Resources\nThe Quarto documentation is the best place to look when you have a question. The documentation will be linked extensively below, but the most important pages are:\n\nCreating a website\nWebsite navigation\nHTML basics\nHTML theming\nPublishing to GitHUb Pages\n\nPosit has also created a YouTube series on building a Quarto website. This series also discusses making a blog with Quarto. A blog is a Quarto website that has some additional features to allow you to have a page listing the blog posts. Otherwise, there is a great deal of overlap.\n\nExamples of Quarto websites\nThere are a lot of Quarto websites out in the world. Explore the gallery of websites on the Quarto site for inspiration.\nA couple that you might want to look at include:\n\nThe website for this class is a Quarto website.\nOpenScapes\nAndrew Heiss\nTed Laderas\nAffective Communication & Computing Lab",
     "crumbs": [
       "Resources",
       "Quarto",
@@ -528,147 +528,291 @@
     ]
   },
   {
-    "objectID": "resources/plaintext.html",
-    "href": "resources/plaintext.html",
-    "title": "Working with Plain Text",
+    "objectID": "resources/quarto-docs.html",
+    "href": "resources/quarto-docs.html",
+    "title": "Quarto documents",
     "section": "",
-    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
+    "text": "Quarto documents provide a way to mix together Markdown text with code and its results. Whereas R scripts are designed primarily for writing and running code—with comments (#) giving a means to document the code—Quarto documents allow you to write prose alongside code. You can then output the Quarto document into a number of formats, including web pages, PDFs, slides, and even Word documents. Projects of connected Quarto documents can create books and full websites. Why might you use Quarto documents instead of an R script?\nTo get familiar with Quarto, please download this Quarto template document, place it in your r-notes project, read through it, and then render it into an HTML document.",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Working with Plain Text"
+      "Quarto",
+      "Quarto documents"
     ]
   },
   {
-    "objectID": "resources/plaintext.html#why-write-in-plain-text",
-    "href": "resources/plaintext.html#why-write-in-plain-text",
-    "title": "Working with Plain Text",
-    "section": "",
-    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
-    ]
-  },
-  {
-    "objectID": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
-    "href": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
-    "title": "Working with Plain Text",
-    "section": "What do I need to write in plaintext?",
-    "text": "What do I need to write in plaintext?\nIn short, a good text editor. Below are some good options to start with. See the Text editors guide for more in depth discussion of using a text editor.\n\nCross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.\n\nWindows\n\nA classic text editor for Windows is Notepad++.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
-    ]
-  },
-  {
-    "objectID": "resources/plaintext.html#markdown-based-apps",
-    "href": "resources/plaintext.html#markdown-based-apps",
-    "title": "Working with Plain Text",
-    "section": "Markdown based apps",
-    "text": "Markdown based apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\n\nObsidian is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.\nTangent Notes is an open source alternative.\niA Writer is a paid application available for Windows and macOS, as well as iOS. It is a very good looking simple application for writing Markdown.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Working with Plain Text"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html",
-    "href": "resources/markdown-syntax.html",
-    "title": "Markdown Syntax",
-    "section": "",
-    "text": "Markdown is a plain text format that is intended to be easy to write and read but also able to provide enough markup options for most forms of writing. On the one hand, Markdown leverages the advantages of plain text: it is light weight, highly portable, non-proprietary, and easily searchable across different documents. On the other, Markdown text can be turned into HTML, PDFs, and even Word documents with stylized text through different interpreters.\nThis document provides a basic overview of the Markdown syntax. Note that there are various “flavors” of Markdown that have different capabilities, but the basic syntax is largely shared.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html#paragraphs",
-    "href": "resources/markdown-syntax.html#paragraphs",
-    "title": "Markdown Syntax",
-    "section": "Paragraphs",
-    "text": "Paragraphs\nParagraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.\n\nThis will be a second paragraph.\nParagraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.\nThis will be a second paragraph.",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html#text-formatting",
-    "href": "resources/markdown-syntax.html#text-formatting",
-    "title": "Markdown Syntax",
-    "section": "Text Formatting",
-    "text": "Text Formatting\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n*italics* or _italics_\nitalics\n\n\n**bold** or __bold__\nbold\n\n\n`verbatim code`\nverbatim code",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html#headings",
-    "href": "resources/markdown-syntax.html#headings",
-    "title": "Markdown Syntax",
-    "section": "Headings",
-    "text": "Headings\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n# Header 1\nHeader 1\n\n\n## Header 2\nHeader 2\n\n\n### Header 3\nHeader 3\n\n\n#### Header 4\nHeader 4\n\n\n##### Header 5\nHeader 5\n\n\n###### Header 6\nHeader 6",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html#lists",
-    "href": "resources/markdown-syntax.html#lists",
-    "title": "Markdown Syntax",
-    "section": "Lists",
-    "text": "Lists\nUnordered lists are created by typing -, *, or + at the start of a line followed by a space. You can choose one symbol or switch between them in nested lists. The styling of the bullets is done by the output interpreter, not by which symbol you choose.\nOrdered lists are created by typing a number followed by a period and a space (1.).\nNested lists are created by indenting the next line in a list with a tab or four spaces followed by the syntax for creating an unordered or ordered list. Unordered and ordered lists can be combined.\n\nUnordered lists\n\n\n\n- unordered list\n    - nested item\n    - nested item\n        * further nesting \n\n\n\nunordered list\n\nnested item\nnested item\n\nfurther nesting\n\n\n\n\n\n\n\n\nOrdered lists\n\n\n\n1. ordered list\n2. Second item\n    1. nested item\n        1. further nesting\n\n\n\nordered list\nSecond item\n\nnested item\n\nfurther nesting\n\n\n\n\n\n\n\n\nMixed lists\n\n\n\n1. mixed list\n    - unordered nesting\n        1. ordered nesting \n        2. second ordered nesting\n    - unordered nesting\n2. Second item\n\n\n\nmixed list\n\nunordered nesting\n\nordered nesting\nsecond ordered nesting\n\nunordered nesting\n\nSecond item",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html#links",
-    "href": "resources/markdown-syntax.html#links",
-    "title": "Markdown Syntax",
-    "section": "Links",
-    "text": "Links\nThere are three main ways to create links in Markdown:\n\nA raw link is created by surrounding the URL by less than and greater than signs.\n&lt;https://lib.vt.edu&gt; becomes https://lib.vt.edu\nInline links are created by surrounding the link text in square brackets, followed immediately by the URL in parentheses.\n[text to link](https://lib.vt.edu) becomes text to link\nReference links are created by surrounding the link text in square brackets, followed by a reference in square brackets. The reference can be a number or text so long as it is unique within the text. Then, the reference is added on a line by itself, after the paragraph or at the bottom of the text, by writing the reference in square brackets, followed by a colon, space, and the URL.\n[text to link][ref]\n\n[ref]: https://lib.vt.edu\nBecomes text to link",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html#footnotes",
-    "href": "resources/markdown-syntax.html#footnotes",
-    "title": "Markdown Syntax",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe linked footnote appears at the end of the document in HTML and end of the page in a PDF.↩︎",
-    "crumbs": [
-      "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
-    ]
-  },
-  {
-    "objectID": "resources/markdown-syntax.html#resources",
-    "href": "resources/markdown-syntax.html#resources",
-    "title": "Markdown Syntax",
+    "objectID": "resources/quarto-docs.html#resources",
+    "href": "resources/quarto-docs.html#resources",
+    "title": "Quarto documents",
     "section": "Resources",
-    "text": "Resources\n\nJohn Gruber’s introduction of Markdown and its syntax\nProgramming Historian: Sarah Simpkin, Getting Started with Markdown\nMarkdown style guide: Quarto docs\nMarkdown Style Guide\nMany Markdown editors, especially those that focus on academic writing, depend upon Pandoc, which attempts to be a universal document converter.\n\nPandoc has an in-depth discussion of its flavor of Markdown syntax.\nSee also Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown",
+    "text": "Resources\nThe rest of this page goes over the foundations of Quarto documents, but there are a couple of very good resources that should be consulted to get a fuller understanding of how and why to use Quarto documents.\n\nA good place to start is with the Getting started with Quarto tutorial for RStudio. It provides an overview of how to write and render Quarto documents into a variety of formats in RStudio. Make sure to go through all three pages of Hello, Quarto, Computations, and Authoring.\nOnce you have gone through the tutorial, look over the Quarto chapter of R for Data Science.\nThe Quarto documentation is very good and very in depth. It is a good place to return to each time you have a question. Some particularly useful pages include:\n\nMarkdown basics\nUsing R\nQuarto in RStudio\nHTML basics",
     "crumbs": [
       "Resources",
-      "Organization",
-      "Markdown Syntax Guide"
+      "Quarto",
+      "Quarto documents"
+    ]
+  },
+  {
+    "objectID": "resources/quarto-docs.html#quarto-foundations",
+    "href": "resources/quarto-docs.html#quarto-foundations",
+    "title": "Quarto documents",
+    "section": "Quarto foundations",
+    "text": "Quarto foundations\nA Quarto document is a plain text file that has a .qmd extension. It contains three basic components:\n\nA YAML header contained within lines with three dashes (---).\nMarkdown text.\nCode chunks set off by three back ticks (```).\n\n\n\n\n\n\n\nFigure 1: A Quarto document in RStudio.\n\n\n\nThe key distinguishing feature between Quarto documents and R scripts is that you can render Quarto documents to different outputs. Rendering a Quarto document with the Render button or Cmd/Ctrl + Shift + K runs the R (or Python) code, producing outputs and converting the document to a Markdown document. It then uses Pandoc to convert the Markdown document to whatever output is specified in the YAML heading. The process is shown in Figure 2.\n\n\n\n\n\n\nFigure 2: Diagram of the process of rendering a Quarto document. Image is from Wickham et al., R for Data Science, Quarto.\n\n\n\n\nQuarto in RStudio\nThe Get Started page of the Quarto documentation shows that you can write Quarto documents in a variety of applications. However, RStudio has many built-in functions that make it easier to work with Quarto documents. You can make a new Quarto document by going to File -&gt; New Document -&gt; Quarto Document… You can add information to the dialogue to fill in the YAML heading, or you can choose Create Empty Document.\n\n\n\n\n\n\nFigure 3: Dialogue box to create a new Quarto document.\n\n\n\nQuarto documents can be edited in either the Visual editor or the Source editor. The Visual editor styles your text as you go, whereas the source editor will give you an interface that is more similar to R scripts. You can change back and forth with the buttons at the top of the editor pane, but do note that this can slightly change how your Markdown is written.",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Quarto documents"
+    ]
+  },
+  {
+    "objectID": "resources/quarto-docs.html#quartos-three-components",
+    "href": "resources/quarto-docs.html#quartos-three-components",
+    "title": "Quarto documents",
+    "section": "Quarto’s three components",
+    "text": "Quarto’s three components\n\n1. YAML header\nThe YAML header provides a way to indicate the title of the document, document metadata such as author, the output format(s), and document wide options. YAML is a way to store data in a human-readable form. Its basic structure is key: value. The YAML heading is set off by three dashes ---. A somewhat complex heading might look like this:\n---\ntitle: \"My title here\"\nauthor:\n  - name: \"Jesse Sadler\"\n    email: jrsadler@vt.edu\n    affiliation: \"University Libraries\"\ndate: last-modified\nformat:\n  html:\n    toc: true\n    abstract: |\n      This is the abstract.\n\n      It has two paragraphs.\nexecute:\n  echo: false\n  warning: false\n---\nThe available keys can be found in the documentation for each type of output.1 Many options are shared across document output types, but some are not. See the HTML options for the widest number of options. It can be difficult to write these YAML headers. There are a lot of different options, and the indentation level must be formatted correctly. Happily, in practice, it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a project such as a website.\n\n\n2. Markdown\nUnlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use Resources: Markdown syntax for Markdown foundations, and look at the Quarto Markdown documentation for more details on the style of Markdown you can use in Quarto documents.\n\n\n3. Code chunks\nWith Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:\n\n```{r}\n24 + 87\n```\n\n[1] 111\n\n\nYou can create code chunks in RStudio with:\n\nThe keyboard shortcut: Cmd + Option + I or Ctrl + Alt + I.\nTyping the chunk delimiters ```{r} and ```.\n\nOnce inside a code chunk, text functions as it does in an R script. Comments are made with #. Everything else is code. You can run the expressions in a chunk with Cmd + Return or Ctrl + Enter. Or you can run the entire chunk with the play button at the top right of the chunk. The output of the chunks will either be placed directly below the chunk or sent to the console. You can alter this in Global Options -&gt; R Markdown tab -&gt; Show output inline for all R Markdown documents checkbox. See also Other tweaks section in Setting up RStudio for success.\nThe primary difference between code chunks and R scripts is that code chunks can have special comments created with #| that provide options for the output of the chunk. These are formatted as YAML and override any defaults set in the YAML header. You can see the full list of options in the Quarto documentation.\n\n```{r}\n#| label: some-math\n#| eval: false\n24 + 87\n```\n\nThe label option names the chunk, making it easier to refer to the chunk and to see it in the outline in RStudio. label names should be short and not include spaces. It is recommended to use a dash between words.\nThe main options that affect the execution of code are:\n\neval: false prevents the code from being run. The code displays but does not run.\necho: false prevents the code from being shown in the output, but the code is run and outputs are shown. This is useful when you want people to see the output but the code does not need to be read by the audience.\ninclude: false prevents the code and outputs from being shown, though the code is run. This is useful for setup code.\nmessage: false or warning: false prevents messages or warnings from being output in the rendered document.\n\nThe other options you might want to change are the figure output. See R for Data Science for more details.\n\nTo set the size of the plot from ggplot2:\n\nfig-width: 6\nfig-asp: 0.618: Aspect ration of width to height. With this you do not need to set the width. 0.618 is the golden ratio.\nfig-width: 4: But you can set width instead of aspect.\n\nControl the output size within the output document:\n\nout-width: \"70%\": This would take up 70% of the content area.\nfig-align: center: How to align the plots.",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Quarto documents"
+    ]
+  },
+  {
+    "objectID": "resources/quarto-docs.html#output-formats",
+    "href": "resources/quarto-docs.html#output-formats",
+    "title": "Quarto documents",
+    "section": "Output formats",
+    "text": "Output formats\nYou can create a number of different types of documents from Quarto documents. The default is HTML documents ready to be put on the web or viewed through your browser, but you can also make PDFs, presentations, dashboards, and even Word documents. It is also possible to combine multiple Quarto documents together into projects such as websites and books.\nYou control the output of individual documents either in the document YAML or in rendering the document via the command line. Generally, you will want to use the document YAM using the format key.\n\nHTML: format: html\nPDF: format: pdf or format: typst\nPresentation: format: revealjs\nWord: format: docx\n\nMost options within the YAML are shared across output formats, but not all formats have all the capabilities. Look at the reference documentation for each type to see the available options.\n\nA note on PDF formats\nIf you want to output a PDF, you have two different choices, format: pdf uses Pandoc to create the PDF; format: typst uses Typst. The Pandoc format has more options, but Typst is a more modern PDF engine and has nicer looking defaults.\n\n\nProject outputs\nProjects contain multiple Quarto documents and use a _quarto.yml file to share the YAML metadata options across all of the documents within the project. If you want different YAML options in one or more documents within the project, you can modify the YAML in the document itself. The options written in the document will take precedence over those written in the _quarto.yml file. This means that generally the YAML heading for individual documents in a project might only have a title. See Quarto websites for more on working with Quarto projects.",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Quarto documents"
+    ]
+  },
+  {
+    "objectID": "resources/quarto-docs.html#conclusion",
+    "href": "resources/quarto-docs.html#conclusion",
+    "title": "Quarto documents",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis is just the tip of the iceberg for what you can do with Quarto documents. But you can do a lot with these foundations. Check out the Resources above for places to start if this document does not cover a question you have.",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Quarto documents"
+    ]
+  },
+  {
+    "objectID": "resources/quarto-docs.html#footnotes",
+    "href": "resources/quarto-docs.html#footnotes",
+    "title": "Quarto documents",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSee the Output formats section for more details on output formats.↩︎",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Quarto documents"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html",
+    "href": "resources/networks.html",
+    "title": "Networks in R",
+    "section": "",
+    "text": "This page provides an introduction to network analysis in R. It provides a very short overview of the main concepts of network analysis, the structure of network data, and then introduces the packages for working with network data and visualizing it using ggplot2.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#network-analysis-concepts",
+    "href": "resources/networks.html#network-analysis-concepts",
+    "title": "Networks in R",
+    "section": "Network analysis concepts",
+    "text": "Network analysis concepts\nNetworks are made up of entities and connections between those entities. The vocabulary around these concepts differs based on software and discipline, but the entities are referred to as nodes or vertices and the connections are referred to as edges or links. A collection of nodes and edges make up a graph whether it is visualized or not.\nThere are a variety of terms to characterize a graph or to understand aspects about the nodes and edges that constitute a graph.\n\nFive number summary\nThe basic structures of a graph can be defined though these five summaries.\n\nSize: number of nodes\nDensity: (0–1) proportion of observed ties to possible ties.\nComponents: subgroup in which all nodes are connected.\nDiameter: longest of the shortest paths across all pairs of nodes.\nCluster: (0–1) proportion of closed triangles to the total number of open and closed triangles.\n\n\n\nGraph terms and measurements\n\nDirected: Whether the order of node pairs represents flow of the connection. Graphs can be directed or undirected.\nNeighbors: Two nodes are adjacent and neighbors if joined by an edge.\nDegree: number of edges connected to the node.\nWalk: distance between nodes.\nPath: a walk without repeated nodes or edges.\nDistance: shortest path between nodes.\nCentrality: measurement of the importance of a node within a graph. There are three main types of centrality measurements.\n\nCloseness centrality: closeness is inversely related to the total distance of a node to all other nodes.\nBetweenness centrality: related to the position of the node on paths between other nodes. If many paths go through a node it has a high centrality.\nEigenvector centrality: focuses on prestige or rank. It uses neighbors to find centrality.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#network-data-structure",
+    "href": "resources/networks.html#network-data-structure",
+    "title": "Networks in R",
+    "section": "Network data structure",
+    "text": "Network data structure\nNetwork data is different from other types of data we have encountered because it is made up of two related structure: an edge list and a node list.1 Within R these two data structures are represented by data frames:\n\nEdge list: A data frame with at least two columns of the node pairs that are joined by an edge. These columns are often named from and to even if there is no direction for the connection. Further columns provide attributes for the edges such as weight, count, or type.\nNode list: A data frame with at least one column containing all of the unique nodes in the graph. This column is often named id. Further columns provide attributes for the node such as name, type, etc.\n\nLet’s look at a simple example:\n\nlibrary(tidyverse)\n# Data frame of node pairs\ntibble(from = c(1, 2, 2, 3, 4),\n       to = c(2, 3, 4, 2, 1))\n\n# A tibble: 5 × 2\n   from    to\n  &lt;dbl&gt; &lt;dbl&gt;\n1     1     2\n2     2     3\n3     2     4\n4     3     2\n5     4     1\n\n# Data frame of nodes\ntibble(id = 1:4)\n\n# A tibble: 4 × 1\n     id\n  &lt;int&gt;\n1     1\n2     2\n3     3\n4     4\n\n\nA more complex graph might have attributes for edges and nodes.\n\n# Data frame of node pairs\nedge_list &lt;- tibble(from = c(1, 2, 2, 3, 4),\n                    to = c(2, 3, 4, 2, 1),\n                    type = c(\"History\", \"English\", \"Art History\", \"History\", \"English\"))\nedge_list\n\n# A tibble: 5 × 3\n   from    to type       \n  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n4     3     2 History    \n5     4     1 English    \n\n# Data frame of nodes\nnode_list &lt;- tibble(id = 1:4,\n                    name = LETTERS[1:4],\n                    university = c(\"VT\", \"JMU\", \"UVA\", \"GMU\"))\nnode_list\n\n# A tibble: 4 × 3\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n\n\nThere are other ways to represent network data, but node and edge lists provides a solid foundation for working with network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#packages-for-network-analysis-in-r",
+    "href": "resources/networks.html#packages-for-network-analysis-in-r",
+    "title": "Networks in R",
+    "section": "Packages for network analysis in R",
+    "text": "Packages for network analysis in R\nWe will be using three main packages for network analysis in R, though there are many more you can explore in CRAN network analysis task view.\n\nigraph an R package for working with network data.\ntidygraph a tidy API for graph/network manipulation.\nggraph an extension of ggplot2 aimed at supporting network graphs.\nnetrankr: Implementation or various centrality measures.\n\nigraph will provide the network algorithms, but we will access these through the tidygraph package that integrates with the tidyverse. Finally, ggraph provides extensions to ggplot2 to integrate the visualization of network graphs.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#creating-network-objects",
+    "href": "resources/networks.html#creating-network-objects",
+    "title": "Networks in R",
+    "section": "Creating network objects",
+    "text": "Creating network objects\nLet’s start by loading the packages listed above.\n\nlibrary(igraph)\nlibrary(tidygraph)\nlibrary(ggraph)\n\nThere are two ways to turn the edge list and node list into a network object. We can either go directly to a tbl_graph object from tidygraph using the tbl_graph() function or first create an igraph object using graph_from_data_frame(). I have found that with larger graphs graph_from_data_frame() works more consistently. Both methods are shown below.\n\nCreate a tidygraph object\n\n# Create a tbl_graph with tidygraph\ntbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\n\n\nCreate an igraph object\n\n# Create an igraph object\ngraph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)\n\nIGRAPH d72d103 UN-- 4 5 -- \n+ attr: name (v/c), university (v/c), type (e/c)\n+ edges from d72d103 (vertex names):\n[1] A--B B--C B--D B--C A--D\n\n\nYou will notice that the way these objects print to the console are quite different. A tbl_graph object prints out as two data frames for the nodes and edges. An igraph object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data attr, and then provides a graphical overview of the edge list. Let’s create a variable by first making an igraph object and then converting to tbl_graph.\n\n\nCreate a tidygraph object through igraph\n\nnetwork &lt;- graph_from_data_frame(d = edge_list,\n                                 vertices = node_list,\n                                 directed = FALSE) |&gt;\n  as_tbl_graph()\nnetwork\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 2 (active)\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#summary-of-the-graph",
+    "href": "resources/networks.html#summary-of-the-graph",
+    "title": "Networks in R",
+    "section": "Summary of the graph",
+    "text": "Summary of the graph\nLet’s get our five number summary of this graph using igraph functions.\n\n# 1. Size\ngorder(network)\n\n[1] 4\n\n# 2. Density (0-1)\nedge_density(network)\n\n[1] 0.8333333\n\n# 3. Components: only one, all nodes have at least one edge\ncount_components(network)\n\n[1] 1\n\n# 4. Diameter\ndiameter(network)\n\n[1] 2\n\n# 5. Clustering coefficient (0-1)\ntransitivity(network)\n\n[1] 0.6",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#calculate-node-properties",
+    "href": "resources/networks.html#calculate-node-properties",
+    "title": "Networks in R",
+    "section": "Calculate node properties",
+    "text": "Calculate node properties\nLet’s make a calculation of the centrality of the nodes using dplyr methods. centrality_degree() measure the degrees and strength of nodes within the graph.\n\nnetwork |&gt; \n  mutate(centrality = centrality_degree())\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n  name  university centrality\n  &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;\n1 A     VT                  2\n2 B     JMU                 4\n3 C     UVA                 2\n4 D     GMU                 2\n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\nYou can see that a new attribute column has been created and the most central node according to this calculation is B from JMU. There are many more calculations you can make to understand the nature of the nodes and edges in a graph. Check the igraph and tidygraph documentation for possibilities.\nNote that by default dplyr functions will work on the nodes data frame. To alter the edges data frame activate it with the activate() function.\n\nnetwork |&gt;\n  activate(edges) |&gt;\n  filter(type == \"History\")\n\n# A tbl_graph: 4 nodes and 2 edges\n#\n# An unrooted forest with 2 trees\n#\n# Edge Data: 2 × 3 (active)\n   from    to type   \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n1     1     2 History\n2     2     3 History\n#\n# Node Data: 4 × 2\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n# ℹ 1 more row",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#visualize-the-graph",
+    "href": "resources/networks.html#visualize-the-graph",
+    "title": "Networks in R",
+    "section": "Visualize the graph",
+    "text": "Visualize the graph\nFinally, let’s visualize the graph with ggraph. ggraph adds node and edge geoms to ggplot2 and implements a graph style that removes the x and y grid. This is because the question of where to layout nodes on an x-y plane is one of the more complex problems in network analysis and a number of algorithms have been developed to do this. Instead of using ggplot() a graph visualization is begun with ggraph().2\n\nset.seed(9528)\n\nggraph(network, layout = \"nicely\") + \n  geom_edge_link() + \n  geom_node_point() + \n  theme_graph()\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\nThere are different styles for the shape of the edges and many different layouts. You can also use any of the layouts from igraph. Let’s finish this up by adding some additional information from the attribute data. This shows that ggraph implements scales for edges allowing you to have to scales of the same type for edge and node.\n\nset.seed(5493)\n\nnetwork |&gt; \n  mutate(centrality = centrality_degree()) |&gt;\n  ggraph(layout = \"kk\") + \n  geom_edge_link(aes(color = type),\n                 linewidth = 2) + \n  geom_node_point(aes(size = centrality)) + \n  geom_node_text(aes(label = university), repel = TRUE) + \n  scale_edge_color_brewer(palette = \"Dark2\") + \n  labs(size = \"Degree Centrality\",\n       edge_color = \"Discipline\") + \n  theme_graph(base_size = 16)\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\nEven this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data. Download the SNiGB networks Quarto document to help you get started.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#further-resources",
+    "href": "resources/networks.html#further-resources",
+    "title": "Networks in R",
+    "section": "Further resources",
+    "text": "Further resources\n\nWorking with network data in R\n\nKatherine Ognyanova, Static and dynamic network visualization with R.\nEric D. Kolaczyk and Gábor Csárdi, Statistical Analysis of Network Data with R, (Springer, 2014), https://doi.org/10.1007/978-1-4939-0983-4.\nJesse Sadler, Introduction to Network Analysis with R: Creating static and interactive network graphs.\n\n\n\nNetwork Analysis\n\nRuth Ahnert et al., The Network Turn: Changing Perspectives in the Humanities (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.\nMark Granovetter, “The Strength of Weak Ties,” American Journal of Sociology 78, no. 6 (1973): 1360–80, http://www.jstor.org/stable/2776392.\nJournal of Historical Network Research.\nFlorian Kerschbaumer et al., eds., The Power of Networks: Prospects of Historical Network Research (Routledge, 2020), https://doi.org/10.4324/9781315189062.\nThe Historical Analysis Research Community\n\nYouTube channel",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/networks.html#footnotes",
+    "href": "resources/networks.html#footnotes",
+    "title": "Networks in R",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nA node list can be created from an edge list if the nodes do not have attributes.↩︎\nBy using set.seed() the layout algorithm will be done in the same way each time it is run.↩︎",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Networks with R"
+    ]
+  },
+  {
+    "objectID": "resources/mapping.html",
+    "href": "resources/mapping.html",
+    "title": "Mapping with R",
+    "section": "",
+    "text": "This page provides an introduction to mapping in R. It provides a very short overview of geospatial concepts and then introduces working with vector and raster data in R by creating a map of Virginia.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Mapping with R"
+    ]
+  },
+  {
+    "objectID": "resources/mapping.html#geospatial-concepts",
+    "href": "resources/mapping.html#geospatial-concepts",
+    "title": "Mapping with R",
+    "section": "Geospatial concepts",
+    "text": "Geospatial concepts\nThere are two main concepts in dealing with geospatial data:\n\nThe type of data and how it is represented: vector or raster.\nHow the data relates to the surface of the Earth: Coordinate reference system. Without a coordinate reference system (CRS), either implicit or explicit, the data is not spatial.\n\n\nData types\n\nVector data\n\nVector data are based on points, lines, and polygons within a coordinate system.\nVector data are similar to the sorts of data we have been working with in creating scatter plots or line plots. It is represented in a data frame and has x and y coordinates.\nIf you are working with points, lines, and polygons (land, oceans, lakes, political borders), you are dealing with vector data.\n\n\n\nRaster data\n\nRaster data is based on a grid of cells in which each cell has one value.\nRaster data is not represented by a data frame but by a matrix: a vector with two dimensions. It does not work through x/y coordinates but from a point of origin, the extent of each cell, and the number of cells.\nRaster data can either be continuous (elevation) or discrete/categorical (soil type).\nDigital photography is based on raster data. If you zoom into raster data it will become pixelated.\n\n\n\n\nCoordinate Reference Systems\n\nVector and raster data is made into spatial data by possessing a Coordinate Reference System (CRS), which translates coordinates (vector) or a grid of cells (raster) to space on the surface of the earth.\nThere are two types of coordinate reference systems: Geographic and projected.\n\nGeographic coordinate reference systems are measured in degrees of latitude and longitude, which are angles from the earth’s center to its surface.\nProjected coordinate reference systems transform the angular measurements on a spherical earth to a flat surface using linear units such as meters or feet.\nCheck out the Map Projection Explorer to get an idea of how different projections look and what they may be useful for.\n\nComponents of coordinate reference systems:\n\nDatum: A model of the shape of the Earth. Common global datums are WGS84 and NAD83.\nProjection: Mathematical projection of 3D model of the Earth to 2D. Projections are often named based on a property they preserve:\n\nEqual-area preserves area\nAzimuthal preserve direction\nEquidistant preserve distance\nConformal preserve local shape\n\n\n\n\n\nReferences\n\nLovelace, Nowosad, and Muenchow, Geocomputation with R, Chapter 2: Geographic Data in R.\nData Carpentries: Introduction to Geospatial Concepts.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Mapping with R"
+    ]
+  },
+  {
+    "objectID": "resources/mapping.html#packages-for-spatial-data-in-r",
+    "href": "resources/mapping.html#packages-for-spatial-data-in-r",
+    "title": "Mapping with R",
+    "section": "Packages for spatial data in R",
+    "text": "Packages for spatial data in R\nSee the CRAN spatial analysis task view for a complete guide to packages for spatial data in R.\n\nSpatial packages\n\nsf: Simple features for R: vector data in R.\nterra: Raster geographic data in R: raster data in R.\ntidyterra: Integrate terra objects into the tidyverse and ggplot2.\n\n\n\nSpatial data packages\n\nUSAboundaries: Historical boundaries from 1629 to 2000 for states and counties from the Newberry Library’s Atlas of Historical County Boundaries and historical city population data from Erik Steiner’s United States Historical City Populations, 1790–2010.\nrnaturalearth: Provides access to the Natural Earth vector data.\ntidygeocoder: Package to geocode locations using any of the many supported geocoding services.\nosmdata: Access to OpenStreetMap data.\ntidycensus: Access to US Census Bureau data in a tidy format, including the option to bind the data spatially on import.\ntigris: Access to cartographic elements provided by the US Census Bureau TIGER, including cartographic boundaries, roads, and water.\ngiscoR: Access to European geospatial data.\nelevatr: An R package for accessing elevation data.\n\n\n\nVisualization of spatial data\n\nggplot2.\ntmap: Thematic maps in R: An alternative to plotting maps with ggplot2.\nleaflet: An R package for the Leaflet open-source JavaScript library for interactive maps.\nmapview: Make quick interactive maps to view spatial data.\nrayshader: Create 3D maps in R.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Mapping with R"
+    ]
+  },
+  {
+    "objectID": "resources/mapping.html#vector-data-in-r",
+    "href": "resources/mapping.html#vector-data-in-r",
+    "title": "Mapping with R",
+    "section": "Vector data in R",
+    "text": "Vector data in R\nThe basis for working with vector spatial data in R is provide by the sf: Simple features for R package. An sf object is a data frame that contains a special geometry column that brings together the coordinates and spatial type (point, line, polygon, etc.) and spatial attributes of the coordinate reference system (CRS) of the data. See Figure 1.\n\n\n\n\n\n\nFigure 1: Overview of an sf object in R.\n\n\n\nAside from the special geometry column, sf objects behave very similar to data frames and, therefore, fit well within the th tidyverse set of packages. This means you can usually make use of the workflows discussed in Wrangling data in the tidyverse as is.\nVector data will generally consist of points, lines, or polygons with attributes you want to represent graphically and, optionally, a separate base map such as Figure 2.\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\nLet’s go through the process of creating this map. For this map we need to geocode the locations, get a base map of the counties of Virginia, project the points and base map to the coordinate reference system for the state, and then make the map. We will do this using the following packages:\n\nsf to represent the geospatial data.\ntidygeocoder to geocode the locations.\nUSAboundaries for the base map and to find the CRS for the state.\nggplot2 to plot the map.\n\nDo note that there are a variety of ways to achieve the same result.\n\nlibrary(sf)\nlibrary(tidygeocoder)\nlibrary(USAboundaries)\nlibrary(tidyverse)\n\n\n1. Geocode locations\nOne of the most straightforward but also flexible packages for geocoding locations in R is tidygeocoder. You can geocode a character vector of locations with geo() or a data frame of locations with geocode(). tidygeocoder provides a number of services for doing the geocoding, defaulting to OpenStreetMap data.\n\nlocations &lt;- geo(c(\"Blacksburg\", \"Charlottesville\"))\nlocations\n\n\n\n# A tibble: 2 × 3\n  address           lat  long\n  &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;\n1 Blacksburg       37.2 -80.4\n2 Charlottesville  38.0 -78.5\n\n\n\n\n2. Convert locations to sf object\nlocations has geographic data, but it is not technically geospatial. The addresses have latitude and longitude values, but the coordinate reference system used is implicit. When data is geocoded it is almost always returned using the web Mercator projection known as EPSG 4326. The EPSG standard is a convenient method for defining a CRS. You can look up EPSG codes using Spatial Reference. We can convert the data frame to a spatial data frame—an sf object—with the st_as_sf() function.\n\nlocations_sf &lt;- st_as_sf(locations, coords = c(\"long\", \"lat\"), crs = 4326)\nlocations_sf\n\nSimple feature collection with 2 features and 1 field\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -80.41368 ymin: 37.22966 xmax: -78.47668 ymax: 38.02931\nGeodetic CRS:  WGS 84\n# A tibble: 2 × 2\n  address                     geometry\n* &lt;chr&gt;                    &lt;POINT [°]&gt;\n1 Blacksburg      (-80.41368 37.22966)\n2 Charlottesville (-78.47668 38.02931)\n\n\nNotice the differences between locations and locations_sf. The latter has combined the long and lat columns into a single geometry column, while we also get attributes about the object’s CRS as shown above in Figure 1.\n\n\n3. Get a base map\nThere are many packages that provide vector mapping data in R. rnaturalearth is a great starting point. It contains worldwide data for administrative boundaries and natural features such as lakes, rivers, and oceans. tigris provides access to census bureau geographic data. In this example we will use USAboundaries, which provides contemporary and historical boundaries in the United states. Both rnaturalearth and USAboundaries provide most of the data through secondary packages. If these packages are needed, you will be prompted to install them.\n\n\n\n\n\n\nWarningInstalling data packages on Windows\n\n\n\n\n\nIf the installation fails on Windows with an error that the package cannot be built, there are two options to solve the issue.\n\nDownload and install RTools, which makes it possible to build packages.\nInstall the package from a different repository:\n\n\ninstall.packages(\"USAboundariesData\", repos = c(\"https://ropensci.r-universe.dev\"))\n\nThe process is the same for rnaturalearth:\n\ninstall.packages(\"rnaturalearth\")\ninstall.packages(\"rnaturalearthdata\", repos = c(\"https://ropensci.r-universe.dev\"))\ninstall.packages(\"rnaturalearthhires\", repos = c(\"https://ropensci.r-universe.dev\"))\n\n\n\n\nBoth rnaturalearth and USAboundaries return sf objects with a CRS of EPSG:4326. Here, we want county data for a single state.\n\nvirginia &lt;- us_counties(states = \"Virginia\")\n\n\n\n4. Reproject the data\nNow we have the data, but we might want to change our data from using the web Mercator projection to a CRS that more accurately reflects the local area. USAboundaries provides both a data frame of the State Plane Coordinate System projections as EPSG codes and a function to quickly return the code for a state. We can then use st_transform() to reproject the data.\n\n# Find EPSG code for Virginia\nstate_plane(state = \"VA\")\n\n[1] 32146\n\n# Project\nlocs_proj &lt;- st_transform(locs, \"EPSG:32146\")\nvirginia_proj &lt;- st_transform(virginia, \"EPSG:32146\")\n\n\n\n5. Map the data\nggplot2 has the ability to plot sf through geom_sf(). This is a special geom in that it can plot different geometric objects—points, lines, polygons—based on the geometric type of the sf object. Note that in creating maps with ggplot2 you will often being providing multiple data objects to separate geom layers. When doing this, the data argument should be written out, thus geom_sf(data = virginia_proj).\n\nggplot() + \n  geom_sf(data = virginia_proj) + \n  geom_sf(data = locs_proj) + \n  labs(title = \"Map of Virginia counties\",\n       subtitle = \"With points showing the locations of Blacksburg and Charlottesville\") + \n  theme_minimal()\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nCreate an interactive plot with leaflet\nleaflet for R provides an interface to the widely used leaflet JavaScript library. Let’s take our map and create a simple interactive map.\n\nlibrary(leaflet)\n\nleaflet() |&gt; \n  addTiles() |&gt; \n  addPolygons(data = virginia,\n              fillOpacity = 0,\n              color = \"#000\",\n              weight = 2) |&gt;\n  addMarkers(data = locs, label = ~address)\n\n\n\n\n\n\n\nFigure 4\n\n\n\n\nYou can make quite complex maps using leaflet, and, as you can see here, they can be placed right into Quarto documents.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Mapping with R"
+    ]
+  },
+  {
+    "objectID": "resources/mapping.html#raster-data-in-r",
+    "href": "resources/mapping.html#raster-data-in-r",
+    "title": "Mapping with R",
+    "section": "Raster data in R",
+    "text": "Raster data in R\nHistorical data is generally vector data, but there may be times when raster data can either supplement a map with vector data or be a meaningful way to present historically relevant data in itself. One particularly relevant form of raster data elevation. Let’s get some elevation data using the following packages:\n\nterra: Raster geographic data in R: raster data in R.\ntidyterra: Integrate terra objects into the tidyverse and ggplot2.\nelevatr: An R package for accessing elevation data.\n\n\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(elevatr)\n\n\n1. Get elevation raster\nThe elevatr package provides a way to download elevation data, using a spatial data object to define the boundaries of the raster to be returned. Currently, get_elev_raster() returns a raster object, which we can update to a terra object with the rast() function. The z level provides a zoom level between 1 and 14 with 1 as the most zoomed out and 14 as the highest resolution. The larger geographic area you want the lower zoom level you will need. Setting clip = locations returns a raster only inside the boundaries of the virginia sf object.\n\nva_elev &lt;- get_elev_raster(virginia, z = 7, clip = \"locations\")\nva_elev &lt;- rast(va_elev)\nva_elev\n\nclass       : SpatRaster \nsize        : 573, 1650, 1  (nrow, ncol, nlyr)\nresolution  : 0.005109401, 0.005109401  (x, y)\nextent      : -83.67501, -75.2445, 36.53983, 39.46752  (xmin, xmax, ymin, ymax)\ncoord. ref. : +proj=longlat +datum=WGS84 +no_defs \nsource(s)   : memory\nname        : file318b60234ce3 \nmin value   :             -315 \nmax value   :             1682 \n\n\nA terra object (specifically this is a SpatRaster) is similar to an sf object in that it is normal R data object with spatial attributes. However, instead of holding data in a data frame, a terra object uses a matrix of values. It will rarely be useful to see the values themselves, but the print method for SpatRaster provides an overview of the dimensions of the raster, the number of layers (nlyr), the name of the layer(s), and the minimum and maximum values.\n\n\n2. Clean the raster data\nThe tidyterra makes it possible to manipulate terra objects using dplyr verbs, provides special geoms for plotting terra objects in ggplot2, and color palettes designed for geographic data. You might notice that the minimum value is less than 0, which is probably an error. We can change anything less than 0 to -1 with mutate(), treating the name of the layer as the column name. First, we might want to rename the layer name to a more descriptive name than the file number.\n\nnames(va_elev)\n\n[1] \"file318b60234ce3\"\n\n# Rename in place\nnames(va_elev) &lt;- \"altitude\"\n\n# Change values less than 0\nva_elev &lt;- va_elev |&gt;\n  mutate(altitude = if_else(condition = altitude &lt; 0,\n                            true = -1,\n                            false = altitude))\nva_elev\n\nclass       : SpatRaster \nsize        : 573, 1650, 1  (nrow, ncol, nlyr)\nresolution  : 0.005109401, 0.005109401  (x, y)\nextent      : -83.67501, -75.2445, 36.53983, 39.46752  (xmin, xmax, ymin, ymax)\ncoord. ref. : +proj=longlat +datum=WGS84 +no_defs \nsource(s)   : memory\nname        : altitude \nmin value   :       -1 \nmax value   :     1682 \n\n\n\n\n3. Reproject the data\nNext, we need to project the terra object into the CRS for virginia. In terra you do this with project().\n\n# project the data\nva_elev &lt;- project(va_elev, \"EPSG:32146\")\nva_elev\n\nclass       : SpatRaster \nsize        : 729, 1632, 1  (nrow, ncol, nlyr)\nresolution  : 462.7398, 462.7398  (x, y)\nextent      : 3036571, 3791763, 1875117, 2212454  (xmin, xmax, ymin, ymax)\ncoord. ref. : NAD83 / Virginia North (EPSG:32146) \nsource(s)   : memory\nname        : altitude \nmin value   :    -1.00 \nmax value   :  1666.06 \n\n\n\n\n4. Map the data\nLet’s take a look at what we have. We can plot with ggplot2 using geom_spatraster() from tidyterra and play around with different scale_fill_*() functions provided by tidyterra. Check out the color palette options at the tidyterra website. This example uses wikipedia colors. Within geom_spatraster() setting the fill aesthetic will be done automatically, so it is not strictly necessary in this case where there is only the one layer.\n\nggplot() + \n  geom_spatraster(data = va_elev, aes(fill = altitude)) + \n  scale_fill_wiki_c() + \n  theme_minimal()\n\n\n\n\n\n\n\nFigure 5",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Mapping with R"
+    ]
+  },
+  {
+    "objectID": "resources/mapping.html#put-it-all-together",
+    "href": "resources/mapping.html#put-it-all-together",
+    "title": "Mapping with R",
+    "section": "Put it all together",
+    "text": "Put it all together\nFinally, let’s put it all together, plotting the raster and vector data together. Note that layers are plotted in order, so we want to plot the raster first and then the vector data. We also need to make the fill of the counties base map (virginia_proj) to transparent using NA.\n\nggplot() + \n  geom_spatraster(data = va_elev) + \n  geom_sf(data = virginia_proj, fill = NA) + \n  geom_sf(data = locs_proj) + \n  scale_fill_wiki_c() + \n  labs(title = \"Map of Virginia counties\",\n       subtitle = \"With points showing the locations of Blacksburg and Charlottesville\",\n       fill = \"Altitude\") + \n  theme_minimal()\n\n\n\n\n\n\n\nFigure 6",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Mapping with R"
+    ]
+  },
+  {
+    "objectID": "resources/mapping.html#further-resources",
+    "href": "resources/mapping.html#further-resources",
+    "title": "Mapping with R",
+    "section": "Further resources",
+    "text": "Further resources\n\nRobin Lovelace, Jakub Nowosad, and Jannes Muenchow, Geocomputation with R (2nd Edition).\n\nSpecifically, read over Chapter 2: Geographic data in R. This chapter provides an overview of vector and raster data in R, as well as coordinate reference systems.\nSkim over the content of the other chapters in the book to see what may be of interest to you.\n\nEdzer Pebesma and Roger Bivand, Spatial Data Science: With Applications in R (2025), https://www.r-spatial.org/book.\nKyle E. Walker, Analyzing US Census Data: Methods, Maps, and Models in R (CRC Press, 2023), https://walker-data.com/census-r/.\nSpatial Data Science with R and terra\nKieran Healy, Data Visualization: A Practical Introduction, Chapter 7: Draw Maps.\nMartijn Tennekes and Jakub Nowosad, Spatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R (2025), https://tmap.geocompx.org.\nJesse Sadler, An Exploration of Simple Features for R.\nData Carpentries: Introduction to Geospatial Concepts.\nData Carpentries: Introduction to Geospatial Raster and Vector Data with R.",
+    "crumbs": [
+      "Resources",
+      "R",
+      "Mapping with R"
     ]
   },
   {
@@ -1048,7 +1192,7 @@
     "href": "resources/accessibility.html#alternative-text",
     "title": "Digital accessibility",
     "section": "Alternative text",
-    "text": "Alternative text\nAlternative text is a brief description of images that is accessible to screen readers, making your content accessible to low sight readers. Alt text should describe the text within the context in which the image appears. Here are some dos and don’ts with alt text:\n\nDos\n\nAlt text should describe the “why” of an image—its core function/purpose/information.\nChoose what to describe by:\n\nIdentifying why the image was included or what readers are meant to learn from the image.\nMoving from larger to smaller details.\n\nAlt text should be written in a similar voice/style to the rest of the text.\nAlt text should be as short as possible to explain the image.\nIf there is text in an image, it should be included in the alt text.\nMake sure that every sentence ends with a period/proper punctuation.\nAlt text should illustrate any clear patterns made by data visualizations (e.g., a data point that is significantly different from the rest or important within the context).\n\n\n\nDon’ts\n\nDo not repeat information about the image included in the body text or caption.\nDo not include information in alt text that is not part of the image.\nDo not use phrases like “picture of” or “image of.”\nException: if the type of image is important to the context (i.e., logo, illustration, painting, cartoon).\n\n\n\nSome resources on alt text\n\nVT Press Guide\nW3 Alt Text\nHarvard Alt text\nMIT Press Guide\nSection 508: Alternative text\nAsk UP: What is alt text\n\n\n\nAlt text in Quarto\n\nImages\n\nImages in Quarto use the Markdown syntax of:\n\n![](image_location.png).\n\nAdd a caption by placing text within the square brackets:\n\n![This is a caption of the image](image_location.png).\n\nAdd alt text with the fig-alt attribute to the image:\n\n![This is a caption of the image](image_location.png){fig-alt=\"This is alternative text.\"}\n\n\nThe following code will produce the following image if you have a folder named img with images in it:\n![The Palmer Penguins!](img/lter_penguins.png){fig-alt=\"Cartoon of Chinstrap, Gentoo, and Adélie penguins with color splashes behind them.\"}\n\n\n\nThe Palmer Penguins!\n\n\n\n\nPlots\nYou can also add alt text and captions to plots you make using R within a Quarto document. If you create a plot in R and then save it as an image file, which you then use on your website, use the process above of placing an image in the text.\nTo provide alt text for a plot, use the same fig-alt attribute but this time as a chunk option. For instance:\n#| caption: \"The flipper length compared to the body mass of Palmer Penguins.\"\n#| fig-alt: |\n#|   The plot shows flipper length on the x-axis, with values that range from \n#|   170 to 230, and body mass on the y-axis, with values that range from 3000 \n#|   to 6000. The three species are displayed using different colors and shapes.\n#|   Adélie and Chinstrap are of similar size, while Gentoo are both heavier and\n#|   have longer flippers.\n\nggplot(data = penguins,\n       mapping = aes(x = flipper_len, y = body_mass)) + \n  geom_point(mapping = aes(color = species, shape = species)) + \n  theme_minimal()\n\n\n\n\n\n\n\n\nFigure 1",
+    "text": "Alternative text\nAlternative text is a brief description of images that is accessible to screen readers, making your content accessible to low sight readers. Alt text should describe the text within the context in which the image appears. Here are some dos and don’ts with alt text:\n\nDos\n\nAlt text should describe the “why” of an image—its core function/purpose/information.\nChoose what to describe by:\n\nIdentifying why the image was included or what readers are meant to learn from the image.\nMoving from larger to smaller details.\n\nAlt text should be written in a similar voice/style to the rest of the text.\nAlt text should be as short as possible to explain the image.\nIf there is text in an image, it should be included in the alt text.\nMake sure that every sentence ends with a period/proper punctuation.\nAlt text should illustrate any clear patterns made by data visualizations (e.g., a data point that is significantly different from the rest or important within the context).\n\n\n\nDon’ts\n\nDo not repeat information about the image included in the body text or caption.\nDo not include information in alt text that is not part of the image.\nDo not use phrases like “picture of” or “image of.”\nException: if the type of image is important to the context (i.e., logo, illustration, painting, cartoon).\n\n\n\nSome resources on alt text\n\nVT Press Guide\nW3 Alt Text\nHarvard Alt text\nMIT Press Guide\nSection 508: Alternative text\nAsk UP: What is alt text\n\n\n\nAlt text in Quarto\n\nImages\nThe basics of working with images and providing alternative text are shown below. If you want to do more with images, including sizing and arranging, see the Quarto documentation on Figures. You may also want to look at the Lightbox figures documentation for another tool for working with images.\n\nImages in Quarto use the Markdown syntax of:\n\n![](image_location.png).\n\nAdd a caption by placing text within the square brackets:\n\n![The caption](image_location.png).\n\nAdd alt text with the fig-alt attribute to the image:\n\n![The caption](image_location.png){fig-alt=\"This is alt text.\"}\n\n\nThe following code will produce the following image if you have a folder named img with images in it:\n![The Palmer Penguins!](img/lter_penguins.png){fig-alt=\"Cartoon of Chinstrap, Gentoo, and Adélie penguins with color splashes behind them.\"}\n\n\n\nThe Palmer Penguins!\n\n\n\n\nPlots\nYou can also add alt text and captions to plots you make using R within a Quarto document. If you create a plot in R and then save it as an image file, which you then use on your website, use the process above of placing an image in the text.\nTo provide alt text for a plot, use the same fig-alt attribute but this time as a chunk option. For instance:\n#| caption: \"The flipper length compared to the body mass of Palmer Penguins.\"\n#| fig-alt: |\n#|   The plot shows flipper length on the x-axis, with values that range from \n#|   170 to 230, and body mass on the y-axis, with values that range from 3000 \n#|   to 6000. The three species are displayed using different colors and shapes.\n#|   Adélie and Chinstrap are of similar size, while Gentoo are both heavier and\n#|   have longer flippers.\n\nggplot(data = penguins,\n       mapping = aes(x = flipper_len, y = body_mass)) + \n  geom_point(mapping = aes(color = species, shape = species)) + \n  theme_minimal()\n\n\n\n\n\n\n\n\nFigure 1",
     "crumbs": [
       "Resources",
       "Quarto",
@@ -1068,11 +1212,35 @@
     ]
   },
   {
+    "objectID": "content/14-content-build.html",
+    "href": "content/14-content-build.html",
+    "title": "Group work on your project",
+    "section": "",
+    "text": "Quinn Dombrowski, “Minimizing Computing Maximizes Labor,” Digital Humanities Quarterly 16, no. 2 (2022), https://doi.org/10.63744/nkueftfvhghb.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "14: Group work on your project"
+    ]
+  },
+  {
+    "objectID": "content/14-content-build.html#reading",
+    "href": "content/14-content-build.html#reading",
+    "title": "Group work on your project",
+    "section": "",
+    "text": "Quinn Dombrowski, “Minimizing Computing Maximizes Labor,” Digital Humanities Quarterly 16, no. 2 (2022), https://doi.org/10.63744/nkueftfvhghb.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "14: Group work on your project"
+    ]
+  },
+  {
     "objectID": "content/14-content-build.html#assignment",
     "href": "content/14-content-build.html#assignment",
     "title": "Group work on your project",
     "section": "Assignment",
-    "text": "Assignment",
+    "text": "Assignment\n\nMake progress on your final project and come to class with questions or ideas.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1084,19 +1252,7 @@
     "href": "content/14-content-build.html#activities",
     "title": "Group work on your project",
     "section": "Activities",
-    "text": "Activities",
-    "crumbs": [
-      "Content",
-      "Topics",
-      "14: Group work on your project"
-    ]
-  },
-  {
-    "objectID": "content/14-content-build.html#resources",
-    "href": "content/14-content-build.html#resources",
-    "title": "Group work on your project",
-    "section": "Resources",
-    "text": "Resources",
+    "text": "Activities\n\nDiscussion: Digital history and minimal computing.\nOverview of Quarto websites and git, GitHub workflow.\nTime to work and help each other on final projects.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1840,7 +1996,7 @@
     "href": "content/09-content-quarto.html#resources",
     "title": "Making websites with Quarto",
     "section": "Resources",
-    "text": "Resources\n\nQuarto resources\n\nElen Le Foll, Quarto for reproducible research workflows and academic publishing\nBranded Websites, Presentations, Dashboards, and PDFs with Quarto posit::conf(2025) workshop\nQuarto documentation: Creating a website\nQuarto documentation: HTML Documents\n\n\n\nDH and static websites\n\nDigital Humanities Quarterly special issue on Minimal Computing.\nLib-Static.",
+    "text": "Resources\n\nQuarto resources\n\nElen Le Foll, Quarto for reproducible research workflows and academic publishing\nBranded Websites, Presentations, Dashboards, and PDFs with Quarto posit::conf(2025) workshop\nQuarto documentation: Creating a website\nQuarto documentation: HTML Documents\n\n\n\nDH and static websites\n\nDigital Humanities Quarterly special issue on Minimal Computing.\nLib-Static.\nAmanda Visconti, “Building a Static Website with Jekyll and GitHub Pages,” The Programming Historian (2016), https://doi.org/10.46430/phen0048.\n\n\n\nStatic webistes\n\nBrian Rinaldi, Static Site Generators (O’Reilly Media, 2015), https://learning.oreilly.com/library/view/static-site-generators/9781492048558/.",
     "crumbs": [
       "Content",
       "Topics",
@@ -1972,7 +2128,7 @@
     "href": "content/13-content-gis-sna.html#activities",
     "title": "Mapping and network analysis",
     "section": "Activities",
-    "text": "Activities\n\nTime to go over visualization, mapping, and networks.\nPractice and plan for website projects.",
+    "text": "Activities\n\nDiscussion: What does DH look like as we approach the end of the semester?\nWorkflow practice.\n\nSNiGB network analysis: Download this Quarto document to practice.\nMapping: Lines from points\n\nIntroduction to interactive tables in Quarto",
     "crumbs": [
       "Content",
       "Topics",
@@ -1984,7 +2140,7 @@
     "href": "content/13-content-gis-sna.html#resources",
     "title": "Mapping and network analysis",
     "section": "Resources",
-    "text": "Resources\n\nResources: Mapping in R\nResources: Networks in R",
+    "text": "Resources\n\nResources: Networks in R\nResources: Mapping in R\nResources: Mapping: Creating lines from points\nResources: Interactive tables in Quarto",
     "crumbs": [
       "Content",
       "Topics",
@@ -1992,11 +2148,23 @@
     ]
   },
   {
+    "objectID": "content/15-content-presentations.html",
+    "href": "content/15-content-presentations.html",
+    "title": "Presentation of final projects",
+    "section": "",
+    "text": "Add the url of your final project to this GoogleDoc.",
+    "crumbs": [
+      "Content",
+      "Topics",
+      "15: Presentation of final projects"
+    ]
+  },
+  {
     "objectID": "content/15-content-presentations.html#assignment",
     "href": "content/15-content-presentations.html#assignment",
     "title": "Presentation of final projects",
-    "section": "Assignment",
-    "text": "Assignment",
+    "section": "",
+    "text": "Add the url of your final project to this GoogleDoc.",
     "crumbs": [
       "Content",
       "Topics",
@@ -2004,11 +2172,11 @@
     ]
   },
   {
-    "objectID": "content/15-content-presentations.html#activities",
-    "href": "content/15-content-presentations.html#activities",
+    "objectID": "content/15-content-presentations.html#presentation-of-websites",
+    "href": "content/15-content-presentations.html#presentation-of-websites",
     "title": "Presentation of final projects",
-    "section": "Activities",
-    "text": "Activities",
+    "section": "Presentation of websites",
+    "text": "Presentation of websites\n\n10 minutes per student: 5–7 minute presentation with time for questions.\nPresentation should provide overview of website and include ideas for future work.\nFeedback to help completion of project.",
     "crumbs": [
       "Content",
       "Topics",
@@ -2016,11 +2184,11 @@
     ]
   },
   {
-    "objectID": "content/15-content-presentations.html#resources",
-    "href": "content/15-content-presentations.html#resources",
+    "objectID": "content/15-content-presentations.html#schedule-to-turn-in-final-projects",
+    "href": "content/15-content-presentations.html#schedule-to-turn-in-final-projects",
     "title": "Presentation of final projects",
-    "section": "Resources",
-    "text": "Resources",
+    "section": "Schedule to turn in final projects",
+    "text": "Schedule to turn in final projects\n\nPresentation on 4 May.\nFinal projects and self reflection due by Tuesday, 12 May.",
     "crumbs": [
       "Content",
       "Topics",
@@ -2132,7 +2300,7 @@
     "href": "resources/ggplot2-color.html#accessibility-and-color",
     "title": "Colors with ggplot2",
     "section": "Accessibility and color",
-    "text": "Accessibility and color\nYou will notice that some of the above plots are easier to interpret and some of more difficult based on the color palettes.\nMaking accessible plots is a multi-faceted task. It involves design, understanding the argument made by the visualization, and adding metadata such as alternative text as shown in Digital accessibility. This resource will focus on the issue of color choice to make plots more legible to more people. The interpretation of visualizations should not rely solely on color, but good color choices can increase accessibility. For a fuller discussion of accessible design, see Nicola Rennie, How to create a more accessible line chart.\nThere are a couple of packages that provide tools to approximate colorblindness and that provide colorblind friendly palettes. These include:\n\ncolorBlindness\ndichromat\nplotcolr\n\n\nEvaluating palettes\nHere we will use the colorBlindness package to evaluate the palettes we have been using. colorBlindness provides two useful functions for evaluating color palettes.\n\ncvdPlot(): Approximate colorblindness for a given plot.\ndisplayAllColors(): Create a matrix of colors that approximates colorblindness for a given palette.\n\nLet’s start with the default ggplot2 colors:\n\ncvdPlot(): DefaultdisplayAllColors(): Default\n\n\n\nlibrary(colorBlindness)\n\ncvdPlot(plot_qualitative + guides(color = \"none\"))\n\n\n\n\n\n\n\nFigure 14\n\n\n\n\n\n\n\nCan access the qualitative color scale with scales::hue_pal(). The use of (3) at the end tells how many colors to make.\n\ndisplayAllColors(scales::hue_pal()(3))\n\n\n\n\n\n\n\nFigure 15\n\n\n\n\n\n\n\n\nYou will notice that the default color palette does not perform very well, especially in grayscale. This is because the default palettes uses colors that all have the same hue. A better default choice is Viridis.\n\ncvdPlot(): ViridisdisplayAllColors(): Viridis\n\n\n\ncvdPlot(\n  plot_qualitative + \n    guides(color = \"none\") + \n    scale_color_viridis_d()\n  )\n\n\n\n\n\n\n\nFigure 16\n\n\n\n\n\n\n\nCan access the qualitative color scale with scales::hue_pal(). The use of (3) at the end tells how many colors to make.\n\ndisplayAllColors(scales::viridis_pal()(3))\n\n\n\n\n\n\n\nFigure 17\n\n\n\n\n\n\n\n\n\n\nOther accessible color palettes\nThis does not mean that your choices are limited. Many packages provide palettes specifically designed to be colorblind friendly, while you can also use the palettes visualizers of the tools from ColorBlindness to check your choices.\nPaletteer includes palettes from colorBlindness, colorblindr, dichromat, as well as many others. Claus Wilke suggests the palette created by Okabe and Ito that is made available through colorblindr.\n\n\n\n\n\n\nTip\n\n\n\nYou can find the palettes from a specific package using dplyr. For instance:\n\npalettes_d_names |&gt;\n  filter(package == \"colorblindr\")\n\n# A tibble: 2 × 5\n  package     palette        length type        novelty\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt; &lt;chr&gt;       &lt;lgl&gt;  \n1 colorblindr OkabeIto_black      8 qualitative FALSE  \n2 colorblindr OkabeIto            8 qualitative FALSE  \n\n\n\n\n\nggthemes: Color BlindcolorBlindness: palette Martin\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"ggthemes::Color_Blind\")\n\n\n\n\n\n\n\nFigure 18\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"colorBlindness::paletteMartin\")\n\n\n\n\n\n\n\nFigure 19",
+    "text": "Accessibility and color\nYou will notice that some of the above plots are easier to interpret and some of more difficult based on the color palettes.\nMaking accessible plots is a multi-faceted task. It involves design, understanding the argument made by the visualization, and adding metadata such as alternative text as shown in Digital accessibility. This resource will focus on the issue of color choice to make plots more legible to more people. The interpretation of visualizations should not rely solely on color, but good color choices can increase accessibility. For a fuller discussion of accessible design, see Nicola Rennie, How to create a more accessible line chart.\nThere are a couple of packages that provide tools to approximate colorblindness and that provide colorblind friendly palettes. These include:\n\ncolorBlindness\ndichromat\nplotcolr\ncols4all\n\n\nEvaluating palettes\nHere we will use the colorBlindness package to evaluate the palettes we have been using. colorBlindness provides two useful functions for evaluating color palettes.\n\ncvdPlot(): Approximate colorblindness for a given plot.\ndisplayAllColors(): Create a matrix of colors that approximates colorblindness for a given palette.\n\nLet’s start with the default ggplot2 colors:\n\ncvdPlot(): DefaultdisplayAllColors(): Default\n\n\n\nlibrary(colorBlindness)\n\ncvdPlot(plot_qualitative + guides(color = \"none\"))\n\n\n\n\n\n\n\nFigure 14\n\n\n\n\n\n\n\nCan access the qualitative color scale with scales::hue_pal(). The use of (3) at the end tells how many colors to make.\n\ndisplayAllColors(scales::hue_pal()(3))\n\n\n\n\n\n\n\nFigure 15\n\n\n\n\n\n\n\n\nYou will notice that the default color palette does not perform very well, especially in grayscale. This is because the default palettes uses colors that all have the same hue. A better default choice is Viridis.\n\ncvdPlot(): ViridisdisplayAllColors(): Viridis\n\n\n\ncvdPlot(\n  plot_qualitative + \n    guides(color = \"none\") + \n    scale_color_viridis_d()\n  )\n\n\n\n\n\n\n\nFigure 16\n\n\n\n\n\n\n\nCan access the qualitative color scale with scales::hue_pal(). The use of (3) at the end tells how many colors to make.\n\ndisplayAllColors(scales::viridis_pal()(3))\n\n\n\n\n\n\n\nFigure 17\n\n\n\n\n\n\n\n\n\n\nOther accessible color palettes\nThis does not mean that your choices are limited. Many packages provide palettes specifically designed to be colorblind friendly, while you can also use the palettes visualizers of the tools from ColorBlindness to check your choices.\nPaletteer includes palettes from colorBlindness, colorblindr, dichromat, as well as many others. Claus Wilke suggests the palette created by Okabe and Ito that is made available through colorblindr.\n\n\n\n\n\n\nTip\n\n\n\nYou can find the palettes from a specific package using dplyr. For instance:\n\npalettes_d_names |&gt;\n  filter(package == \"colorblindr\")\n\n# A tibble: 2 × 5\n  package     palette        length type        novelty\n  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt; &lt;chr&gt;       &lt;lgl&gt;  \n1 colorblindr OkabeIto_black      8 qualitative FALSE  \n2 colorblindr OkabeIto            8 qualitative FALSE  \n\n\n\n\n\nggthemes: Color BlindcolorBlindness: palette Martin\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"ggthemes::Color_Blind\")\n\n\n\n\n\n\n\nFigure 18\n\n\n\n\n\n\n\n\nplot_qualitative + \n  scale_color_paletteer_d(\"colorBlindness::paletteMartin\")\n\n\n\n\n\n\n\nFigure 19",
     "crumbs": [
       "Resources",
       "R",
@@ -2348,7 +2516,7 @@
     "href": "resources/index.html#bibliography",
     "title": "Resources",
     "section": "Bibliography",
-    "text": "Bibliography\nbib to go here",
+    "text": "Bibliography\n\n\nAhnert, Ruth, and Sebastian E. Ahnert. “Metadata, Surveillance and the Tudor State.” History Workshop Journal 87 (2019): 27–51. https://doi.org/10.1093/hwj/dby033.\n\n\nAhnert, Ruth, and Sebastian E. Ahnert. “Protestant Letter Networks in the Reign of Mary I: A Quantitative Approach.” English Literary History 82, no. 1 (2015): 1–33. https://doi.org/10.1353/elh.2015.0000.\n\n\nAhnert, Ruth, and Sebastian E. Ahnert. Tudor Networks of Power. Oxford University Press, 2023. https://doi.org/10.1093/oso/9780198858973.001.0001.\n\n\nAhnert, Ruth, Sebastian E. Ahnert, Catherine Nicole Coleman, and Scott B. Weingart. The Network Turn: Changing Perspectives in the Humanities. Cambridge University Press, 2020.\n\n\nAlbrecht, Kim, Ruth Ahnert, and Sebastian Ahnert. Tudor Networks. Http://tudornetworks.net/, n.d.\n\n\nAntonov, Michael, Gábor Csárdi, Szabolcs Horvát, et al. Igraph Enables Fast and Robust Network Analysis Across Programming Languages. arXiv:2311.10260. arXiv, 2023. https://arxiv.org/abs/2311.10260.\n\n\nArnold, Taylor, and Lauren Tilton. “New Data? The Role of Statistics in DH.” In Debates in the Digital Humanities 2019, edited by Matthew K. Gold and Lauren F. Klein. University of Minnesota Press, 2019.\n\n\nBlevins, Cameron. “Space, Nation, and the Triumph of Region: A View of the World from Houston.” Journal of American History 101, no. 1 (2014): 122–47. https://doi.org/10.1093/jahist/jau184.\n\n\nBroman, Karl W., and Kara H. Woo. “Data Organization in Spreadsheets.” The American Statistician 72, no. 1 (2018): 2–10. https://doi.org/10.1080/00031305.2017.1375989.\n\n\nBryan, Jennifer. Excuse Me, Do You Have a Moment to Talk about Version Control? Preprint. PeerJ Preprints, 2017. https://doi.org/10.7287/peerj.preprints.3159v2.\n\n\nDombrowski, Quinn. “Minimizing Computing Maximizes Labor.” Digital Humanities Quarterly 16, no. 2 (2022). https://doi.org/10.63744/nkueftfvhghb.\n\n\nEstrellado, Ryan A., Emily A. Freer, and Isabella C. Velásquez. “What Does Data Science in Education Look Like?” In Data Science in Education Using R. Https://datascienceineducation.com/c03, n.d.\n\n\nFriendly, Michael, and Howard Wainer. A History of Data Visualization and Graphic Communication. Harvard University Press, 2021.\n\n\nHealy, Kieran. Data Visualization: A Practical Introduction. Princeton University Press, 2019.\n\n\nHealy, Kieran, and James Moody. “Data Visualization in Sociology.” Annual Review of Sociology 40, no. 1 (2014): 105–28. https://doi.org/10.1146/annurev-soc-071312-145551.\n\n\nKerschbaumer, Florian, Linda Von Keyserlingk-Rehbein, Martin Stark, and Marten Düring, eds. The Power of Networks: Prospects of Historical Network Research. Routledge, 2020. https://doi.org/10.4324/9781315189062.\n\n\nLovelace, Robin, Jakub Nowosad, and Jannes Muenchow. Chapter 9 Making Maps with R Geocomputation with R. 2019.\n\n\nLuhmann, Niklas. Communicating with Slip Boxes: An Empirical Account. Https://luhmann.surge.sh/communicating-with-slip-boxes, 1981.\n\n\nMedici, Catherine. “Using Network Analysis to Understand Early Modern Women.” Early Modern Women 13, no. 1 (2018): 153–62. https://doi.org/10.1353/emw.2018.0058.\n\n\nOgnyanova, Katherine. Network Visualization with R. 2025.\n\n\nPebesma, Edzer, and Roger Bivand. Spatial Data Science: With Applications in R. 2025.\n\n\nRawson, Katie, and Trevor Muñoz. “Against Cleaning.” In Debates in the Digital Humanities 2019, edited by Matthew K. Gold and Lauren F. Klein. University of Minnesota Press, 2019.\n\n\nRennie, Nicola. The Art of Data Visualization with Ggplot2: The TidyTuesday Cookbook. CRC Press, 2025.\n\n\nRisam, Roopika, and Alex Gil. “Introduction: The Questions of Minimal Computing.” Digital Humanities Quarterly 16, no. 2 (2022).\n\n\nRyan, Yann C., and Sebastian E. Ahnert. “The Measure of the Archive: The Robustness of Network Analysis in Early Modern Correspondence.” Journal of Cultural Analytics 7 (2021): 57–88. https://doi.org/10.22148/001c.25943.\n\n\nSchrag, Zachary M. The Princeton Guide to Historical Research. Princeton University Press, 2021. https://doi.org/10.2307/j.ctv1pdrrc9.\n\n\nScott, John, and Peter Carrington, eds. The SAGE Handbook of Social Network Analysis. SAGE Publications Ltd, 2014. https://doi.org/10.4135/9781446294413.\n\n\nSolokov, Alex. “Beyond the Binary: Improving Data Visualization for Intersectional Identities.” Nightingale: Journal of the Data Visualization Society, March 2025.\n\n\nTennekes, Martijn, and Jakub Nowosad. Spatial Data Visualization with Tmap: A Practical Guide to Thematic Mapping in R. 2025.\n\n\nWalker, Kyle E. Analyzing US Census Data: Methods, Maps, and Models in R. First edition. CRC the R Series. CRC Press, 2023.\n\n\nWickham, Hadley. “A Layered Grammar of Graphics.” Journal of Computational and Graphical Statistics 19, no. 1 (2010): 3–28. https://doi.org/10.1198/jcgs.2009.07098.\n\n\nWickham, Hadley. Ggplot2: Elegant Graphics for Data Analysis. Second Edition. Use R! Springer, 2016. https://doi.org/10.1007/978-3-319-24277-4.\n\n\nWickham, Hadley. “Tidy Data.” Journal of Statistical Software 59, no. 10 (2014). https://doi.org/10.18637/jss.v059.i10.\n\n\nWickham, Hadley, Mara Averick, Jennifer Bryan, et al. “Welcome to the Tidyverse.” Journal of Open Source Software 4, no. 43 (2019): 1686. https://doi.org/10.21105/joss.01686.\n\n\nWikle, Olivia, and Evan Peter Williamson. “Static Web Methodology as a Sustainable Approach to Digital Humanities Projects.” The Code4Lib Journal, no. 60 (April 2025).\n\n\nWilke, Claus. Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures. O’Reilly Media, 2019.\n\n\nWilkinson, Leland. The Grammar of Graphics. Second. Statistics and Computing. Springer-Verlag, 2005. https://doi.org/10.1007/0-387-28695-0.",
     "crumbs": [
       "Resources",
       "Overview",
@@ -2356,291 +2524,255 @@
     ]
   },
   {
-    "objectID": "resources/mapping.html",
-    "href": "resources/mapping.html",
-    "title": "Mapping with R",
+    "objectID": "resources/mapping-lines.html",
+    "href": "resources/mapping-lines.html",
+    "title": "Mapping: Creating lines from points",
     "section": "",
-    "text": "This page provides an introduction to mapping in R. It provides a very short overview of geospatial concepts and then introduces working with vector and raster data in R by creating a map of Virginia.",
+    "text": "A common task for mapping humanities data is to create lines from sets of points to demonstrate the movement of people, objects, or ideas. To do this we need to get the data in the right format, create point data using the sf package as described in Mapping with R, and then connect the points into lines using a group_by() and summarize() pipeline.\nTwo different ways to organize the data are demonstrated here, resulting in different types of line data. This page also demonstrates the usefulness of joins between multiple data frames and working with geocoded data as demonstrated in Wrangling data in the tidyverse.\nWe start, as always, by loading the packages we will be using. The main packages are tidyverse and sf, but we will also be creating interactive maps with leaflet and using paletteer for a color palette.\nlibrary(tidyverse)\nlibrary(sf)\nlibrary(leaflet)\nlibrary(paletteer)",
     "crumbs": [
       "Resources",
       "R",
-      "Mapping with R"
+      "Mapping: Creating lines from points"
     ]
   },
   {
-    "objectID": "resources/mapping.html#geospatial-concepts",
-    "href": "resources/mapping.html#geospatial-concepts",
-    "title": "Mapping with R",
-    "section": "Geospatial concepts",
-    "text": "Geospatial concepts\nThere are two main concepts in dealing with geospatial data:\n\nThe type of data and how it is represented: vector or raster.\nHow the data relates to the surface of the Earth: Coordinate reference system. Without a coordinate reference system (CRS), either implicit or explicit, the data is not spatial.\n\n\nData types\n\nVector data\n\nVector data are based on points, lines, and polygons within a coordinate system.\nVector data are similar to the sorts of data we have been working with in creating scatter plots or line plots. It is represented in a data frame and has x and y coordinates.\nIf you are working with points, lines, and polygons (land, oceans, lakes, political borders), you are dealing with vector data.\n\n\n\nRaster data\n\nRaster data is based on a grid of cells in which each cell has one value.\nRaster data is not represented by a data frame but by a matrix: a vector with two dimensions. It does not work through x/y coordinates but from a point of origin, the extent of each cell, and the number of cells.\nRaster data can either be continuous (elevation) or discrete/categorical (soil type).\nDigital photography is based on raster data. If you zoom into raster data it will become pixelated.\n\n\n\n\nCoordinate Reference Systems\n\nVector and raster data is made into spatial data by possessing a Coordinate Reference System (CRS), which translates coordinates (vector) or a grid of cells (raster) to space on the surface of the earth.\nThere are two types of coordinate reference systems: Geographic and projected.\n\nGeographic coordinate reference systems are measured in degrees of latitude and longitude, which are angles from the earth’s center to its surface.\nProjected coordinate reference systems transform the angular measurements on a spherical earth to a flat surface using linear units such as meters or feet.\nCheck out the Map Projection Explorer to get an idea of how different projections look and what they may be useful for.\n\nComponents of coordinate reference systems:\n\nDatum: A model of the shape of the Earth. Common global datums are WGS84 and NAD83.\nProjection: Mathematical projection of 3D model of the Earth to 2D. Projections are often named based on a property they preserve:\n\nEqual-area preserves area\nAzimuthal preserve direction\nEquidistant preserve distance\nConformal preserve local shape\n\n\n\n\n\nReferences\n\nLovelace, Nowosad, and Muenchow, Geocomputation with R, Chapter 2: Geographic Data in R.\nData Carpentries: Introduction to Geospatial Concepts.",
+    "objectID": "resources/mapping-lines.html#the-data",
+    "href": "resources/mapping-lines.html#the-data",
+    "title": "Mapping: Creating lines from points",
+    "section": "The data",
+    "text": "The data\nThe data is available through the datasets folder on the class syllabus.\n\nmovements &lt;- read_csv(\"https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/movements.csv\")\nlocations &lt;- read_csv(\"https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/locations.csv\")\n\nThe movements data shows the date and location of siblings from two different families at the end of the 16th century.\n\nmovements\n\n# A tibble: 74 × 3\n   person                 place     date      \n   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;    \n 1 Andries van der Meulen Antwerp   1584-07-01\n 2 Andries van der Meulen Bremen    1585-09-01\n 3 Anna van der Meulen    Cologne   1584-07-01\n 4 Anna van der Meulen    Bremen    1588-06-01\n 5 Anna van der Meulen    Stade     1588-08-01\n 6 Anna van der Meulen    Bremen    1592-03-01\n 7 Sara van der Meulen    Antwerp   1584-07-01\n 8 Sara van der Meulen    Bremen    1585-09-01\n 9 Sara van der Meulen    Frankfurt 1586-03-01\n10 Sara van der Meulen    Cologne   1586-05-01\n# ℹ 64 more rows\n\n\nThe locations data has the latitude and longitude values for the locations that these individuals visited in their travels. This data could have been created by geocoding the locations with tidygeocoder as shown in Mapping with R. It is best practice to save this output to a data folder so you are not re-geocoding the locations every time you run the code.\n\nlocations\n\n# A tibble: 21 × 3\n   location          lat   lng\n   &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;\n 1 Antwerp          51.2  4.40\n 2 Bremen           53.1  8.81\n 3 Cologne          50.9  6.96\n 4 Stade            53.6  9.48\n 5 Frankfurt        50.1  8.68\n 6 Utrecht          52.1  5.13\n 7 Leiden           52.2  4.48\n 8 Geertruidenberg  51.7  4.85\n 9 Bergen op Zoom   51.5  4.29\n10 The Hague        52.1  4.31\n# ℹ 11 more rows\n\n\nLet’s convert the locations data to an sf object to make it truly spatial data. This data can be used to make the points on the map.\n\nlocations_sf &lt;- st_as_sf(locations,\n                         coords = c(\"lng\", \"lat\"),\n                         crs = 4326)",
     "crumbs": [
       "Resources",
       "R",
-      "Mapping with R"
+      "Mapping: Creating lines from points"
     ]
   },
   {
-    "objectID": "resources/mapping.html#packages-for-spatial-data-in-r",
-    "href": "resources/mapping.html#packages-for-spatial-data-in-r",
-    "title": "Mapping with R",
-    "section": "Packages for spatial data in R",
-    "text": "Packages for spatial data in R\nSee the CRAN spatial analysis task view for a complete guide to packages for spatial data in R.\n\nSpatial packages\n\nsf: Simple features for R: vector data in R.\nterra: Raster geographic data in R: raster data in R.\ntidyterra: Integrate terra objects into the tidyverse and ggplot2.\n\n\n\nSpatial data packages\n\nUSAboundaries: Historical boundaries from 1629 to 2000 for states and counties from the Newberry Library’s Atlas of Historical County Boundaries and historical city population data from Erik Steiner’s United States Historical City Populations, 1790–2010.\nrnaturalearth: Provides access to the Natural Earth vector data.\ntidygeocoder: Package to geocode locations using any of the many supported geocoding services.\nosmdata: Access to OpenStreetMap data.\ntidycensus: Access to US Census Bureau data in a tidy format, including the option to bind the data spatially on import.\ntigris: Access to cartographic elements provided by the US Census Bureau TIGER, including cartographic boundaries, roads, and water.\ngiscoR: Access to European geospatial data.\nelevatr: An R package for accessing elevation data.\n\n\n\nVisualization of spatial data\n\nggplot2.\ntmap: Thematic maps in R: An alternative to plotting maps with ggplot2.\nleaflet: An R package for the Leaflet open-source JavaScript library for interactive maps.\nmapview: Make quick interactive maps to view spatial data.\nrayshader: Create 3D maps in R.",
+    "objectID": "resources/mapping-lines.html#the-workflow",
+    "href": "resources/mapping-lines.html#the-workflow",
+    "title": "Mapping: Creating lines from points",
+    "section": "The workflow",
+    "text": "The workflow\nWe can now work on creating lines from the data. First, we will take the data as it is, creating one line for each individuals in the movements data. Secondly, we will create separate lines for each journey between cities, which will entail a bit more wrangling of the data.\nThe basic workflow is:\n\nJoin the movements data to the latitude and longitude values in locations using a left_join().\nConvert the resulting data frame into an sf object with st_as_sf().\nGroup and summarize the data and the cast from points to lines using st_cast().\n\n\n\n\n\n\n\nNote\n\n\n\nIt is possible to combine steps one and two by doing a join on locations_sf. However, the sf object must be the first data frame in a left_join() in order to create an sf object, and this puts the geometry column on the left side of the data frame, which I find aesthetically displeasing.",
     "crumbs": [
       "Resources",
       "R",
-      "Mapping with R"
+      "Mapping: Creating lines from points"
     ]
   },
   {
-    "objectID": "resources/mapping.html#vector-data-in-r",
-    "href": "resources/mapping.html#vector-data-in-r",
-    "title": "Mapping with R",
-    "section": "Vector data in R",
-    "text": "Vector data in R\nThe basis for working with vector spatial data in R is provide by the sf: Simple features for R package. An sf object is a data frame that contains a special geometry column that brings together the coordinates and spatial type (point, line, polygon, etc.) and spatial attributes of the coordinate reference system (CRS) of the data. See Figure 1.\n\n\n\n\n\n\nFigure 1: Overview of an sf object in R.\n\n\n\nAside from the special geometry column, sf objects behave very similar to data frames and, therefore, fit well within the th tidyverse set of packages. This means you can usually make use of the workflows discussed in Wrangling data in the tidyverse as is.\nVector data will generally consist of points, lines, or polygons with attributes you want to represent graphically and, optionally, a separate base map such as Figure 2.\n\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\nLet’s go through the process of creating this map. For this map we need to geocode the locations, get a base map of the counties of Virginia, project the points and base map to the coordinate reference system for the state, and then make the map. We will do this using the following packages:\n\nsf to represent the geospatial data.\ntidygeocoder to geocode the locations.\nUSAboundaries for the base map and to find the CRS for the state.\nggplot2 to plot the map.\n\nDo note that there are a variety of ways to achieve the same result.\n\nlibrary(sf)\nlibrary(tidygeocoder)\nlibrary(USAboundaries)\nlibrary(tidyverse)\n\n\n1. Geocode locations\nOne of the most straightforward but also flexible packages for geocoding locations in R is tidygeocoder. You can geocode a character vector of locations with geo() or a data frame of locations with geocode(). tidygeocoder provides a number of services for doing the geocoding, defaulting to OpenStreetMap data.\n\nlocations &lt;- geo(c(\"Blacksburg\", \"Charlottesville\"))\nlocations\n\n\n\n# A tibble: 2 × 3\n  address           lat  long\n  &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt;\n1 Blacksburg       37.2 -80.4\n2 Charlottesville  38.0 -78.5\n\n\n\n\n2. Convert locations to sf object\nlocations has geographic data, but it is not technically geospatial. The addresses have latitude and longitude values, but the coordinate reference system used is implicit. When data is geocoded it is almost always returned using the web Mercator projection known as EPSG 4326. The EPSG standard is a convenient method for defining a CRS. You can look up EPSG codes using Spatial Reference. We can convert the data frame to a spatial data frame—an sf object—with the st_as_sf() function.\n\nlocations_sf &lt;- st_as_sf(locations, coords = c(\"long\", \"lat\"), crs = 4326)\nlocations_sf\n\nSimple feature collection with 2 features and 1 field\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -80.41368 ymin: 37.22966 xmax: -78.47668 ymax: 38.02931\nGeodetic CRS:  WGS 84\n# A tibble: 2 × 2\n  address                     geometry\n* &lt;chr&gt;                    &lt;POINT [°]&gt;\n1 Blacksburg      (-80.41368 37.22966)\n2 Charlottesville (-78.47668 38.02931)\n\n\nNotice the differences between locations and locations_sf. The latter has combined the long and lat columns into a single geometry column, while we also get attributes about the object’s CRS as shown above in Figure 1.\n\n\n3. Get a base map\nThere are many packages that provide vector mapping data in R. rnaturalearth is a great starting point. It contains worldwide data for administrative boundaries and natural features such as lakes, rivers, and oceans. tigris provides access to census bureau geographic data. In this example we will use USAboundaries, which provides contemporary and historical boundaries in the United states. Both rnaturalearth and USAboundaries provide most of the data through secondary packages. If these packages are needed, you will be prompted to install them.\n\n\n\n\n\n\nWarningInstalling data packages on Windows\n\n\n\n\n\nIf the installation fails on Windows with an error that the package cannot be built, there are two options to solve the issue.\n\nDownload and install RTools, which makes it possible to build packages.\nInstall the package from a different repository:\n\n\ninstall.packages(\"USAboundariesData\", repos = c(\"https://ropensci.r-universe.dev\"))\n\nThe process is the same for rnaturalearth:\n\ninstall.packages(\"rnaturalearth\")\ninstall.packages(\"rnaturalearthdata\", repos = c(\"https://ropensci.r-universe.dev\"))\ninstall.packages(\"rnaturalearthhires\", repos = c(\"https://ropensci.r-universe.dev\"))\n\n\n\n\nBoth rnaturalearth and USAboundaries return sf objects with a CRS of EPSG:4326. Here, we want county data for a single state.\n\nvirginia &lt;- us_counties(states = \"Virginia\")\n\n\n\n4. Reproject the data\nNow we have the data, but we might want to change our data from using the web Mercator projection to a CRS that more accurately reflects the local area. USAboundaries provides both a data frame of the State Plane Coordinate System projections as EPSG codes and a function to quickly return the code for a state. We can then use st_transform() to reproject the data.\n\n# Find EPSG code for Virginia\nstate_plane(state = \"VA\")\n\n[1] 32146\n\n# Project\nlocs_proj &lt;- st_transform(locs, \"EPSG:32146\")\nvirginia_proj &lt;- st_transform(virginia, \"EPSG:32146\")\n\n\n\n5. Map the data\nggplot2 has the ability to plot sf through geom_sf(). This is a special geom in that it can plot different geometric objects—points, lines, polygons—based on the geometric type of the sf object. Note that in creating maps with ggplot2 you will often being providing multiple data objects to separate geom layers. When doing this, the data argument should be written out, thus geom_sf(data = virginia_proj).\n\nggplot() + \n  geom_sf(data = virginia_proj) + \n  geom_sf(data = locs_proj) + \n  labs(title = \"Map of Virginia counties\",\n       subtitle = \"With points showing the locations of Blacksburg and Charlottesville\") + \n  theme_minimal()\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nCreate an interactive plot with leaflet\nleaflet for R provides an interface to the widely used leaflet JavaScript library. Let’s take our map and create a simple interactive map.\n\nlibrary(leaflet)\n\nleaflet() |&gt; \n  addTiles() |&gt; \n  addPolygons(data = virginia,\n              fillOpacity = 0,\n              color = \"#000\",\n              weight = 2) |&gt;\n  addMarkers(data = locs, label = ~address)\n\n\n\n\n\n\n\nFigure 4\n\n\n\n\nYou can make quite complex maps using leaflet, and, as you can see here, they can be placed right into Quarto documents.",
+    "objectID": "resources/mapping-lines.html#one-line-for-each-individual",
+    "href": "resources/mapping-lines.html#one-line-for-each-individual",
+    "title": "Mapping: Creating lines from points",
+    "section": "One line for each individual",
+    "text": "One line for each individual\nLet’s start by doing steps one and two. This is a common workflow when working with geographic data, especially vector data in the form of points, joining geocoded data to attribute data and then turning it into an sf object.\n\nmovements_geo &lt;- left_join(movements, locations,\n                           by = join_by(place == location))\nmovements_sf &lt;- st_as_sf(movements_geo,\n                         coords = c(\"lng\", \"lat\"),\n                         crs = 4326)\n\nNow we can move onto the third step, which is the most crucial. This uses the group by and summarize workflow that is familiar from data wrangling in the tidyverse, but there are some aspects when working with sf objects. summarise() works on the geometry column by default so it can be left blank. However, we set do_union = FALSE to have the points be arranged in order from top to bottom of the data frame. This is why the pipeline begins with arrange(). It is st_cast() that does the actual transformation from points to lines. In this case, it transforms the geometry column from \"MULTIPOINT\" to \"LINESTRING\".\n\nmovements_lines &lt;- movements_sf |&gt; \n1  arrange(date) |&gt;\n2  group_by(person) |&gt;\n3  summarise(do_union = FALSE) |&gt;\n4  st_cast(\"LINESTRING\")\n\n\n1\n\nArrange the rows from earliest to latest date to ensure lines are made in the right order.\n\n2\n\nGroup by person so that each person will have one line.\n\n3\n\nSummarize geometry column, turning POINT data to MULTIPOINT.\n\n4\n\nCast MULTIPOINT to LINESTRING.\n\n\n\n\n\nmovements_lines\n\nSimple feature collection with 11 features and 1 field\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -0.1276474 ymin: 50.11064 xmax: 10.00991 ymax: 53.59979\nGeodetic CRS:  WGS 84\n# A tibble: 11 × 2\n   person                                                               geometry\n   &lt;chr&gt;                                                        &lt;LINESTRING [°]&gt;\n 1 Andries van der Meulen                 (4.399708 51.22111, 8.807165 53.07582)\n 2 Anna della Faille                       (4.64356 52.38371, 4.399708 51.22111)\n 3 Anna van der Meulen    (6.959974 50.93836, 8.807165 53.07582, 9.475438 53.59…\n 4 Carlo della Faille     (4.686789 51.76895, 4.604206 51.64844, 4.399708 51.22…\n 5 Daniel van der Meulen  (4.399708 51.22111, 3.613696 51.49973, 4.362724 51.99…\n 6 Hester della Faille    (4.64356 52.38371, 8.807165 53.07582, 4.481109 52.151…\n 7 Jacques della Faille   (4.64356 52.38371, 10.00991 53.54376, 7.2058 53.36704…\n 8 Jan della Faille       (4.399708 51.22111, 4.481109 52.15182, 4.846743 51.69…\n 9 Marten della Faille    (4.399708 51.22111, 4.289741 51.49659, 4.311346 52.07…\n10 Sara van der Meulen    (4.399708 51.22111, 8.807165 53.07582, 8.682092 50.11…\n11 Steven della Faille    (4.686789 51.76895, 4.399708 51.22111, 4.351697 50.84…\n\n\nYou can see that each individual has a single row. Their movements are represented by a single line, but those with many movements have more stopping points in the line. We can see the results by creating a leaflet map, using paletteer to help create a palette to represent the individuals.\n\n# Create a palette\npal &lt;- colorFactor(\n  palette = as.character(paletteer_d(\"colorBlindness::paletteMartin\")),\n  domain = movements_lines$person\n)\n\nleaflet() |&gt; \n  addTiles() |&gt;\n  addPolylines(data = movements_lines,\n               color = ~pal(person),\n               opacity = 0.8,\n               label = ~person) |&gt; \n  addCircleMarkers(data = locations_sf,\n                   fillOpacity = 0.5,\n                   radius = 5,\n                   label = ~location) |&gt; \n  addLegend(\"bottomleft\", pal = pal, values = movements_lines$person)\n\n\n\n\n\n\n\nFigure 1: A single line representing the movements of individuals.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is currently a bug in how Quarto renders leaflet legends. You can fix it with this solution. For an example, see how it is done on this page.",
     "crumbs": [
       "Resources",
       "R",
-      "Mapping with R"
+      "Mapping: Creating lines from points"
     ]
   },
   {
-    "objectID": "resources/mapping.html#raster-data-in-r",
-    "href": "resources/mapping.html#raster-data-in-r",
-    "title": "Mapping with R",
-    "section": "Raster data in R",
-    "text": "Raster data in R\nHistorical data is generally vector data, but there may be times when raster data can either supplement a map with vector data or be a meaningful way to present historically relevant data in itself. One particularly relevant form of raster data elevation. Let’s get some elevation data using the following packages:\n\nterra: Raster geographic data in R: raster data in R.\ntidyterra: Integrate terra objects into the tidyverse and ggplot2.\nelevatr: An R package for accessing elevation data.\n\n\nlibrary(terra)\nlibrary(tidyterra)\nlibrary(elevatr)\n\n\n1. Get elevation raster\nThe elevatr package provides a way to download elevation data, using a spatial data object to define the boundaries of the raster to be returned. Currently, get_elev_raster() returns a raster object, which we can update to a terra object with the rast() function. The z level provides a zoom level between 1 and 14 with 1 as the most zoomed out and 14 as the highest resolution. The larger geographic area you want the lower zoom level you will need. Setting clip = locations returns a raster only inside the boundaries of the virginia sf object.\n\nva_elev &lt;- get_elev_raster(virginia, z = 7, clip = \"locations\")\nva_elev &lt;- rast(va_elev)\nva_elev\n\nclass       : SpatRaster \nsize        : 573, 1650, 1  (nrow, ncol, nlyr)\nresolution  : 0.005109401, 0.005109401  (x, y)\nextent      : -83.67501, -75.2445, 36.53983, 39.46752  (xmin, xmax, ymin, ymax)\ncoord. ref. : +proj=longlat +datum=WGS84 +no_defs \nsource(s)   : memory\nname        : file318b60234ce3 \nmin value   :             -315 \nmax value   :             1682 \n\n\nA terra object (specifically this is a SpatRaster) is similar to an sf object in that it is normal R data object with spatial attributes. However, instead of holding data in a data frame, a terra object uses a matrix of values. It will rarely be useful to see the values themselves, but the print method for SpatRaster provides an overview of the dimensions of the raster, the number of layers (nlyr), the name of the layer(s), and the minimum and maximum values.\n\n\n2. Clean the raster data\nThe tidyterra makes it possible to manipulate terra objects using dplyr verbs, provides special geoms for plotting terra objects in ggplot2, and color palettes designed for geographic data. You might notice that the minimum value is less than 0, which is probably an error. We can change anything less than 0 to -1 with mutate(), treating the name of the layer as the column name. First, we might want to rename the layer name to a more descriptive name than the file number.\n\nnames(va_elev)\n\n[1] \"file318b60234ce3\"\n\n# Rename in place\nnames(va_elev) &lt;- \"altitude\"\n\n# Change values less than 0\nva_elev &lt;- va_elev |&gt;\n  mutate(altitude = if_else(condition = altitude &lt; 0,\n                            true = -1,\n                            false = altitude))\nva_elev\n\nclass       : SpatRaster \nsize        : 573, 1650, 1  (nrow, ncol, nlyr)\nresolution  : 0.005109401, 0.005109401  (x, y)\nextent      : -83.67501, -75.2445, 36.53983, 39.46752  (xmin, xmax, ymin, ymax)\ncoord. ref. : +proj=longlat +datum=WGS84 +no_defs \nsource(s)   : memory\nname        : altitude \nmin value   :       -1 \nmax value   :     1682 \n\n\n\n\n3. Reproject the data\nNext, we need to project the terra object into the CRS for virginia. In terra you do this with project().\n\n# project the data\nva_elev &lt;- project(va_elev, \"EPSG:32146\")\nva_elev\n\nclass       : SpatRaster \nsize        : 729, 1632, 1  (nrow, ncol, nlyr)\nresolution  : 462.7398, 462.7398  (x, y)\nextent      : 3036571, 3791763, 1875117, 2212454  (xmin, xmax, ymin, ymax)\ncoord. ref. : NAD83 / Virginia North (EPSG:32146) \nsource(s)   : memory\nname        : altitude \nmin value   :    -1.00 \nmax value   :  1666.06 \n\n\n\n\n4. Map the data\nLet’s take a look at what we have. We can plot with ggplot2 using geom_spatraster() from tidyterra and play around with different scale_fill_*() functions provided by tidyterra. Check out the color palette options at the tidyterra website. This example uses wikipedia colors. Within geom_spatraster() setting the fill aesthetic will be done automatically, so it is not strictly necessary in this case where there is only the one layer.\n\nggplot() + \n  geom_spatraster(data = va_elev, aes(fill = altitude)) + \n  scale_fill_wiki_c() + \n  theme_minimal()\n\n\n\n\n\n\n\nFigure 5",
+    "objectID": "resources/mapping-lines.html#one-line-for-each-journey",
+    "href": "resources/mapping-lines.html#one-line-for-each-journey",
+    "title": "Mapping: Creating lines from points",
+    "section": "One line for each journey",
+    "text": "One line for each journey\nThis get’s us the visualization we wanted, but it loses the data about the date of the journey and the direction. This can be rectified by making one line for each journey. However, to do this we need to do a bit of data wrangling. I am sure that there are many ways to do this process, but this is how I would proceed.\nFirst, we need have start and destination locations on each row, so that each row represents a single journey. The key to this is the lag() function that fills in the previous value combined with grouping by person. To see how lag() works run lag(1:5).\n\nmovements_wide &lt;- movements |&gt; \n  arrange(date) |&gt; \n1  group_by(person) |&gt;\n2  mutate(start = lag(place), .after = person) |&gt;\n3  ungroup() |&gt;\n4  rename(destination = place) |&gt;\n5  filter(!is.na(start)) |&gt;\n6  rowid_to_column(\"journey_id\")\n\n\n1\n\nIt is important to group the data so that lag() looks to the previous value for each person, not just from the previous row.\n\n2\n\nCreate a new column named start and place it after the person column for convenience.\n\n3\n\nUngroup the data frame since we are done acting on the grouped data.\n\n4\n\nRename the place column to destination to better represent the nature of the data in the column.\n\n5\n\nRemove the NAs introduced into the start column by lag() where there was no previous location.\n\n6\n\nAdd an id column to keep track of each journey. This will be used for grouping in the next step.\n\n\n\n\n\nmovements_wide\n\n# A tibble: 63 × 5\n   journey_id person                 start      destination date      \n        &lt;int&gt; &lt;chr&gt;                  &lt;chr&gt;      &lt;chr&gt;       &lt;date&gt;    \n 1          1 Daniel van der Meulen  Antwerp    Middelburg  1584-08-01\n 2          2 Daniel van der Meulen  Middelburg Delft       1584-09-01\n 3          3 Jan della Faille       Antwerp    Leiden      1584-11-01\n 4          4 Daniel van der Meulen  Delft      Haarlem     1584-12-01\n 5          5 Daniel van der Meulen  Haarlem    Delft       1585-02-01\n 6          6 Andries van der Meulen Antwerp    Bremen      1585-09-01\n 7          7 Sara van der Meulen    Antwerp    Bremen      1585-09-01\n 8          8 Anna della Faille      Haarlem    Antwerp     1585-09-01\n 9          9 Steven della Faille    Dordrecht  Antwerp     1585-09-01\n10         10 Jacques della Faille   Haarlem    Hamburg     1585-10-01\n# ℹ 53 more rows\n\n\nmovements_wide accomplishes one goal in turning each row into a single journey, but now the task of adding our spatial data is more difficult. We have two locations per row, but we only want one geometry column. The solution is to transform our data from its current wide format to a longer format in which each journey is split into two rows, one for the start and one for the destination. An example of this is shown in Wrangling data in the tidyverse.\n\nmovements_long &lt;- movements_wide |&gt; \n  pivot_longer(\n1    cols = start:destination,\n2    names_to = \"type\",\n3    values_to = \"location\"\n  )\n\n\n1\n\nThe columns to pivot.\n\n2\n\nThe name of the column for the column names that will be pivoted.\n\n3\n\nThe name of the column for the values in the pivoted columns.\n\n\n\n\nThe meaning of the arguments are more clear when you see the outcome.\n\nmovements_long\n\n# A tibble: 126 × 5\n   journey_id person                date       type        location  \n        &lt;int&gt; &lt;chr&gt;                 &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;     \n 1          1 Daniel van der Meulen 1584-08-01 start       Antwerp   \n 2          1 Daniel van der Meulen 1584-08-01 destination Middelburg\n 3          2 Daniel van der Meulen 1584-09-01 start       Middelburg\n 4          2 Daniel van der Meulen 1584-09-01 destination Delft     \n 5          3 Jan della Faille      1584-11-01 start       Antwerp   \n 6          3 Jan della Faille      1584-11-01 destination Leiden    \n 7          4 Daniel van der Meulen 1584-12-01 start       Delft     \n 8          4 Daniel van der Meulen 1584-12-01 destination Haarlem   \n 9          5 Daniel van der Meulen 1585-02-01 start       Haarlem   \n10          5 Daniel van der Meulen 1585-02-01 destination Delft     \n# ℹ 116 more rows\n\n\nNow we can do the same as before, joining the locations data by the single location column, converting it to an sf object and then creating lines.\n\nmovements_long_sf &lt;- movements_long |&gt; \n  left_join(locations, by = \"location\") |&gt; \n  st_as_sf(coords = c(\"lng\", \"lat\"), crs = 4326) |&gt; \n  group_by(journey_id) |&gt; \n  summarise(do_union = FALSE) |&gt; \n  st_cast(\"LINESTRING\")\n\nThe result, as before, is a sf data frame with two columns: journey_id and geometry. We can get back the attribute columns for the journeys by joining movements_long_sf and movements_wide, being careful to place movements_long_sf as the first data frame so that the result is an sf object.\n\njourneys_sf &lt;- left_join(movements_long_sf, movements_wide, by = \"journey_id\")\njourneys_sf\n\nSimple feature collection with 63 features and 5 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -0.1276474 ymin: 50.11064 xmax: 10.00991 ymax: 53.59979\nGeodetic CRS:  WGS 84\n# A tibble: 63 × 6\n   journey_id                       geometry person start destination date      \n        &lt;int&gt;               &lt;LINESTRING [°]&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;       &lt;date&gt;    \n 1          1 (4.399708 51.22111, 3.613696 … Danie… Antw… Middelburg  1584-08-01\n 2          2 (3.613696 51.49973, 4.362724 … Danie… Midd… Delft       1584-09-01\n 3          3 (4.399708 51.22111, 4.481109 … Jan d… Antw… Leiden      1584-11-01\n 4          4 (4.362724 51.99946, 4.64356 5… Danie… Delft Haarlem     1584-12-01\n 5          5 (4.64356 52.38371, 4.362724 5… Danie… Haar… Delft       1585-02-01\n 6          6 (4.399708 51.22111, 8.807165 … Andri… Antw… Bremen      1585-09-01\n 7          7 (4.399708 51.22111, 8.807165 … Sara … Antw… Bremen      1585-09-01\n 8          8 (4.64356 52.38371, 4.399708 5… Anna … Haar… Antwerp     1585-09-01\n 9          9 (4.686789 51.76895, 4.399708 … Steve… Dord… Antwerp     1585-09-01\n10         10 (4.64356 52.38371, 10.00991 5… Jacqu… Haar… Hamburg     1585-10-01\n# ℹ 53 more rows\n\n\nNow we can plot the data, but first let’s create a label column that we can use in the leaflet map using paste() to create a character vector and &lt;br/&gt; to implement line breaks in the HTML used for the popups.\n\njourneys_sf &lt;- journeys_sf |&gt; \n  mutate(label = paste(\n    person, \"&lt;br/&gt;\",\n    start, \"to\", destination, \"&lt;br&gt;\",\n    day(date), month(date, label = TRUE), year(date)))\n\n\nleaflet() |&gt; \n  addTiles() |&gt;\n  addPolylines(data = journeys_sf,\n               color = ~pal(person),\n               opacity = 0.8,\n               popup = ~label) |&gt; \n  addCircleMarkers(data = locations_sf,\n                   fillOpacity = 0.5,\n                   radius = 5,\n                   label = ~location) |&gt; \n  addLegend(\"bottomleft\", pal = pal, values = journeys_sf$person)\n\n\n\n\n\n\n\nFigure 2: Multiple line representing the journeys of individuals.",
     "crumbs": [
       "Resources",
       "R",
-      "Mapping with R"
+      "Mapping: Creating lines from points"
     ]
   },
   {
-    "objectID": "resources/mapping.html#put-it-all-together",
-    "href": "resources/mapping.html#put-it-all-together",
-    "title": "Mapping with R",
-    "section": "Put it all together",
-    "text": "Put it all together\nFinally, let’s put it all together, plotting the raster and vector data together. Note that layers are plotted in order, so we want to plot the raster first and then the vector data. We also need to make the fill of the counties base map (virginia_proj) to transparent using NA.\n\nggplot() + \n  geom_spatraster(data = va_elev) + \n  geom_sf(data = virginia_proj, fill = NA) + \n  geom_sf(data = locs_proj) + \n  scale_fill_wiki_c() + \n  labs(title = \"Map of Virginia counties\",\n       subtitle = \"With points showing the locations of Blacksburg and Charlottesville\",\n       fill = \"Altitude\") + \n  theme_minimal()\n\n\n\n\n\n\n\nFigure 6",
+    "objectID": "resources/mapping-lines.html#bonus-creating-great-circles",
+    "href": "resources/mapping-lines.html#bonus-creating-great-circles",
+    "title": "Mapping: Creating lines from points",
+    "section": "Bonus: Creating great circles",
+    "text": "Bonus: Creating great circles\nThe lines that are created this way are rhumb lines, straight lines at a constant bearing. But another way to represent the lines is with great circles, which represent the shortest distance between points on a spherical representation of the earth.\nHappily, there is a function in sf designed specifically for this, st_segmentize(). This function adds segments to the line, making it appear curved. The function depends on the lwgeom packge, which needs to be installed separately to use the function. st_segmentize() also takes advantage of the units package, which allows you to specify the type of units a numeric value represents. This is used for calculating the longest distance between segments of the line. Let’s see how this works with journeys_sf.\n\njourneys_gc &lt;- journeys_sf |&gt; \n  st_segmentize(units::set_units(20, km))\n\nIf you compare the geometry column of journeys_gc to journeys_sf, you will notice how many more segments there are in each line in journeys_gc. Substitute journeys_gc for journeys_sf in the above map to see the difference. This difference is more noticeable the longer the distance of the line.\n\nblacksburg_london &lt;- tibble(\n  location = c(\"Blacksburg\", \"London\"),\n  lat = c(37.22966, 51.50732),\n  lng = c(-80.41368, -0.1276474)\n) |&gt; \n  st_as_sf(coords = c(\"lng\", \"lat\"), crs = 4326)\n\nrhumb &lt;- blacksburg_london |&gt; \n  # do not need group by because want to summarize all rows (2) into one\n  summarise(do_union = FALSE) |&gt; \n  st_cast(\"LINESTRING\")\n\ngreat_circle &lt;- rhumb |&gt; \n  st_segmentize(units::set_units(20, km))\n\ncomparison &lt;- bind_rows(rhumb, great_circle) |&gt; \n  add_column(type = c(\"Rhumb line\", \"Great circle\"))\n\nLet’s see what the difference looks like.\n\n# Create a palette\npal &lt;- colorFactor(\n  palette = as.character(paletteer_d(\"colorblindr::OkabeIto\")),\n  domain = comparison$type\n)\n\nleaflet() |&gt; \n  addTiles() |&gt;\n  addPolylines(data = comparison,\n               opacity = 1,\n               label = ~type,\n               color = ~pal(type)) |&gt; \n  addCircleMarkers(data = blacksburg_london,\n                   fillOpacity = 0.5,\n                   radius = 5,\n                   label = ~location)\n\n\n\n\n\n\n\nFigure 3: Rhumb line vs great circle.",
     "crumbs": [
       "Resources",
       "R",
-      "Mapping with R"
+      "Mapping: Creating lines from points"
     ]
   },
   {
-    "objectID": "resources/mapping.html#further-resources",
-    "href": "resources/mapping.html#further-resources",
-    "title": "Mapping with R",
-    "section": "Further resources",
-    "text": "Further resources\n\nRobin Lovelace, Jakub Nowosad, and Jannes Muenchow, Geocomputation with R (2nd Edition).\n\nSpecifically, read over Chapter 2: Geographic data in R. This chapter provides an overview of vector and raster data in R, as well as coordinate reference systems.\nSkim over the content of the other chapters in the book to see what may be of interest to you.\n\nEdzer Pebesma and Roger Bivand, Spatial Data Science: With Applications in R (2025), https://www.r-spatial.org/book.\nKyle E. Walker, Analyzing US Census Data: Methods, Maps, and Models in R (CRC Press, 2023), https://walker-data.com/census-r/.\nSpatial Data Science with R and terra\nKieran Healy, Data Visualization: A Practical Introduction, Chapter 7: Draw Maps.\nMartijn Tennekes and Jakub Nowosad, Spatial Data Visualization with tmap: A Practical Guide to Thematic Mapping in R (2025), https://tmap.geocompx.org.\nJesse Sadler, An Exploration of Simple Features for R.\nData Carpentries: Introduction to Geospatial Concepts.\nData Carpentries: Introduction to Geospatial Raster and Vector Data with R.",
-    "crumbs": [
-      "Resources",
-      "R",
-      "Mapping with R"
-    ]
-  },
-  {
-    "objectID": "resources/networks.html",
-    "href": "resources/networks.html",
-    "title": "Networks in R",
+    "objectID": "resources/markdown-syntax.html",
+    "href": "resources/markdown-syntax.html",
+    "title": "Markdown Syntax",
     "section": "",
-    "text": "This page provides an introduction to network analysis in R. It provides a very short overview of the main concepts of network analysis, the structure of network data, and then introduces the packages for working with network data and visualizing it using ggplot2.",
+    "text": "Markdown is a plain text format that is intended to be easy to write and read but also able to provide enough markup options for most forms of writing. On the one hand, Markdown leverages the advantages of plain text: it is light weight, highly portable, non-proprietary, and easily searchable across different documents. On the other, Markdown text can be turned into HTML, PDFs, and even Word documents with stylized text through different interpreters.\nThis document provides a basic overview of the Markdown syntax. Note that there are various “flavors” of Markdown that have different capabilities, but the basic syntax is largely shared.",
     "crumbs": [
       "Resources",
-      "R",
-      "Networks with R"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/networks.html#network-analysis-concepts",
-    "href": "resources/networks.html#network-analysis-concepts",
-    "title": "Networks in R",
-    "section": "Network analysis concepts",
-    "text": "Network analysis concepts\nNetworks are made up of entities and connections between those entities. The vocabulary around these concepts differs based on software and discipline, but the entities are referred to as nodes or vertices and the connections are referred to as edges or links. A collection of nodes and edges make up a graph whether it is visualized or not.\nThere are a variety of terms to characterize a graph or to understand aspects about the nodes and edges that constitute a graph.\n\nFive number summary\nThe basic structures of a graph can be defined though these five summaries.\n\nSize: number of nodes\nDensity: (0–1) proportion of observed ties to possible ties.\nComponents: subgroup in which all nodes are connected.\nDiameter: longest of the shortest paths across all pairs of nodes.\nCluster: (0–1) proportion of closed triangles to the total number of open and closed triangles.\n\n\n\nGraph terms and measurements\n\nDirected: Whether the order of node pairs represents flow of the connection. Graphs can be directed or undirected.\nNeighbors: Two nodes are adjacent and neighbors if joined by an edge.\nDegree: number of edges connected to the node.\nWalk: distance between nodes.\nPath: a walk without repeated nodes or edges.\nDistance: shortest path between nodes.\nCentrality: measurement of the importance of a node within a graph. There are three main types of centrality measurements.\n\nCloseness centrality: closeness is inversely related to the total distance of a node to all other nodes.\nBetweenness centrality: related to the position of the node on paths between other nodes. If many paths go through a node it has a high centrality.\nEigenvector centrality: focuses on prestige or rank. It uses neighbors to find centrality.",
+    "objectID": "resources/markdown-syntax.html#paragraphs",
+    "href": "resources/markdown-syntax.html#paragraphs",
+    "title": "Markdown Syntax",
+    "section": "Paragraphs",
+    "text": "Paragraphs\nParagraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.\n\nThis will be a second paragraph.\nParagraphs are created in Markdown by writing text with no indentation. To create another paragraph there must be one or more blank lines separating the paragraphs.\nThis will be a second paragraph.",
     "crumbs": [
       "Resources",
-      "R",
-      "Networks with R"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/networks.html#network-data-structure",
-    "href": "resources/networks.html#network-data-structure",
-    "title": "Networks in R",
-    "section": "Network data structure",
-    "text": "Network data structure\nNetwork data is different from other types of data we have encountered because it is made up of two related structure: an edge list and a node list.1 Within R these two data structures are represented by data frames:\n\nEdge list: A data frame with at least two columns of the node pairs that are joined by an edge. These columns are often named from and to even if there is no direction for the connection. Further columns provide attributes for the edges such as weight, count, or type.\nNode list: A data frame with at least one column containing all of the unique nodes in the graph. This column is often named id. Further columns provide attributes for the node such as name, type, etc.\n\nLet’s look at a simple example:\n\nlibrary(tidyverse)\n# Data frame of node pairs\ntibble(from = c(1, 2, 2, 3, 4),\n       to = c(2, 3, 4, 2, 1))\n\n# A tibble: 5 × 2\n   from    to\n  &lt;dbl&gt; &lt;dbl&gt;\n1     1     2\n2     2     3\n3     2     4\n4     3     2\n5     4     1\n\n# Data frame of nodes\ntibble(id = 1:4)\n\n# A tibble: 4 × 1\n     id\n  &lt;int&gt;\n1     1\n2     2\n3     3\n4     4\n\n\nA more complex graph might have attributes for edges and nodes.\n\n# Data frame of node pairs\nedge_list &lt;- tibble(from = c(1, 2, 2, 3, 4),\n                    to = c(2, 3, 4, 2, 1),\n                    type = c(\"History\", \"English\", \"Art History\", \"History\", \"English\"))\nedge_list\n\n# A tibble: 5 × 3\n   from    to type       \n  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n4     3     2 History    \n5     4     1 English    \n\n# Data frame of nodes\nnode_list &lt;- tibble(id = 1:4,\n                    name = LETTERS[1:4],\n                    university = c(\"VT\", \"JMU\", \"UVA\", \"GMU\"))\nnode_list\n\n# A tibble: 4 × 3\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n\n\nThere are other ways to represent network data, but node and edge lists provides a solid foundation for working with network data. There may be hundreds of thousands of nodes or edges and dozens of attributes, but at its foundation, network data is node pairs and a set of unique nodes.",
+    "objectID": "resources/markdown-syntax.html#text-formatting",
+    "href": "resources/markdown-syntax.html#text-formatting",
+    "title": "Markdown Syntax",
+    "section": "Text Formatting",
+    "text": "Text Formatting\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n*italics* or _italics_\nitalics\n\n\n**bold** or __bold__\nbold\n\n\n`verbatim code`\nverbatim code",
     "crumbs": [
       "Resources",
-      "R",
-      "Networks with R"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/networks.html#packages-for-network-analysis-in-r",
-    "href": "resources/networks.html#packages-for-network-analysis-in-r",
-    "title": "Networks in R",
-    "section": "Packages for network analysis in R",
-    "text": "Packages for network analysis in R\nWe will be using three main packages for network analysis in R, though there are many more you can explore in CRAN network analysis task view.\n\nigraph an R package for working with network data.\ntidygraph a tidy API for graph/network manipulation.\nggraph an extension of ggplot2 aimed at supporting network graphs.\nnetrankr: Implementation or various centrality measures.\n\nigraph will provide the network algorithms, but we will access these through the tidygraph package that integrates with the tidyverse. Finally, ggraph provides extensions to ggplot2 to integrate the visualization of network graphs.",
+    "objectID": "resources/markdown-syntax.html#headings",
+    "href": "resources/markdown-syntax.html#headings",
+    "title": "Markdown Syntax",
+    "section": "Headings",
+    "text": "Headings\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n# Header 1\nHeader 1\n\n\n## Header 2\nHeader 2\n\n\n### Header 3\nHeader 3\n\n\n#### Header 4\nHeader 4\n\n\n##### Header 5\nHeader 5\n\n\n###### Header 6\nHeader 6",
     "crumbs": [
       "Resources",
-      "R",
-      "Networks with R"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/networks.html#creating-network-objects",
-    "href": "resources/networks.html#creating-network-objects",
-    "title": "Networks in R",
-    "section": "Creating network objects",
-    "text": "Creating network objects\nLet’s start by loading the packages listed above.\n\nlibrary(igraph)\nlibrary(tidygraph)\nlibrary(ggraph)\n\nThere are two ways to turn the edge list and node list into a network object. We can either go directly to a tbl_graph object from tidygraph using the tbl_graph() function or first create an igraph object using graph_from_data_frame(). I have found that with larger graphs graph_from_data_frame() works more consistently. Both methods are shown below.\n\n# Create a tbl_graph with tidygraph\ntbl_graph(nodes = node_list, edges = edge_list, directed = FALSE)\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n     id name  university\n  &lt;int&gt; &lt;chr&gt; &lt;chr&gt;     \n1     1 A     VT        \n2     2 B     JMU       \n3     3 C     UVA       \n4     4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\n\n# Create an igraph object\ngraph_from_data_frame(d = edge_list, vertices = node_list, directed = FALSE)\n\nIGRAPH 65998c0 UN-- 4 5 -- \n+ attr: name (v/c), university (v/c), type (e/c)\n+ edges from 65998c0 (vertex names):\n[1] A--B B--C B--D B--C A--D\n\n\nYou will notice that the way these objects print to the console are quite different. A tbl_graph object prints out as two data frames for the nodes and edges. An igraph object provides an overview of the graph, including the number of nodes and edges. It lists the attributes of the data attr, and then provides a graphical overview of the edge list. Let’s create a variable by first making an igraph object and then converting to tbl_graph.\n\nnetwork &lt;- graph_from_data_frame(d = edge_list,\n                                 vertices = node_list,\n                                 directed = FALSE) |&gt;\n  as_tbl_graph()\nnetwork\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 2 (active)\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n4 D     GMU       \n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows",
+    "objectID": "resources/markdown-syntax.html#lists",
+    "href": "resources/markdown-syntax.html#lists",
+    "title": "Markdown Syntax",
+    "section": "Lists",
+    "text": "Lists\nUnordered lists are created by typing -, *, or + at the start of a line followed by a space. You can choose one symbol or switch between them in nested lists. The styling of the bullets is done by the output interpreter, not by which symbol you choose.\nOrdered lists are created by typing a number followed by a period and a space (1.).\nNested lists are created by indenting the next line in a list with a tab or four spaces followed by the syntax for creating an unordered or ordered list. Unordered and ordered lists can be combined.\n\nUnordered lists\n\n\n\n- unordered list\n    - nested item\n    - nested item\n        * further nesting \n\n\n\nunordered list\n\nnested item\nnested item\n\nfurther nesting\n\n\n\n\n\n\n\n\nOrdered lists\n\n\n\n1. ordered list\n2. Second item\n    1. nested item\n        1. further nesting\n\n\n\nordered list\nSecond item\n\nnested item\n\nfurther nesting\n\n\n\n\n\n\n\n\nMixed lists\n\n\n\n1. mixed list\n    - unordered nesting\n        1. ordered nesting \n        2. second ordered nesting\n    - unordered nesting\n2. Second item\n\n\n\nmixed list\n\nunordered nesting\n\nordered nesting\nsecond ordered nesting\n\nunordered nesting\n\nSecond item",
     "crumbs": [
       "Resources",
-      "R",
-      "Networks with R"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/networks.html#summary-of-the-graph",
-    "href": "resources/networks.html#summary-of-the-graph",
-    "title": "Networks in R",
-    "section": "Summary of the graph",
-    "text": "Summary of the graph\nLet’s get our five number summary of this graph using igraph functions.\n\n# 1. Size\ngorder(network)\n\n[1] 4\n\n# 2. Density (0-1)\nedge_density(network)\n\n[1] 0.8333333\n\n# 3. Components: only one, all nodes have at least one edge\ncount_components(network)\n\n[1] 1\n\n# 4. Diameter\ndiameter(network)\n\n[1] 2\n\n# 5. Clustering coefficient (0-1)\ntransitivity(network)\n\n[1] 0.6",
+    "objectID": "resources/markdown-syntax.html#links",
+    "href": "resources/markdown-syntax.html#links",
+    "title": "Markdown Syntax",
+    "section": "Links",
+    "text": "Links\nThere are three main ways to create links in Markdown:\n\nA raw link is created by surrounding the URL by less than and greater than signs.\n&lt;https://lib.vt.edu&gt; becomes https://lib.vt.edu\nInline links are created by surrounding the link text in square brackets, followed immediately by the URL in parentheses.\n[text to link](https://lib.vt.edu) becomes text to link\nReference links are created by surrounding the link text in square brackets, followed by a reference in square brackets. The reference can be a number or text so long as it is unique within the text. Then, the reference is added on a line by itself, after the paragraph or at the bottom of the text, by writing the reference in square brackets, followed by a colon, space, and the URL.\n[text to link][ref]\n\n[ref]: https://lib.vt.edu\nBecomes text to link",
     "crumbs": [
       "Resources",
-      "R",
-      "Networks with R"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/networks.html#calculate-node-properties",
-    "href": "resources/networks.html#calculate-node-properties",
-    "title": "Networks in R",
-    "section": "Calculate node properties",
-    "text": "Calculate node properties\nLet’s make a calculation of the centrality of the nodes using dplyr methods. centrality_degree() measure the degrees and strength of nodes within the graph.\n\nnetwork |&gt; \n  mutate(centrality = centrality_degree())\n\n# A tbl_graph: 4 nodes and 5 edges\n#\n# An undirected multigraph with 1 component\n#\n# Node Data: 4 × 3 (active)\n  name  university centrality\n  &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;\n1 A     VT                  2\n2 B     JMU                 4\n3 C     UVA                 2\n4 D     GMU                 2\n#\n# Edge Data: 5 × 3\n   from    to type       \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      \n1     1     2 History    \n2     2     3 English    \n3     2     4 Art History\n# ℹ 2 more rows\n\n\nYou can see that a new attribute column has been created and the most central node according to this calculation is B from JMU. There are many more calculations you can make to understand the nature of the nodes and edges in a graph. Check the igraph and tidygraph documentation for possibilities.\nNote that by default dplyr functions will work on the nodes data frame. To alter the edges data frame activate it with the activate() function.\n\nnetwork |&gt;\n  activate(edges) |&gt;\n  filter(type == \"History\")\n\n# A tbl_graph: 4 nodes and 2 edges\n#\n# An unrooted forest with 2 trees\n#\n# Edge Data: 2 × 3 (active)\n   from    to type   \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n1     1     2 History\n2     2     3 History\n#\n# Node Data: 4 × 2\n  name  university\n  &lt;chr&gt; &lt;chr&gt;     \n1 A     VT        \n2 B     JMU       \n3 C     UVA       \n# ℹ 1 more row",
-    "crumbs": [
-      "Resources",
-      "R",
-      "Networks with R"
-    ]
-  },
-  {
-    "objectID": "resources/networks.html#visualize-the-graph",
-    "href": "resources/networks.html#visualize-the-graph",
-    "title": "Networks in R",
-    "section": "Visualize the graph",
-    "text": "Visualize the graph\nFinally, let’s visualize the graph with ggraph. ggraph adds node and edge geoms to ggplot2 and implements a graph style that removes the x and y grid. This is because the question of where to layout nodes on an x-y plane is one of the more complex problems in network analysis and a number of algorithms have been developed to do this. Instead of using ggplot() a graph visualization is begun with ggraph().2\n\nset.seed(9528)\n\nggraph(network, layout = \"nicely\") + \n  geom_edge_link() + \n  geom_node_point() + \n  theme_graph()\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\nThere are different styles for the shape of the edges and many different layouts. You can also use any of the layouts from igraph. Let’s finish this up by adding some additional information from the attribute data. This shows that ggraph implements scales for edges allowing you to have to scales of the same type for edge and node.\n\nset.seed(5493)\n\nnetwork |&gt; \n  mutate(centrality = centrality_degree()) |&gt;\n  ggraph(layout = \"kk\") + \n  geom_edge_link(aes(color = type),\n                 linewidth = 2) + \n  geom_node_point(aes(size = centrality)) + \n  geom_node_text(aes(label = university), repel = TRUE) + \n  scale_edge_color_brewer(palette = \"Dark2\") + \n  labs(size = \"Degree Centrality\",\n       edge_color = \"Discipline\") + \n  theme_graph(base_size = 16)\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\nEven this very simple graph visualization with made up data shows something about the connections. If you want to experiment with real historical data, try it out with the SNiGB data.",
-    "crumbs": [
-      "Resources",
-      "R",
-      "Networks with R"
-    ]
-  },
-  {
-    "objectID": "resources/networks.html#further-resources",
-    "href": "resources/networks.html#further-resources",
-    "title": "Networks in R",
-    "section": "Further resources",
-    "text": "Further resources\n\nWorking with network data in R\n\nKatherine Ognyanova, Static and dynamic network visualization with R.\nEric D. Kolaczyk and Gábor Csárdi, Statistical Analysis of Network Data with R, (Springer, 2014), https://doi.org/10.1007/978-1-4939-0983-4.\nJesse Sadler, Introduction to Network Analysis with R: Creating static and interactive network graphs.\n\n\n\nNetwork Analysis\n\nRuth Ahnert et al., The Network Turn: Changing Perspectives in the Humanities (Cambridge University Press, 2020), https://doi.org/10.1017/9781108866804.\nMark Granovetter, “The Strength of Weak Ties,” American Journal of Sociology 78, no. 6 (1973): 1360–80, http://www.jstor.org/stable/2776392.\nJournal of Historical Network Research.\nFlorian Kerschbaumer et al., eds., The Power of Networks: Prospects of Historical Network Research (Routledge, 2020), https://doi.org/10.4324/9781315189062.\nThe Historical Analysis Research Community\n\nYouTube channel",
-    "crumbs": [
-      "Resources",
-      "R",
-      "Networks with R"
-    ]
-  },
-  {
-    "objectID": "resources/networks.html#footnotes",
-    "href": "resources/networks.html#footnotes",
-    "title": "Networks in R",
+    "objectID": "resources/markdown-syntax.html#footnotes",
+    "href": "resources/markdown-syntax.html#footnotes",
+    "title": "Markdown Syntax",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nA node list can be created from an edge list if the nodes do not have attributes.↩︎\nBy using set.seed() the layout algorithm will be done in the same way each time it is run.↩︎",
+    "text": "Footnotes\n\n\nThe linked footnote appears at the end of the document in HTML and end of the page in a PDF.↩︎",
     "crumbs": [
       "Resources",
-      "R",
-      "Networks with R"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/quarto-docs.html",
-    "href": "resources/quarto-docs.html",
-    "title": "Quarto documents",
-    "section": "",
-    "text": "Quarto documents provide a way to mix together Markdown text with code and its results. Whereas R scripts are designed primarily for writing and running code—with comments (#) giving a means to document the code—Quarto documents allow you to write prose alongside code. You can then output the Quarto document into a number of formats, including web pages, PDFs, slides, and even Word documents. Projects of connected Quarto documents can create books and full websites. Why might you use Quarto documents instead of an R script?\nTo get familiar with Quarto, please download this Quarto template document, place it in your r-notes project, read through it, and then render it into an HTML document.",
-    "crumbs": [
-      "Resources",
-      "Quarto",
-      "Quarto documents"
-    ]
-  },
-  {
-    "objectID": "resources/quarto-docs.html#resources",
-    "href": "resources/quarto-docs.html#resources",
-    "title": "Quarto documents",
+    "objectID": "resources/markdown-syntax.html#resources",
+    "href": "resources/markdown-syntax.html#resources",
+    "title": "Markdown Syntax",
     "section": "Resources",
-    "text": "Resources\nThe rest of this page goes over the foundations of Quarto documents, but there are a couple of very good resources that should be consulted to get a fuller understanding of how and why to use Quarto documents.\n\nA good place to start is with the Getting started with Quarto tutorial for RStudio. It provides an overview of how to write and render Quarto documents into a variety of formats in RStudio. Make sure to go through all three pages of Hello, Quarto, Computations, and Authoring.\nOnce you have gone through the tutorial, look over the Quarto chapter of R for Data Science.\nThe Quarto documentation is very good and very in depth. It is a good place to return to each time you have a question. Some particularly useful pages include:\n\nMarkdown basics\nUsing R\nQuarto in RStudio\nHTML basics",
+    "text": "Resources\n\nJohn Gruber’s introduction of Markdown and its syntax\nProgramming Historian: Sarah Simpkin, Getting Started with Markdown\nMarkdown style guide: Quarto docs\nMarkdown Style Guide\nMany Markdown editors, especially those that focus on academic writing, depend upon Pandoc, which attempts to be a universal document converter.\n\nPandoc has an in-depth discussion of its flavor of Markdown syntax.\nSee also Programming Historian: Dennis Tenen and Grant Wythoff, Sustainable Authorship in Plain Text using Pandoc and Markdown",
     "crumbs": [
       "Resources",
-      "Quarto",
-      "Quarto documents"
+      "Organization",
+      "Markdown Syntax Guide"
     ]
   },
   {
-    "objectID": "resources/quarto-docs.html#quarto-foundations",
-    "href": "resources/quarto-docs.html#quarto-foundations",
-    "title": "Quarto documents",
-    "section": "Quarto foundations",
-    "text": "Quarto foundations\nA Quarto document is a plain text file that has a .qmd extension. It contains three basic components:\n\nA YAML header contained within lines with three dashes (---).\nMarkdown text.\nCode chunks set off by three back ticks (```).\n\n\n\n\n\n\n\nFigure 1: A Quarto document in RStudio.\n\n\n\nThe key distinguishing feature between Quarto documents and R scripts is that you can render Quarto documents to different outputs. Rendering a Quarto document with the Render button or Cmd/Ctrl + Shift + K runs the R (or Python) code, producing outputs and converting the document to a Markdown document. It then uses Pandoc to convert the Markdown document to whatever output is specified in the YAML heading. The process is shown in Figure 2.\n\n\n\n\n\n\nFigure 2: Diagram of the process of rendering a Quarto document. Image is from Wickham et al., R for Data Science, Quarto.\n\n\n\n\nQuarto in RStudio\nThe Get Started page of the Quarto documentation shows that you can write Quarto documents in a variety of applications. However, RStudio has many built-in functions that make it easier to work with Quarto documents. You can make a new Quarto document by going to File -&gt; New Document -&gt; Quarto Document… You can add information to the dialogue to fill in the YAML heading, or you can choose Create Empty Document.\n\n\n\n\n\n\nFigure 3: Dialogue box to create a new Quarto document.\n\n\n\nQuarto documents can be edited in either the Visual editor or the Source editor. The Visual editor styles your text as you go, whereas the source editor will give you an interface that is more similar to R scripts. You can change back and forth with the buttons at the top of the editor pane, but do note that this can slightly change how your Markdown is written.",
+    "objectID": "resources/plaintext.html",
+    "href": "resources/plaintext.html",
+    "title": "Working with Plain Text",
+    "section": "",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
     "crumbs": [
       "Resources",
-      "Quarto",
-      "Quarto documents"
+      "Organization",
+      "Working with Plain Text"
     ]
   },
   {
-    "objectID": "resources/quarto-docs.html#quartos-three-components",
-    "href": "resources/quarto-docs.html#quartos-three-components",
-    "title": "Quarto documents",
-    "section": "Quarto’s three components",
-    "text": "Quarto’s three components\n\n1. YAML header\nThe YAML header provides a way to indicate the title of the document, document metadata such as author, the output format(s), and document wide options. YAML is a way to store data in a human-readable form. Its basic structure is key: value. The YAML heading is set off by three dashes ---. A somewhat complex heading might look like this:\n---\ntitle: \"My title here\"\nauthor:\n  - name: \"Jesse Sadler\"\n    email: jrsadler@vt.edu\n    affiliation: \"University Libraries\"\ndate: last-modified\nformat:\n  html:\n    toc: true\n    abstract: |\n      This is the abstract.\n\n      It has two paragraphs.\nexecute:\n  echo: false\n  warning: false\n---\nThe available keys can be found in the documentation for each type of output.1 Many options are shared across document output types, but some are not. See the HTML options for the widest number of options. It can be difficult to write these YAML headers. There are a lot of different options, and the indentation level must be formatted correctly. Happily, in practice, it is unlikely to be as difficult it looks. Firstly, you will not need to write complex YAML headers often. Secondly, you can figure out settings that work for you and then copy and paste them into other documents. There are also ways for YAML options to be used for all documents in a project such as a website.\n\n\n2. Markdown\nUnlike R scripts where default text is code, the default text in Quarto documents is Markdown. Use Resources: Markdown syntax for Markdown foundations, and look at the Quarto Markdown documentation for more details on the style of Markdown you can use in Quarto documents.\n\n\n3. Code chunks\nWith Markdown as the default editing environment, your code must be placed in code chunks set off by three back ticks (```). They look like this:\n\n```{r}\n24 + 87\n```\n\n[1] 111\n\n\nYou can create code chunks in RStudio with:\n\nThe keyboard shortcut: Cmd + Option + I or Ctrl + Alt + I.\nTyping the chunk delimiters ```{r} and ```.\n\nOnce inside a code chunk, text functions as it does in an R script. Comments are made with #. Everything else is code. You can run the expressions in a chunk with Cmd + Return or Ctrl + Enter. Or you can run the entire chunk with the play button at the top right of the chunk. The output of the chunks will either be placed directly below the chunk or sent to the console. You can alter this in Global Options -&gt; R Markdown tab -&gt; Show output inline for all R Markdown documents checkbox. See also Other tweaks section in Setting up RStudio for success.\nThe primary difference between code chunks and R scripts is that code chunks can have special comments created with #| that provide options for the output of the chunk. These are formatted as YAML and override any defaults set in the YAML header. You can see the full list of options in the Quarto documentation.\n\n```{r}\n#| label: some-math\n#| eval: false\n24 + 87\n```\n\nThe label option names the chunk, making it easier to refer to the chunk and to see it in the outline in RStudio. label names should be short and not include spaces. It is recommended to use a dash between words.\nThe main options that affect the execution of code are:\n\neval: false prevents the code from being run. The code displays but does not run.\necho: false prevents the code from being shown in the output, but the code is run and outputs are shown. This is useful when you want people to see the output but the code does not need to be read by the audience.\ninclude: false prevents the code and outputs from being shown, though the code is run. This is useful for setup code.\nmessage: false or warning: false prevents messages or warnings from being output in the rendered document.\n\nThe other options you might want to change are the figure output. See R for Data Science for more details.\n\nTo set the size of the plot from ggplot2:\n\nfig-width: 6\nfig-asp: 0.618: Aspect ration of width to height. With this you do not need to set the width. 0.618 is the golden ratio.\nfig-width: 4: But you can set width instead of aspect.\n\nControl the output size within the output document:\n\nout-width: \"70%\": This would take up 70% of the content area.\nfig-align: center: How to align the plots.",
+    "objectID": "resources/plaintext.html#why-write-in-plain-text",
+    "href": "resources/plaintext.html#why-write-in-plain-text",
+    "title": "Working with Plain Text",
+    "section": "",
+    "text": "Writing in plain text may seem odd at first, and it confronts the beginner with a number of issues compared to word processing applications such as Microsoft Word or Google Docs that use a WYSIWYG (what you see is what you get) interface. However, there are a number of advantages to using plain text documents that make the initial discomfort worth it.\n\nSustainability: Plain text documents are sustainable. They will be able to be read and displayed by a computer as long as we have such technology. They are not dependent on a proprietary format like docx.\nLight weight: Plain text documents are incredibly lightweight. Word processors add all sorts of formatting characters to provide a WYSIWYG experience that increase the file size and add complexity to the whole process of writing. Try opening a hundred page document in Word and then try opening the same document in a plain text editor. The latter will open instantaneously.\nThe power of a text editor: With a text editor application you can perform all sorts of complex search and search and replace functionality across multiple documents at the same time. See the Text editors guide.\nThe web: The internet is created using plain text documents. If you want to write for the web, you should be writing in plain text.\nAdding formatting with markup languages: If the lack of formatting is a benefit, how do you get plain text documents to have the formatting you want in a document? The answer is to use a markup language. The markup language of the web is HTML, but most modern plain text applications use Markdown to add formatting such as headings, lists, links, and even footnotes. See the Markdown syntax guide.",
     "crumbs": [
       "Resources",
-      "Quarto",
-      "Quarto documents"
+      "Organization",
+      "Working with Plain Text"
     ]
   },
   {
-    "objectID": "resources/quarto-docs.html#output-formats",
-    "href": "resources/quarto-docs.html#output-formats",
-    "title": "Quarto documents",
-    "section": "Output formats",
-    "text": "Output formats\nYou can create a number of different types of documents from Quarto documents. The default is HTML documents ready to be put on the web or viewed through your browser, but you can also make PDFs, presentations, dashboards, and even Word documents. It is also possible to combine multiple Quarto documents together into projects such as websites and books.\nYou control the output of individual documents either in the document YAML or in rendering the document via the command line. Generally, you will want to use the document YAM using the format key.\n\nHTML: format: html\nPDF: format: pdf or format: typst\nPresentation: format: revealjs\nWord: format: docx\n\nMost options within the YAML are shared across output formats, but not all formats have all the capabilities. Look at the reference documentation for each type to see the available options.\n\nA note on PDF formats\nIf you want to output a PDF, you have two different choices, format: pdf uses Pandoc to create the PDF; format: typst uses Typst. The Pandoc format has more options, but Typst is a more modern PDF engine and has nicer looking defaults.\n\n\nProject outputs\nProjects contain multiple Quarto documents and use a _quarto.yml file to share the YAML metadata options across all of the documents within the project. If you want different YAML options in one or more documents within the project, you can modify the YAML in the document itself. The options written in the document will take precedence over those written in the _quarto.yml file. This means that generally the YAML heading for individual documents in a project might only have a title. See Quarto websites for more on working with Quarto projects.",
+    "objectID": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "href": "resources/plaintext.html#what-do-i-need-to-write-in-plaintext",
+    "title": "Working with Plain Text",
+    "section": "What do I need to write in plaintext?",
+    "text": "What do I need to write in plaintext?\nIn short, a good text editor. Below are some good options to start with. See the Text editors guide for more in depth discussion of using a text editor.\n\nCross platform\n\nVisual Studio Code is much more than a text editor, but it can also be made into a good text editor for plain text and Markdown. It is free and open source and worthy of a download to check out.\nVSCodium is a community-driven, freely-licensed binary distribution of Visual Studio Code.\nZed is a cross-platform, open source alternative to Visual Studio Code.\n\nmacOS\n\nBBEdit is over 30 years old and still going strong. It is available for purchase, but you can go quite far with the free version. I recommend downloading the free version and trying it out if you are on a Mac.\n\nWindows\n\nA classic text editor for Windows is Notepad++.",
     "crumbs": [
       "Resources",
-      "Quarto",
-      "Quarto documents"
+      "Organization",
+      "Working with Plain Text"
     ]
   },
   {
-    "objectID": "resources/quarto-docs.html#conclusion",
-    "href": "resources/quarto-docs.html#conclusion",
-    "title": "Quarto documents",
-    "section": "Conclusion",
-    "text": "Conclusion\nThis is just the tip of the iceberg for what you can do with Quarto documents. But you can do a lot with these foundations. Check out the Resources above for places to start if this document does not cover a question you have.",
+    "objectID": "resources/plaintext.html#markdown-based-apps",
+    "href": "resources/plaintext.html#markdown-based-apps",
+    "title": "Working with Plain Text",
+    "section": "Markdown based apps",
+    "text": "Markdown based apps\nThere is currently a renaissance in writing apps that leverage plain text and Markdown to store files that can be linked together in various ways, making it possible to build anything from a data base of notes, a wiki-like database, outlines and checklists, or even short or long forms of writing intended for publication.\n\nObsidian is the most popular choice. It has a large following and is highly customizable. Obsidian is free but not open source.\nTangent Notes is an open source alternative.\niA Writer is a paid application available for Windows and macOS, as well as iOS. It is a very good looking simple application for writing Markdown.",
     "crumbs": [
       "Resources",
-      "Quarto",
-      "Quarto documents"
+      "Organization",
+      "Working with Plain Text"
     ]
   },
   {
-    "objectID": "resources/quarto-docs.html#footnotes",
-    "href": "resources/quarto-docs.html#footnotes",
-    "title": "Quarto documents",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nSee the Output formats section for more details on output formats.↩︎",
+    "objectID": "resources/quarto-tables.html",
+    "href": "resources/quarto-tables.html",
+    "title": "Interactive tables in Quarto",
+    "section": "",
+    "text": "You can create complex data visualization with R and Quarto, but there may be times when you just want to show your table of data in a way that is useful to readers. There are a number of ways to format tables. This page provides a preview of what you can do with tables in Quarto.\nIf you want a nicely formatted static table, look at the gt package. The documentation for the package is very thorough and provides many examples.\nA minimally interactive option is rmarkdown::paged_table(), which can be chosen as the default table output within the df-print option in Quarto’s YAML. But you can get even fancier with either the DT package or reactable.",
     "crumbs": [
       "Resources",
       "Quarto",
-      "Quarto documents"
+      "Interactive tables in Quarto"
+    ]
+  },
+  {
+    "objectID": "resources/quarto-tables.html#examples",
+    "href": "resources/quarto-tables.html#examples",
+    "title": "Interactive tables in Quarto",
+    "section": "Examples",
+    "text": "Examples\nLet’s show examples using the movements of two sibling groups at the end of the 16th century.\n\nlibrary(tidyverse)\nlibrary(DT)\nlibrary(reactable)\n\n\nmovements &lt;- read_csv(\"https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/movements.csv\")\n\n\nRegular tibble output\n\nmovements\n\n# A tibble: 74 × 3\n   person                 place     date      \n   &lt;chr&gt;                  &lt;chr&gt;     &lt;date&gt;    \n 1 Andries van der Meulen Antwerp   1584-07-01\n 2 Andries van der Meulen Bremen    1585-09-01\n 3 Anna van der Meulen    Cologne   1584-07-01\n 4 Anna van der Meulen    Bremen    1588-06-01\n 5 Anna van der Meulen    Stade     1588-08-01\n 6 Anna van der Meulen    Bremen    1592-03-01\n 7 Sara van der Meulen    Antwerp   1584-07-01\n 8 Sara van der Meulen    Bremen    1585-09-01\n 9 Sara van der Meulen    Frankfurt 1586-03-01\n10 Sara van der Meulen    Cologne   1586-05-01\n# ℹ 64 more rows\n\n\n\n\nRMarkdown paged\n\nrmarkdown::paged_table(movements)\n\n\n  \n\n\n\n\n\nDT\n\ndatatable(movements)\n\n\n\n\n\n\n\nreactable\n\nreactable(movements)",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Interactive tables in Quarto"
+    ]
+  },
+  {
+    "objectID": "resources/quarto-tables.html#reactable-1",
+    "href": "resources/quarto-tables.html#reactable-1",
+    "title": "Interactive tables in Quarto",
+    "section": "reactable",
+    "text": "reactable\nThe DT package provides a nice default with a search box and includes many options for styling the table. However, reactable takes this even further, and so that is the package we will concentrate on here.\n\nResources and examples\nThe below will show some examples to help get you started, but look at the documentation for the many options available to you.\n\nScroll through the Examples to get an idea of the basics.\nGo through the demos to see what is possible.\nA good example of a reactable that is also useful in its contents is Nicola Rennie’s Data Science Resources.\n\n\n\nMovements example\nThe below is a relatively simple example that adds a search box, increases the default page side, changes some visual aspects of the table, and provides capitalized header values.\n\nmovements &lt;- movements |&gt; \n  arrange(date) |&gt; \n  mutate(date = paste(day(date), # Transform to use of words for date\n                      month(date, label = TRUE, abbr = FALSE),\n                      year(date)))\n\n\nreactable(movements,\n          defaultPageSize = 15,\n          searchable = TRUE,\n          bordered = TRUE,\n          highlight = TRUE,\n          columns = list(\n            person = colDef(name = \"Person\"),\n            place = colDef(name = \"Place\"),\n            date = colDef(name = \"Date\")\n            )\n          )\n\n\n\n\n\nYou can get quite creative with reactable, including adding filtering widgets and a button to download the data among many other options.",
+    "crumbs": [
+      "Resources",
+      "Quarto",
+      "Interactive tables in Quarto"
     ]
   },
   {
