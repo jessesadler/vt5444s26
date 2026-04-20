@@ -4,13 +4,14 @@ subtitle: "4 May 2026"
 format: html
 ---
 
-## Reading
-
-
 ## Assignment
+- Add the url of your final project to this [GoogleDoc](https://docs.google.com/document/d/13_4VWj6X5-qoBGoaqPs1JqQfV-R7Ugar2uPTAMSo6LE/edit?usp=sharing).
 
+## Presentation of websites
+- 10 minutes per student: 5–7 minute presentation with time for questions.
+- Presentation should provide overview of website and include ideas for future work.
+- Feedback to help completion of project.
 
-## Activities
-
-
-## Resources
+## Schedule to turn in final projects
+- Presentation on 4 May.
+- Final projects and self reflection due by Tuesday, 12 May.

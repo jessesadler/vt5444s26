@@ -12,9 +12,14 @@ Background reading on mapping or network analysis. Find one or more sources that
 - Commonplace book writing: What are you excited to work on? What skills do you need to concentrate on improving?
 
 ## Activities
-- Time to go over visualization, mapping, and networks.
-- Practice and plan for website projects.
+- Discussion: What does DH look like as we approach the end of the semester?
+- Workflow practice.
+    - SNiGB network analysis: [Download this Quarto document to practice](../files/snigb-networks.qmd).
+    - Mapping: Lines from points
+- Introduction to interactive tables in Quarto
 
 ## Resources
-- [Resources: Mapping in R](../resources/mapping.qmd)
 - [Resources: Networks in R](../resources/networks.qmd)
+- [Resources: Mapping in R](../resources/mapping.qmd)
+- [Resources: Mapping: Creating lines from points](../resources/mapping-lines.qmd)
+- [Resources: Interactive tables in Quarto](../resources/quarto-tables.qmd)

@@ -5,12 +5,12 @@ format: html
 ---
 
 ## Reading
-
+- Quinn Dombrowski, "Minimizing Computing Maximizes Labor," *Digital Humanities Quarterly* 16, no. 2 (2022), <https://doi.org/10.63744/nkueftfvhghb>.
 
 ## Assignment
-
+- Make progress on your final project and come to class with questions or ideas.
 
 ## Activities
-
-
-## Resources
+- Discussion: Digital history and minimal computing.
+- Overview of Quarto websites and git, GitHub workflow.
+- Time to work and help each other on final projects.
