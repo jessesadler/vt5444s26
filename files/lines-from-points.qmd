@@ -1,0 +1,272 @@
+---
+title: "Mapping: Creating lines from points"
+format: html
+---
+
+A common task for mapping humanities data is to create lines from sets of points to demonstrate the movement of people, objects, or ideas. To do this we need to get the data in the right format, create point data using the sf package as described in [Mapping with R](mapping.qmd), and then connect the points into lines using a `group_by()` and `summarize()` pipeline.
+
+Two different ways to organize the data are demonstrated here, resulting in different types of line data. This page also demonstrates the usefulness of joins between multiple data frames and working with geocoded data as demonstrated in [Wrangling data in the tidyverse](wrangling.qmd). You can download a copy of this Quarto document to follow along.
+
+We start, as always, by loading the packages we will be using. The main packages are tidyverse and sf, but we will also be creating interactive maps with [leaflet](https://rstudio.github.io/leaflet/) and using [paletteer](https://emilhvitfeldt.github.io/paletteer/) for a color palette.
+
+```{r}
+#| label: setup
+#| message: false
+library(tidyverse)
+library(sf)
+library(leaflet)
+library(paletteer)
+```
+
+## The data
+The data is available through the [datasets folder on the class syllabus](https://github.com/jessesadler/vt5444s26/tree/main/datasets). Download the datasets into your `data-raw` folder or read them in from GitHub.
+
+```{r}
+#| label: load-data-show
+movements <- read_csv("https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/movements.csv")
+locations <- read_csv("https://raw.githubusercontent.com/jessesadler/vt5444s26/refs/heads/main/datasets/locations.csv")
+```
+
+The `movements` data shows the date and location of siblings from two different families at the end of the 16th century.
+
+```{r}
+#| label: movements
+movements
+```
+
+The `locations` data has the latitude and longitude values for the locations that these individuals visited in their travels. This data could have been created by geocoding the locations with tidygeocoder as shown in [Mapping with R](mapping.qmd#geocode-locations). It is best practice to save this output to a data folder so you are not re-geocoding the locations every time you run the code.
+
+```{r}
+#| label: locations
+locations
+```
+
+Let's convert the locations data to an sf object to make it truly spatial data. This data can be used to make the points on the map.
+
+```{r}
+#| label: locations_sf
+locations_sf <- st_as_sf(locations,
+                         coords = c("lng", "lat"),
+                         crs = 4326)
+```
+
+## The workflow
+We can now work on creating lines from the data. First, we will take the data as it is, creating one line for each individuals in the `movements` data. Secondly, we will create separate lines for each journey between cities, which will entail a bit more wrangling of the data.
+
+The basic workflow is:
+
+1. Join the `movements` data to the latitude and longitude values in `locations` using a `left_join()`.
+2. Convert the resulting data frame into an sf object with `st_as_sf()`.
+3. Group and summarize the data and the cast from points to lines using `st_cast()`.
+
+
+## One line for each individual
+Let's start by doing steps one and two. This is a common workflow when working with geographic data, especially vector data in the form of points, joining geocoded data to attribute data and then turning it into an sf object.
+
+```{r}
+#| label: movements-sf
+movements_geo <- left_join(movements, locations,
+                           by = join_by(place == location))
+movements_sf <- st_as_sf(movements_geo,
+                         coords = c("lng", "lat"),
+                         crs = 4326)
+```
+
+Now we can move onto the third step, which is the most crucial. This uses the group by and summarize workflow that is familiar from data wrangling in the tidyverse, but there are some aspects when working with sf objects. `summarise()` works on the geometry column by default so it can be left blank. However, we set `do_union = FALSE` to have the points be arranged in order from top to bottom of the data frame. This is why the pipeline begins with `arrange()`. It is `st_cast()` that does the actual transformation from points to lines. In this case, it transforms the `geometry` column from `"MULTIPOINT"` to `"LINESTRING"`.
+
+```{r}
+#| label: movements-lines
+movements_lines <- movements_sf |> 
+  arrange(date) |> # <1>
+  group_by(person) |> # <2>
+  summarise(do_union = FALSE) |> # <3>
+  st_cast("LINESTRING") # <4>
+```
+
+1. Arrange the rows from earliest to latest date to ensure lines are made in the right order.
+2. Group by person so that each person will have one line.
+3. Summarize `geometry` column, turning `POINT` data to `MULTIPOINT`.
+4. Cast `MULTIPOINT` to `LINESTRING`.
+
+```{r}
+#| label: print-movements-lines
+movements_lines
+```
+
+You can see that each individual has a single row. Their movements are represented by a single line, but those with many movements have more stopping points in the line. We can see the results by creating a [leaflet map](https://rstudio.github.io/leaflet/), using paletteer to help create a palette to represent the individuals.
+
+```{r}
+#| label: lines
+# Create a palette
+pal <- colorFactor(
+  palette = as.character(paletteer_d("colorBlindness::paletteMartin")),
+  domain = movements_lines$person
+)
+
+leaflet() |> 
+  addTiles() |>
+  addPolylines(data = movements_lines,
+               color = ~pal(person),
+               opacity = 0.8,
+               label = ~person) |> 
+  addCircleMarkers(data = locations_sf,
+                   fillOpacity = 0.5,
+                   radius = 5,
+                   label = ~location) |> 
+  addLegend("bottomleft", pal = pal, values = movements_lines$person)
+```
+
+## One line for each journey
+This get's us the visualization we wanted, but it loses the data about the date of the journey and the direction. This can be rectified by making one line for each journey. However, to do this we need to do a bit of data wrangling. I am sure that there are many ways to do this process, but this is how I would proceed.
+
+First, we need have start and destination locations on each row, so that each row represents a single journey. The key to this is the `lag()` function that fills in the previous value combined with grouping by person. To see how `lag()` works run `lag(1:5)`.
+
+```{r}
+#| label: create-movements-wide
+movements_wide <- movements |> 
+  arrange(date) |> 
+  group_by(person) |> # <1>
+  mutate(start = lag(place), .after = person) |> # <2>
+  ungroup() |> # <3>
+  rename(destination = place) |> # <4>
+  filter(!is.na(start)) |> # <5>
+  rowid_to_column("journey_id") # <6>
+```
+
+1. It is important to group the data so that `lag()` looks to the previous value for each person, not just from the previous row.
+2. Create a new column named `start` and place it after the `person` column for convenience.
+3. Ungroup the data frame since we are done acting on the grouped data.
+4. Rename the `place` column to `destination` to better represent the nature of the data in the column.
+5. Remove the `NA`s introduced into the `start` column by `lag()` where there was no previous location.
+6. Add an id column to keep track of each journey. This will be used for grouping in the next step.
+
+```{r}
+#| label: movements-wide
+movements_wide
+```
+
+`movements_wide` accomplishes one goal in turning each row into a single journey, but now the task of adding our spatial data is more difficult. We have two locations per row, but we only want one `geometry` column. The solution is to transform our data from its current wide format to a longer format in which each journey is split into two rows, one for the start and one for the destination. An example of this is shown in [Wrangling data in the tidyverse](wrangling.qmd#modifying-the-structure-of-a-data-frame).
+
+```{r}
+#| label: pivot-longer
+movements_long <- movements_wide |> 
+  pivot_longer(
+    cols = start:destination, # <1>
+    names_to = "type",        # <2>
+    values_to = "location"    # <3>
+  )
+```
+
+1. The columns to pivot.
+2. The name of the column for the column names that will be pivoted.
+3. The name of the column for the values in the pivoted columns.
+
+The meaning of the arguments are more clear when you see the outcome.
+
+```{r}
+#| label: movements_long
+movements_long
+```
+
+Now we can do the same as before, joining the locations data by the single `location` column, converting it to an sf object and then creating lines.
+
+```{r}
+#| label: movements-long-sf
+movements_long_sf <- movements_long |> 
+  left_join(locations, by = "location") |> 
+  st_as_sf(coords = c("lng", "lat"), crs = 4326) |> 
+  group_by(journey_id) |> 
+  summarise(do_union = FALSE) |> 
+  st_cast("LINESTRING")
+```
+
+The result, as before, is a sf data frame with two columns: `journey_id` and `geometry`. We can get back the attribute columns for the journeys by joining `movements_long_sf` and `movements_wide`, being careful to place `movements_long_sf` as the first data frame so that the result is an sf object.
+
+```{r}
+#| label: journeys-sf
+journeys_sf <- left_join(movements_long_sf, movements_wide, by = "journey_id")
+journeys_sf
+```
+
+Now we can plot the data, but first let's create a label column that we can use in the leaflet map using `paste()` to create a character vector and `<br/>` to implement line breaks in the HTML used for the popups.
+
+```{r}
+#| label: create-label
+journeys_sf <- journeys_sf |> 
+  mutate(label = paste(
+    person, "<br/>",
+    start, "to", destination, "<br>",
+    day(date), month(date, label = TRUE), year(date)))
+```
+
+
+```{r}
+#| label: journeys
+leaflet() |> 
+  addTiles() |>
+  addPolylines(data = journeys_sf,
+               color = ~pal(person),
+               opacity = 0.8,
+               popup = ~label) |> 
+  addCircleMarkers(data = locations_sf,
+                   fillOpacity = 0.5,
+                   radius = 5,
+                   label = ~location) |> 
+  addLegend("bottomleft", pal = pal, values = journeys_sf$person)
+```
+
+## Bonus: Creating great circles
+The lines that are created this way are [rhumb lines](https://en.wikipedia.org/wiki/Rhumb_line), straight lines at a constant bearing. But another way to represent the lines is with [great circles](https://en.wikipedia.org/wiki/Great-circle_distance), which represent the shortest distance between points on a spherical representation of the earth.
+
+Happily, there is a function in sf designed specifically for this, `st_segmentize()`. This function adds segments to the line, making it appear curved. The function depends on the [lwgeom packge](https://r-spatial.github.io/lwgeom/), which needs to be installed separately to use the function. `st_segmentize()` also takes advantage of the [units package](https://r-quantities.github.io/units/), which allows you to specify the type of units a numeric value represents. This is used for calculating the longest distance between segments of the line. Let's see how this works with `journeys_sf`.
+
+```{r}
+#| label: journeys-gc
+journeys_gc <- journeys_sf |> 
+  st_segmentize(units::set_units(20, km))
+```
+
+If you compare the `geometry` column of `journeys_gc` to `journeys_sf`, you will notice how many more segments there are in each line in `journeys_gc`. Substitute `journeys_gc` for `journeys_sf` in the above map to see the difference. This difference is more noticeable the longer the distance of the line. This example uses Blacksburg and London, but try your own locations.
+
+```{r}
+#| label: rhumb-vs-gc
+blacksburg_london <- tibble(
+  location = c("Blacksburg", "London"),
+  lat = c(37.22966, 51.50732),
+  lng = c(-80.41368, -0.1276474)
+) |> 
+  st_as_sf(coords = c("lng", "lat"), crs = 4326)
+
+rhumb <- blacksburg_london |> 
+  # do not need group by because want to summarize all rows (2) into one
+  summarise(do_union = FALSE) |> 
+  st_cast("LINESTRING")
+
+great_circle <- rhumb |> 
+  st_segmentize(units::set_units(20, km))
+
+comparison <- bind_rows(rhumb, great_circle) |> 
+  add_column(type = c("Rhumb line", "Great circle"))
+```
+
+Let's see what the difference looks like.
+
+```{r}
+#| label: map-rhumb-vs-gc
+# Create a palette
+pal <- colorFactor(
+  palette = as.character(paletteer_d("colorblindr::OkabeIto")),
+  domain = comparison$type
+)
+
+leaflet() |> 
+  addTiles() |>
+  addPolylines(data = comparison,
+               opacity = 1,
+               label = ~type,
+               color = ~pal(type)) |> 
+  addCircleMarkers(data = blacksburg_london,
+                   fillOpacity = 0.5,
+                   radius = 5,
+                   label = ~location)
+```

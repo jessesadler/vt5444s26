@@ -139,6 +139,8 @@ website:
               file: resources/wrangling.qmd
             - text: "Mapping with R"
               file: resources/mapping.qmd
+            - text: "Mapping: Creating lines from points"
+              file: resources/mapping-lines.qmd
             - text: "Networks with R"
               file: resources/networks.qmd
         - section: "Git and GitHub"
