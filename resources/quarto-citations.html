@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Group work on your project – Digital History Methods</title>
+<title>Citations with Quarto and Zotero – Digital History Methods</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,8 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/15-content-presentations.html" rel="next">
-<link href="../content/13-content-gis-sna.html" rel="prev">
+<link href="../resources/quarto-tables.html" rel="prev">
 <link href="../files/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -266,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Course Details</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content/index.html" aria-current="page"> 
+    <a class="nav-link" href="../content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -278,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html"> 
+    <a class="nav-link active" href="../resources/index.html" aria-current="page"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -293,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/14-content-build.html">14: Group work on your project</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto</a></li><li class="breadcrumb-item"><a href="../resources/quarto-citations.html">Citations with Quarto</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -316,8 +350,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Content</span></a>
+  <a href="../resources/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
   </div>
 </li>
       </ul>
@@ -325,97 +359,210 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Topics</span></a>
+ <span class="menu-text">Digital Humanities</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">1: MLK Day - No class</span>
+  <div class="sidebar-item-container"> 
+  <a href="../resources/dh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">General DH resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data for DH</span></a>
+  </div>
+</li>
+      </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Organization</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/02-content-data-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2: History, data, and the digital</span></a>
+  <a href="../resources/zotero.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zotero Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/03-content-md.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3: The file system and Markdown</span></a>
+  <a href="../resources/plaintext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with Plain Text</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/04-content-tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4: ‘Tidy’ historical data</span></a>
+  <a href="../resources/markdown-syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown Syntax Guide</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/05-content-ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5: Visualizing data with ggplot2</span></a>
+  <a href="../resources/text-editors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Text Editors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/06-content-dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6: Wrangling data</span></a>
+  <a href="../resources/rstudio-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/07-content-snigb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7: Working with SNiGB</span></a>
+  <a href="../resources/rstudio-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using R in RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/08-content-git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8: Reproducible workflows with Git</span></a>
+  <a href="../resources/importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/09-content-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9: Making websites with Quarto</span></a>
+  <a href="../resources/ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualization with ggplot2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/10-content-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10: Making maps</span></a>
+  <a href="../resources/ggplot2-color.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Colors with ggplot2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/11-content-networks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11: Network analysis</span></a>
+  <a href="../resources/wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wrangling data in the tidyverse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/12-content-design.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12: Web design and visualization</span></a>
+  <a href="../resources/mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping with R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/13-content-gis-sna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13: Mapping and network analysis</span></a>
+  <a href="../resources/mapping-lines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mapping: Creating lines from points</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/14-content-build.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">14: Group work on your project</span></a>
+  <a href="../resources/networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Networks with R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Git and GitHub</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub: An overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/15-content-presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15: Presentation of final projects</span></a>
+  <a href="../resources/git-install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installing Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up Git and GitHub</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Git and GitHub workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/git-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quarto</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-docs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto documents</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-websites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto websites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digital accessibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interactive tables in Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-citations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Citations with Quarto</span></a>
   </div>
 </li>
       </ul>
@@ -430,21 +577,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reading" id="toc-reading" class="nav-link active" data-scroll-target="#reading">Reading</a></li>
-  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
-  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities">Activities</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#the-workflow" id="toc-the-workflow" class="nav-link" data-scroll-target="#the-workflow">The workflow</a>
+  <ul class="collapse">
+  <li><a href="#create-.bib-file-in-zotero" id="toc-create-.bib-file-in-zotero" class="nav-link" data-scroll-target="#create-.bib-file-in-zotero">1. Create <code>.bib</code> file in Zotero</a></li>
+  <li><a href="#quarto-setup" id="toc-quarto-setup" class="nav-link" data-scroll-target="#quarto-setup">2. Quarto setup</a></li>
+  <li><a href="#make-citations-in-your-quarto-documents" id="toc-make-citations-in-your-quarto-documents" class="nav-link" data-scroll-target="#make-citations-in-your-quarto-documents">3. Make citations in your Quarto documents</a></li>
+  <li><a href="#creating-a-bibliography" id="toc-creating-a-bibliography" class="nav-link" data-scroll-target="#creating-a-bibliography">4. Creating a bibliography</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/14-content-build.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/quarto-citations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../content/14-content-build.html">14: Group work on your project</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/quarto-docs.html">Quarto</a></li><li class="breadcrumb-item"><a href="../resources/quarto-citations.html">Citations with Quarto</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Group work on your project</h1>
-<p class="subtitle lead">27 April 2026</p>
+<h1 class="title">Citations with Quarto and Zotero</h1>
 </div>
 
 
@@ -461,36 +611,84 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="reading" class="level2">
-<h2 class="anchored" data-anchor-id="reading">Reading</h2>
-<ul>
-<li>Quinn Dombrowski, “Minimizing Computing Maximizes Labor,” <em>Digital Humanities Quarterly</em> 16, no. 2 (2022), <a href="https://doi.org/10.63744/nkueftfvhghb" class="uri">https://doi.org/10.63744/nkueftfvhghb</a>.</li>
-</ul>
-</section>
-<section id="assignment" class="level2">
-<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
-<ul>
-<li>Make progress on your final project and come to class with questions or ideas.</li>
-</ul>
-</section>
-<section id="activities" class="level2">
-<h2 class="anchored" data-anchor-id="activities">Activities</h2>
-<ul>
-<li>Discussion: Digital history and minimal computing.</li>
-<li>Overview of Quarto websites and git, GitHub workflow.</li>
-<li>Time to work and help each other on final projects.</li>
-</ul>
-</section>
+<p>Quarto can automatically format citations and create bibliographies using the tooling provided by <a href="https://pandoc.org">Pandoc</a>. This makes it possible to replicate the <a href="../resources/zotero.html">Zotero to Word or GoogleDocs workflow</a> within a plaintext environment.</p>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
-<li>Check out the <a href="https://jessesadler.github.io/quarto-web-example/">example Quarto website</a> and the <a href="https://github.com/jessesadler/quarto-web-example">site’s GitHub repository</a> that shows how it is made.</li>
-<li>Use <a href="../resources/quarto-websites.html">Resources: Quarto websites</a> and the <a href="https://quarto.org/docs/websites/">Quarto website documentation</a>.</li>
-<li><a href="../resources/quarto-citations.html">Resources: Citations with Quarto</a></li>
-<li><a href="../resources/oa-license.qmd">Resources: Licensing and open access</a></li>
+<li><a href="https://quarto.org/docs/authoring/citations.html">Quarto citations</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#citations">Pandoc citations</a>
+<ul>
+<li><a href="https://pandoc.org/MANUAL.html#citation-syntax">Citation syntax</a></li>
+<li><a href="https://pandoc.org/MANUAL.html#footnotes">Footnote</a></li>
+</ul></li>
+<li><a href="https://retorque.re/zotero-better-bibtex/">Better BibTex</a> Zotero plugin.</li>
 </ul>
+</section>
+<section id="the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-workflow">The workflow</h2>
+<section id="create-.bib-file-in-zotero" class="level3">
+<h3 class="anchored" data-anchor-id="create-.bib-file-in-zotero">1. Create <code>.bib</code> file in Zotero</h3>
+<p>A <a href="http://www.bibtex.org/">BibTex file</a> is a file of references in a special format that ends in <code>.bib</code>. You can create such a file in Zotero as you would other bibliographic styles. While Zotero’s BibTex support is getting better, installing the <a href="https://retorque.re/zotero-better-bibtex/">Better BibTex</a> Zotero plugin will give you more tools to work with BibTex.</p>
+<p>As with other formats, there are many options for creating a BibTex file for a project.</p>
+<ul>
+<li>Through Zotero Collections
+<ul>
+<li>Right click on a Collection and choose Export Collection</li>
+<li>Choose Better BibTex</li>
+<li>Click on <em>Keep updated</em>: This automatically updates the file when you add references to a collection.
+<ul>
+<li>Auto export can be removed by going to Preferences for Better BibTex and removing the updating feature at the bottom of the preferences.</li>
+</ul></li>
+<li>Save file</li>
+</ul></li>
+<li>Create a bib file by hand
+<ul>
+<li>Right click on references and choose Better BibTex -&gt; Copy BibTex to clipboard.</li>
+<li>Or you can create a bibliography and use BibTex for export style.</li>
+</ul></li>
+</ul>
+<p>When exactly and how you create the bib file is a matter of choice. It can be done all at once or one-by-one as you add citations.</p>
+</section>
+<section id="quarto-setup" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-setup">2. Quarto setup</h3>
+<ol type="1">
+<li>Add the BibTex file to the Quarto project. You might name it <code>references.bib</code>.</li>
+<li>Point to the <code>references.bib</code> and choose a citation style in the yaml header. This can either be done on a single page or at the project level in the <code>_quarto.yml</code> configuration file.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> https://www.zotero.org/styles/chicago-fullnote-bibliography</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>csl</code> option links to a specific <a href="https://citationstyles.org">citation style language</a> file. You can provide a link to either a <code>.csl</code> file in your project or the url of a CSL file. You can find these styles at either <a href="https://github.com/citation-style-language/styles">CSL Citation styles repository</a> or <a href="https://www.zotero.org/styles">Zotero’s Style repository</a>.</p>
+</section>
+<section id="make-citations-in-your-quarto-documents" class="level3">
+<h3 class="anchored" data-anchor-id="make-citations-in-your-quarto-documents">3. Make citations in your Quarto documents</h3>
+<p>The BibTex format depends on <strong>citekeys</strong> that provide unique ways to denote each reference. Citations should appear in square brackets, with an <code>@</code> before the citekey, and semicolons separating items: <code>[@citekey1; @citekey2]</code>.</p>
+<p>You can find the citekey for items in Zotero in the item’s information on the right panel.</p>
+<p>Citations can include a prefix, a locator, and a suffix:</p>
+<ul>
+<li><code>This is a sentence [see @doe99, pp. 33-35 and *passim*; @smith04, chap. 1].</code></li>
+<li>Citation of page can use <code>@cite, page 34</code>, <code>@cite, p. 34</code>, <code>@cite, pp. 34–35</code>, or defaults to page with <code>@cite, 34</code>.</li>
+<li>Other locators, such as <code>chapter, chap./chaps.</code>, <code>figure,  fig./figs.</code> or <code>folio,  fol./fols.</code> are available.</li>
+<li>Omitting the square brackets will cause the author’s last name to be rendered, allowing it to be the subject of the sentence: <code>@smith04 says blah</code>.</li>
+</ul>
+</section>
+<section id="creating-a-bibliography" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-bibliography">4. Creating a bibliography</h3>
+<p>By default a <a href="https://quarto.org/docs/authoring/citations.html#bibliography-generation">bibliography</a> will automatically be placed at the end of a document with citations. You can explicitly provide a space for it with a <code>refs</code> div.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bibliography</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you do not want a bibliography on a page you can suppress it with <code>suppress-bibliography: true</code> in the document’s or project’s yaml. This is particularly useful in a project in which you only want one bibliography.</p>
+<p>By default the bibliography will only include items explicitly cited. You can have the bibliography include all items in the <code>.bib</code> file with the <code>nocite</code> option and a wildcard to choose all citekeys:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  @*</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -909,14 +1107,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/13-content-gis-sna.html" class="pagination-link" aria-label="13: Mapping and network analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">13: Mapping and network analysis</span>
+      <a href="../resources/quarto-tables.html" class="pagination-link" aria-label="Interactive tables in Quarto">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interactive tables in Quarto</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/15-content-presentations.html" class="pagination-link" aria-label="15: Presentation of final projects">
-        <span class="nav-page-text">15: Presentation of final projects</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -927,7 +1122,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/content/14-content-build.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jessesadler/vt5444s26/edit/main/resources/quarto-citations.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jessesadler/vt5444s26/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jessesadler/vt5444s26">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
 </div>

@@ -560,6 +560,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Interactive tables in Quarto</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Citations with Quarto</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -626,6 +632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Posit has also created a YouTube series on <a href="https://youtu.be/l7r24gTEkEY?si=QGzhARrLgHJ-gpxk">building a Quarto website</a>. This series also discusses making a <a href="https://quarto.org/docs/websites/website-blog.html">blog with Quarto</a>. A blog is a Quarto website that has some additional features to allow you to have a page listing the blog posts. Otherwise, there is a great deal of overlap.</p>
 <section id="examples-of-quarto-websites" class="level3">
 <h3 class="anchored" data-anchor-id="examples-of-quarto-websites">Examples of Quarto websites</h3>
+<p>Check out a small <a href="https://jessesadler.github.io/quarto-web-example/">example DH website with Quarto</a>. The <a href="https://github.com/jessesadler/quarto-web-example">GitHub repository</a> for the site shows how it is made.</p>
 <p>There are a lot of Quarto websites out in the world. Explore the <a href="https://quarto.org/docs/gallery/#websites">gallery of websites</a> on the Quarto site for inspiration.</p>
 <p>A couple that you might want to look at include:</p>
 <ul>
@@ -664,7 +671,14 @@ Figure&nbsp;2: Project files for a freshly created Quarto website project.
 </section>
 <section id="render-and-preview-your-website" class="level2">
 <h2 class="anchored" data-anchor-id="render-and-preview-your-website">Render and preview your website</h2>
-<p>Click on the <code>Render</code> button at the top of the RStudio editor panel to <a href="https://quarto.org/docs/websites/#website-preview">build your website and preview what it looks like</a>. This can also be done by running the command <code>quarto preview</code> in the Terminal.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> When the website is rendered, a new <code>_site</code> folder will be created. This folder contains all of the HTML files that make up your website. You will also see the preview of the site open in the View panel on the right. You can click on the Show in new window button as shown in <a href="#fig-website-preview" class="quarto-xref">Figure&nbsp;3</a> to open the preview in your browser.</p>
+<p>There are three main ways to <a href="https://quarto.org/docs/websites/#website-preview">render and preview your site</a>:</p>
+<ol type="1">
+<li>Click on the <code>Render</code> button at the top of the RStudio editor panel.</li>
+<li>Click on the <code>Render Website</code> button in the <strong>Build</strong> tab in the upper-right panel. If some things are not being update when you use the first method, this is a good way to ensure everything is rerun.</li>
+<li>Run the command <code>quarto preview</code> in the Terminal.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ol>
+<p>You should render and preview your site often, especially before making a commit, and <strong>definitely before pushing to GitHUb</strong>. This is a way to make sure that everything looks good on your computer before making it live through GitHub. Note that you can do this one step at a time: run any code line-by-line, render a single page, build the whole website, and look at the preview.</p>
+<p>When the website is rendered, a new <code>_site</code> folder will be created. This folder contains all of the HTML files that make up your website. You will also see the preview of the site open in the View panel on the right. You can click on the Show in new window button as shown in <a href="#fig-website-preview" class="quarto-xref">Figure&nbsp;3</a> to open the preview in your browser.</p>
 <div id="fig-website-preview" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of the Viewer panel in RStudio showing a preview of the newly created website. There is a purple arrow pointing to the external viewer button.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-website-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -705,6 +719,18 @@ Figure&nbsp;3: Preview of the newly created Quarto website.
 <p>The <a href="https://quarto.org/docs/output-formats/html-themes.html">HTML theming</a> and <a href="https://quarto.org/docs/output-formats/html-themes-more.html">More about themes</a> documentation goes into the details on styling you website.</p>
 <p>Quarto websites use a base theme that is set within the <code>_quarto.yml</code> configuration file. Quarto themes are based on the 25 <a href="https://bootswatch.com/">bootswatch</a> themes, which can be set under the <code>theme</code> key. You can also set important <a href="https://quarto.org/docs/output-formats/html-themes.html#basic-options">base styling options</a> within the <code>_quarto.yml</code> file.</p>
 <p>But, if you want to alter any aspect of the style of you website, you can do so using CSS (Cascading Style Sheets). However, Quarto is set up to use <a href="https://sass-lang.com">Sass</a> or a <code>.scss</code> file. See the <a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables">Sass variables</a> documentation on how to change styling options with a <code>.scss</code> file.</p>
+<p>One common desire is to choose your own font. <a href="https://fonts.google.com">Google fonts</a> is a popular way to access web fonts. The <a href="https://developers.google.com/fonts/docs/css2">Google Fonts documentation</a> discusses the background for using the service. The easiest way to use one or more fonts on a website is to place the import url at the top of you <code>.scss</code> file, as noted in <a href="https://github.com/orgs/quarto-dev/discussions/2487">this discussion on Quarto</a>. For instance, this website uses <a href="https://fonts.google.com/specimen/Source+Serif+4">Source Serif 4</a> for headings. This can by having the following in your <code>.scss</code> file.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>styles.scss</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="styles.scss"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* css styles */</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>$headings-font-family<span class="in">:</span> "Source Serif 4"<span class="op">,</span> serif !default;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You can access the <code>@import</code> url by selecting the Get font button and then the Get embed code button and selecting the Import option. You may want to only choose some of the available font weights.</p>
 </section>
 </section>
 <section id="deploying-quarto-websites-to-github-pages" class="level2">
@@ -718,16 +744,16 @@ Figure&nbsp;3: Preview of the newly created Quarto website.
 <div class="code-with-filename-file">
 <pre><strong>.gitignore</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename=".gitignore"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>/_site/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename=".gitignore"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>/.quarto/</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>/_site/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 <li><p>Set <code>freeze: auto</code> in <code>_quarto.yml</code>: This makes it so Quarto will only rerender a file if it has changed, making the preview and render workflow faster. See the documentation on use of <a href="https://quarto.org/docs/projects/code-execution.html#freeze">freeze</a>.</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">freeze</span><span class="kw">:</span><span class="at"> auto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="_quarto.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">freeze</span><span class="kw">:</span><span class="at"> auto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></li>
 <li><p>Render site to create a <code>_freeze</code> folder.</p></li>
 <li><p>Add and commit the changes to <code>.gitignore</code>, <code>_quarto.yml</code> and the <code>_freeze</code> folder. Anytime changes occur in <code>_freeze</code>, these should be included in your commit.</p></li>
@@ -743,12 +769,12 @@ Figure&nbsp;3: Preview of the newly created Quarto website.
 <li>Make sure you have committed all changes to your current working branch with <code>git status</code>.</li>
 <li>Close all of your tabs in RStudio. The following actions will delete all of your files on the new branch. This is ok!</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure all changes are committed before running this!</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising gh-pages branch"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure all changes are committed before running this!</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising gh-pages branch"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Switch back to main branch</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Check GitHub Pages setup</p>
 <ul>
 <li>Go to GitHub</li>
@@ -763,7 +789,13 @@ Figure&nbsp;3: Preview of the newly created Quarto website.
 </ul></li>
 <li><p>Add GitHub publish action</p>
 <ul>
-<li>Add <code>.github/workflows/publish.yml</code> copying from the <a href="https://quarto.org/docs/publishing/github-pages.html#publish-action">Publish action</a> in the Quarto documentation.</li>
+<li>Add <code>.github/workflows/publish.yml</code> copying from the <a href="https://quarto.org/docs/publishing/github-pages.html#publish-action">Publish action</a> in the Quarto documentation. In other words:
+<ul>
+<li>add a folder named <code>.github</code> to your project,</li>
+<li>then add a folder inside that named <code>workflows</code>,</li>
+<li>then create a document within that folder named <code>publish.yml</code> (making sure to have the <code>.yml</code> extension). You can use the New File menu and choose Text File.</li>
+<li>Finally, copy the contents of the <a href="https://quarto.org/docs/publishing/github-pages.html#publish-action">Publish action</a> from the Quarto documentation.</li>
+</ul></li>
 <li>Add and commit the new file.</li>
 </ul></li>
 <li><p>Push your project to GitHub</p>
@@ -772,6 +804,10 @@ Figure&nbsp;3: Preview of the newly created Quarto website.
 <li>You should now be able to return to the repository page on GitHub and see an Action running. Click on the Action tab to see the progress.</li>
 <li>If the action runs correctly, the website should be online and updated.</li>
 <li>In the repository page on GitHub click on the gear button in the About section on the right. Click on the box to use your GitHub pages website as the url of the project. This will make it easier to click over to your website.</li>
+</ul></li>
+<li><p>Add the <code>site-url</code> to the <code>_quarto.yml</code>.</p>
+<ul>
+<li>Now that you have a url for your site, you can add the url to the <code>site-url</code> option under <code>website</code> in your <code>_quarto.yml</code> configuration file as discussed in the <a href="https://quarto.org/docs/websites/website-tools.html#social-metadata">social metadata</a> section of the Quarto documentation.</li>
 </ul></li>
 </ol>
 <div id="fig-gh-pages" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A screen shot of GitHub showing how to get to the GitHub Pages web page through Settings and Pages.">

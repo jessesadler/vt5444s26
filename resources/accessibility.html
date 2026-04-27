@@ -560,6 +560,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Interactive tables in Quarto</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/quarto-citations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Citations with Quarto</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -704,7 +710,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="plots">Plots</h4>
 <p>You can also add alt text and captions to plots you make using R within a Quarto document. If you create a plot in R and then save it as an image file, which you then use on your website, use the process above of placing an image in the text.</p>
 <p>To provide alt text for a plot, use the same <code>fig-alt</code> attribute but this time as a chunk option. For instance:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>#| caption: "The flipper length compared to the body mass of Palmer Penguins."</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>#| fig-cap: "The flipper length compared to the body mass of Palmer Penguins."</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>#| fig-alt: |</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>#|   The plot shows flipper length on the x-axis, with values that range from </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>#|   170 to 230, and body mass on the y-axis, with values that range from 3000 </span>
@@ -716,15 +722,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>       mapping = aes(x = flipper_len, y = body_mass)) + </span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  geom_point(mapping = aes(color = species, shape = species)) + </span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  theme_minimal()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell" data-caption="The flipper length compared to the body mass of Palmer Penguins.">
+<div class="cell">
 <div class="cell-output-display">
-<div id="fig-alt" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot shows flipper length on the x-axis, with values that range from  170 to 230, and body mass on the y-axis, with values that range from 3000  to 6000. The three species are displayed using different colors and shapes. Adélie and Chinstrap are of similar size, while Gentoo are both heavier and have longer flippers." width="672">
+<div id="fig-alt" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot shows flipper length on the x-axis, with values that range from  170 to 230, and body mass on the y-axis, with values that range from 3000  to 6000. The three species are displayed using different colors and shapes. Adélie and Chinstrap are of similar size, while Gentoo are both heavier and have longer flippers.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-alt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="accessibility_files/figure-html/fig-alt-1.png" id="fig-alt" class="img-fluid figure-img" alt="The plot shows flipper length on the x-axis, with values that range from  170 to 230, and body mass on the y-axis, with values that range from 3000  to 6000. The three species are displayed using different colors and shapes. Adélie and Chinstrap are of similar size, while Gentoo are both heavier and have longer flippers." width="672">
+<img src="accessibility_files/figure-html/fig-alt-1.png" class="img-fluid figure-img" alt="The plot shows flipper length on the x-axis, with values that range from  170 to 230, and body mass on the y-axis, with values that range from 3000  to 6000. The three species are displayed using different colors and shapes. Adélie and Chinstrap are of similar size, while Gentoo are both heavier and have longer flippers." width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-alt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The flipper length compared to the body mass of Palmer Penguins.
 </figcaption>
 </figure>
 </div>
