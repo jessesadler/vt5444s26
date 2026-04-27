@@ -17,6 +17,8 @@ The Quarto documentation is the best place to look when you have a question. The
 Posit has also created a YouTube series on [building a Quarto website](https://youtu.be/l7r24gTEkEY?si=QGzhARrLgHJ-gpxk). This series also discusses making a [blog with Quarto](https://quarto.org/docs/websites/website-blog.html). A blog is a Quarto website that has some additional features to allow you to have a page listing the blog posts. Otherwise, there is a great deal of overlap.
 
 ### Examples of Quarto websites
+Check out a small [example DH website with Quarto](https://jessesadler.github.io/quarto-web-example/). The [GitHub repository](https://github.com/jessesadler/quarto-web-example) for the site shows how it is made.
+
 There are a lot of Quarto websites out in the world. Explore the [gallery of websites](https://quarto.org/docs/gallery/#websites) on the Quarto site for inspiration.
 
 A couple that you might want to look at include:
@@ -37,7 +39,15 @@ RStudio will start up a new session in your new project folder with a few templa
 ![Project files for a freshly created Quarto website project.](../files/img/quarto-web-files.png){#fig-website-files width=50% fig-alt="A screen shot of RStudio showing the files created by making a new Quarto website project. The files are: _quarto.yml, .gitignore, about.qmd, index.qmd, an Rproj file, and styles.css."}
 
 ## Render and preview your website
-Click on the `Render` button at the top of the RStudio editor panel to [build your website and preview what it looks like](https://quarto.org/docs/websites/#website-preview). This can also be done by running the command `quarto preview` in the Terminal.[^1] When the website is rendered, a new `_site` folder will be created. This folder contains all of the HTML files that make up your website. You will also see the preview of the site open in the View panel on the right. You can click on the Show in new window button as shown in @fig-website-preview to open the preview in your browser.
+There are three main ways to [render and preview your site](https://quarto.org/docs/websites/#website-preview): 
+
+1. Click on the `Render` button at the top of the RStudio editor panel.
+2. Click on the `Render Website` button in the **Build** tab in the upper-right panel. If some things are not being update when you use the first method, this is a good way to ensure everything is rerun.
+3. Run the command `quarto preview` in the Terminal.[^1]
+
+You should render and preview your site often, especially before making a commit, and **definitely before pushing to GitHUb**. This is a way to make sure that everything looks good on your computer before making it live through GitHub. Note that you can do this one step at a time: run any code line-by-line, render a single page, build the whole website, and look at the preview.
+
+When the website is rendered, a new `_site` folder will be created. This folder contains all of the HTML files that make up your website. You will also see the preview of the site open in the View panel on the right. You can click on the Show in new window button as shown in @fig-website-preview to open the preview in your browser.
 
 ![Preview of the newly created Quarto website.](../files/img/quarto-web-preview.png){#fig-website-preview width=50%  fig-alt="A screen shot of the Viewer panel in RStudio showing a preview of the newly created website. There is a purple arrow pointing to the external viewer button."}
 
@@ -71,6 +81,18 @@ The [HTML theming](https://quarto.org/docs/output-formats/html-themes.html) and 
 Quarto websites use a base theme that is set within the `_quarto.yml` configuration file. Quarto themes are based on the 25 [bootswatch](https://bootswatch.com/) themes, which can be set under the `theme` key. You can also set important [base styling options](https://quarto.org/docs/output-formats/html-themes.html#basic-options) within the `_quarto.yml` file.
 
 But, if you want to alter any aspect of the style of you website, you can do so using CSS (Cascading Style Sheets). However, Quarto is set up to use [Sass](https://sass-lang.com) or a `.scss` file. See the [Sass variables](https://quarto.org/docs/output-formats/html-themes.html#sass-variables) documentation on how to change styling options with a `.scss` file.
+
+One common desire is to choose your own font. [Google fonts](https://fonts.google.com) is a popular way to access web fonts. The [Google Fonts documentation](https://developers.google.com/fonts/docs/css2) discusses the background for using the service. The easiest way to use one or more fonts on a website is to place the import url at the top of you `.scss` file, as noted in [this discussion on Quarto](https://github.com/orgs/quarto-dev/discussions/2487). For instance, this website uses [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) for headings. This can by having the following in your `.scss` file.
+
+```{.css filename="styles.scss"}
+/* css styles */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+/*-- scss:defaults --*/
+$headings-font-family: "Source Serif 4", serif !default;
+```
+
+You can access the `@import` url by selecting the Get font button and then the Get embed code button and selecting the Import option. You may want to only choose some of the available font weights.
 
 ## Deploying Quarto websites to GitHub Pages
 These instructions show how to deploy a Quarto website to GitHub pages using a GitHub Action. See the [instructions here](https://quarto.org/docs/publishing/github-pages.html) from the Quarto documentation for more details. GitHub pages uses a special `gh-pages` branch to host static websites created by tools such as Quarto.
@@ -122,13 +144,19 @@ These instructions show how to deploy a Quarto website to GitHub pages using a G
 	- Make sure you are on your `main` branch. You can check this in the Git Tab of RStudio or by running `git branch` in the Terminal.
 	- Run `quarto publish gh-pages` in the Terminal and then enter Y for yes.
 7. Add GitHub publish action
-	- Add `.github/workflows/publish.yml` copying from the [Publish action](https://quarto.org/docs/publishing/github-pages.html#publish-action) in the Quarto documentation.
+	- Add `.github/workflows/publish.yml` copying from the [Publish action](https://quarto.org/docs/publishing/github-pages.html#publish-action) in the Quarto documentation. In other words:
+		- add a folder named `.github` to your project,
+		- then add a folder inside that named `workflows`,
+		- then create a document within that folder named `publish.yml` (making sure to have the `.yml` extension). You can use the New File menu and choose Text File.
+		- Finally, copy the contents of the [Publish action](https://quarto.org/docs/publishing/github-pages.html#publish-action) from the Quarto documentation.
 	- Add and commit the new file.
 8. Push your project to GitHub
     - Make a push to GitHub: `git push`.
     - You should now be able to return to the repository page on GitHub and see an Action running. Click on the Action tab to see the progress.
     - If the action runs correctly, the website should be online and updated.
     - In the repository page on GitHub click on the gear button in the About section on the right. Click on the box to use your GitHub pages website as the url of the project. This will make it easier to click over to your website.
+9. Add the `site-url` to the `_quarto.yml`.
+	- Now that you have a url for your site, you can add the url to the `site-url` option under `website` in your `_quarto.yml` configuration file as discussed in the [social metadata](https://quarto.org/docs/websites/website-tools.html#social-metadata) section of the Quarto documentation.
 
 ![Make sure that your GitHub Pages branch is correctly set up.](../files/img/gh-pages-deploy.png){#fig-gh-pages width=75% fig-alt="A screen shot of GitHub showing how to get to the GitHub Pages web page through Settings and Pages."}
 
