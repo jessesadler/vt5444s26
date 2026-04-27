@@ -39,6 +39,11 @@ Grading of the project will be based on effort and creativity, both in the use o
 
 Students will present their websites on the last meeting of the semester and write a short self reflection encompassing the course and the final project.
 
+- Overview of process for turning in projects:
+    - Add URL to this [GoogleDoc](https://docs.google.com/document/d/13_4VWj6X5-qoBGoaqPs1JqQfV-R7Ugar2uPTAMSo6LE/edit?usp=sharing)
+    - Presentation of website on Monday, May 4th.
+    - Complete website and write a self reflection on the class and the project. Due on **Tuesday, May 12th**.
+
 [^1]: This assignment is inspired by Ryan Cordell's [Commonplace book assignment](https://s25bbb.ryancordell.org/pages/assignments/commonplace-book/) in his [Building a (Better) Book course](https://s25bbb.ryancordell.org).
 
 [^2]: See Ann Blair, "Humanist Methods in Natural Philosophy: The Commonplace Book," *Journal of the History of Ideas* 53, no. 4 (1992): 541–51 and Alberto Cevolini, ed., *Forgetting Machines: Knowledge Management Evolution in Early Modern Europe* (Brill, 2016) for more on the history of commonplace books.

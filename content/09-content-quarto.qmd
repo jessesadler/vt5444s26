@@ -45,3 +45,4 @@ Mine Çetinkaya-Rundel & Julia Stewart Lowndes, Hello Quarto: Share, Collaborate
 
 ### Static webistes
 - Brian Rinaldi, *Static Site Generators* (O’Reilly Media, 2015), <https://learning.oreilly.com/library/view/static-site-generators/9781492048558/>.
+- Blake Watson, [HTML for People](https://htmlforpeople.com). A step-by-step guide to making a static website manually with HTML and CSS.

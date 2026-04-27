@@ -14,3 +14,9 @@ format: html
 - Discussion: Digital history and minimal computing.
 - Overview of Quarto websites and git, GitHub workflow.
 - Time to work and help each other on final projects.
+
+## Resources
+- Check out the [example Quarto website](https://jessesadler.github.io/quarto-web-example/) and the [site's GitHub repository](https://github.com/jessesadler/quarto-web-example) that shows how it is made.
+- Use [Resources: Quarto websites](../resources/quarto-websites.qmd) and the [Quarto website documentation](https://quarto.org/docs/websites/).
+- [Resources: Citations with Quarto](../resources/quarto-citations.qmd)
+- [Resources: Licensing and open access](../resources/oa-license.qmd)

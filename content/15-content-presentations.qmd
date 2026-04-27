@@ -14,4 +14,4 @@ format: html
 
 ## Schedule to turn in final projects
 - Presentation on 4 May.
-- Final projects and self reflection due by Tuesday, 12 May.
+- Final projects and self reflection due by **Tuesday, 12 May**. See the [Assignments page](../assignments.qmd) for details.
