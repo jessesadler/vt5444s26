@@ -165,6 +165,8 @@ website:
               file: resources/accessibility.qmd
             - text: "Interactive tables in Quarto"
               file: resources/quarto-tables.qmd
+            - text: "Citations with Quarto"
+              file: resources/quarto-citations.qmd
 
   page-footer:
     right: |

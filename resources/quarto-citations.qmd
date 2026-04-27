@@ -1,0 +1,79 @@
+---
+title: "Citations with Quarto and Zotero"
+format: html
+---
+
+Quarto can automatically format citations and create bibliographies using the tooling provided by [Pandoc](https://pandoc.org). This makes it possible to replicate the [Zotero to Word or GoogleDocs workflow](zotero.qmd) within a plaintext environment.
+
+## Resources
+- [Quarto citations](https://quarto.org/docs/authoring/citations.html)
+- [Pandoc citations](https://pandoc.org/MANUAL.html#citations)
+	- [Citation syntax](https://pandoc.org/MANUAL.html#citation-syntax)
+	- [Footnote](https://pandoc.org/MANUAL.html#footnotes)
+- [Better BibTex](https://retorque.re/zotero-better-bibtex/) Zotero plugin.
+
+## The workflow
+
+### 1. Create `.bib` file in Zotero
+A [BibTex file](http://www.bibtex.org/) is a file of references in a special format that ends in `.bib`. You can create such a file in Zotero as you would other bibliographic styles. While Zotero's BibTex support is getting better, installing the [Better BibTex](https://retorque.re/zotero-better-bibtex/) Zotero plugin will give you more tools to work with BibTex.
+
+As with other formats, there are many options for creating a BibTex file for a project.
+
+- Through Zotero Collections
+    - Right click on a Collection and choose Export Collection
+    - Choose Better BibTex
+    - Click on *Keep updated*: This automatically updates the file when you add references to a collection.
+        - Auto export can be removed by going to Preferences for Better BibTex and removing the updating feature at the bottom of the preferences.
+    - Save file
+- Create a bib file by hand
+    - Right click on references and choose Better BibTex -> Copy BibTex to clipboard.
+    - Or you can create a bibliography and use BibTex for export style.
+
+When exactly and how you create the bib file is a matter of choice. It can be done all at once or one-by-one as you add citations.
+
+### 2. Quarto setup
+1. Add the BibTex file to the Quarto project. You might name it `references.bib`.
+2. Point to the `references.bib` and choose a citation style in the yaml header. This can either be done on a single page or at the project level in the `_quarto.yml` configuration file.
+
+```yml
+---
+bibliography: references.bib
+csl: https://www.zotero.org/styles/chicago-fullnote-bibliography
+---
+```
+
+The `csl` option links to a specific [citation style language](https://citationstyles.org) file. You can provide a link to either a `.csl` file in your project or the url of a CSL file. You can find these styles at either [CSL Citation styles repository](https://github.com/citation-style-language/styles) or [Zotero's Style repository](https://www.zotero.org/styles).
+
+### 3. Make citations in your Quarto documents
+The BibTex format depends on **citekeys** that provide unique ways to denote each reference. Citations should appear in square brackets, with an `@` before the citekey, and semicolons separating items: `[@citekey1; @citekey2]`.
+
+You can find the citekey for items in Zotero in the item's information on the right panel.
+
+Citations can include a prefix, a locator, and a suffix:
+
+- `This is a sentence [see @doe99, pp. 33-35 and *passim*; @smith04, chap. 1].`
+- Citation of page can use `@cite, page 34`, `@cite, p. 34`, `@cite, pp. 34–35`, or defaults to page with `@cite, 34`.
+- Other locators, such as `chapter, chap./chaps.`, `figure,  fig./figs.` or `folio,  fol./fols.` are available.
+- Omitting the square brackets will cause the author's last name to be rendered, allowing it to be the subject of the sentence: `@smith04 says blah`.
+
+
+### 4. Creating a bibliography
+By default a [bibliography](https://quarto.org/docs/authoring/citations.html#bibliography-generation) will automatically be placed at the end of a document with citations. You can explicitly provide a space for it with a `refs` div.
+
+```markdown
+### Bibliography
+
+::: {#refs}
+:::
+```
+
+If you do not want a bibliography on a page you can suppress it with `suppress-bibliography: true` in the document's or project's yaml. This is particularly useful in a project in which you only want one bibliography.
+
+By default the bibliography will only include items explicitly cited. You can have the bibliography include all items in the `.bib` file with the `nocite` option and a wildcard to choose all citekeys:
+
+```yml
+---
+nocite: |
+  @*
+---
+```

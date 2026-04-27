@@ -126,6 +126,9 @@ Check out these resources from the Library on Zotero, including former workshops
 - Document preferences: Citation styles
 	- The Document Preferences window is where you will choose your citation style within the Zotero app.
 
+### Quarto
+You can also use Zotero to style citations in plaintext documents with Quarto. See [Citations with Quarto](quarto-citations.qmd) for more information.
+
 ### Things to keep in mind
 - By using the Word plugin or Zotero Connector with Google Docs the citations and bibliography are linked to Zotero. This means you can make changes to the Document Preferences or to an individual references and the output will be updated.
 - If you share the document with someone else or want to make final manual tweaks to the citations, you will want to unlink the document.
