@@ -79,7 +79,7 @@ You can also add alt text and captions to plots you make using R within a Quarto
 To provide alt text for a plot, use the same `fig-alt` attribute but this time as a chunk option. For instance:
 
 ``` markdown
-#| caption: "The flipper length compared to the body mass of Palmer Penguins."
+#| fig-cap: "The flipper length compared to the body mass of Palmer Penguins."
 #| fig-alt: |
 #|   The plot shows flipper length on the x-axis, with values that range from 
 #|   170 to 230, and body mass on the y-axis, with values that range from 3000 
@@ -98,7 +98,7 @@ ggplot(data = penguins,
 #| echo: false
 #| message: false
 #| warning: false
-#| caption: "The flipper length compared to the body mass of Palmer Penguins."
+#| fig-cap: "The flipper length compared to the body mass of Palmer Penguins."
 #| fig-alt: |
 #|   The plot shows flipper length on the x-axis, with values that range from 
 #|   170 to 230, and body mass on the y-axis, with values that range from 3000 
@@ -108,8 +108,6 @@ ggplot(data = penguins,
 
 
 library(ggplot2)
-#| caption: 
-#| fig-alt: 
 ggplot(data = penguins,
        mapping = aes(x = flipper_len, y = body_mass)) + 
   geom_point(mapping = aes(color = species, shape = species)) + 
