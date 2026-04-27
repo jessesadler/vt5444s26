@@ -168,7 +168,7 @@ website:
             - text: "Citations with Quarto"
               file: resources/quarto-citations.qmd
             - text: "Licensing and open access"
-              file: oa-license.qmd
+              file: resources/oa-license.qmd
 
   page-footer:
     right: |
