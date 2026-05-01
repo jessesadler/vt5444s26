@@ -637,13 +637,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The basic steps for using Git are fairly straightforward, but they do involve more overhead than you will be used to in working on a project. One way to think about it is that Git forces you to be explicit about organizing the changes you make to your project.</p>
 <ol type="1">
 <li>Initialize your repository (project folder) as a Git project.</li>
-<li>Make changes to the documents in the folder.</li>
-<li>Add the changed files to the <em>stage</em>.</li>
-<li>Commit those changed files as a save state with a commit message.</li>
+<li>Make changes to the documents in the folder, making sure to save the files as you go along using File -&gt; Save, the save file button in RStudio, or the <code>Cmd/Ctrl + S</code> keyboard shortcut.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Add the changed files that you want to be a part of a commit to the <em>stage</em>.</li>
+<li><em>Commit</em> those changed files as a save state with a commit message.</li>
 <li>Repeat steps 2–4.</li>
 <li>Push your changes to GitHub repository.</li>
 </ol>
-<p>There are many different ways you can go about doing these foundational steps. Adding in GitHub to the mix brings in further complexity. Do you create the repository on GitHub first or on your computer. Let’s go through creating a repository on GitHub first, which makes things a bit easier because each step actually combines multiple steps into one. Then, we will go through how to get our <code>r-notes</code> project on GitHub, which is a bit more manual.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Quarto websites and Git
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The workflow for developing Quarto websites follows this basic structure, but it involves a couple of more pieces:</p>
+<ol type="1">
+<li>You will want to <strong>building and previewing</strong> the website into the workflow of making changes to your files (step 2).</li>
+<li>Setting up the connection to GitHub is more complex because you want to not only have your files on GitHub but also build and serve a website.</li>
+</ol>
+<p>For the particulars on working with Quarto websites and Git, see the <a href="../resources/quarto-websites.html">Quarto websites resources page</a>.</p>
+</div>
+</div>
+<p>There are many different ways you can go about doing these foundational steps. Adding in GitHub to the mix brings in further complexity. Do you create the repository on GitHub first or on your computer. Let’s go through creating a repository on <a href="#github-first">GitHub first</a>, which makes things a bit easier because each step actually combines multiple steps into one. Then, we will go through how to get our <a href="#local-first"><code>r-notes</code> project on GitHub</a>, which is a bit more manual.</p>
 <p>For more background, see the options described in <a href="https://happygitwithr.com/usage-intro">Happy Git</a>.</p>
 </section>
 <section id="github-first" class="level2">
@@ -793,7 +811,7 @@ Figure&nbsp;2: The Git tab in RStudio with files yet to be committed.
 <li>Go to GitHub and create a new repository
 <ol type="1">
 <li>Clicking on the plus button in the upper-right and select <code>New Repository</code>.</li>
-<li>Name the repository the <em>exact</em> same name as the RStudio project, such as <code>r-notes</code>.</li>
+<li>Name the repository the <strong>exact same name as the RStudio project folder</strong>, such as <code>r-notes</code>.</li>
 <li>Select Create Repository, making sure <em>not</em> to add anything. It should be an empty repository.</li>
 </ol></li>
 <li>Add the GitHub repository as a remote server
@@ -825,9 +843,10 @@ Figure&nbsp;2: The Git tab in RStudio with files yet to be committed.
 <h2 class="anchored" data-anchor-id="the-ongoing-workflow">The ongoing workflow</h2>
 <p>Now you can do your work and practice the Git and GitHub workflow.</p>
 <ol type="1">
-<li>Make changes to your project.</li>
-<li>Add the changes to the stage and then commit with a message about the changes.</li>
-<li>Repeat steps 1 and 2 until you feel you have made good progress.</li>
+<li>Make changes to your project, saving the files as you go along.</li>
+<li>Add the changes to the <strong>stage</strong> that you want to be part of a commit.</li>
+<li><strong>Commit</strong> the staged files with a message about the changes.</li>
+<li>Repeat steps 1–3 until you feel you have made good progress.</li>
 <li>Push the changes to GitHub.</li>
 <li>Repeat.</li>
 </ol>
@@ -835,7 +854,13 @@ Figure&nbsp;2: The Git tab in RStudio with files yet to be committed.
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This is usually the only and, therefore, the last step in working with files, but Git is more involved, as you will see on this page.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
