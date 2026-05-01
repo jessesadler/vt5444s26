@@ -3,7 +3,13 @@ title: "Quarto websites"
 format: html
 ---
 
-[Quarto websites](https://quarto.org/docs/websites/) are a collection of Quarto documents using `format: html` with a set structure and consistent visual style. This page will guide you through setting up a Quarto website project, outline some of the structures and features of Quarto websites, and show how to deploy a Quarto website to the internet using GitHub Pages.
+[Quarto websites](https://quarto.org/docs/websites/) are a collection of Quarto documents using `format: html` with a set structure and consistent visual style. This page will guide you through:
+
+1. [Creating a Quarto website project](#creating-a-quarto-website) in RStudio.
+2. How to [render and preview your website](#render-and-preview-your-website), something that you will want to do regularly to check the changes you have made.
+3. [How Quarto websites work](#how-quarto-websites-work), outlining the three main components of Quarto websites.
+4. [How to deploy Quarto websites to GitHub pages](#deploying-quarto-websites-to-github-pages). This section goes over in detail how to connect your website project to GitHub and get your website live on GitHub pages. The process is similar to, but more complex than, the [general Git and GitHub workflow](git-workflow.qmd).
+5. Finally, the steps of the [ongoing website workflow](#the-website-workflow) once you have everything setup.
 
 ## Resources
 The Quarto documentation is the best place to look when you have a question. The documentation will be linked extensively below, but the most important pages are:
@@ -17,11 +23,9 @@ The Quarto documentation is the best place to look when you have a question. The
 Posit has also created a YouTube series on [building a Quarto website](https://youtu.be/l7r24gTEkEY?si=QGzhARrLgHJ-gpxk). This series also discusses making a [blog with Quarto](https://quarto.org/docs/websites/website-blog.html). A blog is a Quarto website that has some additional features to allow you to have a page listing the blog posts. Otherwise, there is a great deal of overlap.
 
 ### Examples of Quarto websites
-Check out a small [example DH website with Quarto](https://jessesadler.github.io/quarto-web-example/). The [GitHub repository](https://github.com/jessesadler/quarto-web-example) for the site shows how it is made.
+Check out a small [**example DH website with Quarto**](https://jessesadler.github.io/quarto-web-example/) and see how it was made by going to the project's [GitHub repository](https://github.com/jessesadler/quarto-web-example).
 
-There are a lot of Quarto websites out in the world. Explore the [gallery of websites](https://quarto.org/docs/gallery/#websites) on the Quarto site for inspiration.
-
-A couple that you might want to look at include:
+There are a lot of Quarto websites out in the world. Explore the [gallery of websites](https://quarto.org/docs/gallery/#websites) on the Quarto site for inspiration. A couple that you might want to look at include:
 
 - The website for [this class](https://jessesadler.github.io/vt5444s26/) is a Quarto website.
 - [OpenScapes](https://openscapes.org)
@@ -45,7 +49,9 @@ There are three main ways to [render and preview your site](https://quarto.org/d
 2. Click on the `Render Website` button in the **Build** tab in the upper-right panel. If some things are not being update when you use the first method, this is a good way to ensure everything is rerun.
 3. Run the command `quarto preview` in the Terminal.[^1]
 
-You should render and preview your site often, especially before making a commit, and **definitely before pushing to GitHUb**. This is a way to make sure that everything looks good on your computer before making it live through GitHub. Note that you can do this one step at a time: run any code line-by-line, render a single page, build the whole website, and look at the preview.
+![Build and render the website using the Build tab in the Environment panel.](../files/img/render-website.png){#fig-website-preview width=50%  fig-alt="A screen shot of the Build tab in the Environment panel in RStudio. Step 1 shows the Build Tab and step two points to the Render Website button."}
+
+You should render and preview your site often, especially before making a commit, and **definitely before pushing to GitHub**. This is a way to make sure that everything looks good on your computer before making it live through GitHub. Note that you can do this one step at a time: run any code line-by-line, render a single page, build the whole website, and look at the preview.
 
 When the website is rendered, a new `_site` folder will be created. This folder contains all of the HTML files that make up your website. You will also see the preview of the site open in the View panel on the right. You can click on the Show in new window button as shown in @fig-website-preview to open the preview in your browser.
 
@@ -63,15 +69,28 @@ Let's now dig into the files that were created with the website project to under
 Let's go through these one by one.
 
 ### 1. Quarto documents
-Each document is a web page. `index.qmd` and `about.qmd` are special pages. All other Quarto documents are other web pages. See the [HTML documents](https://quarto.org/docs/reference/formats/html.html) documentation on options for HTML documents.
+Each document is a web page. `index.qmd` and `about.qmd` are special pages. All other Quarto documents are other web pages. See the [HTML documents](https://quarto.org/docs/reference/formats/html.html) documentation on options for HTML documents. The YAML heading for each document can be very simple because `_quarto.yml` can be used to set the options for the whole site.
 
 - `index.qmd` is the home page.
 - `about.qmd` is about page that has some special themes.
 
-The YAML heading for each document can be very simple because `_quarto.yml` can be used to set the options for the whole site.
+Adding a new page to your website us a two step process: 
+
+1. Create a new Quarto document and give it a name (normal naming procedures apply, no spaces or special characters). Add content to the document.
+2. Add the name of the Quarto document to the `_quarto.yml` configuration file as described below.
+
 
 ### 2. Configuration file
-`_quarto.yml` is a YAML file that determines the structure of the website and sets website wide options. The [Website navigation](https://quarto.org/docs/websites/website-navigation.html) documentation shows the different options for setting up the structure of the website. You can use a [top navigation bar](https://quarto.org/docs/websites/website-navigation.html#top-navigation), a [side bar](https://quarto.org/docs/websites/website-navigation.html#side-navigation), or a [combination of the two](https://quarto.org/docs/websites/website-navigation.html#hybrid-navigation).
+`_quarto.yml` is a YAML file that determines the structure of the website and sets website wide options. The [Website navigation](https://quarto.org/docs/websites/website-navigation.html) documentation shows the different options for setting up the structure of the website. You can use a [top navigation bar](https://quarto.org/docs/websites/website-navigation.html#top-navigation), a [side bar](https://quarto.org/docs/websites/website-navigation.html#side-navigation), or a [combination of the two](https://quarto.org/docs/websites/website-navigation.html#hybrid-navigation). For instance, to add a Quarto page about historical context as contained in a Quarto document named `context.qmd` to your website on a top navbar, your configuration file might look like:
+
+``` {.yaml filename="_quarto.yml"}
+  navbar:
+    right: # have links to pages begin from right ride
+      - href: index.qmd # Homepage of the website
+        text: Home
+	  - href: context.qmd # Add the historical context page
+	  - href: about.qmd
+```
 
 The `_quarto.yml` configuration file can also be used to set website-wide options for the webpages such as whether to include a table of contents or the numbering of sections among many others. See the [HTML options page](https://quarto.org/docs/reference/formats/html.html) for a complete list of choices available to you.
 
@@ -80,7 +99,15 @@ The [HTML theming](https://quarto.org/docs/output-formats/html-themes.html) and 
 
 Quarto websites use a base theme that is set within the `_quarto.yml` configuration file. Quarto themes are based on the 25 [bootswatch](https://bootswatch.com/) themes, which can be set under the `theme` key. You can also set important [base styling options](https://quarto.org/docs/output-formats/html-themes.html#basic-options) within the `_quarto.yml` file.
 
-But, if you want to alter any aspect of the style of you website, you can do so using CSS (Cascading Style Sheets). However, Quarto is set up to use [Sass](https://sass-lang.com) or a `.scss` file. See the [Sass variables](https://quarto.org/docs/output-formats/html-themes.html#sass-variables) documentation on how to change styling options with a `.scss` file.
+But, if you want to alter any aspect of the style of you website, you can do so using CSS (Cascading Style Sheets). However, Quarto is set up to use [Sass](https://sass-lang.com) or a `.scss` file. See the [Sass variables](https://quarto.org/docs/output-formats/html-themes.html#sass-variables) documentation on how to change styling options with a `.scss` file. To point to use both a base theme and some special changes in a SCSS file, your `_quarto.yml` configuration file might look like the following:
+
+``` {.yaml filename="_quarto.yml"}
+format:
+  html:
+    theme:
+      - cosmo # Base quarto theme
+      - styles.scss # SCSS file with particular styling choices
+```
 
 One common desire is to choose your own font. [Google fonts](https://fonts.google.com) is a popular way to access web fonts. The [Google Fonts documentation](https://developers.google.com/fonts/docs/css2) discusses the background for using the service. The easiest way to use one or more fonts on a website is to place the import url at the top of you `.scss` file, as noted in [this discussion on Quarto](https://github.com/orgs/quarto-dev/discussions/2487). For instance, this website uses [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) for headings. This can by having the following in your `.scss` file.
 
@@ -160,14 +187,21 @@ These instructions show how to deploy a Quarto website to GitHub pages using a G
 
 ![Make sure that your GitHub Pages branch is correctly set up.](../files/img/gh-pages-deploy.png){#fig-gh-pages width=75% fig-alt="A screen shot of GitHub showing how to get to the GitHub Pages web page through Settings and Pages."}
 
-## The website workflow
-With the GitHub Action set up the website workflow is largely the same as the normal Git and GitHub workflow with one minor change. You should make sure to preview and render your changes before making a push to GitHub.
+## The ongoing website workflow
+With the GitHub Action set up the website workflow is largely the same as the normal [Git and GitHub workflow](git-workflow.qmd#the-ongoing-workflow) with one minor change. You should make sure to preview and render your changes before making a push to GitHub.
 
-1. Make changes to your website project.
-2. Preview the website to see that everything works and to ensure that the `_freeze` folder is updated.
-3. Add and commit the local changes.
-4. Repeat steps 1–3.
-5. Push to GitHub to make your changes live to your website.
+Make sure to go over the basic structure of Quarto websites as discussed above in [How Quarto websites work](#how-quarto-websites-work) on adding pages and changing styles.
+
+1. Make changes to your website project, saving the files as you go along.
+2. **Build and preview** the website to see that everything works and to ensure that the `_freeze` folder with all of the R outputs is updated.
+3. Add the changes to the **stage** that you want to be part of a commit.
+4. **Commit** the staged files with a message about the changes.
+5. Repeat steps 1–4, making sure to build and preview your website often.
+6. Push to GitHub to make your changes live to your website.
+	- You can go to the GitHub repo to make sure that the publish GitHub Action worked correctly.
+	- Check the live website to make sure everything looks good, though note that your browser might cache the previous version of the website, so it may appear as if the website has not updated immediately.
+
+Finally, when in doubt, check the [Quarto documentation](https://quarto.org/docs/websites/) or look at the different resources on the syllabus.
 
 
 [^1]: Quarto is first and foremost a command line tool. Therefore, all of the commands you run in RStudio can also be done in the Terminal.

@@ -15,13 +15,23 @@ This page will break down the basic Git and GitHub workflow, concentrating on th
 The basic steps for using Git are fairly straightforward, but they do involve more overhead than you will be used to in working on a project. One way to think about it is that Git forces you to be explicit about organizing the changes you make to your project.
 
 1. Initialize your repository (project folder) as a Git project.
-2. Make changes to the documents in the folder.
-3. Add the changed files to the *stage*.
-4. Commit those changed files as a save state with a commit message.
+2. Make changes to the documents in the folder, making sure to save the files as you go along using File -> Save, the save file button in RStudio, or the `Cmd/Ctrl + S` keyboard shortcut.[^1]
+3. Add the changed files that you want to be a part of a commit to the *stage*.
+4. *Commit* those changed files as a save state with a commit message.
 5. Repeat steps 2–4.
 6. Push your changes to GitHub repository.
 
-There are many different ways you can go about doing these foundational steps. Adding in GitHub to the mix brings in further complexity. Do you create the repository on GitHub first or on your computer. Let's go through creating a repository on GitHub first, which makes things a bit easier because each step actually combines multiple steps into one. Then, we will go through how to get our `r-notes` project on GitHub, which is a bit more manual.
+::: {.callout-note}
+## Quarto websites and Git
+The workflow for developing Quarto websites follows this basic structure, but it involves a couple of more pieces: 
+
+1. You will want to **building and previewing** the website into the workflow of making changes to your files (step 2).
+2. Setting up the connection to GitHub is more complex because you want to not only have your files on GitHub but also build and serve a website.
+
+For the particulars on working with Quarto websites and Git, see the [Quarto websites resources page](quarto-websites.qmd).
+:::
+
+There are many different ways you can go about doing these foundational steps. Adding in GitHub to the mix brings in further complexity. Do you create the repository on GitHub first or on your computer. Let's go through creating a repository on [GitHub first](#github-first), which makes things a bit easier because each step actually combines multiple steps into one. Then, we will go through how to get our [`r-notes` project on GitHub](#local-first), which is a bit more manual.
 
 For more background, see the options described in [Happy Git](https://happygitwithr.com/usage-intro).
 
@@ -124,7 +134,7 @@ It can do all of this because Git knows who you are and usethis has access to yo
 
 1. Go to GitHub and create a new repository
     1. Clicking on the plus button in the upper-right and select `New Repository`.
-    2. Name the repository the *exact* same name as the RStudio project, such as `r-notes`.
+    2. Name the repository the **exact same name as the RStudio project folder**, such as `r-notes`.
     3. Select Create Repository, making sure *not* to add anything. It should be an empty repository.
 2. Add the GitHub repository as a remote server
     1. Click on the [**green Code button**]{style="color:green"} on the top right and copy the HTTPS URL.
@@ -142,8 +152,11 @@ It can do all of this because Git knows who you are and usethis has access to yo
 ## The ongoing workflow
 Now you can do your work and practice the Git and GitHub workflow.
 
-1. Make changes to your project.
-2. Add the changes to the stage and then commit with a message about the changes.
-3. Repeat steps 1 and 2 until you feel you have made good progress.
+1. Make changes to your project, saving the files as you go along.
+2. Add the changes to the **stage** that you want to be part of a commit.
+3. **Commit** the staged files with a message about the changes.
+3. Repeat steps 1–3 until you feel you have made good progress.
 4. Push the changes to GitHub.
 5. Repeat.
+
+[^1]: This is usually the only and, therefore, the last step in working with files, but Git is more involved, as you will see on this page. 
