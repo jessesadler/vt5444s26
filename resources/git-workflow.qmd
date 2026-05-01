@@ -150,13 +150,23 @@ It can do all of this because Git knows who you are and usethis has access to yo
     - Celebrate 🎉 your success if they did.
 
 ## The ongoing workflow
-Now you can do your work and practice the Git and GitHub workflow.
+Now you can do your work and practice the Git and GitHub workflow. The details will differ by project and the types of documents you are working with, but the general outlines of the workflow are:
 
-1. Make changes to your project, saving the files as you go along.
-2. Add the changes to the **stage** that you want to be part of a commit.
-3. **Commit** the staged files with a message about the changes.
-3. Repeat steps 1–3 until you feel you have made good progress.
-4. Push the changes to GitHub.
-5. Repeat.
+1. **Make changes** to your project, saving the files as you go along.
+2. **Check the output** of the changes.
+    - [R scripts](rstudio-setup.qmd#scripts-and-reproducibility): check that the code is doing what you want. To be extra sure, restart your R session to make sure the code is not dependent on an object you created without writing it in the script.
+    - [Quarto documents](quarto-docs.qmd): check that the quarto document Renders and looks like what you want.[^2]
+    - [Quarto websites](quarto-websites.qmd#render-and-preview-your-website): check that the website builds correctly by rendering and previewing the site from the Build tab in the Environment panel.
+3. Make a **commit** consisting of a defined set of changes. This is a two-step process.
+    1. Add the files to the **stage** that you want to be part of a commit.
+    2. Commit the staged files with a message describing the changes.
+4. **Repeat steps 1–3** until you feel you have made good progress.
+5. **Push** the changes to GitHub.
+    - Take extra care with the commit before pushing to GitHub to ensure that everything is working and rendering correctly.[^3]
+6. **Repeat** steps 1–5.
 
-[^1]: This is usually the only and, therefore, the last step in working with files, but Git is more involved, as you will see on this page. 
+[^1]: This is usually the only and, therefore, the last step in working with files, but Git is more involved, as you will see on this page.
+
+[^2]: Rendering a Quarto document is the same as restarting R and running an R script from top to bottom. If there are any problems, the render will not work. Doing this often makes it easier to identify where problems are occurring.
+
+[^3]: If something does break, or you later find a problem, there is no need to panic. You can always make a change to fix things. However, changes, especially rewinding changes, are always easier when they are only on your local computer. When changes are on both GitHub and your computer, things get a little more complex.
