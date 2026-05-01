@@ -870,19 +870,24 @@ Figure&nbsp;5: Make sure that your GitHub Pages branch is correctly set up.
 </section>
 <section id="the-ongoing-website-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="the-ongoing-website-workflow">The ongoing website workflow</h2>
-<p>With the GitHub Action set up the website workflow is largely the same as the normal <a href="../resources/git-workflow.html#the-ongoing-workflow">Git and GitHub workflow</a> with one minor change. You should make sure to preview and render your changes before making a push to GitHub.</p>
+<p>With the GitHub Action set up the website workflow is largely the same as the normal <a href="../resources/git-workflow.html#the-ongoing-workflow">Git and GitHub workflow</a>, but it is even more important that you check the output of your changes before committing and pushing because your site cannot update if there is a problem in the build process.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Make sure to go over the basic structure of Quarto websites as discussed above in <a href="#how-quarto-websites-work">How Quarto websites work</a> on adding pages and changing styles.</p>
 <ol type="1">
 <li>Make changes to your website project, saving the files as you go along.</li>
 <li><strong>Build and preview</strong> the website to see that everything works and to ensure that the <code>_freeze</code> folder with all of the R outputs is updated.</li>
+<li>Make a <strong>commit</strong> consisting of a defined set of changes, including those to the <code>_freeze</code> folder. This is a two-step process.
+<ol type="1">
 <li>Add the changes to the <strong>stage</strong> that you want to be part of a commit.</li>
 <li><strong>Commit</strong> the staged files with a message about the changes.</li>
-<li>Repeat steps 1–4, making sure to build and preview your website often.</li>
-<li>Push to GitHub to make your changes live to your website.
+</ol></li>
+<li><strong>Repeat</strong> steps 1–3, making sure to build and preview your website often.</li>
+<li><strong>Push</strong> to GitHub to make your changes live to your website.
 <ul>
+<li>Take extra care before pushing to GitHub that you fully built your website and have committed all necessary files.</li>
 <li>You can go to the GitHub repo to make sure that the publish GitHub Action worked correctly.</li>
 <li>Check the live website to make sure everything looks good, though note that your browser might cache the previous version of the website, so it may appear as if the website has not updated immediately.</li>
 </ul></li>
+<li><strong>Repeat</strong> steps 1–5.</li>
 </ol>
 <p>Finally, when in doubt, check the <a href="https://quarto.org/docs/websites/">Quarto documentation</a> or look at the different resources on the syllabus.</p>
 
@@ -894,6 +899,7 @@ Figure&nbsp;5: Make sure that your GitHub Pages branch is correctly set up.
 
 <ol>
 <li id="fn1"><p>Quarto is first and foremost a command line tool. Therefore, all of the commands you run in RStudio can also be done in the Terminal.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>But, for your peace of mind, an error in the GitHub publish process will not break your site; it just will not be updated.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
